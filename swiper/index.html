@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=1.0, minimum-scale=1.0, maximum-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+        <script src="http://code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+        <script src="/static/js/jquery.touchswipe.js"></script>
+
+
+        <link type="text/css" rel="stylesheet" media="all" href="/static/pinchzoomer/css/pinchzoomer.css">
+        <script src="/static/pinchzoomer/js/hammer.js" type="text/javascript"></script>
+        <script src="/static/pinchzoomer/js/jquery.mousewheel.js" type="text/javascript"></script>
+        <script src="/static/pinchzoomer/js/TweenMax.js" type="text/javascript"></script>
+        <script src="/static/pinchzoomer/js/jquery.pinchzoomer.js" type="text/javascript"></script>
+
+		<script>
+		$(function(){
+			setTimeout(function() {
+				$('.fullscreenToggle').click();
+			}, 2000);
+		});
+		</script>
+
+<!--        <script src="./js/jquery-touch-fix.js"></script>-->
+<!--        <script src="./js/swiper.js"></script>-->
+<!--        <script src="./js/pan-zoom.js"></script>-->
+
+        <style>
+            html {
+                position: relative;
+                cursor: pointer;
+                height: 100%;
+                width: 100%;
+                -webkit-touch-callout: none;
+                -webkit-user-select: none;
+                -khtml-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+            }
+            body {
+                cursor: pointer;
+            }
+            #debug {
+                display: none;
+                width: 350px;
+                min-height: 200px;
+                background: #000;
+                color: #27ae60;
+                padding: 10px;
+                font-weight: 600;
+                position: absolute;
+                right: 10px;
+                top: 10px;
+            }
+            #targetImage {
+                cursor: pointer;
+                display: block;
+                width: 100%;
+                max-width: 600px;
+                margin: 0 auto;
+            }
+            .zoomHolder
+            {
+                width:100%;
+                height:auto;
+                margin: 0 auto;
+                position:relative;
+            }
+
+            #imageContainer {
+                z-index: 50;
+                position: absolute;
+                background: rgba(0,0,0,0.25);
+                left: 0;
+                right: 0;
+                bottom: 0;
+                display: none;
+                top: 0;
+                content: ' ';
+            }
+            .controlHolder {
+                display: none !important;
+            }
+			
+			.btn-play-to-label {
+				z-index: 100;
+				position: fixed;
+				left: 40px;
+				bottom: 5px;
+				border-radius: 100%;
+				background: #e74c3c;
+				text-align: center;
+				padding: 25px 35px;
+				font-size: 30px;
+				color: #fff;
+				font-weight: bold;
+				text-decoration: none;
+				z-index: 999;
+			}
+			.btn-play-to-label.p2 {
+				left: auto;
+				right: 40px;
+			}
+			.fullscreenDiv {
+				z-index: 1 !important;
+			}
+        </style>
+    </head>
+    <body>
+
+
+        <div id="imageWrapper" class="zoomHolder">
+            <div id="imageContainer"></div>
+            
+			<!-- let op tijdelijk uitgezet om in het scherm geen schoen te zien!  -->
+			<img id="targetImage" src="/static/images2/001.jpg"  data-src="/static/images2/001.jpg" data-elem="pinchzoomer"  /> 
+			<!-- <a href="javascript:void(0);" class="js-play-to-label btn-play-to-label">1</a>
+			<a href="javascript:void(0);" class="js-play-to-label2 btn-play-to-label p2">2</a>   -->
+        </div>
+
+
+        <div id="testdebug"></div>
+
+        <script src="/static/js/rotator.js"></script>
+        <textarea id="debug"></textarea>
+    </body>
+</html>

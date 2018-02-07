@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Switcher</title>
+		<style>
+		
+			body
+					{
+						background-color:                   red;
+						font-family:      TradeGothic, sans-serif;
+						font-size: 30px;						
+	
+						
+						
+					}
+		
+
+		
+			.btn {
+				padding: 10px 10px;
+				background: blue;
+				color: #fff;
+				text-decoration: none;
+				border-radius: 10px;
+				font-family: Arial;
+
+				font-size: 40px;
+
+				margin:  5px;
+				}
+
+			.btn_green {
+				padding: 10px 10px;
+				background: green;
+				color: white;
+				text-decoration: none;
+				border-radius: 10px;
+				font-family: Arial;
+				font-weight: bold;
+				font-size: 40px;
+			
+				}		
+			
+			.btn-container {
+				max-width: 900px;
+				margin: 30px auto;
+				text-align: center;
+				
+				
+				
+			}
+			
+			.touch {
+				width: 40%;
+			}
+
+			.custom {
+				margin: 50px 0;
+				
+			  width: 80%;
+			  -webkit-appearance: none !important;
+			  height:20px;
+			  border-radius: 8px;
+			  background:-webkit-gradient(linear,center top, center bottom, from(#CFDCDD),to(#DFE9EA),color-stop(50%,#DFE9EA));
+			-webkit-transition: background 450ms;
+			  transition: background 450ms;
+
+			}
+
+			/* Change the Slider Button Color Here */
+			.custom::-webkit-slider-thumb {
+				-webkit-appearance: none !important;
+				background:#108A93;
+				height:100px;
+				width:100px;
+				border-radius: 100px;
+			}
+
+			.custom::-webkit-slider-thumb:before {
+			  background-color: yellow;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div class="btn-container">
+			<p>ad product</p>			
+			<a href="/ad_product" class="js-ajx btn">ad_product</a>
+			<a href="/ad_ready" class="js-ajx btn">ad_ready</a>
+			
+			
+			<p> </p>
+			<p>change product </p>
+			<a href="/change_product" class="js-ajx btn">change_product</a>
+			<a href="/select_product" class="js-ajx btn">select_product</a>			
+			
+			<a href="/ready" class="js-ajx btn">ready</a>
+			
+			<p>play </p>
+			<a href="/recenter" class="js-ajx btn_green">recenter</a>
+			<a href="/play_modus" class="js-ajx btn_green">play_modus</a>
+			
+
+			
+			
+			<div class="text-center" style="margin: 20px auto;">
+				<iframe src="/swiper3" style="width: 500px; height: 500px;" border="0"></iframe>
+			</div>
+			
+			<input class="js-ajx-slider custom" type="range" min="0.2" max="1.5" step="0.1" />
+
+			<p>selecteer product </p>			
+			<a href="/product1" class="js-ajx btn">avatar1</a>			
+			<a href="/product2" class="js-ajx btn">avatar2</a>				
+			<a href="/product3" class="js-ajx btn">avatar3</a>				
+			<a href="/product4" class="js-ajx btn">spinner1</a>	
+			<p>selecteer product </p>	
+			<a href="/product5" class="js-ajx btn">video</a>			
+			<a href="/product6" class="js-ajx btn">kaku</a>				
+			<a href="/product7" class="js-ajx btn">product7</a>				
+			<a href="/product8" class="js-ajx btn">product8</a>	
+			
+			
+		</div>
+		<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+		<script src="/static/js/slider.js"></script>
+		<script>
+		  $(function () {
+			var socket = io();
+			
+			$('.js-ajx').on('click', function(e) {
+				e.preventDefault();
+				$.ajax({
+					url: $(this).attr('href')
+				}).done(function() {
+					console.log('Ajax request successfull');
+				});
+			});
+			
+			$('.js-ajx-slider').on('input change', function(e) {
+				var v = $(this).val();
+				$.ajax({
+					url: '/scale_100',
+					data: { val: v },
+					type: 'GET',
+				}).done(function() {
+					console.log('Ajax request successfull');
+				});
+			});
+		  });
+		</script>
+	</body>
+</html>

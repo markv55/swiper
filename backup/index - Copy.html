@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Switcher</title>
+		<style>
+			.btn {
+				padding: 15px 20px;
+				background: #2ecc71;
+				color: #fff;
+				text-decoration: none;
+				border-radius: 50px;
+				font-family: Arial;
+				font-weight: bold;
+				font-size: 20px;
+			}
+			.btn-container {
+				max-width: 300px;
+				margin: 50px auto;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="btn-container">
+			<p>recenter</p>			
+			<a href="/on1" class="btn btn-on">recenter</a>
+			<a href="/off1" class="btn btn-off">leeg</a>
+			<p>- </p>
+			<p>scene 1</p>
+			<a href="/on2" class="btn btn-on">scene 1</a>
+			<a href="/off2" class="btn btn-off">uit</a>		
+			<p> -</p>
+			<p>scene 2</p>
+			<a href="/on3" class="btn btn-on">scene 2</a>
+			<a href="/off3" class="btn btn-off">uit</a>				
+			<p> -</p>
+			<p>scene 3</p>
+			<a href="/on4" class="btn btn-on">scene 3</a>
+			<a href="/off4" class="btn btn-off">uit</a>		
+			<p>swiper</p>
+			<a href="/left" class="btn btn-on">left</a>
+			<a href="/right" class="btn btn-off">right</a>				
+			
+						
+			
+			
+		</div>
+		<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+		<script>
+		  $(function () {
+			var socket = io();
+		  });
+		</script>
+	</body>
+</html>

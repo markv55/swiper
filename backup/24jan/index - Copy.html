@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Switcher</title>
+		<style>
+		
+			body
+					{
+						background-color:                   red;
+						font-family:      TradeGothic, sans-serif;
+						font-size: 40px;						
+						margin-left:                       -300px;
+						margin-top:                        -584px;
+						position:                        absolute;
+						height:                             768px;
+						width:                             700px;
+						left:                                 50%;
+						top:                                  50%;
+					}
+		
+
+		
+			.btn {
+				padding: 15px 20px;
+				background: #2ecc71;
+				color: #fff;
+				text-decoration: none;
+				border-radius: 10px;
+				font-family: Arial;
+				font-weight: bold;
+				font-size: 40px;
+			}
+			.btn-container {
+				max-width: 700px;
+				margin: 10px auto;
+				text-align: center;
+				
+				
+				
+			}
+			
+			.touch {
+				width: 40%;
+			}
+
+			.custom {
+				margin: 50px 0;
+				
+			  width: 80%;
+			  -webkit-appearance: none !important;
+			  height:20px;
+			  border-radius: 8px;
+			  background:-webkit-gradient(linear,center top, center bottom, from(#CFDCDD),to(#DFE9EA),color-stop(50%,#DFE9EA));
+			-webkit-transition: background 450ms;
+			  transition: background 450ms;
+
+			}
+
+			/* Change the Slider Button Color Here */
+			.custom::-webkit-slider-thumb {
+				-webkit-appearance: none !important;
+				background:#108A93;
+				height:100px;
+				width:100px;
+				border-radius: 100px;
+			}
+
+			.custom::-webkit-slider-thumb:before {
+			  background-color: yellow;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="btn-container">
+			<p>recenter</p>			
+			<a href="/on1" class="js-ajx btn">recenter</a>
+			<a href="/off1" class="js-ajx btn">leeg</a>
+			<p> </p>
+			<p>product 1</p>
+			<a href="/on2" class="js-ajx btn">product 1</a>
+			<a href="/uit2" class="js-ajx btn">uit</a>			
+			
+			<!--werkend maar hij refreshed steeds
+			<a href="/off2" class="btn btn-on">camera</a>	
+			<a href="/off3" class="btn btn-off">wereld</a>-->
+
+			<a href="/off2" class="js-ajx btn">camera</a>
+			<a href="/off3" class="js-ajx btn">wereld</a>
+			
+			
+
+			
+			
+			<div class="text-center" style="margin: 20px auto;">
+				<iframe src="/swiper" style="width: 500px; height: 500px;" border="0"></iframe>
+			</div>
+			
+			<input class="js-ajx-slider custom" type="range" min="0.2" max="1.5" step="0.1" />
+			
+			<p>- </p>		
+			
+			<p>product 2</p>
+			<a href="/on3" class="btn btn-on">product 2</a>
+			<a href="/off3" class="btn btn-off">parkeer</a>				
+			<p> </p>
+			<p>product 3</p>
+			<a href="/on4" class="js-ajx btn">video aan 3</a>
+			<a href="/off4" class="js-ajx btn">video uit</a>		
+			<p>swiper</p>
+			<a href="/left" class="btn btn-on">left</a>
+			<a href="/right" class="btn btn-off">right</a>				
+			
+		</div>
+		<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+		<script src="/static/js/slider.js"></script>
+		<script>
+		  $(function () {
+			var socket = io();
+			
+			$('.js-ajx').on('click', function(e) {
+				e.preventDefault();
+				$.ajax({
+					url: $(this).attr('href')
+				}).done(function() {
+					console.log('Ajax request successfull');
+				});
+			});
+			
+			$('.js-ajx-slider').on('input change', function(e) {
+				var v = $(this).val();
+				$.ajax({
+					url: '/scale_100',
+					data: { val: v },
+					type: 'GET',
+				}).done(function() {
+					console.log('Ajax request successfull');
+				});
+			});
+		  });
+		</script>
+	</body>
+</html>
