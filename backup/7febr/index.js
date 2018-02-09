@@ -21,7 +21,6 @@ io.on('connection', function(socket) {
 	socket.on('message', function(msg){  // deze functie ontvangt de socket van de client en zet ze door naar unity
         if (msg[0] == 'photo') {
 			io.emit('message', 'photo' , msg[1] );
-			console.log (msg[0];
 			console.log (msg[1]);
 		}
     });
@@ -54,19 +53,6 @@ io.on('connection', function(socket) {
 
 app.use(express.static(__dirname + '/node_modules'));
 app.use('/static', express.static(path.join(__dirname, 'public')));
-
-//////////////
-
-// Roep deze aan als /return/{MESSAGE} en hij verstuurd de MESSAGE door naar unity. (socket)
-app.get('/return/:rec', function (req, res) {
-	//KlikAanKlikUit(11, 260, 7, 5).off(1, 2);
-	io.emit('message', 'pi', req.params.rec);
-	console.log (req.params.rec);		
-	res.redirect('/');
-});
-
-
-//////////////////
 
 app.get('/swiper', function(req, res) {
 	res.sendFile(path.join(__dirname+'/swiper/index.html'));
@@ -258,10 +244,6 @@ app.get('/play_modus', function (req, res) {
 });
 
 
-/*  let op uitgezet!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-/*  let op uitgezet!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-/*  let op uitgezet!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
 app.get('/objecten_aan', function (req, res) {
 	//KlikAanKlikUit(11, 260, 7, 5).off(1, 2);
 	io.emit('message', 'pi', 'objecten_aan' );
@@ -275,17 +257,12 @@ app.get('/objecten_uit', function (req, res) {
 	console.log ('objecten_uit');		
 	res.redirect('/');
 });
-*/
 
 
-///////////////////
-////////////////// input is output
-/////////////////
 
 
-///////////////////
-///////////////////
-//////////////////
+
+
 
 app.get('/product1', function (req, res) {
 	//KlikAanKlikUit(11, 260, 7, 5).off(1, 2);
