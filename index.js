@@ -58,6 +58,7 @@ app.use('/static', express.static(path.join(__dirname, 'public')));
 //////////////
 
 // Roep deze aan als /return/{MESSAGE} en hij verstuurd de MESSAGE door naar unity. (socket)
+// ik hoef nu niet iedere nieuwe input naar nodejs opnieuw aan te maken!
 app.get('/return/:rec', function (req, res) {
 	//KlikAanKlikUit(11, 260, 7, 5).off(1, 2);
 	io.emit('message', 'pi', req.params.rec);
