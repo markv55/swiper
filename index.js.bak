@@ -144,7 +144,7 @@ app.get('/recenter', function (req, res) {
 // video     // video     // video     // video     
 app.get('/video_aan', function (req, res) {
 	//KlikAanKlikUit(11, 260, 7, 5).on(1, 1);
-	io.emit('message', 'pi' , 'video_aan' );
+	io.emit('message', 'aan' , 'aan' );
 	console.log ('video_aan');	
 	res.redirect('/');
 });
@@ -152,12 +152,12 @@ app.get('/video_aan', function (req, res) {
     
 app.get('/video_uit', function (req, res) {
 	//KlikAanKlikUit(11, 260, 7, 5).on(1, 1);
-	io.emit('message', 'pi' , 'video_uit' );
+	io.emit('message', 'uit' , 'uit' );
 	console.log ('video_uit');	
 	res.redirect('/');
 });
 
-
+   
 
 
 app.get('/off1', function (req, res) {

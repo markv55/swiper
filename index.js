@@ -142,22 +142,22 @@ app.get('/recenter', function (req, res) {
 
 
 // video     // video     // video     // video     
-app.get('/video_aan', function (req, res) {
+app.get('/aan', function (req, res) {
 	//KlikAanKlikUit(11, 260, 7, 5).on(1, 1);
-	io.emit('message', 'video_aan' , 'video_aan' );
-	console.log ('video_aan');	
+	io.emit('message', 'aan' , 'aan' );
+	console.log ('aan');	
 	res.redirect('/');
 });
 
     
-app.get('/video_uit', function (req, res) {
+app.get('/uit', function (req, res) {
 	//KlikAanKlikUit(11, 260, 7, 5).on(1, 1);
-	io.emit('message', 'video_uit' , 'video_uit' );
-	console.log ('video_uit');	
+	io.emit('message', 'uit' , 'uit' );
+	console.log ('uit');	
 	res.redirect('/');
 });
 
-
+   
 
 
 app.get('/off1', function (req, res) {

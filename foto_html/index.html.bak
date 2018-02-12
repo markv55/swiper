@@ -33,6 +33,8 @@
 		<button id="hide-1" type="button" class="btn btn-info">Click here to Hide the image below</button>
 		<button id="show-1" type="button" class="btn btn-info">Click here to Show the image below</button>
 		<div><img id="mainFoto" src="static/images2/001.jpg" alt="" width="800" height="800" /></div>
+		
+		
 		<!--  <div><img id="mainFoto2" src="static/images2/155.jpg" alt="" width="800" height="800" /></div>  -->
 
 
@@ -44,11 +46,7 @@ $('#show-1').click(function() {   $('#mainFoto').show('slow'); });
 });
 </script>
 		
-		
-		
-		
-		
-		
+			
 		
 
 		<script>
@@ -68,11 +66,14 @@ $('#show-1').click(function() {   $('#mainFoto').show('slow'); });
 			if (msg == 'video_aan'){
 				$('#mainFoto').hide('slow'); 
 				<!--  $('#mainVideo').trigger('play'); -->
+				<!-- window.location = '/change_product_html';    let op dit werkt niet. hij gaat wel naar de url maar de hele werking is niet goed etc. -->
+				
 
 			}
 
 			if (msg == 'video_uit'){
-				$('#mainFoto').show('slow');			
+				$('#mainFoto').show('slow');		
+				
 				
 			}	
 				
