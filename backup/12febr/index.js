@@ -87,17 +87,7 @@ app.get('/film', function(req, res) {
 	res.sendFile(path.join(__dirname+'/film/index.html'));
 });
 
-
-app.get('/foto_html', function(req, res) {
-	res.sendFile(path.join(__dirname+'/foto_html/index.html'));
-});
-
-
-
-
 /////////////////////////////////
-
-
 
 
 app.get('/ad_product_html', function(req, res) {
@@ -139,26 +129,6 @@ app.get('/recenter', function (req, res) {
 	console.log ('recenter');	
 	res.redirect('/');
 });
-
-
-// video     // video     // video     // video     
-app.get('/video_aan', function (req, res) {
-	//KlikAanKlikUit(11, 260, 7, 5).on(1, 1);
-	io.emit('message', 'video_aan' , 'video_aan' );
-	console.log ('video_aan');	
-	res.redirect('/');
-});
-
-    
-app.get('/video_uit', function (req, res) {
-	//KlikAanKlikUit(11, 260, 7, 5).on(1, 1);
-	io.emit('message', 'video_uit' , 'video_uit' );
-	console.log ('video_uit');	
-	res.redirect('/');
-});
-
-
-
 
 app.get('/off1', function (req, res) {
 	//KlikAanKlikUit(11, 260, 7, 5).off(1, 1);
