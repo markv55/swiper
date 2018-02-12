@@ -63,7 +63,7 @@ $('#show-1').click(function() {   $('#mainFoto').show('slow'); });
 			console.log(vid);
 			
 			
-			if (msg == 'video_aan'){
+			if (msg == 'aan'){
 				$('#mainFoto').hide('slow'); 
 				<!--  $('#mainVideo').trigger('play'); -->
 				<!-- window.location = '/change_product_html';    let op dit werkt niet. hij gaat wel naar de url maar de hele werking is niet goed etc. -->
@@ -71,7 +71,7 @@ $('#show-1').click(function() {   $('#mainFoto').show('slow'); });
 
 			}
 
-			if (msg == 'video_uit'){
+			if (msg == 'uit'){
 				$('#mainFoto').show('slow');		
 				
 				
