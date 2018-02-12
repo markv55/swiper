@@ -95,6 +95,8 @@ app.get('/foto_html', function(req, res) {
 
 
 
+
+
 /////////////////////////////////
 
 
@@ -157,7 +159,12 @@ app.get('/uit', function (req, res) {
 	res.redirect('/');
 });
 
-   
+app.get('/home', function (req, res) {
+	//KlikAanKlikUit(11, 260, 7, 5).on(1, 1);
+	io.emit('message', 'home' , 'home' );
+	console.log ('home');	
+	res.redirect('/');
+});   
 
 
 app.get('/off1', function (req, res) {

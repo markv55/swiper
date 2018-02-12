@@ -14,6 +14,8 @@
 				margin: 50px auto;
 				border: 0;
 			}
+			
+			
 		</style>
 	</head>
 	<body>
@@ -33,6 +35,13 @@
 		<button id="hide-1" type="button" class="btn btn-info">Click here to Hide the image below</button>
 		<button id="show-1" type="button" class="btn btn-info">Click here to Show the image below</button>
 		<div><img id="mainFoto" src="static/images2/001.jpg" alt="" width="800" height="800" /></div>
+	
+		<button id="audio-1" type="button" class="btn btn-info">geluid</button>	
+		<audio class="audios" id="yes-audio" controls preload="none"> 
+		<source src="static/audio/detail.mp3" type="audio/mpeg">
+		</audio>
+
+		<a href="/ad_product" class="js-ajx-url-ad btn">ad_product</a> 
 		
 		
 		<!--  <div><img id="mainFoto2" src="static/images2/155.jpg" alt="" width="800" height="800" /></div>  -->
@@ -42,8 +51,13 @@
 jQuery(document).ready(function($){ 
 $('#hide-1').click(function() {   $('#mainFoto').hide('slow'); });
 $('#show-1').click(function() {   $('#mainFoto').show('slow'); }); 
-
+$('#audio-1').click(function() {   $('#yes-audio').trigger('play'); }); 
 });
+
+
+
+
+
 </script>
 		
 			
@@ -64,7 +78,9 @@ $('#show-1').click(function() {   $('#mainFoto').show('slow'); });
 			
 			
 			if (msg == 'aan'){
-				$('#mainFoto').hide('slow'); 
+				$('#mainFoto').show('slow'); 
+				$('#yes-audio').trigger('play');
+				
 				<!--  $('#mainVideo').trigger('play'); -->
 				<!-- window.location = '/change_product_html';    let op dit werkt niet. hij gaat wel naar de url maar de hele werking is niet goed etc. -->
 				
@@ -72,8 +88,8 @@ $('#show-1').click(function() {   $('#mainFoto').show('slow'); });
 			}
 
 			if (msg == 'uit'){
-				$('#mainFoto').show('slow');		
-				
+				$('#mainFoto').hide('slow');		
+				$('#yes-audio').trigger('pause')	;			
 				
 			}	
 				
@@ -101,5 +117,38 @@ $('#show-1').click(function() {   $('#mainFoto').show('slow'); });
 		  
 		  
 		</script>
+		
+		<script>
+		  $(function () {
+			var socket = io();
+			
+
+	
+			$('.js-ajx-url-ad').on('click', function(e) {
+				e.preventDefault();
+				$.ajax({
+					url: $(this).attr('href')
+				}).done(function() {
+					
+					window.location = '/';
+					console.log('Ajax request successfull');
+				});
+			});
+	
+	
+			
+	
+			
+			
+			
+			
+			
+		  });
+		</script>		
+		
+		
+		
+		
+		
 	</body>
 </html>
