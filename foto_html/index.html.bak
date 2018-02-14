@@ -5,6 +5,8 @@
 		<style>
 			body {
 				background: white;
+				font-family:      TradeGothic, sans-serif;
+				font-size: 30px;		
 			}
 			
 			#mainFoto {
@@ -15,6 +17,10 @@
 				border: 0;
 			}
 			
+			.size{
+			font-family:      TradeGothic, sans-serif;
+			font-size: 30px;		
+			}
 			
 		</style>
 	</head>
@@ -34,27 +40,39 @@
 
 		<button id="hide-1" type="button" class="btn btn-info">Click here to Hide the image below</button>
 		<button id="show-1" type="button" class="btn btn-info">Click here to Show the image below</button>
-		<div><img id="mainFoto" src="static/images2/001.jpg" alt="" width="800" height="800" /></div>
+		
+		<div><img id="mainFoto" src="static/images2/137.jpg" alt="" width="800" height="800" /></div>
 	
-		<button id="audio-1" type="button" class="btn btn-info">geluid</button>	
+		<button id="audio-1" type="button" class="btn btn-info size">geluid</button>	
 		<audio class="audios" id="yes-audio" controls preload="none"> 
-		<source src="static/audio/detail.mp3" type="audio/mpeg">
+		<!-- <source src="static/audio/detail.mp3" type="audio/mpeg"> -->
+		<source src="static/audio/sonar.wav" type="audio/wav"> 
 		</audio>
 
-		<a href="/ad_product" class="js-ajx-url-ad btn">ad_product</a> 
+		<a href="/home" class="js-ajx-url-home btn">ad_product</a> 
+		
+		<button class="btn btn-default" onclick="vibrateSimple()">Vibrate for 200 ms</button>
+		<button class="btn btn-default" onclick="vibratePattern()">Vibrate with pattern</button>
 		
 		
 		<!--  <div><img id="mainFoto2" src="static/images2/155.jpg" alt="" width="800" height="800" /></div>  -->
 
+		
 
 <script>
 jQuery(document).ready(function($){ 
 $('#hide-1').click(function() {   $('#mainFoto').hide('slow'); });
 $('#show-1').click(function() {   $('#mainFoto').show('slow'); }); 
-$('#audio-1').click(function() {   $('#yes-audio').trigger('play'); }); 
+$('#audio-1').click(function() {   $('#yes-audio').trigger('play'); $('#yes-audio').trigger('pause'); }); 
 });
 
+function vibrateSimple() {
+  navigator.vibrate(200);
+}
 
+function vibratePattern() {
+  navigator.vibrate([100, 200, 200, 200, 500]);
+}
 
 
 
@@ -73,7 +91,8 @@ $('#audio-1').click(function() {   $('#yes-audio').trigger('play'); });
 			var socket = io();
 
 			socket.on('message', function(msg, vid){  
-	
+			
+			console.log (msg);
 			console.log(vid);
 			
 			
@@ -84,6 +103,7 @@ $('#audio-1').click(function() {   $('#yes-audio').trigger('play'); });
 				<!--  $('#mainVideo').trigger('play'); -->
 				<!-- window.location = '/change_product_html';    let op dit werkt niet. hij gaat wel naar de url maar de hele werking is niet goed etc. -->
 				
+				navigator.vibrate([100, 200, 200, 200, 500]);
 
 			}
 
@@ -92,6 +112,14 @@ $('#audio-1').click(function() {   $('#yes-audio').trigger('play'); });
 				$('#yes-audio').trigger('pause')	;			
 				
 			}	
+			
+			if (msg == 'photo'){
+			
+				var src = "static/images2/" + vid + ".jpg"
+				
+				$('#mainFoto').attr('src', src);
+			}				
+			
 				
 			
 		});
@@ -124,7 +152,7 @@ $('#audio-1').click(function() {   $('#yes-audio').trigger('play'); });
 			
 
 	
-			$('.js-ajx-url-ad').on('click', function(e) {
+			$('.js-ajx-url-home').on('click', function(e) {
 				e.preventDefault();
 				$.ajax({
 					url: $(this).attr('href')
