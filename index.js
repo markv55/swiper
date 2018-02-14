@@ -12,7 +12,7 @@ var path = require('path');
 var server = require('http').createServer(app);
 var io = require('socket.io')(server);
 
-
+// onderstaand ontvangen sockets niet-zijnde-van-ajax request
 
 //io.emit('message', '1');
 io.on('connection', function(socket) {
@@ -47,7 +47,20 @@ io.on('connection', function(socket) {
 		console.log("video uit " + u);
 		io.emit('message', 'uit', u);
 	});	
+
 	
+	socket.on('alpha', function(u) {
+		console.log("alpha " + u);
+		io.emit('message', 'alpha', u);
+	});	
+	
+	socket.on('beta', function(u) {
+		console.log("beta " + u);
+		io.emit('message', 'beta', u);
+	});	
+
+
+
 	
 });
 
@@ -525,6 +538,6 @@ app.get('/', function (req, res) {
 });
 
 
-server.listen(3000, function(){
-	console.log("Running on IP laptop on port 3000 ");
+server.listen(80, function(){
+	console.log("Running on IP laptop on port 80 ");
 });

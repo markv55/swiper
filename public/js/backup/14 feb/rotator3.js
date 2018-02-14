@@ -243,13 +243,6 @@ var Rotator = {
 				var beta = event.beta;
 				var gamma = event.gamma;
 				
-				//alert ("test");
-				
-				// hier sturen we de alpha en beta als socket naar nodejs
-				//this.socket.emit('alpha', alpha);
-				//this.socket.emit('beta', beta);				
-				
-				
 				if (this.current_alpha === null){
 					this.current_alpha = alpha;
 				}
@@ -548,6 +541,4 @@ $(function() {
     Rotator.setDebug($('#debug'));
     Rotator.setOffsetSteps($('#targetImage').width() * 0.5);
 	Rotator.getByMobileOrientation();
-
-	
 });

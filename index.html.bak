@@ -111,7 +111,7 @@
 			<a href="/recenter" class="js-ajx btn_green btn-container-left">recenter</a>
 			<a href="/aan" class="js-ajx btn btn-container-left">aan</a>
 			<a href="/uit" class="js-ajx btn_green btn-container-left">uit</a>
-			 <a href="/foto_html" class="js-ajx-url-foto btn">foto_html</a> 	
+			 <a href="/foto_html" class="js-ajx-url-foto_html btn">foto_html</a> 	
 			
 				<p> </p>
 			<p>READY</p>		
@@ -120,7 +120,9 @@
 			  <a href="/return/wereld1_aan" class="js-ajx btn_green">wereld1_aan</a>  
 			  <a href="/return/wereld1_uit" class="js-ajx btn btn_red">wereld1_uit</a>  			  
 
-			
+			 <p>VIDEO</p>		
+				<a href="/return/video_aan" class="js-ajx btn_green">video_aan</a>  
+				<a href="/return/video_uit" class="js-ajx btn btn_red">video_uit</a>  		
 
 			
 			<!--
@@ -223,7 +225,22 @@
 				});
 			});
 
-
+			$('.js-ajx-url-foto_html').on('click', function(e) {
+				e.preventDefault();
+				$.ajax({
+					url: $(this).attr('href')
+				}).done(function() {
+					
+					window.location = '/foto_html';
+					console.log('Ajax request successfull');
+				});
+			});
+			
+			
+			
+			
+			
+			
 
 	
 			$('.js-ajx-slider').on('input change', function(e) {

@@ -5,21 +5,30 @@
 		<style>
 			body {
 				background: #000;
+				font-family:      TradeGothic, sans-serif;
+				font-size: 30px;
 			}
 			
 			#mainVideo {
-				max-width: 1280px;
+			
 				width: 100%;
 				display: block;
 				margin: 50px auto;
 				border: 0;
 			}
+			
+			.size{
+			font-family:      TradeGothic, sans-serif;
+			font-size: 30px;		
+			}			
+			
+			
 		</style>
 	</head>
 	<body>
 
-		<a href="/film"   >klik voor film</a>
-		
+		<a href="/"   >klik voor film</a>
+		<button id="show-1" type="button" class="size">Click here to Show the image below</button>		
 	
 		<video id="mainVideo">
 		   <source src="static/videos/liese.mp4" type="video/mp4">
@@ -33,10 +42,13 @@
 		<script src="/static/js/slider.js"></script>
 
 
+		
 		<script>
 
 		
 
+		
+$('#show-1').click(function() {   				$('#mainVideo').trigger('play');  $('#mainVideo').trigger('pause');; 	 			}); 
 		
 		
 		$(function () {
@@ -44,15 +56,32 @@
 
 			socket.on('message', function(msg, vid){  
 	
+			console.log(msg);
 			console.log(vid);
 			
 			if (msg == 'aan'){
 				$('#mainVideo').trigger('play');
+				console.log("video aan");
 			}
+			
+			if (vid == 'aan'){
+				$('#mainVideo').trigger('play');
+				console.log("video aan");
+			}
+			
+			
 
 			if (msg == 'uit'){
 				$('#mainVideo').trigger('pause');
+				console.log("video pause");
 			}						
+			
+			if (vid == 'uit'){
+				$('#mainVideo').trigger('pause');
+				console.log("video pause");
+			}					
+			
+			
 			
 		});
    	
