@@ -60,6 +60,7 @@
 		
 
 <script>
+
 for (var i = 1; i < (256 + 1); i++) {
 
 	var imageIndexString = i;
@@ -76,10 +77,12 @@ for (var i = 1; i < (256 + 1); i++) {
 	console.log('preloading..' + imagePath);
 }
 
+
+
 jQuery(document).ready(function($){ 
 $('#hide-1').click(function() {   $('#mainFoto').hide('slow'); });
 $('#show-1').click(function() {   $('#mainFoto').show('slow'); }); 
-$('#audio-1').click(function() {   $('#yes-audio').trigger('play'); $('#yes-audio').trigger('pause'); }); 
+$('#audio-1').click(function() {   $('#yes-audio').trigger('play'); $('#yes-audio').trigger('pause'); 	navigator.vibrate([100, 200, 200, 200, 500]);}); 
 });
 
 function vibrateSimple() {
@@ -106,10 +109,12 @@ function vibratePattern() {
 		$(function () {
 			var socket = io();
 
-			socket.on('message', function(msg, vid){  
+			socket.on('message', function(msg, vid, scale){  
 			
 			console.log (msg);
 			console.log(vid);
+			console.log(scale);
+			
 			
 			
 			if (msg == 'aan'){
@@ -136,6 +141,17 @@ function vibratePattern() {
 				$('#mainFoto').attr('src', src);
 			}				
 			
+				
+			if (msg == 'scale'){
+			
+		// hier een inzoom functie	
+				
+			}						
+				
+				
+				
+				
+				
 				
 			
 		});
