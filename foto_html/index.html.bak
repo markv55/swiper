@@ -41,7 +41,7 @@
 		<button id="hide-1" type="button" class="btn btn-info">Click here to Hide the image below</button>
 		<button id="show-1" type="button" class="btn btn-info">Click here to Show the image below</button>
 		
-		<div><img id="mainFoto" src="static/images2/137.jpg" alt="" width="800" height="800" /></div>
+		<div><img id="mainFoto" src="static/images2/245.jpg" alt="" width="800" height="800" /></div>
 	
 		<button id="audio-1" type="button" class="btn btn-info size">geluid</button>	
 		<audio class="audios" id="yes-audio" controls preload="none"> 
@@ -60,6 +60,22 @@
 		
 
 <script>
+for (var i = 1; i < (256 + 1); i++) {
+
+	var imageIndexString = i;
+	if (i < 100){
+		imageIndexString = '0' + imageIndexString;
+	}
+	if (i < 10) {
+		imageIndexString = '0' + imageIndexString;
+	}
+
+	var imagePath = '/static/images2/' + imageIndexString + '.jpg';  // probleem?? laad hij wel de 001.jpg of alleen de 1.jpg????
+	var image = new Image();
+	image.src = imagePath;
+	console.log('preloading..' + imagePath);
+}
+
 jQuery(document).ready(function($){ 
 $('#hide-1').click(function() {   $('#mainFoto').hide('slow'); });
 $('#show-1').click(function() {   $('#mainFoto').show('slow'); }); 
