@@ -54,12 +54,6 @@
 				margin: 30px auto;
 				text-align: right;
 			}
-			
-			.btn-container-center {
-				max-width: 900px;
-				margin: 30px auto;
-				text-align: center;
-			}
 	
 			.touch {
 				width: 40%;
@@ -94,15 +88,41 @@
 	</head>
 	
 	<body>
-
+		<div class="btn-container-left">
 		
 		<!-- <a href= "/film" class="btn"  >klik voor film</a> -->
 
 		<!-- let op in alle ajax verzoeken de return toevoegen dan is de js code heel simpel -->
 			<p> </p>
+			<p>GAME OBJECTEN </p>
+			<a href="/return/objecten_aan" class="js-ajx btn_green">objecten_aan</a>	
+			<a href="/return/objecten_uit" class="js-ajx btn btn_red">objecten_uit</a>					
 			
+			<!-- <a href="/return/inputisoutput" class="js-ajx btn btn_red">input is output</a>		-->			
 			
 
+		
+	
+			
+			<br>				
+			<br>		
+			<p> </p>
+			<p>RECENTER</p>				
+			<a href="/recenter" class="js-ajx btn_green btn-container-left">recenter</a>
+			<a href="/aan" class="js-ajx btn btn-container-left">aan</a>
+			<a href="/uit" class="js-ajx btn_green btn-container-left">uit</a>
+			 <a href="/foto_html" class="js-ajx-url-foto_html btn">foto_html</a> 	
+			
+				<p> </p>
+			<p>READY</p>		
+			
+			  <a href="/return/ready" class="js-ajx btn">ready</a>  
+			  <a href="/return/wereld1_aan" class="js-ajx btn_green">wereld1_aan</a>  
+			  <a href="/return/wereld1_uit" class="js-ajx btn btn_red">wereld1_uit</a>  			  
+
+			 <p>VIDEO</p>		
+				<a href="/return/aan" class="js-ajx btn_green">aan</a>  
+				<a href="/return/uit" class="js-ajx btn btn_red">uit</a>  		
 
 			
 			<!--
@@ -126,101 +146,33 @@
 			
 			-->
 			
-		
-		
-		<!--  <div class="btn-container-right">	-->
-		<div class="btn-container-center">		
-
-			<p>BUILD_MODUS </p>	
-			  <a href="/return/wereld1_make" class="js-ajx btn">wereld1_make</a>  
-			  <a href="/return/wereld2_make" class="js-ajx btn">wereld2_make</a>  				
-			
-			<p>PLACE OBJECTS</p>			
-			<a href="/return/recenter" class="js-ajx btn btn_green">recenter</a>
-			<br>
-			<br>			
-				
-			<!-- <a href="/ad_product_html" class="btn">ad_product</a> -->
-			 <a href="/return/ad_product" class="js-ajx-url-ad btn btn_red">ad_product</a> 
-			<br>
-			<br>
-		
-			<!-- <p>change product </p> -->
-			<!-- <a href="/change_product_html" class="btn">change_product</a> -->
-			<a href="/return/change_product" class="js-ajx-url-change btn btn_red">change_product</a>	
-			<br>
-			<br>		
-			<!-- <p>delete product </p> -->
-			<a href="/return/delete_product" class="js-ajx-url-delete btn btn_red">delete_product</a>
-			<br>
-			<br>
-			
-			<a href="/return/wereld1_ready" class="js-ajx btn">wereld1_ready</a>  
-			<a href="/return/wereld2_ready" class="js-ajx btn">wereld2_ready</a>  		
-			
-			
-			<!-- <p>PLAY MODUS </p>	
-			<a href="/play_modus" class="js-ajx btn_green">play_modus</a>		
-			-->
 		</div>
+		
+		<div class="btn-container-right">	
 
-		<!-- <div class="btn-container-left"> -->
-		<div class="btn-container-center">		
-			<br>
-			<br>		
+			
+			<p>ad product</p>			
+			<!-- <a href="/ad_product_html" class="btn">ad_product</a> -->
+			 <a href="/ad_product" class="js-ajx-url-ad btn">ad_product</a> 
 			
 			
-			<p>PLAY_MODUS </p>					
-			<!--<a href="/recenter" class="js-ajx btn btn-container-left">recenter</a>		
-			<br>	
-			<br>
--->			
-			<!-- <p>WERELD1</p>	-->	 
-			  <a href="/return/wereld1_aan" class="js-ajx btn">wereld1_aan</a>  
-			  <a href="/return/wereld1_play" class="js-ajx btn_green">w1_play</a>  			  
-			  <a href="/return/wereld1_uit" class="js-ajx btn btn_red">w1_uit</a>  			  
-			<!-- <p>WERELD2</p> -->
-			<br>	
-			<br>				
-			  <a href="/return/wereld2_aan" class="js-ajx btn">wereld2_aan</a>  
-			  <a href="/return/wereld2_play" class="js-ajx btn_green">w2_play</a>			  
-			  <a href="/return/wereld2_uit" class="js-ajx btn btn_red">w2_uit</a>  			 
-							
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			  <a href="/return/build_modus" class="js-ajx btn btn">build_modus</a>  	
+			<p> </p>
+			<p>change product </p>
+			<!-- <a href="/change_product_html" class="btn">change_product</a> -->
+			<a href="/change_product" class="js-ajx-url-change btn">change_product</a>	
+
+			<p> </p>			
+			<p>delete product </p>
+			<a href="/delete_product" class="js-ajx-url-delete btn">delete_product</a>
+			
 			<br>
 			<br>			
-			
-			<p>GAME OBJECTEN </p>
-			<a href="/return/objecten_aan" class="js-ajx btn_green">objecten_aan</a>	
-			<a href="/return/objecten_uit" class="js-ajx btn btn_red">objecten_uit</a>		
-			  <a href="/return/ready" class="js-ajx btn">ready</a>  			
-			
-			<!-- <a href="/return/inputisoutput" class="js-ajx btn btn_red">input is output</a>		-->			
-			
-						
-			<br>		
+			<br>
+			<p> </p>			
 			<p> </p>
-			<p>RECENTER</p>				
-			<a href="/recenter" class="js-ajx btn_green btn-container-left">recenter</a>
-			<a href="/aan" class="js-ajx btn btn-container-left">aan</a>
-			<a href="/uit" class="js-ajx btn_green btn-container-left">uit</a>
-			 <a href="/foto_html" class="js-ajx-url-foto_html btn">foto_html</a> 	
-			 <!--  <p>VIDEO</p>		-->
-			<a href="/return/aan" class="js-ajx btn_green">aan</a>  
-			<a href="/return/uit" class="js-ajx btn btn_red">uit</a>  			
-			
-			
-			
-			
-			
-			
+			<p>PLAY MODUS </p>	
+			<a href="/play_modus" class="js-ajx btn_green">play_modus</a>		
+
 		</div>		
 		
 		
