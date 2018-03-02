@@ -59,7 +59,7 @@ $('#show-1').click(function() {$('#mainVideo').trigger('play');  $('#mainVideo')
 			console.log(msg);
 			console.log(vid);
 			
-			if (msg == 'aan'){
+			if (msg == 'video_aan'){ // was aan
 				$('#mainVideo').trigger('play');
 				console.log("video aan");
 			}
@@ -71,7 +71,7 @@ $('#show-1').click(function() {$('#mainVideo').trigger('play');  $('#mainVideo')
 			
 			
 
-			if (msg == 'uit'){
+			if (msg == 'video_uit'){  // was uit
 				$('#mainVideo').trigger('pause');
 				console.log("video pause");
 			}						

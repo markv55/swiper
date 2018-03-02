@@ -38,6 +38,18 @@ io.on('connection', function(socket) {
 	
 	// videos
 	
+   socket.on('video_aan', function(a) {
+		console.log("video aan " + a);
+		io.emit('message', 'video_aan', a);
+	});
+ 
+	socket.on('video_uit', function(u) {
+		console.log("video uit " + u);
+		io.emit('message', 'video_uit', u);
+	});	
+
+	// kaku
+	
    socket.on('aan', function(a) {
 		console.log("video aan " + a);
 		io.emit('message', 'aan', a);
@@ -47,7 +59,11 @@ io.on('connection', function(socket) {
 		console.log("video uit " + u);
 		io.emit('message', 'uit', u);
 	});	
-
+	
+	
+	
+	
+	
 	
 	socket.on('alpha', function(u) {
 		console.log("alpha " + u);
