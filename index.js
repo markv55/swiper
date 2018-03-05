@@ -159,6 +159,25 @@ app.get('/delete_product_html', function(req, res) {
 });
 
 
+/////////////////////////////////
+
+
+
+app.get('/timo1_html', function(req, res) {
+	res.sendFile(path.join(__dirname+'/timo1_html/index.html'));
+});
+
+app.get('/timo2_html', function(req, res) {
+	res.sendFile(path.join(__dirname+'/timo2_html/index.html'));
+});
+
+app.get('/timo3_html', function(req, res) {
+	res.sendFile(path.join(__dirname+'/timo3_html/index.html'));
+});
+
+//////////////////////////////
+
+
 app.get('/get_product', function (req, res) {
 	//KlikAanKlikUit(11, 260, 7, 5).off(1, 2);
 	io.emit('message', 'product_id', req.query.id );
