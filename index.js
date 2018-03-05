@@ -77,11 +77,20 @@ io.on('connection', function(socket) {
 
 ///////////////////
 
-	socket.on('simpeleFilm timo1', function(u) {
-		console.log("simpeleFilm timo1 " + u);
-		//io.emit('message', 'uit', u);
+	socket.on('timo1', function(u) {
+		console.log("timo1 " + u);
+		io.emit('message', 'timo1', u);
 	});	
 
+		socket.on('timo2', function(u) {
+		console.log("timo2 " + u);
+		io.emit('message', 'timo1', u);
+	});	
+	
+		socket.on('timo3', function(u) {
+		console.log("timo3 " + u);
+		io.emit('message', 'timo3', u);
+	});	
 	
 });
 
