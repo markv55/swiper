@@ -315,9 +315,28 @@
 				});
 			});
 			
+		//
+		
+			socket.on('message', function(msg, vid){  
 	
+			console.log(msg);
+			console.log(vid);
 			
-			
+			if (msg == 'videotimo1'){
+				window.location = '/timo1_html';  //op deze simpele manier kun je naar een andere website toe gaan!!!!	
+			}	
+
+			if (msg == 'videotimo2'){
+				window.location = '/timo2_html';  //op deze simpele manier kun je naar een andere website toe gaan!!!!	
+			}	
+			if (msg == 'videotimo3'){
+				window.location = '/timo3_html';  //op deze simpele manier kun je naar een andere website toe gaan!!!!	
+			}	
+
+
+			});
+		
+		//	
 			
 			
 			
