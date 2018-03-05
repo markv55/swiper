@@ -84,7 +84,7 @@ io.on('connection', function(socket) {
 
 		socket.on('timo2', function(u) {
 		console.log("timo2 " + u);
-		io.emit('message', 'videotimo1', u);
+		io.emit('message', 'videotimo2', u);
 	});	
 	
 		socket.on('timo3', function(u) {
