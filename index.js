@@ -75,7 +75,12 @@ io.on('connection', function(socket) {
 		io.emit('message', 'beta', u);
 	});	
 
+///////////////////
 
+	socket.on('simpeleFilm timo1', function(u) {
+		console.log("simpeleFilm timo1 " + u);
+		//io.emit('message', 'uit', u);
+	});	
 
 	
 });
