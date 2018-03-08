@@ -137,10 +137,6 @@ app.get('/foto_html', function(req, res) {
 
 
 
-app.get('/longjpg_html', function(req, res) {
-	res.sendFile(path.join(__dirname+'/longjpg_html/index.html'));
-});
-
 
 
 

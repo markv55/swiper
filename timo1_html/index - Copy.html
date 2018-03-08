@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Switcher</title>
+		<style>
+			body {
+				background: red;
+				font-family:      TradeGothic, sans-serif;
+				font-size: 60px;		
+			}
+			
+			#mainFoto {
+				max-width: 1280px;
+				width: 100%;
+				display: block;
+				margin: 50px auto;
+				border: 0;
+			}
+			
+			.size{
+			font-family:      TradeGothic, sans-serif;
+			font-size: 30px;		
+			}
+			
+			.btn-container {
+				max-width: 900px;
+				margin: 30px auto;
+				text-align: center;		
+			
+			
+			
+			
+		</style>
+		</head>
+	
+		<body>
+			<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+			
+			<div class="btn-container">
+			<p>INFO PRODUCT 1 </p>	
+			</div>	
+		
+				<script>
+				 vibratePattern();  // eenmalig even trillen als hij de pagina inkomt!
+
+				function vibrateSimple() {
+				  navigator.vibrate(200);
+				}
+
+				function vibratePattern() {
+				  navigator.vibrate([500]);
+				}
+
+				</script>
+		
+	
+		<script>
+
+		$(function () {
+			var socket = io();
+
+			socket.on('message', function(msg, vid, scale){  
+			
+					console.log (msg);
+					console.log(vid);
+					console.log(scale);
+			
+					if (msg == 'videotimo2'){
+						window.location = '/timo2_html';    
+					}
+					
+					if (msg == 'videotimo3'){
+						window.location = '/timo3_html';    
+					}
+			});
+   		
+		 });
+		  
+		  
+		</script>
+		
+		
+	</body>
+</html>

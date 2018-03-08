@@ -229,11 +229,6 @@
 			<a href="/return/aan" class="js-ajx btn_green">aan</a>  
 			<a href="/return/uit" class="js-ajx btn btn_red">uit</a>  			
 			
-			<br>		
-			<p> </p>
-			<p>longjpg</p>	
-			<a href="/return/longjpg" class="js-ajx-url-longjpg btn btn_red">longjpg</a> 
-
 			
 			
 			
@@ -302,18 +297,7 @@
 				});
 			});
 			
-	
-
-			$('.js-ajx-url-longjpg').on('click', function(e) {
-				e.preventDefault();
-				$.ajax({
-					url: $(this).attr('href')
-				}).done(function() {
-					
-					window.location = '/longjpg_html';
-					console.log('Ajax request successfull');
-				});
-			});	
+			
 			
 			
 			
