@@ -232,15 +232,6 @@ app.get('/home', function (req, res) {
 });   
 
 
-app.get('/remote_play_timo1', function (req, res) {
-	//KlikAanKlikUit(11, 260, 7, 5).on(1, 1);
-	io.emit('message', 'remote_play_timo1' , 'remote_play_timo1' );
-	console.log ('remote_play_timo1');	
-	res.redirect('/');
-});   
-
-
-
 app.get('/off1', function (req, res) {
 	//KlikAanKlikUit(11, 260, 7, 5).off(1, 1);
 	io.emit('message', 'pi' , 'leeg' );	
