@@ -11,13 +11,11 @@ var Rotator = {
 
     targetImage: null,
     currentImageIndex: 1,  tijdelijk even veranderd om te checken of hij een ander foto nr stuurd
-	//currentImageIndex: 122,  // werkt niet
 	
 	x: 1,
 	y: 1,
 	
 	yOffset: 16, 
-	// yOffset: 8,  // werkt ook niet!
 	
 	playingToLabel: false,
 	xToLabelTarget: 0,
