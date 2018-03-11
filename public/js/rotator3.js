@@ -10,7 +10,7 @@ var index_changed  ;
 var Rotator = {
 
     targetImage: null,
-    currentImageIndex: 1,  tijdelijk even veranderd om te checken of hij een ander foto nr stuurd
+    currentImageIndex: 1,  
 	
 	x: 1,
 	y: 1,
