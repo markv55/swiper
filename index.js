@@ -95,6 +95,14 @@ io.on('connection', function(socket) {
 		io.emit('message', 'videotimo3', u);
 	});	
 	
+		socket.on('spinnerObject1', function(u) {
+		console.log("spinnerObject1 " + u);
+		io.emit('message', 'spinnerObject1', u);
+	});	
+	
+	
+	
+	
 });
 
 
