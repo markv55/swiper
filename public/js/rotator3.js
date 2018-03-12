@@ -1,7 +1,4 @@
-
-// vragen:
-// waarom kan ik nergens deze regel inplakken zonder error? 				console.log ("currentimageindex   " + currentImageIndex);
-// kunnen we de currentImageIndex gebruiken om via websocket te versturen?
+// mark hoe kan ik de startfoto instellen. nu is die startfoto 001, maar ik wil 128 als startfoto hebben!!!
 
 
 var position_new = 0;	
