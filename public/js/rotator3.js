@@ -244,8 +244,8 @@ var Rotator = {
 				
 				
 				// 7 maart werkt!!!  hier sturen we de alpha en beta als socket naar nodejs
-				//this.socket.emit('alpha', alpha); // alpha is de rotation (kompaswaarde) van een vliegtuig
-				//this.socket.emit('beta', beta);	// beta is de stijghoek van een vliegtuig			
+				this.socket.emit('alpha', alpha); // alpha is de rotation (kompaswaarde) van een vliegtuig
+				this.socket.emit('beta', beta);	// beta is de stijghoek van een vliegtuig			
 				
 				
 				if (this.current_alpha === null){
