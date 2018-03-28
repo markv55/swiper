@@ -136,7 +136,7 @@ app.get('/return2/:param_1/:param_2/:param_3/:param_4', function (req, res) {
 	var param_3 = req.params.param_3;
 	var param_4 = req.params.param_4;
 	
-	io.emit(param_1, param_2, param_3, param_4);
+	io.emit('message', param_1, param_2, param_3, param_4);
 	console.log (param_1 + ' - ' + param_2 + ' - ' + param_3 + ' - ' + param_4);		
 	res.redirect('/');
 });
