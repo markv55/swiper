@@ -32,6 +32,8 @@ io.on('connection', function(socket) {
 		}
     });
     
+	
+	// uitleg: onderstaand ontvangt eerste socket x, en daarna een 2e waarde. deze tweede waarde wordt opgeslagen in variable (x). vervolgens wordt deze variable als 3e socket meegestuurd
     socket.on('x', function(x) {
 		console.log("The x is: " + x);
 		io.emit('message', 'x', x);
@@ -100,6 +102,15 @@ io.on('connection', function(socket) {
 		io.emit('message', 'spinnerObject1', u);
 	});	
 	
+	// op 28 maart nieuw met mark gemaakt
+	// deze ontvangt een socket met 4 variabele en stuurt hem 1 op 1 door!
+	
+	socket.on('stuur', function(param1, param2, param3, param4) {
+		io.emit('message', param1, param2, param3, param4);
+	});
+	
+	
+	
 	
 	
 	
@@ -126,7 +137,7 @@ app.get('/return/:rec', function (req, res) {
 
 
 
-// nieuw  28 maart
+// nieuw  28 maart  // onderstaand ontvangt vanuit index.html de code return2. deze zit op een knop. en stuurt 4 variabele mee
 
 app.get('/return2/:param_1/:param_2/:param_3/:param_4', function (req, res) {
 	//KlikAanKlikUit(11, 260, 7, 5).off(1, 2);
