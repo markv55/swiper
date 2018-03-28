@@ -116,12 +116,34 @@ app.use('/static', express.static(path.join(__dirname, 'public')));
 
 // Roep deze aan als /return/{MESSAGE} en hij verstuurd de MESSAGE door naar unity. (socket)
 // ik hoef nu niet iedere nieuwe input naar nodejs opnieuw aan te maken!
+
 app.get('/return/:rec', function (req, res) {
 	//KlikAanKlikUit(11, 260, 7, 5).off(1, 2);
 	io.emit('message', 'pi', req.params.rec);
 	console.log (req.params.rec);		
 	res.redirect('/');
 });
+
+
+
+// nieuw
+
+app.get('/return2/:param_1/:param_2/:param_3/:param_4', function (req, res) {
+	//KlikAanKlikUit(11, 260, 7, 5).off(1, 2);
+	
+	var param_1 = req.params.param_1;
+	var param_2 = req.params.param_2;
+	var param_3 = req.params.param_3;
+	var param_4 = req.params.param_4;
+	
+	io.emit(param_1, param_2, param_3, param_4);
+	console.log (req.params.rec);		
+	res.redirect('/');
+});
+
+
+
+
 
 
 /////   LINKEN VAN EEN SUB WEBPAGINA         /////////LINKEN VAN EEN SUB WEBPAGINA         /////////LINKEN VAN EEN SUB WEBPAGINA         /////////LINKEN VAN EEN SUB WEBPAGINA         /////////LINKEN VAN EEN SUB WEBPAGINA     
