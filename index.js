@@ -126,7 +126,7 @@ app.get('/return/:rec', function (req, res) {
 
 
 
-// nieuw
+// nieuw  28 maart
 
 app.get('/return2/:param_1/:param_2/:param_3/:param_4', function (req, res) {
 	//KlikAanKlikUit(11, 260, 7, 5).off(1, 2);
@@ -137,7 +137,7 @@ app.get('/return2/:param_1/:param_2/:param_3/:param_4', function (req, res) {
 	var param_4 = req.params.param_4;
 	
 	io.emit(param_1, param_2, param_3, param_4);
-	console.log (req.params.rec);		
+	console.log (param_1 + ' - ' + param_2 + ' - ' + param_3 + ' - ' + param_4);		
 	res.redirect('/');
 });
 
