@@ -235,6 +235,9 @@ var Rotator = {
 	current_beta: 0,
 	last_dev: 0,
 	
+	old_alpha: 0,
+	old_beta: 0,
+	
 	getByMobileOrientation() {		
 		if(window.DeviceOrientationEvent) {
 			window.addEventListener('deviceorientation', function(event) {		
@@ -246,8 +249,20 @@ var Rotator = {
 				
 				
 				// 7 maart werkt!!!  hier sturen we de alpha en beta als socket naar nodejs
-				this.socket.emit('alpha', alpha); // alpha is de rotation (kompaswaarde) van een vliegtuig
-				this.socket.emit('beta', beta);	// beta is de stijghoek van een vliegtuig			
+				//this.socket.emit('alpha', alpha); // alpha is de rotation (kompaswaarde) van een vliegtuig
+				//this.socket.emit('beta', beta);	// beta is de stijghoek van een vliegtuig			
+				
+				
+				if (alpha - this.old_alpha > 1 || alpha - this.old_alpha < -1) {	
+					this.old_alpha = alpha;
+					this.socket.emit('alpha', alpha); // alpha is de rotation (kompaswaarde) van een vliegtuig
+				}
+				
+				if (beta - this.old_beta > 1 || beta - this.old_beta < -1) {				
+					this.old_beta = beta;
+					this.socket.emit('beta', beta);	// beta is de stijghoek van een vliegtuig					
+				}				
+				
 				
 				
 				if (this.current_alpha === null){
