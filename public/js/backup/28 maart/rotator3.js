@@ -1,6 +1,4 @@
 // mark hoe kan ik de startfoto instellen. nu is die startfoto 001, maar ik wil 128 als startfoto hebben!!!
-// mark op regel 248 zit de socket. deze moet pas sturen bij 1 graad verschil
-
 
 
 var position_new = 0;	
