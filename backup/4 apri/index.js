@@ -200,16 +200,7 @@ app.get('/longjpg_html', function(req, res) {
 });
 
 
-//// catapult
 
-
-
-app.get('/catapult_html', function(req, res) {
-	res.sendFile(path.join(__dirname+'/catapult_html/index.html'));
-});
-
-
-//// einde catapult
 
 
 
@@ -534,15 +525,6 @@ app.get('/product8', function (req, res) {
 	console.log ('product8');		
 	res.redirect('/');
 });
-
-app.get('/speed_kogel', function (req, res) {
-	//KlikAanKlikUit(11, 260, 7, 5).off(1, 2);
-	io.emit('message', 'pi', 'speed_kogel', req.query.val );
-	console.log ('speed_kogel' + req.query.val);		
-	res.redirect('/');
-});
-
-
 
 // oude code    ///////////////////////////   oude code  ///////////////////////
 // oude code    ///////////////////////////   oude code  ///////////////////////
