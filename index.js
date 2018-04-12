@@ -200,6 +200,12 @@ app.get('/longjpg_html', function(req, res) {
 });
 
 
+app.get('/tablet_html', function(req, res) {
+	res.sendFile(path.join(__dirname+'/tablet_html/index.html'));
+});
+
+
+
 //// catapult
 
 

@@ -1,0 +1,231 @@
+<!--mark hoe kan ik de knoppen naast elkaar maken zonder hiervoor een nieuwe css te hoeven maken?  -->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Switcher</title>
+		<style>
+			body {
+				background: black;
+				font-family:      TradeGothic, sans-serif;
+				font-size: 30px;		
+			}
+			
+			#mainFoto {
+				max-width: 1000px;
+				width: 100%;
+				height: 100%
+				display: block;
+				margin: 0px auto;
+				border: 0;
+			}
+			
+			.size{
+			font-family:      TradeGothic, sans-serif;
+			font-size: 30px;		
+			}
+			
+			
+			.img-holder {position: relative;}
+
+			.img-holder .link {
+				position: absolute;
+				top: 100px; /*your button position*/
+				left: 100px; /*your button position*/
+				font-size: 20px;
+				color: white;
+			}
+			
+			.img-holder .link2 {
+				position: absolute;
+				top: 100px; /*your button position*/
+				left: 200px; /*your button position*/
+				font-size: 20px;
+				color: white;
+			}
+			
+			
+			.img-holder .link3 {
+				position: absolute;
+				bottom: 100px; /*your button position*/
+				left: 200px; /*your button position*/
+				font-size: 20px;
+				color: white;
+			}
+			
+			.btn {
+				padding: 10px 10px;
+				background: blue;
+				color: #fff;
+				text-decoration: none;
+				border-radius: 10px;
+				font-family: Arial;
+
+				font-size: 40px;
+
+				margin:  5px;
+			}
+			
+			
+			
+		</style>
+
+
+
+
+
+
+
+		</head>
+	
+	<body>
+
+		<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+		<script src="/static/js/slider.js"></script>
+		
+		<!-- 
+		<a href="/"   >HOME</a>
+		<div> <img id="mainFoto" src="static/photos/photo0.png" alt="" width="660" height="1600" />  </div> 
+		-->
+
+
+		<div class="img-holder">
+			<img id="mainFoto" src="static/photos/photo0.png" alt="" width="660" height="1200" /> 			
+			<a class="link" href="/"   > HOME   </a>
+			
+			<button id="audio-1" type="button" class="link2 btn ">geluid</button>
+			<a href="/remote_play_timo1" class="js-ajx-button1 link3 btn">remote_play_timo1</a>   <!-- stuurt href /home naar ajax, en ajax naar node.js. en node.js stuurt een socket  -->
+
+
+			
+		</div>
+		
+
+		<audio class="audios" id="yes-audio" style="display:none">	
+			<!-- <source src="static/audio/detail.mp3" type="audio/mpeg">  -->
+			<source src="static/audio/sonar.wav" type="audio/wav"> 
+		</audio>
+
+		<!--
+		<button id="hide-1" type="button" class="btn btn-info">Click here to Hide the image below</button>
+		<button id="show-1" type="button" class="btn btn-info">Click here to Show the image below</button>
+	
+		<button class="btn btn-default" onclick="vibrateSimple()">Vibrate for 200 ms</button>
+		<button class="btn btn-default" onclick="vibratePattern()">Vibrate with pattern</button>	
+	
+		<button id="audio-1" type="button" class="btn btn-info size">geluid</button> 
+		-->
+		
+		
+		
+	
+		
+		
+
+		
+	
+
+		<script>
+			jQuery(document).ready(function($){ 
+				$('#hide-1').click(function() {   $('#mainFoto').hide('slow'); });
+				$('#show-1').click(function() {   $('#mainFoto').show('slow'); }); 
+				$('#audio-1').click(function() {   $('#yes-audio').trigger('play'); $('#yes-audio').trigger('pause'); 	}); 
+			});
+
+			function vibrateSimple() {
+			  navigator.vibrate(200);
+			}
+
+			function vibratePattern() {
+			  navigator.vibrate([100, 200, 200, 200, 500]);
+			}
+		</script>
+		
+			
+		
+
+		<script>
+		$(function () {
+			var socket = io();
+			socket.on('message', function(msg, vid, scale){  
+				console.log (msg);
+				console.log(vid);
+				console.log(scale);
+						
+				if (vid == 'timo1'){
+					var src = "static/photos/photo1.png"  
+					$('#mainFoto').attr('src', src);
+					$('#mainFoto').slideDown('slow'); 
+					$('#yes-audio').trigger('play');
+					vibratePattern();  // eenmalig even trillen als hij de pagina inkomt!
+					
+					// reserve code. let op boven aan in deze procedure zetten anders werken ze niet!
+					// window.location = '/timo2_html';  // let op deze bovenaan, ander voert ios deze niet uit! 
+					//$('#mainFoto').slideDown('slow'); 
+				}		
+
+				if (vid == 'timo2'){
+					var src = "static/photos/photo2.png"  
+					$('#mainFoto').attr('src', src);
+					$('#mainFoto').slideDown('slow'); 
+					$('#yes-audio').trigger('play');
+					vibratePattern();  // eenmalig even trillen als hij de pagina inkomt!
+				}				
+				
+				if (vid == 'timo3'){
+					var src = "static/photos/photo3.png"  
+					$('#mainFoto').attr('src', src);
+					$('#mainFoto').slideDown('slow'); 
+					$('#yes-audio').trigger('play');
+					vibratePattern();  // eenmalig even trillen als hij de pagina inkomt!
+				}					
+				
+				
+				
+				
+				if (vid == 'ready'){
+					var src = "static/photos/photo0.png"  
+					$('#mainFoto').slideDown('slow'); 
+					$('#mainFoto').attr('src', src);
+					//$('#yes-audio').trigger('pause');		
+					
+				}			
+			});
+   		});
+		</script>
+	
+
+	
+		<script>
+		$(function () {
+			var socket = io();
+			
+			$('.js-ajx-url-home').on('click', function(e) {
+				e.preventDefault();
+				$.ajax({
+					url: $(this).attr('href')
+				}).done(function() {
+					//window.location = '/';
+					console.log('Ajax request successfull');
+				});
+			});
+
+		
+			$('.js-ajx-button1').on('click', function(e) {
+				e.preventDefault();
+				$.ajax({
+					url: $(this).attr('href')
+				}).done(function() {
+					console.log('Ajax request successfull');
+				});
+			});
+		
+		});		
+		
+		
+		
+		</script>		
+		
+	</body>
+</html>
