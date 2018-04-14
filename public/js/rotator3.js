@@ -305,7 +305,7 @@ var Rotator = {
 				var move_down = false;
 				var move_up = false;
 				
-				if (dif_alpha > 10 && dif_alpha < 200){
+				if (dif_alpha > 2 && dif_alpha < 200){  // let op stond op 10 voor de normale spinner dat hij 1 op 1 volgt. met een 1 is het reageren op de laser
 					move_right = true;
 				}else{
 					if (dif_alpha > 200){
@@ -313,7 +313,7 @@ var Rotator = {
 					}
 				}
 				
-				if (dif_alpha < -10 && dif_alpha > -200){
+				if (dif_alpha < -2 && dif_alpha > -200){  // let op stond op 10
 					this.current_alpha = alpha;
 					move_left = true;
 				}else{
@@ -322,11 +322,11 @@ var Rotator = {
 					}
 				}
 				
-				var dif_beta = beta - this.current_beta;
-				if (dif_beta > 10){
-					move_up = true;
-				}else if (dif_beta < -10){
-					move_down = true;
+				var dif_beta = beta - this.current_beta;  //let op stond op 10 en -10
+				if (dif_beta > 2){
+					move_down = true;  // let op deze stond origineel op move_up =true. maar voor de laser heb ik hem op move down = true gezet 
+				}else if (dif_beta < -2){
+					move_up = true;  // let hier stond origineel move_down = true
 				}  
 				
 				
