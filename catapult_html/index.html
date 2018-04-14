@@ -13,14 +13,7 @@
 						
 						
 					}
-			#mainFoto {
-				max-width: 1000px;
-				width: 100%;
-				height: 100%
-				display: block;
-				margin: 0px auto;
-				border: 0;
-			}
+
 
 		
 			.btn {
@@ -49,8 +42,7 @@
 				margin:  5px;
 				}
 				
-				<!-- nieuw -->
-			.img-holder {position: relative;}
+
 
 				
 				
@@ -143,28 +135,7 @@
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/rangeslider.js/2.0.5/rangeslider.min.js"></script>
 		
 		
-		<!-- nieuw -->
-		<div class="img-holder">
-		
-
-			<img id="mainFoto" src="static/photos/photo0.png" alt="" width="660" height="1000" /> 	
-
-			
-		</div>
-		
-
-		<audio class="audios" id="yes-audio" style="display:none">	
-			<!-- <source src="static/audio/detail.mp3" type="audio/mpeg">  -->
-			<source src="static/audio/sonar.wav" type="audio/wav"> 
-		</audio>
-		
-		
-		<audio class="audios" id="no-audio" style="display:none">	
-			<!-- <source src="static/audio/detail.mp3" type="audio/mpeg">  -->
-			<source src="static/audio/laser.mp3" type="audio/mp3"> 
-		</audio>
-		
-		<!-- eind nieuw -->
+	
 		
 		
 		
@@ -249,73 +220,7 @@
 			});
 			*/
 	
-			socket.on('message', function(sender, receiver, object, action){  
-				console.log (sender);
-				console.log(receiver);
-				console.log(object);
-				console.log (action);
-						
-				if (action == 'yes'){
-					var src = "static/photos/groen.png"  
-					$('#mainFoto').attr('src', src);
-					$('#mainFoto').slideDown('slow'); 
-					$('#yes-audio').trigger('play');
-					vibratePattern();  // eenmalig even trillen als hij de pagina inkomt!
-					
-					// reserve code. let op boven aan in deze procedure zetten anders werken ze niet!
-					// window.location = '/timo2_html';  // let op deze bovenaan, ander voert ios deze niet uit! 
-					//$('#mainFoto').slideDown('slow'); 
-				}		
-
-				if (action == 'no'){
-					var src = "static/photos/rood.png"  
-					$('#mainFoto').attr('src', src);
-					$('#mainFoto').slideDown('slow'); 
-					$('#no-audio').trigger('play');
-					vibratePattern();  // eenmalig even trillen als hij de pagina inkomt!
-				}				
-				
-				if (action == 'new'){
-					var src = "static/photos/wit.png"  
-					$('#mainFoto').attr('src', src);
-					$('#mainFoto').slideDown('slow'); 
-					//$('#yes-audio').trigger('play');
-					vibratePattern();  // eenmalig even trillen als hij de pagina inkomt!
-				}					
-				
-				
-				
-				
-				if (action == 'ready'){
-					var src = "static/photos/photo0.png"  
-					$('#mainFoto').slideDown('slow'); 
-					$('#mainFoto').attr('src', src);
-					//$('#yes-audio').trigger('pause');		
-					
-				}			
-				
-				if (action == 'spinnerObject1'){
-					//window.location = '/ad_product_html';    
-					var src = "static/photos/photo4.png"  
-					$('#mainFoto').attr('src', src);
-					$('#mainFoto').slideDown('slow'); 
-					$('#yes-audio').trigger('play');
-					vibratePattern();  // eenmalig even trillen als hij de pagina inkomt!
-						
-				}
-				
-				
-				
-			});
-
-
-	
-	
-			
-			
-			
-			
-			
+		
 		  });
 		</script>
 	</body>
