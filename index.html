@@ -237,8 +237,16 @@
 			<p>longjpg</p>	
 			<a href="/return/longjpg" class="js-ajx-url-longjpg btn btn_red">longjpg</a> 
 
-			
-			
+			<br>		
+			<p> </p>
+			<p>catapult</p>	
+			<a href="/return/catapult" class="js-ajx-url-catapult btn btn_red">catapult</a> 		
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>			
 			
 			
 			
@@ -318,7 +326,19 @@
 				});
 			});	
 			
-			
+			$('.js-ajx-url-catapult').on('click', function(e) {
+				e.preventDefault();
+				$.ajax({
+					url: $(this).attr('href')
+				}).done(function() {
+					
+					window.location = '/catapult_html';
+					console.log('Ajax request successfull');
+				});
+			});	
+
+
+	
 			
 			
 

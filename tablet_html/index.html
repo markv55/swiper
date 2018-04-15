@@ -119,16 +119,8 @@
 			.custom::-webkit-slider-thumb:before {
 			  background-color: yellow;
 			}		
-			
-			
-		</style>
-
-
-
-
-
-
-
+		
+			</style>
 		</head>
 	
 	<body>
@@ -136,42 +128,23 @@
 		<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
 		<script src="/static/js/slider.js"></script>
-		
-
-		
-		<!-- 
-		<a href="/"   >HOME</a>
-		<div> <img id="mainFoto" src="static/photos/photo0.png" alt="" width="660" height="1600" />  </div> 
-		-->
-
 
 		<div class="img-holder">
-		
 
 			<img id="mainFoto" src="static/photos/photo0.png" alt="" width="660" height="1000" /> 	
-
-
 			<a class="link" href="/"   > HOME   </a>
-			
 			<button id="audio-1" type="button" class="link2 btn ">geluid</button>
-			
 
 			
 			<div class="text-center" style="margin: 20px auto;">
-				<!-- <iframe src="/swiper3" style="width: 500px; height: 500px;" border="0"></iframe> -->
 				<iframe src="/swiper3" style="width: 0px; height: 0px;" border="0"></iframe>				
 			</div>
 			
+			
 			<input class="js-ajx-slider custom" type="range" min="0.2" max="1.5" step="0.1" />
-
-			
-			
-			
 			<a href="/remote_play_timo1" class="js-ajx-button1 link3 btn btn_green">remote_play_timo1</a>   <!-- stuurt href /home naar ajax, en ajax naar node.js. en node.js stuurt een socket  -->
 			<a href="/remote_stop_timo1" class="js-ajx-button1 link4 btn btn_red">remote_stop_timo1</a>   <!-- stuurt href /home naar ajax, en ajax naar node.js. en node.js stuurt een socket  -->
-
-
-			
+	
 		</div>
 		
 
@@ -199,13 +172,6 @@
 		-->
 		
 		
-		
-	
-		
-		
-
-		
-	
 
 		<script>
 			jQuery(document).ready(function($){ 
@@ -229,6 +195,7 @@
 		<script>
 		$(function () {
 			var socket = io();
+			
 			socket.on('message', function(sender, receiver, object, action){  
 				console.log (sender);
 				console.log(receiver);
