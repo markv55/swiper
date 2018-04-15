@@ -6,7 +6,7 @@
 		
 			body
 					{
-						background-color: black;
+						background-color: red;
 						font-family:      TradeGothic, sans-serif;
 						font-size: 30px;						
 					}
@@ -76,7 +76,6 @@
 			
 			
 			
-			
 		</style>
 		<link href="/static/rangeslider/rangeslider.css" rel="stylesheet" type="text/css">
 	</head>
@@ -88,8 +87,8 @@
 					<a class="link" href="/"   > HOME   </a>
 					<button id="audio-1" type="button" class=" link2 btn ">geluid</button>
 
-					
-				
+
+			
 				
 				
 				
@@ -101,6 +100,28 @@
 			<input class="range js-ajx-slider" data-orientation="vertical" type="range" max="0" value="0" min="-10" step="0.1" />
 			
 			<br>
+			
+			<!-- nieuw  score bord  -->	
+
+			<p>score</p>
+			<!-- <button type="button" onclick="myFunction()">Count!</button>  -->
+			<p id="demo">0</p>
+				<script>
+				var counter = 0;
+
+					function add() {
+						return counter += 1;  // let op deze moet 1 zijn. maar ik krijg 4 keer de socket binnen
+					}
+
+				function myFunction(){
+					document.getElementById("demo").innerHTML = add();
+				}
+				</script>
+			
+			<!-- einde scorebord  -->
+			
+			
+			
 			<br>		
 
 			<br>
@@ -129,9 +150,7 @@
 			-->
 			
 			
-			
 
-			
 			
 			
 			
@@ -277,6 +296,9 @@
 					
 					vibratePattern();  // eenmalig even trillen als hij de pagina inkomt!
 					
+					document.getElementById("demo").innerHTML = add();
+
+					
 					// reserve code. let op boven aan in deze procedure zetten anders werken ze niet!
 					// window.location = '/timo2_html';  // let op deze bovenaan, ander voert ios deze niet uit! 
 					//$('#mainFoto').slideDown('slow'); 
@@ -292,6 +314,9 @@
 
 					
 					vibratePattern();  // eenmalig even trillen als hij de pagina inkomt!
+					
+
+			
 				}				
 				
 				if (action == 'new'){
@@ -300,7 +325,7 @@
 					$('#mainFoto').slideDown('slow'); 
 					//$('#yes-audio').trigger('play');
 	
-					document.body.style.backgroundColor = "black";	
+					document.body.style.backgroundColor = "grey";	
 					vibratePattern();  // eenmalig even trillen als hij de pagina inkomt!
 					
 					
