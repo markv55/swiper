@@ -6,7 +6,7 @@
 		
 			body
 					{
-						background-color: red;
+						background-color: green;
 						font-family:      TradeGothic, sans-serif;
 						font-size: 30px;						
 					}
@@ -63,7 +63,7 @@
 			}
 			
 			.rangeslider {
-				height: 600px;
+				<!-- height: 600px;   let op deze staat nu uit. maar met hoogte is hij een slider in de code-->
 				width: 75px;
 				margin: 0 auto;
 			}
@@ -84,8 +84,8 @@
 		<div class="btn-container">
 				
 
-					<a class="link" href="/"   > HOME   </a>
-					<button id="audio-1" type="button" class=" link2 btn ">geluid</button>
+					<a class="btn" href="/"   > HOME   </a>
+					<button id="audio-1" type="button" class="  btn ">geluid</button>
 
 
 			
@@ -100,27 +100,70 @@
 			<input class="range js-ajx-slider" data-orientation="vertical" type="range" max="0" value="0" min="-10" step="0.1" />
 			
 			<br>
+
+			<div id="imp">SCOOR 10 PUNTEN!  </div>
+			
+				<script>			
+					
+					var ofs = 0;
+					var el = document.getElementById('imp');
+
+					window.setInterval(function(){
+					  el.style.background = 'rgba(255,0,0,'+Math.abs(Math.sin(ofs))+')';
+					  ofs += 0.01;
+					}, 1);
+					
+					
+					
+				</script>	
+
+
+
 			
 			<!-- nieuw  score bord  -->	
-
-			<p>score</p>
-			 <button type="button" onclick="myFunction()">Count!</button>  
-			<p id="demo">0</p>
+			<!--  <a>score</a>  -->
+			<br>
+			<br>
+			<!-- <button type="button" onclick="myFunction()">Count!</button>  -->
+			<a id="demo" class="btn" >0</a>
+								
+				
 				<script>
 				var counter = 0;
 
-					function add() {
-						return counter += 1;  // let op deze moet 1 zijn. maar ik krijg 4 keer de socket binnen
-					}
+				function add() {
+					return counter += 1;  // let op deze moet 1 zijn. maar ik krijg 4 keer de socket binnen
+				}
 
 				function myFunction(){
 					document.getElementById("demo").innerHTML = add();
+					console.log(counter);
+					
+					if (counter == 2)
+					{
+					
+					console.log('yes 2 punt');
+					}
 				}
+				
+
+				
+			
 				</script>
+				
+			
 			
 			<!-- einde scorebord  -->
 			
 			
+		
+			
+			
+			
+			<br>		
+
+			<br>
+			<br>		
 			
 			<br>		
 
@@ -281,10 +324,10 @@
 			*/
 	
 			socket.on('message', function(sender, receiver, object, action){  
-				console.log (sender);
-				console.log(receiver);
-				console.log(object);
-				console.log (action);
+				//console.log (sender);
+				//console.log(receiver);
+				//console.log(object);
+				//console.log (action);
 						
 				if (action == 'yes'){
 					var src = "static/photos/groen.png"  
@@ -294,7 +337,8 @@
 					
 				 document.body.style.backgroundColor = "green";
 					
-					document.getElementById("demo").innerHTML = add();
+					//document.getElementById("demo").innerHTML = add();
+					myFunction();
 
 					vibratePattern();  // eenmalig even trillen als hij de pagina inkomt!
 					
@@ -312,6 +356,8 @@
 					$('#no-audio').trigger('play');
 					
 					document.body.style.backgroundColor = "red";
+					
+
 
 					
 					vibratePattern();  // eenmalig even trillen als hij de pagina inkomt!
