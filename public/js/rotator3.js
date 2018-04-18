@@ -11,6 +11,8 @@ var Rotator = {
     targetImage: null,
     currentImageIndex: 1,  
 	
+	
+	// onderstaand de startpositie. x is kolom, en y is rij nummer.
 	x: 1,
 	y: 1,
 	

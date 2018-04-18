@@ -15,7 +15,7 @@
 
 		
 			.btn {
-				padding: 30px 60px;
+				padding: 40px 60px;
 				background: blue;
 				color: #fff;
 				text-decoration: none;
@@ -53,7 +53,7 @@
 				}		
 			
 			.btn-container {
-				max-width: 800px;
+				max-width: 900px;
 				margin: 30px auto;
 				text-align: center;
 			}
@@ -63,21 +63,15 @@
 			}
 			
 			.rangeslider {
-				 height: 800px;   <!--let op deze staat nu uit. maar met hoogte is hij een slider in de code-->
+				 height: 600px;   <!--let op deze staat nu uit. maar met hoogte is hij een slider in de code-->
 				width: 75px;
 				margin: 0 auto;
-				background: transparent !important;
-				box-shadow: none !important;
-			}
-			
-			.rangeslider__fill {
-				background: rgba(0, 0, 0, 0.1) !important;
 			}
 			
 			.rangeslider__handle {
-				height: 300px !important;
-				width: 300px !important;
-				margin-left: -150px;
+				height: 200px !important;
+				width: 200px !important;
+				margin-left: -75px;
 			}
 			
 			
@@ -92,10 +86,6 @@
 
 					<a class="btn" href="/"   > HOME   </a>
 					<button id="audio-1" type="button" class="  btn ">geluid</button>
-					<br>
-					<br>
-					<a href="/return/recenter_laser" class="js-ajx btn">recenter_laser</a>  
-
 
 
 			
@@ -107,9 +97,7 @@
 			</div>
 			
 			<br>
-			
-			<!-- <input class="range js-ajx-slider" data-orientation="vertical" type="range" max="0" value="0" min="-10" step="0.1" /> -->
-			<input class="range js-ajx-slider" data-orientation="vertical" type="range" max="10" value="0" min="0" step="0.1" />
+			<input class="range js-ajx-slider" data-orientation="vertical" type="range" max="0" value="0" min="-10" step="0.1" />
 			
 			<br>
 
@@ -190,6 +178,7 @@
 			<br>
 			<br>			
 			<br>
+			<a href="/return/recenter_laser" class="js-ajx btn">recenter_laser</a>  
 	
 			<br>	
 			<br>
@@ -257,43 +246,27 @@
 			$(document).ready(function() {
 			
 				var $rangeSlider = $('input[type="range"]');
-				
-				var sliding = false;
-				var startSlidingTime = 0;
-				
+			
 				$rangeSlider.rangeslider({
 					polyfill : false,
 					onInit : function() {
 						//this.output = $( '<div class="range-output" />' ).insertAfter( this.$range ).html( this.$element.val() );
 					},
 					onSlide : function( position, value ) {
-						if (!sliding) {
-							sliding = true;
-							startSlidingTime = Date.now();
-						}
+						//this.output.html( value );
 					},
 					onSlideEnd: function(position, value) {
-						if (sliding) {
-							$rangeSlider.val(0).change();
-							
-							sliding = false;
-							
-							var timeDif = Date.now() - startSlidingTime;
-							var force = (value > 0 && timeDif > 0) ? ((value / timeDif) * 30) : 0;
-							force = -force;
-							console.log('You stopped with a value of ' + value + ' in ' + timeDif + ' miliseconds with a force of ' + force);
-							
-							$.ajax({
-								url: '/speed_kogel',
-								data: { val: force },
-								type: 'GET',
-							}).done(function() {
-								console.log('Ajax request successfull');
-							});						
-							
-						}
 						
 						/*
+						$.ajax({
+							url: '/return/stop_this',
+							data: { },
+							type: 'GET',
+						}).done(function() {
+							console.log('Fired');
+						});
+						
+						*/
 						
 						$.ajax({
 							url: '/speed_kogel',
@@ -303,8 +276,10 @@
 							console.log('Ajax request successfull');
 						});						
 						
+					
+						
+						
 						$rangeSlider.val(0).change();
-						*/
 					},
 				});
 			});
