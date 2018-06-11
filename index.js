@@ -79,8 +79,21 @@ io.on('connection', function(socket) {
 		console.log("beta " + u);
 		io.emit('message', 'beta', u);
 	});	
+	
+	socket.on('gamma', function(u) {
+		console.log("gamma " + u);
+		io.emit('message', 'gamma', u);
+	});		
 
-///////////////////
+/////////////////// nieuw 6 juni  //////////////////////////
+
+	socket.on('hlookat', function(u) {
+		console.log("hlookat " + u);
+		io.emit('message', 'hlookat', u);
+	});		
+
+///////////////////////////////////////////////////////////
+
 
 	socket.on('timo1', function(u) {
 		console.log("timo1 " + u);
@@ -218,6 +231,9 @@ app.get('/catapult_html', function(req, res) {
 //// einde catapult
 
 
+app.get('/krpano_html', function(req, res) {
+	res.sendFile(path.join(__dirname+'/krpano_html/index.html'));
+});
 
 
 

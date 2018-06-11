@@ -239,6 +239,7 @@ var Rotator = {
 	
 	old_alpha: 0,
 	old_beta: 0,
+	old_gamma: 0,
 	
 	getByMobileOrientation() {		
 		if(window.DeviceOrientationEvent) {
@@ -264,9 +265,16 @@ var Rotator = {
 					this.old_beta = beta;
 					this.socket.emit('beta', beta);	// beta is de stijghoek van een vliegtuig					
 				}				
+
+
+				if (gamma - this.old_gamma > 1 || gamma - this.old_gamma < -1) {				
+					this.old_gamma = gamma;
+					this.socket.emit('gamma', gamma);	// gamma is nieuw					
+				}					
 				
-				
-				
+	
+
+	
 				if (this.current_alpha === null){
 					this.current_alpha = alpha;
 				}
