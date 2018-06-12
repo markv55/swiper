@@ -32,6 +32,7 @@ io.on('connection', function(socket) {
 		}
     });
     
+
 	
 	// uitleg: onderstaand ontvangt eerste socket x, en daarna een 2e waarde. deze tweede waarde wordt opgeslagen in variable (x). vervolgens wordt deze variable als 3e socket meegestuurd
     socket.on('x', function(x) {
@@ -124,17 +125,26 @@ io.on('connection', function(socket) {
 		console.log (param2);
 		console.log (param3);
 		console.log (param4);
-
-		
-		
+	
 	});
 	
+///////////////////  vanuit krpano_html komt een scene nummer. dit is 1 of 2. hij ontvangt 2 variable. scene en scene1_krpano. scene_krpano is msg. 
+// vervolgens stuurt hij 3 variable. voor unity is message altijd nodig (dacht ik?). message is in unity arg[0] (dacht ik?)
+// hij stuurt dus message / scene / scene1_krpano als voorbeeld 
+
+	socket.on('scene', function(msg) {
+		console.log('Receiving socket on scene: ' + msg);
+		io.emit('message', 'scene', msg);   
+	});
+		
+	socket.on('vraag', function(msg) {
+		console.log('Receiving socket on vraag: ' + msg);
+		io.emit('message', 'vraag', msg);   
+	});	
 	
 	
 	
-	
-	
-});
+});  // einde sockets ontvangen
 
 
 app.use(express.static(__dirname + '/node_modules'));

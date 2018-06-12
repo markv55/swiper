@@ -75,6 +75,51 @@
 	</action>
 
 
+ 	
+
+<layer name="knop1" url="images/baai1.png" onclick= "send_scene1(); 	loadscene(scene_200, null, MERGE, BLEND(1));" 
+keep="true" visible="true" zorder="2" handcursor="false" capture="false"  align="lefttop" scale="1.5"  scale.mobile="0.5" />
+
+
+<layer name="knop2" url="images/baai2.png" onclick= "send_scene2(); 	loadscene(scene_400, null, MERGE, BLEND(1));" 
+keep="true" visible="true" zorder="2" handcursor="false" capture="false"  align="rightop" scale="1.5"  scale.mobile="0.5" />
+
+
+<layer name="vraag1" url="images/vraag1.png" onclick= "send_vraag1(); " 
+keep="true" visible="true" zorder="2" handcursor="false" capture="false"  align="left" scale="1.5"  scale.mobile="0.5" />
+
+
+<layer name="vraag2" url="images/vraag2.png" onclick= "send_vraag2(); 	" 
+keep="true" visible="true" zorder="2" handcursor="false" capture="false"  align="center" scale="1.5"  scale.mobile="0.5" />
+
+<layer name="leeg" url="images/leeg.png" onclick= "send_leeg(); 	" 
+keep="true" visible="true" zorder="2" handcursor="false" capture="false"  align="right" scale="1.5"  scale.mobile="0.5" />
+
+
+	
+<action name="send_scene1" type="Javascript">
+		 window.send_scene1_krpano();
+</action>	
+
+<action name="send_scene2" type="Javascript">
+		 window.send_scene2_krpano();
+</action>		
+	
+<action name="send_vraag1" type="Javascript">
+		 window.send_vraag1_krpano();
+</action>
+
+<action name="send_vraag2" type="Javascript">
+		 window.send_vraag2_krpano();
+</action>
+
+<action name="send_leeg" type="Javascript">
+		 window.send_leeg_krpano();
+</action>
+
+
+
+
 	
 	<scene name="scene_200" title="200" onstart="" havevrimage="true" thumburl="panos/200.tiles/thumb.jpg" lat="36.69361111" lng="28.86583333" heading="0.0">
 
@@ -98,12 +143,51 @@
 		<!-- place your scene hotspots here -->
 
 		
-		
+		<!-- geen flauw idee wat onderstaand doet??
 		ondown2="set(hlookat_moveforce,+1);" onup2="set(hlookat_moveforce,0);"
-		
+		-->
 		
 		
 	</scene>
 
+	
+	<scene name="scene_400" title="400" onstart="" havevrimage="true" thumburl="panos/400.tiles/thumb.jpg" lat="36.69361111" lng="28.86583333" heading="0.0">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/400.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+			<level tiledimagewidth="2304" tiledimageheight="2304">
+				<cube url="panos/400.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1152" tiledimageheight="1152">
+				<cube url="panos/400.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+
+		<image if="webvr.isenabled">
+			<cube url="panos/400.tiles/vr/pano_%s.jpg" />
+		</image>
+
+		<!-- place your scene hotspots here -->
+
+		
+		<!-- geen flauw idee wat onderstaand doet??
+		ondown2="set(hlookat_moveforce,+1);" onup2="set(hlookat_moveforce,0);"
+		-->
+		
+		
+	</scene>	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 </krpano>

@@ -21,7 +21,7 @@
 				font-family:      TradeGothic, sans-serif;
 				font-size: 30px;		
 			}
-			
+			<!--
 			#mainFoto {
 				max-width: 1280px;
 				width: 100%;
@@ -29,6 +29,7 @@
 				margin: 50px auto;
 				border: 0;
 			}
+			-->
 			
 			.size{
 			font-family:      TradeGothic, sans-serif;
@@ -47,10 +48,10 @@
 		</style>
 	</head>
 	<body>
-
+<!--
 		<a href="/"   >home</a>
-		
-	
+	-->	
+		<iframe src="/static/swiper3" style="width: 0px; height: 0px;" border="0"></iframe>
 	
 		<script src="/static/krpano/tour.js"></script>
 
@@ -58,10 +59,12 @@
 		<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
 		<script src="/static/js/slider.js"></script>
-
+<!--
 		<button id="hide-1" type="button" class="btn btn-info">Click here to Hide the image below</button>
 		<button id="show-1" type="button" class="btn btn-info">Click here to Show the image below</button>
-		
+-->	
+
+	
 		<!-- <div><img id="mainFoto" src="static/images2/245.jpg" alt="" width="800" height="800" /></div>
 	-->
 	
@@ -80,18 +83,22 @@
 	
 	
 	
-	
+	<!--
 		<button id="audio-1" type="button" class="btn btn-info size">geluid</button>	
+		-->
+		
+		<!--
 		<audio class="audios" id="yes-audio" controls preload="none"> 
-		<!-- <source src="static/audio/detail.mp3" type="audio/mpeg"> -->
 		<source src="static/audio/sonar.wav" type="audio/wav"> 
 		</audio>
-
+		-->
+<!--
 		<a href="/home" class="js-ajx-url-home btn">ad_product</a> 
-		
+	-->	
+		<!-- 
 		<button class="btn btn-default" onclick="vibrateSimple()">Vibrate for 200 ms</button>
 		<button class="btn btn-default" onclick="vibratePattern()">Vibrate with pattern</button>
-		
+		-->
 		
 		<!--  <div><img id="mainFoto2" src="static/images2/155.jpg" alt="" width="800" height="800" /></div>  -->
 
@@ -147,7 +154,7 @@ function vibratePattern() {
 		$(function () {
 		
 		
-		// nieuwe code. hij loopt onderstaande loop 10 keer per seconde door. en als de hlookat is veranderd dan stuurt hij een socket naar server!
+		// nieuwe code. hij loopt onderstaande loop 1 keer per seconde door. en als de hlookat is veranderd dan stuurt hij een socket naar server!
 			var socket = io();
 					
 			var hlookat;
@@ -162,7 +169,7 @@ function vibratePattern() {
 					socket.emit('hlookat', krpano.get('view.hlookat'));	
 				}
 				
-			}, 100); 
+			}, 1000); 
 
 
 
@@ -257,6 +264,37 @@ function vibratePattern() {
 			} else if (elem.webkitRequestFullscreen) {
 			  elem.webkitRequestFullscreen();
 			}*/
+			
+			
+		// scenes ontvangen	
+	window.send_scene1_krpano = function(){
+		console.log ('scene1_krpano'); 
+		socket.emit('scene', 'scene1_krpano');			
+	}
+
+	window.send_scene2_krpano = function(){
+		console.log ('scene2_krpano'); 
+		socket.emit('scene', 'scene2_krpano');
+	}	
+			
+	window.send_vraag1_krpano = function(){
+		console.log ('vraag1_krpano'); 
+		socket.emit('vraag', 'vraag1_krpano');
+	}				
+			
+	window.send_vraag2_krpano = function(){
+		console.log ('vraag2_krpano'); 
+		socket.emit('vraag', 'vraag2_krpano');
+	}				
+
+	window.send_leeg_krpano = function(){
+		console.log ('leeg_krpano'); 
+		socket.emit('vraag', 'leeg_krpano');
+	}				
+			
+			
+			
+			
 			
 		  });
 		  
