@@ -85,27 +85,15 @@ keep="true" visible="true" zorder="2" handcursor="false" capture="false"  align=
 keep="true" visible="true" zorder="2" handcursor="false" capture="false"  align="rightop" scale="1.5"  scale.mobile="0.5" />
 
 
-<layer name="vraag1" url="images/knopvraag1.png" onclick= "send_vraag1(); BerekenHoogteBreedte1 (); set (layer[magic_content_info].visible,true); knoppen_sluiten(); " 
+<layer name="vraag1" url="images/vraag1.png" onclick= "send_vraag1(); " 
 keep="true" visible="true" zorder="2" handcursor="false" capture="false"  align="left" scale="1.5"  scale.mobile="0.5" />
 
 
-<layer name="vraag2" url="images/knopvraag2.png" onclick= "send_vraag2(); BerekenHoogteBreedte2 (); set (layer[magic_content_info2].visible,true); knoppen_sluiten(); 	" 
+<layer name="vraag2" url="images/vraag2.png" onclick= "send_vraag2(); 	" 
 keep="true" visible="true" zorder="2" handcursor="false" capture="false"  align="center" scale="1.5"  scale.mobile="0.5" />
 
 <layer name="leeg" url="images/leeg.png" onclick= "send_leeg(); 	" 
 keep="true" visible="true" zorder="2" handcursor="false" capture="false"  align="right" scale="1.5"  scale.mobile="0.5" />
-
-
-
-<!--  DE POP UP MET DE VRAAG -->
-<layer name="magic_content_info" url="images/vraag1.png"  visible= "false" keep="true" handcursor="false" capture="false"  align="center"  scalechildren="true" />		
-<layer name="close_button1" style="close_btn_style1" x="5" y="5" zorder="1" onclick="set (layer[magic_content_info].visible,false); knoppen_tonen(); "/>
-<style name="close_btn_style1" keep="true" url="images/close.png" parent="magic_content_info" align="righttop" edge="center" scale= "0.6" scale.mobile = "1"  />
-
-<!--  DE POP UP MET DE VRAAG -->
-<layer name="magic_content_info2" url="images/vraag2.png"  visible= "false" keep="true" handcursor="false" capture="false"  align="center"  scalechildren="true" />		
-<layer name="close_button" style="close_btn_style" x="5" y="5" zorder="1" onclick="set (layer[magic_content_info2].visible,false); knoppen_tonen(); "/>
-<style name="close_btn_style" keep="true" url="images/close.png" parent="magic_content_info2" align="righttop" edge="center" scale= "0.6" scale.mobile = "1"  />
 
 
 	
@@ -130,53 +118,7 @@ keep="true" visible="true" zorder="2" handcursor="false" capture="false"  align=
 </action>
 
 
-<action name="BerekenHoogteBreedte1">
-if(stagewidth LT stageheight  <!-- breedte kleiner dan hoogte =  portrait-->
-,  
-<!-- PORTRAIT -->
-if(device.tablet, set (layer[magic_content_info].width, calc(stagewidth*0.7)); 		set (layer[magic_content_info].height, calc(stagewidth*0.7) ););
-if(device.mobile, set (layer[magic_content_info].width, calc(stagewidth*0.7)); 		set (layer[magic_content_info].height, calc(stagewidth*0.7) ););	
-if(device.desktop, set (layer[magic_content_info].width, calc(stagewidth*0.5)); 	set (layer[magic_content_info].height, calc(stagewidth*0.5) ););	
-,
-<!-- LANDSCAPE -->
-if(device.tablet,  set (layer[magic_content_info].height, calc(stageheight*0.7)); 	set (layer[magic_content_info].width, calc(stageheight*0.7) ););
-if(device.mobile,  set (layer[magic_content_info].height, calc(stageheight*0.7)); 	set (layer[magic_content_info].width, calc(stageheight*0.7) );); 	
-if(device.desktop, set (layer[magic_content_info].height, calc(stageheight*0.5)); 	set (layer[magic_content_info].width, calc(stageheight*0.5) ););	
-);
-</action>
 
-<action name="BerekenHoogteBreedte2">
-if(stagewidth LT stageheight  <!-- breedte kleiner dan hoogte =  portrait-->
-,  
-<!-- PORTRAIT -->
-if(device.tablet, set (layer[magic_content_info2].width, calc(stagewidth*0.7)); 		set (layer[magic_content_info2].height, calc(stagewidth*0.7) ););
-if(device.mobile, set (layer[magic_content_info2].width, calc(stagewidth*0.7)); 		set (layer[magic_content_info2].height, calc(stagewidth*0.7) ););	
-if(device.desktop, set (layer[magic_content_info2].width, calc(stagewidth*0.5)); 		set (layer[magic_content_info2].height, calc(stagewidth*0.5) ););	
-,
-<!-- LANDSCAPE -->
-if(device.tablet,  set (layer[magic_content_info2].height, calc(stageheight*0.7)); 	set (layer[magic_content_info2].width, calc(stageheight*0.7) ););
-if(device.mobile,  set (layer[magic_content_info2].height, calc(stageheight*0.7)); 	set (layer[magic_content_info2].width, calc(stageheight*0.7) );); 	
-if(device.desktop, set (layer[magic_content_info2].height, calc(stageheight*0.5)); 	set (layer[magic_content_info2].width, calc(stageheight*0.5) ););	
-);
-</action>
-
-
-<action name="knoppen_sluiten">
-	set (layer[knop1].visible,false);
-	set (layer[knop2].visible,false);
-	set (layer[vraag1].visible,false);
-	set (layer[vraag2].visible,false);
-	set (layer[leeg].visible,false);
-</action>
-
-<action name="knoppen_tonen">
-	set (layer[knop1].visible,true);
-	set (layer[knop2].visible,true);
-	set (layer[vraag1].visible,true);
-	set (layer[vraag2].visible,true);
-	set (layer[leeg].visible,true);
-
-</action>
 
 	
 	<scene name="scene_200" title="200" onstart="" havevrimage="true" thumburl="panos/200.tiles/thumb.jpg" lat="36.69361111" lng="28.86583333" heading="0.0">
