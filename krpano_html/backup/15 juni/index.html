@@ -232,25 +232,8 @@ function vibratePattern() {
 				krpano.set("view.vlookat", vid);
 			}	
 
-			
-<!--hij ontvangt een socket vraag1 en toont op iedere telefoon de vraag -->
-			if (vid == 'vraag1_krpano'){	
-			console.log (" dit is niuew");			
-			var krpano = document.getElementById("krpanoSWFObject");
-			//krpano.set("view.vlookat", 200);
-			krpano.call( "knoppen_sluiten()" );		// aanroepen van deze action in krpano werkt goed!!!!	
-			krpano.call( "BerekenHoogteBreedte1()" );		// aanroepen van deze action in krpano werkt goed!!!!	
-			krpano.set("layer[magic_content_info].visible","true");
-			}				
-			
-			
-<!--leeg maken  -->
-			if (vid == 'leeg_krpano'){			
-			    var krpano = document.getElementById("krpanoSWFObject");
-			krpano.call( "knoppen_tonen()" );		// aanroepen van deze action in krpano werkt goed!!!!	
-			krpano.call( "BerekenHoogteBreedte1()" );		// aanroepen van deze action in krpano werkt goed!!!!	
-			krpano.set("layer[magic_content_info].visible","false");				
-			}	
+
+
 			
 				
 			if (msg == 'scale'){
@@ -292,19 +275,11 @@ function vibratePattern() {
 	window.send_scene2_krpano = function(){
 		console.log ('scene2_krpano'); 
 		socket.emit('scene', 'scene2_krpano');
-		
 	}	
 			
 	window.send_vraag1_krpano = function(){
-		console.log ('vraag1_krpano// werkt dit?'); 
+		console.log ('vraag1_krpano'); 
 		socket.emit('vraag', 'vraag1_krpano');
-	    //var krpano = document.getElementById("krpanoSWFObject");
-		//krpano.set("layer[vraag1].visible, true");
-		//console.log ("toon de vraag 1?");
-		//krpano.set("view.vlookat", 200);
-
-		
-		
 	}				
 			
 	window.send_vraag2_krpano = function(){

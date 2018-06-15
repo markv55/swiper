@@ -177,11 +177,7 @@ if(device.desktop, set (layer[magic_content_info2].height, calc(stageheight*0.5)
 	set (layer[leeg].visible,true);
 
 </action>
-	
-	
-	
-	
-	
+
 	
 	<scene name="scene_200" title="200" onstart="" havevrimage="true" thumburl="panos/200.tiles/thumb.jpg" lat="36.69361111" lng="28.86583333" heading="0.0">
 
