@@ -99,12 +99,12 @@ keep="true" visible="true" zorder="2" handcursor="false" capture="false"  align=
 
 <!--  DE POP UP MET DE VRAAG -->
 <layer name="magic_content_info" url="images/vraag1.png"  visible= "false" keep="true" handcursor="false" capture="false"  align="center"  scalechildren="true" />		
-<layer name="close_button1" style="close_btn_style1" x="5" y="5" zorder="1" onclick="set (layer[magic_content_info].visible,false); knoppen_tonen(); "/>
+<layer name="close_button1" style="close_btn_style1" x="5" y="5" zorder="1" onclick="set (layer[magic_content_info].visible,false); knoppen_tonen(); delete_vragen(); "/>
 <style name="close_btn_style1" keep="true" url="images/close.png" parent="magic_content_info" align="righttop" edge="center" scale= "0.6" scale.mobile = "1"  />
 
 <!--  DE POP UP MET DE VRAAG -->
 <layer name="magic_content_info2" url="images/vraag2.png"  visible= "false" keep="true" handcursor="false" capture="false"  align="center"  scalechildren="true" />		
-<layer name="close_button" style="close_btn_style" x="5" y="5" zorder="1" onclick="set (layer[magic_content_info2].visible,false); knoppen_tonen();"/>
+<layer name="close_button" style="close_btn_style" x="5" y="5" zorder="1" onclick="set (layer[magic_content_info2].visible,false); knoppen_tonen(); delete_vragen();"/>
 <style name="close_btn_style" keep="true" url="images/close.png" parent="magic_content_info2" align="righttop" edge="center" scale= "0.6" scale.mobile = "1"  />
 
 
@@ -128,6 +128,15 @@ keep="true" visible="true" zorder="2" handcursor="false" capture="false"  align=
 <action name="send_leeg" type="Javascript">
 		 window.send_leeg_krpano();
 </action>
+
+<action name="delete_vragen" type="Javascript">
+		 window.send_delete_vragen();
+</action>
+
+
+
+
+
 
 
 <action name="BerekenHoogteBreedte1">

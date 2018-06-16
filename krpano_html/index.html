@@ -216,9 +216,8 @@
 								krpano.set("layer[magic_content_info2].visible","true");
 							}	
 						
-							
-							
-							<!--leeg maken  -->
+	
+					
 							if (vid == 'leeg_krpano'){			
 								var krpano = document.getElementById("krpanoSWFObject");
 								krpano.call( "knoppen_tonen()" );			
@@ -226,6 +225,17 @@
 								krpano.set("layer[magic_content_info].visible","false");	
 								krpano.set("layer[magic_content_info2].visible","false");									
 							}	
+							
+							
+							if (vid == 'delete_vragen'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "knoppen_tonen()" );			
+								krpano.set("layer[magic_content_info].visible","false");	
+								krpano.set("layer[magic_content_info2].visible","false");									
+							}							
+							
+							
+							
 							
 								
 							if (msg == 'scale'){
@@ -270,7 +280,13 @@
 				console.log ('leeg_krpano'); 
 				socket.emit('vraag', 'leeg_krpano');
 			}				
-	
+
+			window.send_delete_vragen = function(){
+				console.log ('delete_vragen'); 
+				socket.emit('vraag', 'delete_vragen');
+			}		
+
+			
 		}); // einde function
 		</script>
 		
