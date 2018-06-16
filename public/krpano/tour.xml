@@ -77,11 +77,11 @@
 
  	
 
-<layer name="knop1" url="images/baai1.png" onclick= "send_scene1(); 	loadscene(scene_200, null, MERGE, BLEND(1));" 
+<layer name="knop1" url="images/baai1.png" onclick= "send_scene1(); 	laad_scene1();" 
 keep="true" visible="true" zorder="2" handcursor="false" capture="false"  align="lefttop" scale="1.5"  scale.mobile="0.5" />
 
 
-<layer name="knop2" url="images/baai2.png" onclick= "send_scene2(); 	loadscene(scene_400, null, MERGE, BLEND(1));" 
+<layer name="knop2" url="images/baai2.png" onclick= "send_scene2(); 	laad_scene2() ;"
 keep="true" visible="true" zorder="2" handcursor="false" capture="false"  align="rightop" scale="1.5"  scale.mobile="0.5" />
 
 
@@ -178,8 +178,15 @@ if(device.desktop, set (layer[magic_content_info2].height, calc(stageheight*0.5)
 
 </action>
 	
-	
-	
+
+<action name="laad_scene1">
+loadscene(scene_200, null, MERGE, BLEND(1));
+</action>
+
+<action name="laad_scene2">
+loadscene(scene_400, null, MERGE, BLEND(1));
+</action>
+
 	
 	
 	

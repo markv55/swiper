@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	
+		<title>Switcher</title>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta http-equiv="x-ua-compatible" content="IE=edge" />
+		
+		<style>
+				body {
+					background: white;
+					font-family:      TradeGothic, sans-serif;
+					font-size: 30px;		
+				}
+				<!--
+				#mainFoto {
+					max-width: 1280px;
+					width: 100%;
+					display: block;
+					margin: 50px auto;
+					border: 0;
+				}
+				-->
+				
+				.size{
+				font-family:      TradeGothic, sans-serif;
+				font-size: 30px;		
+				}
+				
+			@-ms-viewport { width:device-width; }
+			@media only screen and (min-device-width:800px) { html { overflow:hidden; } }
+			html { height:100%; }
+			body { height:100%; overflow:hidden; margin:0; padding:0; font-family:Arial, Helvetica, sans-serif; font-size:16px; color:#FFFFFF; background-color:#000000; }
+		</style>
+	</head>
+	
+	
+	<body>
+		<!-- <a href="/"   >home</a>-->	
+		
+		<iframe src="/static/swiper3" style="width: 0px; height: 0px;" border="0"></iframe>
+		<script src="/static/krpano/tour.js"></script>
+		<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+		<script src="/static/js/slider.js"></script>
+		<!--
+		<button id="hide-1" type="button" class="btn btn-info">Click here to Hide the image below</button>
+		<button id="show-1" type="button" class="btn btn-info">Click here to Show the image below</button>
+		<div><img id="mainFoto" src="static/images2/245.jpg" alt="" width="800" height="800" /></div>
+		-->
+	
+		<div id="pano" style="width:100%;height:100%;">
+			<noscript><table style="width:100%;height:100%;"><tr style="vertical-align:middle;"><td><div style="text-align:center;">ERROR:<br/><br/>Javascript not activated<br/><br/></div></td></tr></table></noscript>
+			<script>
+				//embedpano({swf:"tour.swf", xml:"tour.xml", target:"pano", html5:"auto", mobilescale:1.0, passQueryParameters:true});
+				// let op tour.xml verplaatst naar de map static (oftewel public)
+				embedpano({swf:"/static/krpano/tour.swf", xml:"/static/krpano/tour.xml", target:"pano", html5:"auto", mobilescale:1.0, passQueryParameters:true});
+			</script>
+		</div>
+	
+	
+	
+	
+	<!--
+		<button id="audio-1" type="button" class="btn btn-info size">geluid</button>	
+		-->
+		
+		<!--
+		<audio class="audios" id="yes-audio" controls preload="none"> 
+		<source src="static/audio/sonar.wav" type="audio/wav"> 
+		</audio>
+		-->
+<!--
+		<a href="/home" class="js-ajx-url-home btn">ad_product</a> 
+	-->	
+		<!-- 
+		<button class="btn btn-default" onclick="vibrateSimple()">Vibrate for 200 ms</button>
+		<button class="btn btn-default" onclick="vibratePattern()">Vibrate with pattern</button>
+		-->
+		
+		<!--  <div><img id="mainFoto2" src="static/images2/155.jpg" alt="" width="800" height="800" /></div>  -->
+
+		
+
+<script>
+
+		for (var i = 1; i < (256 + 1); i++) {
+			var imageIndexString = i;
+			if (i < 100){
+				imageIndexString = '0' + imageIndexString;
+			}
+			if (i < 10) {
+				imageIndexString = '0' + imageIndexString;
+			}
+
+			var imagePath = '/static/images2/' + imageIndexString + '.jpg';  // probleem?? laad hij wel de 001.jpg of alleen de 1.jpg????
+			var image = new Image();
+			image.src = imagePath;
+			console.log('preloading..' + imagePath);
+		}
+
+		
+		jQuery(document).ready(function($){ 
+		$('#hide-1').click(function() {   $('#mainFoto').hide('slow'); });
+		$('#show-1').click(function() {   $('#mainFoto').show('slow'); }); 
+		$('#audio-1').click(function() {   $('#yes-audio').trigger('play'); 			navigator.vibrate([100, 200, 200, 200, 500]);}); 
+		});
+
+		
+		function vibrateSimple() {
+		  navigator.vibrate(200);
+		}
+
+		function vibratePattern() {
+		  navigator.vibrate([100, 200, 200, 200, 500]);
+		}
+
+</script>
+		
+			
+		
+
+		<script>
+
+	
+
+		
+		
+		$(function () {
+		
+		
+		// nieuwe code. hij loopt onderstaande loop 1 keer per seconde door. en als de hlookat is veranderd dan stuurt hij een socket naar server!
+			var socket = io();
+					
+			var hlookat;
+			setInterval(function() {
+				var krpano = document.getElementById("krpanoSWFObject");
+				var current_hlookat = krpano.get('view.hlookat');
+				
+				//if (current_hlookat - hlookat > 1 || current_hlookat - hlookat < 1 ) {
+				if (current_hlookat != hlookat) {
+					hlookat = current_hlookat;
+					
+					socket.emit('hlookat', krpano.get('view.hlookat'));	
+				}
+				
+			}, 1000); 
+
+
+
+
+		
+		// oude en werkende code. maar bovenstaande hebben we daarna gemaakt!! bovenstaand stuurt alleen sockets als er een veranering is om daarmee dataverkeer te beperken
+		
+			/*setInterval(function() {
+				var krpano = document.getElementById("krpanoSWFObject");
+				console.log("Horizontal lookat: " + krpano.get("view.hlookat"));
+
+				var socket = io();
+				socket.emit('hlookat', krpano.get('view.hlookat'));
+				
+			}, 1000); */
+
+			
+			
+			
+			
+			socket.on('message', function(msg, vid, scale){  
+			
+			console.log (msg);
+			console.log(vid);
+			//console.log(scale);
+
+			
+			
+			
+			if (msg == 'aan'){
+				$('#mainFoto').show('slow'); 
+				$('#yes-audio').trigger('play');
+				
+				<!--  $('#mainVideo').trigger('play'); -->
+				<!-- window.location = '/change_product_html';    let op dit werkt niet. hij gaat wel naar de url maar de hele werking is niet goed etc. -->
+				
+				navigator.vibrate([100, 200, 200, 200, 500]);
+
+			}
+
+			if (msg == 'uit'){
+				$('#mainFoto').hide('slow');		
+				$('#yes-audio').trigger('pause')	;			
+				
+			}	
+
+			//if (msg == 'photo'){			
+			//    var krpano = document.getElementById("krpanoSWFObject");
+			//	var src = "static/images2/" + vid + ".jpg"
+			//	$('#mainFoto').attr('src', src);
+			//}		
+
+			
+<!--alpha   let op was -vid-->
+			if (msg == 'y'){			
+			    var krpano = document.getElementById("krpanoSWFObject");
+				krpano.set("view.hlookat", vid);
+				
+				//console.log("Horizontal lookat: " + krpano.get("view.hlookat"));	
+			}				
+<!--beta  -->
+			if (msg == 'x'){			
+			    var krpano = document.getElementById("krpanoSWFObject");
+				krpano.set("view.vlookat", vid);
+			}	
+
+			
+<!--hij ontvangt een socket vraag1 en toont op iedere telefoon de vraag -->
+			if (vid == 'vraag1_krpano'){	
+			console.log (" dit is niuew");			
+			var krpano = document.getElementById("krpanoSWFObject");
+			//krpano.set("view.vlookat", 200);
+			krpano.call( "knoppen_sluiten()" );		// aanroepen van deze action in krpano werkt goed!!!!	
+			krpano.call( "BerekenHoogteBreedte1()" );		// aanroepen van deze action in krpano werkt goed!!!!	
+			krpano.set("layer[magic_content_info].visible","true");
+			}				
+			
+			
+<!--leeg maken  -->
+			if (vid == 'leeg_krpano'){			
+			    var krpano = document.getElementById("krpanoSWFObject");
+			krpano.call( "knoppen_tonen()" );		// aanroepen van deze action in krpano werkt goed!!!!	
+			krpano.call( "BerekenHoogteBreedte1()" );		// aanroepen van deze action in krpano werkt goed!!!!	
+			krpano.set("layer[magic_content_info].visible","false");				
+			}	
+			
+				
+			if (msg == 'scale'){
+			
+		// hier een inzoom functie	
+				
+			}						
+		
+		});  //einde on-message
+
+
+
+
+		
+		////////////////////////////////////
+			
+			//$('#mainVideo').trigger('pause');
+			//$('#mainVideo').trigger('play');
+			
+			/*
+			var elem = document.getElementById("mainVideo");
+			if (elem.requestFullscreen) {
+			  elem.requestFullscreen();
+			} else if (elem.mozRequestFullScreen) {
+			  elem.mozRequestFullScreen();
+			} else if (elem.webkitRequestFullscreen) {
+			  elem.webkitRequestFullscreen();
+			}*/
+			
+			
+		// scenes ontvangen	
+	window.send_scene1_krpano = function(){
+		console.log ('scene1_krpano'); 
+		socket.emit('scene', 'scene1_krpano');			
+	}
+
+	window.send_scene2_krpano = function(){
+		console.log ('scene2_krpano'); 
+		socket.emit('scene', 'scene2_krpano');
+		
+	}	
+			
+	window.send_vraag1_krpano = function(){
+		console.log ('vraag1_krpano// werkt dit?'); 
+		socket.emit('vraag', 'vraag1_krpano');
+	    //var krpano = document.getElementById("krpanoSWFObject");
+		//krpano.set("layer[vraag1].visible, true");
+		//console.log ("toon de vraag 1?");
+		//krpano.set("view.vlookat", 200);
+
+		
+		
+	}				
+			
+	window.send_vraag2_krpano = function(){
+		console.log ('vraag2_krpano'); 
+		socket.emit('vraag', 'vraag2_krpano');
+	}				
+
+	window.send_leeg_krpano = function(){
+		console.log ('leeg_krpano'); 
+		socket.emit('vraag', 'leeg_krpano');
+	}				
+			
+			
+			
+			
+			
+		  });
+		  
+		  
+		  
+		  
+		</script>
+		
+		<script>
+		  $(function () {
+			var socket = io();
+			
+
+	
+			$('.js-ajx-url-home').on('click', function(e) {
+				e.preventDefault();
+				$.ajax({
+					url: $(this).attr('href')
+				}).done(function() {
+					
+					window.location = '/';
+					console.log('Ajax request successfull');
+				});
+			});
+	
+	
+			
+	
+			
+			
+			
+			
+			
+		  });
+		</script>		
+		
+		
+		
+		
+		
+	</body>
+</html>
