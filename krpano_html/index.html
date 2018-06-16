@@ -42,6 +42,13 @@
 	<body>
 		<!-- <a href="/"   >home</a>-->	
 		
+		
+		<audio id="sound_1" src="/static/krpano/audio/1.mp3"   loop="loop"    preload="auto"></audio>  
+		<audio id="sound_2" src="/static/krpano/audio/2.mp3"   loop="loop"    preload="auto"></audio>  
+		
+		
+		
+		
 <!-- LASER POINTER   //////     LASER POINTER   //////     LASER POINTER   //////     LASER POINTER   //////     LASER POINTER   //////     LASER POINTER   //////      -->		
 <!-- LASER POINTER   //////     LASER POINTER   //////     LASER POINTER   //////     LASER POINTER   //////     LASER POINTER   //////     LASER POINTER   //////      -->		
 <!-- LASER POINTER   //////     LASER POINTER   //////     LASER POINTER   //////     LASER POINTER   //////     LASER POINTER   //////     LASER POINTER   //////      -->		
@@ -225,13 +232,20 @@ als master inzet. nu knippert hij omdat hij steeds een stukje terug gaat.
 							if (vid == 'scene1_krpano'){	
 								var krpano = document.getElementById("krpanoSWFObject");
 								console.log ("verander scene");						
-								krpano.call( "laad_scene1()" );									
+								krpano.call( "laad_scene1()" );		
+								sound_1.play();
+								sound_2.pause();
+
+								
 							}								
 							
 							if (vid == 'scene2_krpano'){	
 								var krpano = document.getElementById("krpanoSWFObject");
 								console.log ("verander scene");						
-								krpano.call( "laad_scene2()" );									
+								krpano.call( "laad_scene2()" );		
+								sound_1.pause();
+								sound_2.play();
+								
 							}	
 
 							
@@ -240,6 +254,7 @@ als master inzet. nu knippert hij omdat hij steeds een stukje terug gaat.
 								krpano.call( "knoppen_sluiten()" );		
 								krpano.call( "BerekenHoogteBreedte1()" );		
 								krpano.set("layer[magic_content_info].visible","true");
+								
 							}	
 							
 							if (vid == 'vraag2_krpano'){	
@@ -287,7 +302,8 @@ als master inzet. nu knippert hij omdat hij steeds een stukje terug gaat.
 
 			window.send_scene1_krpano = function(){
 				console.log ('scene1_krpano'); 
-				socket.emit('scene', 'scene1_krpano');			
+				socket.emit('scene', 'scene1_krpano');	
+				
 			}
 
 			window.send_scene2_krpano = function(){
