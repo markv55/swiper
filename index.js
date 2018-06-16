@@ -92,6 +92,12 @@ io.on('connection', function(socket) {
 		console.log("hlookat " + u);
 		io.emit('message', 'hlookat', u);
 	});		
+	
+		socket.on('vlookat', function(u) {
+		console.log("vlookat " + u);
+		io.emit('message', 'vlookat', u);
+	});		
+	
 
 ///////////////////////////////////////////////////////////
 
