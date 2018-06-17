@@ -1,4 +1,4 @@
-﻿<krpano version="1.19" title="Virtual Tour" onstart=" center_vlak();  maat_weet_zeker (); " >
+﻿<krpano version="1.19" title="Virtual Tour" onstart=" center_vlak();  setSizeVierkant ()" >
 
 	<include url="skin/vtourskin.xml" />
 
@@ -76,190 +76,167 @@
 
 
  	
+<!-- STARTKNOPPEN  -->
 
-<layer name="knop1" url="images/baai1.png" onclick= "send_scene1(); laad_scene1(); " 
-keep="true" visible="false" zorder="2" handcursor="false" capture="false"  align="lefttop" scale="1.5"  scale.mobile="0.5" />
-
-
-<layer name="knop2" url="images/baai2.png" onclick= "send_scene2(); 	laad_scene2() ;" 
-keep="true" visible="false" zorder="2" handcursor="false" capture="false"  align="rightop" scale="1.5"  scale.mobile="0.5" />
-
-
-<layer name="vraag1" url="images/volgendevraag.png" onclick= "send_vraag1();  set (layer[magic_content_info].visible,true); knoppen_sluiten(); "  
-keep="true" visible="true" zorder="2" handcursor="false" capture="false"  align="left" scale="1.5"  scale.mobile="0.5" />
+		<layer name="vraag1" url="images/volgendevraag.png" onclick= "send_vraag1(); center_vlak(); setSizeVierkant() ; set (layer[vraag_1].visible,true); knoppen_sluiten(); send_scene1"  
+		keep="true" visible="true" zorder="2" handcursor="false" capture="false"  align="left" scale="1.5"  scale.mobile="0.5" />
+		
+		<layer name="leeg" url="images/leeg.png" onclick= "send_leeg(); 	"  
+		keep="true" visible="true" zorder="2" handcursor="false" capture="false"  align="right" scale="1.5"  scale.mobile="0.5" />
 
 
-<layer name="vraag2" url="images/knopvraag2.png" onclick= "send_vraag2(); BerekenHoogteBreedte2 (); set (layer[magic_content_info2].visible,true); knoppen_sluiten(); " 	 
-keep="true" visible="false" zorder="2" handcursor="false" capture="false"  align="center" scale="1.5"  scale.mobile="0.5" />
+		<!-- RESERVE NIET ZICHTBARE KNOPPEN  -->
+		<layer name="knop1" url="images/baai1.png" onclick= "send_scene1(); laad_scene1(); " 
+		keep="true" visible="false" zorder="2" handcursor="false" capture="false"  align="lefttop" scale="1.5"  scale.mobile="0.5" />
 
-<layer name="leeg" url="images/leeg.png" onclick= "send_leeg(); 	"  
-keep="true" visible="false" zorder="2" handcursor="false" capture="false"  align="right" scale="1.5"  scale.mobile="0.5" />
+		<layer name="knop2" url="images/baai2.png" onclick= "send_scene2(); 	laad_scene2() ;" 
+		keep="true" visible="false" zorder="2" handcursor="false" capture="false"  align="rightop" scale="1.5"  scale.mobile="0.5" />
+
+		
+		<layer name="vraag2" url="images/knopvraag2.png" onclick= "send_vraag2();  set (layer[vraag_1].visible,true); knoppen_sluiten(); " 	 
+		keep="true" visible="false" zorder="2" handcursor="false" capture="false"  align="center" scale="1.5"  scale.mobile="0.5" />
 
 
+
+<!-- SCALEN VAN DE VIERKANT IN HET MIDDEN VAN HET SCHERM. VOOR VRAGEN EN ANTWOORD GOED/FOUT-->	
+		<action name="setSizeVierkant">
+
+		set (layer[vraag_1].height, calc(hoogte_plaatje*1)); 	
+		set (layer[vraag_1].width, calc(breedte_plaatje*1));
+
+		set (layer[weet_zeker].height, calc(hoogte_plaatje*1)); 	
+		set (layer[weet_zeker].width, calc(breedte_plaatje*1));
+		
+		set (layer[antwoord_is_goed].height, calc(hoogte_plaatje*1)); 	
+		set (layer[antwoord_is_goed].width, calc(breedte_plaatje*1));	
+		
+		set (layer[antwoord_is_fout].height, calc(hoogte_plaatje*1)); 	
+		set (layer[antwoord_is_fout].width, calc(breedte_plaatje*1));			
+		
+		
+		</action>		
+		
 
 
 <!--  LEGE VIERKANT IN CENTRUM -->
-
- <!-- <layer name="center_vlak" url="images/leegvierkant.png"   visible= "true" keep="true" handcursor="false" capture="false"  align="center"  />		
--->
-
+		<!-- <layer name="center_vlak" url="images/leegvierkant.png"   visible= "true" keep="true" handcursor="false" capture="false"  align="center"  />		
+		-->
 
 
-<!--  DE POP UP MET DE VRAAG -->
-<layer name="magic_content_info" url="images/vraag1_leeg.png"  visible= "false" keep="true" handcursor="false" capture="false"  align="center"  scalechildren="true"   />		
 
-<layer name="close_button1" style="close_btn_style1" x="5" y="5" zorder="5" onclick="set (layer[magic_content_info].visible,false); knoppen_tonen(); delete_vragen(); "/>
-	<style name="close_btn_style1" keep="true" url="images/close.png" parent="magic_content_info" align="righttop" edge="center" scale= "0.6" scale.mobile = "1"  />
+<!--  POP UP: VRAAG 1 -->
+		<layer name="vraag_1" url="images/vraag1_leeg.png"  visible= "false" keep="true" handcursor="false" capture="false"  align="center"  scalechildren="true"   />		
 
-<layer name="jaknop" style="style_jaknop" x="300" y="150" zorder="6" onclick=" set (layer[magic_content_info].visible,false); maat_weet_zeker() ;set (layer[weet_zeker].visible,true); " />
-	<style name="style_jaknop" keep="true" url="images/jaknop.png" parent="magic_content_info" align="leftbottom" edge="center" scale= "1.5" scale.mobile = "1.5"  />
+		<layer name="close_button1" style="close_btn_style1" x="5" y="5" zorder="5" onclick="set (layer[vraag_1].visible,false); knoppen_tonen(); delete_vragen(); "/>
+			<style name="close_btn_style1" keep="true" url="images/close.png" parent="vraag_1" align="righttop" edge="center" scale= "0.6" scale.mobile = "1"  />
 
-<layer name="neeknop" style="style_neeknop" x="300" y="150" zorder="6" onclick=" set (layer[magic_content_info].visible,false); maat_weet_zeker(); set (layer[weet_zeker].visible,true);   "/>
-	<style name="style_neeknop" keep="true" url="images/neeknop.png" parent="magic_content_info" align="rightbottom" edge="center" scale= "1.5" scale.mobile = "1.5"  />
+		<layer name="jaknop" style="style_jaknop" x="300" y="150" zorder="6" onclick=" call_vraag1_ja(); action_vraag1_ja(); " />
+			<style name="style_jaknop" keep="true" url="images/jaknop.png" parent="vraag_1" align="leftbottom" edge="center" scale= "1.5" scale.mobile = "1.5"  />
 
-
+		<layer name="neeknop" style="style_neeknop" x="300" y="150" zorder="6" onclick="action_vraag1_nee();  "/>
+			<style name="style_neeknop" keep="true" url="images/neeknop.png" parent="vraag_1" align="rightbottom" edge="center" scale= "1.5" scale.mobile = "1.5"  />
 	
-<!-- WEET JE HET ZEKER? -->	
 
-
-<action name="maat_weet_zeker">
-
-<!--
-set (layer [weet_zeker].width, '200 '   );
-
-
-set (layer [weet_zeker].height, '200'  );
--->
-<!-- send_scene2(); -->
-<!--
-if(device.desktop, set (layer[weet_zeker].height, calc(stageheight*0.5)); 	set (layer[weet_zeker].width, calc(stageheight*0.5) ););	
-
-
-set (layer[weet_zeker].height, calc(stageheight*0.5)); 	
-set (layer[weet_zeker].width, calc(stageheight*0.5) );
--->
-<!--
-set (hoogte_plaatje, calc(stageheight*0.5));
-set (breedte_plaatje, calc(stageheight*0.5));	
--->
-
-
-
-set (layer[weet_zeker].height, calc(hoogte_plaatje*1)); 	
-set (layer[weet_zeker].width, calc(breedte_plaatje*1));
-
-
-
-</action>		
-
-	
-<layer name="weet_zeker" url="images/weetzeker.png"  visible= "false" keep="true" handcursor="false" capture="false"  align="center"  scalechildren="true"  />		
-
-
-<layer name="jaknop2" style="style_jaknop2" x="300" y="150" zorder="1" onclick=" laad_scene2()  ;set (layer[weet_zeker].visible,false); send_vraag2(); BerekenHoogteBreedte2 (); set (layer[magic_content_info2].visible,true); knoppen_sluiten();  send_scene2();" />
-	<style name="style_jaknop2" keep="true" url="images/jaknop.png" parent="weet_zeker" align="leftbottom" edge="center" scale= "1.5" scale.mobile = "1.5"  />
-
-<layer name="neeknop2" style="style_neeknop2" x="300" y="150" zorder="1" onclick="set (layer[weet_zeker].visible,false); set (layer[magic_content_info].visible,true)"/>
-	<style name="style_neeknop2" keep="true" url="images/neeknop.png" parent="weet_zeker" align="rightbottom" edge="center" scale= "1.5" scale.mobile = "1.5"  />
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-<!--  DE POP UP MET DE VRAAG -->
-<layer name="magic_content_info2" url="images/vraag2.png"  visible= "false" keep="true" handcursor="false" capture="false"  align="center"  scalechildren="true" />		
-<layer name="close_button" style="close_btn_style" x="5" y="5" zorder="1" onclick="set (layer[magic_content_info2].visible,false); knoppen_tonen(); delete_vragen();"/>
-<style name="close_btn_style" keep="true" url="images/close.png" parent="magic_content_info2" align="righttop" edge="center" scale= "0.6" scale.mobile = "1"  />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
-<action name="send_scene1" type="Javascript">
-		 window.send_scene1_krpano();
+<action name="action_vraag1_ja">
+set (layer[vraag_1].visible,false); set (layer[antwoord_is_goed].visible,true); sound_succes (); center_vlak(); setSizeVierkant();
 </action>	
 
-<action name="send_scene2" type="Javascript">
-		 window.send_scene2_krpano();
-</action>		
+<action name="action_vraag1_nee">
+set (layer[vraag_1].visible,false); set (layer[antwoord_is_fout].visible,true); sound_nietgoed (); center_vlak(); setSizeVierkant();
+</action>	
+
+
+			
+
+<!--  POP UP: WEET JE HET ZEKER? 		
+		<layer name="weet_zeker" url="images/weetzeker.png"  visible= "false" keep="true" handcursor="false" capture="false"  align="center"  scalechildren="true"  />		
+
+		<layer name="jaknop2" style="style_jaknop2" x="300" y="150" zorder="1" 
+			onclick="set (layer[weet_zeker].visible,false); knoppen_sluiten(); set (layer[antwoord_is_goed].visible,true); set (layer[jaknop3].visible,true); sound_succes (); " />
+			<style name="style_jaknop2" keep="true" url="images/jaknopgrijs.png" parent="weet_zeker" align="leftbottom" edge="center" scale= "1.5" scale.mobile = "1.5"  />
+
+		<layer name="neeknop2" style="style_neeknop2" x="300" y="150" zorder="1" 
+			onclick="set (layer[weet_zeker].visible,false); set (layer[vraag_1].visible,true)"/>
+			<style name="style_neeknop2" keep="true" url="images/neeknopgrijs.png" parent="weet_zeker" align="rightbottom" edge="center" scale= "1.5" scale.mobile = "1.5"  />
+-->
+
+			
+<!--  POP UP: ANTWOORD IS GOED!!!! -->		
+		<layer name="antwoord_is_goed" url="images/antwoordisgoed.png"  visible= "false" keep="true" handcursor="false" capture="false"  align="center"  scalechildren="true"  />		
+
+		<layer name="jaknop3" style="style_jaknop3" x="0" y="150" zorder="1" onclick="action_vraag1_goed(); call_vraag1_goed()" />
+			<style name="style_jaknop3" keep="true" url="images/volgende.png" parent="antwoord_is_goed" align="bottom" edge="center" scale= "1.5" scale.mobile = "1.5"  />
+
+<!--  POP UP: ANTWOORD IS FOUT!!!! -->		
+		<layer name="antwoord_is_fout" url="images/antwoordisfout.png"  visible= "false" keep="true" handcursor="false" capture="false"  align="center"  scalechildren="true"  />		
+
+		<layer name="jaknop4" style="style_jaknop4" x="0" y="150" zorder="1" onclick="action_vraag1_fout();" />
+			<style name="style_jaknop4" keep="true" url="images/volgende.png" parent="antwoord_is_fout" align="bottom" edge="center" scale= "1.5" scale.mobile = "1.5"  />
+
+			
+<action name="action_vraag1_goed">
+set (layer[jaknop3].visible,false); set (layer[antwoord_is_goed].visible,false);   knoppen_tonen();  send_scene2 ();
+</action>	
+
+<action name="action_vraag1_fout">
+set (layer[jaknop4].visible,false); set (layer[antwoord_is_fout].visible,false);   knoppen_tonen(); laad_scene2 (); send_scene2 ();
+</action>	
+
+			
+			
+			
+			
+			
+			
+			
+
+
+<!-- CALL NAAR INDEX.HTML . HTML STUURT EEN SOCKET NAAR DE SERVER -->
 	
-<action name="send_vraag1" type="Javascript">
-		 window.send_vraag1_krpano();
-</action>
+		<action name="send_scene1" type="Javascript">
+				 window.send_scene1_krpano();
+		</action>	
 
-<action name="send_vraag2" type="Javascript">
-		 window.send_vraag2_krpano();
-</action>
+		<action name="send_scene2" type="Javascript">
+				 window.send_scene2_krpano();
+		</action>		
+			
+		<action name="send_vraag1" type="Javascript">
+				 window.send_vraag1_krpano();
+		</action>
 
-<action name="send_leeg" type="Javascript">
-		 window.send_leeg_krpano();
-</action>
+		<action name="send_vraag2" type="Javascript">
+				 window.send_vraag2_krpano();
+		</action>
 
-<action name="delete_vragen" type="Javascript">
-		 window.send_delete_vragen();
-</action>
+		<action name="send_leeg" type="Javascript">
+				 window.send_leeg_krpano();
+		</action>
 
+		<action name="delete_vragen" type="Javascript">
+				 window.send_delete_vragen();
+		</action>
 
+		<action name="sound_succes" type="Javascript">
+				 window.send_sound_succes();
+		</action>		
+		
+		<action name="sound_nietgoed" type="Javascript">
+				 window.send_sound_nietgoed();
+		</action>	
 
+		<action name="call_vraag1_ja" type="Javascript">
+				 window.send_call_vraag1_ja();
+		</action>	
 
-
-
-
-<action name="BerekenHoogteBreedte1">
-if(stagewidth LT stageheight  <!-- breedte kleiner dan hoogte =  portrait-->
-,  
-<!-- PORTRAIT -->
-if(device.tablet, set (layer[magic_content_info].width, calc(stagewidth*0.7)); 		set (layer[magic_content_info].height, calc(stagewidth*0.7) ););
-if(device.mobile, set (layer[magic_content_info].width, calc(stagewidth*0.7)); 		set (layer[magic_content_info].height, calc(stagewidth*0.7) ););	
-if(device.desktop, set (layer[magic_content_info].width, calc(stagewidth*0.5)); 	set (layer[magic_content_info].height, calc(stagewidth*0.5) ););	
-,
-<!-- LANDSCAPE -->
-if(device.tablet,  set (layer[magic_content_info].height, calc(stageheight*0.7)); 	set (layer[magic_content_info].width, calc(stageheight*0.7) ););
-if(device.mobile,  set (layer[magic_content_info].height, calc(stageheight*0.7)); 	set (layer[magic_content_info].width, calc(stageheight*0.7) );); 	
-if(device.desktop, set (layer[magic_content_info].height, calc(stageheight*0.5)); 	set (layer[magic_content_info].width, calc(stageheight*0.5) ););	
-);
-</action>
-
-<action name="BerekenHoogteBreedte2">
-if(stagewidth LT stageheight  <!-- breedte kleiner dan hoogte =  portrait-->
-,  
-<!-- PORTRAIT -->
-if(device.tablet, set (layer[magic_content_info2].width, calc(stagewidth*0.7)); 		set (layer[magic_content_info2].height, calc(stagewidth*0.7) ););
-if(device.mobile, set (layer[magic_content_info2].width, calc(stagewidth*0.7)); 		set (layer[magic_content_info2].height, calc(stagewidth*0.7) ););	
-if(device.desktop, set (layer[magic_content_info2].width, calc(stagewidth*0.5)); 		set (layer[magic_content_info2].height, calc(stagewidth*0.5) ););	
-,
-<!-- LANDSCAPE -->
-if(device.tablet,  set (layer[magic_content_info2].height, calc(stageheight*0.7)); 	set (layer[magic_content_info2].width, calc(stageheight*0.7) ););
-if(device.mobile,  set (layer[magic_content_info2].height, calc(stageheight*0.7)); 	set (layer[magic_content_info2].width, calc(stageheight*0.7) );); 	
-if(device.desktop, set (layer[magic_content_info2].height, calc(stageheight*0.5)); 	set (layer[magic_content_info2].width, calc(stageheight*0.5) ););	
-);
-</action>
-
+		<action name="call_vraag1_goed" type="Javascript">
+				 window.send_call_vraag1_goed();
+		</action>	
+		
+		
+		
+		
+				
 
 <events onviewchange="center_vlak; ();"/>
 
@@ -275,32 +252,9 @@ if(device.desktop, set (breedte_plaatje, calc(stagewidth*0.5)); 	set (hoogte_pla
 if(device.tablet,  set (hoogte_plaatje, calc(stageheight*0.7)); 	set (breedte_plaatje, calc(stageheight*0.7) ););
 if(device.mobile,  set (hoogte_plaatje, calc(stageheight*0.7)); 	set (breedte_plaatje, calc(stageheight*0.7) );); 	
 if(device.desktop, set (hoogte_plaatje, calc(stageheight*0.5)); 	set (breedte_plaatje, calc(stageheight*0.5) ););	
-
 );
 
-
-
-
-
-
-
-
-
 </action>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

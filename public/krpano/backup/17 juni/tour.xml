@@ -1,0 +1,406 @@
+﻿<krpano version="1.19" title="Virtual Tour" onstart=" center_vlak();  maat_weet_zeker (); " >
+
+	<include url="skin/vtourskin.xml" />
+
+
+	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
+	<skin_settings maps="true"
+	               maps_type="google"
+	               maps_bing_api_key=""
+	               maps_google_api_key=""
+	               maps_zoombuttons="false"
+	               gyro="true"
+	               webvr="true"
+	               webvr_gyro_keeplookingdirection="false"
+	               webvr_prev_next_hotspots="true"
+	               littleplanetintro="false"
+	               title="true"
+	               thumbs="true"
+	               thumbs_width="120" thumbs_height="80" thumbs_padding="10" thumbs_crop="0|40|240|160"
+	               thumbs_opened="false"
+	               thumbs_text="false"
+	               thumbs_dragging="true"
+	               thumbs_onhoverscrolling="false"
+	               thumbs_scrollbuttons="false"
+	               thumbs_scrollindicator="false"
+	               thumbs_loop="false"
+	               tooltips_buttons="false"
+	               tooltips_thumbs="false"
+	               tooltips_hotspots="false"
+	               tooltips_mapspots="false"
+	               deeplinking="false"
+	               loadscene_flags="MERGE"
+	               loadscene_blend="OPENBLEND(0.5, 0.0, 0.75, 0.05, linear)"
+	               loadscene_blend_prev="SLIDEBLEND(0.5, 180, 0.75, linear)"
+	               loadscene_blend_next="SLIDEBLEND(0.5,   0, 0.75, linear)"
+	               loadingtext="loading..."
+	               layout_width="100%"
+	               layout_maxwidth="814"
+	               controlbar_width="-24"
+	               controlbar_height="40"
+	               controlbar_offset="20"
+	               controlbar_offset_closed="-40"
+	               controlbar_overlap.no-fractionalscaling="10"
+	               controlbar_overlap.fractionalscaling="0"
+	               design_skin_images="vtourskin.png"
+	               design_bgcolor="0x2D3E50"
+	               design_bgalpha="0.8"
+	               design_bgborder="0"
+	               design_bgroundedge="1"
+	               design_bgshadow="0 4 10 0x000000 0.3"
+	               design_thumbborder_bgborder="3 0xFFFFFF 1.0"
+	               design_thumbborder_padding="2"
+	               design_thumbborder_bgroundedge="0"
+	               design_text_css="color:#FFFFFF; font-family:Arial;"
+	               design_text_shadow="1"
+	               />
+
+	<!--
+	    For an alternative skin design either change the <skin_settings> values 
+	    from above or optionally include one of the predefined designs from below.
+	-->
+	<!-- <include url="skin/vtourskin_design_flat_light.xml"  /> -->
+	<!-- <include url="skin/vtourskin_design_glass.xml"       /> -->
+	<!-- <include url="skin/vtourskin_design_ultra_light.xml" /> -->
+	<!-- <include url="skin/vtourskin_design_117.xml"         /> -->
+	<!-- <include url="skin/vtourskin_design_117round.xml"    /> -->
+	<!-- <include url="skin/vtourskin_design_black.xml"       /> -->
+
+
+	<!-- startup action - load the first scene -->
+	<action name="startup" autorun="onstart">
+		if(startscene === null OR !scene[get(startscene)], copy(startscene,scene[0].name); );
+		loadscene(get(startscene), null, MERGE);
+		if(startactions !== null, startactions() );
+	</action>
+
+
+ 	
+
+<layer name="knop1" url="images/baai1.png" onclick= "send_scene1(); laad_scene1(); " 
+keep="true" visible="false" zorder="2" handcursor="false" capture="false"  align="lefttop" scale="1.5"  scale.mobile="0.5" />
+
+
+<layer name="knop2" url="images/baai2.png" onclick= "send_scene2(); 	laad_scene2() ;" 
+keep="true" visible="false" zorder="2" handcursor="false" capture="false"  align="rightop" scale="1.5"  scale.mobile="0.5" />
+
+
+<layer name="vraag1" url="images/volgendevraag.png" onclick= "send_vraag1();  set (layer[magic_content_info].visible,true); knoppen_sluiten(); "  
+keep="true" visible="true" zorder="2" handcursor="false" capture="false"  align="left" scale="1.5"  scale.mobile="0.5" />
+
+
+<layer name="vraag2" url="images/knopvraag2.png" onclick= "send_vraag2(); BerekenHoogteBreedte2 (); set (layer[magic_content_info2].visible,true); knoppen_sluiten(); " 	 
+keep="true" visible="false" zorder="2" handcursor="false" capture="false"  align="center" scale="1.5"  scale.mobile="0.5" />
+
+<layer name="leeg" url="images/leeg.png" onclick= "send_leeg(); 	"  
+keep="true" visible="true" zorder="2" handcursor="false" capture="false"  align="right" scale="1.5"  scale.mobile="0.5" />
+
+
+
+
+<!--  LEGE VIERKANT IN CENTRUM -->
+
+ <!-- <layer name="center_vlak" url="images/leegvierkant.png"   visible= "true" keep="true" handcursor="false" capture="false"  align="center"  />		
+-->
+
+
+
+<!--  DE POP UP MET DE VRAAG -->
+<layer name="magic_content_info" url="images/vraag1_leeg.png"  visible= "false" keep="true" handcursor="false" capture="false"  align="center"  scalechildren="true"   />		
+
+<layer name="close_button1" style="close_btn_style1" x="5" y="5" zorder="5" onclick="set (layer[magic_content_info].visible,false); knoppen_tonen(); delete_vragen(); "/>
+	<style name="close_btn_style1" keep="true" url="images/close.png" parent="magic_content_info" align="righttop" edge="center" scale= "0.6" scale.mobile = "1"  />
+
+<layer name="jaknop" style="style_jaknop" x="300" y="150" zorder="6" onclick=" set (layer[magic_content_info].visible,false); maat_weet_zeker() ;set (layer[weet_zeker].visible,true); " />
+	<style name="style_jaknop" keep="true" url="images/jaknop.png" parent="magic_content_info" align="leftbottom" edge="center" scale= "1.5" scale.mobile = "1.5"  />
+
+<layer name="neeknop" style="style_neeknop" x="300" y="150" zorder="6" onclick=" set (layer[magic_content_info].visible,false); maat_weet_zeker(); set (layer[weet_zeker].visible,true);   "/>
+	<style name="style_neeknop" keep="true" url="images/neeknop.png" parent="magic_content_info" align="rightbottom" edge="center" scale= "1.5" scale.mobile = "1.5"  />
+
+
+	
+<!-- WEET JE HET ZEKER? -->	
+
+
+<action name="maat_weet_zeker">
+
+<!--
+set (layer [weet_zeker].width, '200 '   );
+
+
+set (layer [weet_zeker].height, '200'  );
+-->
+<!-- send_scene2(); -->
+<!--
+if(device.desktop, set (layer[weet_zeker].height, calc(stageheight*0.5)); 	set (layer[weet_zeker].width, calc(stageheight*0.5) ););	
+
+
+set (layer[weet_zeker].height, calc(stageheight*0.5)); 	
+set (layer[weet_zeker].width, calc(stageheight*0.5) );
+-->
+<!--
+set (hoogte_plaatje, calc(stageheight*0.5));
+set (breedte_plaatje, calc(stageheight*0.5));	
+-->
+
+
+
+set (layer[weet_zeker].height, calc(hoogte_plaatje*1)); 	
+set (layer[weet_zeker].width, calc(breedte_plaatje*1));
+
+
+
+</action>		
+
+	
+<layer name="weet_zeker" url="images/weetzeker.png"  visible= "false" keep="true" handcursor="false" capture="false"  align="center"  scalechildren="true"  />		
+
+
+<layer name="jaknop2" style="style_jaknop2" x="300" y="150" zorder="1" onclick=" laad_scene2()  ;set (layer[weet_zeker].visible,false); send_vraag2(); BerekenHoogteBreedte2 (); set (layer[magic_content_info2].visible,true); knoppen_sluiten();  send_scene2();" />
+	<style name="style_jaknop2" keep="true" url="images/jaknop.png" parent="weet_zeker" align="leftbottom" edge="center" scale= "1.5" scale.mobile = "1.5"  />
+
+<layer name="neeknop2" style="style_neeknop2" x="300" y="150" zorder="1" onclick="set (layer[weet_zeker].visible,false); set (layer[magic_content_info].visible,true)"/>
+	<style name="style_neeknop2" keep="true" url="images/neeknop.png" parent="weet_zeker" align="rightbottom" edge="center" scale= "1.5" scale.mobile = "1.5"  />
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+<!--  DE POP UP MET DE VRAAG -->
+<layer name="magic_content_info2" url="images/vraag2.png"  visible= "false" keep="true" handcursor="false" capture="false"  align="center"  scalechildren="true" />		
+<layer name="close_button" style="close_btn_style" x="5" y="5" zorder="1" onclick="set (layer[magic_content_info2].visible,false); knoppen_tonen(); delete_vragen();"/>
+<style name="close_btn_style" keep="true" url="images/close.png" parent="magic_content_info2" align="righttop" edge="center" scale= "0.6" scale.mobile = "1"  />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+<action name="send_scene1" type="Javascript">
+		 window.send_scene1_krpano();
+</action>	
+
+<action name="send_scene2" type="Javascript">
+		 window.send_scene2_krpano();
+</action>		
+	
+<action name="send_vraag1" type="Javascript">
+		 window.send_vraag1_krpano();
+</action>
+
+<action name="send_vraag2" type="Javascript">
+		 window.send_vraag2_krpano();
+</action>
+
+<action name="send_leeg" type="Javascript">
+		 window.send_leeg_krpano();
+</action>
+
+<action name="delete_vragen" type="Javascript">
+		 window.send_delete_vragen();
+</action>
+
+
+
+
+
+
+
+<action name="BerekenHoogteBreedte1">
+if(stagewidth LT stageheight  <!-- breedte kleiner dan hoogte =  portrait-->
+,  
+<!-- PORTRAIT -->
+if(device.tablet, set (layer[magic_content_info].width, calc(stagewidth*0.7)); 		set (layer[magic_content_info].height, calc(stagewidth*0.7) ););
+if(device.mobile, set (layer[magic_content_info].width, calc(stagewidth*0.7)); 		set (layer[magic_content_info].height, calc(stagewidth*0.7) ););	
+if(device.desktop, set (layer[magic_content_info].width, calc(stagewidth*0.5)); 	set (layer[magic_content_info].height, calc(stagewidth*0.5) ););	
+,
+<!-- LANDSCAPE -->
+if(device.tablet,  set (layer[magic_content_info].height, calc(stageheight*0.7)); 	set (layer[magic_content_info].width, calc(stageheight*0.7) ););
+if(device.mobile,  set (layer[magic_content_info].height, calc(stageheight*0.7)); 	set (layer[magic_content_info].width, calc(stageheight*0.7) );); 	
+if(device.desktop, set (layer[magic_content_info].height, calc(stageheight*0.5)); 	set (layer[magic_content_info].width, calc(stageheight*0.5) ););	
+);
+</action>
+
+<action name="BerekenHoogteBreedte2">
+if(stagewidth LT stageheight  <!-- breedte kleiner dan hoogte =  portrait-->
+,  
+<!-- PORTRAIT -->
+if(device.tablet, set (layer[magic_content_info2].width, calc(stagewidth*0.7)); 		set (layer[magic_content_info2].height, calc(stagewidth*0.7) ););
+if(device.mobile, set (layer[magic_content_info2].width, calc(stagewidth*0.7)); 		set (layer[magic_content_info2].height, calc(stagewidth*0.7) ););	
+if(device.desktop, set (layer[magic_content_info2].width, calc(stagewidth*0.5)); 		set (layer[magic_content_info2].height, calc(stagewidth*0.5) ););	
+,
+<!-- LANDSCAPE -->
+if(device.tablet,  set (layer[magic_content_info2].height, calc(stageheight*0.7)); 	set (layer[magic_content_info2].width, calc(stageheight*0.7) ););
+if(device.mobile,  set (layer[magic_content_info2].height, calc(stageheight*0.7)); 	set (layer[magic_content_info2].width, calc(stageheight*0.7) );); 	
+if(device.desktop, set (layer[magic_content_info2].height, calc(stageheight*0.5)); 	set (layer[magic_content_info2].width, calc(stageheight*0.5) ););	
+);
+</action>
+
+
+<events onviewchange="center_vlak; ();"/>
+
+<action name="center_vlak">
+if(stagewidth LT stageheight  <!-- breedte kleiner dan hoogte =  portrait-->
+,  
+<!-- PORTRAIT -->
+if(device.tablet, set (breedte_plaatje, calc(stagewidth*0.7)); 		set (hoogte_plaatje, calc(stagewidth*0.7) ););
+if(device.mobile, set (breedte_plaatje, calc(stagewidth*0.7)); 		set (hoogte_plaatje, calc(stagewidth*0.7) ););	
+if(device.desktop, set (breedte_plaatje, calc(stagewidth*0.5)); 	set (hoogte_plaatje, calc(stagewidth*0.5) ););	
+,
+<!-- LANDSCAPE -->
+if(device.tablet,  set (hoogte_plaatje, calc(stageheight*0.7)); 	set (breedte_plaatje, calc(stageheight*0.7) ););
+if(device.mobile,  set (hoogte_plaatje, calc(stageheight*0.7)); 	set (breedte_plaatje, calc(stageheight*0.7) );); 	
+if(device.desktop, set (hoogte_plaatje, calc(stageheight*0.5)); 	set (breedte_plaatje, calc(stageheight*0.5) ););	
+
+);
+
+
+
+
+
+
+
+
+
+</action>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<action name="knoppen_sluiten">
+	set (layer[knop1].visible,false);
+	set (layer[knop2].visible,false);
+	set (layer[vraag1].visible,false);
+	set (layer[vraag2].visible,false);
+	set (layer[leeg].visible,false);
+</action>
+
+<action name="knoppen_tonen">
+	
+	set (layer[vraag1].visible,true);
+
+	<!--
+	set (layer[knop1].visible,true);
+	set (layer[knop2].visible,true);
+	set (layer[vraag2].visible,true);
+	set (layer[leeg].visible,true);
+	-->
+	
+</action>
+	
+
+<action name="laad_scene1">
+loadscene(scene_200, null, MERGE, BLEND(1));
+</action>
+
+<action name="laad_scene2">
+loadscene(scene_400, null, MERGE, BLEND(1));
+</action>
+
+	
+	
+	
+	<scene name="scene_200" title="200" onstart="" havevrimage="true" thumburl="panos/200.tiles/thumb.jpg" lat="36.69361111" lng="28.86583333" heading="0.0">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/200.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+			<level tiledimagewidth="2304" tiledimageheight="2304">
+				<cube url="panos/200.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1152" tiledimageheight="1152">
+				<cube url="panos/200.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+
+		<image if="webvr.isenabled">
+			<cube url="panos/200.tiles/vr/pano_%s.jpg" />
+		</image>
+
+		<!-- place your scene hotspots here -->
+
+		
+		<!-- geen flauw idee wat onderstaand doet??
+		ondown2="set(hlookat_moveforce,+1);" onup2="set(hlookat_moveforce,0);"
+		-->
+		
+		
+	</scene>
+
+	
+	
+	<!-- let op olyppisch heeft andere resolutie etc -->
+	
+		<scene name="scene_400" title="400" onstart="" havevrimage="true" thumburl="panos/400.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/400.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+			<level tiledimagewidth="2560" tiledimageheight="2560">
+				<cube url="panos/400.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1280" tiledimageheight="1280">
+				<cube url="panos/400.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="640" tiledimageheight="640">
+				<cube url="panos/400.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+
+		<image if="webvr.isenabled">
+			<cube url="panos/400.tiles/vr/pano_%s.jpg" />
+		</image>
+
+		<!-- place your scene hotspots here -->
+
+	</scene>
+	
+	
+	
+	
+	
+	
+	
+
+</krpano>
