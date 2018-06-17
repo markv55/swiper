@@ -280,10 +280,10 @@ als master inzet. nu knippert hij omdat hij steeds een stukje terug gaat.
 					
 							if (vid == 'leeg_krpano'){			
 								var krpano = document.getElementById("krpanoSWFObject");
-								krpano.call( "knoppen_tonen()" );			
-								krpano.call( "setSizeVierkant()" );		
-								krpano.set("layer[magic_content_info].visible","false");	
-								krpano.set("layer[magic_content_info2].visible","false");									
+								//krpano.call( "knoppen_tonen()" );			
+								//krpano.call( "setSizeVierkant()" );		
+								//krpano.set("layer[magic_content_info].visible","false");	
+								//krpano.set("layer[magic_content_info2].visible","false");									
 							}	
 							
 							
@@ -311,19 +311,76 @@ als master inzet. nu knippert hij omdat hij steeds een stukje terug gaat.
 								sound_nietgoed.play();
 							}									
 
+							
+			<!-- VRAAG 1  -->
 							if (vid == 'call_vraag1_ja'){			
 								var krpano = document.getElementById("krpanoSWFObject");
 								krpano.call( "action_vraag1_ja()" );		
 								console.log ('gaat de goede call weg??'); 
 							}										
 							
+							if (vid == 'call_vraag1_nee'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "action_vraag1_nee()" );		
+								console.log ('action_vraag1_nee'); 
+							}												
+							
 							if (vid == 'call_vraag1_goed'){			
 								var krpano = document.getElementById("krpanoSWFObject");
 								krpano.call( "action_vraag1_goed()" );		
 								console.log ('gaat de goede call weg??'); 
-							}				
+							}	
 
+							if (vid == 'call_vraag1_fout'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "action_vraag1_fout()" );		
+								console.log ('action_vraag1_fout??'); 
+							}				
 							
+
+			<!-- VRAAG 2  -->
+							if (vid == 'call_vraag2_ja'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "action_vraag2_ja()" );		
+								console.log ('gaat de goede call weg??'); 
+							}										
+							
+							if (vid == 'call_vraag2_nee'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "action_vraag2_nee()" );		
+								console.log ('action_vraag2_nee'); 
+							}												
+							
+							if (vid == 'call_vraag2_goed'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "action_vraag2_goed()" );		
+								console.log ('gaat de goede call weg??'); 
+							}	
+
+							if (vid == 'call_vraag2_fout'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "action_vraag2_fout()" );		
+								console.log ('action_vraag2_fout??'); 
+							}			
+							
+							
+			<!-- EINDSCOSRE  -->							
+							
+							if (vid == 'call_eindscore'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "action_eindscore()" );		
+								console.log ('action_eindscore??'); 
+							}											
+	
+							if (vid == 'call_eindscore_close'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "action_eindscore_close()" );		
+								console.log ('komt hij fucking hier??'); 
+							}			
+							
+							
+							
+						
 							
 							
 							
@@ -346,7 +403,6 @@ als master inzet. nu knippert hij omdat hij steeds een stukje terug gaat.
 			window.send_scene1_krpano = function(){
 				console.log ('scene1_krpano'); 
 				socket.emit('scene', 'scene1_krpano');	
-				
 			}
 
 			window.send_scene2_krpano = function(){
@@ -388,21 +444,63 @@ als master inzet. nu knippert hij omdat hij steeds een stukje terug gaat.
 				socket.emit('vraag', 'sound_nietgoed');
 			}					
 
+			
+// vraag1
 			window.send_call_vraag1_ja	 = function(){
 				console.log ('window.send_call_vraag1_ja weet je het zeker'); 
 				socket.emit('vraag', 'call_vraag1_ja');
 			}			
 
-
+			window.send_call_vraag1_nee	 = function(){
+				console.log ('window.send_call_vraag1_nee'); 
+				socket.emit('vraag', 'call_vraag1_nee');
+			}
 			
 			window.send_call_vraag1_goed  = function(){
 				console.log ('	 werkt deze wel?  '); 
 				socket.emit('vraag', 'call_vraag1_goed');
 			}				
-		
+			
+			window.send_call_vraag1_fout  = function(){
+				console.log ('	 window.send_call_vraag1_fout'); 
+				socket.emit('vraag', 'call_vraag1_fout');
+			}				
 
+// vraag2
 
+			window.send_call_vraag2_ja	 = function(){
+				console.log ('window.send_call_vraag2_ja weet je het zeker'); 
+				socket.emit('vraag', 'call_vraag2_ja');
+			}			
 
+			window.send_call_vraag2_nee	 = function(){
+				console.log ('window.send_call_vraag2_nee'); 
+				socket.emit('vraag', 'call_vraag2_nee');
+			}
+			
+			window.send_call_vraag2_goed  = function(){
+				console.log ('	 werkt deze wel?  '); 
+				socket.emit('vraag', 'call_vraag2_goed');
+			}				
+			
+			window.send_call_vraag2_fout  = function(){
+				console.log ('	 window.send_call_vraag2_fout'); 
+				socket.emit('vraag', 'call_vraag2_fout');
+			}							
+			
+// EINDSCORE		
+			
+			window.send_call_eindscore  = function(){
+				console.log ('window.send_call_eindscore'); 
+				socket.emit('vraag', 'call_eindscore');
+			}					
+
+			window.send_call_eindscore_close  = function(){
+				console.log ('window.send_call_eindscore_close'); 
+				socket.emit('vraag', 'call_eindscore_close');
+			}			
+			
+			
 	
 			
 		}); // einde function
