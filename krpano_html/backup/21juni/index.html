@@ -289,11 +289,9 @@ als master inzet. nu knippert hij omdat hij steeds een stukje terug gaat.
 							
 							if (vid == 'delete_vragen'){			
 								var krpano = document.getElementById("krpanoSWFObject");
-								//krpano.call( "knoppen_tonen()" );
-								krpano.set("layer[vraag_1].visible","false");	
-								
-								//krpano.set("layer[magic_content_info].visible","false");	
-								//krpano.set("layer[magic_content_info2].visible","false");									
+								krpano.call( "knoppen_tonen()" );			
+								krpano.set("layer[magic_content_info].visible","false");	
+								krpano.set("layer[magic_content_info2].visible","false");									
 							}							
 							
 							
