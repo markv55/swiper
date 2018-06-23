@@ -1,4 +1,4 @@
-﻿<krpano version="1.19" title="Virtual Tour" onstart=" center_vlak();  setSizeVierkant (); 	startLayer();  ">
+﻿<krpano version="1.19" title="Virtual Tour" onstart=" center_vlak();  setSizeVierkant ()" >
 
 	<include url="skin/vtourskin.xml" />
 
@@ -95,17 +95,7 @@
 		set (layer[antwoord_is_fout].width, calc(breedte_plaatje*1));			
 		
 		set (layer[vraag_2].height, calc(hoogte_plaatje*1)); 	
-		set (layer[vraag_2].width, calc(breedte_plaatje*1));		
-
-		set (layer[vraag_3].height, calc(hoogte_plaatje*1)); 	
-		set (layer[vraag_3].width, calc(breedte_plaatje*1));	
-
-		set (layer[vraag_4].height, calc(hoogte_plaatje*1)); 	
-		set (layer[vraag_4].width, calc(breedte_plaatje*1));	
-
-		set (layer[vraag_5].height, calc(hoogte_plaatje*1)); 	
-		set (layer[vraag_5].width, calc(breedte_plaatje*1));	
-		
+		set (layer[vraag_2].width, calc(breedte_plaatje*1));				
 
 		set (layer[antwoord_is_goed2].height, calc(hoogte_plaatje*1)); 	
 		set (layer[antwoord_is_goed2].width, calc(breedte_plaatje*1));	
@@ -138,85 +128,34 @@ call_scene1(); center_vlak(); setSizeVierkant() ; set (layer[startscherm_tablet]
 </action>	
 
 
-<!--     START. LAYERS EN ACTIONS   -->
-<!--     START. LAYERS EN ACTIONS   -->
-<!--    START. LAYERS EN ACTIONS   -->
-
-<action name="startLayer">
-set(layer[jaknop].parent,vraag_1);
-set(layer[neeknop].parent,vraag_1);
-
-	set(layer[antwoord_is_goed].url,static/krpano/images/vragen/vraag1goed.png);
-	set(layer[antwoord_is_fout].url,static/krpano/images/vragen/vraag1fout.png);	
 
 
-</action>	
+<!--  ////////////   VRAAG 1       //////////////////////////////////////// -->
+<!--  ////////////   VRAAG 1       //////////////////////////////////////// -->
+<!--  ////////////   VRAAG 1       //////////////////////////////////////// -->
+
 
 
 <!--  POP UP: VRAAG 1 -->
 
 <action name="action_vraag1_show">
 	set (layer[vraag_1].visible,true); center_vlak(); setSizeVierkant();
-	set(layer[jaknop].parent,vraag_1); 
-	set(layer[neeknop].parent,vraag_1); 	
-
-	set(layer[antwoord_is_goed].url,static/krpano/images/vragen/vraag1goed.png);
-	set(layer[antwoord_is_fout].url,static/krpano/images/vragen/vraag1fout.png);	
-	
 </action>	
-
-<action name="action_vraag2_show">
-	set (layer[vraag_2].visible,true); center_vlak(); setSizeVierkant();
-	set(layer[jaknop].parent,vraag_2); 
-	set(layer[neeknop].parent,vraag_2); 	
-</action>	
-
-<action name="action_vraag3_show">
-	set (layer[vraag_3].visible,true); center_vlak(); setSizeVierkant();
-	set(layer[jaknop].parent,vraag_3); 
-	set(layer[neeknop].parent,vraag_3); 	
-</action>	
-
-<action name="action_vraag4_show">
-	set (layer[vraag_4].visible,true); center_vlak(); setSizeVierkant();
-	set(layer[jaknop].parent,vraag_4); 
-	set(layer[neeknop].parent,vraag_4); 	
-</action>	
-
-<action name="action_vraag5_show">
-	set (layer[vraag_5].visible,true); center_vlak(); setSizeVierkant();
-	set(layer[jaknop].parent,vraag_5); 
-	set(layer[neeknop].parent,vraag_5); 	
-</action>	
+			
 
 
+		<layer name="vraag_1" url="images/vraag1_leeg.png"  visible= "false" keep="true" handcursor="false" capture="false"  align="center"  scalechildren="true"   />		
 
-
-<!--  ////////////   VRAGEN      //////////////////////////////////////// -->
-
-
-		<layer name="vraag_1" url="images/vragen/vraag1.png"  visible= "false" keep="true" handcursor="false" capture="false"  align="center"  scalechildren="true"   />		
-		
-		
-		<layer name="vraag_2" url="images/vraag2_leeg.png"  visible= "false" keep="true" handcursor="false" capture="false"  align="center"  scalechildren="true"   />		
-		<layer name="vraag_3" url="images/vraag2_leeg.png"  visible= "false" keep="true" handcursor="false" capture="false"  align="center"  scalechildren="true"   />		
-		<layer name="vraag_4" url="images/vraag2_leeg.png"  visible= "false" keep="true" handcursor="false" capture="false"  align="center"  scalechildren="true"   />				
-		<layer name="vraag_5" url="images/vraag2_leeg.png"  visible= "false" keep="true" handcursor="false" capture="false"  align="center"  scalechildren="true"   />		
-<!--  ////////////   VERVOLGVRAGEN      //////////////////////////////////////// -->
-
-		
 		<!--
 		<layer name="close_button1" style="close_btn_style1" x="5" y="5" zorder="5" onclick="set (layer[vraag_1].visible,false); knoppen_tonen(); call_delete_vragen(); "/>
 			<style name="close_btn_style1" keep="true" url="images/close.png" parent="vraag_1" align="righttop" edge="center" scale= "0.6" scale.mobile = "1"  />
 		-->
-		<!-- uit onderstaande functie weggegaald  parent="vraag_1" -->	
-			
 			
 		<layer name="jaknop" style="style_jaknop" x="300" y="150" zorder="6" onclick=" call_vraag1_ja(); action_vraag1_ja(); " />
-			<style name="style_jaknop" keep="true" url="images/jaknop.png"  align="leftbottom" edge="center" scale= "1.5" scale.mobile = "1.5"  />
+			<style name="style_jaknop" keep="true" url="images/jaknop.png" parent="vraag_1" align="leftbottom" edge="center" scale= "1.5" scale.mobile = "1.5"  />
 
 		<layer name="neeknop" style="style_neeknop" x="300" y="150" zorder="6" onclick="call_vraag1_nee(); action_vraag1_nee();  "/>
-			<style name="style_neeknop" keep="true" url="images/neeknop.png" align="rightbottom" edge="center" scale= "1.5" scale.mobile = "1.5"  />
+			<style name="style_neeknop" keep="true" url="images/neeknop.png" parent="vraag_1" align="rightbottom" edge="center" scale= "1.5" scale.mobile = "1.5"  />
 	
 
 <!-- //////////////////  JA EN NEE KNOPPEN //////////////// -->
@@ -232,23 +171,18 @@ set(layer[neeknop].parent,vraag_1);
 
 
 
-<!--  POP UP: ANTWOORD IS GOED!!!! 
-url="images/antwoordisgoed.png"
-url="images/antwoordisfout.png"
-url = "images/vragen/vraag1goed.png"
-url = "images/vragen/vraag1fout.png"  
--->		
-		<layer name="antwoord_is_goed"   visible= "false" keep="true" handcursor="false" capture="false"  align="center"  scalechildren="true"  />		
+<!--  POP UP: ANTWOORD IS GOED!!!! -->		
+		<layer name="antwoord_is_goed" url="images/antwoordisgoed.png"  visible= "false" keep="true" handcursor="false" capture="false"  align="center"  scalechildren="true"  />		
 
-		<layer name="volgende_goed" style="style_volgende_goed" visible= "true" x="0" y="150" zorder="1" onclick="action_vraag1_goed(); call_vraag1_goed()" />
-			<style name="style_volgende_goed" keep="true" url="images/volgende.png" parent="antwoord_is_goed" align="bottom" edge="center" scale= "1.5" scale.mobile = "1.5"  />
+		<layer name="jaknop3" style="style_jaknop3" visible= "true" x="0" y="150" zorder="1" onclick="action_vraag1_goed(); call_vraag1_goed()" />
+			<style name="style_jaknop3" keep="true" url="images/volgende.png" parent="antwoord_is_goed" align="bottom" edge="center" scale= "1.5" scale.mobile = "1.5"  />
 
 			
 <!--  POP UP: ANTWOORD IS FOUT!!!! -->		
-		<layer name="antwoord_is_fout"   visible= "false" keep="true" handcursor="false" capture="false"  align="center"  scalechildren="true"  />		
+		<layer name="antwoord_is_fout" url="images/antwoordisfout.png"  visible= "false" keep="true" handcursor="false" capture="false"  align="center"  scalechildren="true"  />		
 
-		<layer name="volgende_fout" style="style_volgende_fout" visible= "true" x="0" y="150" zorder="1" onclick="action_vraag1_fout(); call_vraag1_fout(); " />
-			<style name="style_volgende_fout" keep="true" url="images/volgende.png" parent="antwoord_is_fout" align="bottom" edge="center" scale= "1.5" scale.mobile = "1.5"  />
+		<layer name="jaknop4" style="style_jaknop4" visible= "true" x="0" y="150" zorder="1" onclick="action_vraag1_fout(); call_vraag1_fout(); " />
+			<style name="style_jaknop4" keep="true" url="images/volgende.png" parent="antwoord_is_fout" align="bottom" edge="center" scale= "1.5" scale.mobile = "1.5"  />
 
 			
 <action name="action_vraag1_goed">
@@ -261,7 +195,79 @@ url = "images/vragen/vraag1fout.png"
 
 			
 
+
+			
+		
+
+
+
+			
+<!--  ////////////   VRAAG 2       //////////////////////////////////////// -->
+<!--  ////////////   VRAAG 2       //////////////////////////////////////// -->
+<!--  ////////////   VRAAG 2       //////////////////////////////////////// -->
+			
+<action name="action_vraag2_show">
+	set (layer[vraag_2].visible,true); center_vlak(); setSizeVierkant();
+</action>	
+			
+<!--  POP UP: VRAAG 2 -->
+		<layer name="vraag_2" url="images/vraag2_leeg.png"  visible= "false" keep="true" handcursor="false" capture="false"  align="center"  scalechildren="true"   />		
+
+		<!--
+		<layer name="close_button2" style="close_btn_style2" x="5" y="5" zorder="5" onclick="set (layer[vraag_2].visible,false); knoppen_tonen(); call_delete_vragen(); "/>
+			<style name="close_btn_style2" keep="true" url="images/close.png" parent="vraag_2" align="righttop" edge="center" scale= "0.6" scale.mobile = "1"  />
+		-->
+			
+		<layer name="jaknop5" style="style_jaknop5" x="300" y="150" zorder="6" onclick=" call_vraag2_ja(); action_vraag2_ja(); " />
+			<style name="style_jaknop5" keep="true" url="images/jaknop.png" parent="vraag_2" align="leftbottom" edge="center" scale= "1.5" scale.mobile = "1.5"  />
+
+		<layer name="neeknop2" style="style_neeknop2" x="300" y="150" zorder="6" onclick="call_vraag2_nee() ; action_vraag2_nee();  "/>
+			<style name="style_neeknop2" keep="true" url="images/neeknop.png" parent="vraag_2" align="rightbottom" edge="center" scale= "1.5" scale.mobile = "1.5"  />
+				
+			
+			
+<action name="action_vraag2_ja">
+	set (layer[vraag_2].visible,false); set (layer[antwoord_is_goed2].visible,true); call_sound_succes (); center_vlak(); setSizeVierkant();
+</action>	
+
+<action name="action_vraag2_nee">
+	set (layer[vraag_2].visible,false); set (layer[antwoord_is_fout2].visible,true); call_sound_succes (); center_vlak(); setSizeVierkant();
+</action>				
+			
+
+
+
+
+			
+<!--  POP UP: ANTWOORD IS GOED!!!! -->		
+		<layer name="antwoord_is_goed2" url="images/antwoordisgoed.png"  visible= "false" keep="true" handcursor="false" capture="false"  align="center"  scalechildren="true"  />		
+
+		<layer name="jaknop6" style="style_jaknop6" visible= "true" x="0" y="150" zorder="1" onclick="action_vraag2_goed(); call_vraag2_goed()" />
+			<style name="style_jaknop6" keep="true" url="images/volgende.png" parent="antwoord_is_goed2" align="bottom" edge="center" scale= "1.5" scale.mobile = "1.5"  />
+
+<!--  POP UP: ANTWOORD IS FOUT!!!! -->		
+		<layer name="antwoord_is_fout2" url="images/antwoordisfout.png"  visible= "false" keep="true" handcursor="false" capture="false"  align="center"  scalechildren="true"  />		
+
+		<layer name="jaknop7" style="style_jaknop7" visible= "true" x="0" y="150" zorder="1" onclick="action_vraag2_fout(); call_vraag2_fout(); " />
+			<style name="style_jaknop7" keep="true" url="images/volgende.png" parent="antwoord_is_fout2" align="bottom" edge="center" scale= "1.5" scale.mobile = "1.5"  />
+
+			
+<action name="action_vraag2_goed">
+	call_eindscore(); action_eindscore();  delete_vragen(); call_delete_vragen();
+</action>	
+
+<action name="action_vraag2_fout">
+	call_eindscore(); action_eindscore();  delete_vragen (); call_delete_vragen ();
+</action>				
+
+
 	
+
+
+	
+			
+
+
 			
 
 			
@@ -412,10 +418,6 @@ if(device.desktop, set (hoogte_plaatje, calc(stageheight*0.5)); 	set (breedte_pl
 <action name="delete_vragen">
 set (layer[vraag_1].visible,false);
 set (layer[vraag_2].visible,false); 
-set (layer[vraag_3].visible,false); 
-set (layer[vraag_4].visible,false); 
-set (layer[vraag_5].visible,false); 
-
 </action>
 
 
