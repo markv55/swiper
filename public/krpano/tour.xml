@@ -168,10 +168,10 @@ call_scene1(); delete_vragen(); center_vlak(); setSizeVierkant() ; set (layer[st
 		
 		
  	
-<!-- STARTSCHERM MET INSTRUCTIE TEKST  -->
+<!-- STARTSCHERM MET INSTRUCTIE TEKST  scale="1.5"  scale.mobile="0.5" -->
 
 		<layer name="startscherm_tablet" url="images/startscherm_tablet.png" onclick= " " keep="true" visible="true" zorder="2" handcursor="false" capture="false"  align="center" 
-		scale="1.5"  scale.mobile="0.5"  scalechildren="true"/>
+		 scalechildren="true"/>
 
 		<layer name="startscherm_tablet_verder" style="style_startscherm_tablet_verder" visible= "true" x="0" y="100" zorder="1" 
 		onclick=" action_delete_startscherm(); call_delete_startscherm();" />  <!--hier ook een call maken naar node zodat alle startschemen op alle tablets weg gaaan!!! -->
