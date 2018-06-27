@@ -1,6 +1,8 @@
 ﻿<krpano>
 
 	<!-- krpano 1.19.pr8 - Virtual Tour Skin -->
+	
+	<!-- regel 407 omzetten voor VR of voor normaal.   -->
 
 
 	<!-- skin settings (can be overridden in the tour.xml) -->
@@ -30,9 +32,9 @@
 	               tooltips_mapspots="false"
 	               deeplinking="false"
 	               loadscene_flags="MERGE"
-	               loadscene_blend="OPENBLEND(0.5, 0.0, 0.75, 0.05, linear)"
-	               loadscene_blend_prev="SLIDEBLEND(0.5, 180, 0.75, linear)"
-	               loadscene_blend_next="SLIDEBLEND(0.5,   0, 0.75, linear)"
+	               loadscene_blend="ZOOMBLEND(3.0,3.0,easyInOutSine)"
+	               loadscene_blend_prev="ZOOMBLEND(3.0,3.0,easyInOutSine)"
+	               loadscene_blend_next="ZOOMBLEND(3.0,3.0,easyInOutSine)"
 	               loadingtext="loading..."
 	               layout_width="100%"
 	               layout_maxwidth="814"
@@ -142,8 +144,11 @@
 			set(skin_settings.loadscene_flags, MERGE|KEEPVIEW|KEEPMOVING|NOPREVIEW);
 			webvr_act_as_gyro_in_portrait_mode(true);
 			if(scene.count GT 1 AND skin_settings.webvr_prev_next_hotspots,
-				set(hotspot[webvr_prev_scene].visible, true);
-				set(hotspot[webvr_next_scene].visible, true);
+
+			
+			<!-- hier op false gezet -->
+			set(hotspot[webvr_prev_scene].visible, false);
+				set(hotspot[webvr_next_scene].visible, false);
 				set(events[webvr_events].onviewchange, webvr_menu_following());
 			  );
 		  ,
@@ -232,17 +237,67 @@
 	<!-- skin_thumbtext_style - style/textfield for the (optional, skin_settings.thumbs_text) thumbnails texts -->
 	<style name="skin_thumbtext_style" url="%SWFPATH%/plugins/textfield.swf" align="bottom" width="100%" autoheight="true" y="5" enabled="false" background="false" border="false" css="calc:skin_settings.design_text_css + ' text-align:center; font-size:10px;'" textshadow="get:skin_settings.design_text_shadow" />
 
-	<!-- skin_hotspotstyle - style for the hotspots -->
-	<style name="skin_hotspotstyle" url="vtourskin_hotspot.png" scale="0.5" edge="top" distorted="true"
-	       tooltip=""
+	<!-- skin_hotspotstyle - style for the hotspots  
+		   tooltip=""
 	       linkedscene=""
 	       linkedscene_lookat=""
-	       onclick="skin_hotspotstyle_click();"
 	       onover="tween(scale,0.55);"
 	       onout="tween(scale,0.5);"
-	       onloaded="if(linkedscene AND skin_settings.tooltips_hotspots, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); );"
-	       />
+	       onloaded="if(linkedscene AND skin_settings.tooltips_hotspots, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); );"                 -->
 
+		   
+		   
+		   
+		   
+		   
+		   
+<!--	<style name="skin_hotspotstyle" url="pijlwit.png" scale="0.5" edge="top" distorted="true"  -->
+<!--  INVOEG VAN NIEUWE WITTE PIJL OM NAAR VOLGENDE RUIMTE TE GAAN -->
+		   
+	<style name="skin_hotspotstyle" url="pijlwit4.png" scale="0.5" edge="top" distorted="true"
+	       onclick="skin_hotspotstyle_click();"
+		   onloaded="do_crop_animation(128,128,9);"
+	/>
+
+<!--
+		do_crop_animation(framewidth, frameheight, framerate)
+		- animation by changing the image cropping
+		- parameters:
+		  - framewidth (%1) - the width from one frame in pixels
+		  - frameheight (%2) - the height from one frame in pixels
+		  - framerate (%3) - the animation frame rate in 'frames per second'
+		- the image can be a vertical or horizontal (or both) image-strip / sprite-sheet
+		- the action will loop automatically through all frames from left to right and top to bottom
+	-->		   
+
+	
+	<action name="do_crop_animation">
+		<!-- add attributes to the hotspot -->
+		registerattribute(xframes, calc((imagewidth / %1) BOR 0));
+		registerattribute(yframes, calc((imageheight / %2) BOR 0));
+		registerattribute(frames, calc(xframes * yframes));
+		registerattribute(frame, 0);
+
+		set(crop, '0|0|%1|%2');
+
+		setinterval(calc('crop_anim_' + name), calc(1.0 / %3),
+			if(loaded,
+				inc(frame);
+				if(frame GE frames, if(onlastframe !== null, onlastframe() ); set(frame,0); );
+				mod(xpos, frame, xframes);
+				div(ypos, frame, xframes);
+				Math.floor(ypos);
+				mul(xpos, %1);
+				mul(ypos, %2);
+				calc(crop, xpos + '|' + ypos + '|%1|%2');
+			  ,
+				clearinterval(calc('crop_anim_' + name));
+			  );
+		  );
+	</action>		   
+		   
+		   
+		   
 	<action name="skin_hotspotstyle_click">
 		if(linkedscene,
 			if(linkedscene_lookat,
@@ -261,7 +316,13 @@
 		  );
 	</action>
 	
-
+<!--  EINDE INVOEG VAN NIEUWE WITTE PIJL OM NAAR VOLGENDE RUIMTE TE GAAN -->	
+	
+	
+	
+	
+	
+	
 	<!-- skin_tooltip - style for the thumb, hotspot and mapspot tooltips -->
 	<style name="skin_tooltips"
 	       onover.mouse="copy(layer[skin_tooltip].html, tooltip);
@@ -341,10 +402,30 @@
 				<layer name="skin_btn_gyro"      style="skin_base|skin_glow" crop="0|384|64|64"  align="center"      x="+140" y="0"  scale="0.5" onclick="switch(plugin[skin_gyro].enabled); if(plugin[skin_gyro].enabled, skin_showmap(false));" visible="false" devices="html5" />
 				<layer name="skin_btn_vr"        style="skin_base|skin_glow" crop="0|0|80|64"    align="center"      x="+146" y="0"  scale="0.5" onclick="webvr.enterVR();" visible="false" />
 				<layer name="skin_btn_fs"        style="skin_base|skin_glow" crop="0|576|64|64"  align="right"       x="90"   y="0"  scale="0.5" onclick="switch(fullscreen);" devices="fullscreensupport" />
-				<layer name="skin_btn_hide"      style="skin_base|skin_glow" crop="0|448|64|64"  align="right"       x="50"   y="0"  scale="0.5" onclick="skin_hideskin()" />
-				<layer name="skin_btn_show" type="container" bgcapture="true" align="bottom" width="100%" height="get:skin_settings.controlbar_height" y="calc:skin_settings.controlbar_height - skin_settings.controlbar_offset_closed" onclick="skin_showskin()" onhover="tween(alpha,1.0);" onout="tween(alpha,0.25);" ondown.touch="onhover();" onup.touch="onout();" visible="false" capture="false" alpha="0.0">
+				
+				
+	<!-- wel of geen onderknop zichbaar  -->			
+			 <layer name="skin_btn_hide"      style="skin_base|skin_glow" crop="0|448|64|64"  align="right"       x="50"   y="0"  scale="0.5" onclick="skin_hideskin()" onloaded="skin_hideskin()" />  
+				<!--	<layer name="skin_btn_hide"      style="skin_base|skin_glow" crop="0|448|64|64"  align="right"       x="50"   y="0"  scale="0.5" onclick="skin_hideskin()" />  -->
+
+
+
+
+
+	<!-- onderstaand de lage knop weggehaald en onclick leeg gemaakt  -->				
+		<!--		<layer name="skin_btn_show" type="container" bgcapture="true" align="bottom" width="100%" height="get:skin_settings.controlbar_height" y="calc:skin_settings.controlbar_height - skin_settings.controlbar_offset_closed" onclick="skin_showskin()" onhover="tween(alpha,1.0);" onout="tween(alpha,0.25);" ondown.touch="onhover();" onup.touch="onout();" visible="false" capture="false" alpha="0.0">
 					<layer name="skin_btn_show_icon" style="skin_base" crop="64|448|64|64" scale="0.5" align="bottom" y="2" enabled="false" />
 				</layer>
+	-->
+
+				<layer name="skin_btn_show" type="container" bgcapture="true" align="bottom" width="100%" height="get:skin_settings.controlbar_height" y="calc:skin_settings.controlbar_height - skin_settings.controlbar_offset_closed" onclick="        " onhover="tween(alpha,1.0);" onout="tween(alpha,0.25);" ondown.touch="onhover();" onup.touch="onout();" visible="false" capture="false" alpha="0.0">
+					<layer name="skin_btn_show_icon" style="skin_base" crop="0|0|0|0" scale="0.5" align="bottom" y="2" enabled="false" />
+				</layer>
+	
+				
+				
+
+				
 				<layer name="skin_btn_next"      style="skin_base|skin_glow" crop="64|64|64|64"  align="right"       x="5"    y="0"   scale="0.5" alpha="0.5"  onclick="if(skin_settings.thumbs_loop, skin_nextscene_loop(+1), skin_nextscene(+1) );" />
 				</layer>
 			</layer>
@@ -355,18 +436,27 @@
 	</layer>
 
 	<!-- previous/next scene buttons for the hidden skin mode -->
-	<layer name="skin_btn_prev_fs" keep="true" type="container" align="lefttop"  x="-50" width="40" height="100%" bgcapture="true" alpha="0.25" capture="false" zorder="2" onclick="skin_nextscene_loop(-1);" onhover="tween(alpha,1.0);" onout="tween(alpha,0.25);" ondown.touch="onhover();" onup.touch="onout();">
+<!--	<layer name="skin_btn_prev_fs" keep="true" type="container" align="lefttop"  x="-50" width="40" height="100%" bgcapture="true" alpha="0.25" capture="false" zorder="2" onclick="skin_nextscene_loop(-1);" onhover="tween(alpha,1.0);" onout="tween(alpha,0.25);" ondown.touch="onhover();" onup.touch="onout();">
 		<layer name="skin_btn_prev_fs_icon" style="skin_base" crop="0|64|64|64"  align="center" scale="0.5" enabled="false" />
 	</layer>
 	<layer name="skin_btn_next_fs" keep="true" type="container" align="righttop" x="-50" width="40" height="100%" bgcapture="true" alpha="0.25" capture="false" zorder="2" onclick="skin_nextscene_loop(+1);" onhover="tween(alpha,1.0);" onout="tween(alpha,0.25);" ondown.touch="onhover();" onup.touch="onout();">
 		<layer name="skin_btn_next_fs_icon" style="skin_base" crop="64|64|64|64" align="center" scale="0.5" enabled="false" />
 	</layer>
+-->
 
 
+
+
+<!--  ONDERSTAAND GYRO AANGEZET ENABLED IS TRUE   -->
 	<!-- gyro plugin -->
 	<plugin name="skin_gyro" keep="true" url="" html5_url="%SWFPATH%/plugins/gyro2.js" softstart="1.0" enabled="false" onavailable="skin_arrange_buttons();" devices="html5" />
 
 
+	
+	
+	
+	
+	
 	<!-- skin events -->
 	<events name="skin_events" keep="true"
 	        onxmlcomplete="set(events[skin_events].onxmlcomplete,null); skin_startup();"

@@ -319,6 +319,20 @@ als master inzet. nu knippert hij omdat hij steeds een stukje terug gaat.
 								krpano.call( "action_vraag1_nee()" );		
 								console.log ('action_vraag1_nee'); 
 							}												
+
+							
+							<!--  -->
+							if (vid == 'call_vraag1_nee_maartochdoor'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "action_vraag1_nee_maartochdoor()" );		
+								console.log ('action_vraag1_nee_maartochdoor'); 
+							}												
+
+
+							
+							
+							
+							
 							
 							if (vid == 'call_vraag1_goed'){			
 								var krpano = document.getElementById("krpanoSWFObject");
@@ -331,6 +345,18 @@ als master inzet. nu knippert hij omdat hij steeds een stukje terug gaat.
 								krpano.call( "action_vraag1_fout()" );		
 								console.log ('action_vraag1_fout??'); 
 							}				
+
+
+							if (vid == 'call_vraag1_fout_maartochdoor'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "action_vraag1_fout_maartochdoor()" );		
+								console.log ('action_vraag1_fout_maartochdoor??'); 
+							}	
+
+
+							
+							
+							
 							
 
 			<!-- VRAAG 2  -->
@@ -430,16 +456,7 @@ als master inzet. nu knippert hij omdat hij steeds een stukje terug gaat.
 								console.log ('action_vraag3_3_show'); 
 							}											
 							
-							
-							
-							
-							
-							
-							
-							
-							
-							
-							
+								
 							
 							
 // OP ZOEK NAAR ICON
@@ -533,7 +550,25 @@ als master inzet. nu knippert hij omdat hij steeds een stukje terug gaat.
 								krpano.call( "action_eindscore_close()" );		
 								console.log ('komt hij fucking hier??'); 
 							}			
+
 							
+// RESET GAME							
+							if (vid == 'call_reset_game'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "action_reset_game()" );		
+								console.log ('action_reset_game'); 
+							}		
+							
+							
+							
+							
+
+// INTRODUCTIE STARTSCHERM							
+							if (vid == 'call_delete_startscherm'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "action_delete_startscherm()" );		
+								console.log ('action_delete_startscherm'); 
+							}									
 							
 							
 						
@@ -556,7 +591,25 @@ als master inzet. nu knippert hij omdat hij steeds een stukje terug gaat.
 // EEN INTERNE CALL VAN KRPANO, SEND SOCKET TO BACKEND  ///////////////////////////////////////////////////////////////////////////////////////////////////////
 // EEN INTERNE CALL VAN KRPANO, SEND SOCKET TO BACKEND  ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
+// RESET GAME
 
+			window.send_call_reset_game = function(){
+				console.log ('call_reset_game'); 
+				socket.emit('vraag', 'call_reset_game');
+			}	
+
+
+
+
+
+
+
+// INTRODUCTIE STARTSCHERM
+
+			window.send_call_delete_startscherm = function(){
+				console.log ('call_delete_startscherm'); 
+				socket.emit('vraag', 'call_delete_startscherm');
+			}	
 
 
 			
@@ -605,7 +658,19 @@ als master inzet. nu knippert hij omdat hij steeds een stukje terug gaat.
 				console.log ('call_vraag1_nee'); 
 				socket.emit('vraag', 'call_vraag1_nee');
 			}
+
 			
+	<!-- -->		
+			window.send_call_vraag1_nee_maartochdoor = function(){
+				console.log ('call_vraag1_nee_maartochdoor'); 
+				socket.emit('vraag', 'call_vraag1_nee_maartochdoor');
+			}			
+
+			
+			
+			
+			
+	
 			window.send_call_vraag1_goed  = function(){
 				console.log ('	 call_vraag1_goed '); 
 				socket.emit('vraag', 'call_vraag1_goed');
@@ -614,7 +679,16 @@ als master inzet. nu knippert hij omdat hij steeds een stukje terug gaat.
 			window.send_call_vraag1_fout  = function(){
 				console.log ('call_vraag1_fout'); 
 				socket.emit('vraag', 'call_vraag1_fout');
-			}				
+			}	
+
+			window.send_call_vraag1_fout_maartochdoor  = function(){
+				console.log ('call_vraag1_fout_maartochdoor'); 
+				socket.emit('vraag', 'call_vraag1_fout_maartochdoor');
+			}
+
+
+
+			
 
 // VRAAG 2   // VRAAG 2
 

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Switcher</title>
+		<style>
+			body {
+				background: white;
+				font-family:      TradeGothic, sans-serif;
+				font-size: 30px;		
+			}
+			
+			#mainFoto {
+				max-width: 1280px;
+				width: 100%;
+				display: block;
+				margin: 50px auto;
+				border: 0;
+			}
+			
+			.size{
+			font-family:      TradeGothic, sans-serif;
+			font-size: 30px;		
+			}
+			
+		</style>
+	</head>
+	<body>
+
+		<a href="/"   >klik voor film</a>
+		
+	
+	
+		
+		
+		
+		
+		<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+		<script src="/static/js/slider.js"></script>
+
+		<button id="hide-1" type="button" class="btn btn-info">Click here to Hide the image below</button>
+		<button id="show-1" type="button" class="btn btn-info">Click here to Show the image below</button>
+		
+		<div><img id="mainFoto" src="static/images2/245.jpg" alt="" width="800" height="800" /></div>
+	
+		<button id="audio-1" type="button" class="btn btn-info size">geluid</button>	
+		<audio class="audios" id="yes-audio" controls preload="none"> 
+		<!-- <source src="static/audio/detail.mp3" type="audio/mpeg"> -->
+		<source src="static/audio/sonar.wav" type="audio/wav"> 
+		</audio>
+
+		<a href="/home" class="js-ajx-url-home btn">ad_product</a> 
+		
+		<button class="btn btn-default" onclick="vibrateSimple()">Vibrate for 200 ms</button>
+		<button class="btn btn-default" onclick="vibratePattern()">Vibrate with pattern</button>
+		
+		
+		<!--  <div><img id="mainFoto2" src="static/images2/155.jpg" alt="" width="800" height="800" /></div>  -->
+
+		
+
+<script>
+
+for (var i = 1; i < (256 + 1); i++) {
+
+	var imageIndexString = i;
+	if (i < 100){
+		imageIndexString = '0' + imageIndexString;
+	}
+	if (i < 10) {
+		imageIndexString = '0' + imageIndexString;
+	}
+
+	var imagePath = '/static/images2/' + imageIndexString + '.jpg';  // probleem?? laad hij wel de 001.jpg of alleen de 1.jpg????
+	var image = new Image();
+	image.src = imagePath;
+	console.log('preloading..' + imagePath);
+}
+
+
+
+jQuery(document).ready(function($){ 
+$('#hide-1').click(function() {   $('#mainFoto').hide('slow'); });
+$('#show-1').click(function() {   $('#mainFoto').show('slow'); }); 
+$('#audio-1').click(function() {   $('#yes-audio').trigger('play'); 			navigator.vibrate([100, 200, 200, 200, 500]);}); 
+});
+
+function vibrateSimple() {
+  navigator.vibrate(200);
+}
+
+function vibratePattern() {
+  navigator.vibrate([100, 200, 200, 200, 500]);
+}
+
+
+
+</script>
+		
+			
+		
+
+		<script>
+
+
+
+		
+		
+		$(function () {
+			var socket = io();
+
+			socket.on('message', function(msg, vid, scale){  
+			
+			console.log (msg);
+			console.log(vid);
+			console.log(scale);
+			
+			
+			
+			if (msg == 'aan'){
+				$('#mainFoto').show('slow'); 
+				$('#yes-audio').trigger('play');
+				
+				<!--  $('#mainVideo').trigger('play'); -->
+				<!-- window.location = '/change_product_html';    let op dit werkt niet. hij gaat wel naar de url maar de hele werking is niet goed etc. -->
+				
+				navigator.vibrate([100, 200, 200, 200, 500]);
+
+			}
+
+			if (msg == 'uit'){
+				$('#mainFoto').hide('slow');		
+				$('#yes-audio').trigger('pause')	;			
+				
+			}	
+			
+			if (msg == 'photo'){
+			
+				var src = "static/images2/" + vid + ".jpg"
+				
+				$('#mainFoto').attr('src', src);
+			}				
+			
+				
+			if (msg == 'scale'){
+			
+		// hier een inzoom functie	
+				
+			}						
+				
+				
+				
+				
+				
+				
+			
+		});
+   	
+		////////////////////////////////////
+			
+			//$('#mainVideo').trigger('pause');
+			//$('#mainVideo').trigger('play');
+			
+			/*
+			var elem = document.getElementById("mainVideo");
+			if (elem.requestFullscreen) {
+			  elem.requestFullscreen();
+			} else if (elem.mozRequestFullScreen) {
+			  elem.mozRequestFullScreen();
+			} else if (elem.webkitRequestFullscreen) {
+			  elem.webkitRequestFullscreen();
+			}*/
+			
+		  });
+		  
+		  
+		  
+		  
+		</script>
+		
+		<script>
+		  $(function () {
+			var socket = io();
+			
+
+	
+			$('.js-ajx-url-home').on('click', function(e) {
+				e.preventDefault();
+				$.ajax({
+					url: $(this).attr('href')
+				}).done(function() {
+					
+					window.location = '/';
+					console.log('Ajax request successfull');
+				});
+			});
+	
+	
+			
+	
+			
+			
+			
+			
+			
+		  });
+		</script>		
+		
+		
+		
+		
+		
+	</body>
+</html>
