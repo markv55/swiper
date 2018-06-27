@@ -162,7 +162,7 @@
 		
 			
 <action name="action_reset_game">
-call_scene1(); center_vlak(); setSizeVierkant() ; set (layer[startscherm_tablet].visible,true);
+call_scene1(); delete_vragen(); center_vlak(); setSizeVierkant() ; set (layer[startscherm_tablet].visible,true);
 </action>	
 		
 		
