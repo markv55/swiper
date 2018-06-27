@@ -914,8 +914,8 @@ loadscene(scene_300, null, MERGE, BLEND(1));
 		</image>
 
 		<!-- place your scene hotspots here -->
-		<hotspot name="vraagteken1" url="images/vraagteken.png"  visible= "true" keep="false" handcursor="true" capture="false"   ath="315" atv="0" scale= "0.3" scale.mobile = "0.1" />		
-		<hotspot name="vraagteken2" url="images/vraagteken.png"  visible= "false"  keep="false" handcursor="true" capture="false"   ath="135" atv="0" scale= "0.3" scale.mobile = "0.1" />		
+		<hotspot name="vraagteken1" url="images/vraagteken.png"  visible= "true" keep="false" handcursor="true" capture="false"   ath="135" atv="0" scale= "0.3" scale.mobile = "0.1" />		
+		<hotspot name="vraagteken2" url="images/vraagteken.png"  visible= "false"  keep="false" handcursor="true" capture="false"   ath="315" atv="0" scale= "0.3" scale.mobile = "0.1" />		
 		<hotspot name="vraagteken3" url="images/vraagteken.png"  visible= "false" keep="false" handcursor="true" capture="false"   ath="225" atv="0" scale= "0.3" scale.mobile = "0.1" />		
 
 	</scene>
