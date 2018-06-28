@@ -716,12 +716,12 @@ if(stagewidth LT stageheight  <!-- breedte kleiner dan hoogte =  portrait-->
 <!-- PORTRAIT -->
 if(device.tablet, set (breedte_plaatje, calc(stagewidth*0.7)); 		set (hoogte_plaatje, calc(stagewidth*0.7) ););
 if(device.mobile, set (breedte_plaatje, calc(stagewidth*0.7)); 		set (hoogte_plaatje, calc(stagewidth*0.7) ););	
-if(device.desktop, set (breedte_plaatje, calc(stagewidth*0.5)); 	set (hoogte_plaatje, calc(stagewidth*0.5) ););	
+if(device.desktop, set (breedte_plaatje, calc(stagewidth*0.7)); 	set (hoogte_plaatje, calc(stagewidth*0.7) ););	
 ,
 <!-- LANDSCAPE -->
 if(device.tablet,  set (hoogte_plaatje, calc(stageheight*0.7)); 	set (breedte_plaatje, calc(stageheight*0.7) ););
 if(device.mobile,  set (hoogte_plaatje, calc(stageheight*0.7)); 	set (breedte_plaatje, calc(stageheight*0.7) );); 	
-if(device.desktop, set (hoogte_plaatje, calc(stageheight*0.5)); 	set (breedte_plaatje, calc(stageheight*0.5) ););	
+if(device.desktop, set (hoogte_plaatje, calc(stageheight*0.7)); 	set (breedte_plaatje, calc(stageheight*0.7) ););	
 );
 
 </action>
