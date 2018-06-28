@@ -969,10 +969,10 @@ loadscene(scene_300, null, MERGE, BLEND(1));
 
 		<!-- place your scene hotspots here -->
 
-		<hotspot name="vraagteken1" url="images/gefeliciteerd.png"  visible= "true" keep="false" handcursor="true" capture="false"   ath="0" atv="0" scale= "0.2" scale.mobile = "0.07" />		
-		<hotspot name="vraagteken2" url="images/gefeliciteerd.png"  visible= "true"  keep="false" handcursor="true" capture="false"   ath="90" atv="0" scale= "0.2" scale.mobile = "0.07" />		
-		<hotspot name="vraagteken3" url="images/gefeliciteerd.png"  visible= "true" keep="false" handcursor="true" capture="false"   ath="180" atv="0" scale= "0.2" scale.mobile = "0.07" />		
-		<hotspot name="vraagteken4" url="images/gefeliciteerd.png"  visible= "true" keep="false" handcursor="true" capture="false"   ath="270" atv="0" scale= "0.2" scale.mobile = "0.07" />		
+		<hotspot name="vraagteken1" url="images/gefeliciteerd.png"  visible= "true" keep="false" handcursor="true" capture="false"   ath="0" atv="0" scale= "0.4" scale.mobile = "0.07" />		
+		<hotspot name="vraagteken2" url="images/gefeliciteerd.png"  visible= "true"  keep="false" handcursor="true" capture="false"   ath="90" atv="0" scale= "0.4" scale.mobile = "0.07" />		
+		<hotspot name="vraagteken3" url="images/gefeliciteerd.png"  visible= "true" keep="false" handcursor="true" capture="false"   ath="180" atv="0" scale= "0.4" scale.mobile = "0.07" />		
+		<hotspot name="vraagteken4" url="images/gefeliciteerd.png"  visible= "true" keep="false" handcursor="true" capture="false"   ath="270" atv="0" scale= "0.4" scale.mobile = "0.07" />		
 		
 		
 		
