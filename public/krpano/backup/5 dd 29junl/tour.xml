@@ -141,8 +141,8 @@
 		set (layer[eindscore].height, calc(hoogte_plaatje*1)); 	
 		set (layer[eindscore].width, calc(breedte_plaatje*1));	
 		
-		set (layer[startscherm_tablet].height, calc(hoogte_plaatje*1)); 	
-		set (layer[startscherm_tablet].width, calc(breedte_plaatje*1));			
+		set (layer[startscherm_tablet].height, calc(hoogte_plaatje*0.8)); 	
+		set (layer[startscherm_tablet].width, calc(breedte_plaatje*0.8));			
 		
 		</action>		
 
