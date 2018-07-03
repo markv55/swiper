@@ -242,7 +242,7 @@ als master inzet. nu knippert hij omdat hij steeds een stukje terug gaat.
 								var krpano = document.getElementById("krpanoSWFObject");
 								console.log ("verander scene");						
 								krpano.call( "laad_scene1()" );		
-								sound_3.play();
+								sound_1.play();
 								sound_2.pause();
 								//sound_succes.currentTime = 0;
 								sound_succes.pause;
@@ -255,8 +255,8 @@ als master inzet. nu knippert hij omdat hij steeds een stukje terug gaat.
 								var krpano = document.getElementById("krpanoSWFObject");
 								console.log ("verander scene");						
 								krpano.call( "laad_scene2()" );		
-								sound_3.pause();
-								//sound_2.play();
+								sound_1.pause();
+								sound_2.play();
 								//sound_succes.currentTime = 0;
 								sound_succes.pause;
 								sound_nietgoed.pause;
@@ -283,7 +283,7 @@ als master inzet. nu knippert hij omdat hij steeds een stukje terug gaat.
 							if (vid == 'call_sound_succes'){			
 								var krpano = document.getElementById("krpanoSWFObject");
 								sound_succes.play();	
-								sound_3.pause();	
+								sound_1.pause();	
 								sound_2.pause();
 								sound_nietgoed.pause();
 							}									
@@ -291,7 +291,7 @@ als master inzet. nu knippert hij omdat hij steeds een stukje terug gaat.
 							if (vid == 'call_sound_nietgoed'){			
 								var krpano = document.getElementById("krpanoSWFObject");
 								sound_succes.pause();	
-								sound_3.pause();	
+								sound_1.pause();	
 								sound_2.pause();
 								sound_nietgoed.play();
 							}									
