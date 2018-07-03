@@ -320,15 +320,17 @@ als master inzet. nu knippert hij omdat hij steeds een stukje terug gaat.
 								console.log ('action_vraag1_nee'); 
 							}												
 
-							
-							<!--  -->
 							if (vid == 'call_vraag1_nee_maartochdoor'){			
 								var krpano = document.getElementById("krpanoSWFObject");
 								krpano.call( "action_vraag1_nee_maartochdoor()" );		
 								console.log ('action_vraag1_nee_maartochdoor'); 
 							}												
 
-
+							if (vid == 'call_vraag1_ja_volgendevraag'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "action_vraag1_ja_volgendevraag()" );		
+								console.log ('gaat de goede call weg??'); 
+							}
 							
 							
 							
@@ -346,13 +348,17 @@ als master inzet. nu knippert hij omdat hij steeds een stukje terug gaat.
 								console.log ('action_vraag1_fout??'); 
 							}				
 
-
 							if (vid == 'call_vraag1_fout_maartochdoor'){			
 								var krpano = document.getElementById("krpanoSWFObject");
 								krpano.call( "action_vraag1_fout_maartochdoor()" );		
 								console.log ('action_vraag1_fout_maartochdoor??'); 
 							}	
 
+							if (vid == 'call_vraag1_goed_volgendevraag'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "action_vraag1_goed_volgendevraag()" );		
+								console.log ('gaat de goede call weg??'); 
+							}	
 
 							
 							
@@ -659,13 +665,15 @@ als master inzet. nu knippert hij omdat hij steeds een stukje terug gaat.
 				socket.emit('vraag', 'call_vraag1_nee');
 			}
 
-			
-	<!-- -->		
 			window.send_call_vraag1_nee_maartochdoor = function(){
 				console.log ('call_vraag1_nee_maartochdoor'); 
 				socket.emit('vraag', 'call_vraag1_nee_maartochdoor');
 			}			
 
+			window.send_call_vraag1_ja_volgendevraag	 = function(){
+				console.log ('call_vraag1_ja_volgendevraag'); 
+				socket.emit('vraag', 'call_vraag1_ja_volgendevraag');
+			}			
 			
 			
 			
@@ -686,7 +694,13 @@ als master inzet. nu knippert hij omdat hij steeds een stukje terug gaat.
 				socket.emit('vraag', 'call_vraag1_fout_maartochdoor');
 			}
 
+			window.send_call_vraag1_goed_volgendevraag  = function(){
+				console.log ('	 call_vraag1_goed_volgendevraag '); 
+				socket.emit('vraag', 'call_vraag1_goed_volgendevraag');
+			}				
 
+			
+	
 
 			
 
