@@ -180,9 +180,9 @@ in de tour.xml de scene_100 vervangen. de oude uitgecommanteerd
 <!--VOLLEDIG RESET VAN DE GAME. IN KRPANO ZIT EEN KNOP. DAAR DRUKT MEN OP. ALLE KRPANO USERS GAAN TERUG NAAR DE STARTSITUATIE MAAR OOK UNITI ONTVANGT EEN SOCKET RESET_GAME.  -->	
 <!-- UNITY GAAT DAN NAAR SCENE 'CLASSROOM' TERUG EN KRPANO GAAAT NAAR DE DEFAULT -->
 		
-			
+<!-- eruit gehaald  call_scene1(); -->			
 <action name="action_reset_game">
-call_scene1(); delete_vragen(); center_vlak(); setSizeVierkant() ; set (layer[startscherm_tablet].visible,true);
+delete_vragen(); center_vlak(); setSizeVierkant() ; set (layer[startscherm_tablet].visible,true);
 </action>	
 		
 		
