@@ -190,7 +190,7 @@ delete_vragen(); center_vlak(); setSizeVierkant() ; set (layer[startscherm_table
  	
 <!-- STARTSCHERM MET INSTRUCTIE TEKST  scale="1.5"  scale.mobile="0.5" -->
 
-		<layer name="startscherm_tablet" url="images/startscherm_tablet2.png" onclick= " " keep="true" visible="true" zorder="2" handcursor="false" capture="false"  align="center" 
+		<layer name="startscherm_tablet" url="images/startscherm_tablet.png" onclick= " " keep="true" visible="true" zorder="2" handcursor="false" capture="false"  align="center" 
 		 scalechildren="true"/>
 
 		<layer name="startscherm_tablet_verder" style="style_startscherm_tablet_verder" visible= "true" x="0" y="100" zorder="1" 
@@ -1147,10 +1147,10 @@ loadscene(scene_300, null, MERGE, BLEND(1));
 
 		<!-- place your scene hotspots here -->
 
-		<hotspot name="vraagteken1" url="images/gefeliciteerd2.png"  visible= "true" keep="false" handcursor="true" capture="false"   ath="0" atv="0" scale= "0.4" scale.mobile = "0.07" />		
-		<hotspot name="vraagteken2" url="images/gefeliciteerd2.png"  visible= "true"  keep="false" handcursor="true" capture="false"   ath="90" atv="0" scale= "0.4" scale.mobile = "0.07" />		
-		<hotspot name="vraagteken3" url="images/gefeliciteerd2.png"  visible= "true" keep="false" handcursor="true" capture="false"   ath="180" atv="0" scale= "0.4" scale.mobile = "0.07" />		
-		<hotspot name="vraagteken4" url="images/gefeliciteerd2.png"  visible= "true" keep="false" handcursor="true" capture="false"   ath="270" atv="0" scale= "0.4" scale.mobile = "0.07" />		
+		<hotspot name="vraagteken1" url="images/gefeliciteerd.png"  visible= "true" keep="false" handcursor="true" capture="false"   ath="0" atv="0" scale= "0.4" scale.mobile = "0.07" />		
+		<hotspot name="vraagteken2" url="images/gefeliciteerd.png"  visible= "true"  keep="false" handcursor="true" capture="false"   ath="90" atv="0" scale= "0.4" scale.mobile = "0.07" />		
+		<hotspot name="vraagteken3" url="images/gefeliciteerd.png"  visible= "true" keep="false" handcursor="true" capture="false"   ath="180" atv="0" scale= "0.4" scale.mobile = "0.07" />		
+		<hotspot name="vraagteken4" url="images/gefeliciteerd.png"  visible= "true" keep="false" handcursor="true" capture="false"   ath="270" atv="0" scale= "0.4" scale.mobile = "0.07" />		
 		
 		
 		
