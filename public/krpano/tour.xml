@@ -584,14 +584,14 @@ if(device.desktop, 	set(scaleFactorScore, '0.1'););
 		
 		
 		<layer name="punt1"  zorder="6" keep="true" url="images/score/1.png"  align="left" edge="center"  y="0" parent="bar" scalechildren ="true"/>
-		<layer name="punt2"  zorder="6" keep="true" url="images/score/2.png"  align="left" edge="center"  y="0" parent="bar" />		
-		<layer name="punt3"  zorder="6" keep="true" url="images/score/3.png"  align="left" edge="center"  y="0" parent="bar" />
-		<layer name="punt4"  zorder="6" keep="true" url="images/score/4.png"  align="left" edge="center"  y="0" parent="bar" />		
-		<layer name="punt5"  zorder="6" keep="true" url="images/score/5.png"  align="left" edge="center"  y="0" parent="bar" />
-		<layer name="punt6"  zorder="6" keep="true" url="images/score/6.png"  align="left" edge="center"  y="0" parent="bar" />
-		<layer name="punt7"  zorder="6" keep="true" url="images/score/7.png"  align="left" edge="center"  y="0" parent="bar" />		
-		<layer name="punt8"  zorder="6" keep="true" url="images/score/8.png"  align="left" edge="center"  y="0" parent="bar" />
-		<layer name="punt9"  zorder="6" keep="true" url="images/score/9.png"  align="left" edge="center"  y="0" parent="bar" />		
+		<layer name="punt2"  zorder="6" keep="true" url="images/score/2.png"  align="left" edge="center"  y="0" parent="bar" scalechildren ="true"/>		
+		<layer name="punt3"  zorder="6" keep="true" url="images/score/3.png"  align="left" edge="center"  y="0" parent="bar" scalechildren ="true"/>
+		<layer name="punt4"  zorder="6" keep="true" url="images/score/4.png"  align="left" edge="center"  y="0" parent="bar" scalechildren ="true"/>		
+		<layer name="punt5"  zorder="6" keep="true" url="images/score/5.png"  align="left" edge="center"  y="0" parent="bar" scalechildren ="true"/>
+		<layer name="punt6"  zorder="6" keep="true" url="images/score/6.png"  align="left" edge="center"  y="0" parent="bar" scalechildren ="true"/>
+		<layer name="punt7"  zorder="6" keep="true" url="images/score/7.png"  align="left" edge="center"  y="0" parent="bar" scalechildren ="true"/>		
+		<layer name="punt8"  zorder="6" keep="true" url="images/score/8.png"  align="left" edge="center"  y="0" parent="bar" scalechildren ="true"/>
+		<layer name="punt9"  zorder="6" keep="true" url="images/score/9.png"  align="left" edge="center"  y="0" parent="bar" scalechildren ="true"/>		
 	
 
 		<layer name="fout1"  zorder="4" keep="true" visible= "false" url="images/score/fout.png"  parent="punt1" />
