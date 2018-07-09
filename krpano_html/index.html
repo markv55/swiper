@@ -149,6 +149,31 @@
 /*  let op. onderstaand is een werkende functie en stuur de hlook en vlook door zodat alle andere panos luisteren en meedraaien. maar er moet nog een functie in dat je de pano
 als master inzet. nu knippert hij omdat hij steeds een stukje terug gaat. 
 
+soort onderstaande functie inbouwen!!!!!!!!!!!!
+een nieuwe variable. die variable wordt op basis van een ontvangen socket ingevuld
+de socket is dat de html luistert naar hlook en vlook sockets of dat deze de sockets verstuurd
+default is 1. de html is de ontvanger van de sockets
+maar is de socket 2, dan is de html zender van de sockets!!
+onderstaande function moet helemaal onderaan de code
+
+var sound_nr = 1;
+
+// scenes ontvangen	
+	window.send_scene1 = function(){
+		sound_nr = 1;	
+		console.log ('scene = 1'); 
+	}
+
+	window.send_scene2 = function(){
+		sound_nr = 2;		
+		console.log ('scene = 2'); 
+	}
+
+
+
+
+
+
 				var hlookat;
 				setInterval(function() {
 					var krpano = document.getElementById("krpanoSWFObject");
