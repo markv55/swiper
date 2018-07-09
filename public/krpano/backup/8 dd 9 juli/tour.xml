@@ -10,7 +10,7 @@ in de tour.xml de scene_100 vervangen. de oude uitgecommanteerd
 
  -->
 
-<krpano version="1.19" title="Virtual Tour" onstart=" center_vlak();  setSizeVierkant (); startLayer ();  scale_bar()">
+<krpano version="1.19" title="Virtual Tour" onstart=" center_vlak();  setSizeVierkant (); startLayer ();  ">
 
 	<include url="skin/vtourskin.xml" />
 
@@ -190,10 +190,10 @@ delete_vragen(); center_vlak(); setSizeVierkant() ; set (layer[startscherm_table
  	
 <!-- STARTSCHERM MET INSTRUCTIE TEKST  scale="1.5"  scale.mobile="0.5" -->
 
-		<layer name="startscherm_tablet" url="images/startscherm_tablet2.png" onclick= " " keep="true" visible="true" zorder="10" handcursor="false" capture="false"  align="center" 
+		<layer name="startscherm_tablet" url="images/startscherm_tablet2.png" onclick= " " keep="true" visible="true" zorder="2" handcursor="false" capture="false"  align="center" 
 		 scalechildren="true"/>
 
-		<layer name="startscherm_tablet_verder" style="style_startscherm_tablet_verder" visible= "true" x="0" y="100" zorder="10" 
+		<layer name="startscherm_tablet_verder" style="style_startscherm_tablet_verder" visible= "true" x="0" y="100" zorder="1" 
 		onclick=" action_delete_startscherm(); call_delete_startscherm();" />  <!--hier ook een call maken naar node zodat alle startschemen op alle tablets weg gaaan!!! -->
 			<style name="style_startscherm_tablet_verder" keep="true" url="images/startknop.png" parent="startscherm_tablet" align="bottom" edge="center" scale= "1" scale.mobile = "1"  />
 
@@ -502,86 +502,19 @@ action_vraag1_ja_volgendevraag : deze moet bij vraag 1 en 2. hij gaat in unity n
 <!-- SCOREBORD       SCOREBORD        SCOREBORD       SCOREBORD        SCOREBORD       SCOREBORD        SCOREBORD       SCOREBORD        SCOREBORD       SCOREBORD        
 
 -->		
-height = "170px"  width= "breedte_plaatje"
-<!-- -->
+
 	
-		<layer name="bar" url="images/score/bar.png" visible= "true"    x= "0" y="0"   zorder="6" keep="true"  align="bottom" edge="bottom" scalechildren="false"  />
-		<style name="punt_style" height= "height_punt" width="width_punt" />		
-	
-<action name="scale_bar">
-		set (layer[bar].height, calc(stageheight*0.1)); 	
-		set (layer[bar].width, calc(stagewidth*1));	
+		<layer name="bar" url="images/score/bar.png" visible= "true"  height = "170px"  width= "breedte_plaatje" y="100"   zorder="6" keep="true"  align="bottom" edge="center" scalechildren="false"  />
 
-		
-		set (layer[score_tekst].x, calc(stagewidth*(1/12)));	
-		set (layer[score_tekst].width, calc(stageheight*0.15));	
-		set (layer[score_tekst].height, calc(stageheight*0.15));		
-		
-		
-		
-<!-- WERELD 1  -->
-		set (layer[punt1].x, calc(stagewidth*(3/12)));	
-		set (layer[punt1].width, calc(stageheight*0.1));	
-		set (layer[punt1].height, calc(stageheight*0.1));
-
-		set (layer[punt2].x, calc(stagewidth*(4/12)));	
-		set (layer[punt2].width, calc(stageheight*0.1));	
-		set (layer[punt2].height, calc(stageheight*0.1));
-		
-		
-		set (layer[punt3].x, calc(stagewidth*(5/12)));	
-		set (layer[punt3].width, calc(stageheight*0.1));	
-		set (layer[punt3].height, calc(stageheight*0.1));	
-		
-<!-- WERELD 2  -->
-		set (layer[punt4].x, calc(stagewidth*(6/12)));	
-		set (layer[punt4].width, calc(stageheight*0.1));	
-		set (layer[punt4].height, calc(stageheight*0.1));
-
-		set (layer[punt5].x, calc(stagewidth*(7/12)));	
-		set (layer[punt5].width, calc(stageheight*0.1));	
-		set (layer[punt5].height, calc(stageheight*0.1));
-		
-		
-		set (layer[punt6].x, calc(stagewidth*(8/12)));	
-		set (layer[punt6].width, calc(stageheight*0.1));	
-		set (layer[punt6].height, calc(stageheight*0.1));	
-
-<!-- WERELD 3  -->
-		set (layer[punt7].x, calc(stagewidth*(9/12)));	
-		set (layer[punt7].width, calc(stageheight*0.1));	
-		set (layer[punt7].height, calc(stageheight*0.1));
-
-		set (layer[punt8].x, calc(stagewidth*(10/12)));	
-		set (layer[punt8].width, calc(stageheight*0.1));	
-		set (layer[punt8].height, calc(stageheight*0.1));
-		
-		
-		set (layer[punt9].x, calc(stagewidth*(11/12)));	
-		set (layer[punt9].width, calc(stageheight*0.1));	
-		set (layer[punt9].height, calc(stageheight*0.1));	
-
-		
-		
-		
-</action>		
-		
-
-		<layer name="score_tekst"  zorder="6" keep="true" url="images/score/score.png"  align="left"	edge="center" y="0"  parent="bar" />
-		
-		
-		<layer name="punt1"  zorder="6" keep="true" url="images/score/1.png"  align="left"	edge="center" y="0"  parent="bar" />
-		
-		<layer name="punt2"  zorder="6" keep="true" url="images/score/2.png"  align="left"	edge="center" y="0"   parent="bar" />		
-
-		<layer name="punt3"  zorder="6" keep="true" url="images/score/3.png"  align="left"	edge="center"  y="0"  parent="bar" />
-
-		<layer name="punt4"  zorder="6" keep="true" url="images/score/4.png"  align="left" edge="center"  y="0" parent="bar" />		
-		<layer name="punt5"  zorder="6" keep="true" url="images/score/5.png"  align="left" edge="center"  y="0" parent="bar" />
-		<layer name="punt6"  zorder="6" keep="true" url="images/score/6.png"  align="left" edge="center"  y="0" parent="bar" />
-		<layer name="punt7"  zorder="6" keep="true" url="images/score/7.png"  align="left" edge="center"  y="0" parent="bar" />		
-		<layer name="punt8"  zorder="6" keep="true" url="images/score/8.png"  align="left" edge="center"  y="0" parent="bar" />
-		<layer name="punt9"  zorder="6" keep="true" url="images/score/9.png"  align="left" edge="center"  y="0" parent="bar" />		
+		<layer name="punt1"  zorder="6" keep="true" url="images/score/1.png"  align="center" edge="center" height= "200px" width="200px" x="-1200" y="0" parent="bar" />
+		<layer name="punt2"  zorder="6" keep="true" url="images/score/2.png"  align="center" edge="center" height= "200px" width="200px" x="-1000" y="0" parent="bar" />		
+		<layer name="punt3"  zorder="6" keep="true" url="images/score/3.png"  align="center" edge="center" height= "200px" width="200px" x="-800" y="0" parent="bar" />
+		<layer name="punt4"  zorder="6" keep="true" url="images/score/4.png"  align="center" edge="center" height= "200px" width="200px" x="-600" y="0" parent="bar" />		
+		<layer name="punt5"  zorder="6" keep="true" url="images/score/5.png"  align="center" edge="center" height= "200px" width="200px" x="-400" y="0" parent="bar" />
+		<layer name="punt6"  zorder="6" keep="true" url="images/score/6.png"  align="center" edge="center" height= "200px" width="200px" x="-200" y="0" parent="bar" />
+		<layer name="punt7"  zorder="6" keep="true" url="images/score/7.png"  align="center" edge="center" height= "200px" width="200px" x="-0" y="0" parent="bar" />		
+		<layer name="punt8"  zorder="6" keep="true" url="images/score/8.png"  align="center" edge="center" height= "200px" width="200px" x="200" y="0" parent="bar" />
+		<layer name="punt9"  zorder="6" keep="true" url="images/score/9.png"  align="center" edge="center" height= "200px" width="200px" x="400" y="0" parent="bar" />		
 	
 
 		<layer name="fout1"  zorder="4" keep="true" visible= "false" url="images/score/fout.png"  align="center" edge="center" height= "200px" width="200px" x="-1200" y="0" parent="bar" />
@@ -918,7 +851,7 @@ if(nextsceneindex LT scene.count, loadscene(get(scene[get(nextsceneindex)].name)
 		
 				
 
-<events onviewchange="center_vlak(); scale_bar()  "/>
+<events onviewchange="center_vlak();"/>
 
 <action name="center_vlak">
 if(stagewidth LT stageheight  <!-- breedte kleiner dan hoogte =  portrait-->
