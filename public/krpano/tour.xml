@@ -583,7 +583,7 @@ if(device.desktop, 	set(scaleFactorScore, '0.1'););
 		<layer name="score_tekst"  zorder="6" keep="true" url="images/score/score.png"  align="left"	edge="center" y="0"  parent="bar"  onclick = "" />
 		
 		
-		<layer name="punt1"  zorder="6" keep="true" url="images/score/1.png"  align="left" edge="center"  y="0" parent="bar" />
+		<layer name="punt1"  zorder="6" keep="true" url="images/score/1.png"  align="left" edge="center"  y="0" parent="bar" scalechildren ="true"/>
 		<layer name="punt2"  zorder="6" keep="true" url="images/score/2.png"  align="left" edge="center"  y="0" parent="bar" />		
 		<layer name="punt3"  zorder="6" keep="true" url="images/score/3.png"  align="left" edge="center"  y="0" parent="bar" />
 		<layer name="punt4"  zorder="6" keep="true" url="images/score/4.png"  align="left" edge="center"  y="0" parent="bar" />		
@@ -594,7 +594,7 @@ if(device.desktop, 	set(scaleFactorScore, '0.1'););
 		<layer name="punt9"  zorder="6" keep="true" url="images/score/9.png"  align="left" edge="center"  y="0" parent="bar" />		
 	
 
-		<layer name="fout1"  zorder="4" keep="true" visible= "false" url="images/score/fout.png"  align="center" edge="center" height= "200px" width="200px" x="-1200" y="0" parent="bar" />
+		<layer name="fout1"  zorder="4" keep="true" visible= "false" url="images/score/fout.png"  parent="punt1" />
 		<layer name="fout2"  zorder="4" keep="true" visible= "false" url="images/score/fout.png"  align="center" edge="center" height= "200px" width="200px" x="-1000" y="0" parent="bar" />	
 		<layer name="fout3"  zorder="4" keep="true" visible= "false" url="images/score/fout.png"  align="center" edge="center" height= "200px" width="200px" x="-800" y="0" parent="bar" />
 		<layer name="fout4"  zorder="4" keep="true" visible= "false" url="images/score/fout.png"  align="center" edge="center" height= "200px" width="200px" x="-600" y="0" parent="bar" />		
@@ -608,7 +608,7 @@ if(device.desktop, 	set(scaleFactorScore, '0.1'););
 		
 		
 	
-		<layer name="goed1"  zorder="4" keep="true" visible= "false" url="images/score/goed.png"  align="center" edge="center" height= "200px" width="200px" x="-1200" y="0" parent="bar" />
+		<layer name="goed1"  zorder="4" keep="true" visible= "false" url="images/score/goed.png"  parent="punt1" />
 		<layer name="goed2"  zorder="4" keep="true" visible= "false" url="images/score/goed.png"  align="center" edge="center" height= "200px" width="200px" x="-1000" y="0" parent="bar" />	
 		<layer name="goed3"  zorder="4" keep="true" visible= "false" url="images/score/goed.png"  align="center" edge="center" height= "200px" width="200px" x="-800" y="0" parent="bar" />
 		<layer name="goed4"  zorder="4" keep="true" visible= "false" url="images/score/goed.png"  align="center" edge="center" height= "200px" width="200px" x="-600" y="0" parent="bar" />		
