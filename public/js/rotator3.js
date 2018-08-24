@@ -1,6 +1,9 @@
 // mark hoe kan ik de startfoto instellen. nu is die startfoto 001, maar ik wil 128 als startfoto hebben!!!
 // mark op regel 248 zit de socket. deze moet pas sturen bij 1 graad verschil
 
+// 20juli2018: bij de socket emit op regel 270 maken dat hij de alfa/beta/gamma ook via een interne call naar krpano doorzet zodat krpano op de alpha/beta/gamma gaat reageren
+// doel is om voor AR de reversed camera te maken!!!
+
 
 
 var position_new = 0;	
@@ -259,17 +262,32 @@ var Rotator = {
 				if (alpha - this.old_alpha > 1 || alpha - this.old_alpha < -1) {	
 					this.old_alpha = alpha;
 					this.socket.emit('alpha', alpha); // alpha is de rotation (kompaswaarde) van een vliegtuig
+					// hier moet een interne call naar krpano.
+					//console.log(alpha);
+					//var krpano = document.getElementById("krpanoSWFObject");
+					//krpano.set("view.hlookat", alpha); // ik wil direcct uit rotator 3 een interne call maken. maar dat lukt niet. tijdelijk even via een socket gemaakt. mark scherrenburg aub aanpassen
+					
+					
 				}
 				
 				if (beta - this.old_beta > 1 || beta - this.old_beta < -1) {				
 					this.old_beta = beta;
-					this.socket.emit('beta', beta);	// beta is de stijghoek van een vliegtuig					
+					this.socket.emit('beta', beta);	// beta is de stijghoek van een vliegtuig	
+					// hier moet een interne call naar krpano.
+					//console.log(beta);
+					//var krpano = document.getElementById("krpanoSWFObject");
+					//krpano.set("view.vlookat", beta);
+					
+					
 				}				
 
 
 				if (gamma - this.old_gamma > 1 || gamma - this.old_gamma < -1) {				
 					this.old_gamma = gamma;
-					this.socket.emit('gamma', gamma);	// gamma is nieuw					
+					this.socket.emit('gamma', gamma);	// gamma is nieuw		
+					// hier moet een interne call naar krpano.
+					//console.log(gamma);	
+				
 				}					
 				
 	

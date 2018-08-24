@@ -1,3 +1,10 @@
+<!-- 20juli2018: nieuw rond regel 270 de alpha en beta als socket ingelezen en dan krpano een call geven zodat hij de positie van de 360 veranderd  
+ tevens rond regel 819 opgenomen dat hij <iframe src="/swiper3" style="width: 0px; height: 0px;" border="0"></iframe> start.
+ hiermee geeft hij zijn alpha/beta/gamma waarde van de mobiel door
+ 
+ 20 juli: dit project weeer in de oude staat gebracht. een neiuwe map AR_html gemaakt waar echt AR wordt gemaakt. 
+-->
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -137,6 +144,8 @@
 
 		</script>
 
+		
+		
 		<script>
 	
 		$(function () {
@@ -200,6 +209,10 @@ var sound_nr = 1;
 				}, 100); 				
 			
 */			
+
+
+
+
 			
 /// ONTVANGEN SOCKET VAN BACKEND   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// ONTVANGEN SOCKET VAN BACKEND   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -258,9 +271,24 @@ var sound_nr = 1;
 								krpano.set("view.vlookat", vid);
 								//krpano.set("view.vlookat", 200);
 							}	
-
-
 							
+////////////////////  20 juli nieuw   /// alpha en gamma socket inlezen vanuit rotator3.js.  ////////////////////////////////////////////////
+// nu krijg je nog socket via rotator3. maar deze moet straks zonder sockets en internet direct een interne call krijgen vanuit rotator3
+//  mark scherrenburg kan hiermee helpen			
+
+/*	20 juli weer uitgezet en in AR_html overgenomen
+						
+							if (msg == 'alpha'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.set("view.hlookat", - vid);
+							}									
+
+							if (msg == 'gamma'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.set("view.vlookat", - vid);
+							}								
+
+	*/						
 //  RECEIVE SOCKETS WITHIN KRPANO    // RECEIVE SOCKETS WITHIN KRPANO							
 							
 							
@@ -788,6 +816,16 @@ var sound_nr = 1;
 			});
 		  });
 		</script>		
-			
+
+		
+		
+<!-- let op onderstaande nieuw om in de krpano ook de alpha, beta en gamma waarde uit te lezen-->
+<!-- let op onderstaande nieuw om in de krpano ook de alpha, beta en gamma waarde uit te lezen-->
+<!-- let op onderstaande nieuw om in de krpano ook de alpha, beta en gamma waarde uit te lezen-->
+
+		<!--   20 juli weer uitgezet  <iframe src="/swiper3" style="width: 0px; height: 0px;" border="0"></iframe>  -->
+
+      <!--   <script src="/static/js/rotator3.js"></script>  --> 
+		
 	</body>
 </html>

@@ -252,6 +252,41 @@ app.get('/krpano_html', function(req, res) {
 });
 
 
+app.get('/AR_html', function(req, res) {
+	res.sendFile(path.join(__dirname+'/AR_html/index.html'));
+});
+
+
+app.get('/krpanoControl_html', function(req, res) {
+	res.sendFile(path.join(__dirname+'/krpanoControl_html/index.html'));
+});
+
+
+app.get('/krpanoSlave_html', function(req, res) {
+	res.sendFile(path.join(__dirname+'/krpanoSlave_html/index.html'));
+});
+
+
+
+
+app.get('/zeilenControl_html', function(req, res) {
+	res.sendFile(path.join(__dirname+'/zeilenControl_html/index.html'));
+});
+
+
+app.get('/zeilenSlave_html', function(req, res) {
+	res.sendFile(path.join(__dirname+'/zeilenSlave_html/index.html'));
+});
+
+
+
+
+
+
+
+
+
+
 
 app.get('/ad_product_html', function(req, res) {
 	res.sendFile(path.join(__dirname+'/ad_product_html/index.html'));

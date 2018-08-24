@@ -66,6 +66,41 @@ in de tour.xml de scene_100 vervangen. de oude uitgecommanteerd
 	               design_text_css="color:#FFFFFF; font-family:Arial;"
 	               design_text_shadow="1"
 	               />
+				   
+				   
+<!-- 10 augustus:
+onderstaand zorgt dat de krpano in stereo komt		. maar dan werken alleen de pop ups en layers niet meer. 
+deze popups etc. komen in midden van het scherm uit en niet in midden van ieder scherm links en rechts   		
+	<display autofullscreen="true"
+         stereo="true"
+         stereooverlap="0.0"
+         stereoscale="1.0"
+         monoside="1"
+         anaglyph="false"
+         safearea="auto"
+         hardwarelimit=""
+         usedesktopimages=""
+         mipmapping="auto"
+         loadwhilemoving="auto"
+         framebufferscale="1.0"
+         hotspotvrrendering="natural"
+         />			   
+	-->		   
+			   
+				   
+				   
+				   
+				   
+				   
+				   
+				   
+				   
+				   
+				   
+				   
+				   
+				   
+				   
 
 	<!--
 	    For an alternative skin design either change the <skin_settings> values 

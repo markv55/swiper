@@ -250,11 +250,38 @@
 			<a href="/return/krpano" class="js-ajx-url-krpano btn btn_red">krpano</a> 		
 			<br>
 			<br>
-			<br>		<br>			
+			<br>		
+			
+			<br>
+				<p>AR</p>	
+			<a href="/return/AR" class="js-ajx-url-AR btn btn_red">AR</a> 		
+			<br>
+			<br>
+			
+			<br>			
+			<br>
+				<p>krpanoControl</p>	
+			<a href="/return/krpanoControl" class="js-ajx-url-krpanoControl btn btn_red">krpanoControl</a> 		
+
+
+			<br>
+				<p>krpanoSlave</p>	
+			<a href="/return/krpanoSlave" class="js-ajx-url-krpanoSlave btn btn_red">krpanoSlave</a> 		
+
 			<br>
 			<br>
 			<br>
 			<br>
+				<p>zeilenControl</p>	
+			<a href="/return/zeilenControl" class="js-ajx-url-zeilenControl btn btn_red">zeilenControl</a> 		
+			<br>
+		
+				<p>zeilenSlave</p>	
+			<a href="/return/zeilenSlave" class="js-ajx-url-zeilenSlave btn btn_red">zeilenSlave</a> 		
+			<br>
+			<br>
+			
+			
 			<br>
 				<p>load from internet 2d plaatje</p>	
 
@@ -376,10 +403,68 @@
 				});
 			});	
 
+			$('.js-ajx-url-AR').on('click', function(e) {
+				e.preventDefault();
+				$.ajax({
+					url: $(this).attr('href')
+				}).done(function() {
+					
+					window.location = '/AR_html';
+					console.log('Ajax request successfull');
+				});
+			});	
+
+			$('.js-ajx-url-krpanoControl').on('click', function(e) {
+				e.preventDefault();
+				$.ajax({
+					url: $(this).attr('href')
+				}).done(function() {
+					
+					window.location = '/krpanoControl_html';
+					console.log('Ajax request successfull');
+				});
+			});	
+
+			$('.js-ajx-url-krpanoSlave').on('click', function(e) {
+				e.preventDefault();
+				$.ajax({
+					url: $(this).attr('href')
+				}).done(function() {
+					
+					window.location = '/krpanoSlave_html';
+					console.log('Ajax request successfull');
+				});
+			});	
 
 
-
-
+			$('.js-ajx-url-zeilenControl').on('click', function(e) {
+				e.preventDefault();
+				$.ajax({
+					url: $(this).attr('href')
+				}).done(function() {
+					
+					window.location = '/zeilenControl_html';
+					console.log('Ajax request successfull');
+				});
+			});	
+			
+			$('.js-ajx-url-zeilenSlave').on('click', function(e) {
+				e.preventDefault();
+				$.ajax({
+					url: $(this).attr('href')
+				}).done(function() {
+					
+					window.location = '/zeilenSlave_html';
+					console.log('Ajax request successfull');
+				});
+			});	
+			
+			
+			
+			
+			
+			
+			
 
 	
 			

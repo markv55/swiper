@@ -1,0 +1,41 @@
+		
+		<hotspot name="trigger" url="images/doorzichtigvlak.png"  visible= "true" keep="false" handcursor="true" capture="false"   ath="225" atv="0" scale= "0.3" scale.mobile = "0.1" 
+		onclick=""	onhover=""	
+		/>		
+
+		
+		maak een variable (trigger)
+		bij een onclick trigger=1, else trigger=0
+		
+		onclick trigger();
+		else noTrigger();
+		
+		
+		onclick:  trigger(); set(trigger,1);
+		else:  trigger(); set(trigger,0);
+		
+		
+//////////////////////////////////////
+
+
+		
+		
+<action name="trigger">
+	if( trigger===1,
+	
+		inc(index2,1,get(lastindex2),1); 		
+		txtadd(urll,'foto',get(index2)); 	
+				
+		set (hotspot[foto1].visible,false); set (hotspot[foto2].visible,false); set (hotspot[foto3].visible,false); set (hotspot[foto4].visible,false); 
+		
+		set(hotspot[get(urll)].visible,true);	
+		
+		delayedcall(0.3, animate3(););	
+		
+		);
+		</action>	
+		
+		
+		
+
+		
