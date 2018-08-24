@@ -110,7 +110,7 @@
 					<button id="scene16" type="button" class="btn btn-info">Feest2</button>	
 					<button id="scene17" type="button" class="btn_red btn-info">6Fathom Cove</button>	
 
-					<a href="/home" class="js-ajx-url-home btn"  >home</a> 
+					<!--<a href="/home" class="js-ajx-url-home btn"  >home</a> -->
 			</div>
 
 			<button onclick="myFunction()">hide button</button>
@@ -170,12 +170,21 @@
 	/////////////////////////////////////////////////
 	
 			jQuery(document).ready(function($){ 
+			
+			
+			
+			
+			
+			
+			
 			$('#scene1').click(function() {   
 				//$('#mainFoto').hide('slow');
 				var krpano = document.getElementById("krpanoSWFObject");
 				console.log ("verander scene");						
 				krpano.call( "laad_scene1()" );	
 				send_call_scene1_krpano();
+				changeCollorBack();
+				$(this).css('background-color', 'green');
 			});
 			
 			$('#scene2').click(function() {   
@@ -184,6 +193,8 @@
 				console.log ("verander scene");						
 				krpano.call( "laad_scene2()" );	
 				send_call_scene2_krpano();
+				changeCollorBack();
+				$(this).css('background-color', 'green');
 			
 			});
 			
@@ -193,6 +204,8 @@
 				console.log ("verander scene");						
 				krpano.call( "laad_scene3()" );	
 				send_call_scene3_krpano();
+				changeCollorBack();
+				$(this).css('background-color', 'green');
 			
 			});
 
@@ -202,6 +215,8 @@
 				console.log ("verander scene");						
 				krpano.call( "laad_scene4()" );	
 				send_call_scene4_krpano();
+				changeCollorBack();
+				$(this).css('background-color', 'green');
 			
 			});
 
@@ -211,6 +226,8 @@
 				console.log ("verander scene");						
 				krpano.call( "laad_scene5()" );	
 				send_call_scene5_krpano();
+				changeCollorBack();
+				$(this).css('background-color', 'green');
 			
 			});
 
@@ -220,6 +237,8 @@
 				console.log ("verander scene");						
 				krpano.call( "laad_scene6()" );	
 				send_call_scene6_krpano();
+				changeCollorBack();
+				$(this).css('background-color', 'green');
 			
 			});
 
@@ -229,6 +248,8 @@
 				console.log ("verander scene");						
 				krpano.call( "laad_scene7()" );	
 				send_call_scene7_krpano();
+				changeCollorBack();
+				$(this).css('background-color', 'green');
 			});
 			
 			$('#scene8').click(function() {   
@@ -237,6 +258,8 @@
 				console.log ("verander scene");						
 				krpano.call( "laad_scene8()" );	
 				send_call_scene8_krpano();
+				changeCollorBack();
+				$(this).css('background-color', 'green');
 			
 			});
 			
@@ -246,6 +269,8 @@
 				console.log ("verander scene");						
 				krpano.call( "laad_scene9()" );	
 				send_call_scene9_krpano();
+				changeCollorBack();
+				$(this).css('background-color', 'green');
 			
 			});
 
@@ -255,6 +280,8 @@
 				console.log ("verander scene");						
 				krpano.call( "laad_scene10()" );	
 				send_call_scene10_krpano();
+				changeCollorBack();
+				$(this).css('background-color', 'green');
 			
 			});
 
@@ -264,6 +291,8 @@
 				console.log ("verander scene");						
 				krpano.call( "laad_scene11()" );	
 				send_call_scene11_krpano();
+				changeCollorBack();
+				$(this).css('background-color', 'green');
 			
 			});
 
@@ -273,6 +302,8 @@
 				console.log ("verander scene");						
 				krpano.call( "laad_scene12()" );	
 				send_call_scene12_krpano();
+				changeCollorBack();
+				$(this).css('background-color', 'green');
 			
 			});			
 
@@ -282,6 +313,8 @@
 				console.log ("verander scene");						
 				krpano.call( "laad_scene13()" );	
 				send_call_scene13_krpano();
+				changeCollorBack();
+				$(this).css('background-color', 'green');
 			});
 			
 			$('#scene14').click(function() {   
@@ -290,6 +323,8 @@
 				console.log ("verander scene");						
 				krpano.call( "laad_scene14()" );	
 				send_call_scene14_krpano();
+				changeCollorBack();
+				$(this).css('background-color', 'green');
 			
 			});
 			
@@ -299,6 +334,8 @@
 				console.log ("verander scene");						
 				krpano.call( "laad_scene15()" );	
 				send_call_scene15_krpano();
+				changeCollorBack();
+				$(this).css('background-color', 'green');
 			
 			});
 
@@ -308,6 +345,8 @@
 				console.log ("verander scene");						
 				krpano.call( "laad_scene16()" );	
 				send_call_scene16_krpano();
+				changeCollorBack();
+				$(this).css('background-color', 'green');
 			
 			});
 
@@ -317,6 +356,8 @@
 				console.log ("verander scene");						
 				krpano.call( "laad_scene17()" );	
 				send_call_scene17_krpano();
+				changeCollorBack();
+				$(this).css('background-color', 'green');
 			
 			});
 
@@ -353,17 +394,33 @@
 				toongeeninfo();
 			});		
 
-
-			
-			
-			
-
-
-
 			
 			$('#audio-1').click(function() {   $('#yes-audio').trigger('play'); 			navigator.vibrate([100, 200, 200, 200, 500]);}); 
 			});
 
+			
+			function changeCollorBack(){
+			document.getElementById("scene1").style.background='red';
+			document.getElementById("scene2").style.background='red';
+			document.getElementById("scene3").style.background='red';
+			document.getElementById("scene4").style.background='blue';
+			document.getElementById("scene5").style.background='blue';
+			document.getElementById("scene6").style.background='blue';
+			document.getElementById("scene7").style.background='blue';
+			document.getElementById("scene8").style.background='blue';
+			document.getElementById("scene9").style.background='blue';
+			document.getElementById("scene10").style.background='blue';
+			document.getElementById("scene11").style.background='blue';
+			document.getElementById("scene12").style.background='red';			
+			document.getElementById("scene13").style.background='red';
+			document.getElementById("scene14").style.background='blue';
+			document.getElementById("scene15").style.background='blue';
+			document.getElementById("scene16").style.background='blue';
+			document.getElementById("scene17").style.background='red';
+			}
+			
+			
+			
 			
 			function vibrateSimple() {
 			  navigator.vibrate(200);
@@ -533,11 +590,8 @@ var sound_nr = 1;
 								var krpano = document.getElementById("krpanoSWFObject");
 								console.log ("verander scene");						
 								krpano.call( "laad_scene1()" );		
-								sound_4.play();
-								sound_2.pause();
 								//sound_succes.currentTime = 0;
-								sound_succes.pause;
-								sound_nietgoed.pause;
+
 
 								
 							}								
@@ -546,33 +600,27 @@ var sound_nr = 1;
 								var krpano = document.getElementById("krpanoSWFObject");
 								console.log ("verander scene");						
 								krpano.call( "laad_scene2()" );		
-								sound_4.pause();
 								//sound_2.play();
 								//sound_succes.currentTime = 0;
-								sound_succes.pause;
-								sound_nietgoed.pause;
+		
 							}	
 
 							if (vid == 'call_scene3_krpano'){	
 								var krpano = document.getElementById("krpanoSWFObject");
 								console.log ("verander scene");						
 								krpano.call( "laad_scene3()" );		
-								sound_4.pause();
 								//sound_2.play();
 								//sound_succes.currentTime = 0;
-								sound_succes.pause;
-								sound_nietgoed.pause;
+					
 							}	
 
 							if (vid == 'call_scene4_krpano'){	
 								var krpano = document.getElementById("krpanoSWFObject");
 								console.log ("verander scene");						
 								krpano.call( "laad_scene4()" );		
-								sound_4.pause();
 								//sound_2.play();
 								//sound_succes.currentTime = 0;
-								sound_succes.pause;
-								sound_nietgoed.pause;
+						
 							}	
 
 
@@ -580,22 +628,18 @@ var sound_nr = 1;
 								var krpano = document.getElementById("krpanoSWFObject");
 								console.log ("verander scene");						
 								krpano.call( "laad_scene5()" );		
-								sound_4.pause();
 								//sound_2.play();
 								//sound_succes.currentTime = 0;
-								sound_succes.pause;
-								sound_nietgoed.pause;
+						
 							}	
 
 							if (vid == 'call_scene6_krpano'){	
 								var krpano = document.getElementById("krpanoSWFObject");
 								console.log ("verander scene");						
 								krpano.call( "laad_scene6()" );		
-								sound_4.pause();
 								//sound_2.play();
 								//sound_succes.currentTime = 0;
-								sound_succes.pause;
-								sound_nietgoed.pause;
+					
 							}	
 /////////////
 							if (vid == 'call_scene7_krpano'){	
