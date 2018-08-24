@@ -87,43 +87,39 @@
 		<script src="/static/krpano/tour.js"></script>
 		<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
-		<script src="/static/js/slider.js"></script> 
-		
-
-		
+		<script src="/static/js/slider.js"></script> 	
 	
 		<div id="pano" style="width:100%;height:100%;">
+		
+			<div id="myDIV">
+					<button id="scene1" type="button" class="btn_red btn-info">1Fetiye</button>			
+					<button id="scene2" type="button" class="btn_red btn-info">2Tomb Bay</button>
+					<button id="scene3" type="button" class="btn_red btn-info">3Kapi Creep</button>			
+					<button id="scene4" type="button" class="btn btn-info">Wandeling</button>	
+					<button id="scene5" type="button" class="btn btn-info">Uitzicht</button>			
+					<button id="scene6" type="button" class="btn btn-info">Moskee</button>					
+					<button id="scene7" type="button" class="btn btn-info">Lepels</button>			
+					<button id="scene8" type="button" class="btn btn-info">Briefing</button>	
+					<button id="scene9" type="button" class="btn btn-info">Zeilen1</button>			
+					<button id="scene10" type="button" class="btn btn-info">Zeilen2</button>
+					<button id="scene11" type="button" class="btn btn-info">Zwemmen</button>			
+					<button id="scene12" type="button" class="btn_red btn-info">4Gocek</button>	
+					<button id="scene13" type="button" class="btn_red btn-info">5 Karacaoren</button>			
+					<button id="scene14" type="button" class="btn btn-info">Borrel</button>					
+					<button id="scene15" type="button" class="btn btn-info">Feest1</button>			
+					<button id="scene16" type="button" class="btn btn-info">Feest2</button>	
+					<button id="scene17" type="button" class="btn_red btn-info">6Fathom Cove</button>	
 
-				<button id="scene1" type="button" class="btn btn-info">1.</button>			
-				<button id="scene2" type="button" class="btn btn-info">2</button>
-				<button id="scene3" type="button" class="btn btn-info">3</button>			
-				<button id="scene4" type="button" class="btn btn-info">4</button>	
-				<button id="scene5" type="button" class="btn btn-info">5</button>			
-				<button id="scene6" type="button" class="btn btn-info">6</button>					
-				<button id="scene7" type="button" class="btn btn-info">7</button>			
-				<button id="scene8" type="button" class="btn btn-info">8</button>	
-				<button id="scene9" type="button" class="btn btn-info">9</button>			
-				<button id="scene10" type="button" class="btn btn-info">10</button>
-				<button id="scene11" type="button" class="btn btn-info">11</button>			
-				<button id="scene12" type="button" class="btn btn-info">12</button>	
-				<button id="scene13" type="button" class="btn btn-info">13</button>			
-				<button id="scene14" type="button" class="btn btn-info">14</button>					
-				<button id="scene15" type="button" class="btn btn-info">15</button>			
-				<button id="scene16" type="button" class="btn btn-info">16</button>	
-				<button id="scene17" type="button" class="btn btn-info">17</button>	
+					<a href="/home" class="js-ajx-url-home btn"  >home</a> 
+			</div>
+
+			<button onclick="myFunction()">hide button</button>
+					
+			<noscript><table style="width:100%;height:100%;"><tr style="vertical-align:middle;"><td><div style="text-align:center;">ERROR:<br/><br/>Javascript not activated<br/><br/></div></td></tr></table></noscript>
 				
-				<!--
-				<button id="toonInfo" type="button" class="btn_red btn-info">info </button>
-				<button id="toonGeenInfo" type="button" class="btn_red btn-info">geen info </button>					
-				-->
-				
-				<a href="/home" class="js-ajx-url-home btn"  >home</a> 
-				
-				<noscript><table style="width:100%;height:100%;"><tr style="vertical-align:middle;"><td><div style="text-align:center;">ERROR:<br/><br/>Javascript not activated<br/><br/></div></td></tr></table></noscript>
-				
-				<script>
+			<script>
 				embedpano({swf:"/static/krpano/tour.swf", xml:"/static/zeilenControl/tour.xml", target:"pano", html5:"auto", mobilescale:1.0, passQueryParameters:true});
-				</script>
+			</script>
 		</div>
 
 
@@ -142,6 +138,19 @@
 		
 
 		<script>
+		
+		function myFunction() {
+    var x = document.getElementById("myDIV");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+		
+		
+		
+		
 
 			for (var i = 1; i < (256 + 1); i++) {
 				var imageIndexString = i;
