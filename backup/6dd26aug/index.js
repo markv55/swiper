@@ -280,10 +280,6 @@ app.get('/zeilenSlave_html', function(req, res) {
 
 
 
-app.get('/zeilenSlaveSocket_html', function(req, res) {
-	res.sendFile(path.join(__dirname+'/zeilenSlaveSocket_html/index.html'));
-});
-
 
 
 

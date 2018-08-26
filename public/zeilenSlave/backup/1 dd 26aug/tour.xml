@@ -1,5 +1,4 @@
-﻿<krpano version="1.19" title="Virtual Tour">
-
+﻿<krpano version="1.19" title="Virtual Tour" onstart="  center_vlak(); setSizeVierkant ();  ">
 	<include url="skin/vtourskin.xml" />
 
 
@@ -55,16 +54,7 @@
 	               design_text_shadow="1"
 	               />
 
-	<!--
-	    For an alternative skin design either change the <skin_settings> values 
-	    from above or optionally include one of the predefined designs from below.
-	-->
-	<!-- <include url="skin/vtourskin_design_flat_light.xml"  /> -->
-	<!-- <include url="skin/vtourskin_design_glass.xml"       /> -->
-	<!-- <include url="skin/vtourskin_design_ultra_light.xml" /> -->
-	<!-- <include url="skin/vtourskin_design_117.xml"         /> -->
-	<!-- <include url="skin/vtourskin_design_117round.xml"    /> -->
-	<!-- <include url="skin/vtourskin_design_black.xml"       /> -->
+
 
 
 	<!-- startup action - load the first scene -->
@@ -74,13 +64,44 @@
 		if(startactions !== null, startactions() );
 	</action>
 
+
+	<layer name="startscherm_tablet" url="images/startscherm_tablet2.png" onclick= " " keep="true" visible="true" zorder="10" handcursor="false" capture="false"  align="center" 
+		 scalechildren="true"/>
+
+	<layer name="startscherm_tablet_verder" style="style_startscherm_tablet_verder" visible= "true" x="0" y="100" zorder="10" 
+		onclick=" action_delete_startscherm();  " />  <!--call_delete_startscherm();hier ook een call maken naar node zodat alle startschemen op alle tablets weg gaaan!!! -->
+			<style name="style_startscherm_tablet_verder" keep="true" url="images/startknop.png" parent="startscherm_tablet" align="bottom" edge="center" scale= "1" scale.mobile = "1"  />
+
+			
+	<action name="action_delete_startscherm">
+		set (layer[startscherm_tablet].visible,false); webvr.enterVR(); 
+	</action>	
+
 	
 	
+<!-- SCALEN VAN DE VIERKANT IN HET MIDDEN VAN HET SCHERM. VOOR VRAGEN EN ANTWOORD GOED/FOUT-->	
+		<action name="setSizeVierkant">
+		set (layer[startscherm_tablet].height, calc(hoogte_plaatje*1)); 	
+		set (layer[startscherm_tablet].width, calc(breedte_plaatje*1));	
+		</action>	
+	
+		<action name="center_vlak">
+		if(stagewidth LT stageheight  <!-- breedte kleiner dan hoogte =  portrait-->
+		,  
+		<!-- PORTRAIT -->
+		if(device.tablet, set (breedte_plaatje, calc(stagewidth*0.7)); 		set (hoogte_plaatje, calc(stagewidth*0.7) ););
+		if(device.mobile, set (breedte_plaatje, calc(stagewidth*0.7)); 		set (hoogte_plaatje, calc(stagewidth*0.7) ););	
+		if(device.desktop, set (breedte_plaatje, calc(stagewidth*0.7)); 	set (hoogte_plaatje, calc(stagewidth*0.7) ););	
+		,
+		<!-- LANDSCAPE -->
+		if(device.tablet,  set (hoogte_plaatje, calc(stageheight*0.7)); 	set (breedte_plaatje, calc(stageheight*0.7) ););
+		if(device.mobile,  set (hoogte_plaatje, calc(stageheight*0.7)); 	set (breedte_plaatje, calc(stageheight*0.7) );); 	
+		if(device.desktop, set (hoogte_plaatje, calc(stageheight*0.7)); 	set (breedte_plaatje, calc(stageheight*0.7) ););	
+		);
 
-		<action name="laad_scene0">
-		loadscene(scene_0, null, MERGE, BLEND(1));
-		</action>
-
+		</action>	
+	
+	
 
 		<action name="laad_scene1">
 		loadscene(scene_100, null, MERGE, BLEND(1));
@@ -158,42 +179,17 @@
 		</action>
 
 
-	<scene name="scene_0" title="0" onstart="" havevrimage="true" thumburl="panos/0.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
-
-		<preview url="panos/0.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
-			<level tiledimagewidth="576" tiledimageheight="576">
-				<cube url="panos/0.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-		<image if="webvr.isenabled">
-			<cube url="panos/0.tiles/vr/pano_%s.jpg" />
-		</image>
-
-		<!-- place your scene hotspots here -->
-	
-		<hotspot name="hart" url="images/hart.png" distorted="true"  visible= "true" keep="false" handcursor="false" 
-		capture="false"   ath="0" atv="0" scale= "0.3" scale.mobile = "0.5" 		/>		
-		
-		<hotspot name="hart1" url="images/hart.png" distorted="true"  visible= "true" keep="false" handcursor="false" 
-		capture="false"   ath="-30" atv="0" scale= "0.3" scale.mobile = "0.5" 		/>	
-		
-		<hotspot name="hart2" url="images/hart.png" distorted="true"  visible= "true" keep="false" handcursor="false" 
-		capture="false"   ath="30" atv="0" scale= "0.3" scale.mobile = "0.5" 		/>	
-	
-	</scene>
-
 	
 	
 	
 
-	
-	
 
+
+
+
+	
+	
+	
 	
 	<scene name="scene_100" title="100" onstart="" havevrimage="true" thumburl="panos/100.tiles/thumb.jpg" lat="36.63694444" lng="29.10305556" heading="0.0">
 

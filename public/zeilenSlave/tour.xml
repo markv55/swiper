@@ -101,6 +101,9 @@
 
 		</action>	
 	
+		<action name="laad_scene0">
+		loadscene(scene_0, null, MERGE, BLEND(1));
+		</action>
 	
 
 		<action name="laad_scene1">
@@ -180,9 +183,35 @@
 
 
 	
-	
-	
+		
+	<scene name="scene_0" title="0" onstart="" havevrimage="true" thumburl="panos/0.tiles/thumb.jpg" lat="" lng="" heading="">
 
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/0.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+			<level tiledimagewidth="576" tiledimageheight="576">
+				<cube url="panos/0.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+
+		<image if="webvr.isenabled">
+			<cube url="panos/0.tiles/vr/pano_%s.jpg" />
+		</image>
+
+		<!-- place your scene hotspots here -->
+	
+		<hotspot name="hart" url="images/hart.png" distorted="true"  visible= "true" keep="false" handcursor="false" 
+		capture="false"   ath="0" atv="0" scale= "0.3" scale.mobile = "0.5" 		/>		
+		
+		<hotspot name="hart1" url="images/hart.png" distorted="true"  visible= "true" keep="false" handcursor="false" 
+		capture="false"   ath="-30" atv="0" scale= "0.3" scale.mobile = "0.5" 		/>	
+		
+		<hotspot name="hart2" url="images/hart.png" distorted="true"  visible= "true" keep="false" handcursor="false" 
+		capture="false"   ath="30" atv="0" scale= "0.3" scale.mobile = "0.5" 		/>	
+	
+	</scene>
 
 
 

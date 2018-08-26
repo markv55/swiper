@@ -275,15 +275,7 @@
 				<p>zeilenControl</p>	
 			<a href="/return/zeilenControl" class="js-ajx-url-zeilenControl btn btn_red">zeilenControl</a> 		
 			<br>
-
-				<p>zeilenSlaveSocket</p>	
-			<a href="/return/zeilenSlaveSocket" class="js-ajx-url-zeilenSlaveSocket btn btn_red">zeilenSlaveSocket</a> 		
-			<br>
-			<br>
-
-
-
-			
+		
 				<p>zeilenSlave</p>	
 			<a href="/return/zeilenSlave" class="js-ajx-url-zeilenSlave btn btn_red">zeilenSlave</a> 		
 			<br>
@@ -467,16 +459,7 @@
 				});
 			});	
 			
-			$('.js-ajx-url-zeilenSlaveSocket').on('click', function(e) {
-				e.preventDefault();
-				$.ajax({
-					url: $(this).attr('href')
-				}).done(function() {
-					
-					window.location = '/zeilenSlaveSocket_html';
-					console.log('Ajax request successfull');
-				});
-			});				
+			
 			
 			
 			

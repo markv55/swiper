@@ -23,8 +23,7 @@
 					font-family:      TradeGothic, sans-serif;
 					font-size: 30px;		
 				}
-	
-				
+					
 				.size{
 				font-family:      TradeGothic, sans-serif;
 				font-size: 30px;		
@@ -34,21 +33,46 @@
 			@media only screen and (min-device-width:800px) { html { overflow:hidden; } }
 			html { height:100%; }
 			body { height:100%; overflow:hidden; margin:0; padding:0; font-family:Arial, Helvetica, sans-serif; font-size:16px; color:#FFFFFF; background-color:#000000; }
-		</style>
+
+
+			.btn {
+				padding: 5px 5px;
+				background: blue;
+				color: #fff;
+				text-decoration: none;
+				border-radius: 10px;
+				font-family: Arial;
+
+				font-size: 15px;
+
+				margin:  5px;
+				}
+
+			.btn_red {
+				padding: 5px 5px;
+				background: red;
+				color: #fff;
+				text-decoration: none;
+				border-radius: 10px;
+				font-family: Arial;
+
+				font-size: 15px;
+
+				margin:  5px;
+				}
+				
+				
+				
+				
+
+			</style>
 	</head>
 	
 	
 	<body>
 		<!-- <a href="/"   >home</a>-->	
 		
-		
-		
 
-		
-		
-		
-		
-		
 		
 <!-- LASER POINTER   //////     LASER POINTER   //////     LASER POINTER   //////     LASER POINTER   //////     LASER POINTER   //////     LASER POINTER   //////      -->		
 <!-- LASER POINTER   //////     LASER POINTER   //////     LASER POINTER   //////     LASER POINTER   //////     LASER POINTER   //////     LASER POINTER   //////      -->		
@@ -63,27 +87,44 @@
 		<script src="/static/krpano/tour.js"></script>
 		<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
-		
-		
-		
-		<script src="/static/js/slider.js"></script> 
-		
-		
-		
-		
-		<!--
-		<button id="hide-1" type="button" class="btn btn-info">Click here to Hide the image below</button>
-		<button id="show-1" type="button" class="btn btn-info">Click here to Show the image below</button>
-		<div><img id="mainFoto" src="static/images2/245.jpg" alt="" width="800" height="800" /></div>
-		-->
+		<script src="/static/js/slider.js"></script> 	
 	
 		<div id="pano" style="width:100%;height:100%;">
+		
+			<div id="myDIV">
+					<button id="scene0" type="button" class="btn_red btn-info">start</button>						
+					<button id="scene1" type="button" class="btn_red btn-info">1Fetiye</button>			
+					<button id="scene2" type="button" class="btn_red btn-info">2Tomb Bay</button>
+					<button id="scene3" type="button" class="btn_red btn-info">3Kapi Creep</button>			
+					<button id="scene4" type="button" class="btn btn-info">Wandeling</button>	
+					<button id="scene5" type="button" class="btn btn-info">Uitzicht</button>			
+					<button id="scene6" type="button" class="btn btn-info">Moskee</button>					
+					<button id="scene7" type="button" class="btn btn-info">Lepels</button>			
+					<button id="scene8" type="button" class="btn btn-info">Briefing</button>	
+					<button id="scene9" type="button" class="btn btn-info">Zeilen1</button>			
+					<button id="scene10" type="button" class="btn btn-info">Zeilen2</button>
+					<button id="scene11" type="button" class="btn btn-info">Zwemmen</button>			
+					<button id="scene12" type="button" class="btn_red btn-info">4Gocek</button>	
+					<button id="scene13" type="button" class="btn_red btn-info">5 Karacaoren</button>			
+					<button id="scene14" type="button" class="btn btn-info">Borrel</button>					
+					<button id="scene15" type="button" class="btn btn-info">Feest1</button>			
+					<button id="scene16" type="button" class="btn btn-info">Feest2</button>	
+					<button id="scene17" type="button" class="btn_red btn-info">6Fathom Cove</button>	
+
+					<!--<a href="/home" class="js-ajx-url-home btn"  >home</a> -->
+			</div>
+
+			<button onclick="myFunction()">hide button</button>
+					
 			<noscript><table style="width:100%;height:100%;"><tr style="vertical-align:middle;"><td><div style="text-align:center;">ERROR:<br/><br/>Javascript not activated<br/><br/></div></td></tr></table></noscript>
+				
 			<script>
-				embedpano({swf:"/static/krpano/tour.swf", xml:"/static/zeilenSlave/tour.xml", target:"pano", html5:"auto", mobilescale:1.0, passQueryParameters:true});
+				embedpano({swf:"/static/krpano/tour.swf", xml:"/static/zeilenControl/tour.xml", target:"pano", html5:"auto", mobilescale:1.0, passQueryParameters:true});
 			</script>
 		</div>
-	
+
+
+		
 		<!-- 
 		<button id="audio-1" type="button" class="btn btn-info size">geluid</button>	
 		<audio class="audios" id="yes-audio" controls preload="none"> 
@@ -98,6 +139,19 @@
 		
 
 		<script>
+		
+		function myFunction() {
+    var x = document.getElementById("myDIV");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+		
+		
+		
+		
 
 			for (var i = 1; i < (256 + 1); i++) {
 				var imageIndexString = i;
@@ -114,13 +168,260 @@
 				console.log('preloading..' + imagePath);
 			}
 
-			
+	/////////////////////////////////////////////////
+	
 			jQuery(document).ready(function($){ 
-			$('#hide-1').click(function() {   $('#mainFoto').hide('slow'); });
-			$('#show-1').click(function() {   $('#mainFoto').show('slow'); }); 
+			
+			
+			
+			
+			
+			
+			
+			$('#scene1').click(function() {   
+				//$('#mainFoto').hide('slow');
+				var krpano = document.getElementById("krpanoSWFObject");
+				console.log ("verander scene");						
+				krpano.call( "laad_scene1()" );	
+				send_call_scene1_krpano();
+				changeCollorBack();
+				$(this).css('background-color', 'green');
+			});
+			
+			$('#scene2').click(function() {   
+				//$('#mainFoto').show('slow'); 
+				var krpano = document.getElementById("krpanoSWFObject");
+				console.log ("verander scene");						
+				krpano.call( "laad_scene2()" );	
+				send_call_scene2_krpano();
+				changeCollorBack();
+				$(this).css('background-color', 'green');
+			
+			});
+			
+			$('#scene3').click(function() {   
+				//$('#mainFoto').show('slow'); 
+				var krpano = document.getElementById("krpanoSWFObject");
+				console.log ("verander scene");						
+				krpano.call( "laad_scene3()" );	
+				send_call_scene3_krpano();
+				changeCollorBack();
+				$(this).css('background-color', 'green');
+			
+			});
+
+			$('#scene4').click(function() {   
+				//$('#mainFoto').show('slow'); 
+				var krpano = document.getElementById("krpanoSWFObject");
+				console.log ("verander scene");						
+				krpano.call( "laad_scene4()" );	
+				send_call_scene4_krpano();
+				changeCollorBack();
+				$(this).css('background-color', 'green');
+			
+			});
+
+			$('#scene5').click(function() {   
+				//$('#mainFoto').show('slow'); 
+				var krpano = document.getElementById("krpanoSWFObject");
+				console.log ("verander scene");						
+				krpano.call( "laad_scene5()" );	
+				send_call_scene5_krpano();
+				changeCollorBack();
+				$(this).css('background-color', 'green');
+			
+			});
+
+			$('#scene6').click(function() {   
+				//$('#mainFoto').show('slow'); 
+				var krpano = document.getElementById("krpanoSWFObject");
+				console.log ("verander scene");						
+				krpano.call( "laad_scene6()" );	
+				send_call_scene6_krpano();
+				changeCollorBack();
+				$(this).css('background-color', 'green');
+			
+			});
+
+			$('#scene7').click(function() {   
+				//$('#mainFoto').hide('slow');
+				var krpano = document.getElementById("krpanoSWFObject");
+				console.log ("verander scene");						
+				krpano.call( "laad_scene7()" );	
+				send_call_scene7_krpano();
+				changeCollorBack();
+				$(this).css('background-color', 'green');
+			});
+			
+			$('#scene8').click(function() {   
+				//$('#mainFoto').show('slow'); 
+				var krpano = document.getElementById("krpanoSWFObject");
+				console.log ("verander scene");						
+				krpano.call( "laad_scene8()" );	
+				send_call_scene8_krpano();
+				changeCollorBack();
+				$(this).css('background-color', 'green');
+			
+			});
+			
+			$('#scene9').click(function() {   
+				//$('#mainFoto').show('slow'); 
+				var krpano = document.getElementById("krpanoSWFObject");
+				console.log ("verander scene");						
+				krpano.call( "laad_scene9()" );	
+				send_call_scene9_krpano();
+				changeCollorBack();
+				$(this).css('background-color', 'green');
+			
+			});
+
+			$('#scene10').click(function() {   
+				//$('#mainFoto').show('slow'); 
+				var krpano = document.getElementById("krpanoSWFObject");
+				console.log ("verander scene");						
+				krpano.call( "laad_scene10()" );	
+				send_call_scene10_krpano();
+				changeCollorBack();
+				$(this).css('background-color', 'green');
+			
+			});
+
+			$('#scene11').click(function() {   
+				//$('#mainFoto').show('slow'); 
+				var krpano = document.getElementById("krpanoSWFObject");
+				console.log ("verander scene");						
+				krpano.call( "laad_scene11()" );	
+				send_call_scene11_krpano();
+				changeCollorBack();
+				$(this).css('background-color', 'green');
+			
+			});
+
+			$('#scene12').click(function() {   
+				//$('#mainFoto').show('slow'); 
+				var krpano = document.getElementById("krpanoSWFObject");
+				console.log ("verander scene");						
+				krpano.call( "laad_scene12()" );	
+				send_call_scene12_krpano();
+				changeCollorBack();
+				$(this).css('background-color', 'green');
+			
+			});			
+
+			$('#scene13').click(function() {   
+				//$('#mainFoto').hide('slow');
+				var krpano = document.getElementById("krpanoSWFObject");
+				console.log ("verander scene");						
+				krpano.call( "laad_scene13()" );	
+				send_call_scene13_krpano();
+				changeCollorBack();
+				$(this).css('background-color', 'green');
+			});
+			
+			$('#scene14').click(function() {   
+				//$('#mainFoto').show('slow'); 
+				var krpano = document.getElementById("krpanoSWFObject");
+				console.log ("verander scene");						
+				krpano.call( "laad_scene14()" );	
+				send_call_scene14_krpano();
+				changeCollorBack();
+				$(this).css('background-color', 'green');
+			
+			});
+			
+			$('#scene15').click(function() {   
+				//$('#mainFoto').show('slow'); 
+				var krpano = document.getElementById("krpanoSWFObject");
+				console.log ("verander scene");						
+				krpano.call( "laad_scene15()" );	
+				send_call_scene15_krpano();
+				changeCollorBack();
+				$(this).css('background-color', 'green');
+			
+			});
+
+			$('#scene16').click(function() {   
+				//$('#mainFoto').show('slow'); 
+				var krpano = document.getElementById("krpanoSWFObject");
+				console.log ("verander scene");						
+				krpano.call( "laad_scene16()" );	
+				send_call_scene16_krpano();
+				changeCollorBack();
+				$(this).css('background-color', 'green');
+			
+			});
+
+			$('#scene17').click(function() {   
+				//$('#mainFoto').show('slow'); 
+				var krpano = document.getElementById("krpanoSWFObject");
+				console.log ("verander scene");						
+				krpano.call( "laad_scene17()" );	
+				send_call_scene17_krpano();
+				changeCollorBack();
+				$(this).css('background-color', 'green');
+			
+			});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			
+///////////////////////////////////////////////////////////////
+			
+			$('#toonInfo').click(function() {   
+				//var krpano = document.getElementById("krpanoSWFObject");
+				//send_call_scene1_krpano();
+				//opZoekNaarIcon_1
+				tooninfo();
+			});			
+
+
+			$('#toonGeenInfo').click(function() {   
+				//var krpano = document.getElementById("krpanoSWFObject");
+				//send_call_scene1_krpano();
+				//opZoekNaarIcon_1
+				toongeeninfo();
+			});		
+
+			
 			$('#audio-1').click(function() {   $('#yes-audio').trigger('play'); 			navigator.vibrate([100, 200, 200, 200, 500]);}); 
 			});
 
+			
+			function changeCollorBack(){
+			document.getElementById("scene1").style.background='red';
+			document.getElementById("scene2").style.background='red';
+			document.getElementById("scene3").style.background='red';
+			document.getElementById("scene4").style.background='blue';
+			document.getElementById("scene5").style.background='blue';
+			document.getElementById("scene6").style.background='blue';
+			document.getElementById("scene7").style.background='blue';
+			document.getElementById("scene8").style.background='blue';
+			document.getElementById("scene9").style.background='blue';
+			document.getElementById("scene10").style.background='blue';
+			document.getElementById("scene11").style.background='blue';
+			document.getElementById("scene12").style.background='red';			
+			document.getElementById("scene13").style.background='red';
+			document.getElementById("scene14").style.background='blue';
+			document.getElementById("scene15").style.background='blue';
+			document.getElementById("scene16").style.background='blue';
+			document.getElementById("scene17").style.background='red';
+			}
+			
+			
+			
 			
 			function vibrateSimple() {
 			  navigator.vibrate(200);
@@ -176,7 +477,7 @@ var sound_nr = 1;
 					var krpano = document.getElementById("krpanoSWFObject");
 					var current_hlookat = krpano.get('view.hlookat');
 					
-					//if ((current_hlookat - hlookat > 0.1) || (current_hlookat - hlookat < -0.1 )) {
+					//if (current_hlookat - hlookat > 1 || current_hlookat - hlookat < 1 ) {
 					if (current_hlookat != hlookat) {
 						hlookat = current_hlookat;
 						socket.emit('hlookat', krpano.get('view.hlookat'));	
@@ -189,7 +490,7 @@ var sound_nr = 1;
 					var krpano = document.getElementById("krpanoSWFObject");
 					var current_vlookat = krpano.get('view.vlookat');
 					
-					//if ((current_vlookat - vlookat > 0.1) || (current_vlookat - vlookat < -0.1 )) {
+					//if (current_vlookat - hlookat > 1 || current_vlookat - hlookat < 1 ) {
 					if (current_vlookat != vlookat) {
 						vlookat = current_vlookat;
 						socket.emit('vlookat', krpano.get('view.vlookat'));	
@@ -207,8 +508,11 @@ var sound_nr = 1;
 /// ONTVANGEN SOCKET VAN BACKEND   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 					socket.on('message', function(msg, vid, scale){  
 
-							console.log (msg);
-							console.log(vid);
+							// 16 aug uitgezet
+							//console.log (msg);
+							//console.log(vid);
+							
+							
 							//console.log(scale);
 							
 							if (msg == 'aan'){
@@ -232,7 +536,7 @@ var sound_nr = 1;
 							<!-- hlookat-->
 							if (msg == 'hlookat'){			
 								var krpano = document.getElementById("krpanoSWFObject");
-	// 17 aug uitgezet omdat de slave de hlook verstuurde en direct ontving.   krpano.set("view.hlookat", vid);
+								krpano.set("view.hlookat", vid);
 								//console.log("Horizontal lookat via socket: " + krpano.get("view.hlookat"));	
 							}				
 
@@ -240,7 +544,7 @@ var sound_nr = 1;
 							<!-- vlookat-->
 							if (msg == 'vlookat'){			
 								var krpano = document.getElementById("krpanoSWFObject");
-	// 17 aug uitgezet omdat de slave de hlook verstuurde en direct ontving.  krpano.set("view.vlookat", vid);
+								krpano.set("view.vlookat", vid);
 								//console.log("vertical lookat via socket: " + krpano.get("view.vlookat"));	
 							}				
 
@@ -264,7 +568,10 @@ var sound_nr = 1;
 // nu krijg je nog socket via rotator3. maar deze moet straks zonder sockets en internet direct een interne call krijgen vanuit rotator3
 //  mark scherrenburg kan hiermee helpen			
 
-/*	20 juli weer uitgezet en in AR_html overgenomen
+//	15 augustus voor de krpano contoll deze weer aangezet!!!!!
+//  we ontvangen de alfa en beta maar hij draait de verkeerde kant op
+// hij moet op de x en y gaan meedraaien en de AR moet er nog uit.
+// een nieuwe krpano_follow_html maken!!
 						
 							if (msg == 'alpha'){			
 								var krpano = document.getElementById("krpanoSWFObject");
@@ -276,60 +583,45 @@ var sound_nr = 1;
 								krpano.set("view.vlookat", - vid);
 							}								
 
-	*/						
+					
 //  RECEIVE SOCKETS WITHIN KRPANO    // RECEIVE SOCKETS WITHIN KRPANO							
-
-
-							if (vid == 'call_scene0_krpano'){	
-								var krpano = document.getElementById("krpanoSWFObject");
-								console.log ("verander scene");						
-								krpano.call( "laad_scene0()" );		
 							
-							}								
-								
 							
 							if (vid == 'call_scene1_krpano'){	
 								var krpano = document.getElementById("krpanoSWFObject");
 								console.log ("verander scene");						
 								krpano.call( "laad_scene1()" );		
-								sound_4.play();
-								sound_2.pause();
 								//sound_succes.currentTime = 0;
-								sound_succes.pause;
-								sound_nietgoed.pause;
+
+
+								
 							}								
 							
 							if (vid == 'call_scene2_krpano'){	
 								var krpano = document.getElementById("krpanoSWFObject");
 								console.log ("verander scene");						
 								krpano.call( "laad_scene2()" );		
-								sound_4.pause();
 								//sound_2.play();
 								//sound_succes.currentTime = 0;
-								sound_succes.pause;
-								sound_nietgoed.pause;
+		
 							}	
 
 							if (vid == 'call_scene3_krpano'){	
 								var krpano = document.getElementById("krpanoSWFObject");
 								console.log ("verander scene");						
 								krpano.call( "laad_scene3()" );		
-								sound_4.pause();
 								//sound_2.play();
 								//sound_succes.currentTime = 0;
-								sound_succes.pause;
-								sound_nietgoed.pause;
+					
 							}	
 
 							if (vid == 'call_scene4_krpano'){	
 								var krpano = document.getElementById("krpanoSWFObject");
 								console.log ("verander scene");						
 								krpano.call( "laad_scene4()" );		
-								sound_4.pause();
 								//sound_2.play();
 								//sound_succes.currentTime = 0;
-								sound_succes.pause;
-								sound_nietgoed.pause;
+						
 							}	
 
 
@@ -337,24 +629,19 @@ var sound_nr = 1;
 								var krpano = document.getElementById("krpanoSWFObject");
 								console.log ("verander scene");						
 								krpano.call( "laad_scene5()" );		
-								sound_4.pause();
 								//sound_2.play();
 								//sound_succes.currentTime = 0;
-								sound_succes.pause;
-								sound_nietgoed.pause;
+						
 							}	
 
 							if (vid == 'call_scene6_krpano'){	
 								var krpano = document.getElementById("krpanoSWFObject");
 								console.log ("verander scene");						
 								krpano.call( "laad_scene6()" );		
-								sound_4.pause();
 								//sound_2.play();
 								//sound_succes.currentTime = 0;
-								sound_succes.pause;
-								sound_nietgoed.pause;
+					
 							}	
-
 /////////////
 							if (vid == 'call_scene7_krpano'){	
 								var krpano = document.getElementById("krpanoSWFObject");
@@ -410,20 +697,7 @@ var sound_nr = 1;
 								krpano.call( "laad_scene17()" );		
 							}	
 
-///////////////////////////////////////////////////////////////////	
-
-
-
-
-
-
-
-
-
-
-							
-
-							
+///////////////////////////////////////////////////////////////////						
 							
 							if (vid == 'unity_delete_vragen'){			
 								var krpano = document.getElementById("krpanoSWFObject");
@@ -737,8 +1011,22 @@ var sound_nr = 1;
 								console.log ('action_delete_startscherm'); 
 							}									
 							
+
+
+////////////////////  nieuw voor master en slave krpano  /////////////////////
+////////////////////  nieuw voor master en slave krpano  /////////////////////
+////////////////////  nieuw voor master en slave krpano  /////////////////////
+// vanuit de client ontvangen we een socket 'vid' . deze socket maakt een call naar krpano
+
 							
-						
+							if (vid == 'call_hide_hotspot'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "action_hide_hotspot()" );		
+								console.log ('action_hide_hotspot'); 
+							}
+
+
+							
 							
 							
 							
@@ -811,7 +1099,95 @@ var sound_nr = 1;
 				socket.emit('scene', 'call_scene2_krpano');
 			}	
 
+			window.send_call_scene3_krpano = function(){
+				console.log ('call_scene3_krpano'); 
+				socket.emit('scene', 'call_scene3_krpano');
+			}	
+			
+			window.send_call_scene4_krpano = function(){
+				console.log ('call_scene4_krpano'); 
+				socket.emit('scene', 'call_scene4_krpano');
+			}				
+			
+			
+			window.send_call_scene5_krpano = function(){
+				console.log ('call_scene5_krpano'); 
+				socket.emit('scene', 'call_scene5_krpano');
+			}				
+			
+			window.send_call_scene6_krpano = function(){
+				console.log ('call_scene6_krpano'); 
+				socket.emit('scene', 'call_scene6_krpano');
+			}				
+			
+			window.send_call_scene7_krpano = function(){
+				console.log ('call_scene7_krpano'); 
+				socket.emit('scene', 'call_scene7_krpano');	
+			}
 
+			window.send_call_scene8_krpano = function(){
+				console.log ('call_scene8_krpano'); 
+				socket.emit('scene', 'call_scene8_krpano');
+			}	
+
+			window.send_call_scene9_krpano = function(){
+				console.log ('call_scene9_krpano'); 
+				socket.emit('scene', 'call_scene9_krpano');
+			}	
+			
+			window.send_call_scene10_krpano = function(){
+				console.log ('call_scene10_krpano'); 
+				socket.emit('scene', 'call_scene10_krpano');
+			}				
+			
+			
+			window.send_call_scene11_krpano = function(){
+				console.log ('call_scene11_krpano'); 
+				socket.emit('scene', 'call_scene11_krpano');
+			}				
+			
+			window.send_call_scene12_krpano = function(){
+				console.log ('call_scene12_krpano'); 
+				socket.emit('scene', 'call_scene12_krpano');
+			}							
+			window.send_call_scene13_krpano = function(){
+				console.log ('call_scene13_krpano'); 
+				socket.emit('scene', 'call_scene13_krpano');	
+			}
+
+			window.send_call_scene14_krpano = function(){
+				console.log ('call_scene14_krpano'); 
+				socket.emit('scene', 'call_scene14_krpano');
+			}	
+
+			window.send_call_scene15_krpano = function(){
+				console.log ('call_scene15_krpano'); 
+				socket.emit('scene', 'call_scene15_krpano');
+			}	
+			
+			window.send_call_scene16_krpano = function(){
+				console.log ('call_scene16_krpano'); 
+				socket.emit('scene', 'call_scene16_krpano');
+			}				
+			
+			
+			window.send_call_scene17_krpano = function(){
+				console.log ('call_scene17_krpano'); 
+				socket.emit('scene', 'call_scene17_krpano');
+			}				
+			
+						
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
 
 			
 // VRAAG 1   // VRAAG 1
@@ -899,25 +1275,26 @@ var sound_nr = 1;
 				socket.emit('vraag', 'call_eindscore_close');
 			}			
 			
+	
 
-//////////////////////////////////////////////
-// nieuw voor master slave krpano
-// nieuw voor master slave krpano
-// nieuw voor master slave krpano
-//  vanuit de tour.xml wordt onderstaande functie aangeroepen. deze functie verstuurd een socket naar de server.
+////////nieuwe functies voor master/slave krpano    ///////////////////////
+////////nieuwe functies voor master/slave krpano    ///////////////////////
+////////nieuwe functies voor master/slave krpano    ///////////////////////
 
-			window.send_call_hide_hotspot  = function(){
-				console.log ('call_hide_hotspot'); 
-				socket.emit('vraag', 'call_hide_hotspot');
-			}	
+			window.tooninfo = function(){
+				console.log ('tooninfo'); 
+				socket.emit('vraag', 'opZoekNaarIcon_5');	
+			}
+
+			toongeeninfo = function(){
+				console.log ('toongeeninfo'); 
+				socket.emit('vraag', 'opZoekNaarIcon_1');	
+				//var krpano = document.getElementById("krpanoSWFObject");
+				//krpano.call( "opZoekNaarIcon_5()" );		
+			}			
 
 
-
-
-
-
-
-			
+	
 	
 			
 		}); // einde function
