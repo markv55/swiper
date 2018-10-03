@@ -246,11 +246,20 @@
 			<br>
 			<br>
 			<br>
-				<p>krpano</p>	
-			<a href="/return/krpano" class="js-ajx-url-krpano btn btn_red">krpano</a> 		
+				<p>krpano  (school game marco)</p>	
+			<a href="/return/krpano" class="js-ajx-url-krpano btn btn_red">krpano (school game marco)</a> 		
 			<br>
 			<br>
 			<br>		
+				<p>feesttimo</p>	
+			<a href="/return/feesttimo" class="js-ajx-url-feesttimo btn btn_red">feest timo</a> 		
+			<br>
+			<br>
+			<br>	
+
+
+
+
 			
 			<br>
 				<p>AR</p>	
@@ -410,6 +419,27 @@
 					console.log('Ajax request successfull');
 				});
 			});	
+			
+			
+			$('.js-ajx-url-feesttimo').on('click', function(e) {
+				e.preventDefault();
+				$.ajax({
+					url: $(this).attr('href')
+				}).done(function() {
+					
+					window.location = '/feesttimo_html';
+					console.log('Ajax request successfull');
+				});
+			});				
+			
+			
+			
+			
+			
+			
+			
+			
+			
 
 			$('.js-ajx-url-AR').on('click', function(e) {
 				e.preventDefault();

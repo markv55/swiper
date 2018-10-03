@@ -1,0 +1,501 @@
+﻿<krpano version="1.19" title="Virtual Tour" onstart=" center_vlak();  setSizeVierkant (); 	startLayer();  ">
+
+	<include url="skin/vtourskin.xml" />
+
+
+	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
+	<skin_settings maps="true"
+	               maps_type="google"
+	               maps_bing_api_key=""
+	               maps_google_api_key=""
+	               maps_zoombuttons="false"
+	               gyro="true"
+	               webvr="true"
+	               webvr_gyro_keeplookingdirection="false"
+	               webvr_prev_next_hotspots="true"
+	               littleplanetintro="false"
+	               title="true"
+	               thumbs="true"
+	               thumbs_width="120" thumbs_height="80" thumbs_padding="10" thumbs_crop="0|40|240|160"
+	               thumbs_opened="false"
+	               thumbs_text="false"
+	               thumbs_dragging="true"
+	               thumbs_onhoverscrolling="false"
+	               thumbs_scrollbuttons="false"
+	               thumbs_scrollindicator="false"
+	               thumbs_loop="false"
+	               tooltips_buttons="false"
+	               tooltips_thumbs="false"
+	               tooltips_hotspots="false"
+	               tooltips_mapspots="false"
+	               deeplinking="false"
+	               loadscene_flags="MERGE"
+	               loadscene_blend="OPENBLEND(0.5, 0.0, 0.75, 0.05, linear)"
+	               loadscene_blend_prev="SLIDEBLEND(0.5, 180, 0.75, linear)"
+	               loadscene_blend_next="SLIDEBLEND(0.5,   0, 0.75, linear)"
+	               loadingtext=" "
+	               layout_width="100%"
+	               layout_maxwidth="814"
+	               controlbar_width="-24"
+	               controlbar_height="40"
+	               controlbar_offset="20"
+	               controlbar_offset_closed="-40"
+	               controlbar_overlap.no-fractionalscaling="10"
+	               controlbar_overlap.fractionalscaling="0"
+	               design_skin_images="vtourskin.png"
+	               design_bgcolor="0x2D3E50"
+	               design_bgalpha="0.8"
+	               design_bgborder="0"
+	               design_bgroundedge="1"
+	               design_bgshadow="0 4 10 0x000000 0.3"
+	               design_thumbborder_bgborder="3 0xFFFFFF 1.0"
+	               design_thumbborder_padding="2"
+	               design_thumbborder_bgroundedge="0"
+	               design_text_css="color:#FFFFFF; font-family:Arial;"
+	               design_text_shadow="1"
+	               />
+
+	<!--
+	    For an alternative skin design either change the <skin_settings> values 
+	    from above or optionally include one of the predefined designs from below.
+	-->
+	<!-- <include url="skin/vtourskin_design_flat_light.xml"  /> -->
+	<!-- <include url="skin/vtourskin_design_glass.xml"       /> -->
+	<!-- <include url="skin/vtourskin_design_ultra_light.xml" /> -->
+	<!-- <include url="skin/vtourskin_design_117.xml"         /> -->
+	<!-- <include url="skin/vtourskin_design_117round.xml"    /> -->
+	<!-- <include url="skin/vtourskin_design_black.xml"       /> -->
+
+
+	<!-- startup action - load the first scene -->
+	<action name="startup" autorun="onstart">
+		if(startscene === null OR !scene[get(startscene)], copy(startscene,scene[0].name); );
+		loadscene(get(startscene), null, MERGE);
+		if(startactions !== null, startactions() );
+	</action>
+
+
+			
+
+
+
+<!-- SCALEN VAN DE VIERKANT IN HET MIDDEN VAN HET SCHERM. VOOR VRAGEN EN ANTWOORD GOED/FOUT-->	
+		<action name="setSizeVierkant">
+
+		set (layer[vraag_1].height, calc(hoogte_plaatje*1)); 	
+		set (layer[vraag_1].width, calc(breedte_plaatje*1));
+
+		set (layer[weet_zeker].height, calc(hoogte_plaatje*1)); 	
+		set (layer[weet_zeker].width, calc(breedte_plaatje*1));
+		
+		set (layer[antwoord_is_goed].height, calc(hoogte_plaatje*1)); 	
+		set (layer[antwoord_is_goed].width, calc(breedte_plaatje*1));	
+		
+		set (layer[antwoord_is_fout].height, calc(hoogte_plaatje*1)); 	
+		set (layer[antwoord_is_fout].width, calc(breedte_plaatje*1));			
+		
+		set (layer[vraag_2].height, calc(hoogte_plaatje*1)); 	
+		set (layer[vraag_2].width, calc(breedte_plaatje*1));		
+
+		set (layer[vraag_3].height, calc(hoogte_plaatje*1)); 	
+		set (layer[vraag_3].width, calc(breedte_plaatje*1));	
+
+		set (layer[vraag_4].height, calc(hoogte_plaatje*1)); 	
+		set (layer[vraag_4].width, calc(breedte_plaatje*1));	
+
+		set (layer[vraag_5].height, calc(hoogte_plaatje*1)); 	
+		set (layer[vraag_5].width, calc(breedte_plaatje*1));	
+		
+
+		set (layer[antwoord_is_goed2].height, calc(hoogte_plaatje*1)); 	
+		set (layer[antwoord_is_goed2].width, calc(breedte_plaatje*1));	
+		
+		set (layer[antwoord_is_fout2].height, calc(hoogte_plaatje*1)); 	
+		set (layer[antwoord_is_fout2].width, calc(breedte_plaatje*1));			
+		
+		set (layer[eindscore].height, calc(hoogte_plaatje*1)); 	
+		set (layer[eindscore].width, calc(breedte_plaatje*1));	
+		
+		set (layer[startscherm_tablet].height, calc(hoogte_plaatje*0.8)); 	
+		set (layer[startscherm_tablet].width, calc(breedte_plaatje*0.8));			
+		
+		</action>		
+		
+
+ 	
+<!-- STARTKNOPPEN  -->
+
+		<layer name="startscherm_tablet" url="images/startscherm_tablet.png" onclick= " " keep="true" visible="true" zorder="2" handcursor="false" capture="false"  align="center" 
+		scale="1.5"  scale.mobile="0.5"  scalechildren="true"/>
+
+		<layer name="startscherm_tablet_verder" style="style_startscherm_tablet_verder" visible= "true" x="0" y="100" zorder="1" 
+		onclick=" delete_startscherm(); " />
+			<style name="style_startscherm_tablet_verder" keep="true" url="images/startknop.png" parent="startscherm_tablet" align="bottom" edge="center" scale= "1" scale.mobile = "1"  />
+
+			
+<action name="delete_startscherm">
+call_scene1(); center_vlak(); setSizeVierkant() ; set (layer[startscherm_tablet].visible,false);
+</action>	
+
+
+<!--     START. LAYERS EN ACTIONS   -->
+<!--     START. LAYERS EN ACTIONS   -->
+<!--    START. LAYERS EN ACTIONS   -->
+
+<action name="startLayer">
+set(layer[jaknop].parent,vraag_1);
+set(layer[neeknop].parent,vraag_1);
+</action>	
+
+
+<!--  POP UP: VRAAG 1 -->
+
+<action name="action_vraag1_show">
+	set (layer[vraag_1].visible,true); center_vlak(); setSizeVierkant();
+	set(layer[jaknop].parent,vraag_1); 
+	set(layer[neeknop].parent,vraag_1); 	
+</action>	
+
+<action name="action_vraag2_show">
+	set (layer[vraag_2].visible,true); center_vlak(); setSizeVierkant();
+	set(layer[jaknop].parent,vraag_2); 
+	set(layer[neeknop].parent,vraag_2); 	
+</action>	
+
+<action name="action_vraag3_show">
+	set (layer[vraag_3].visible,true); center_vlak(); setSizeVierkant();
+	set(layer[jaknop].parent,vraag_3); 
+	set(layer[neeknop].parent,vraag_3); 	
+</action>	
+
+<action name="action_vraag4_show">
+	set (layer[vraag_4].visible,true); center_vlak(); setSizeVierkant();
+	set(layer[jaknop].parent,vraag_4); 
+	set(layer[neeknop].parent,vraag_4); 	
+</action>	
+
+<action name="action_vraag5_show">
+	set (layer[vraag_5].visible,true); center_vlak(); setSizeVierkant();
+	set(layer[jaknop].parent,vraag_5); 
+	set(layer[neeknop].parent,vraag_5); 	
+</action>	
+
+
+
+
+<!--  ////////////   VRAGEN      //////////////////////////////////////// -->
+
+
+		<layer name="vraag_1" url="images/vraag1_leeg.png"  visible= "false" keep="true" handcursor="false" capture="false"  align="center"  scalechildren="true"   />		
+		<layer name="vraag_2" url="images/vraag2_leeg.png"  visible= "false" keep="true" handcursor="false" capture="false"  align="center"  scalechildren="true"   />		
+		<layer name="vraag_3" url="images/vraag1_leeg.png"  visible= "false" keep="true" handcursor="false" capture="false"  align="center"  scalechildren="true"   />		
+		<layer name="vraag_4" url="images/vraag2_leeg.png"  visible= "false" keep="true" handcursor="false" capture="false"  align="center"  scalechildren="true"   />				
+		<layer name="vraag_5" url="images/vraag1_leeg.png"  visible= "false" keep="true" handcursor="false" capture="false"  align="center"  scalechildren="true"   />		
+<!--  ////////////   VERVOLGVRAGEN      //////////////////////////////////////// -->
+
+		
+		<!--
+		<layer name="close_button1" style="close_btn_style1" x="5" y="5" zorder="5" onclick="set (layer[vraag_1].visible,false); knoppen_tonen(); call_delete_vragen(); "/>
+			<style name="close_btn_style1" keep="true" url="images/close.png" parent="vraag_1" align="righttop" edge="center" scale= "0.6" scale.mobile = "1"  />
+		-->
+		<!-- uit onderstaande functie weggegaald  parent="vraag_1" -->	
+			
+			
+		<layer name="jaknop" style="style_jaknop" x="300" y="150" zorder="6" onclick=" call_vraag1_ja(); action_vraag1_ja(); " />
+			<style name="style_jaknop" keep="true" url="images/jaknop.png"  align="leftbottom" edge="center" scale= "1.5" scale.mobile = "1.5"  />
+
+		<layer name="neeknop" style="style_neeknop" x="300" y="150" zorder="6" onclick="call_vraag1_nee(); action_vraag1_nee();  "/>
+			<style name="style_neeknop" keep="true" url="images/neeknop.png" align="rightbottom" edge="center" scale= "1.5" scale.mobile = "1.5"  />
+	
+
+<!-- //////////////////  JA EN NEE KNOPPEN //////////////// -->
+	
+<action name="action_vraag1_ja">
+	set (layer[vraag_1].visible,false); set (layer[antwoord_is_goed].visible,true); call_sound_succes (); center_vlak(); setSizeVierkant();
+</action>	
+
+<action name="action_vraag1_nee">
+	set (layer[vraag_1].visible,false); set (layer[antwoord_is_fout].visible,true); call_sound_nietgoed (); center_vlak(); setSizeVierkant();
+</action>	
+
+
+
+
+<!--  POP UP: ANTWOORD IS GOED!!!! -->		
+		<layer name="antwoord_is_goed" url="images/antwoordisgoed.png"  visible= "false" keep="true" handcursor="false" capture="false"  align="center"  scalechildren="true"  />		
+
+		<layer name="volgende_goed" style="style_volgende_goed" visible= "true" x="0" y="150" zorder="1" onclick="action_vraag1_goed(); call_vraag1_goed()" />
+			<style name="style_volgende_goed" keep="true" url="images/volgende.png" parent="antwoord_is_goed" align="bottom" edge="center" scale= "1.5" scale.mobile = "1.5"  />
+
+			
+<!--  POP UP: ANTWOORD IS FOUT!!!! -->		
+		<layer name="antwoord_is_fout" url="images/antwoordisfout.png"  visible= "false" keep="true" handcursor="false" capture="false"  align="center"  scalechildren="true"  />		
+
+		<layer name="volgende_fout" style="style_volgende_fout" visible= "true" x="0" y="150" zorder="1" onclick="action_vraag1_fout(); call_vraag1_fout(); " />
+			<style name="style_volgende_fout" keep="true" url="images/volgende.png" parent="antwoord_is_fout" align="bottom" edge="center" scale= "1.5" scale.mobile = "1.5"  />
+
+			
+<action name="action_vraag1_goed">
+	set (layer[antwoord_is_goed].visible,false);  call_delete_vragen();  
+</action>	
+
+<action name="action_vraag1_fout">
+	set (layer[antwoord_is_fout].visible,false); call_delete_vragen();    
+</action>	
+
+			
+
+	
+			
+
+			
+			
+			
+			
+<!--  //////////////////////////////////////////////////// -->
+			
+<!--  POP UP: EINDSCORE -->
+		<action name="action_eindscore">
+		  set (layer[antwoord_is_goed2].visible,false);   set (layer[antwoord_is_fout2].visible,false); call_scene1 () ;  set (layer[eindscore].visible,true); center_vlak(); setSizeVierkant();
+		</action>			
+		
+		<layer name="eindscore" url="images/eindscore.png"  visible= "false" keep="true" handcursor="false" capture="false"  align="center"  scalechildren="true"   />		
+
+		
+		
+		
+		<layer name="close_button22" style="close_btn_style22" x="5" y="5" zorder="5" onclick=" action_eindscore_close(); call_eindscore_close();"/>
+			<style name="close_btn_style22" keep="true" url="images/close.png" parent="eindscore" align="righttop" edge="center" scale= "0.6" scale.mobile = "1"  />
+			
+<action name="action_eindscore_close">
+	set (layer[eindscore].visible,false); set (layer[vraag1].visible,true);
+</action>				
+						
+			
+			
+			
+			
+			
+			
+
+<!-- CALL NAAR INDEX.HTML . HTML STUURT EEN SOCKET NAAR DE SERVER -->
+<!-- de server stuurt vervolgens   -->
+	
+
+<!-- ALGEMEEN -->			
+		
+
+
+		<action name="call_delete_vragen" type="Javascript">
+				 window.send_call_delete_vragen();
+		</action>
+
+		<action name="call_sound_succes" type="Javascript">
+				 window.send_call_sound_succes();
+		</action>		
+		
+		<action name="call_sound_nietgoed" type="Javascript">
+				 window.send_call_sound_nietgoed();
+		</action>	
+
+		
+<!-- SCENES -->		
+		
+		<action name="call_scene1" type="Javascript">
+				 window.send_call_scene1_krpano();
+		</action>	
+
+		<action name="call_scene2" type="Javascript">
+				 window.send_call_scene2_krpano();
+		</action>		
+			
+
+
+
+
+	
+<!-- VRAAG 1 -->	
+
+
+
+
+
+		<action name="call_vraag1_ja" type="Javascript">
+				 window.send_call_vraag1_ja();
+		</action>	
+		
+		<action name="call_vraag1_nee" type="Javascript">
+				 window.send_call_vraag1_nee();
+		</action>			
+
+		<action name="call_vraag1_goed" type="Javascript">
+				 window.send_call_vraag1_goed();
+		</action>	
+
+		<action name="call_vraag1_fout" type="Javascript">
+				 window.send_call_vraag1_fout();
+		</action>			
+	
+
+	
+	<!-- VRAAG 2 -->		
+		<action name="call_vraag2_ja" type="Javascript">
+				 window.send_call_vraag2_ja();
+		</action>		
+
+		
+		<action name="	call_vraag2_nee" type="Javascript">
+				 window.send_call_vraag2_nee();
+		</action>				
+
+
+		<action name="call_vraag2_goed" type="Javascript">
+				 window.send_call_vraag2_goed();
+		</action>	
+
+		<action name="call_vraag2_fout" type="Javascript">
+				 window.send_call_vraag2_fout();
+		</action>		
+
+
+<!-- EINDSCORE -->		
+
+		<action name="call_eindscore" type="Javascript">
+				 window.send_call_eindscore();
+		</action>		
+		
+		<action name="call_eindscore_close" type="Javascript">
+				 window.send_call_eindscore_close();
+		</action>			
+		
+		
+ 
+
+		
+		
+				
+
+<events onviewchange="center_vlak();"/>
+
+<action name="center_vlak">
+if(stagewidth LT stageheight  <!-- breedte kleiner dan hoogte =  portrait-->
+,  
+<!-- PORTRAIT -->
+if(device.tablet, set (breedte_plaatje, calc(stagewidth*0.7)); 		set (hoogte_plaatje, calc(stagewidth*0.7) ););
+if(device.mobile, set (breedte_plaatje, calc(stagewidth*0.7)); 		set (hoogte_plaatje, calc(stagewidth*0.7) ););	
+if(device.desktop, set (breedte_plaatje, calc(stagewidth*0.5)); 	set (hoogte_plaatje, calc(stagewidth*0.5) ););	
+,
+<!-- LANDSCAPE -->
+if(device.tablet,  set (hoogte_plaatje, calc(stageheight*0.7)); 	set (breedte_plaatje, calc(stageheight*0.7) ););
+if(device.mobile,  set (hoogte_plaatje, calc(stageheight*0.7)); 	set (breedte_plaatje, calc(stageheight*0.7) );); 	
+if(device.desktop, set (hoogte_plaatje, calc(stageheight*0.5)); 	set (breedte_plaatje, calc(stageheight*0.5) ););	
+);
+
+</action>
+
+<action name="delete_vragen">
+set (layer[vraag_1].visible,false);
+set (layer[vraag_2].visible,false); 
+set (layer[vraag_3].visible,false); 
+set (layer[vraag_4].visible,false); 
+set (layer[vraag_5].visible,false); 
+
+</action>
+
+
+
+<action name="knoppen_sluiten">
+	set (layer[knop1].visible,false);
+	set (layer[knop2].visible,false);
+	set (layer[vraag1].visible,false);
+	set (layer[vraag2].visible,false);
+	set (layer[leeg].visible,false);
+</action>
+
+<action name="knoppen_tonen">
+	
+	set (layer[vraag1].visible,true);
+	
+
+	<!--
+	set (layer[knop1].visible,true);
+	set (layer[knop2].visible,true);
+	set (layer[vraag2].visible,true);
+	set (layer[leeg].visible,true);
+	-->
+	
+</action>
+	
+
+<action name="laad_scene1">
+loadscene(scene_100, null, MERGE, BLEND(1));
+</action>
+
+<action name="laad_scene2">
+loadscene(scene_400, null, MERGE, BLEND(1));
+</action>
+
+	
+	
+	
+	<scene name="scene_100" title="100" onstart="" havevrimage="true" thumburl="panos/100.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/100.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+			<level tiledimagewidth="2048" tiledimageheight="2048">
+				<cube url="panos/100.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1024" tiledimageheight="1024">
+				<cube url="panos/100.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+
+		<image if="webvr.isenabled">
+			<cube url="panos/100.tiles/vr/pano_%s.jpg" />
+		</image>
+
+		<!-- place your scene hotspots here -->
+
+	</scene>
+
+	
+	
+	<!-- let op olyppisch heeft andere resolutie etc -->
+	
+		<scene name="scene_400" title="400" onstart="" havevrimage="true" thumburl="panos/400.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/400.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+			<level tiledimagewidth="2560" tiledimageheight="2560">
+				<cube url="panos/400.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1280" tiledimageheight="1280">
+				<cube url="panos/400.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="640" tiledimageheight="640">
+				<cube url="panos/400.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+
+		<image if="webvr.isenabled">
+			<cube url="panos/400.tiles/vr/pano_%s.jpg" />
+		</image>
+
+		<!-- place your scene hotspots here -->
+
+	</scene>
+	
+	
+	
+	
+	
+	
+	
+
+</krpano>

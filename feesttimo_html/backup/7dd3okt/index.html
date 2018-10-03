@@ -1,0 +1,831 @@
+<!-- 20juli2018: nieuw rond regel 270 de alpha en beta als socket ingelezen en dan krpano een call geven zodat hij de positie van de 360 veranderd  
+ tevens rond regel 819 opgenomen dat hij <iframe src="/swiper3" style="width: 0px; height: 0px;" border="0"></iframe> start.
+ hiermee geeft hij zijn alpha/beta/gamma waarde van de mobiel door
+ 
+ 20 juli: dit project weeer in de oude staat gebracht. een neiuwe map AR_html gemaakt waar echt AR wordt gemaakt. 
+-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+	
+		<title>Switcher</title>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta http-equiv="x-ua-compatible" content="IE=edge" />
+		
+		<style>
+				body {
+					background: white;
+					font-family:      TradeGothic, sans-serif;
+					font-size: 30px;		
+				}
+				<!--
+				#mainFoto {
+					max-width: 1280px;
+					width: 100%;
+					display: block;
+					margin: 50px auto;
+					border: 0;
+				}
+				-->
+				
+				.size{
+				font-family:      TradeGothic, sans-serif;
+				font-size: 30px;		
+				}
+				
+			@-ms-viewport { width:device-width; }
+			@media only screen and (min-device-width:800px) { html { overflow:hidden; } }
+			html { height:100%; }
+			body { height:100%; overflow:hidden; margin:0; padding:0; font-family:Arial, Helvetica, sans-serif; font-size:16px; color:#FFFFFF; background-color:#000000; }
+		</style>
+	</head>
+	
+	
+	<body>
+		<!-- <a href="/"   >home</a>-->	
+		
+		
+		<audio id="sound_1" src="/static/krpano/audio/1.mp3"   loop="loop"    preload="auto"></audio>  
+		<audio id="sound_2" src="/static/krpano/audio/2.mp3"   loop="loop"    preload="auto"></audio>  
+		<audio id="sound_4" src="/static/krpano/audio/4.mp3"   loop="loop"    preload="auto"></audio>  		
+		<audio id="sound_succes" src="/static/krpano/audio/succes.mp3"      preload="auto"></audio>  		
+		<audio id="sound_nietgoed" src="/static/krpano/audio/geluidnietgoed.mp3"      preload="auto"></audio>  		
+
+		
+		
+		
+		
+		
+		
+<!-- LASER POINTER   //////     LASER POINTER   //////     LASER POINTER   //////     LASER POINTER   //////     LASER POINTER   //////     LASER POINTER   //////      -->		
+<!-- LASER POINTER   //////     LASER POINTER   //////     LASER POINTER   //////     LASER POINTER   //////     LASER POINTER   //////     LASER POINTER   //////      -->		
+<!-- LASER POINTER   //////     LASER POINTER   //////     LASER POINTER   //////     LASER POINTER   //////     LASER POINTER   //////     LASER POINTER   //////      -->		
+
+		<!-- onderstaand is de code dat hij alpha en beta doorgeeft en er een laser pointer van gemaakt wordt in unity
+		<iframe src="/static/swiper3" style="width: 0px; height: 0px;" border="0"></iframe>
+		-->
+		
+		
+		
+		<script src="/static/krpano/tour.js"></script>
+		<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+		
+		
+		
+		<script src="/static/js/slider.js"></script> 
+		
+		
+		
+		
+		<!--
+		<button id="hide-1" type="button" class="btn btn-info">Click here to Hide the image below</button>
+		<button id="show-1" type="button" class="btn btn-info">Click here to Show the image below</button>
+		<div><img id="mainFoto" src="static/images2/245.jpg" alt="" width="800" height="800" /></div>
+		-->
+	
+		<div id="pano" style="width:100%;height:100%;">
+			<noscript><table style="width:100%;height:100%;"><tr style="vertical-align:middle;"><td><div style="text-align:center;">ERROR:<br/><br/>Javascript not activated<br/><br/></div></td></tr></table></noscript>
+			<script>
+				embedpano({swf:"/static/krpano/tour.swf", xml:"/static/krpano/tour.xml", target:"pano", html5:"auto", mobilescale:1.0, passQueryParameters:true});
+			</script>
+		</div>
+	
+		<!-- 
+		<button id="audio-1" type="button" class="btn btn-info size">geluid</button>	
+		<audio class="audios" id="yes-audio" controls preload="none"> 
+		<source src="static/audio/sonar.wav" type="audio/wav"> 
+		</audio>
+		
+		<a href="/home" class="js-ajx-url-home btn">ad_product</a> 
+		<button class="btn btn-default" onclick="vibrateSimple()">Vibrate for 200 ms</button>
+		<button class="btn btn-default" onclick="vibratePattern()">Vibrate with pattern</button>
+		<div><img id="mainFoto2" src="static/images2/155.jpg" alt="" width="800" height="800" /></div>  -->
+
+		
+
+		<script>
+
+			for (var i = 1; i < (256 + 1); i++) {
+				var imageIndexString = i;
+				if (i < 100){
+					imageIndexString = '0' + imageIndexString;
+				}
+				if (i < 10) {
+					imageIndexString = '0' + imageIndexString;
+				}
+
+				var imagePath = '/static/images2/' + imageIndexString + '.jpg';  // probleem?? laad hij wel de 001.jpg of alleen de 1.jpg????
+				var image = new Image();
+				image.src = imagePath;
+				console.log('preloading..' + imagePath);
+			}
+
+			
+			jQuery(document).ready(function($){ 
+			$('#hide-1').click(function() {   $('#mainFoto').hide('slow'); });
+			$('#show-1').click(function() {   $('#mainFoto').show('slow'); }); 
+			$('#audio-1').click(function() {   $('#yes-audio').trigger('play'); 			navigator.vibrate([100, 200, 200, 200, 500]);}); 
+			});
+
+			
+			function vibrateSimple() {
+			  navigator.vibrate(200);
+			}
+
+			function vibratePattern() {
+			  navigator.vibrate([100, 200, 200, 200, 500]);
+			}
+
+		</script>
+
+		
+		
+		<script>
+	
+		$(function () {
+				var socket = io();
+
+// LEES HLOOKAT EN SEND SOCKET TO BACKEND  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// LEES HLOOKAT EN SEND SOCKET TO BACKEND  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// LEES HLOOKAT EN SEND SOCKET TO BACKEND  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/*  let op. onderstaand is een werkende functie en stuur de hlook en vlook door zodat alle andere panos luisteren en meedraaien. maar er moet nog een functie in dat je de pano
+als master inzet. nu knippert hij omdat hij steeds een stukje terug gaat. 
+
+soort onderstaande functie inbouwen!!!!!!!!!!!!
+een nieuwe variable. die variable wordt op basis van een ontvangen socket ingevuld
+de socket is dat de html luistert naar hlook en vlook sockets of dat deze de sockets verstuurd
+default is 1. de html is de ontvanger van de sockets
+maar is de socket 2, dan is de html zender van de sockets!!
+onderstaande function moet helemaal onderaan de code
+
+var sound_nr = 1;
+
+// scenes ontvangen	
+	window.send_scene1 = function(){
+		sound_nr = 1;	
+		console.log ('scene = 1'); 
+	}
+
+	window.send_scene2 = function(){
+		sound_nr = 2;		
+		console.log ('scene = 2'); 
+	}
+
+
+
+
+
+
+				var hlookat;
+				setInterval(function() {
+					var krpano = document.getElementById("krpanoSWFObject");
+					var current_hlookat = krpano.get('view.hlookat');
+					
+					//if (current_hlookat - hlookat > 1 || current_hlookat - hlookat < 1 ) {
+					if (current_hlookat != hlookat) {
+						hlookat = current_hlookat;
+						socket.emit('hlookat', krpano.get('view.hlookat'));	
+					}
+				}, 100); 
+				
+				
+				var vlookat;
+				setInterval(function() {
+					var krpano = document.getElementById("krpanoSWFObject");
+					var current_vlookat = krpano.get('view.vlookat');
+					
+					//if (current_vlookat - hlookat > 1 || current_vlookat - hlookat < 1 ) {
+					if (current_vlookat != vlookat) {
+						vlookat = current_vlookat;
+						socket.emit('vlookat', krpano.get('view.vlookat'));	
+					}
+				}, 100); 				
+			
+*/			
+
+
+
+
+			
+/// ONTVANGEN SOCKET VAN BACKEND   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/// ONTVANGEN SOCKET VAN BACKEND   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/// ONTVANGEN SOCKET VAN BACKEND   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+					socket.on('message', function(msg, vid, scale){  
+
+							console.log (msg);
+							console.log(vid);
+							//console.log(scale);
+							
+							if (msg == 'aan'){
+								$('#mainFoto').show('slow'); 
+								$('#yes-audio').trigger('play');
+								<!-- window.location = '/change_product_html';    let op dit werkt niet. hij gaat wel naar de url maar de hele werking is niet goed etc. -->
+								navigator.vibrate([100, 200, 200, 200, 500]);
+							}
+
+							if (msg == 'uit'){
+								$('#mainFoto').hide('slow');		
+								$('#yes-audio').trigger('pause')	;			
+							}	
+
+							//if (msg == 'photo'){			
+							//    var krpano = document.getElementById("krpanoSWFObject");
+							//	var src = "static/images2/" + vid + ".jpg"
+							//	$('#mainFoto').attr('src', src);
+							//}		
+							
+							<!-- hlookat-->
+							if (msg == 'hlookat'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.set("view.hlookat", vid);
+								//console.log("Horizontal lookat via socket: " + krpano.get("view.hlookat"));	
+							}				
+
+														
+							<!-- vlookat-->
+							if (msg == 'vlookat'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.set("view.vlookat", vid);
+								//console.log("vertical lookat via socket: " + krpano.get("view.vlookat"));	
+							}				
+
+
+							
+							<!--alpha   let op was -vid-->
+							if (msg == 'y'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.set("view.hlookat", vid);
+								//console.log("Horizontal lookat: " + krpano.get("view.hlookat"));	
+							}				
+
+							<!--beta  -->
+							if (msg == 'x'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.set("view.vlookat", vid);
+								//krpano.set("view.vlookat", 200);
+							}	
+							
+////////////////////  20 juli nieuw   /// alpha en gamma socket inlezen vanuit rotator3.js.  ////////////////////////////////////////////////
+// nu krijg je nog socket via rotator3. maar deze moet straks zonder sockets en internet direct een interne call krijgen vanuit rotator3
+//  mark scherrenburg kan hiermee helpen			
+
+/*	20 juli weer uitgezet en in AR_html overgenomen
+						
+							if (msg == 'alpha'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.set("view.hlookat", - vid);
+							}									
+
+							if (msg == 'gamma'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.set("view.vlookat", - vid);
+							}								
+
+	*/						
+//  RECEIVE SOCKETS WITHIN KRPANO    // RECEIVE SOCKETS WITHIN KRPANO							
+							
+							
+							if (vid == 'call_scene1_krpano'){	
+								var krpano = document.getElementById("krpanoSWFObject");
+								console.log ("verander scene");						
+								krpano.call( "laad_scene1()" );		
+								sound_4.play();
+								sound_2.pause();
+								//sound_succes.currentTime = 0;
+								sound_succes.pause;
+								sound_nietgoed.pause;
+
+								
+							}								
+							
+							if (vid == 'call_scene2_krpano'){	
+								var krpano = document.getElementById("krpanoSWFObject");
+								console.log ("verander scene");						
+								krpano.call( "laad_scene2()" );		
+								sound_4.pause();
+								//sound_2.play();
+								//sound_succes.currentTime = 0;
+								sound_succes.pause;
+								sound_nietgoed.pause;
+							}	
+
+						
+
+							
+							
+							if (vid == 'unity_delete_vragen'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								console.log ('unity_delete_vragen'); 
+								krpano.call( "delete_vragen()" );		
+							}							
+							
+								
+							if (vid == 'call_delete_vragen'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "delete_vragen()" );	
+							}		
+
+
+	
+							if (vid == 'call_sound_succes'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								sound_succes.play();	
+								sound_4.pause();	
+								sound_2.pause();
+								sound_nietgoed.pause();
+								sound_nietgoed.currentTime = 0;
+
+							}									
+							
+							if (vid == 'call_sound_nietgoed'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								sound_succes.pause();	
+								sound_4.pause();	
+								sound_2.pause();
+								sound_nietgoed.play();
+							}									
+
+							
+			<!-- VRAAG 1  -->
+			
+							if (vid == 'unity_vraag1_1'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "action_vraag1_show()" );		
+								console.log ('socket unity_vraag1_1 en  dan: action_vraag1_show'); 
+							}	
+
+
+			
+		
+							if (vid == 'call_vraag1_ja'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "action_vraag1_ja()" );		
+								console.log ('gaat de goede call weg??'); 
+							}										
+							
+							if (vid == 'call_vraag1_nee'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "action_vraag1_nee()" );		
+								console.log ('action_vraag1_nee'); 
+							}												
+
+							if (vid == 'call_vraag1_nee_maartochdoor'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "action_vraag1_nee_maartochdoor()" );		
+								console.log ('action_vraag1_nee_maartochdoor'); 
+							}												
+
+							if (vid == 'call_vraag1_ja_volgendevraag'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "action_vraag1_ja_volgendevraag()" );		
+								console.log ('gaat de goede call weg??'); 
+							}
+							
+							
+							
+							
+							
+							if (vid == 'call_vraag1_goed'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "action_vraag1_goed()" );		
+								console.log ('gaat de goede call weg??'); 
+							}	
+
+							if (vid == 'call_vraag1_fout'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "action_vraag1_fout()" );		
+								console.log ('action_vraag1_fout??'); 
+							}				
+
+							if (vid == 'call_vraag1_fout_maartochdoor'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "action_vraag1_fout_maartochdoor()" );		
+								console.log ('action_vraag1_fout_maartochdoor??'); 
+							}	
+
+							if (vid == 'call_vraag1_goed_volgendevraag'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "action_vraag1_goed_volgendevraag()" );		
+								console.log ('gaat de goede call weg??'); 
+							}	
+
+							
+							
+							
+							
+
+			<!-- VRAAG 2  -->
+
+
+			
+							if (vid == 'unity_vraag1_2'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "action_vraag2_show()" );		
+								console.log ('socket unity_vraag1_2 en  dan: action_vraag2_show'); 
+							}	
+
+
+
+
+							if (vid == 'call_vraag2_ja'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "action_vraag2_ja()" );		
+								console.log ('gaat de goede call weg??'); 
+							}										
+							
+							if (vid == 'call_vraag2_nee'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "action_vraag2_nee()" );		
+								console.log ('action_vraag2_nee'); 
+							}												
+							
+							if (vid == 'call_vraag2_goed'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "action_vraag2_goed()" );		
+								console.log ('gaat de goede call weg??'); 
+							}	
+
+							if (vid == 'call_vraag2_fout'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "action_vraag2_fout()" );		
+								console.log ('action_vraag2_fout??'); 
+							}			
+
+
+// GENERIEKE VRAGEN							
+							
+						if (vid == 'unity_vraag1_3'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "action_vraag3_show()" );		
+								console.log ('socket unity_vraag1_3 en  dan: action_vraag3_show'); 
+							}	
+
+						if (vid == 'unity_vraag1_4'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "action_vraag4_show()" );		
+								console.log ('socket unity_vraag1_4 en  dan: action_vraag4_show'); 
+							}
+
+						if (vid == 'unity_vraag1_5'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "action_vraag5_show()" );		
+								console.log ('socket unity_vraag1_5 en  dan: action_vraag5_show'); 
+							}
+
+	// nieuw						
+							
+						if (vid == 'unity_vraag2_1'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "action_vraag2_1_show()" );		
+								console.log ('action_vraag2_1_show'); 
+							}							
+							
+						if (vid == 'unity_vraag2_2'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "action_vraag2_2_show()" );		
+								console.log ('action_vraag2_2_show'); 
+							}										
+							
+						if (vid == 'unity_vraag2_3'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "action_vraag2_3_show()" );		
+								console.log ('action_vraag2_3_show'); 
+							}										
+							
+
+						if (vid == 'unity_vraag3_1'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "action_vraag3_1_show()" );		
+								console.log ('action_vraag3_1_show'); 
+							}										
+							
+						if (vid == 'unity_vraag3_2'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "action_vraag3_2_show()" );		
+								console.log ('action_vraag3_2_show'); 
+							}								
+							
+						if (vid == 'unity_vraag3_3'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "action_vraag3_3_show()" );		
+								console.log ('action_vraag3_3_show'); 
+							}											
+							
+								
+							
+							
+// OP ZOEK NAAR ICON
+// unity stuurt een socket. dit geeft aan in welke fase de app zit in de zoektocht naar de 5 icons.							
+						if (vid == 'opZoekNaarIcon_1'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "opZoekNaarIcon_1()" );		
+								console.log ('opZoekNaarIcon_1'); 
+							}
+							
+						if (vid == 'opZoekNaarIcon_2'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "opZoekNaarIcon_2()" );		
+								console.log ('opZoekNaarIcon_2'); 
+							}							
+
+						if (vid == 'opZoekNaarIcon_3'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "opZoekNaarIcon_3()" );		
+								console.log ('opZoekNaarIcon_3'); 
+							}							
+							
+
+						if (vid == 'opZoekNaarIcon_4'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "opZoekNaarIcon_4()" );		
+								console.log ('opZoekNaarIcon_4'); 
+							}
+
+						if (vid == 'opZoekNaarIcon_5'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "opZoekNaarIcon_5()" );		
+								console.log ('opZoekNaarIcon_5'); 
+							}
+
+						if (vid == 'helaas_het_spel_stopt'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "helaas_het_spel_stopt()" );		
+								console.log ('helaas_het_spel_stopt'); 
+							}	
+
+
+						if (vid == 'SCENE1'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "SCENE1()" );		
+								console.log ('SCENE1'); 
+							}	
+							
+						if (vid == 'SCENE2'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "SCENE2()" );		
+								console.log ('SCENE2'); 
+							}								
+							
+						if (vid == 'SCENE3'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "SCENE3()" );		
+								console.log ('SCENE3'); 
+							}							
+							
+						if (vid == 'TUNNEL1'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "TUNNEL1()" );		
+								console.log ('TUNNEL1'); 
+							}		
+
+						if (vid == 'TUNNEL2'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "TUNNEL2()" );		
+								console.log ('TUNNEL2'); 
+							}		
+
+						if (vid == 'EINDE'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "EINDE()" );		
+								console.log ('EINDE'); 
+							}		
+
+							
+							
+			<!-- EINDSCOSRE  -->							
+							
+							if (vid == 'call_eindscore'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "action_eindscore()" );		
+								console.log ('action_eindscore??'); 
+							}											
+	
+							if (vid == 'call_eindscore_close'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "action_eindscore_close()" );		
+								console.log ('komt hij fucking hier??'); 
+							}			
+
+							
+// RESET GAME							
+							if (vid == 'call_reset_game'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "action_reset_game()" );		
+								console.log ('action_reset_game'); 
+							}		
+							
+							
+							
+							
+
+// INTRODUCTIE STARTSCHERM							
+							if (vid == 'call_delete_startscherm'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "action_delete_startscherm()" );		
+								console.log ('action_delete_startscherm'); 
+							}									
+							
+							
+						
+							
+							
+							
+							//////////////////
+								
+							if (msg == 'scale'){
+								// hier een inzoom functie	
+							}						
+					
+					});  //einde on-message
+
+	
+
+
+
+// EEN INTERNE CALL VAN KRPANO, SEND SOCKET TO BACKEND  ///////////////////////////////////////////////////////////////////////////////////////////////////////
+// EEN INTERNE CALL VAN KRPANO, SEND SOCKET TO BACKEND  ///////////////////////////////////////////////////////////////////////////////////////////////////////
+// EEN INTERNE CALL VAN KRPANO, SEND SOCKET TO BACKEND  ///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// RESET GAME
+
+			window.send_call_reset_game = function(){
+				console.log ('call_reset_game'); 
+				socket.emit('vraag', 'call_reset_game');
+			}	
+
+
+
+
+
+
+
+// INTRODUCTIE STARTSCHERM
+
+			window.send_call_delete_startscherm = function(){
+				console.log ('call_delete_startscherm'); 
+				socket.emit('vraag', 'call_delete_startscherm');
+			}	
+
+
+			
+// ALGEMEEN   // ALGEMEEN
+			
+			
+			window.send_call_delete_vragen = function(){
+				console.log ('call_delete_vragen'); 
+				socket.emit('vraag', 'call_delete_vragen');
+			}		
+
+			window.send_call_sound_succes = function(){
+				console.log ('call_sound_succes'); 
+				socket.emit('vraag', 'call_sound_succes');
+			}		
+			
+			window.send_call_sound_nietgoed = function(){
+				console.log ('call_sound_nietgoed'); 
+				socket.emit('vraag', 'call_sound_nietgoed');
+			}					
+
+
+			
+// SCENES   // SCENES
+			window.send_call_scene1_krpano = function(){
+				console.log ('call_scene1_krpano'); 
+				socket.emit('scene', 'call_scene1_krpano');	
+			}
+
+			window.send_call_scene2_krpano = function(){
+				console.log ('call_scene2_krpano'); 
+				socket.emit('scene', 'call_scene2_krpano');
+			}	
+
+
+
+			
+// VRAAG 1   // VRAAG 1
+
+			window.send_call_vraag1_ja	 = function(){
+				console.log ('call_vraag1_ja'); 
+				socket.emit('vraag', 'call_vraag1_ja');
+			}			
+
+			window.send_call_vraag1_nee	 = function(){
+				console.log ('call_vraag1_nee'); 
+				socket.emit('vraag', 'call_vraag1_nee');
+			}
+
+			window.send_call_vraag1_nee_maartochdoor = function(){
+				console.log ('call_vraag1_nee_maartochdoor'); 
+				socket.emit('vraag', 'call_vraag1_nee_maartochdoor');
+			}			
+
+			window.send_call_vraag1_ja_volgendevraag	 = function(){
+				console.log ('call_vraag1_ja_volgendevraag'); 
+				socket.emit('vraag', 'call_vraag1_ja_volgendevraag');
+			}			
+			
+			
+			
+			
+	
+			window.send_call_vraag1_goed  = function(){
+				console.log ('	 call_vraag1_goed '); 
+				socket.emit('vraag', 'call_vraag1_goed');
+			}				
+			
+			window.send_call_vraag1_fout  = function(){
+				console.log ('call_vraag1_fout'); 
+				socket.emit('vraag', 'call_vraag1_fout');
+			}	
+
+			window.send_call_vraag1_fout_maartochdoor  = function(){
+				console.log ('call_vraag1_fout_maartochdoor'); 
+				socket.emit('vraag', 'call_vraag1_fout_maartochdoor');
+			}
+
+			window.send_call_vraag1_goed_volgendevraag  = function(){
+				console.log ('	 call_vraag1_goed_volgendevraag '); 
+				socket.emit('vraag', 'call_vraag1_goed_volgendevraag');
+			}				
+
+			
+	
+
+			
+
+// VRAAG 2   // VRAAG 2
+
+			window.send_call_vraag2_ja	 = function(){
+				console.log ('call_vraag2_ja'); 
+				socket.emit('vraag', 'call_vraag2_ja');
+			}			
+
+			window.send_call_vraag2_nee	 = function(){
+				console.log ('call_vraag2_nee'); 
+				socket.emit('vraag', 'call_vraag2_nee');
+			}
+			
+			window.send_call_vraag2_goed  = function(){
+				console.log ('	 call_vraag2_goed '); 
+				socket.emit('vraag', 'call_vraag2_goed');
+			}				
+			
+			window.send_call_vraag2_fout  = function(){
+				console.log ('	call_vraag2_fout'); 
+				socket.emit('vraag', 'call_vraag2_fout');
+			}							
+			
+// EINDSCORE		
+			
+			window.send_call_eindscore  = function(){
+				console.log ('call_eindscore'); 
+				socket.emit('vraag', 'call_eindscore');
+			}					
+
+			window.send_call_eindscore_close  = function(){
+				console.log ('call_eindscore_close'); 
+				socket.emit('vraag', 'call_eindscore_close');
+			}			
+			
+			
+	
+			
+		}); // einde function
+		</script>
+		
+		
+		
+		<script>
+		  $(function () {
+			var socket = io();
+			$('.js-ajx-url-home').on('click', function(e) {
+				e.preventDefault();
+				$.ajax({
+					url: $(this).attr('href')
+				}).done(function() {
+				window.location = '/';
+				console.log('Ajax request successfull');
+				});
+			});
+		  });
+		</script>		
+
+		
+		
+<!-- let op onderstaande nieuw om in de krpano ook de alpha, beta en gamma waarde uit te lezen-->
+<!-- let op onderstaande nieuw om in de krpano ook de alpha, beta en gamma waarde uit te lezen-->
+<!-- let op onderstaande nieuw om in de krpano ook de alpha, beta en gamma waarde uit te lezen-->
+
+		<!--   20 juli weer uitgezet  <iframe src="/swiper3" style="width: 0px; height: 0px;" border="0"></iframe>  -->
+
+      <!--   <script src="/static/js/rotator3.js"></script>  --> 
+		
+	</body>
+</html>

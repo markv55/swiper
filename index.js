@@ -252,6 +252,13 @@ app.get('/krpano_html', function(req, res) {
 });
 
 
+app.get('/feesttimo_html', function(req, res) {
+	res.sendFile(path.join(__dirname+'/feesttimo_html/index.html'));
+});
+
+
+
+
 app.get('/AR_html', function(req, res) {
 	res.sendFile(path.join(__dirname+'/AR_html/index.html'));
 });
