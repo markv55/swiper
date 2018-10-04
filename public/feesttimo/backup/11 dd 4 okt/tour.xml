@@ -196,14 +196,8 @@ deze popups etc. komen in midden van het scherm uit en niet in midden van ieder 
 		set (layer[startscherm_tablet].height, calc(hoogte_plaatje*1)); 	
 		set (layer[startscherm_tablet].width, calc(breedte_plaatje*1));	
 
-		<!--
-		set (layer[bar].height, calc(hoogte_plaatje*0.2)); 	waarom wordt de bar ook onderaan nog een keer geset?????? 
-		set (layer[bar].width, calc(hoogte_plaatje*3));		waarom staat hier niet breedte plaatje?? 	
-		-->
-		
-		set (layer[VR_bril].height, calc(stageheight*1)); 	
-		set (layer[VR_bril].width, calc(stagewidth*1));			
-		
+		set (layer[bar].height, calc(hoogte_plaatje*0.2)); 	
+		set (layer[bar].width, calc(hoogte_plaatje*3));			
 		
 		</action>		
 
@@ -215,8 +209,6 @@ deze popups etc. komen in midden van het scherm uit en niet in midden van ieder 
 		<layer name="reset_button" url="images/home2.png"  visible= "true" keep="true" handcursor="false" capture="false"  align="righttop"  scalechildren="true" scale= "0.15" scale.mobile = "0.1" 
 		onclick = "action_reset_game(); call_reset_game"  />		
 
-<!-- VR bril contour-->
-		<layer name="VR_bril" url="images/kader2.png"  visible= "true" keep="true" handcursor="false" capture="false"  align="center"  scalechildren="true"   />				
 
 		
 <!--VOLLEDIG RESET VAN DE GAME. -->
@@ -544,10 +536,9 @@ action_vraag1_ja_volgendevraag : deze moet bij vraag 1 en 2. hij gaat in unity n
 
 <!-- SCOREBORD       SCOREBORD        SCOREBORD       SCOREBORD        SCOREBORD       SCOREBORD        SCOREBORD       SCOREBORD        SCOREBORD       SCOREBORD    -->    
 
-<!--
-<layer name="bar" url="images/score/bar.png" visible= "true"    x= "0" y="0"   zorder="6" keep="true"  align="bottom" edge="bottom" scalechildren="false"  />
--->
-<layer name="bar" url="images/score/bar_transparant.png" visible= "true"    x= "0" y="0"   zorder="6" keep="true"  align="bottom" edge="bottom" scalechildren="false"  />
+
+	
+		<layer name="bar" url="images/score/bar.png" visible= "true"    x= "0" y="0"   zorder="6" keep="true"  align="bottom" edge="bottom" scalechildren="false"  />
 	
 	
 <action name="scale_bar">
@@ -565,65 +556,60 @@ if(device.mobile,  	set(scaleFactorScore, '0.1'););
 if(device.desktop, 	set(scaleFactorScore, '0.1'););	
 );	
 
-
-
 		
-		<!--set (layer[bar].height, calc(stageheight*0.1)); 	-->
-		set (layer[bar].height, calc(stageheight*0.2));
+		set (layer[bar].height, calc(stageheight*0.1)); 	
 		set (layer[bar].width, calc(stagewidth*1));	
 
 		
-		set (layer[score_tekst].x, calc(stagewidth*(3/16)));	
+		set (layer[score_tekst].x, calc(stagewidth*(1/12)));	
 		set (layer[score_tekst].width, calc(stageheight*scaleFactorScore*1.3));	
 		set (layer[score_tekst].height, calc(stageheight*scaleFactorScore*1.3));		
 		
 		
 		
 <!-- WERELD 1  -->
-		set (layer[punt1].x, calc(stagewidth*(5/16)));	
+		set (layer[punt1].x, calc(stagewidth*(3/12)));	
 		set (layer[punt1].width, calc(stageheight*scaleFactorScore));	
 		set (layer[punt1].height, calc(stageheight*scaleFactorScore));
 
-		set (layer[punt2].x, calc(stagewidth*(6/16)));	
+		set (layer[punt2].x, calc(stagewidth*(4/12)));	
 		set (layer[punt2].width, calc(stageheight*scaleFactorScore));	
 		set (layer[punt2].height, calc(stageheight*scaleFactorScore));
 		
 		
-		set (layer[punt3].x, calc(stagewidth*(7/16)));	
+		set (layer[punt3].x, calc(stagewidth*(5/12)));	
 		set (layer[punt3].width, calc(stageheight*scaleFactorScore));	
 		set (layer[punt3].height, calc(stageheight*scaleFactorScore));	
 		
 <!-- WERELD 2  -->
-		set (layer[punt4].x, calc(stagewidth*(8/16)));	
+		set (layer[punt4].x, calc(stagewidth*(6/12)));	
 		set (layer[punt4].width, calc(stageheight*scaleFactorScore));	
 		set (layer[punt4].height, calc(stageheight*scaleFactorScore));
 
-		set (layer[punt5].x, calc(stagewidth*(9/16)));	
+		set (layer[punt5].x, calc(stagewidth*(7/12)));	
 		set (layer[punt5].width, calc(stageheight*scaleFactorScore));	
 		set (layer[punt5].height, calc(stageheight*scaleFactorScore));
 		
 		
-		set (layer[punt6].x, calc(stagewidth*(10/16)));	
+		set (layer[punt6].x, calc(stagewidth*(8/12)));	
 		set (layer[punt6].width, calc(stageheight*scaleFactorScore));	
 		set (layer[punt6].height, calc(stageheight*scaleFactorScore));	
 
 <!-- WERELD 3  -->
-		set (layer[punt7].x, calc(stagewidth*(11/16)));	
+		set (layer[punt7].x, calc(stagewidth*(9/12)));	
 		set (layer[punt7].width, calc(stageheight*scaleFactorScore));	
 		set (layer[punt7].height, calc(stageheight*scaleFactorScore));
 
-		set (layer[punt8].x, calc(stagewidth*(12/16)));	
+		set (layer[punt8].x, calc(stagewidth*(10/12)));	
 		set (layer[punt8].width, calc(stageheight*scaleFactorScore));	
 		set (layer[punt8].height, calc(stageheight*scaleFactorScore));
 		
 		
-		set (layer[punt9].x, calc(stagewidth*(13/16)));	
+		set (layer[punt9].x, calc(stagewidth*(11/12)));	
 		set (layer[punt9].width, calc(stageheight*scaleFactorScore));	
 		set (layer[punt9].height, calc(stageheight*scaleFactorScore));	
 
-		set (layer[punt10].x, calc(stagewidth*(14/16)));	
-		set (layer[punt10].width, calc(stageheight*scaleFactorScore));	
-		set (layer[punt10].height, calc(stageheight*scaleFactorScore));			
+		
 		
 		
 </action>		
@@ -641,7 +627,6 @@ if(device.desktop, 	set(scaleFactorScore, '0.1'););
 		<layer name="punt7"  zorder="6" keep="true" url="images/score/7.png"  align="left" edge="center"  y="0" parent="bar" scalechildren ="true"/>		
 		<layer name="punt8"  zorder="6" keep="true" url="images/score/8.png"  align="left" edge="center"  y="0" parent="bar" scalechildren ="true"/>
 		<layer name="punt9"  zorder="6" keep="true" url="images/score/9.png"  align="left" edge="center"  y="0" parent="bar" scalechildren ="true"/>		
-		<layer name="punt10"  zorder="6" keep="true" url="images/score/10.png"  align="left" edge="center"  y="0" parent="bar" scalechildren ="true"/>		
 	
 
 		<layer name="fout1"  zorder="4" keep="true" visible= "false" url="images/score/fout.png"  parent="punt1" />
@@ -653,7 +638,7 @@ if(device.desktop, 	set(scaleFactorScore, '0.1'););
 		<layer name="fout7"  zorder="4" keep="true" visible= "false" url="images/score/fout.png"  parent="punt7"  />		
 		<layer name="fout8"  zorder="4" keep="true" visible= "false" url="images/score/fout.png"  parent="punt8"  />
 		<layer name="fout9"  zorder="4" keep="true" visible= "false" url="images/score/fout.png"  parent="punt9"  />			
-		<layer name="fout10"  zorder="4" keep="true" visible= "false" url="images/score/fout.png"  parent="punt10"  />			
+		
 		
 		
 		
@@ -666,8 +651,7 @@ if(device.desktop, 	set(scaleFactorScore, '0.1'););
 		<layer name="goed6"  zorder="4" keep="true" visible= "false" url="images/score/goed.png"  parent="punt6" />
 		<layer name="goed7"  zorder="4" keep="true" visible= "false" url="images/score/goed.png"  parent="punt7" />		
 		<layer name="goed8"  zorder="4" keep="true" visible= "false" url="images/score/goed.png"  parent="punt8" />
-		<layer name="goed9"  zorder="4" keep="true" visible= "false" url="images/score/goed.png"  parent="punt9" />		
-		<layer name="goed10"  zorder="4" keep="true" visible= "false" url="images/score/goed.png"  parent="punt10" />		
+		<layer name="goed9"  zorder="4" keep="true" visible= "false" url="images/score/goed.png"  parent="punt9" />					
 		<!-- 
 		
 		set (layer[fout1].visible,true);
