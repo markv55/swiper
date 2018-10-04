@@ -4,16 +4,11 @@ de originele xml opgeslagen bij backup (as used amsterdam)
 de fotos pano 100 vervangen door nieuwe 100 van stadion baan. oude wel in de map panos laten staan
 in de tour.xml de scene_100 vervangen. de oude uitgecommanteerd
 
-
-
-
-
  -->
 
 <krpano version="1.19" title="Virtual Tour" onstart=" center_vlak();  setSizeVierkant (); startLayer ();  scale_bar()">
 
 	<include url="skin/vtourskin.xml" />
-
 
 	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
 	<skin_settings maps="true"
@@ -66,53 +61,6 @@ in de tour.xml de scene_100 vervangen. de oude uitgecommanteerd
 	               design_text_css="color:#FFFFFF; font-family:Arial;"
 	               design_text_shadow="1"
 	               />
-				   
-				   
-<!-- 10 augustus:
-onderstaand zorgt dat de krpano in stereo komt		. maar dan werken alleen de pop ups en layers niet meer. 
-deze popups etc. komen in midden van het scherm uit en niet in midden van ieder scherm links en rechts   		
-	<display autofullscreen="true"
-         stereo="true"
-         stereooverlap="0.0"
-         stereoscale="1.0"
-         monoside="1"
-         anaglyph="false"
-         safearea="auto"
-         hardwarelimit=""
-         usedesktopimages=""
-         mipmapping="auto"
-         loadwhilemoving="auto"
-         framebufferscale="1.0"
-         hotspotvrrendering="natural"
-         />			   
-	-->		   
-			   
-				   
-				   
-				   
-				   
-				   
-				   
-				   
-				   
-				   
-				   
-				   
-				   
-				   
-				   
-
-	<!--
-	    For an alternative skin design either change the <skin_settings> values 
-	    from above or optionally include one of the predefined designs from below.
-	-->
-	<!-- <include url="skin/vtourskin_design_flat_light.xml"  /> -->
-	<!-- <include url="skin/vtourskin_design_glass.xml"       /> -->
-	<!-- <include url="skin/vtourskin_design_ultra_light.xml" /> -->
-	<!-- <include url="skin/vtourskin_design_117.xml"         /> -->
-	<!-- <include url="skin/vtourskin_design_117round.xml"    /> -->
-	<!-- <include url="skin/vtourskin_design_black.xml"       /> -->
-
 
 	<!-- startup action - load the first scene -->
 	<action name="startup" autorun="onstart">
@@ -120,10 +68,6 @@ deze popups etc. komen in midden van het scherm uit en niet in midden van ieder 
 		loadscene(get(startscene), null, MERGE);
 		if(startactions !== null, startactions() );
 	</action>
-
-
-			
-
 
 
 <!-- SCALEN VAN DE VIERKANT IN HET MIDDEN VAN HET SCHERM. VOOR VRAGEN EN ANTWOORD GOED/FOUT-->	
@@ -146,9 +90,6 @@ deze popups etc. komen in midden van het scherm uit en niet in midden van ieder 
 		
 		set (layer[antwoord_is_goed_volgendevraag].height, calc(hoogte_plaatje*1)); 	
 		set (layer[antwoord_is_goed_volgendevraag].width, calc(breedte_plaatje*1));			
-		
-		
-
 		
 		
 		set (layer[vraag_2].height, calc(hoogte_plaatje*1)); 	
@@ -181,8 +122,6 @@ deze popups etc. komen in midden van het scherm uit en niet in midden van ieder 
 		set (layer[vraag_33].height, calc(hoogte_plaatje*1)); 	
 		set (layer[vraag_33].width, calc(breedte_plaatje*1));	
 
-
-		
 		
 		set (layer[antwoord_is_goed2].height, calc(hoogte_plaatje*1)); 	
 		set (layer[antwoord_is_goed2].width, calc(breedte_plaatje*1));	
@@ -211,8 +150,8 @@ deze popups etc. komen in midden van het scherm uit en niet in midden van ieder 
 <!-- KIJK CURSOR-->
 		<layer name="kijk_cursur" url="images/kijk-cursor.png"  visible= "true" keep="true" handcursor="false" capture="false"  align="center"  scalechildren="true" scale= "0.6" scale.mobile = "0.4"  />		
 
-<!-- HOME KNOP-->
-		<layer name="reset_button" url="images/home2.png"  visible= "true" keep="true" handcursor="false" capture="false"  align="righttop"  scalechildren="true" scale= "0.15" scale.mobile = "0.1" 
+<!-- HOME KNOP  // GAME RESET KNOP   -->
+		<layer name="reset_button" url="images/home2.png"  zorder="5" visible= "true" keep="true" handcursor="false" capture="false"  align="righttop"  scalechildren="true" scale= "0.10" scale.mobile = "0.08" 
 		onclick = "action_reset_game(); call_reset_game"  />		
 
 <!-- VR bril contour-->
@@ -224,9 +163,9 @@ deze popups etc. komen in midden van het scherm uit en niet in midden van ieder 
 <!-- UNITY GAAT DAN NAAR SCENE 'CLASSROOM' TERUG EN KRPANO GAAAT NAAR DE DEFAULT -->
 		
 <!-- eruit gehaald  call_scene1(); -->			
-<action name="action_reset_game">
-delete_vragen(); center_vlak(); setSizeVierkant() ; set (layer[startscherm_tablet].visible,true); scale_bar();
-</action>	
+		<action name="action_reset_game">
+		call_scene1(); delete_vragen(); center_vlak(); setSizeVierkant() ; set (layer[startscherm_tablet].visible,true); scale_bar(); alle_scorepunten_uit();
+		</action>	
 		
 		
 		
@@ -241,25 +180,25 @@ delete_vragen(); center_vlak(); setSizeVierkant() ; set (layer[startscherm_table
 			<style name="style_startscherm_tablet_verder" keep="true" url="images/startknop.png" parent="startscherm_tablet" align="bottom" edge="center" scale= "1" scale.mobile = "1"  />
 
 			
-<action name="action_delete_startscherm">
-call_scene1(); center_vlak(); setSizeVierkant() ; set (layer[startscherm_tablet].visible,false);scale_bar();
-</action>	
+		<action name="action_delete_startscherm">
+		call_scene1(); center_vlak(); setSizeVierkant() ; set (layer[startscherm_tablet].visible,false);scale_bar();
+		</action>	
 
 
 <!--     START. LAYERS EN ACTIONS   -->
 <!--     START. LAYERS EN ACTIONS   -->
 <!--     START. LAYERS EN ACTIONS   -->
 
-<action name="startLayer">  <!-- bij start van script helaal bovenaan wordt deze functie aangeroepen. de A,B,C en Ja en Nee knoppen worden onder het dummy parent gehangen zodat ze niet zichtbaar zijn -->
+		<action name="startLayer">  <!-- bij start van script helaal bovenaan wordt deze functie aangeroepen. de A,B,C en Ja en Nee knoppen worden onder het dummy parent gehangen zodat ze niet zichtbaar zijn -->
 
-set(layer[jaknop].parent,dummyparent);
-set(layer[neeknop].parent,dummyparent);
+		set(layer[jaknop].parent,dummyparent);
+		set(layer[neeknop].parent,dummyparent);
 
-set(layer[aknop].parent,dummyparent);
-set(layer[bknop].parent,dummyparent);
-set(layer[cknop].parent,dummyparent);
+		set(layer[aknop].parent,dummyparent);
+		set(layer[bknop].parent,dummyparent);
+		set(layer[cknop].parent,dummyparent);
 
-</action>	
+		</action>	
 
 
 <!--
@@ -293,9 +232,9 @@ action_vraag1_ja_volgendevraag : deze moet bij vraag 1 en 2. hij gaat in unity n
 
 	<!-- set(layer[aknop].onclick,call_vraag1_ja(); action_vraag1_ja();); -->
 	
-	set(layer[aknop].onclick,call_vraag1_nee(); action_vraag1_nee(); set(layer[fout1].visible,true); );
-	set(layer[bknop].onclick,call_vraag1_ja_volgendevraag(); action_vraag1_ja_volgendevraag();  set(layer[goed1].visible,true);   ); 
-	set(layer[cknop].onclick,call_vraag1_nee(); action_vraag1_nee(); set(layer[fout1].visible,true);     );
+	set(layer[aknop].onclick,call_vraag1_nee(); action_vraag1_nee(); set(layer[fout1].visible,true);  call_vraag1_fout_beantwoord();    );
+	set(layer[bknop].onclick,call_vraag1_ja_volgendevraag(); action_vraag1_ja_volgendevraag();  set(layer[goed1].visible,true); call_vraag1_goed_beantwoord();  ); 
+	set(layer[cknop].onclick,call_vraag1_nee(); action_vraag1_nee(); set(layer[fout1].visible,true); call_vraag1_fout_beantwoord();    );
  
  		
 
@@ -325,10 +264,10 @@ action_vraag1_ja_volgendevraag : deze moet bij vraag 1 en 2. hij gaat in unity n
 	set(layer[bknop].parent,vraag_2);
 	set(layer[cknop].parent,vraag_2);	
 	
-	set(layer[aknop].onclick,call_vraag1_nee(); action_vraag1_nee(); set(layer[fout2].visible,true); );
+	set(layer[aknop].onclick,call_vraag1_nee(); action_vraag1_nee(); set(layer[fout2].visible,true); call_vraag2_fout_beantwoord(); );
 	<!-- set(layer[bknop].onclick,call_vraag1_ja(); action_vraag1_ja();); -->
-	set(layer[bknop].onclick,call_vraag1_ja_volgendevraag(); action_vraag1_ja_volgendevraag(); set(layer[goed2].visible,true); ); 
-	set(layer[cknop].onclick,call_vraag1_nee(); action_vraag1_nee(); set(layer[fout2].visible,true); 	);
+	set(layer[bknop].onclick,call_vraag1_ja_volgendevraag(); action_vraag1_ja_volgendevraag(); set(layer[goed2].visible,true);call_vraag2_goed_beantwoord();  ); 
+	set(layer[cknop].onclick,call_vraag1_nee(); action_vraag1_nee(); set(layer[fout2].visible,true); call_vraag2_fout_beantwoord(); 	);
 
 	<!--de plaatjs die getoond worden bij een goed of fout antwoord   
 	set(layer[antwoord_is_goed].url,static/krpano/images/material/goed.png);
@@ -349,10 +288,10 @@ action_vraag1_ja_volgendevraag : deze moet bij vraag 1 en 2. hij gaat in unity n
 	set(layer[bknop].parent,vraag_3);
 	set(layer[cknop].parent,vraag_3);	
 	
-	set(layer[aknop].onclick,call_vraag1_nee_maartochdoor(); action_vraag1_nee_maartochdoor();set(layer[fout3].visible,true);   );
+	set(layer[aknop].onclick,call_vraag1_nee_maartochdoor(); action_vraag1_nee_maartochdoor();set(layer[fout3].visible,true);  call_vraag3_fout_beantwoord();  );
 	<!-- vraag 3 is de laatste vraag in deze scene. bij fout krijg je een pop up 'fout maar je gaat wel naar de volgende wereld. doe beter je best!!!! -->	
-	set(layer[bknop].onclick,call_vraag1_ja(); action_vraag1_ja();set(layer[goed3].visible,true);	  );
-	set(layer[cknop].onclick,call_vraag1_nee_maartochdoor(); action_vraag1_nee_maartochdoor();set(layer[fout3].visible,true);   );
+	set(layer[bknop].onclick,call_vraag1_ja(); action_vraag1_ja();set(layer[goed3].visible,true);	call_vraag3_goed_beantwoord();   );
+	set(layer[cknop].onclick,call_vraag1_nee_maartochdoor(); action_vraag1_nee_maartochdoor();set(layer[fout3].visible,true); call_vraag3_fout_beantwoord();   );
 
 <!--
 	set(layer[bknop].onclick,call_vraag1_ja(); action_vraag1_ja(););
@@ -380,10 +319,10 @@ action_vraag1_ja_volgendevraag : deze moet bij vraag 1 en 2. hij gaat in unity n
 	set(layer[bknop].parent,vraag_21);
 	set(layer[cknop].parent,vraag_21);	
 	
-	set(layer[aknop].onclick,call_vraag1_nee(); action_vraag1_nee();set(layer[fout4].visible,true); 	);
-	set(layer[bknop].onclick,call_vraag1_nee(); action_vraag1_nee();set(layer[fout4].visible,true);   );
+	set(layer[aknop].onclick,call_vraag1_nee(); action_vraag1_nee();set(layer[fout4].visible,true); call_vraag4_fout_beantwoord(); 	);
+	set(layer[bknop].onclick,call_vraag1_nee(); action_vraag1_nee();set(layer[fout4].visible,true); call_vraag4_fout_beantwoord();   );
 	<!--set(layer[cknop].onclick,call_vraag1_ja(); action_vraag1_ja(););-->
-	set(layer[cknop].onclick,call_vraag1_ja_volgendevraag(); action_vraag1_ja_volgendevraag(); set(layer[goed4].visible,true);	 ); 
+	set(layer[cknop].onclick,call_vraag1_ja_volgendevraag(); action_vraag1_ja_volgendevraag(); set(layer[goed4].visible,true);	call_vraag4_goed_beantwoord();  ); 
 
 	
 <!--
@@ -403,10 +342,10 @@ action_vraag1_ja_volgendevraag : deze moet bij vraag 1 en 2. hij gaat in unity n
 	set(layer[bknop].parent,vraag_22);
 	set(layer[cknop].parent,vraag_22);	
 	
-	set(layer[aknop].onclick,call_vraag1_nee(); action_vraag1_nee(); set(layer[fout5].visible,true); 	 );
-	set(layer[bknop].onclick,call_vraag1_nee(); action_vraag1_nee();set(layer[fout5].visible,true); 	);
+	set(layer[aknop].onclick,call_vraag1_nee(); action_vraag1_nee(); set(layer[fout5].visible,true); 	call_vraag5_fout_beantwoord();  );
+	set(layer[bknop].onclick,call_vraag1_nee(); action_vraag1_nee();set(layer[fout5].visible,true); 	call_vraag5_fout_beantwoord(); );
 	<!-- set(layer[cknop].onclick,call_vraag1_ja(); action_vraag1_ja();); -->
-	set(layer[cknop].onclick,call_vraag1_ja_volgendevraag(); action_vraag1_ja_volgendevraag();set(layer[goed5].visible,true);	); 
+	set(layer[cknop].onclick,call_vraag1_ja_volgendevraag(); action_vraag1_ja_volgendevraag();set(layer[goed5].visible,true);	call_vraag5_goed_beantwoord(); ); 
 
 	
 <!--
@@ -426,10 +365,10 @@ action_vraag1_ja_volgendevraag : deze moet bij vraag 1 en 2. hij gaat in unity n
 	set(layer[bknop].parent,vraag_23);
 	set(layer[cknop].parent,vraag_23);	
 	
-	set(layer[aknop].onclick,call_vraag1_ja(); action_vraag1_ja(); set(layer[goed6].visible,true);	 );
+	set(layer[aknop].onclick,call_vraag1_ja(); action_vraag1_ja(); set(layer[goed6].visible,true);	call_vraag6_goed_beantwoord();  );
 <!-- vraag 3 is de laatste vraag in deze scene. bij fout krijg je een pop up 'fout maar je gaat wel naar de volgende wereld. doe beter je best!!!! -->	
-	set(layer[bknop].onclick,call_vraag1_nee_maartochdoor(); action_vraag1_nee_maartochdoor(); set(layer[fout6].visible,true); 	 );
-	set(layer[cknop].onclick,call_vraag1_nee_maartochdoor(); action_vraag1_nee_maartochdoor(); set(layer[fout6].visible,true); 	  );
+	set(layer[bknop].onclick,call_vraag1_nee_maartochdoor(); action_vraag1_nee_maartochdoor(); set(layer[fout6].visible,true); 	call_vraag6_fout_beantwoord();  );
+	set(layer[cknop].onclick,call_vraag1_nee_maartochdoor(); action_vraag1_nee_maartochdoor(); set(layer[fout6].visible,true); 	call_vraag6_fout_beantwoord();   );
 
 <!--
 	set(layer[bknop].onclick,call_vraag1_nee(); action_vraag1_nee(););
@@ -455,9 +394,9 @@ action_vraag1_ja_volgendevraag : deze moet bij vraag 1 en 2. hij gaat in unity n
 	set(layer[cknop].parent,vraag_31);	
 	
 	<!--set(layer[aknop].onclick,call_vraag1_ja(); action_vraag1_ja(););-->
-	set(layer[aknop].onclick,call_vraag1_ja_volgendevraag(); action_vraag1_ja_volgendevraag(); set(layer[goed7].visible,true);	); 
-	set(layer[bknop].onclick,call_vraag1_nee(); action_vraag1_nee();set(layer[fout7].visible,true); 	 );
-	set(layer[cknop].onclick,call_vraag1_nee(); action_vraag1_nee();set(layer[fout7].visible,true); 	);
+	set(layer[aknop].onclick,call_vraag1_ja_volgendevraag(); action_vraag1_ja_volgendevraag(); set(layer[goed7].visible,true); call_vraag7_goed_beantwoord(); 	); 
+	set(layer[bknop].onclick,call_vraag1_nee(); action_vraag1_nee();set(layer[fout7].visible,true); call_vraag7_fout_beantwoord(); 	 );
+	set(layer[cknop].onclick,call_vraag1_nee(); action_vraag1_nee();set(layer[fout7].visible,true); call_vraag7_fout_beantwoord(); 	);
 	
 <!--
 	set(layer[antwoord_is_goed].url,static/krpano/images/material/goed.png);
@@ -477,10 +416,10 @@ action_vraag1_ja_volgendevraag : deze moet bij vraag 1 en 2. hij gaat in unity n
 	set(layer[bknop].parent,vraag_32);
 	set(layer[cknop].parent,vraag_32);	
 	
-	set(layer[aknop].onclick,call_vraag1_nee(); action_vraag1_nee(); set(layer[fout8].visible,true); 	);
+	set(layer[aknop].onclick,call_vraag1_nee(); action_vraag1_nee(); set(layer[fout8].visible,true); 	call_vraag8_fout_beantwoord(); );
 	<!--set(layer[bknop].onclick,call_vraag1_ja(); action_vraag1_ja(););-->
-	set(layer[bknop].onclick,call_vraag1_ja_volgendevraag(); action_vraag1_ja_volgendevraag(); set(layer[goed8].visible,true);	 ); 
-	set(layer[cknop].onclick,call_vraag1_nee(); action_vraag1_nee(); set(layer[fout8].visible,true); 	);
+	set(layer[bknop].onclick,call_vraag1_ja_volgendevraag(); action_vraag1_ja_volgendevraag(); set(layer[goed8].visible,true);	call_vraag8_goed_beantwoord();  ); 
+	set(layer[cknop].onclick,call_vraag1_nee(); action_vraag1_nee(); set(layer[fout8].visible,true); call_vraag8_fout_beantwoord(); 	);
 	
 <!--
 	set(layer[antwoord_is_goed].url,static/krpano/images/material/goed.png);
@@ -500,10 +439,10 @@ action_vraag1_ja_volgendevraag : deze moet bij vraag 1 en 2. hij gaat in unity n
 	set(layer[bknop].parent,vraag_33);
 	set(layer[cknop].parent,vraag_33);	
 	
-	set(layer[aknop].onclick,call_vraag1_ja(); action_vraag1_ja(); set(layer[goed9].visible,true);	 );
+	set(layer[aknop].onclick,call_vraag1_ja(); action_vraag1_ja(); set(layer[goed9].visible,true);	call_vraag9_goed_beantwoord();  );
 <!-- vraag 3 is de laatste vraag in deze scene. bij fout krijg je een pop up 'fout maar je gaat wel naar de volgende wereld. doe beter je best!!!! -->	
-	set(layer[bknop].onclick,call_vraag1_nee_maartochdoor(); action_vraag1_nee_maartochdoor(); set(layer[fout9].visible,true); 	);
-	set(layer[cknop].onclick,call_vraag1_nee_maartochdoor(); action_vraag1_nee_maartochdoor(); set(layer[fout9].visible,true); 	);
+	set(layer[bknop].onclick,call_vraag1_nee_maartochdoor(); action_vraag1_nee_maartochdoor(); set(layer[fout9].visible,true); call_vraag9_fout_beantwoord(); 	);
+	set(layer[cknop].onclick,call_vraag1_nee_maartochdoor(); action_vraag1_nee_maartochdoor(); set(layer[fout9].visible,true); call_vraag9_fout_beantwoord(); 	);
 
 <!-- reserve
 	set(layer[bknop].onclick,call_vraag1_nee(); action_vraag1_nee(););
@@ -521,6 +460,10 @@ action_vraag1_ja_volgendevraag : deze moet bij vraag 1 en 2. hij gaat in unity n
 	
 	</action>	
 
+	
+	
+	
+	
 
 <!--  ////////////   VRAGEN      //////////////////////////////////////// -->
 <!--  ////////////   VRAGEN      //////////////////////////////////////// -->
@@ -836,11 +779,40 @@ if(nextsceneindex LT scene.count, loadscene(get(scene[get(nextsceneindex)].name)
 </action>				
 						
 			
+
+<!--  //////////////////////////////////  RESETTEN GAME   ALLE SCORE KNOPPEN UITZETTEN    ////////////////////////////////////////////// -->
+<!--  //////////////////////////////////  RESETTEN GAME   ALLE SCORE KNOPPEN UITZETTEN    ////////////////////////////////////////////// -->			
+<!--  //////////////////////////////////  RESETTEN GAME   ALLE SCORE KNOPPEN UITZETTEN    ////////////////////////////////////////////// -->
 			
-			
-			
-			
-			
+	<action name="alle_scorepunten_uit">
+		set (layer[fout1].visible,false);
+		set (layer[goed1].visible,false);	
+		set (layer[fout2].visible,false);
+		set (layer[goed2].visible,false);	
+		set (layer[fout3].visible,false);
+		set (layer[goed3].visible,false);		
+		set (layer[fout4].visible,false);
+		set (layer[goed4].visible,false);	
+		set (layer[fout5].visible,false);
+		set (layer[goed5].visible,false);	
+		set (layer[fout6].visible,false);
+		set (layer[goed6].visible,false);	
+		set (layer[fout7].visible,false);
+		set (layer[goed7].visible,false);	
+		set (layer[fout8].visible,false);
+		set (layer[goed8].visible,false);	
+		set (layer[fout9].visible,false);
+		set (layer[goed9].visible,false);	
+		set (layer[fout10].visible,false);
+		set (layer[goed10].visible,false);		
+
+		set (layer[antwoord_is_goed].visible,false);
+		set (layer[antwoord_is_fout].visible,false);
+		set (layer[antwoord_is_fout_maartochdoor].visible,false);
+		set (layer[antwoord_is_goed_volgendevraag].visible,false);
+		
+	</action>		
+
 
 <!-- CALL NAAR INDEX.HTML . HTML STUURT EEN SOCKET NAAR DE SERVER -->
 <!-- de server stuurt vervolgens   -->
@@ -971,14 +943,164 @@ if(nextsceneindex LT scene.count, loadscene(get(scene[get(nextsceneindex)].name)
 		<action name="call_eindscore_close" type="Javascript">
 				 window.send_call_eindscore_close();
 		</action>			
-		
-		
- 
 
-		
-		
-				
+	
 
+	
+<!-- voor iedere vraag gaat naar de server of deze goed of fout is!!! -->
+
+		<action name="call_vraag1_goed_beantwoord" type="Javascript">
+				 window.send_call_vraag1_goed_beantwoord();
+		</action>	
+ 		<action name="call_vraag1_fout_beantwoord" type="Javascript">
+				 window.send_call_vraag1_fout_beantwoord();
+		</action>
+
+		<action name="call_vraag2_goed_beantwoord" type="Javascript">
+				 window.send_call_vraag2_goed_beantwoord();
+		</action>	
+ 		<action name="call_vraag2_fout_beantwoord" type="Javascript">
+				 window.send_call_vraag2_fout_beantwoord();
+		</action>
+		
+		<action name="call_vraag3_goed_beantwoord" type="Javascript">
+				 window.send_call_vraag3_goed_beantwoord();
+		</action>	
+ 		<action name="call_vraag3_fout_beantwoord" type="Javascript">
+				 window.send_call_vraag3_fout_beantwoord();
+		</action>
+		
+		<action name="call_vraag4_goed_beantwoord" type="Javascript">
+				 window.send_call_vraag4_goed_beantwoord();
+		</action>	
+ 		<action name="call_vraag4_fout_beantwoord" type="Javascript">
+				 window.send_call_vraag4_fout_beantwoord();
+		</action>
+		
+		<action name="call_vraag5_goed_beantwoord" type="Javascript">
+				 window.send_call_vraag5_goed_beantwoord();
+		</action>	
+ 		<action name="call_vraag5_fout_beantwoord" type="Javascript">
+				 window.send_call_vraag5_fout_beantwoord();
+		</action>
+		
+		<action name="call_vraag6_goed_beantwoord" type="Javascript">
+				 window.send_call_vraag6_goed_beantwoord();
+		</action>	
+ 		<action name="call_vraag6_fout_beantwoord" type="Javascript">
+				 window.send_call_vraag6_fout_beantwoord();
+		</action>
+		
+		<action name="call_vraag7_goed_beantwoord" type="Javascript">
+				 window.send_call_vraag7_goed_beantwoord();
+		</action>	
+ 		<action name="call_vraag7_fout_beantwoord" type="Javascript">
+				 window.send_call_vraag7_fout_beantwoord();
+		</action>
+		
+		<action name="call_vraag8_goed_beantwoord" type="Javascript">
+				 window.send_call_vraag8_goed_beantwoord();
+		</action>	
+ 		<action name="call_vraag8_fout_beantwoord" type="Javascript">
+				 window.send_call_vraag8_fout_beantwoord();
+		</action>
+		
+		<action name="call_vraag9_goed_beantwoord" type="Javascript">
+				 window.send_call_vraag9_goed_beantwoord();
+		</action>	
+ 		<action name="call_vraag9_fout_beantwoord" type="Javascript">
+				 window.send_call_vraag9_fout_beantwoord();
+		</action>
+		
+		<action name="call_vraag10_goed_beantwoord" type="Javascript">
+				 window.send_call_vraag10_goed_beantwoord();
+		</action>	
+ 		<action name="call_vraag10_fout_beantwoord" type="Javascript">
+				 window.send_call_vraag10_fout_beantwoord();
+		</action>
+		
+<!-- de nodige acties nav bovenstaande ontvangen calls (sockets) van de server -->		
+		<action name="action_vraag1_goed_beantwoord" >
+			set(layer[goed1].visible,true);	 
+		</action>	
+ 		<action name="action_vraag1_fout_beantwoord" >
+			set(layer[fout1].visible,true);	 
+		</action>		
+
+		<action name="action_vraag2_goed_beantwoord" >
+			set(layer[goed2].visible,true);	 
+		</action>	
+ 		<action name="action_vraag2_fout_beantwoord" >
+			set(layer[fout2].visible,true);	 
+		</action>	
+
+		<action name="action_vraag3_goed_beantwoord" >
+			set(layer[goed3].visible,true);	 
+		</action>	
+ 		<action name="action_vraag3_fout_beantwoord" >
+			set(layer[fout3].visible,true);	 
+		</action>	
+
+		<action name="action_vraag4_goed_beantwoord" >
+			set(layer[goed4].visible,true);	 
+		</action>	
+ 		<action name="action_vraag4_fout_beantwoord" >
+			set(layer[fout4].visible,true);	 
+		</action>	
+
+		<action name="action_vraag5_goed_beantwoord" >
+			set(layer[goed5].visible,true);	 
+		</action>	
+ 		<action name="action_vraag5_fout_beantwoord" >
+			set(layer[fout5].visible,true);	 
+		</action>	
+
+		<action name="action_vraag6_goed_beantwoord" >
+			set(layer[goed6].visible,true);	 
+		</action>	
+ 		<action name="action_vraag6_fout_beantwoord" >
+			set(layer[fout6].visible,true);	 
+		</action>	
+
+		<action name="action_vraag7_goed_beantwoord" >
+			set(layer[goed7].visible,true);	 
+		</action>	
+ 		<action name="action_vraag7_fout_beantwoord" >
+			set(layer[fout7].visible,true);	 
+		</action>	
+
+		<action name="action_vraag8_goed_beantwoord" >
+			set(layer[goed8].visible,true);	 
+		</action>	
+ 		<action name="action_vraag8_fout_beantwoord" >
+			set(layer[fout8].visible,true);	 
+		</action>			
+
+		<action name="action_vraag9_goed_beantwoord" >
+			set(layer[goed9].visible,true);	 
+		</action>	
+ 		<action name="action_vraag9_fout_beantwoord" >
+			set(layer[fout9].visible,true);	 
+		</action>			
+		
+		<action name="action_vraag10_goed_beantwoord" >
+			set(layer[goed10].visible,true);	 
+		</action>	
+ 		<action name="action_vraag10_fout_beantwoord" >
+			set(layer[fout10].visible,true);	 
+		</action>			
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 <events onviewchange="center_vlak(); scale_bar()  "/>
 
 <action name="center_vlak">
