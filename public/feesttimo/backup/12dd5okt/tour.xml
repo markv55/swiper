@@ -6,8 +6,7 @@ in de tour.xml de scene_100 vervangen. de oude uitgecommanteerd
 
  -->
 
-<krpano version="1.19" title="Virtual Tour" onstart=" center_vlak();  setSizeVierkant (); startLayer ();  scale_bar() ; 	    
-            ">
+<krpano version="1.19" title="Virtual Tour" onstart=" center_vlak();  setSizeVierkant (); startLayer ();  scale_bar()">
 
 	<include url="skin/vtourskin.xml" />
 
@@ -91,9 +90,6 @@ in de tour.xml de scene_100 vervangen. de oude uitgecommanteerd
 		
 		set (layer[antwoord_is_goed_volgendevraag].height, calc(hoogte_plaatje*1)); 	
 		set (layer[antwoord_is_goed_volgendevraag].width, calc(breedte_plaatje*1));			
-
-		set (layer[unity_pop_up_scherm_andere_speler].height, calc(hoogte_plaatje*1)); 	
-		set (layer[unity_pop_up_scherm_andere_speler].width, calc(breedte_plaatje*1));		
 		
 		
 		set (layer[vraag_2].height, calc(hoogte_plaatje*1)); 	
@@ -248,17 +244,10 @@ action_vraag1_ja_volgendevraag : deze moet bij vraag 1 en 2. hij gaat in unity n
 	set(layer[antwoord_is_goed].url,static/krpano/images/material/goed.png);
 	set(layer[antwoord_is_fout].url,static/krpano/images/material/fout.png);
 -->	
-	<!--
+	
 	set(layer[antwoord_is_goed].url,static/krpano/images/timo/1/goedtab.png);
 	set(layer[antwoord_is_fout].url,static/krpano/images/timo/1/fouttab.png);
 	set(layer[antwoord_is_goed_volgendevraag].url,static/krpano/images/timo/1/goedtab.png);
--->
-
-	set(layer[antwoord_is_goed].url,static/krpano/images/vgz/1/goedtab.png);
-	set(layer[antwoord_is_fout].url,static/krpano/images/vgz/1/fouttab.png);
-	set(layer[antwoord_is_goed_volgendevraag].url,static/krpano/images/vgz/1/goedtab.png);
-
-
 
 	<!--set layer score1, goed.png of fout.png afhankelijk van de score! -->
 
@@ -482,10 +471,7 @@ action_vraag1_ja_volgendevraag : deze moet bij vraag 1 en 2. hij gaat in unity n
 
 		<layer name="dummyparent"  visible= "false" keep="true" handcursor="false" capture="false"  align="center"  scalechildren="true"   />		<!-- dummy parent om bij opstart alle childes onder te hangen. deze zijn dan niet zichtbaar -->
 		
-		<!--<layer name="vraag_1" url="images/timo/1/antwoord.png"  visible= "false" keep="true" handcursor="false" capture="false"  align="center"  scalechildren="true"   />	-->
-		<layer name="vraag_1" url="images/vgz/1/antwoord.png"  visible= "false" keep="true" handcursor="false" capture="false"  align="center"  scalechildren="true"   />	
-
-		
+		<layer name="vraag_1" url="images/timo/1/antwoord.png"  visible= "false" keep="true" handcursor="false" capture="false"  align="center"  scalechildren="true"   />		
 		<layer name="vraag_2" url="images/timo/2/antwoord.png"  visible= "false" keep="true" handcursor="false" capture="false"  align="center"  scalechildren="true"   />		
 		<layer name="vraag_3" url="images/timo/3/antwoord.png"   visible= "false" keep="true" handcursor="false" capture="false"  align="center"  scalechildren="true"   />		
 
@@ -728,35 +714,9 @@ if(device.desktop, 	set(scaleFactorScore, '0.1'););
 			<style name="style_volgende_goed_volgendevraag" keep="true" url="images/volgende.png" parent="antwoord_is_goed_volgendevraag" align="bottom" edge="center" scale= "1.5" scale.mobile = "1.5"  />
 
 
-
 			
-<!--  pop up dat een andere speler de headset moet opdoen  -->
-<!--  pop up dat een andere speler de headset moet opdoen  -->	
-<!--  pop up dat een andere speler de headset moet opdoen  -->		
-	
-
-		<layer name="unity_pop_up_scherm_andere_speler" url="images/headsetAndereSpeler.png" onclick= " " keep="true" visible="false" zorder="10" handcursor="false" capture="false"  align="center" 
-		 scalechildren="true"/>
-
-		<layer name="tablet_verder" style="style__verder" visible= "true" x="0" y="100" zorder="10" 
-		onclick="action_pop_up_andere_speler(); call_pop_up_andere_speler()" />  
+					
 			
-		<style name="style__verder" keep="true" url="images/startknop.png" parent="unity_pop_up_scherm_andere_speler" align="bottom" edge="center" scale= "1" scale.mobile = "1"  />
-
-
-			<action name="action_pop_up_andere_speler">
-				set (layer[unity_pop_up_scherm_andere_speler].visible,false);    
-			</action>	
-
-			<action name="unity_pop_up_scherm_andere_speler">
-				set (layer[unity_pop_up_scherm_andere_speler].visible,true);    
-			</action>
-
-			
-			<action name="call_pop_up_andere_speler" type="Javascript">
-				window.send_call_pop_up_andere_speler();
-			</action>				
-
 			
 			
 			
@@ -778,6 +738,9 @@ if(device.desktop, 	set(scaleFactorScore, '0.1'););
 <action name="action_vraag1_goed_volgendevraag">
 	set (layer[antwoord_is_goed_volgendevraag].visible,false);  call_delete_vragen();  
 </action>	
+
+
+
 
 
 
@@ -945,10 +908,7 @@ if(nextsceneindex LT scene.count, loadscene(get(scene[get(nextsceneindex)].name)
 		<action name="call_vraag1_goed_volgendevraag" type="Javascript">
 				 window.send_call_vraag1_goed_volgendevraag();
 		</action>	
-
-
-
-			
+	
 
 	
 	
@@ -1174,9 +1134,6 @@ set (layer[vraag_31].visible,false);
 set (layer[vraag_32].visible,false); 
 set (layer[vraag_33].visible,false); 
 
-set (layer[unity_pop_up_scherm_andere_speler].visible,false);    
-
-
 </action>
 
 
@@ -1291,10 +1248,7 @@ loadscene(scene_300, null, MERGE, BLEND(1));
 
 
 <!-- STADION		STADION			STADION		STADION			STADION		STADION			STADION		STADION			STADION		STADION			STADION		STADION			 -->
-<!-- tijdelijk uitgezet!!!!!!!!!!!!!!!!!!!  werkt prima als stadion voor feestje van timo 
-onderstaande scene werkt en gaat naar public/feesttimo/panos en haalt dan 100.tiles op
--->
-<!--
+
 	<scene name="scene_100" title="100" onstart="" havevrimage="true" thumburl="panos/100.tiles/thumb.jpg" lat="" lng="" heading="">
 
 		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
@@ -1317,7 +1271,7 @@ onderstaande scene werkt en gaat naar public/feesttimo/panos en haalt dan 100.ti
 			<cube url="panos/100.tiles/vr/pano_%s.jpg" />
 		</image>
 
-
+		<!-- place your scene hotspots here -->
 
 		
 			
@@ -1327,45 +1281,13 @@ onderstaande scene werkt en gaat naar public/feesttimo/panos en haalt dan 100.ti
 		
 	</scene>
 
--->
+
 
 <!-- SCENE 1		SCENE 1		 SCENE 1		 SCENE 1		 SCENE 1		 SCENE 1		 SCENE 1		 SCENE 1		  -->	
-<!-- VERLEDEN		VERLEDEN		VERLEDEN		VERLEDEN		VERLEDEN  
-verleden even aangezet. de verwijzing is naar public/feesttimo/panos en dan heb ik 100.tiles omgenoemd naar fabriek100.tiles
--->
-
-	
-	<scene name="scene_100" title="100" onstart="" havevrimage="true" thumburl="panos/fabriek100.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
-
-		<preview url="panos/fabriek100.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/fabriek100.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/fabriek100.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-		<image if="webvr.isenabled">
-			<cube url="panos/fabriek100.tiles/vr/pano_%s.jpg" />
-		</image>
-
-
-	
-		<hotspot name="vraagteken1" url="images/vraagteken.png"  visible= "true" keep="false" handcursor="true" capture="false"   ath="315" atv="0" scale= "0.3" scale.mobile = "0.1" />		
-		<hotspot name="vraagteken2" url="images/vraagteken.png"  visible= "false"  keep="false" handcursor="true" capture="false"   ath="135" atv="0" scale= "0.3" scale.mobile = "0.1" />		
-		<hotspot name="vraagteken3" url="images/vraagteken.png"  visible= "false" keep="false" handcursor="true" capture="false"   ath="225" atv="0" scale= "0.3" scale.mobile = "0.1" />		
-		
-	</scene>
-
-
+<!-- VERLEDEN		VERLEDEN		VERLEDEN		VERLEDEN		VERLEDEN  -->
 <!--
 	
-	<scene name="scene_100" title="100" onstart="" havevrimage="true" thumburl="panos/100.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="scene_100" title="100" onstart="set (layer[reset_button].visible,true)" havevrimage="true" thumburl="panos/100.tiles/thumb.jpg" lat="" lng="" heading="">
 
 		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
 
@@ -1392,9 +1314,6 @@ verleden even aangezet. de verwijzing is naar public/feesttimo/panos en dan heb 
 		
 	</scene>
 -->
-
-
-
 
 <!-- SCENE 2	  SCENE 2	  SCENE 2	  SCENE 2	  SCENE 2	  SCENE 2	  SCENE 2	  SCENE 2	  SCENE 2	  SCENE 2	  SCENE 2	  -->	
 <!-- HEDEN		HEDEN 		HEDEN		HEDEN 		 HEDEN		HEDEN 		 HEDEN		HEDEN 		 HEDEN		HEDEN 		 HEDEN		HEDEN 		  -->

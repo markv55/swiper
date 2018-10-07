@@ -46,8 +46,8 @@
 		<audio id="sound_1" src="/static/krpano/audio/1.mp3"   loop="loop"    preload="auto"></audio>  
 		<audio id="sound_2" src="/static/krpano/audio/2.mp3"   loop="loop"    preload="auto"></audio>  
 		<audio id="sound_4" src="/static/krpano/audio/4.mp3"   loop="loop"    preload="auto"></audio>  		
-		<audio id="sound_succes" src="/static/krpano/audio/succes.mp3"   loop="loop"     preload="auto"></audio>  		
-		<audio id="sound_nietgoed" src="/static/krpano/audio/geluidnietgoed.mp3"  loop="loop"      preload="auto"></audio>  		
+		<audio id="sound_succes" src="/static/krpano/audio/succes.mp3"      preload="auto"></audio>  		
+		<audio id="sound_nietgoed" src="/static/krpano/audio/geluidnietgoed.mp3"      preload="auto"></audio>  		
 
 		
 		
@@ -247,7 +247,6 @@ als master inzet. nu knippert hij omdat hij steeds een stukje terug gaat.
 								sound_4.play();
 								sound_2.pause();
 								//sound_succes.currentTime = 0;
-								
 								sound_succes.pause;
 								sound_nietgoed.pause;
 
@@ -290,6 +289,7 @@ als master inzet. nu knippert hij omdat hij steeds een stukje terug gaat.
 								sound_2.pause();
 								sound_nietgoed.pause();
 								sound_nietgoed.currentTime = 0;
+
 							}									
 							
 							if (vid == 'call_sound_nietgoed'){			
@@ -300,7 +300,6 @@ als master inzet. nu knippert hij omdat hij steeds een stukje terug gaat.
 								sound_nietgoed.play();
 							}									
 
-							
 							
 			<!-- VRAAG 1  -->
 			
@@ -319,47 +318,38 @@ als master inzet. nu knippert hij omdat hij steeds een stukje terug gaat.
 								krpano.call( "action_vraag1_ja()" );		
 								console.log ('vid = call_vraag1_ja'); 
 								console.log ('krpano.call( "action_vraag1_ja()" )'); 
-					
 							}										
 							
 							if (vid == 'call_vraag1_nee'){			
 								var krpano = document.getElementById("krpanoSWFObject");
 								krpano.call( "action_vraag1_nee()" );		
 								console.log ('vid = call_vraag1_nee'); 
-								console.log ('krpano.call( "action_vraag1_nee()"'); 
-								
+								console.log ('krpano.call( "action_vraag1_nee()"'); 								
 							}												
 
 							if (vid == 'call_vraag1_nee_maartochdoor'){			
 								var krpano = document.getElementById("krpanoSWFObject");
 								krpano.call( "action_vraag1_nee_maartochdoor()" );		
 								console.log ('vid = call_vraag1_nee_maartochdoor'); 
-								console.log ('krpano.call( "action_vraag1_nee_maartochdoor()"'); 
-								
+								console.log ('krpano.call( "action_vraag1_nee_maartochdoor()"'); 								
 							}												
 
 							if (vid == 'call_vraag1_ja_volgendevraag'){			
 								var krpano = document.getElementById("krpanoSWFObject");
 								krpano.call( "action_vraag1_ja_volgendevraag()" );		
 								console.log ('vid = call_vraag1_ja_volgendevraag'); 
-								console.log ('krpano.call( "action_vraag1_ja_volgendevraag()"'); 	
-								
+								console.log ('krpano.call( "action_vraag1_ja_volgendevraag()"'); 								
 							}
 							
 							
 							
-// hieronder moet het achtergrond geluid weer gaan spelen??							
+							
 							
 							if (vid == 'call_vraag1_goed'){			
 								var krpano = document.getElementById("krpanoSWFObject");
 								krpano.call( "action_vraag1_goed()" );		
 								console.log ('vid = call_vraag1_goed');
-								console.log (' krpano.call( "action_vraag1_goed()" )'); 	
-								sound_4.play();
-								sound_nietgoed.pause();
-								sound_nietgoed.currentTime = 0;							
-								sound_succes.pause();			
-								sound_succes.currentTime = 0;								
+								console.log (' krpano.call( "action_vraag1_goed()" )'); 								
 							}	
 
 							if (vid == 'call_vraag1_fout'){			
@@ -367,11 +357,6 @@ als master inzet. nu knippert hij omdat hij steeds een stukje terug gaat.
 								krpano.call( "action_vraag1_fout()" );		
 								console.log ('vid = call_vraag1_fout'); 
 								console.log ('krpano.call( "action_vraag1_fout()" )'); 
-								sound_4.play();	
-								sound_nietgoed.pause();
-								sound_nietgoed.currentTime = 0;							
-								sound_succes.pause();			
-								sound_succes.currentTime = 0;								
 							}				
 
 							if (vid == 'call_vraag1_fout_maartochdoor'){			
@@ -379,11 +364,6 @@ als master inzet. nu knippert hij omdat hij steeds een stukje terug gaat.
 								krpano.call( "action_vraag1_fout_maartochdoor()" );		
 								console.log ('vid = call_vraag1_fout_maartochdoor'); 
 								console.log ('krpano.call( "action_vraag1_fout_maartochdoor()"'); 
-								sound_4.play();	
-								sound_nietgoed.pause();
-								sound_nietgoed.currentTime = 0;							
-								sound_succes.pause();			
-								sound_succes.currentTime = 0;								
 								}	
 
 							if (vid == 'call_vraag1_goed_volgendevraag'){			
@@ -391,11 +371,6 @@ als master inzet. nu knippert hij omdat hij steeds een stukje terug gaat.
 								krpano.call( "action_vraag1_goed_volgendevraag()" );		
 								console.log ('vid = call_vraag1_goed_volgendevraag'); 
 								console.log ('krpano.call( "action_vraag1_goed_volgendevraag()'); 
-								sound_4.play();	
-								sound_nietgoed.pause();
-								sound_nietgoed.currentTime = 0;							
-								sound_succes.pause();			
-								sound_succes.currentTime = 0;								
 							}	
 
 							
@@ -730,22 +705,11 @@ als master inzet. nu knippert hij omdat hij steeds een stukje terug gaat.
 							}				
 
 
-//  headset voor andere speler
-							
-							if (vid == 'call_pop_up_andere_speler'){			
-								var krpano = document.getElementById("krpanoSWFObject");
-								krpano.call( "action_pop_up_andere_speler()" );		
-								console.log ('action_pop_up_andere_speler'); 
-							}	
 
-			
-							if (vid == 'unity_pop_up_scherm_andere_speler'){			
-								var krpano = document.getElementById("krpanoSWFObject");
-								krpano.call( "unity_pop_up_scherm_andere_speler()" );		
-								console.log ('unity_pop_up_scherm_andere_speler'); 
-							}	
 
-							
+
+
+
 							
 							//////////////////
 								
@@ -998,12 +962,10 @@ als master inzet. nu knippert hij omdat hij steeds een stukje terug gaat.
 			}	
 
 			
-// headset op andere speler
 
-			window.send_call_pop_up_andere_speler  = function(){
-				console.log ('doet deze het? window.send_call_pop_up_andere_speler'); 
-				socket.emit('vraag','call_pop_up_andere_speler');
-			}
+
+
+
 
 
 
