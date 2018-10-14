@@ -186,7 +186,7 @@ in de tour.xml de scene_100 vervangen. de oude uitgecommanteerd
  	
 <!-- STARTSCHERM MET INSTRUCTIE TEKST  scale="1.5"  scale.mobile="0.5" -->
 
-		<layer name="startscherm_tablet" url="images/startscherm_tablet2.png" onclick= " " keep="true" visible="true" zorder="10" handcursor="false" capture="false"  align="center" 
+		<layer name="startscherm_tablet" url="images/import/format/startscherm_web.png" onclick= " " keep="true" visible="true" zorder="10" handcursor="false" capture="false"  align="center" 
 		 scalechildren="true"/>
 
 		<layer name="startscherm_tablet_verder" style="style_startscherm_tablet_verder" visible= "true" x="0" y="100" zorder="10" 
@@ -804,6 +804,7 @@ if(device.desktop, 	set(scaleFactorScore, '0.1'););
 <!--  2 pop up dat een andere speler de headset moet opdoen  -->	
 <!--  2 pop up dat een andere speler de headset moet opdoen  -->		
 	
+	<!-- wordt onderstaande wel gebruikt???? weghalen?????????????  -->
 
 		<layer name="unity_pop_up_scherm_andere_speler2" url="images/headsetAndereSpeler.png" onclick= " " keep="true" visible="false" zorder="10" handcursor="false" capture="false"  align="center" 
 		 scalechildren="true"/>
@@ -918,6 +919,11 @@ if(nextsceneindex LT scene.count, loadscene(get(scene[get(nextsceneindex)].name)
 		set (layer[antwoord_is_fout].visible,false);
 		set (layer[antwoord_is_fout_maartochdoor].visible,false);
 		set (layer[antwoord_is_goed_volgendevraag].visible,false);
+		
+		set (layer[pop_up_eindscore_groter70].visible,false);
+		set (layer[pop_up_eindscore_kleiner70].visible,false);
+		
+		
 		
 	</action>		
 
@@ -1213,7 +1219,8 @@ if(nextsceneindex LT scene.count, loadscene(get(scene[get(nextsceneindex)].name)
 
 		
 		<action name="aantal_goed1" >
-			set(layer[pop_up_eindscore_kleiner70].visible,true);	 
+			set(layer[pop_up_eindscore_kleiner70].visible,true);	
+			
 		</action>		
 		
 		<action name="aantal_goed2" >
@@ -1263,10 +1270,11 @@ if(nextsceneindex LT scene.count, loadscene(get(scene[get(nextsceneindex)].name)
 <!--  POPUP EINDSCORE    POPUP EINDSCORE       POPUP EINDSCORE     POPUP EINDSCORE        -->
 	
 <!--  groter 70%    -->				
-		<layer name="pop_up_eindscore_groter70" url="images/eindscore_groter70.png" onclick= " " keep="true" visible="false" zorder="10" handcursor="false" capture="false"  align="center" 
+		<layer name="pop_up_eindscore_groter70" url="images/import/10/eindscore_goed.png" onclick= " " keep="true" visible="false" zorder="10" handcursor="false" capture="false"  align="center" 
 		 scalechildren="true"/>
 
-		<layer name="close_popup_score_groter70" style="style_popup_score_groter70" visible= "true" x="0" y="100" zorder="10" 
+		 <!-- ONDERSTAAND DE CLOSE KNOP UITGEZET, layer visalble is false. DE SPELERS KUNNEN ALLEEN NOG EEN RESET MAKEN MAAR KRIJGEN GEEN KNOP MEER TE ZIEN  -->
+		<layer name="close_popup_score_groter70" style="style_popup_score_groter70" visible= "false" x="0" y="100" zorder="10" 
 		onclick="action_close_popup_groter70(); call_close_popup_groter70()" />  
 			
 		<style name="style_popup_score_groter70" keep="true" url="images/eindeknop.png" parent="pop_up_eindscore_groter70" align="bottom" edge="center" scale= "1" scale.mobile = "1"  />
@@ -1289,10 +1297,11 @@ if(nextsceneindex LT scene.count, loadscene(get(scene[get(nextsceneindex)].name)
 		
 		
 <!--  kleiner 70%    -->				
-		<layer name="pop_up_eindscore_kleiner70" url="images/eindscore_kleiner70.png" onclick= " " keep="true" visible="false" zorder="10" handcursor="false" capture="false"  align="center" 
+		<layer name="pop_up_eindscore_kleiner70" url="images/import/10/eindscore_fout.png" onclick= " " keep="true" visible="false" zorder="10" handcursor="false" capture="false"  align="center" 
 		 scalechildren="true"/>
 
-		<layer name="close_popup_score_kleiner70" style="style_popup_score_kleiner70" visible= "true" x="0" y="100" zorder="10" 
+	 <!-- ONDERSTAAND DE CLOSE KNOP UITGEZET, layer visalble is false. DE SPELERS KUNNEN ALLEEN NOG EEN RESET MAKEN MAAR KRIJGEN GEEN KNOP MEER TE ZIEN  -->
+		<layer name="close_popup_score_kleiner70" style="style_popup_score_kleiner70" visible= "false" x="0" y="100" zorder="10" 
 		onclick="action_close_popup_kleiner70(); call_close_popup_kleiner70()" />  
 			
 		<style name="style_popup_score_kleiner70" keep="true" url="images/eindeknop.png" parent="pop_up_eindscore_kleiner70" align="bottom" edge="center" scale= "1" scale.mobile = "1"  />

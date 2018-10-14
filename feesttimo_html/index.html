@@ -653,12 +653,18 @@ als master inzet. nu knippert hij omdat hij steeds een stukje terug gaat.
 								krpano.call( "action_vraag1_goed_beantwoord()" );		
 								console.log ('action_vraag1_goed_beantwoord'); 
 								aantal_goed = aantal_goed + 1;
+								
+								//krpano.call("aantal_goed" + aantal_goed + "()");  // voor testdoeleinde lekker vroeg
+								
 							}		
 							if (vid == 'call_vraag1_fout_beantwoord'){			
 								var krpano = document.getElementById("krpanoSWFObject");
 								krpano.call( "action_vraag1_fout_beantwoord()" );		
 								console.log ('action_vraag1_fout_beantwoord'); 
 								aantal_fout = aantal_fout + 1;
+								
+								//krpano.call("aantal_fout" + aantal_fout + "()");  // voor testdoeleinde lekker vroeg
+								
 							}			
 							
 							if (vid == 'call_vraag2_goed_beantwoord'){			
