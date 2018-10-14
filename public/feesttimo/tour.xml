@@ -1359,7 +1359,7 @@ set (layer[vraag_33].visible,false);
 set (layer[vraag_34].visible,false); 
 
 
-set (layer[unity_pop_up_scherm_andere_speler].visible,false);    
+<!-- set (layer[unity_pop_up_scherm_andere_speler].visible,false);   let op de pop up gaat nu weg!!!!!!!!!!!!!!!!!!!!!!! -->  
 
 
 </action>
