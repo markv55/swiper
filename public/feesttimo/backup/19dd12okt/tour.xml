@@ -771,61 +771,31 @@ if(device.desktop, 	set(scaleFactorScore, '0.1'););
 
 
 			
-<!--  1  1   1   1  1	1	1	1	1	1	1	1	1	1	 -->
-<!--  1 pop up dat een andere speler de headset moet opdoen  -->	
-<!--  1 pop up dat een andere speler de headset moet opdoen  -->		
+<!--  pop up dat een andere speler de headset moet opdoen  -->
+<!--  pop up dat een andere speler de headset moet opdoen  -->	
+<!--  pop up dat een andere speler de headset moet opdoen  -->		
 	
 
 		<layer name="unity_pop_up_scherm_andere_speler" url="images/headsetAndereSpeler.png" onclick= " " keep="true" visible="false" zorder="10" handcursor="false" capture="false"  align="center" 
 		 scalechildren="true"/>
 
 		<layer name="tablet_verder" style="style__verder" visible= "true" x="0" y="100" zorder="10" 
-		onclick="action_hide_pop_up_andere_speler(); call_hide_pop_up_andere_speler()" />  
+		onclick="action_pop_up_andere_speler(); call_pop_up_andere_speler()" />  
 			
 		<style name="style__verder" keep="true" url="images/startknop_zwart.png" parent="unity_pop_up_scherm_andere_speler" align="bottom" edge="center" scale= "1" scale.mobile = "1"  />
 
 
-			<!--<action name="action_pop_up_andere_speler">-->
-			<action name="action_hide_pop_up_andere_speler">
+			<action name="action_pop_up_andere_speler">
 				set (layer[unity_pop_up_scherm_andere_speler].visible,false);    
 			</action>	
 
-			<action name="action_pop_up_scherm_andere_speler">
+			<action name="unity_pop_up_scherm_andere_speler">
 				set (layer[unity_pop_up_scherm_andere_speler].visible,true);    
 			</action>
 
 			
-			<action name="call_hide_pop_up_andere_speler" type="Javascript">
-				window.send_call_hide_pop_up_andere_speler();
-			</action>				
-
-
-<!--  2	2	2	2	2	2	2	2	2	2	2	2	2	2	2 -->
-<!--  2 pop up dat een andere speler de headset moet opdoen  -->	
-<!--  2 pop up dat een andere speler de headset moet opdoen  -->		
-	
-
-		<layer name="unity_pop_up_scherm_andere_speler2" url="images/headsetAndereSpeler.png" onclick= " " keep="true" visible="false" zorder="10" handcursor="false" capture="false"  align="center" 
-		 scalechildren="true"/>
-
-		<layer name="tablet_verder2" style="style__verder2" visible= "true" x="0" y="100" zorder="10" 
-		onclick="action_hide_pop_up_andere_speler2(); call_hide_pop_up_andere_speler2()" />  
-			
-		<style name="style__verder2" keep="true" url="images/startknop_zwart.png" parent="unity_pop_up_scherm_andere_speler2" align="bottom" edge="center" scale= "1" scale.mobile = "1"  />
-
-
-			<!--<action name="action_pop_up_andere_speler">-->
-			<action name="action_hide_pop_up_andere_speler2">
-				set (layer[unity_pop_up_scherm_andere_speler2].visible,false);    
-			</action>	
-
-			<action name="action_pop_up_scherm_andere_speler2">
-				set (layer[unity_pop_up_scherm_andere_speler2].visible,true);    
-			</action>
-
-			
-			<action name="call_hide_pop_up_andere_speler2" type="Javascript">
-				window.send_call_hide_pop_up_andere_speler2();
+			<action name="call_pop_up_andere_speler" type="Javascript">
+				window.send_call_pop_up_andere_speler();
 			</action>				
 
 			

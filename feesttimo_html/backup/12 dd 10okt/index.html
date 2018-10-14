@@ -138,21 +138,9 @@
 
 		</script>
 
-	
-
-
-
-	
-		
-		
 		<script>
 	
 		$(function () {
-	
-		<!-- variabele welke tellen hoeveel vragen goed en hoeveel fout zijn beantwoord -->	
-		var aantal_goed = 0;
-		var aantal_fout = 0;		
-		
 				var socket = io();
 
 // LEES HLOOKAT EN SEND SOCKET TO BACKEND  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -254,7 +242,7 @@ als master inzet. nu knippert hij omdat hij steeds een stukje terug gaat.
 							
 							if (vid == 'call_scene1_krpano'){	
 								var krpano = document.getElementById("krpanoSWFObject");
-								console.log ("call_scene1_krpano");						
+								console.log ("verander scene");						
 								krpano.call( "laad_scene1()" );		
 								sound_4.play();
 								sound_2.pause();
@@ -268,7 +256,7 @@ als master inzet. nu knippert hij omdat hij steeds een stukje terug gaat.
 							
 							if (vid == 'call_scene2_krpano'){	
 								var krpano = document.getElementById("krpanoSWFObject");
-								console.log ("call_scene2_krpano");						
+								console.log ("verander scene");						
 								krpano.call( "laad_scene2()" );		
 								sound_4.pause();
 								//sound_2.play();
@@ -511,12 +499,8 @@ als master inzet. nu knippert hij omdat hij steeds een stukje terug gaat.
 								krpano.call( "action_vraag3_3_show()" );		
 								console.log ('action_vraag3_3_show'); 
 							}											
-	// nieuw 10okt						
-						if (vid == 'unity_vraag3_4'){			
-								var krpano = document.getElementById("krpanoSWFObject");
-								krpano.call( "action_vraag3_4_show()" );		
-								console.log ('action_vraag3_4_show'); 
-							}														
+							
+								
 							
 							
 // OP ZOEK NAAR ICON
@@ -617,19 +601,6 @@ als master inzet. nu knippert hij omdat hij steeds een stukje terug gaat.
 								var krpano = document.getElementById("krpanoSWFObject");
 								krpano.call( "action_reset_game()" );		
 								console.log ('action_reset_game'); 
-								aantal_fout = 0;
-								aantal_goed = 0;
-
-								sound_4.pause();								
-								sound_4.currentTime = 0;	
-								
-								sound_nietgoed.pause();
-								sound_nietgoed.currentTime = 0;		
-								
-								sound_succes.pause();			
-								sound_succes.currentTime = 0;				
-								
-								
 							}		
 							
 							
@@ -647,207 +618,133 @@ als master inzet. nu knippert hij omdat hij steeds een stukje terug gaat.
 // IEDERE VRAAG KOMT BINNEN OF IE GOED OF NIET GOED IS BEANTWOORD
 // IEDERE VRAAG KOMT BINNEN OF IE GOED OF NIET GOED IS BEANTWOORD
 
-
 							if (vid == 'call_vraag1_goed_beantwoord'){			
 								var krpano = document.getElementById("krpanoSWFObject");
 								krpano.call( "action_vraag1_goed_beantwoord()" );		
 								console.log ('action_vraag1_goed_beantwoord'); 
-								aantal_goed = aantal_goed + 1;
 							}		
 							if (vid == 'call_vraag1_fout_beantwoord'){			
 								var krpano = document.getElementById("krpanoSWFObject");
 								krpano.call( "action_vraag1_fout_beantwoord()" );		
 								console.log ('action_vraag1_fout_beantwoord'); 
-								aantal_fout = aantal_fout + 1;
-							}			
-							
+							}							
 							if (vid == 'call_vraag2_goed_beantwoord'){			
 								var krpano = document.getElementById("krpanoSWFObject");
 								krpano.call( "action_vraag2_goed_beantwoord()" );		
 								console.log ('action_vraag2_goed_beantwoord'); 
-								aantal_goed = aantal_goed + 1;
 							}		
 						
 							if (vid == 'call_vraag2_fout_beantwoord'){			
 								var krpano = document.getElementById("krpanoSWFObject");
 								krpano.call( "action_vraag2_fout_beantwoord()" );		
 								console.log ('action_vraag2_fout_beantwoord'); 
-								aantal_fout = aantal_fout + 1;
 							}				
 
 							if (vid == 'call_vraag3_goed_beantwoord'){			
 								var krpano = document.getElementById("krpanoSWFObject");
 								krpano.call( "action_vraag3_goed_beantwoord()" );		
 								console.log ('action_vraag3_goed_beantwoord'); 
-								aantal_goed = aantal_goed + 1;
-								}		
+							}		
 						
 							if (vid == 'call_vraag3_fout_beantwoord'){			
 								var krpano = document.getElementById("krpanoSWFObject");
 								krpano.call( "action_vraag3_fout_beantwoord()" );		
 								console.log ('action_vraag3_fout_beantwoord'); 
-								aantal_fout = aantal_fout + 1;
-								}				
+							}				
 							if (vid == 'call_vraag4_goed_beantwoord'){			
 								var krpano = document.getElementById("krpanoSWFObject");
 								krpano.call( "action_vraag4_goed_beantwoord()" );		
 								console.log ('action_vraag4_goed_beantwoord'); 
-								aantal_goed = aantal_goed + 1;
-								}		
+							}		
 						
 							if (vid == 'call_vraag4_fout_beantwoord'){			
 								var krpano = document.getElementById("krpanoSWFObject");
 								krpano.call( "action_vraag4_fout_beantwoord()" );		
 								console.log ('action_vraag4_fout_beantwoord'); 
-								aantal_fout = aantal_fout + 1;
-								}				
+							}				
 							if (vid == 'call_vraag5_goed_beantwoord'){			
 								var krpano = document.getElementById("krpanoSWFObject");
 								krpano.call( "action_vraag5_goed_beantwoord()" );		
 								console.log ('action_vraag5_goed_beantwoord'); 
-								aantal_goed = aantal_goed + 1;
-								}		
+							}		
 						
 							if (vid == 'call_vraag5_fout_beantwoord'){			
 								var krpano = document.getElementById("krpanoSWFObject");
 								krpano.call( "action_vraag5_fout_beantwoord()" );		
 								console.log ('action_vraag5_fout_beantwoord'); 
-								aantal_fout = aantal_fout + 1;
-								}				
+							}				
 							if (vid == 'call_vraag6_goed_beantwoord'){			
 								var krpano = document.getElementById("krpanoSWFObject");
 								krpano.call( "action_vraag6_goed_beantwoord()" );		
 								console.log ('action_vraag6_goed_beantwoord'); 
-								aantal_goed = aantal_goed + 1;
-								}		
+							}		
 						
 							if (vid == 'call_vraag6_fout_beantwoord'){			
 								var krpano = document.getElementById("krpanoSWFObject");
 								krpano.call( "action_vraag6_fout_beantwoord()" );		
 								console.log ('action_vraag6_fout_beantwoord'); 
-								aantal_fout = aantal_fout + 1;
-								}				
+							}				
 							if (vid == 'call_vraag7_goed_beantwoord'){			
 								var krpano = document.getElementById("krpanoSWFObject");
 								krpano.call( "action_vraag7_goed_beantwoord()" );		
 								console.log ('action_vraag7_goed_beantwoord'); 
-								aantal_goed = aantal_goed + 1;
-								}		
+							}		
 						
 							if (vid == 'call_vraag7_fout_beantwoord'){			
 								var krpano = document.getElementById("krpanoSWFObject");
 								krpano.call( "action_vraag7_fout_beantwoord()" );		
 								console.log ('action_vraag7_fout_beantwoord'); 
-								aantal_fout = aantal_fout + 1;
-								}				
+							}				
 							if (vid == 'call_vraag8_goed_beantwoord'){			
 								var krpano = document.getElementById("krpanoSWFObject");
 								krpano.call( "action_vraag8_goed_beantwoord()" );		
 								console.log ('action_vraag8_goed_beantwoord'); 
-								aantal_goed = aantal_goed + 1;
-								}		
+							}		
 						
 							if (vid == 'call_vraag8_fout_beantwoord'){			
 								var krpano = document.getElementById("krpanoSWFObject");
 								krpano.call( "action_vraag8_fout_beantwoord()" );		
 								console.log ('action_vraag8_fout_beantwoord'); 
-								aantal_fout = aantal_fout + 1;
-								}				
+							}				
 							if (vid == 'call_vraag9_goed_beantwoord'){			
 								var krpano = document.getElementById("krpanoSWFObject");
 								krpano.call( "action_vraag9_goed_beantwoord()" );		
 								console.log ('action_vraag9_goed_beantwoord'); 
-								aantal_goed = aantal_goed + 1;
-								}		
+							}		
 						
 							if (vid == 'call_vraag9_fout_beantwoord'){			
 								var krpano = document.getElementById("krpanoSWFObject");
 								krpano.call( "action_vraag9_fout_beantwoord()" );		
 								console.log ('action_vraag9_fout_beantwoord'); 
-								aantal_fout = aantal_fout + 1;
-								}	
-
-// laatste vraag en versturen van de score naar krpano!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-							
+							}				
 							if (vid == 'call_vraag10_goed_beantwoord'){			
 								var krpano = document.getElementById("krpanoSWFObject");
 								krpano.call( "action_vraag10_goed_beantwoord()" );		
 								console.log ('action_vraag10_goed_beantwoord'); 
-								aantal_goed = aantal_goed + 1;
-								
-								//krpano.call("aantal_fout" + aantal_fout + "()");
-								krpano.call("aantal_goed" + aantal_goed + "()");
-								aantal_fout = 0;
-								aantal_goed = 0;
-
-								
 							}		
 						
 							if (vid == 'call_vraag10_fout_beantwoord'){			
 								var krpano = document.getElementById("krpanoSWFObject");
 								krpano.call( "action_vraag10_fout_beantwoord()" );		
 								console.log ('action_vraag10_fout_beantwoord'); 
-								aantal_fout = aantal_fout + 1;
-								
-								//krpano.call("aantal_fout" + aantal_fout + "()");
-								krpano.call("aantal_goed" + aantal_goed + "()");
-								aantal_fout = 0;
-								aantal_goed = 0;									
-
 							}				
 
 
 //  headset voor andere speler
 							
-							if (vid == 'call_hide_pop_up_andere_speler'){			
+							if (vid == 'call_pop_up_andere_speler'){			
 								var krpano = document.getElementById("krpanoSWFObject");
-								krpano.call( "action_hide_pop_up_andere_speler()" );		
-								console.log ('action_hide_pop_up_andere_speler'); 
+								krpano.call( "action_pop_up_andere_speler()" );		
+								console.log ('action_pop_up_andere_speler'); 
 							}	
 
-							if (vid == 'call_hide_pop_up_andere_speler2'){			
-								var krpano = document.getElementById("krpanoSWFObject");
-								krpano.call( "action_hide_pop_up_andere_speler2()" );		
-								console.log ('action_hide_pop_up_andere_speler2'); 
-							}	
-
-
-							
+			
 							if (vid == 'unity_pop_up_scherm_andere_speler'){			
 								var krpano = document.getElementById("krpanoSWFObject");
-								krpano.call( "action_pop_up_scherm_andere_speler()" );		
-								console.log ('action_pop_up_scherm_andere_speler'); 
+								krpano.call( "unity_pop_up_scherm_andere_speler()" );		
+								console.log ('unity_pop_up_scherm_andere_speler'); 
 							}	
 
-							if (vid == 'unity_pop_up_scherm_andere_speler2'){			
-								var krpano = document.getElementById("krpanoSWFObject");
-								krpano.call( "action_pop_up_scherm_andere_speler2()" );		
-								console.log ('action_pop_up_scherm_andere_speler2'); 
-							}								
-							
-
-							
-// eindscore na 10 vragen
-
-							if (vid == 'call_close_popup_groter70'){			
-								var krpano = document.getElementById("krpanoSWFObject");
-								krpano.call( "action_close_popup_groter70()" );		
-								console.log ('action_close_popup_groter70'); 
-							}	
-
-							if (vid == 'call_close_popup_kleiner70'){			
-								var krpano = document.getElementById("krpanoSWFObject");
-								krpano.call( "action_close_popup_kleiner70()" );		
-								console.log ('action_close_popup_kleiner70'); 
-							}	
-
-							
-							
-							
-							
-							
-							
-							
 							
 							
 							//////////////////
@@ -911,17 +808,12 @@ als master inzet. nu knippert hij omdat hij steeds een stukje terug gaat.
 // SCENES   // SCENES
 			window.send_call_scene1_krpano = function(){
 				console.log ('call_scene1_krpano'); 
-				//socket.emit('scene', 'call_scene1_krpano');
-				socket.emit('vraag', 'call_scene1_krpano');
-				
+				socket.emit('scene', 'call_scene1_krpano');	
 			}
 
 			window.send_call_scene2_krpano = function(){
 				console.log ('call_scene2_krpano'); 
-				//socket.emit('scene', 'call_scene2_krpano');
-				socket.emit('vraag', 'call_scene2_krpano');
-				
-				
+				socket.emit('scene', 'call_scene2_krpano');
 			}	
 
 
@@ -1108,29 +1000,17 @@ als master inzet. nu knippert hij omdat hij steeds een stukje terug gaat.
 			
 // headset op andere speler
 
-			window.send_call_hide_pop_up_andere_speler  = function(){
-				console.log ('doet deze het? window.send_call_hide_pop_up_andere_speler'); 
-				socket.emit('vraag','call_hide_pop_up_andere_speler');
-			}
-
-			window.send_call_hide_pop_up_andere_speler2  = function(){
-				console.log ('doet deze het? window.send_call_hide_pop_up_andere_speler2'); 
-				socket.emit('vraag','call_hide_pop_up_andere_speler2');
+			window.send_call_pop_up_andere_speler  = function(){
+				console.log ('doet deze het? window.send_call_pop_up_andere_speler'); 
+				socket.emit('vraag','call_pop_up_andere_speler');
 			}
 
 
-// eindscore na 10 vragen
-
-			window.send_call_close_popup_groter70  = function(){
-				console.log ('window.send_call_close_popup_groter70'); 
-				socket.emit('vraag','call_close_popup_groter70');
-			}
 
 
-			window.send_call_close_popup_kleiner70  = function(){
-				console.log ('window.send_call_close_popup_kleiner70'); 
-				socket.emit('vraag','call_close_popup_kleiner70');
-			}
+
+
+
 
 
 
