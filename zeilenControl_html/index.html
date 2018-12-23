@@ -85,8 +85,10 @@
 		
 		
 		<script src="/static/krpano/tour.js"></script>
+		 
 		<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+		
 		<script src="/static/js/slider.js"></script> 	
 	
 		<div id="pano" style="width:100%;height:100%;">
@@ -153,20 +155,7 @@
 		
 		
 
-			for (var i = 1; i < (256 + 1); i++) {
-				var imageIndexString = i;
-				if (i < 100){
-					imageIndexString = '0' + imageIndexString;
-				}
-				if (i < 10) {
-					imageIndexString = '0' + imageIndexString;
-				}
-
-				var imagePath = '/static/images2/' + imageIndexString + '.jpg';  // probleem?? laad hij wel de 001.jpg of alleen de 1.jpg????
-				var image = new Image();
-				image.src = imagePath;
-				console.log('preloading..' + imagePath);
-			}
+			
 
 	/////////////////////////////////////////////////
 	
@@ -175,197 +164,157 @@
 			
 			
 			$('#scene0').click(function() {   
-				//$('#mainFoto').hide('slow');
 				var krpano = document.getElementById("krpanoSWFObject");
-				console.log ("verander scene");						
-				krpano.call( "laad_scene0()" );	
-				send_call_scene0_krpano();
-				//changeCollorBack();
-				//$(this).css('background-color', 'green');
+				krpano.call( "laad_foto0()" );	
+				laad_foto0();
 			});			
-			
-			
-			
+				
 			
 			$('#scene1').click(function() {   
-				//$('#mainFoto').hide('slow');
 				var krpano = document.getElementById("krpanoSWFObject");
-				console.log ("verander scene");						
-				krpano.call( "laad_scene1()" );	
-				send_call_scene1_krpano();
+				krpano.call( "laad_foto1()" );	
+				laad_foto1();
 				changeCollorBack();
 				$(this).css('background-color', 'green');
 			});
 			
 			$('#scene2').click(function() {   
-				//$('#mainFoto').show('slow'); 
 				var krpano = document.getElementById("krpanoSWFObject");
-				console.log ("verander scene");						
-				krpano.call( "laad_scene2()" );	
-				send_call_scene2_krpano();
+				krpano.call( "laad_foto2()" );	
+				laad_foto2();
 				changeCollorBack();
 				$(this).css('background-color', 'green');
 			
 			});
 			
 			$('#scene3').click(function() {   
-				//$('#mainFoto').show('slow'); 
 				var krpano = document.getElementById("krpanoSWFObject");
-				console.log ("verander scene");						
-				krpano.call( "laad_scene3()" );	
-				send_call_scene3_krpano();
+				krpano.call( "laad_foto3()" );	
+				laad_foto3();
 				changeCollorBack();
 				$(this).css('background-color', 'green');
 			
 			});
 
 			$('#scene4').click(function() {   
-				//$('#mainFoto').show('slow'); 
 				var krpano = document.getElementById("krpanoSWFObject");
-				console.log ("verander scene");						
-				krpano.call( "laad_scene4()" );	
-				send_call_scene4_krpano();
+				krpano.call( "laad_foto4()" );
+				laad_foto4();				
 				changeCollorBack();
 				$(this).css('background-color', 'green');
 			
 			});
 
 			$('#scene5').click(function() {   
-				//$('#mainFoto').show('slow'); 
 				var krpano = document.getElementById("krpanoSWFObject");
-				console.log ("verander scene");						
-				krpano.call( "laad_scene5()" );	
-				send_call_scene5_krpano();
+				krpano.call( "laad_foto5()" );	
+				laad_foto5();
 				changeCollorBack();
 				$(this).css('background-color', 'green');
 			
 			});
 
 			$('#scene6').click(function() {   
-				//$('#mainFoto').show('slow'); 
 				var krpano = document.getElementById("krpanoSWFObject");
-				console.log ("verander scene");						
-				krpano.call( "laad_scene6()" );	
-				send_call_scene6_krpano();
+				krpano.call( "laad_foto6()" );	
+				laad_foto6();
 				changeCollorBack();
 				$(this).css('background-color', 'green');
 			
 			});
 
 			$('#scene7').click(function() {   
-				//$('#mainFoto').hide('slow');
 				var krpano = document.getElementById("krpanoSWFObject");
-				console.log ("verander scene");						
-				krpano.call( "laad_scene7()" );	
-				send_call_scene7_krpano();
+				krpano.call( "laad_foto7()" );	
+				laad_foto7();
 				changeCollorBack();
 				$(this).css('background-color', 'green');
 			});
 			
 			$('#scene8').click(function() {   
-				//$('#mainFoto').show('slow'); 
 				var krpano = document.getElementById("krpanoSWFObject");
-				console.log ("verander scene");						
-				krpano.call( "laad_scene8()" );	
-				send_call_scene8_krpano();
+				krpano.call( "laad_foto8()" );	
+				laad_foto8();
 				changeCollorBack();
 				$(this).css('background-color', 'green');
 			
 			});
 			
 			$('#scene9').click(function() {   
-				//$('#mainFoto').show('slow'); 
 				var krpano = document.getElementById("krpanoSWFObject");
-				console.log ("verander scene");						
-				krpano.call( "laad_scene9()" );	
-				send_call_scene9_krpano();
+				krpano.call( "laad_foto9()" );	
+				laad_foto9();
 				changeCollorBack();
 				$(this).css('background-color', 'green');
 			
 			});
 
 			$('#scene10').click(function() {   
-				//$('#mainFoto').show('slow'); 
 				var krpano = document.getElementById("krpanoSWFObject");
-				console.log ("verander scene");						
-				krpano.call( "laad_scene10()" );	
-				send_call_scene10_krpano();
+				krpano.call( "laad_foto10()" );	
+				laad_foto10();
 				changeCollorBack();
 				$(this).css('background-color', 'green');
 			
 			});
 
 			$('#scene11').click(function() {   
-				//$('#mainFoto').show('slow'); 
 				var krpano = document.getElementById("krpanoSWFObject");
-				console.log ("verander scene");						
-				krpano.call( "laad_scene11()" );	
-				send_call_scene11_krpano();
+				krpano.call( "laad_foto11()" );	
+				laad_foto11();
 				changeCollorBack();
 				$(this).css('background-color', 'green');
 			
 			});
 
 			$('#scene12').click(function() {   
-				//$('#mainFoto').show('slow'); 
 				var krpano = document.getElementById("krpanoSWFObject");
-				console.log ("verander scene");						
-				krpano.call( "laad_scene12()" );	
-				send_call_scene12_krpano();
+				krpano.call( "laad_foto12()" );	
+				laad_foto12();
 				changeCollorBack();
 				$(this).css('background-color', 'green');
 			
 			});			
 
 			$('#scene13').click(function() {   
-				//$('#mainFoto').hide('slow');
 				var krpano = document.getElementById("krpanoSWFObject");
-				console.log ("verander scene");						
-				krpano.call( "laad_scene13()" );	
-				send_call_scene13_krpano();
+				krpano.call( "laad_foto13()" );	
+				laad_foto13();
 				changeCollorBack();
 				$(this).css('background-color', 'green');
 			});
 			
 			$('#scene14').click(function() {   
-				//$('#mainFoto').show('slow'); 
 				var krpano = document.getElementById("krpanoSWFObject");
-				console.log ("verander scene");						
-				krpano.call( "laad_scene14()" );	
-				send_call_scene14_krpano();
+				krpano.call( "laad_foto14()" );	
+				laad_foto14();
 				changeCollorBack();
 				$(this).css('background-color', 'green');
 			
 			});
 			
 			$('#scene15').click(function() {   
-				//$('#mainFoto').show('slow'); 
 				var krpano = document.getElementById("krpanoSWFObject");
-				console.log ("verander scene");						
-				krpano.call( "laad_scene15()" );	
-				send_call_scene15_krpano();
+				krpano.call( "laad_foto15()" );	
+				laad_foto15();
 				changeCollorBack();
 				$(this).css('background-color', 'green');
 			
 			});
 
 			$('#scene16').click(function() {   
-				//$('#mainFoto').show('slow'); 
 				var krpano = document.getElementById("krpanoSWFObject");
-				console.log ("verander scene");						
-				krpano.call( "laad_scene16()" );	
-				send_call_scene16_krpano();
+				krpano.call( "laad_foto16()" );	
+				laad_foto16();
 				changeCollorBack();
 				$(this).css('background-color', 'green');
 			
 			});
 
 			$('#scene17').click(function() {   
-				//$('#mainFoto').show('slow'); 
 				var krpano = document.getElementById("krpanoSWFObject");
-				console.log ("verander scene");						
-				krpano.call( "laad_scene17()" );	
-				send_call_scene17_krpano();
+				krpano.call( "laad_foto17()" );	
+				laad_foto17();
 				changeCollorBack();
 				$(this).css('background-color', 'green');
 			
@@ -373,40 +322,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-			
-///////////////////////////////////////////////////////////////
-			
-			$('#toonInfo').click(function() {   
-				//var krpano = document.getElementById("krpanoSWFObject");
-				//send_call_scene1_krpano();
-				//opZoekNaarIcon_1
-				tooninfo();
-			});			
-
-
-			$('#toonGeenInfo').click(function() {   
-				//var krpano = document.getElementById("krpanoSWFObject");
-				//send_call_scene1_krpano();
-				//opZoekNaarIcon_1
-				toongeeninfo();
-			});		
-
-			
-			$('#audio-1').click(function() {   $('#yes-audio').trigger('play'); 			navigator.vibrate([100, 200, 200, 200, 500]);}); 
-			});
+			});  // einde jquery druk knoppen
 
 			
 			function changeCollorBack(){
@@ -428,17 +344,7 @@
 			document.getElementById("scene16").style.background='blue';
 			document.getElementById("scene17").style.background='red';
 			}
-			
-			
-			
-			
-			function vibrateSimple() {
-			  navigator.vibrate(200);
-			}
-
-			function vibratePattern() {
-			  navigator.vibrate([100, 200, 200, 200, 500]);
-			}
+	
 
 		</script>
 
@@ -476,11 +382,6 @@ var sound_nr = 1;
 		console.log ('scene = 2'); 
 	}
 
-
-
-
-
-
 				var hlookat;
 				setInterval(function() {
 					var krpano = document.getElementById("krpanoSWFObject");
@@ -517,30 +418,10 @@ var sound_nr = 1;
 /// ONTVANGEN SOCKET VAN BACKEND   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 					socket.on('message', function(msg, vid, scale){  
 
-							// 16 aug uitgezet
-							//console.log (msg);
-							//console.log(vid);
+							console.log (msg);
+							console.log(vid);
+							console.log(scale);
 							
-							
-							//console.log(scale);
-							
-							if (msg == 'aan'){
-								$('#mainFoto').show('slow'); 
-								$('#yes-audio').trigger('play');
-								<!-- window.location = '/change_product_html';    let op dit werkt niet. hij gaat wel naar de url maar de hele werking is niet goed etc. -->
-								navigator.vibrate([100, 200, 200, 200, 500]);
-							}
-
-							if (msg == 'uit'){
-								$('#mainFoto').hide('slow');		
-								$('#yes-audio').trigger('pause')	;			
-							}	
-
-							//if (msg == 'photo'){			
-							//    var krpano = document.getElementById("krpanoSWFObject");
-							//	var src = "static/images2/" + vid + ".jpg"
-							//	$('#mainFoto').attr('src', src);
-							//}		
 							
 							<!-- hlookat-->
 							if (msg == 'hlookat'){			
@@ -593,464 +474,100 @@ var sound_nr = 1;
 							}								
 
 					
-//  RECEIVE SOCKETS WITHIN KRPANO    // RECEIVE SOCKETS WITHIN KRPANO							
+//  RECEIVE SOCKETS WITHIN KRPANO    // RECEIVE SOCKETS WITHIN KRPANO	    // RECEIVE SOCKETS WITHIN KRPANO	    // RECEIVE SOCKETS WITHIN KRPANO	    // RECEIVE SOCKETS WITHIN KRPANO	
+//  RECEIVE SOCKETS WITHIN KRPANO    // RECEIVE SOCKETS WITHIN KRPANO	    // RECEIVE SOCKETS WITHIN KRPANO	    // RECEIVE SOCKETS WITHIN KRPANO	    // RECEIVE SOCKETS WITHIN KRPANO							
+//  RECEIVE SOCKETS WITHIN KRPANO    // RECEIVE SOCKETS WITHIN KRPANO	    // RECEIVE SOCKETS WITHIN KRPANO	    // RECEIVE SOCKETS WITHIN KRPANO	    // RECEIVE SOCKETS WITHIN KRPANO	
 							
-							if (vid == 'call_scene0_krpano'){	
+							if (msg == 'laad_foto0'){	
 								var krpano = document.getElementById("krpanoSWFObject");
-								console.log ("verander scene");						
-								krpano.call( "laad_scene0()" );		
-								//sound_succes.currentTime = 0;
+								krpano.call( "laad_foto0()" );		
 							}								
-	
-
-							
-							if (vid == 'call_scene1_krpano'){	
-								var krpano = document.getElementById("krpanoSWFObject");
-								console.log ("verander scene");						
-								krpano.call( "laad_scene1()" );		
-								//sound_succes.currentTime = 0;
-							}								
-							
-							if (vid == 'call_scene2_krpano'){	
-								var krpano = document.getElementById("krpanoSWFObject");
-								console.log ("verander scene");						
-								krpano.call( "laad_scene2()" );		
-								//sound_2.play();
-								//sound_succes.currentTime = 0;
-		
-							}	
-
-							if (vid == 'call_scene3_krpano'){	
-								var krpano = document.getElementById("krpanoSWFObject");
-								console.log ("verander scene");						
-								krpano.call( "laad_scene3()" );		
-								//sound_2.play();
-								//sound_succes.currentTime = 0;
 					
-							}	
-
-							if (vid == 'call_scene4_krpano'){	
+							if (msg == 'laad_foto1'){	
 								var krpano = document.getElementById("krpanoSWFObject");
-								console.log ("verander scene");						
-								krpano.call( "laad_scene4()" );		
-								//sound_2.play();
-								//sound_succes.currentTime = 0;
-						
-							}	
-
-
-							if (vid == 'call_scene5_krpano'){	
-								var krpano = document.getElementById("krpanoSWFObject");
-								console.log ("verander scene");						
-								krpano.call( "laad_scene5()" );		
-								//sound_2.play();
-								//sound_succes.currentTime = 0;
-						
-							}	
-
-							if (vid == 'call_scene6_krpano'){	
-								var krpano = document.getElementById("krpanoSWFObject");
-								console.log ("verander scene");						
-								krpano.call( "laad_scene6()" );		
-								//sound_2.play();
-								//sound_succes.currentTime = 0;
-					
-							}	
-/////////////
-							if (vid == 'call_scene7_krpano'){	
-								var krpano = document.getElementById("krpanoSWFObject");
-								krpano.call( "laad_scene7()" );		
-							}							
-
-							if (vid == 'call_scene8_krpano'){	
-								var krpano = document.getElementById("krpanoSWFObject");
-								krpano.call( "laad_scene8()" );		
-							}	
-
-							if (vid == 'call_scene9_krpano'){	
-								var krpano = document.getElementById("krpanoSWFObject");
-								krpano.call( "laad_scene9()" );		
-							}	
-
-							if (vid == 'call_scene10_krpano'){	
-								var krpano = document.getElementById("krpanoSWFObject");
-								krpano.call( "laad_scene10()" );		
-							}	
-							if (vid == 'call_scene11_krpano'){	
-								var krpano = document.getElementById("krpanoSWFObject");
-								krpano.call( "laad_scene11()" );		
-							}	
-
-							if (vid == 'call_scene12_krpano'){	
-								var krpano = document.getElementById("krpanoSWFObject");
-								krpano.call( "laad_scene12()" );		
-							}	
-
-							if (vid == 'call_scene13_krpano'){	
-								var krpano = document.getElementById("krpanoSWFObject");
-								krpano.call( "laad_scene13()" );		
-							}	
-
-							if (vid == 'call_scene14_krpano'){	
-								var krpano = document.getElementById("krpanoSWFObject");
-								krpano.call( "laad_scene14()" );		
-							}	
-
-							if (vid == 'call_scene15_krpano'){	
-								var krpano = document.getElementById("krpanoSWFObject");
-								krpano.call( "laad_scene15()" );		
-							}	
-
-							if (vid == 'call_scene16_krpano'){	
-								var krpano = document.getElementById("krpanoSWFObject");
-								krpano.call( "laad_scene16()" );		
-							}	
-
-							if (vid == 'call_scene17_krpano'){	
-								var krpano = document.getElementById("krpanoSWFObject");
-								krpano.call( "laad_scene17()" );		
-							}	
-
-///////////////////////////////////////////////////////////////////						
-							
-							if (vid == 'unity_delete_vragen'){			
-								var krpano = document.getElementById("krpanoSWFObject");
-								console.log ('unity_delete_vragen'); 
-								krpano.call( "delete_vragen()" );		
-							}							
-							
-								
-							if (vid == 'call_delete_vragen'){			
-								var krpano = document.getElementById("krpanoSWFObject");
-								krpano.call( "delete_vragen()" );	
-							}		
-
-
-	
-							if (vid == 'call_sound_succes'){			
-								var krpano = document.getElementById("krpanoSWFObject");
-								sound_succes.play();	
-								sound_4.pause();	
-								sound_2.pause();
-								sound_nietgoed.pause();
-								sound_nietgoed.currentTime = 0;
-
-							}									
-							
-							if (vid == 'call_sound_nietgoed'){			
-								var krpano = document.getElementById("krpanoSWFObject");
-								sound_succes.pause();	
-								sound_4.pause();	
-								sound_2.pause();
-								sound_nietgoed.play();
-							}									
-
-							
-			<!-- VRAAG 1  -->
-			
-							if (vid == 'unity_vraag1_1'){			
-								var krpano = document.getElementById("krpanoSWFObject");
-								krpano.call( "action_vraag1_show()" );		
-								console.log ('socket unity_vraag1_1 en  dan: action_vraag1_show'); 
-							}	
-
-
-			
-		
-							if (vid == 'call_vraag1_ja'){			
-								var krpano = document.getElementById("krpanoSWFObject");
-								krpano.call( "action_vraag1_ja()" );		
-								console.log ('gaat de goede call weg??'); 
-							}										
-							
-							if (vid == 'call_vraag1_nee'){			
-								var krpano = document.getElementById("krpanoSWFObject");
-								krpano.call( "action_vraag1_nee()" );		
-								console.log ('action_vraag1_nee'); 
-							}												
-
-							if (vid == 'call_vraag1_nee_maartochdoor'){			
-								var krpano = document.getElementById("krpanoSWFObject");
-								krpano.call( "action_vraag1_nee_maartochdoor()" );		
-								console.log ('action_vraag1_nee_maartochdoor'); 
-							}												
-
-							if (vid == 'call_vraag1_ja_volgendevraag'){			
-								var krpano = document.getElementById("krpanoSWFObject");
-								krpano.call( "action_vraag1_ja_volgendevraag()" );		
-								console.log ('gaat de goede call weg??'); 
-							}
-							
-							
-							
-							
-							
-							if (vid == 'call_vraag1_goed'){			
-								var krpano = document.getElementById("krpanoSWFObject");
-								krpano.call( "action_vraag1_goed()" );		
-								console.log ('gaat de goede call weg??'); 
-							}	
-
-							if (vid == 'call_vraag1_fout'){			
-								var krpano = document.getElementById("krpanoSWFObject");
-								krpano.call( "action_vraag1_fout()" );		
-								console.log ('action_vraag1_fout??'); 
-							}				
-
-							if (vid == 'call_vraag1_fout_maartochdoor'){			
-								var krpano = document.getElementById("krpanoSWFObject");
-								krpano.call( "action_vraag1_fout_maartochdoor()" );		
-								console.log ('action_vraag1_fout_maartochdoor??'); 
-							}	
-
-							if (vid == 'call_vraag1_goed_volgendevraag'){			
-								var krpano = document.getElementById("krpanoSWFObject");
-								krpano.call( "action_vraag1_goed_volgendevraag()" );		
-								console.log ('gaat de goede call weg??'); 
-							}	
-
-							
-							
-							
-							
-
-			<!-- VRAAG 2  -->
-
-
-			
-							if (vid == 'unity_vraag1_2'){			
-								var krpano = document.getElementById("krpanoSWFObject");
-								krpano.call( "action_vraag2_show()" );		
-								console.log ('socket unity_vraag1_2 en  dan: action_vraag2_show'); 
-							}	
-
-
-
-
-							if (vid == 'call_vraag2_ja'){			
-								var krpano = document.getElementById("krpanoSWFObject");
-								krpano.call( "action_vraag2_ja()" );		
-								console.log ('gaat de goede call weg??'); 
-							}										
-							
-							if (vid == 'call_vraag2_nee'){			
-								var krpano = document.getElementById("krpanoSWFObject");
-								krpano.call( "action_vraag2_nee()" );		
-								console.log ('action_vraag2_nee'); 
-							}												
-							
-							if (vid == 'call_vraag2_goed'){			
-								var krpano = document.getElementById("krpanoSWFObject");
-								krpano.call( "action_vraag2_goed()" );		
-								console.log ('gaat de goede call weg??'); 
-							}	
-
-							if (vid == 'call_vraag2_fout'){			
-								var krpano = document.getElementById("krpanoSWFObject");
-								krpano.call( "action_vraag2_fout()" );		
-								console.log ('action_vraag2_fout??'); 
-							}			
-
-
-// GENERIEKE VRAGEN							
-							
-						if (vid == 'unity_vraag1_3'){			
-								var krpano = document.getElementById("krpanoSWFObject");
-								krpano.call( "action_vraag3_show()" );		
-								console.log ('socket unity_vraag1_3 en  dan: action_vraag3_show'); 
-							}	
-
-						if (vid == 'unity_vraag1_4'){			
-								var krpano = document.getElementById("krpanoSWFObject");
-								krpano.call( "action_vraag4_show()" );		
-								console.log ('socket unity_vraag1_4 en  dan: action_vraag4_show'); 
-							}
-
-						if (vid == 'unity_vraag1_5'){			
-								var krpano = document.getElementById("krpanoSWFObject");
-								krpano.call( "action_vraag5_show()" );		
-								console.log ('socket unity_vraag1_5 en  dan: action_vraag5_show'); 
-							}
-
-	// nieuw						
-							
-						if (vid == 'unity_vraag2_1'){			
-								var krpano = document.getElementById("krpanoSWFObject");
-								krpano.call( "action_vraag2_1_show()" );		
-								console.log ('action_vraag2_1_show'); 
-							}							
-							
-						if (vid == 'unity_vraag2_2'){			
-								var krpano = document.getElementById("krpanoSWFObject");
-								krpano.call( "action_vraag2_2_show()" );		
-								console.log ('action_vraag2_2_show'); 
-							}										
-							
-						if (vid == 'unity_vraag2_3'){			
-								var krpano = document.getElementById("krpanoSWFObject");
-								krpano.call( "action_vraag2_3_show()" );		
-								console.log ('action_vraag2_3_show'); 
-							}										
-							
-
-						if (vid == 'unity_vraag3_1'){			
-								var krpano = document.getElementById("krpanoSWFObject");
-								krpano.call( "action_vraag3_1_show()" );		
-								console.log ('action_vraag3_1_show'); 
-							}										
-							
-						if (vid == 'unity_vraag3_2'){			
-								var krpano = document.getElementById("krpanoSWFObject");
-								krpano.call( "action_vraag3_2_show()" );		
-								console.log ('action_vraag3_2_show'); 
+								krpano.call( "laad_foto1()" );		
 							}								
 							
-						if (vid == 'unity_vraag3_3'){			
+							if (msg == 'laad_foto2'){	
 								var krpano = document.getElementById("krpanoSWFObject");
-								krpano.call( "action_vraag3_3_show()" );		
-								console.log ('action_vraag3_3_show'); 
-							}											
-							
-								
-							
-							
-// OP ZOEK NAAR ICON
-// unity stuurt een socket. dit geeft aan in welke fase de app zit in de zoektocht naar de 5 icons.							
-						if (vid == 'opZoekNaarIcon_1'){			
-								var krpano = document.getElementById("krpanoSWFObject");
-								krpano.call( "opZoekNaarIcon_1()" );		
-								console.log ('opZoekNaarIcon_1'); 
-							}
-							
-						if (vid == 'opZoekNaarIcon_2'){			
-								var krpano = document.getElementById("krpanoSWFObject");
-								krpano.call( "opZoekNaarIcon_2()" );		
-								console.log ('opZoekNaarIcon_2'); 
-							}							
-
-						if (vid == 'opZoekNaarIcon_3'){			
-								var krpano = document.getElementById("krpanoSWFObject");
-								krpano.call( "opZoekNaarIcon_3()" );		
-								console.log ('opZoekNaarIcon_3'); 
-							}							
-							
-
-						if (vid == 'opZoekNaarIcon_4'){			
-								var krpano = document.getElementById("krpanoSWFObject");
-								krpano.call( "opZoekNaarIcon_4()" );		
-								console.log ('opZoekNaarIcon_4'); 
-							}
-
-						if (vid == 'opZoekNaarIcon_5'){			
-								var krpano = document.getElementById("krpanoSWFObject");
-								krpano.call( "opZoekNaarIcon_5()" );		
-								console.log ('opZoekNaarIcon_5'); 
-							}
-
-						if (vid == 'helaas_het_spel_stopt'){			
-								var krpano = document.getElementById("krpanoSWFObject");
-								krpano.call( "helaas_het_spel_stopt()" );		
-								console.log ('helaas_het_spel_stopt'); 
+								krpano.call( "laad_foto2()" );		
 							}	
 
-
-						if (vid == 'SCENE1'){			
+							if (msg == 'laad_foto3'){	
 								var krpano = document.getElementById("krpanoSWFObject");
-								krpano.call( "SCENE1()" );		
-								console.log ('SCENE1'); 
+								krpano.call( "laad_foto3()" );		
 							}	
-							
-						if (vid == 'SCENE2'){			
+
+							if (msg == 'laad_foto4'){	
 								var krpano = document.getElementById("krpanoSWFObject");
-								krpano.call( "SCENE2()" );		
-								console.log ('SCENE2'); 
-							}								
-							
-						if (vid == 'SCENE3'){			
+								krpano.call( "laad_foto4()" );		
+							}	
+
+							if (msg == 'laad_foto5'){	
 								var krpano = document.getElementById("krpanoSWFObject");
-								krpano.call( "SCENE3()" );		
-								console.log ('SCENE3'); 
+								krpano.call( "laad_foto5()" );		
+							}	
+
+							if (msg == 'laad_foto6'){	
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "laad_foto6()" );		
+							}	
+
+							if (msg == 'laad_foto7'){	
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "laad_foto7()" );		
 							}							
-							
-						if (vid == 'TUNNEL1'){			
+
+							if (msg == 'laad_foto8'){	
 								var krpano = document.getElementById("krpanoSWFObject");
-								krpano.call( "TUNNEL1()" );		
-								console.log ('TUNNEL1'); 
-							}		
+								krpano.call( "laad_foto8()" );		
+							}	
 
-						if (vid == 'TUNNEL2'){			
+							if (msg == 'laad_foto9'){	
 								var krpano = document.getElementById("krpanoSWFObject");
-								krpano.call( "TUNNEL2()" );		
-								console.log ('TUNNEL2'); 
-							}		
+								krpano.call( "laad_foto9()" );		
+							}	
 
-						if (vid == 'EINDE'){			
+							if (msg == 'laad_foto10'){	
 								var krpano = document.getElementById("krpanoSWFObject");
-								krpano.call( "EINDE()" );		
-								console.log ('EINDE'); 
-							}		
-
-							
-							
-			<!-- EINDSCOSRE  -->							
-							
-							if (vid == 'call_eindscore'){			
+								krpano.call( "laad_foto10()" );		
+							}	
+							if (msg == 'laad_foto11'){	
 								var krpano = document.getElementById("krpanoSWFObject");
-								krpano.call( "action_eindscore()" );		
-								console.log ('action_eindscore??'); 
-							}											
-	
-							if (vid == 'call_eindscore_close'){			
+								krpano.call( "laad_foto11()" );		
+							}	
+
+							if (msg == 'laad_foto12'){	
 								var krpano = document.getElementById("krpanoSWFObject");
-								krpano.call( "action_eindscore_close()" );		
-								console.log ('komt hij fucking hier??'); 
-							}			
+								krpano.call( "laad_foto12()" );		
+							}	
 
-							
-// RESET GAME							
-							if (vid == 'call_reset_game'){			
+							if (msg == 'laad_foto13'){	
 								var krpano = document.getElementById("krpanoSWFObject");
-								krpano.call( "action_reset_game()" );		
-								console.log ('action_reset_game'); 
-							}		
-							
-							
-							
-							
+								krpano.call( "laad_foto13()" );		
+							}	
 
-// INTRODUCTIE STARTSCHERM							
-							if (vid == 'call_delete_startscherm'){			
+							if (msg == 'laad_foto14'){	
 								var krpano = document.getElementById("krpanoSWFObject");
-								krpano.call( "action_delete_startscherm()" );		
-								console.log ('action_delete_startscherm'); 
-							}									
-							
+								krpano.call( "laad_foto14()" );		
+							}	
 
-
-////////////////////  nieuw voor master en slave krpano  /////////////////////
-////////////////////  nieuw voor master en slave krpano  /////////////////////
-////////////////////  nieuw voor master en slave krpano  /////////////////////
-// vanuit de client ontvangen we een socket 'vid' . deze socket maakt een call naar krpano
-
-							
-							if (vid == 'call_hide_hotspot'){			
+							if (msg == 'laad_foto15'){	
 								var krpano = document.getElementById("krpanoSWFObject");
-								krpano.call( "action_hide_hotspot()" );		
-								console.log ('action_hide_hotspot'); 
-							}
+								krpano.call( "laad_foto15()" );		
+							}	
 
+							if (msg == 'laad_foto16'){	
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "laad_foto16()" );		
+							}	
 
-							
-							
-							
-							
-							//////////////////
-								
-							if (msg == 'scale'){
-								// hier een inzoom functie	
-							}						
-					
-					});  //einde on-message
+							if (msg == 'laad_foto17'){	
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "laad_foto17()" );		
+							}	
+				
+					});  //einde on-message  ///////////////////////////////////////////////////////////////////
 
 	
 
@@ -1060,263 +577,82 @@ var sound_nr = 1;
 // EEN INTERNE CALL VAN KRPANO, SEND SOCKET TO BACKEND  ///////////////////////////////////////////////////////////////////////////////////////////////////////
 // EEN INTERNE CALL VAN KRPANO, SEND SOCKET TO BACKEND  ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// RESET GAME
 
-			window.send_call_reset_game = function(){
-				console.log ('call_reset_game'); 
-				socket.emit('vraag', 'call_reset_game');
-			}	
-
-
-
-
-
-
-
-// INTRODUCTIE STARTSCHERM
-
-			window.send_call_delete_startscherm = function(){
-				console.log ('call_delete_startscherm'); 
-				socket.emit('vraag', 'call_delete_startscherm');
-			}	
-
-
-			
-// ALGEMEEN   // ALGEMEEN
-			
-			
-			window.send_call_delete_vragen = function(){
-				console.log ('call_delete_vragen'); 
-				socket.emit('vraag', 'call_delete_vragen');
-			}		
-
-			window.send_call_sound_succes = function(){
-				console.log ('call_sound_succes'); 
-				socket.emit('vraag', 'call_sound_succes');
-			}		
-			
-			window.send_call_sound_nietgoed = function(){
-				console.log ('call_sound_nietgoed'); 
-				socket.emit('vraag', 'call_sound_nietgoed');
-			}					
-
-
-			
-// SCENES   // SCENES
-			window.send_call_scene0_krpano = function(){
-				console.log ('call_scene1_krpano'); 
-				socket.emit('scene', 'call_scene0_krpano');	
+			window.laad_foto0 = function(){
+				console.log ('laad_foto0'); 
+				socket.emit('stuur', 'laad_foto0','b','c', 'd');	
 			}
-
-
-			window.send_call_scene1_krpano = function(){
-				console.log ('call_scene1_krpano'); 
-				socket.emit('scene', 'call_scene1_krpano');	
+			window.laad_foto1 = function(){
+				console.log ('laad_foto1'); 
+				socket.emit('stuur', 'laad_foto1','b','c', 'd');	
 			}
-
-			window.send_call_scene2_krpano = function(){
-				console.log ('call_scene2_krpano'); 
-				socket.emit('scene', 'call_scene2_krpano');
-			}	
-
-			window.send_call_scene3_krpano = function(){
-				console.log ('call_scene3_krpano'); 
-				socket.emit('scene', 'call_scene3_krpano');
-			}	
-			
-			window.send_call_scene4_krpano = function(){
-				console.log ('call_scene4_krpano'); 
-				socket.emit('scene', 'call_scene4_krpano');
-			}				
-			
-			
-			window.send_call_scene5_krpano = function(){
-				console.log ('call_scene5_krpano'); 
-				socket.emit('scene', 'call_scene5_krpano');
-			}				
-			
-			window.send_call_scene6_krpano = function(){
-				console.log ('call_scene6_krpano'); 
-				socket.emit('scene', 'call_scene6_krpano');
-			}				
-			
-			window.send_call_scene7_krpano = function(){
-				console.log ('call_scene7_krpano'); 
-				socket.emit('scene', 'call_scene7_krpano');	
+			window.laad_foto2 = function(){
+				console.log ('laad_foto2'); 
+				socket.emit('stuur', 'laad_foto2','b','c', 'd');	
 			}
-
-			window.send_call_scene8_krpano = function(){
-				console.log ('call_scene8_krpano'); 
-				socket.emit('scene', 'call_scene8_krpano');
-			}	
-
-			window.send_call_scene9_krpano = function(){
-				console.log ('call_scene9_krpano'); 
-				socket.emit('scene', 'call_scene9_krpano');
-			}	
-			
-			window.send_call_scene10_krpano = function(){
-				console.log ('call_scene10_krpano'); 
-				socket.emit('scene', 'call_scene10_krpano');
-			}				
-			
-			
-			window.send_call_scene11_krpano = function(){
-				console.log ('call_scene11_krpano'); 
-				socket.emit('scene', 'call_scene11_krpano');
-			}				
-			
-			window.send_call_scene12_krpano = function(){
-				console.log ('call_scene12_krpano'); 
-				socket.emit('scene', 'call_scene12_krpano');
-			}							
-			window.send_call_scene13_krpano = function(){
-				console.log ('call_scene13_krpano'); 
-				socket.emit('scene', 'call_scene13_krpano');	
+			window.laad_foto3 = function(){
+				console.log ('laad_foto3'); 
+				socket.emit('stuur', 'laad_foto3','b','c', 'd');	
 			}
-
-			window.send_call_scene14_krpano = function(){
-				console.log ('call_scene14_krpano'); 
-				socket.emit('scene', 'call_scene14_krpano');
-			}	
-
-			window.send_call_scene15_krpano = function(){
-				console.log ('call_scene15_krpano'); 
-				socket.emit('scene', 'call_scene15_krpano');
-			}	
-			
-			window.send_call_scene16_krpano = function(){
-				console.log ('call_scene16_krpano'); 
-				socket.emit('scene', 'call_scene16_krpano');
-			}				
-			
-			
-			window.send_call_scene17_krpano = function(){
-				console.log ('call_scene17_krpano'); 
-				socket.emit('scene', 'call_scene17_krpano');
-			}				
-			
+			window.laad_foto4 = function(){
+				console.log ('laad_foto4'); 
+				socket.emit('stuur', 'laad_foto4','b','c', 'd');	
+			}
+			window.laad_foto5 = function(){
+				console.log ('laad_foto5'); 
+				socket.emit('stuur', 'laad_foto5','b','c', 'd');	
+			}
+			window.laad_foto6 = function(){
+				console.log ('laad_foto6'); 
+				socket.emit('stuur', 'laad_foto6','b','c', 'd');	
+			}
+			window.laad_foto7 = function(){
+				console.log ('laad_foto7'); 
+				socket.emit('stuur', 'laad_foto7','b','c', 'd');	
+			}
+			window.laad_foto8 = function(){
+				console.log ('laad_foto8'); 
+				socket.emit('stuur', 'laad_foto8','b','c', 'd');	
+			}
+			window.laad_foto9 = function(){
+				console.log ('laad_foto9'); 
+				socket.emit('stuur', 'laad_foto9','b','c', 'd');	
+			}
+			window.laad_foto10 = function(){
+				console.log ('laad_foto10'); 
+				socket.emit('stuur', 'laad_foto10','b','c', 'd');	
+			}
+			window.laad_foto11 = function(){
+				console.log ('laad_foto11'); 
+				socket.emit('stuur', 'laad_foto11','b','c', 'd');	
+			}
+			window.laad_foto12 = function(){
+				console.log ('laad_foto12'); 
+				socket.emit('stuur', 'laad_foto12','b','c', 'd');	
+			}
+			window.laad_foto13 = function(){
+				console.log ('laad_foto13'); 
+				socket.emit('stuur', 'laad_foto13','b','c', 'd');	
+			}
+			window.laad_foto14 = function(){
+				console.log ('laad_foto14'); 
+				socket.emit('stuur', 'laad_foto14','b','c', 'd');	
+			}
+			window.laad_foto15 = function(){
+				console.log ('laad_foto15'); 
+				socket.emit('stuur', 'laad_foto15','b','c', 'd');	
+			}
+			window.laad_foto16 = function(){
+				console.log ('laad_foto16'); 
+				socket.emit('stuur', 'laad_foto16','b','c', 'd');	
+			}
+			window.laad_foto17 = function(){
+				console.log ('laad_foto17'); 
+				socket.emit('stuur', 'laad_foto17','b','c', 'd');	
+			}
 						
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-
-			
-// VRAAG 1   // VRAAG 1
-
-			window.send_call_vraag1_ja	 = function(){
-				console.log ('call_vraag1_ja'); 
-				socket.emit('vraag', 'call_vraag1_ja');
-			}			
-
-			window.send_call_vraag1_nee	 = function(){
-				console.log ('call_vraag1_nee'); 
-				socket.emit('vraag', 'call_vraag1_nee');
-			}
-
-			window.send_call_vraag1_nee_maartochdoor = function(){
-				console.log ('call_vraag1_nee_maartochdoor'); 
-				socket.emit('vraag', 'call_vraag1_nee_maartochdoor');
-			}			
-
-			window.send_call_vraag1_ja_volgendevraag	 = function(){
-				console.log ('call_vraag1_ja_volgendevraag'); 
-				socket.emit('vraag', 'call_vraag1_ja_volgendevraag');
-			}			
-			
-			
-			
-			
 	
-			window.send_call_vraag1_goed  = function(){
-				console.log ('	 call_vraag1_goed '); 
-				socket.emit('vraag', 'call_vraag1_goed');
-			}				
-			
-			window.send_call_vraag1_fout  = function(){
-				console.log ('call_vraag1_fout'); 
-				socket.emit('vraag', 'call_vraag1_fout');
-			}	
-
-			window.send_call_vraag1_fout_maartochdoor  = function(){
-				console.log ('call_vraag1_fout_maartochdoor'); 
-				socket.emit('vraag', 'call_vraag1_fout_maartochdoor');
-			}
-
-			window.send_call_vraag1_goed_volgendevraag  = function(){
-				console.log ('	 call_vraag1_goed_volgendevraag '); 
-				socket.emit('vraag', 'call_vraag1_goed_volgendevraag');
-			}				
-
-			
-	
-
-			
-
-// VRAAG 2   // VRAAG 2
-
-			window.send_call_vraag2_ja	 = function(){
-				console.log ('call_vraag2_ja'); 
-				socket.emit('vraag', 'call_vraag2_ja');
-			}			
-
-			window.send_call_vraag2_nee	 = function(){
-				console.log ('call_vraag2_nee'); 
-				socket.emit('vraag', 'call_vraag2_nee');
-			}
-			
-			window.send_call_vraag2_goed  = function(){
-				console.log ('	 call_vraag2_goed '); 
-				socket.emit('vraag', 'call_vraag2_goed');
-			}				
-			
-			window.send_call_vraag2_fout  = function(){
-				console.log ('	call_vraag2_fout'); 
-				socket.emit('vraag', 'call_vraag2_fout');
-			}							
-			
-// EINDSCORE		
-			
-			window.send_call_eindscore  = function(){
-				console.log ('call_eindscore'); 
-				socket.emit('vraag', 'call_eindscore');
-			}					
-
-			window.send_call_eindscore_close  = function(){
-				console.log ('call_eindscore_close'); 
-				socket.emit('vraag', 'call_eindscore_close');
-			}			
-			
-	
-
-////////nieuwe functies voor master/slave krpano    ///////////////////////
-////////nieuwe functies voor master/slave krpano    ///////////////////////
-////////nieuwe functies voor master/slave krpano    ///////////////////////
-
-			window.tooninfo = function(){
-				console.log ('tooninfo'); 
-				socket.emit('vraag', 'opZoekNaarIcon_5');	
-			}
-
-			toongeeninfo = function(){
-				console.log ('toongeeninfo'); 
-				socket.emit('vraag', 'opZoekNaarIcon_1');	
-				//var krpano = document.getElementById("krpanoSWFObject");
-				//krpano.call( "opZoekNaarIcon_5()" );		
-			}			
-
-
-	
-	
-			
+				
 		}); // einde function
 		</script>
 		

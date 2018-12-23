@@ -77,83 +77,83 @@
 	
 	
 
-		<action name="laad_foto0">
+		<action name="laad_scene0">
 		loadscene(scene_0, null, MERGE, BLEND(1));
 		</action>
 
 
-		<action name="laad_foto1">
+		<action name="laad_scene1">
 		loadscene(scene_100, null, MERGE, BLEND(1));
 		</action>
 
-		<action name="laad_foto2">
+		<action name="laad_scene2">
 		loadscene(scene_200, null, MERGE, BLEND(1));
 		</action>
 
 
-		<action name="laad_foto3">
+		<action name="laad_scene3">
 		loadscene(scene_300, null, MERGE, BLEND(1));
 		</action>
 
-		<action name="laad_foto4">
+		<action name="laad_scene4">
 		loadscene(scene_301, null, MERGE, BLEND(1));
 		</action>
 
 
-		<action name="laad_foto5">
+		<action name="laad_scene5">
 		loadscene(scene_302, null, MERGE, BLEND(1));
 		</action>
 
-		<action name="laad_foto6">
+		<action name="laad_scene6">
 		loadscene(scene_303, null, MERGE, BLEND(1));
 		</action>
 	
 	
-		<action name="laad_foto7">
+		<action name="laad_scene7">
 		loadscene(scene_304, null, MERGE, BLEND(1));
 		</action>
 
-		<action name="laad_foto8">
+		<action name="laad_scene8">
 		loadscene(scene_305, null, MERGE, BLEND(1));
 		</action>
 
 
-		<action name="laad_foto9">
+		<action name="laad_scene9">
 		loadscene(scene_306, null, MERGE, BLEND(1));
 		</action>
 
-		<action name="laad_foto10">
+		<action name="laad_scene10">
 		loadscene(scene_307, null, MERGE, BLEND(1));
 		</action>
 
 
-		<action name="laad_foto11">
+		<action name="laad_scene11">
 		loadscene(scene_308, null, MERGE, BLEND(1));
 		</action>
 
-		<action name="laad_foto12">
+		<action name="laad_scene12">
 		loadscene(scene_400, null, MERGE, BLEND(1));
 		</action>
 	
-		<action name="laad_foto13">
+		<action name="laad_scene13">
 		loadscene(scene_500, null, MERGE, BLEND(1));
 		</action>
 
-		<action name="laad_foto14">
+		<action name="laad_scene14">
 		loadscene(scene_501, null, MERGE, BLEND(1));
 		</action>
 
 
-		<action name="laad_foto15">
+		<action name="laad_scene15">
 		loadscene(scene_502, null, MERGE, BLEND(1));
 		</action>
 
-		<action name="laad_foto16">
+		<action name="laad_scene16">
 		loadscene(scene_503, null, MERGE, BLEND(1));
 		</action>
 
 
-		<action name="laad_foto17">
+		<action name="laad_scene17">
 		loadscene(scene_600, null, MERGE, BLEND(1));
 		</action>
 
