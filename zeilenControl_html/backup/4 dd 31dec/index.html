@@ -406,9 +406,7 @@ onderstaande aanpassingen moeten worden gemaakt om de web VR code te maken. in d
 							<!-- hlookat-->
 							if (msg == 'hlookat'){			
 								var krpano = document.getElementById("krpanoSWFObject");
-								<!--krpano.set("view.hlookat", vid);  uitgezet om hem met onderstaande regel smoother te maken-->
-								krpano.call("ga_naar_y()");	// nieuw probeersel!!!! stuur een variable naar krpano.
-								krpano.set("vid_y",vid);							
+								krpano.set("view.hlookat", vid);
 								//console.log("Horizontal lookat via socket: " + krpano.get("view.hlookat"));	
 							}				
 
@@ -416,9 +414,7 @@ onderstaande aanpassingen moeten worden gemaakt om de web VR code te maken. in d
 							<!-- vlookat-->
 							if (msg == 'vlookat'){			
 								var krpano = document.getElementById("krpanoSWFObject");
-								<!-- krpano.set("view.vlookat", vid);  uitgezet om hem met onderstaande regel smoother te maken-->
-								krpano.call("ga_naar_x()");	// nieuw probeersel!!!! stuur een variable naar krpano.
-								krpano.set("vid_x",vid);								
+								krpano.set("view.vlookat", vid);
 								//console.log("vertical lookat via socket: " + krpano.get("view.vlookat"));	
 							}				
 							
@@ -432,7 +428,7 @@ onderstaande aanpassingen moeten worden gemaakt om de web VR code te maken. in d
 								var krpano = document.getElementById("krpanoSWFObject");
 								//krpano.set("view.hlookat", vid);  //dit werkt. tijdelijk uitgezet om onderstaand te testen
 								krpano.call("ga_naar_y()");	// nieuw probeersel!!!! stuur een variable naar krpano.
-								krpano.set("vid_y",vid);
+								krpano.set("vid",vid);
 								//console.log("Horizontal lookat: " + krpano.get("view.hlookat"));	
 							}				
 
@@ -441,7 +437,7 @@ onderstaande aanpassingen moeten worden gemaakt om de web VR code te maken. in d
 								var krpano = document.getElementById("krpanoSWFObject");
 								//krpano.set("view.vlookat", vid);  //dit werkt. tijdelijk uitgezet om onderstaand te testen
 								krpano.call("ga_naar_x()"); // nieuw probeersel!!!!	stuur een variable naar krpano.		
-								krpano.set("vid_x",vid);
+								krpano.set("vid",vid);
 								//krpano.set("view.vlookat", 200);
 							}	
 							

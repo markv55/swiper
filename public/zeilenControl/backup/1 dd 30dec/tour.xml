@@ -74,42 +74,7 @@
 		if(startactions !== null, startactions() );
 	</action>
 
-
-
-
 	
-<!-- HIER OPLOSSIGN VOOR VINDEN!!!!!!!!!!!!!!!!!!! -->
-<!-- HIER OPLOSSIGN VOOR VINDEN!!!!!!!!!!!!!!!!!!! -->
-<!-- HIER OPLOSSIGN VOOR VINDEN!!!!!!!!!!!!!!!!!!! -->
-
-<!-- nieuw het inlezen van x en y en langzaam ernaar toe bewegen  -->
-		<action name="ga_naar_y">
-		 <!-- set(view.hlookat, get(vid)); deze werkt maar erg stoterig!!! -->
-		 <!-- tween(view.vlookat, 90.0, 2.0); -->	<!-- hij gaat naar 90 graden in 2 seconde (toch?) -->
-		tween(view.hlookat, get(vid_y), 0.5 );
-		<!-- let op hij start op 0. dus de variable nog vullen!!!!!!!! -->
-
-
-		 <!--deze functie crashed nu. hier een oplossing voor vinden -->
-
-		</action>
-		
-		<action name="ga_naar_x">
-		 <!-- set(view.vlookat, get(vid)); --> <!--deze functie werkte maar erg stoterig  -->
-		 tween(view.vlookat, get(vid_x), 0.5);
-		 <!-- let op hij start op 0. dus de variable nog vullen!!!!!!!! -->
-
-		</action>		
-<!-- einde nieuwe code -->	
-
-
-
-
-
-
-
-
-
 	
 
 		<action name="laad_foto0">

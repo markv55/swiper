@@ -83,10 +83,9 @@ onderstaande aanpassingen moeten worden gemaakt om de web VR code te maken. in d
 		<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
 		-->
-		
-		
 		<script src="/static/js/jquery-1.11.1.js"></script>
 		<script src="/static/js/socket.io.js"></script>
+		
 		
 		
 		<script src="/static/js/slider.js"></script> 	
@@ -97,7 +96,7 @@ onderstaande aanpassingen moeten worden gemaakt om de web VR code te maken. in d
 
 <!-- aanpassen voor VR!!!!!!!!!!!!!!!!!! -->				
 <!-- let op onderstaande knoppen uitcommanteren voor de VR versie van dit script -->
-			
+<!--			
 					<button id="scene0" type="button" class="btn_red btn-info">start</button>						
 					<button id="scene1" type="button" class="btn_red btn-info">1Fetiye</button>			
 					<button id="scene2" type="button" class="btn_red btn-info">2Tomb Bay</button>
@@ -116,14 +115,14 @@ onderstaande aanpassingen moeten worden gemaakt om de web VR code te maken. in d
 					<button id="scene15" type="button" class="btn btn-info">Feest1</button>			
 					<button id="scene16" type="button" class="btn btn-info">Feest2</button>	
 					<button id="scene17" type="button" class="btn_red btn-info">6Fathom Cove</button>	
-
+-->
 			</div>
 
 <!-- aanpassen voor VR!!!!!!!!!!!!!!!!!! -->				
 <!-- let op onderstaande knoppen uitcommanteren voor de VR versie van dit script -->			
-				
+<!--				
 			<button onclick="myFunction()">hide button</button>
-	
+-->	
 	
 			<noscript><table style="width:100%;height:100%;"><tr style="vertical-align:middle;"><td><div style="text-align:center;">ERROR:<br/><br/>Javascript not activated<br/><br/></div></td></tr></table></noscript>
 				
@@ -133,10 +132,10 @@ onderstaande aanpassingen moeten worden gemaakt om de web VR code te maken. in d
 <!-- let op onderstaand de juiste xml selecteren -->				
 
 				// onderstaand voor de afstandbediening code
-				embedpano({swf:"/static/krpano/tour.swf", xml:"/static/zeilenControl/tour.xml", target:"pano", html5:"auto", mobilescale:1.0, passQueryParameters:true});
+				//embedpano({swf:"/static/krpano/tour.swf", xml:"/static/zeilenControl/tour.xml", target:"pano", html5:"auto", mobilescale:1.0, passQueryParameters:true});
 				
 				// onderstaand voor de VR code
-				//embedpano({swf:"/static/krpano/tour.swf", xml:"/static/zeilenSlave/tour.xml", target:"pano", html5:"auto", mobilescale:1.0, passQueryParameters:true});
+				embedpano({swf:"/static/krpano/tour.swf", xml:"/static/zeilenSlave/tour.xml", target:"pano", html5:"auto", mobilescale:1.0, passQueryParameters:true});
 			</script>
 		</div>
 
@@ -355,7 +354,7 @@ onderstaande aanpassingen moeten worden gemaakt om de web VR code te maken. in d
 <!-- let op onderstaande code aanzetten voor de VR versie van dit script . maar let op ook het ontvangen van x,y vlookat en hlookat hieronder juist weer uitzetten-->
 	
 	
-/*			  
+/*	*/		  
 
 			var hlookat;
 			setInterval(function() {
@@ -382,7 +381,7 @@ onderstaande aanpassingen moeten worden gemaakt om de web VR code te maken. in d
 				}
 			}, 100); 				
 								
-*/			
+			
 
 			
 		/// ONTVANGEN SOCKET VAN BACKEND   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -402,13 +401,11 @@ onderstaande aanpassingen moeten worden gemaakt om de web VR code te maken. in d
 
 <!-- aanpassen voor VR!!!!!!!!!!!!!!!!!! -->				
 <!-- let op onderstaande code uitzetten voor de VR versie van dit script . -->
-		
+/*			
 							<!-- hlookat-->
 							if (msg == 'hlookat'){			
 								var krpano = document.getElementById("krpanoSWFObject");
-								<!--krpano.set("view.hlookat", vid);  uitgezet om hem met onderstaande regel smoother te maken-->
-								krpano.call("ga_naar_y()");	// nieuw probeersel!!!! stuur een variable naar krpano.
-								krpano.set("vid_y",vid);							
+								krpano.set("view.hlookat", vid);
 								//console.log("Horizontal lookat via socket: " + krpano.get("view.hlookat"));	
 							}				
 
@@ -416,39 +413,25 @@ onderstaande aanpassingen moeten worden gemaakt om de web VR code te maken. in d
 							<!-- vlookat-->
 							if (msg == 'vlookat'){			
 								var krpano = document.getElementById("krpanoSWFObject");
-								<!-- krpano.set("view.vlookat", vid);  uitgezet om hem met onderstaande regel smoother te maken-->
-								krpano.call("ga_naar_x()");	// nieuw probeersel!!!! stuur een variable naar krpano.
-								krpano.set("vid_x",vid);								
+								krpano.set("view.vlookat", vid);
 								//console.log("vertical lookat via socket: " + krpano.get("view.vlookat"));	
 							}				
 							
-<!-- HIER OPLOSSIGN VOOR VINDEN!!!!!!!!!!!!!!!!!!! -->
-<!-- HIER OPLOSSIGN VOOR VINDEN!!!!!!!!!!!!!!!!!!! -->
-<!-- HIER OPLOSSIGN VOOR VINDEN!!!!!!!!!!!!!!!!!!! -->
-							
-							
-							<!--y-->
+							<!--alpha   let op was -vid-->
 							if (msg == 'y'){			
 								var krpano = document.getElementById("krpanoSWFObject");
-								//krpano.set("view.hlookat", vid);  //dit werkt. tijdelijk uitgezet om onderstaand te testen
-								krpano.call("ga_naar_y()");	// nieuw probeersel!!!! stuur een variable naar krpano.
-								krpano.set("vid_y",vid);
+								krpano.set("view.hlookat", vid);
 								//console.log("Horizontal lookat: " + krpano.get("view.hlookat"));	
 							}				
 
-							<!--x-->
+							<!--beta  -->
 							if (msg == 'x'){			
 								var krpano = document.getElementById("krpanoSWFObject");
-								//krpano.set("view.vlookat", vid);  //dit werkt. tijdelijk uitgezet om onderstaand te testen
-								krpano.call("ga_naar_x()"); // nieuw probeersel!!!!	stuur een variable naar krpano.		
-								krpano.set("vid_x",vid);
+								krpano.set("view.vlookat", vid);
 								//krpano.set("view.vlookat", 200);
 							}	
 							
-
-<!------------------------------------>
-
-							
+						
 							if (msg == 'alpha'){			
 								var krpano = document.getElementById("krpanoSWFObject");
 								krpano.set("view.hlookat", - vid);
@@ -458,7 +441,7 @@ onderstaande aanpassingen moeten worden gemaakt om de web VR code te maken. in d
 								var krpano = document.getElementById("krpanoSWFObject");
 								krpano.set("view.vlookat", - vid);
 							}								
-
+*/
 					
 		//  RECEIVE SOCKETS WITHIN KRPANO    // RECEIVE SOCKETS WITHIN KRPANO	    // RECEIVE SOCKETS WITHIN KRPANO	    // RECEIVE SOCKETS WITHIN KRPANO	    // RECEIVE SOCKETS WITHIN KRPANO	
 		//  RECEIVE SOCKETS WITHIN KRPANO    // RECEIVE SOCKETS WITHIN KRPANO	    // RECEIVE SOCKETS WITHIN KRPANO	    // RECEIVE SOCKETS WITHIN KRPANO	    // RECEIVE SOCKETS WITHIN KRPANO							
