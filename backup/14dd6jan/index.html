@@ -289,21 +289,15 @@
 			<a href="/return/zeilenSlaveSocket" class="js-ajx-url-zeilenSlaveSocket btn btn_red">zeilenSlaveSocket</a> 		
 			<br>
 			<br>
-		
+
+
+
+			
 				<p>zeilenSlave</p>	
 			<a href="/return/zeilenSlave" class="js-ajx-url-zeilenSlave btn btn_red">zeilenSlave</a> 		
 			<br>
 			<br>
 			
-
-
-				<p>zeilenScherm</p>	
-			<a href="/return/zeilenScherm" class="js-ajx-url-zeilenScherm btn btn_red">zeilenScherm</a> 		
-			<br>
-
-
-
-
 			
 			<br>
 				<p>load from internet 2d plaatje</p>	
@@ -442,7 +436,14 @@
 				});
 			});				
 			
-		
+			
+			
+			
+			
+			
+			
+			
+			
 
 			$('.js-ajx-url-AR').on('click', function(e) {
 				e.preventDefault();
@@ -478,10 +479,6 @@
 			});	
 
 
-			
-			
-<!-- knoppen zeilen oud -->			
-			
 			$('.js-ajx-url-zeilenControl').on('click', function(e) {
 				e.preventDefault();
 				$.ajax({
@@ -515,19 +512,10 @@
 				});
 			});				
 			
-<!-- knoppen zeilen BB beurs -->				
 			
 			
-			$('.js-ajx-url-zeilenScherm').on('click', function(e) {
-				e.preventDefault();
-				$.ajax({
-					url: $(this).attr('href')
-				}).done(function() {
-					
-					window.location = '/zeilenScherm_html';
-					console.log('Ajax request successfull');
-				});
-			});				
+			
+			
 
 	
 			

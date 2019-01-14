@@ -209,12 +209,6 @@
 		laad_standaard_view();
 		</action>
 
-		
-		
-<layer name="terug" url="images/logo.png" onclick=" " keep="true" visible="true" zorder="2" handcursor="false" capture="false"  align="leftbottom" x="30" y="30" scale="0.7"  scale.mobile="0.3" />		
-		
-	
-		
 
 	<scene name="scene_0" title="0" onstart="" havevrimage="true" thumburl="panos/0.tiles/thumb.jpg" lat="" lng="" heading="">
 
@@ -234,13 +228,13 @@
 
 		<!-- place your scene hotspots here -->
 	
-		<hotspot name="hart" url="images/bb.png" distorted="true"  visible= "true" keep="false" handcursor="false" 
+		<hotspot name="hart" url="images/hart.png" distorted="true"  visible= "true" keep="false" handcursor="false" 
 		capture="false"   ath="0" atv="0" scale= "0.3" scale.mobile = "0.5" 		/>		
 		
-		<hotspot name="hart1" url="images/bb.png" distorted="true"  visible= "true" keep="false" handcursor="false" 
+		<hotspot name="hart1" url="images/hart.png" distorted="true"  visible= "true" keep="false" handcursor="false" 
 		capture="false"   ath="-30" atv="0" scale= "0.3" scale.mobile = "0.5" 		/>	
 		
-		<hotspot name="hart2" url="images/bb.png" distorted="true"  visible= "true" keep="false" handcursor="false" 
+		<hotspot name="hart2" url="images/hart.png" distorted="true"  visible= "true" keep="false" handcursor="false" 
 		capture="false"   ath="30" atv="0" scale= "0.3" scale.mobile = "0.5" 		/>	
 	
 	</scene>

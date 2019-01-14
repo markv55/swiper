@@ -293,9 +293,7 @@ app.get('/zeilenSlaveSocket_html', function(req, res) {
 });
 
 
-app.get('/zeilenScherm_html', function(req, res) {
-	res.sendFile(path.join(__dirname+'/zeilenScherm_html/index.html'));
-});
+
 
 
 
