@@ -359,12 +359,12 @@ onderstaande aanpassingen moeten worden gemaakt om de web VR code te maken. in d
 			var hlookat;
 			setInterval(function() {
 				var krpano = document.getElementById("krpanoSWFObject");
-				var current_hlookat = krpano.get('view.hlookat')+ 3600;
+				var current_hlookat = krpano.get('view.hlookat');
 				
 				//if (current_hlookat - hlookat > 1 || current_hlookat - hlookat < 1 ) {
 				if (current_hlookat != hlookat) {
 					hlookat = current_hlookat;
-					socket.emit('hlookat', krpano.get('view.hlookat'));	
+					socket.emit('hlookat', krpano.get('view.hlookat')+3600);	
 				}
 			}, 100); 
 			
@@ -372,12 +372,12 @@ onderstaande aanpassingen moeten worden gemaakt om de web VR code te maken. in d
 			var vlookat;
 			setInterval(function() {
 				var krpano = document.getElementById("krpanoSWFObject");
-				var current_vlookat = krpano.get('view.vlookat') + 3600;
+				var current_vlookat = krpano.get('view.vlookat') ;
 				
 				//if (current_vlookat - hlookat > 1 || current_vlookat - hlookat < 1 ) {
 				if (current_vlookat != vlookat) {
 					vlookat = current_vlookat;
-					socket.emit('vlookat', krpano.get('view.vlookat'));	
+					socket.emit('vlookat', krpano.get('view.vlookat')+3600);	
 				}
 			}, 100); 				
 								
