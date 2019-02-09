@@ -364,7 +364,7 @@ onderstaande aanpassingen moeten worden gemaakt om de web VR code te maken. in d
 				//if (current_hlookat - hlookat > 1 || current_hlookat - hlookat < 1 ) {
 				if (current_hlookat != hlookat) {
 					hlookat = current_hlookat;
-					socket.emit('hlookat', krpano.get('view.hlookat')+3600);	
+					socket.emit('hlookat', krpano.get('view.hlookat'));	
 				}
 			}, 100); 
 			
@@ -377,7 +377,7 @@ onderstaande aanpassingen moeten worden gemaakt om de web VR code te maken. in d
 				//if (current_vlookat - hlookat > 1 || current_vlookat - hlookat < 1 ) {
 				if (current_vlookat != vlookat) {
 					vlookat = current_vlookat;
-					socket.emit('vlookat', krpano.get('view.vlookat')+3600);	
+					socket.emit('vlookat', krpano.get('view.vlookat'));	
 				}
 			}, 100); 				
 								
