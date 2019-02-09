@@ -342,7 +342,9 @@ onderstaande aanpassingen moeten worden gemaakt om de web VR code te maken. in d
 		
 		
 <script>
-	
+
+
+			
 	$(function () {
 			var socket = io();
 
@@ -354,30 +356,113 @@ onderstaande aanpassingen moeten worden gemaakt om de web VR code te maken. in d
 <!-- let op onderstaande code aanzetten voor de VR versie van dit script . maar let op ook het ontvangen van x,y vlookat en hlookat hieronder juist weer uitzetten-->
 	
 	
-/*	*/		  
-
-			var hlookat;
-			setInterval(function() {
+/*	copy van origineel werkend veilig gesteld
+			var hlookat = 0;
+				setInterval(function() {
 				var krpano = document.getElementById("krpanoSWFObject");
 				var current_hlookat = krpano.get('view.hlookat');
 				
-				//if (current_hlookat - hlookat > 1 || current_hlookat - hlookat < 1 ) {
-				if (current_hlookat != hlookat) {
+				if (current_hlookat - hlookat > 2 || current_hlookat - hlookat < -2 ) {
+				//if (current_hlookat != hlookat) {
 					hlookat = current_hlookat;
-					socket.emit('hlookat', krpano.get('view.hlookat'));	
+
+					//socket.emit('hlookat', krpano.get('view.hlookat'));						
+					var hlook_sent = krpano.get('view.hlookat') + 0;					
+					socket.emit('hlookat', hlook_sent);	
 				}
 			}, 100); 
+*/		  
+
+
+
+			var correctie = 0;
+			var hlookat = 0;
+			var isRechts = 0;
+			var isLinks = 0;
+			var current_hlookat ;
+			var doorgaanLinks = true;
+			var doorgaanRechts = true;
 			
+			setInterval(function() {
 			
-			var vlookat;
+				var krpano = document.getElementById("krpanoSWFObject");
+				var current_hlookat = krpano.get('view.hlookat');
+				
+				// RECHTS    RECHTS    RECHTS    RECHTS    RECHTS    RECHTS    RECHTS    RECHTS    
+			
+				if (current_hlookat > 175 && current_hlookat < 180){
+				isRechts = 1;
+				}
+				
+				if (isRechts = 1){
+					if (current_hlookat > -180 && current_hlookat < -175){
+						if(doorgaanRechts == true){
+						correctie = correctie + 360;
+						doorgaanRechts = false;
+						}
+						isRechts = 0;					
+					}
+				}
+				
+				// LINKS    LINKS    LINKS    LINKS    LINKS    LINKS    LINKS    LINKS   LINKS    
+				
+				if(current_hlookat > -180 && current_hlookat < -175) {
+				isLinks = 1;
+				}
+				
+				if (isLinks == 1){
+					if (current_hlookat > 175 && current_hlookat < 180){
+						if(doorgaanLinks == true){
+						correctie = correctie - 360;
+						doorgaanLinks = false;
+						}
+						isLinks = 0;						
+					}
+				}
+
+				// RESET    RESET     RESET    RESET     RESET    RESET     RESET    RESET     RESET    
+				if (current_hlookat > 0 && current_hlookat < 175)  {
+				isLinks = 0;
+				isRechts = 0;
+				doorgaanRechts = true;
+				doorgaanLinks = true;
+				}
+
+				if (current_hlookat > -175 && current_hlookat < 0) {
+				isLinks = 0;
+				isRechts = 0;
+				doorgaanRechts = true;
+				doorgaanLinks = true;
+				}
+				
+				var hlook_sent = current_hlookat + correctie + 0 ;
+				
+				if (hlook_sent - hlookat > 2 || hlook_sent - hlookat < -2 ) {
+					hlookat = hlook_sent;
+
+					//socket.emit('hlookat', krpano.get('view.hlookat'));						
+					socket.emit('hlookat', hlook_sent);	
+				}
+			
+			}, 10); 	
+
+
+
+			
+			var vlookat = 0;
 			setInterval(function() {
 				var krpano = document.getElementById("krpanoSWFObject");
 				var current_vlookat = krpano.get('view.vlookat') ;
 				
-				//if (current_vlookat - hlookat > 1 || current_vlookat - hlookat < 1 ) {
-				if (current_vlookat != vlookat) {
+				if (current_vlookat - vlookat > 2 || current_vlookat - vlookat < -2 ) {
+				//if (current_vlookat != vlookat) {
 					vlookat = current_vlookat;
-					socket.emit('vlookat', krpano.get('view.vlookat'));	
+					
+					//socket.emit('vlookat', krpano.get('view.vlookat'));	
+					
+					var vlook_sent = krpano.get('view.vlookat');					
+					socket.emit('vlookat', vlook_sent);	// deze zo weer aanzettten					
+					
 				}
 			}, 100); 				
 								
@@ -390,9 +475,9 @@ onderstaande aanpassingen moeten worden gemaakt om de web VR code te maken. in d
 					
 		socket.on('message', function(msg, vid, scale){  
 
-							console.log (msg);
-							console.log(vid);
-							console.log(scale);
+							//console.log (msg);
+							//console.log(vid);
+							//console.log(scale);
 
 		// RECEIVE X EN Y POSITIE VAN VR BRIL        // RECEIVE X EN Y POSITIE VAN VR BRIL        // RECEIVE X EN Y POSITIE VAN VR BRIL        // RECEIVE X EN Y POSITIE VAN VR BRIL        					
 		// RECEIVE X EN Y POSITIE VAN VR BRIL        // RECEIVE X EN Y POSITIE VAN VR BRIL        // RECEIVE X EN Y POSITIE VAN VR BRIL        // RECEIVE X EN Y POSITIE VAN VR BRIL 
