@@ -1,0 +1,86 @@
+	<a href="/return/recenter" class="js-ajx btn btn_green">recenter</a>
+	<a href="/return/ad_product" class="js-ajx-url-ad btn btn_red">ad_product</a> 
+
+		<script>
+		  $(function () {
+			var socket = io();
+			
+			$('.js-ajx').on('click', function(e) {
+				e.preventDefault();
+				$.ajax({
+					url: $(this).attr('href')
+				}).done(function() {
+					console.log('Ajax request successfull');
+				});
+			});	
+
+
+			$('.js-ajx-url-ad').on('click', function(e) {
+				e.preventDefault();
+				$.ajax({
+					url: $(this).attr('href')
+				}).done(function() {
+					
+					window.location = '/ad_product_html';
+					console.log('Ajax request successfull');
+				});
+			});
+			
+		</script>
+		
+
+// in de index.js-ajx			// in de index.js-ajx			// in de index.js-ajx			// in de index.js-ajx			// in de index.js-ajx			// in de index.js-ajx			// in de index.js-ajx			
+		
+io.on('connection', function(socket) {
+
+	socket.on('stuur', function(param1, param2, param3, param4) {
+		io.emit('message', param1, param2, param3, param4);
+		console.log (param1);
+		console.log (param2);
+		console.log (param3);
+		console.log (param4);
+	});
+	
+});  // einde sockets ontvangen	
+
+app.use(express.static(__dirname + '/node_modules'));
+app.use('/static', express.static(path.join(__dirname, 'public')));
+
+
+
+
+// recenteren     // recenteren     // recenteren     // recenteren     
+app.get('/recenter', function (req, res) {
+	//KlikAanKlikUit(11, 260, 7, 5).on(1, 1);
+	io.emit('message', 'pi' , 'recenter' );
+	console.log ('recenter');	
+	res.redirect('/');
+});
+
+
+
+
+app.get('/ad_product_html', function(req, res) {
+	res.sendFile(path.join(__dirname+'/ad_product_html/index.html'));
+});
+
+app.get('/ad_product', function (req, res) {
+	//KlikAanKlikUit(11, 260, 7, 5).off(1, 2);
+	io.emit('message', 'pi', 'ad_product' );
+	console.log ('ad_product');		
+	res.redirect('/');
+});
+
+
+
+
+
+
+
+
+
+
+
+server.listen(80, function(){
+	console.log("Running on IP laptop on port 80 ");
+});

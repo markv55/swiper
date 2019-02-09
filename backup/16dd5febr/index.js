@@ -34,13 +34,8 @@ io.on('connection', function(socket) {
     
 
 	
-// uitleg: onderstaand ontvangt eerste socket x, en daarna een 2e waarde. deze tweede waarde wordt opgeslagen in variable (x). vervolgens wordt deze variable als 3e socket meegestuurd
-// onderstaande x en y ontvangt hij van unity script readCameraAndSendXYendXY.cs. dit script stuurt de x en y variable en deze index.js stuurt het 1 op 1 door!
-
-// ONDERSTAANDE IS ESSENTIEEL VOOR 2.0 ALERT ONLINE (VGZ GAME) WAAR VANUIT UNITY DE SOCKETS X EN Y KOMEN!!!!
-// ONDERSTAANDE SOCKET BESTAAT UIT 3 VARIABLE: MESSAGE, X, WAARDE (BIJVOORBEELD 223). DEZE OPBOUW IS IN UNITY GEMAAKT EN DEZE 3 WAARDEN STUURT UNITY DOOR NAAR DE  NODE.JS SERVER. ONDERSTAANDE SCRIPT
-// STUURT DEZE 3 WAARDE 1 OP 1 DOOR NAAR KRPANO WAARDOOR DE WEBSITE MEE BEWEEGT
-
+	// uitleg: onderstaand ontvangt eerste socket x, en daarna een 2e waarde. deze tweede waarde wordt opgeslagen in variable (x). vervolgens wordt deze variable als 3e socket meegestuurd
+	// onderstaande x en y ontvangt hij van unity script readCameraAndSendXYendXY.cs. dit script stuurt de x en y variable en deze index.js stuurt het 1 op 1 door!
     socket.on('x', function(x) {
 		console.log("The x is: " + x);
 		io.emit('message', 'x', x);
@@ -51,12 +46,6 @@ io.on('connection', function(socket) {
 		io.emit('message', 'y', y);
 	});
 	
-
-
-
-
-
-
 	// videos
 	
    socket.on('video_aan', function(a) {
