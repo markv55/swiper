@@ -281,19 +281,8 @@
 			<br>
 			<br>
 			<br>
-	
-
-			
-<!-- ZEILEN      ZEILEN       ZEILEN      ZEILEN      ZEILEN       ZEILEN      ZEILEN      ZEILEN       ZEILEN      ZEILEN      ZEILEN       ZEILEN       -->			
-<!-- ZEILEN      ZEILEN       ZEILEN      ZEILEN      ZEILEN       ZEILEN      ZEILEN      ZEILEN       ZEILEN      ZEILEN      ZEILEN       ZEILEN       -->	
-
-<!-- uitleg
-onderstaande href="/return/zeilenSlaveSocket". De tekst zeilenSlaveSocket wordt als socket verstuurd in index.js in de functie app.get('/return/:rec',
-onderstaande class  (bijvoorbeeld js-ajx-url-zeilenSlaveSocket)  wordt onderaan deze pagina gekoppeld aan een sub web pagina
- -->
-
 			<br>		
-			<br>			
+			<br>		
 				<p>B&B VR DEMO OP VAKANTIEBEURS</p>		
 				<p>B&B VR DEMO OP VAKANTIEBEURS</p>						
 			<br>						
@@ -319,41 +308,8 @@ onderstaande class  (bijvoorbeeld js-ajx-url-zeilenSlaveSocket)  wordt onderaan 
 			<a href="/return/zeilenControl" class="js-ajx-url-zeilenControl btn btn_red">MEEKIJKEN AFSTANDBEDIENING</a> 		
 			<br>
 
-			
-<!-- VIRTUAL TRAVEL       VIRTUAL TRAVEL       VIRTUAL TRAVEL       VIRTUAL TRAVEL       VIRTUAL TRAVEL       VIRTUAL TRAVEL       VIRTUAL TRAVEL       -->			
-<!-- VIRTUAL TRAVEL       VIRTUAL TRAVEL       VIRTUAL TRAVEL       VIRTUAL TRAVEL       VIRTUAL TRAVEL       VIRTUAL TRAVEL       VIRTUAL TRAVEL       -->		
-			<br>		
-			<br>			
-				<p>VIRTUAL TRAVEL</p>		
-			<br>						
-			<br>
 
-				<p>WEB VIRTUAL REALITY (MASTER)</p>	
-			<a href="/return/VirtualTravel_1" class="ajx_url_VirtualTravel_1 btn btn_green">WEB VIRTUAL REALITY (MASTER)</a> 		
-			<br>
-			<br>
-		
-				<p>WEB VIRTUAL REALITY (MEEKIJKEN)</p>	
-			<a href="/return/VirtualTravel_2" class="ajx_url_VirtualTravel_2 btn btn_green">WEB VIRTUAL REALITY (MEEKIJKEN)</a> 		
-			<br>
-			<br>
-			<br>
-
-
-				<p>full screen scherm op TV  //  zeilenScherm</p>	
-			<a href="/return/VirtualTravel_3" class="ajx_url_VirtualTravel_3 btn btn_green"> MEEKIJKEN FULL SCREEN</a> 		
-			<br>
-
-				<p>afstandbediening op telefoon  // zeilenControl</p>	
-			<a href="/return/VirtualTravel_4" class="ajx_url_VirtualTravel_4 btn btn_green">MEEKIJKEN AFSTANDBEDIENING</a> 		
-			<br>		
 			
-			
-<!--  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  -->
-<!--  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  -->
-<!--  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  -->			
-			
-		
 			<br>
 				<p>load from internet 2d plaatje</p>	
 
@@ -388,11 +344,8 @@ onderstaande class  (bijvoorbeeld js-ajx-url-zeilenSlaveSocket)  wordt onderaan 
 		<script src="/static/js/socket.io.js"></script>
 		
 		<script src="/static/js/slider.js"></script>
-
 		<script>
-
-	$(function () {
-	
+		  $(function () {
 			var socket = io();
 			
 			$('.js-ajx').on('click', function(e) {
@@ -534,46 +487,8 @@ onderstaande class  (bijvoorbeeld js-ajx-url-zeilenSlaveSocket)  wordt onderaan 
 
 			
 			
-<!-- ZEILEN      ZEILEN       ZEILEN      ZEILEN      ZEILEN       ZEILEN      ZEILEN      ZEILEN       ZEILEN      ZEILEN      ZEILEN       ZEILEN       -->			
-<!-- ZEILEN      ZEILEN       ZEILEN      ZEILEN      ZEILEN       ZEILEN      ZEILEN      ZEILEN       ZEILEN      ZEILEN      ZEILEN       ZEILEN       -->	
-
-<!--WEB VR MASTER (SEND SOCKET) -->
-			$('.js-ajx-url-zeilenSlaveSocket').on('click', function(e) {
-				e.preventDefault();
-				$.ajax({
-					url: $(this).attr('href')
-				}).done(function() {
-					
-					window.location = '/zeilenSlaveSocket_html';
-					console.log('Ajax request successfull');
-				});
-			});				
-
-<!--WEB VR (MEEKIJKEN)  -->			
-			$('.js-ajx-url-zeilenSlave').on('click', function(e) {
-				e.preventDefault();
-				$.ajax({
-					url: $(this).attr('href')
-				}).done(function() {
-					
-					window.location = '/zeilenSlave_html';
-					console.log('Ajax request successfull');
-				});
-			});	
-
-<!--FULL SCREEN SCHERM -->			
-			$('.js-ajx-url-zeilenScherm').on('click', function(e) {
-				e.preventDefault();
-				$.ajax({
-					url: $(this).attr('href')
-				}).done(function() {
-					
-					window.location = '/zeilenScherm_html';
-					console.log('Ajax request successfull');
-				});
-			});				
-
-<!--REMOTE CONTROLLER  -->		
+<!-- knoppen zeilen oud -->			
+			
 			$('.js-ajx-url-zeilenControl').on('click', function(e) {
 				e.preventDefault();
 				$.ajax({
@@ -585,109 +500,92 @@ onderstaande class  (bijvoorbeeld js-ajx-url-zeilenSlaveSocket)  wordt onderaan 
 				});
 			});	
 			
-
-			
-<!-- VIRTUAL TRAVEL       VIRTUAL TRAVEL       VIRTUAL TRAVEL       VIRTUAL TRAVEL       VIRTUAL TRAVEL       VIRTUAL TRAVEL       VIRTUAL TRAVEL       VIRTUAL TRAVEL            -->			
-<!-- VIRTUAL TRAVEL       VIRTUAL TRAVEL       VIRTUAL TRAVEL       VIRTUAL TRAVEL       VIRTUAL TRAVEL       VIRTUAL TRAVEL       VIRTUAL TRAVEL       VIRTUAL TRAVEL            -->			
-
-<!--WEB VR MASTER (SEND SOCKET) -->
-			$('.ajx_url_VirtualTravel_1').on('click', function(e) {
+			$('.js-ajx-url-zeilenSlave').on('click', function(e) {
 				e.preventDefault();
 				$.ajax({
 					url: $(this).attr('href')
 				}).done(function() {
 					
-					window.location = '/VirtualTravel_1_html';
-					console.log('Ajax request successfull');
-				});
-			});				
-
-<!--WEB VR (MEEKIJKEN)  -->			
-			$('.ajx_url_VirtualTravel_2').on('click', function(e) {
-				e.preventDefault();
-				$.ajax({
-					url: $(this).attr('href')
-				}).done(function() {
-					
-					window.location = '/VirtualTravel_2_html';
+					window.location = '/zeilenSlave_html';
 					console.log('Ajax request successfull');
 				});
 			});	
-
-<!--FULL SCREEN SCHERM -->			
-			$('.ajx_url_VirtualTravel_3').on('click', function(e) {
+			
+			$('.js-ajx-url-zeilenSlaveSocket').on('click', function(e) {
 				e.preventDefault();
 				$.ajax({
 					url: $(this).attr('href')
 				}).done(function() {
 					
-					window.location = '/VirtualTravel_3_html';
+					window.location = '/zeilenSlaveSocket_html';
 					console.log('Ajax request successfull');
 				});
 			});				
-
-<!--REMOTE CONTROLLER  -->		
-			$('.ajx_url_VirtualTravel_4').on('click', function(e) {
+			
+<!-- knoppen zeilen BB beurs -->				
+			
+			
+			$('.js-ajx-url-zeilenScherm').on('click', function(e) {
 				e.preventDefault();
 				$.ajax({
 					url: $(this).attr('href')
 				}).done(function() {
 					
-					window.location = '/VirtualTravel_4_html';
+					window.location = '/zeilenScherm_html';
 					console.log('Ajax request successfull');
 				});
 			});				
-			
+
 	
 			
 			
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////
 	
-		$('.js-ajx-slider').on('input change', function(e) {
-					var v = $(this).val();
-					$.ajax({
-						url: '/scale_100',
-						data: { val: v },
-						type: 'GET',
-					}).done(function() {
-						console.log('Ajax request successfull');
-					});
-		});
+			$('.js-ajx-slider').on('input change', function(e) {
+				var v = $(this).val();
+				$.ajax({
+					url: '/scale_100',
+					data: { val: v },
+					type: 'GET',
+				}).done(function() {
+					console.log('Ajax request successfull');
+				});
+			});
 			
+		//
+
+
 
 
 
 		
-		socket.on('message', function(msg, vid){  
-		
-				console.log(msg);
-				console.log(vid);
-				
-				if (msg == 'videotimo1'){
-					window.location = '/timo1_html';  //op deze simpele manier kun je naar een andere website toe gaan!!!!	
-					navigator.vibrate([100, 200, 200, 200, 500]);
-				}	
+			socket.on('message', function(msg, vid){  
+	
+			console.log(msg);
+			console.log(vid);
+			
+			if (msg == 'videotimo1'){
+				window.location = '/timo1_html';  //op deze simpele manier kun je naar een andere website toe gaan!!!!	
+				navigator.vibrate([100, 200, 200, 200, 500]);
+			}	
 
-				if (msg == 'videotimo2'){
-					window.location = '/timo2_html';  //op deze simpele manier kun je naar een andere website toe gaan!!!!	
-					navigator.vibrate([100, 200, 200, 200, 500]);
-				}	
-				if (msg == 'videotimo3'){
-					window.location = '/timo3_html';  //op deze simpele manier kun je naar een andere website toe gaan!!!!	
-					navigator.vibrate([100, 200, 200, 200, 500]);
-				}	
+			if (msg == 'videotimo2'){
+				window.location = '/timo2_html';  //op deze simpele manier kun je naar een andere website toe gaan!!!!	
+				navigator.vibrate([100, 200, 200, 200, 500]);
+			}	
+			if (msg == 'videotimo3'){
+				window.location = '/timo3_html';  //op deze simpele manier kun je naar een andere website toe gaan!!!!	
+				navigator.vibrate([100, 200, 200, 200, 500]);
+			}	
 
 
-		});
+			});
 		
 		//	
 			
 			
 			
-	});
-		
-		
+		  });
 		</script>
 	</body>
 </html>

@@ -24,7 +24,6 @@ var io = require('socket.io')(server);
 io.on('connection', function(socket) {
 	//console.log ('userconnected' );
 
-	
 	socket.on('message', function(msg){  // deze functie ontvangt de socket van de client en zet ze door naar unity
         if (msg[0] == 'photo') {
 			io.emit('message', 'photo' , msg[1] );
@@ -287,20 +286,6 @@ app.get('/krpanoSlave_html', function(req, res) {
 });
 
 
-//  ZEILEN       ZEILEN       ZEILEN       ZEILEN       ZEILEN       ZEILEN       ZEILEN       ZEILEN       ZEILEN       ZEILEN       
-//  ZEILEN       ZEILEN       ZEILEN       ZEILEN       ZEILEN       ZEILEN       ZEILEN       ZEILEN       ZEILEN       ZEILEN       
-
-app.get('/zeilenSlaveSocket_html', function(req, res) {
-	res.sendFile(path.join(__dirname+'/zeilenSlaveSocket_html/index.html'));
-});
-
-app.get('/zeilenSlave_html', function(req, res) {
-	res.sendFile(path.join(__dirname+'/zeilenSlave_html/index.html'));
-});
-
-app.get('/zeilenScherm_html', function(req, res) {
-	res.sendFile(path.join(__dirname+'/zeilenScherm_html/index.html'));
-});
 
 
 app.get('/zeilenControl_html', function(req, res) {
@@ -308,33 +293,20 @@ app.get('/zeilenControl_html', function(req, res) {
 });
 
 
-// VIRTUAL TRAVEL       VIRTUAL TRAVEL       VIRTUAL TRAVEL       VIRTUAL TRAVEL       VIRTUAL TRAVEL       VIRTUAL TRAVEL       VIRTUAL TRAVEL       
-// VIRTUAL TRAVEL       VIRTUAL TRAVEL       VIRTUAL TRAVEL       VIRTUAL TRAVEL       VIRTUAL TRAVEL       VIRTUAL TRAVEL       VIRTUAL TRAVEL     
-
-
-app.get('/VirtualTravel_1_html', function(req, res) {
-	res.sendFile(path.join(__dirname+'/VirtualTravel_html/VirtualTravel_1_html/index.html'));
-});
-
-app.get('/VirtualTravel_2_html', function(req, res) {
-	res.sendFile(path.join(__dirname+'/VirtualTravel_html/VirtualTravel_2_html/index.html'));
-});
-
-app.get('/VirtualTravel_3_html', function(req, res) {
-	res.sendFile(path.join(__dirname+'/VirtualTravel_html/VirtualTravel_3_html/index.html'));
+app.get('/zeilenSlave_html', function(req, res) {
+	res.sendFile(path.join(__dirname+'/zeilenSlave_html/index.html'));
 });
 
 
-app.get('/VirtualTravel_4_html', function(req, res) {
-	res.sendFile(path.join(__dirname+'/VirtualTravel_html/VirtualTravel_4_html/index.html'));
+
+app.get('/zeilenSlaveSocket_html', function(req, res) {
+	res.sendFile(path.join(__dirname+'/zeilenSlaveSocket_html/index.html'));
 });
 
 
-//  EINDE    EINDE     EINDE     EINDE     EINDE     EINDE     EINDE     EINDE     EINDE     EINDE     EINDE     EINDE     EINDE     EINDE     EINDE      
-//  EINDE    EINDE     EINDE     EINDE     EINDE     EINDE     EINDE     EINDE     EINDE     EINDE     EINDE     EINDE     EINDE     EINDE     EINDE 
-
-
-
+app.get('/zeilenScherm_html', function(req, res) {
+	res.sendFile(path.join(__dirname+'/zeilenScherm_html/index.html'));
+});
 
 
 
