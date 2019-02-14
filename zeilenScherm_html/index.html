@@ -1,31 +1,28 @@
-<!-- 
-Masterscript voor 360 tour met koppeling aan VR
-Basis voor B&B sailing demo voor vakantiebeurs 2019.
-onderstaande code is voor de afstandbediening. daarin de knopen welke foto wordt getoond
-tevens stuurt deze geen x, en y code voor de kijkrichting. 
-
-onderstaande aanpassingen moeten worden gemaakt om de web VR code te maken. in de VR zijn de aanpassingen:
-- op poppen van de knop 'start VR'. dit door een andere XML op te starten bij onderstaande embedpano!
-- geen keuze knoppen welke baaien te tonen. deze knoppen onderstaand uitcommanteren
-- het versturen van de kijkrichting hlookat en vlookat aanzetten via sockets. let op dat je dan uitzet dat de VR code ook reageert op ontvangen x,y,hlookat, vlookat sockets. anders gaat hij bibberen!!! 
-
-
-6 jan 2019: Deze code is 100% gelijk aan zeilenControl_html maar alleen de knoppen (fetiye / coceck etc) zijn niet meer zichtbaar!!!
-
-
--->
 
 <!DOCTYPE html>
 <html>
+
+<!--  PROJECT SETTINGS        PROJECT SETTINGS        PROJECT SETTINGS        PROJECT SETTINGS        -->
+	<script>
+		var customer = 'BB';  // customer name
+		var project = 'P_01';	//  project name
+	</script>
+
+
+
+
+
 	<head>
 	
-		<title>Switcher</title>
+		<title>BB remote</title>
 		
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 		<meta http-equiv="x-ua-compatible" content="IE=edge" />
+		
+		<link rel="apple-touch-icon" href="/static/zeilenControl/icon.png">
 		
 		<style>
 				body {
@@ -46,45 +43,73 @@ onderstaande aanpassingen moeten worden gemaakt om de web VR code te maken. in d
 
 
 			.btn {
-				padding: 5px 5px;
-				background: blue;
+				padding: 3px 3px;
+				background: #4dabf5;
 				color: #fff;
 				text-decoration: none;
-				border-radius: 10px;
+				border-radius: 6px;
 				font-family: Arial;
 
-				font-size: 15px;
+				font-size: 12px;
 
-				margin:  5px;
+				margin:  2px;
 				}
 
 			.btn_red {
-				padding: 5px 5px;
-				background: red;
+				padding: 3px 3px;
+				background: #1769aa;
 				color: #fff;
 				text-decoration: none;
-				border-radius: 10px;
+				border-radius: 6px;
 				font-family: Arial;
 
-				font-size: 15px;
+				font-size: 12px;
 
-				margin:  5px;
+				margin:  2px;
 				}
+
+			.btn_red_light {
+				padding: 3px 3px;
+				background: #2196f3;
+				color: #fff;
+				text-decoration: none;
+				border-radius: 6px;
+				font-family: Arial;
+
+				font-size: 12px;
+
+				margin:  2px;
+				}
+
+
 				
 			.btn_black {
-				padding: 5px 5px;
+				padding: 3px 3px;
 				background: black;
 				color: #fff;
 				border-color: black;
 				text-decoration: none;
-				border-radius: 10px;
+				border-radius: 6px;
 				font-family: Arial;
 
-				font-size: 15px;
+				font-size: 12px;
 
-				margin:  5px;
+				margin:  2px;
 				}				
-				
+
+			.btn_zwart {
+				padding: 3px 3px;
+				background: grey;
+				color: white;
+				border-color: black;
+				text-decoration: none;
+				border-radius: 6px;
+				font-family: Arial;
+
+				font-size: 12px;
+
+				margin:  2px;
+				}							
 				
 			</style>
 	</head>
@@ -92,93 +117,41 @@ onderstaande aanpassingen moeten worden gemaakt om de web VR code te maken. in d
 	
 	
 	<body>
-		<!-- <a href="/"   >home</a>-->	
-		
 
 		<script src="/static/krpano/tour.js"></script>
 		<!-- 
 		<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
 		-->
-		
-		
+				
 		<script src="/static/js/jquery-1.11.1.js"></script>
 		<script src="/static/js/socket.io.js"></script>
-		
-		
 		<script src="/static/js/slider.js"></script> 	
 	
 		<div id="pano" style="width:100%;height:100%;">
-		
-			<div id="myDIV">
 
-<!-- aanpassen voor VR!!!!!!!!!!!!!!!!!! -->				
-<!-- let op onderstaande knoppen uitcommanteren voor de VR versie van dit script -->
-			
-				<!--	<button id="scene0" type="button" class="btn_red btn-info">start</button>				
-					<button id="scene1" type="button" class="btn_red btn-info">1Fetiye</button>			
-					<button id="scene2" type="button" class="btn_red btn-info">2Tomb Bay</button>
-					<button id="scene3" type="button" class="btn_red btn-info">3Kapi Creep</button>			
-					<button id="scene4" type="button" class="btn btn-info">Wandeling</button>	
-					<button id="scene5" type="button" class="btn btn-info">Uitzicht</button>			
-					<button id="scene6" type="button" class="btn btn-info">Moskee</button>					
-					<button id="scene7" type="button" class="btn btn-info">Lepels</button>			
-					<button id="scene8" type="button" class="btn btn-info">Briefing</button>	
-					<button id="scene9" type="button" class="btn btn-info">Zeilen1</button>			
-					<button id="scene10" type="button" class="btn btn-info">Zeilen2</button>
-					<button id="scene11" type="button" class="btn btn-info">Zwemmen</button>			
-					<button id="scene12" type="button" class="btn_red btn-info">4Gocek</button>	
-					<button id="scene13" type="button" class="btn_red btn-info">5 Karacaoren</button>			
-					<button id="scene14" type="button" class="btn btn-info">Borrel</button>					
-					<button id="scene15" type="button" class="btn btn-info">Feest1</button>			
-					<button id="scene16" type="button" class="btn btn-info">Feest2</button>	
-					<button id="scene17" type="button" class="btn_red btn-info">6Fathom Cove</button>	-->
-
-			</div>
-
-<!-- aanpassen voor VR!!!!!!!!!!!!!!!!!! -->				
-<!-- let op onderstaande knoppen uitcommanteren voor de VR versie van dit script -->			
-				
-		<!--	<button onclick="myFunction()" class="btn_black btn-info"   >hide button</button>  -->
-	
-	
 			<noscript><table style="width:100%;height:100%;"><tr style="vertical-align:middle;"><td><div style="text-align:center;">ERROR:<br/><br/>Javascript not activated<br/><br/></div></td></tr></table></noscript>
 				
-			<script>
-				
-<!-- aanpassen voor VR!!!!!!!!!!!!!!!!!! -->	
-<!-- let op onderstaand de juiste xml selecteren -->				
-
-				// onderstaand voor de afstandbediening code
+			<script>				
 				embedpano({swf:"/static/krpano/tour.swf", xml:"/static/zeilenControl/tour.xml", target:"pano", html5:"auto", mobilescale:1.0, passQueryParameters:true});
-				
-				// onderstaand voor de VR code
-				//embedpano({swf:"/static/krpano/tour.swf", xml:"/static/zeilenSlave/tour.xml", target:"pano", html5:"auto", mobilescale:1.0, passQueryParameters:true});
 			</script>
+
 		</div>
 
 
 
 <script>
 		
-		function myFunction() {
-			var x = document.getElementById("myDIV");
-			if (x.style.display === "none") {
-				x.style.display = "block";
-			} else {
-				x.style.display = "none";
-			}
-		}
-		
-		
-		/////////////////////////////////////////////////
+
+				
 	
-	jQuery(document).ready(function($){ 
+		jQuery(document).ready(function($){ 
 			
 			$('#scene0').click(function() {   
 				var krpano = document.getElementById("krpanoSWFObject");
 				krpano.call( "laad_foto0()" );	
 				laad_foto0();
+				changeCollorBack();
 			});			
 				
 			
@@ -187,7 +160,7 @@ onderstaande aanpassingen moeten worden gemaakt om de web VR code te maken. in d
 				krpano.call( "laad_foto1()" );	
 				laad_foto1();
 				changeCollorBack();
-				$(this).css('background-color', 'green');
+				$(this).css('background-color', 'red');
 			});
 			
 			$('#scene2').click(function() {   
@@ -195,7 +168,7 @@ onderstaande aanpassingen moeten worden gemaakt om de web VR code te maken. in d
 				krpano.call( "laad_foto2()" );	
 				laad_foto2();
 				changeCollorBack();
-				$(this).css('background-color', 'green');
+				$(this).css('background-color', 'red');
 			
 			});
 			
@@ -204,7 +177,7 @@ onderstaande aanpassingen moeten worden gemaakt om de web VR code te maken. in d
 				krpano.call( "laad_foto3()" );	
 				laad_foto3();
 				changeCollorBack();
-				$(this).css('background-color', 'green');
+				$(this).css('background-color', 'red');
 			
 			});
 
@@ -213,7 +186,7 @@ onderstaande aanpassingen moeten worden gemaakt om de web VR code te maken. in d
 				krpano.call( "laad_foto4()" );
 				laad_foto4();				
 				changeCollorBack();
-				$(this).css('background-color', 'green');
+				$(this).css('background-color', 'red');
 			
 			});
 
@@ -222,7 +195,7 @@ onderstaande aanpassingen moeten worden gemaakt om de web VR code te maken. in d
 				krpano.call( "laad_foto5()" );	
 				laad_foto5();
 				changeCollorBack();
-				$(this).css('background-color', 'green');
+				$(this).css('background-color', 'red');
 			
 			});
 
@@ -231,7 +204,7 @@ onderstaande aanpassingen moeten worden gemaakt om de web VR code te maken. in d
 				krpano.call( "laad_foto6()" );	
 				laad_foto6();
 				changeCollorBack();
-				$(this).css('background-color', 'green');
+				$(this).css('background-color', 'red');
 			
 			});
 
@@ -240,7 +213,7 @@ onderstaande aanpassingen moeten worden gemaakt om de web VR code te maken. in d
 				krpano.call( "laad_foto7()" );	
 				laad_foto7();
 				changeCollorBack();
-				$(this).css('background-color', 'green');
+				$(this).css('background-color', 'red');
 			});
 			
 			$('#scene8').click(function() {   
@@ -248,7 +221,7 @@ onderstaande aanpassingen moeten worden gemaakt om de web VR code te maken. in d
 				krpano.call( "laad_foto8()" );	
 				laad_foto8();
 				changeCollorBack();
-				$(this).css('background-color', 'green');
+				$(this).css('background-color', 'red');
 			
 			});
 			
@@ -257,7 +230,7 @@ onderstaande aanpassingen moeten worden gemaakt om de web VR code te maken. in d
 				krpano.call( "laad_foto9()" );	
 				laad_foto9();
 				changeCollorBack();
-				$(this).css('background-color', 'green');
+				$(this).css('background-color', 'red');
 			
 			});
 
@@ -266,7 +239,7 @@ onderstaande aanpassingen moeten worden gemaakt om de web VR code te maken. in d
 				krpano.call( "laad_foto10()" );	
 				laad_foto10();
 				changeCollorBack();
-				$(this).css('background-color', 'green');
+				$(this).css('background-color', 'red');
 			
 			});
 
@@ -275,7 +248,7 @@ onderstaande aanpassingen moeten worden gemaakt om de web VR code te maken. in d
 				krpano.call( "laad_foto11()" );	
 				laad_foto11();
 				changeCollorBack();
-				$(this).css('background-color', 'green');
+				$(this).css('background-color', 'red');
 			
 			});
 
@@ -284,7 +257,7 @@ onderstaande aanpassingen moeten worden gemaakt om de web VR code te maken. in d
 				krpano.call( "laad_foto12()" );	
 				laad_foto12();
 				changeCollorBack();
-				$(this).css('background-color', 'green');
+				$(this).css('background-color', 'red');
 			
 			});			
 
@@ -293,7 +266,7 @@ onderstaande aanpassingen moeten worden gemaakt om de web VR code te maken. in d
 				krpano.call( "laad_foto13()" );	
 				laad_foto13();
 				changeCollorBack();
-				$(this).css('background-color', 'green');
+				$(this).css('background-color', 'red');
 			});
 			
 			$('#scene14').click(function() {   
@@ -301,7 +274,7 @@ onderstaande aanpassingen moeten worden gemaakt om de web VR code te maken. in d
 				krpano.call( "laad_foto14()" );	
 				laad_foto14();
 				changeCollorBack();
-				$(this).css('background-color', 'green');
+				$(this).css('background-color', 'red');
 			
 			});
 			
@@ -310,7 +283,7 @@ onderstaande aanpassingen moeten worden gemaakt om de web VR code te maken. in d
 				krpano.call( "laad_foto15()" );	
 				laad_foto15();
 				changeCollorBack();
-				$(this).css('background-color', 'green');
+				$(this).css('background-color', 'red');
 			
 			});
 
@@ -319,7 +292,7 @@ onderstaande aanpassingen moeten worden gemaakt om de web VR code te maken. in d
 				krpano.call( "laad_foto16()" );	
 				laad_foto16();
 				changeCollorBack();
-				$(this).css('background-color', 'green');
+				$(this).css('background-color', 'red');
 			
 			});
 
@@ -328,32 +301,12 @@ onderstaande aanpassingen moeten worden gemaakt om de web VR code te maken. in d
 				krpano.call( "laad_foto17()" );	
 				laad_foto17();
 				changeCollorBack();
-				$(this).css('background-color', 'green');
+				$(this).css('background-color', 'red');
 			
 			});
 	});  // einde jquery druk knoppen
 
-			
-			function changeCollorBack(){
-			document.getElementById("scene1").style.background='red';
-			document.getElementById("scene2").style.background='red';
-			document.getElementById("scene3").style.background='red';
-			document.getElementById("scene4").style.background='blue';
-			document.getElementById("scene5").style.background='blue';
-			document.getElementById("scene6").style.background='blue';
-			document.getElementById("scene7").style.background='blue';
-			document.getElementById("scene8").style.background='blue';
-			document.getElementById("scene9").style.background='blue';
-			document.getElementById("scene10").style.background='blue';
-			document.getElementById("scene11").style.background='blue';
-			document.getElementById("scene12").style.background='red';			
-			document.getElementById("scene13").style.background='red';
-			document.getElementById("scene14").style.background='blue';
-			document.getElementById("scene15").style.background='blue';
-			document.getElementById("scene16").style.background='blue';
-			document.getElementById("scene17").style.background='red';
-			}
-	
+
 
 </script>
 
@@ -362,63 +315,21 @@ onderstaande aanpassingen moeten worden gemaakt om de web VR code te maken. in d
 <script>
 	
 	$(function () {
-			var socket = io();
-
-	// LEES HLOOKAT EN SEND SOCKET TO BACKEND  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	// LEES HLOOKAT EN SEND SOCKET TO BACKEND  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	// LEES HLOOKAT EN SEND SOCKET TO BACKEND  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-<!-- aanpassen voor VR!!!!!!!!!!!!!!!!!! -->				
-<!-- let op onderstaande code aanzetten voor de VR versie van dit script . maar let op ook het ontvangen van x,y vlookat en hlookat hieronder juist weer uitzetten-->
-	
-	
-/*			  
-
-			var hlookat;
-			setInterval(function() {
-				var krpano = document.getElementById("krpanoSWFObject");
-				var current_hlookat = krpano.get('view.hlookat');
-				
-				//if (current_hlookat - hlookat > 1 || current_hlookat - hlookat < 1 ) {
-				if (current_hlookat != hlookat) {
-					hlookat = current_hlookat;
-					socket.emit('hlookat', krpano.get('view.hlookat'));	
-				}
-			}, 100); 
+		var socket = io();
 			
-			
-			var vlookat;
-			setInterval(function() {
-				var krpano = document.getElementById("krpanoSWFObject");
-				var current_vlookat = krpano.get('view.vlookat');
-				
-				//if (current_vlookat - hlookat > 1 || current_vlookat - hlookat < 1 ) {
-				if (current_vlookat != vlookat) {
-					vlookat = current_vlookat;
-					socket.emit('vlookat', krpano.get('view.vlookat'));	
-				}
-			}, 100); 				
-								
-*/			
-
-			
-		/// ONTVANGEN SOCKET VAN BACKEND   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-		/// ONTVANGEN SOCKET VAN BACKEND   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-		/// ONTVANGEN SOCKET VAN BACKEND   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-					
-		socket.on('message', function(msg, vid, scale){  
+		socket.on('message', function(msg, vid, scale,d){  
 
 							console.log (msg);
 							console.log(vid);
 							console.log(scale);
-
+							console.log(d);
+							
 		// RECEIVE X EN Y POSITIE VAN VR BRIL        // RECEIVE X EN Y POSITIE VAN VR BRIL        // RECEIVE X EN Y POSITIE VAN VR BRIL        // RECEIVE X EN Y POSITIE VAN VR BRIL        					
 		// RECEIVE X EN Y POSITIE VAN VR BRIL        // RECEIVE X EN Y POSITIE VAN VR BRIL        // RECEIVE X EN Y POSITIE VAN VR BRIL        // RECEIVE X EN Y POSITIE VAN VR BRIL 
 		// RECEIVE X EN Y POSITIE VAN VR BRIL        // RECEIVE X EN Y POSITIE VAN VR BRIL        // RECEIVE X EN Y POSITIE VAN VR BRIL        // RECEIVE X EN Y POSITIE VAN VR BRIL 
 
 
-<!-- aanpassen voor VR!!!!!!!!!!!!!!!!!! -->				
-<!-- let op onderstaande code uitzetten voor de VR versie van dit script . -->
+						if ((scale == customer) && (d == project )){
 		
 							<!-- hlookat-->
 							if (msg == 'hlookat'){			
@@ -438,15 +349,11 @@ onderstaande aanpassingen moeten worden gemaakt om de web VR code te maken. in d
 								krpano.set("vid_x",vid);								
 								//console.log("vertical lookat via socket: " + krpano.get("view.vlookat"));	
 							}				
-							
-<!-- HIER OPLOSSIGN VOOR VINDEN!!!!!!!!!!!!!!!!!!! -->
-<!-- HIER OPLOSSIGN VOOR VINDEN!!!!!!!!!!!!!!!!!!! -->
-<!-- HIER OPLOSSIGN VOOR VINDEN!!!!!!!!!!!!!!!!!!! -->
-							
-
+					
 
 // 9 FEBR ONDERSTAANDE UITGEZET. DE ALERT ONLINE 2.0 (VGZ) GAME STUURT DE WAARDE X EN Y EN DAAR REAGEERDE KRPANO B&B OOK OP.
-// DOEL IS X,Y GEBRUIKEN VOOR ALERT ONLINE 2.0 EN DE HLOOKAT EN VLOOKAT VOOR B&B SITE.							
+// DOEL IS X,Y GEBRUIKEN VOOR ALERT ONLINE 2.0 EN DE HLOOKAT EN VLOOKAT VOOR B&B SITE.	
+							
 							<!--y-->
 /*							if (msg == 'y'){			
 								var krpano = document.getElementById("krpanoSWFObject");
@@ -465,19 +372,6 @@ onderstaande aanpassingen moeten worden gemaakt om de web VR code te maken. in d
 								//krpano.set("view.vlookat", 200);
 							}	
 */							
-
-<!------------------------------------>
-
-							
-							if (msg == 'alpha'){			
-								var krpano = document.getElementById("krpanoSWFObject");
-								krpano.set("view.hlookat", - vid);
-							}									
-
-							if (msg == 'gamma'){			
-								var krpano = document.getElementById("krpanoSWFObject");
-								krpano.set("view.vlookat", - vid);
-							}								
 
 					
 		//  RECEIVE SOCKETS WITHIN KRPANO    // RECEIVE SOCKETS WITHIN KRPANO	    // RECEIVE SOCKETS WITHIN KRPANO	    // RECEIVE SOCKETS WITHIN KRPANO	    // RECEIVE SOCKETS WITHIN KRPANO	
@@ -573,9 +467,11 @@ onderstaande aanpassingen moeten worden gemaakt om de web VR code te maken. in d
 								krpano.call( "laad_foto17()" );		
 							}	
 				
+						}  // einde customer / project
+				
 					});  //einde on-message  ///////////////////////////////////////////////////////////////////
 
-	
+
 
 
 
@@ -586,75 +482,75 @@ onderstaande aanpassingen moeten worden gemaakt om de web VR code te maken. in d
 
 			window.laad_foto0 = function(){
 				console.log ('laad_foto0'); 
-				socket.emit('stuur', 'laad_foto0','b','c', 'd');	
+				socket.emit('stuur', 'laad_foto0','',customer,project);	
 			}
 			window.laad_foto1 = function(){
 				console.log ('laad_foto1'); 
-				socket.emit('stuur', 'laad_foto1','b','c', 'd');	
+				socket.emit('stuur', 'laad_foto1','',customer,project);	
 			}
 			window.laad_foto2 = function(){
 				console.log ('laad_foto2'); 
-				socket.emit('stuur', 'laad_foto2','b','c', 'd');	
+				socket.emit('stuur', 'laad_foto2','',customer,project);	
 			}
 			window.laad_foto3 = function(){
 				console.log ('laad_foto3'); 
-				socket.emit('stuur', 'laad_foto3','b','c', 'd');	
+				socket.emit('stuur', 'laad_foto3','',customer,project);	
 			}
 			window.laad_foto4 = function(){
 				console.log ('laad_foto4'); 
-				socket.emit('stuur', 'laad_foto4','b','c', 'd');	
+				socket.emit('stuur', 'laad_foto4','',customer,project);	
 			}
 			window.laad_foto5 = function(){
 				console.log ('laad_foto5'); 
-				socket.emit('stuur', 'laad_foto5','b','c', 'd');	
+				socket.emit('stuur', 'laad_foto5','',customer,project);	
 			}
 			window.laad_foto6 = function(){
 				console.log ('laad_foto6'); 
-				socket.emit('stuur', 'laad_foto6','b','c', 'd');	
+				socket.emit('stuur', 'laad_foto6','',customer,project);	
 			}
 			window.laad_foto7 = function(){
 				console.log ('laad_foto7'); 
-				socket.emit('stuur', 'laad_foto7','b','c', 'd');	
+				socket.emit('stuur', 'laad_foto7','',customer,project);	
 			}
 			window.laad_foto8 = function(){
 				console.log ('laad_foto8'); 
-				socket.emit('stuur', 'laad_foto8','b','c', 'd');	
+				socket.emit('stuur', 'laad_foto8','',customer,project);	
 			}
 			window.laad_foto9 = function(){
 				console.log ('laad_foto9'); 
-				socket.emit('stuur', 'laad_foto9','b','c', 'd');	
+				socket.emit('stuur', 'laad_foto9','',customer,project);	
 			}
 			window.laad_foto10 = function(){
 				console.log ('laad_foto10'); 
-				socket.emit('stuur', 'laad_foto10','b','c', 'd');	
+				socket.emit('stuur', 'laad_foto10','',customer,project);	
 			}
 			window.laad_foto11 = function(){
 				console.log ('laad_foto11'); 
-				socket.emit('stuur', 'laad_foto11','b','c', 'd');	
+				socket.emit('stuur', 'laad_foto11','',customer,project);	
 			}
 			window.laad_foto12 = function(){
 				console.log ('laad_foto12'); 
-				socket.emit('stuur', 'laad_foto12','b','c', 'd');	
+				socket.emit('stuur', 'laad_foto12','',customer,project);	
 			}
 			window.laad_foto13 = function(){
 				console.log ('laad_foto13'); 
-				socket.emit('stuur', 'laad_foto13','b','c', 'd');	
+				socket.emit('stuur', 'laad_foto13','',customer,project);	
 			}
 			window.laad_foto14 = function(){
 				console.log ('laad_foto14'); 
-				socket.emit('stuur', 'laad_foto14','b','c', 'd');	
+				socket.emit('stuur', 'laad_foto14','',customer,project);	
 			}
 			window.laad_foto15 = function(){
 				console.log ('laad_foto15'); 
-				socket.emit('stuur', 'laad_foto15','b','c', 'd');	
+				socket.emit('stuur', 'laad_foto15','',customer,project);	
 			}
 			window.laad_foto16 = function(){
 				console.log ('laad_foto16'); 
-				socket.emit('stuur', 'laad_foto16','b','c', 'd');	
+				socket.emit('stuur', 'laad_foto16','',customer,project);	
 			}
 			window.laad_foto17 = function(){
 				console.log ('laad_foto17'); 
-				socket.emit('stuur', 'laad_foto17','b','c', 'd');	
+				socket.emit('stuur', 'laad_foto17','',customer,project);	
 			}
 			
 		}); // einde function
