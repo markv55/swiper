@@ -212,7 +212,7 @@ keep="true" visible="false" zorder="2" handcursor="false" capture="false"  align
 <layer name="map" url="graphics/floor.jpg" url2="graphics/floor.jpg" keep="true" handcursor="false" capture="false" align="righttop" scale="0" scale.mobile="0" scalechildren="true" />
 
 <!--  DE KNOP 'SPOTS' RECHTSOVEN OP DE 360 PANO FOTO. SOMS IS NAAM SPOTS OF BAAIEN. BIJ KLIKKEN OPEN JE DE PLATTEGROND-->
-<layer name="mapicon" url="graphics/knopSpots.png" onclick="openmap(); set(control.usercontrol,all); set(control.touchzoom,true);set(autorotate.enabled,false);set(layer[activespot].visible,true); 
+<layer name="mapicon" url="graphics/knopSpots.png" onclick="openmap() ; openmap-bij-opstart(); set(control.usercontrol,all); set(control.touchzoom,true);set(autorotate.enabled,false);set(layer[activespot].visible,true); 
  stop_video();  hide_vtourskin(); rnskin(); " 
 keep="true" visible="true" zorder="2" handcursor="false" capture="false"  align="righttop"  />
 
@@ -382,12 +382,23 @@ set (layer[terug].width, calc(stagewidth*0.2)); 		set (layer[terug].height, calc
 
 
 
+
+
+
+
+
+
+
+
+
+
 <!--  LOAD SCENE AFTER PRESSING A ICON ON PLATTEGROND                -->
 <action name="mapspot_loadscene">
 	if(layer[map].scale GT 0.1, ; 
 	
 	set(layer[mapicon].visible,true); 
 	set(layer[terug].visible,true);  
+	
 		
 	<!-- OPLOSSING ONDERSTAAND MOET HIJ PER SCENE DOEN -->
 	<!-- firstTime wordt bij opstarten op true gezet. met onderstaande if wordt na de eerste keer drukken op een spot de  kliktostart getoond, en spot-knop niet getoond. bij een tweede keer drukken op de  
@@ -474,6 +485,7 @@ if(stageheight GT stagewidth,
 <!-- ALGEMENE FUNCTIES NA OPSTARTEN VAN 1E SCENE       ////      ALGEMENE FUNCTIES NA OPSTARTEN VAN 1E SCENE    /////    ALGEMENE FUNCTIES NA OPSTARTEN VAN 1E SCENE       	-->
 	
 <!-- HIDE ALL BUTTONS ON START TILL SOME MOVEMENT IS DETECTED            -->
+
 
 <events onviewchange="test();"/>
 
@@ -647,7 +659,8 @@ BerekenHoogteBreedte2();
 	set(layer[activespot].parent, spot2);	
 	set(layer[map200].width, calc(stagewidth*0.4));
 	set(layer[map200].height, calc(stagewidth*0.4) ); 
-		openmap-bij-opstart(); 
+	set(layer[map200].visible,false); 
+	set(layer[mapicon].visible,true);	
 </action>	
 	
 	
@@ -680,6 +693,12 @@ BerekenHoogteBreedte2();
 		set(hotspot[iframe2].visible,true);			set(hotspot[iframe3].visible,true);		set(layer[terug].visible,true); ; closemap(); "
 />	
 
+
+		<action name="start_deze_video">
+			set(layer[map200].visible,false); 
+			set(layer[mapicon].visible,true);
+			
+		</action>
 		
 </scene>
 
@@ -698,7 +717,8 @@ BerekenHoogteBreedte2();
 	set(layer[activespot].parent, spot3);	
 	set(layer[map300].width, calc(stagewidth*0.4));
 	set(layer[map300].height, calc(stagewidth*0.4) ); 	
-	openmap-bij-opstart(); 	
+	set(layer[map300].visible,false); 
+	set(layer[mapicon].visible,true);	
 </action>	
 	
 	
@@ -725,6 +745,15 @@ BerekenHoogteBreedte2();
 		set(hotspot[iframe2].visible,true);			set(hotspot[iframe3].visible,true);		set(layer[terug].visible,true); closemap();  " 
 />	
 
+		<action name="start_deze_video">
+			set(layer[map300].visible,false); 
+			set(layer[mapicon].visible,true);
+			
+		</action>
+
+
+
+
 		
 </scene>
 
@@ -738,7 +767,13 @@ BerekenHoogteBreedte2();
 
 
 <!-- NATIONAL PARK CHITWAN    -->
-<scene name="scene_100" title="Virtual-Travel Video">      
+<scene name="scene_100" title="Virtual-Travel Video"  onstart=" start()" >   
+
+
+<action name="start">
+	set(layer[mapicon].visible,false); 
+	set(layer[terug].visible,false);  
+</action>	   
 
 		<!-- grid preview pano -->
 		<preview type="grid(cube,64,64,512,0xCCCCCC,0xF6F6F6,0x999999);" />
@@ -756,9 +791,7 @@ BerekenHoogteBreedte2();
 		        loop="true"
 				volume="1.0"
 				
-				onloaded="add_video_sources(); maat_bepalen2(); set(layer[activespot].parent, spot1); hide_vtourskin(); rnskin();set(layer[start_knop_video_700].visible,true); set(layer[mapicon].visible,false); 
-				closemap(); 				  
-"
+				onloaded="add_video_sources(); maat_bepalen2(); set(layer[activespot].parent, spot1); hide_vtourskin(); rnskin();set(layer[start_knop_video_700].visible,true); set(layer[mapicon].visible,false); "
 					
 		/>
 
@@ -788,7 +821,7 @@ BerekenHoogteBreedte2();
 			set (layer[start_knop_video_700].width, calc(stagewidth*0.4)); 		
 			set (layer[start_knop_video_700].height, calc(stagewidth*0.4) );
 			
-			set(layer[mapicon].visible,true); 
+			set(layer[mapicon].visible,false); 
 			set(autorotate.enabled,false); "  
 			
 		</action>
@@ -800,6 +833,7 @@ BerekenHoogteBreedte2();
 		<action name="start_deze_video">
 			plugin[video].play();
 			set(layer[start_knop_video_700].visible,false); 
+			set(layer[mapicon].visible,true);
 			
 		</action>
 
@@ -826,8 +860,7 @@ BerekenHoogteBreedte2();
 		        loop="true"
 				volume="1.0"
 				
-				onloaded="add_video_sources(); maat_bepalen2(); set(layer[activespot].parent, spot4); hide_vtourskin(); rnskin();set(layer[start_knop_video_900].visible,true); set(layer[mapicon].visible,false); 
-				closemap();	  "
+				onloaded="add_video_sources(); maat_bepalen2(); set(layer[activespot].parent, spot4); hide_vtourskin(); rnskin();set(layer[start_knop_video_900].visible,true); set(layer[mapicon].visible,false);   "
 					
 		/>
 
@@ -869,6 +902,7 @@ BerekenHoogteBreedte2();
 		<action name="start_deze_video">
 			plugin[video].play();
 			set(layer[start_knop_video_900].visible,false); 
+			set(layer[mapicon].visible,true);
 
 		</action>
 
@@ -895,8 +929,7 @@ BerekenHoogteBreedte2();
 		        loop="true"
 				volume="1.0"
 				
-				onloaded="add_video_sources(); maat_bepalen2(); set(layer[activespot].parent, spot6); hide_vtourskin(); rnskin();set(layer[start_knop_video_800].visible,true); set(layer[mapicon].visible,false); 
-				closemap(); 	  "
+				onloaded="add_video_sources(); maat_bepalen2(); set(layer[activespot].parent, spot6); hide_vtourskin(); rnskin();set(layer[start_knop_video_800].visible,true); set(layer[mapicon].visible,false);   "
 					
 		/>
 
@@ -940,7 +973,9 @@ BerekenHoogteBreedte2();
 		<action name="start_deze_video">
 			plugin[video].play();
 			set(layer[start_knop_video_800].visible,false);
-		</action>
+			set(layer[mapicon].visible,true);
+
+			</action>
 
 </scene>
 
@@ -965,8 +1000,7 @@ BerekenHoogteBreedte2();
 		        loop="true"
 				volume="1.0"
 				
-				onloaded="add_video_sources(); maat_bepalen2(); set(layer[activespot].parent, spot5); hide_vtourskin(); rnskin();set(layer[start_knop_video_1000].visible,true); set(layer[mapicon].visible,false); closemap();
-					 "
+				onloaded="add_video_sources(); maat_bepalen2(); set(layer[activespot].parent, spot5); hide_vtourskin(); rnskin();set(layer[start_knop_video_1000].visible,true); set(layer[mapicon].visible,false);	 "
 					
 		/>
 
@@ -1000,13 +1034,14 @@ BerekenHoogteBreedte2();
 			
 		</action>
 
-		<layer name="start_knop_video_1000" url="graphics/start_video_1000.png" onclick="start_deze_video(); set(layer[start_knop_video_1000].visible,false); set(layer[mapicon].visible,true); 	  closemap(); " 
+		<layer name="start_knop_video_1000" url="graphics/start_video_1000.png" onclick="start_deze_video(); set(layer[start_knop_video_1000].visible,false); set(layer[mapicon].visible,true);  " 
 		keep="true" visible="true" zorder="2" handcursor="true" capture="false"  align="center"  />
 
 
 		<action name="start_deze_video">
 			plugin[video].play();
 			set(layer[start_knop_video_1000].visible,false);
+			set(layer[mapicon].visible,true);
 		</action>
 
 </scene>

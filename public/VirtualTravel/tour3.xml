@@ -94,7 +94,9 @@ set (firstMove,false) ; set(last_view_hlookat,0); set (eenmalig,false) ; " >
 		set(view.fov,140);
 		</action>
 
-	
+
+
+		
 
 		<action name="laad_foto0">
 		loadscene(scene_0, null, MERGE, BLEND(1));
@@ -212,7 +214,7 @@ keep="true" visible="false" zorder="2" handcursor="false" capture="false"  align
 <!--  DE KNOP 'SPOTS' RECHTSOVEN OP DE 360 PANO FOTO. SOMS IS NAAM SPOTS OF BAAIEN. BIJ KLIKKEN OPEN JE DE PLATTEGROND-->
 <layer name="mapicon" url="graphics/knopSpots.png" onclick="openmap(); set(control.usercontrol,all); set(control.touchzoom,true);set(autorotate.enabled,false);set(layer[activespot].visible,true); 
  stop_video();  hide_vtourskin(); rnskin(); " 
-keep="true" visible="true" zorder="2" handcursor="false" capture="false"  align="righttop"  />
+keep="true" visible="false" zorder="2" handcursor="false" capture="false"  align="righttop"  />
 
 <!-- deze regel uit bovenstaand gehaald. tijdelijk scale uitgezet en vervangen door onderstaande functie  scale="1.5"  scale.mobile="0.5" -->
 
@@ -362,7 +364,7 @@ set (layer[terug].width, calc(stagewidth*0.2)); 		set (layer[terug].height, calc
 	tween(layer[map].y, 0);	
 	tween(layer[map].scale, 0); 
 	tween(layer[map].scale.mobile, 0);  
-	set(layer[mapicon].visible,true);	
+
 	set(layer[terug].visible,true);  
 	
 	set(hotspot[iframe2].visible,true);	<!-- de hotspot in iedere scene aanzetten. deze hotspot opent het iframe -->	
@@ -380,12 +382,23 @@ set (layer[terug].width, calc(stagewidth*0.2)); 		set (layer[terug].height, calc
 
 
 
+
+
+
+
+
+
+
+
+
+
 <!--  LOAD SCENE AFTER PRESSING A ICON ON PLATTEGROND                -->
 <action name="mapspot_loadscene">
 	if(layer[map].scale GT 0.1, ; 
 	
-	set(layer[mapicon].visible,true); 
+
 	set(layer[terug].visible,true);  
+	
 		
 	<!-- OPLOSSING ONDERSTAAND MOET HIJ PER SCENE DOEN -->
 	<!-- firstTime wordt bij opstarten op true gezet. met onderstaande if wordt na de eerste keer drukken op een spot de  kliktostart getoond, en spot-knop niet getoond. bij een tweede keer drukken op de  
@@ -473,6 +486,7 @@ if(stageheight GT stagewidth,
 	
 <!-- HIDE ALL BUTTONS ON START TILL SOME MOVEMENT IS DETECTED            -->
 
+
 <events onviewchange="test();"/>
 
 
@@ -486,8 +500,8 @@ if(stageheight GT stagewidth,
 	); 
 	
 	if (eenmalig EQ true,
-		if (calc( last_view_hlookat - view.hlookat) GT 5, set(layer[mapicon].visible,true); set (eenmalig,false)); 
-		if (calc( last_view_hlookat - view.hlookat) LT -5, set(layer[mapicon].visible,true); set (eenmalig,false)); 	
+		if (calc( last_view_hlookat - view.hlookat) GT 5, set(layer[mapicon].visible,false); set (eenmalig,false)); 
+		if (calc( last_view_hlookat - view.hlookat) LT -5, set(layer[mapicon].visible,false); set (eenmalig,false)); 	
 		<!-- set (eenmalig,false);-->  <!-- als je deze weghaalt gaat het niet goed -->
 	);
  </action>
@@ -539,7 +553,7 @@ BerekenHoogteBreedte2();
 
 
 <!-- AUTOROTATE -->
-<autorotate enabled="true" waittime="1.0" speed="10.0"  accel="30.0"    horizon="20.0"     tofov="90.0"    interruptionevents="userviewchange|layers|keyboard" />  		
+<autorotate enabled="false" waittime="1.0" speed="10.0"  accel="30.0"    horizon="20.0"     tofov="90.0"    interruptionevents="userviewchange|layers|keyboard" />  		
  
 	
 	
@@ -594,16 +608,6 @@ BerekenHoogteBreedte2();
 </action>	
 
 
-
-		<action name="start_deze_video">
-			plugin[video].play();
-		</action>
-
-
-
-
-
-
 	<!-- STARTSCENE  STARTSCENE        -->		
 
 
@@ -611,14 +615,8 @@ BerekenHoogteBreedte2();
 	
 <action name="updateradar0">
 	set(layer[activespot].parent, spot0);	
-	openmap-bij-opstart(); 
-	set(layer[terug].visible,false);  
-	
 
-	
-	
-	
-
+	set(layer[terug].visible,true);  
 </action>	
 	
 	
@@ -661,7 +659,7 @@ BerekenHoogteBreedte2();
 	set(layer[activespot].parent, spot2);	
 	set(layer[map200].width, calc(stagewidth*0.4));
 	set(layer[map200].height, calc(stagewidth*0.4) ); 
-		openmap-bij-opstart(); 
+	set(layer[map200].visible,false); 
 </action>	
 	
 	
@@ -694,6 +692,11 @@ BerekenHoogteBreedte2();
 		set(hotspot[iframe2].visible,true);			set(hotspot[iframe3].visible,true);		set(layer[terug].visible,true); ; closemap(); "
 />	
 
+
+		<action name="start_deze_video">
+			set(layer[map200].visible,false); 
+			
+		</action>
 		
 </scene>
 
@@ -712,7 +715,8 @@ BerekenHoogteBreedte2();
 	set(layer[activespot].parent, spot3);	
 	set(layer[map300].width, calc(stagewidth*0.4));
 	set(layer[map300].height, calc(stagewidth*0.4) ); 	
-	openmap-bij-opstart(); 	
+	set(layer[map300].visible,false); 
+	
 </action>	
 	
 	
@@ -739,6 +743,14 @@ BerekenHoogteBreedte2();
 		set(hotspot[iframe2].visible,true);			set(hotspot[iframe3].visible,true);		set(layer[terug].visible,true); closemap();  " 
 />	
 
+		<action name="start_deze_video">
+			set(layer[map300].visible,false); 
+			
+		</action>
+
+
+
+
 		
 </scene>
 
@@ -752,7 +764,14 @@ BerekenHoogteBreedte2();
 
 
 <!-- NATIONAL PARK CHITWAN    -->
-<scene name="scene_100" title="Virtual-Travel Video">      
+<scene name="scene_100" title="Virtual-Travel Video"  onstart=" start()" >   
+
+
+<action name="start">
+	set(layer[mapicon].visible,false); 
+	set(layer[terug].visible,false);  
+ 
+</action>	   
 
 		<!-- grid preview pano -->
 		<preview type="grid(cube,64,64,512,0xCCCCCC,0xF6F6F6,0x999999);" />
@@ -770,9 +789,7 @@ BerekenHoogteBreedte2();
 		        loop="true"
 				volume="1.0"
 				
-				onloaded="add_video_sources(); maat_bepalen2(); set(layer[activespot].parent, spot1); hide_vtourskin(); rnskin();set(layer[start_knop_video_700].visible,true); set(layer[mapicon].visible,false); 
-				closemap(); 				  
-"
+				onloaded="add_video_sources(); maat_bepalen2(); set(layer[activespot].parent, spot1); hide_vtourskin(); rnskin();set(layer[start_knop_video_700].visible,true); set(layer[mapicon].visible,false); "
 					
 		/>
 
@@ -802,17 +819,19 @@ BerekenHoogteBreedte2();
 			set (layer[start_knop_video_700].width, calc(stagewidth*0.4)); 		
 			set (layer[start_knop_video_700].height, calc(stagewidth*0.4) );
 			
-			set(layer[mapicon].visible,true); 
+			set(layer[mapicon].visible,false); 
 			set(autorotate.enabled,false); "  
 			
 		</action>
 
 		<layer name="start_knop_video_700" url="graphics/start_video_700.png" onclick="start_deze_video(); set(layer[start_knop_video_700].visible,false); set(layer[mapicon].visible,true); 	  closemap(); " 
-		keep="true" visible="false" zorder="2" handcursor="true" capture="false"  align="center"  />
+		keep="true" visible="true" zorder="2" handcursor="true" capture="false"  align="center"  />
 
 
 		<action name="start_deze_video">
 			plugin[video].play();
+			set(layer[start_knop_video_700].visible,false); 
+			
 		</action>
 
 </scene>
@@ -838,8 +857,7 @@ BerekenHoogteBreedte2();
 		        loop="true"
 				volume="1.0"
 				
-				onloaded="add_video_sources(); maat_bepalen2(); set(layer[activespot].parent, spot4); hide_vtourskin(); rnskin();set(layer[start_knop_video_800].visible,true); set(layer[mapicon].visible,false); 
-				closemap();	  "
+				onloaded="add_video_sources(); maat_bepalen2(); set(layer[activespot].parent, spot4); hide_vtourskin(); rnskin();set(layer[start_knop_video_900].visible,true); set(layer[mapicon].visible,false);   "
 					
 		/>
 
@@ -868,17 +886,21 @@ BerekenHoogteBreedte2();
 		<action name="maat_bepalen2">
 			set (layer[start_knop_video_900].width, calc(stagewidth*0.4)); 		
 			set (layer[start_knop_video_900].height, calc(stagewidth*0.4) );
-			set(layer[mapicon].visible,true); 
+
 			set(autorotate.enabled,false); "  
 			
 		</action>
 
 		<layer name="start_knop_video_900" url="graphics/start_video_900.png" onclick="start_deze_video(); set(layer[start_knop_video_900].visible,false);  set(layer[mapicon].visible,true); 	  closemap();" 
-		keep="true" visible="false" zorder="2" handcursor="true" capture="false"  align="center"  />
+		keep="true" visible="true" zorder="2" handcursor="true" capture="false"  align="center"  />
 
 
 
+		<action name="start_deze_video">
+			plugin[video].play();
+			set(layer[start_knop_video_900].visible,false); 
 
+		</action>
 
 </scene>
 
@@ -903,8 +925,7 @@ BerekenHoogteBreedte2();
 		        loop="true"
 				volume="1.0"
 				
-				onloaded="add_video_sources(); maat_bepalen2(); set(layer[activespot].parent, spot6); hide_vtourskin(); rnskin();set(layer[start_knop_video_900].visible,true); set(layer[mapicon].visible,false); 
-				closemap(); 	  "
+				onloaded="add_video_sources(); maat_bepalen2(); set(layer[activespot].parent, spot6); hide_vtourskin(); rnskin();set(layer[start_knop_video_800].visible,true); set(layer[mapicon].visible,false);   "
 					
 		/>
 
@@ -937,17 +958,19 @@ BerekenHoogteBreedte2();
 		<action name="maat_bepalen2">
 			set (layer[start_knop_video_800].width, calc(stagewidth*0.4)); 		
 			set (layer[start_knop_video_800].height, calc(stagewidth*0.4) );
-			set(layer[mapicon].visible,true); 
+
 			set(autorotate.enabled,false); "  
 			
 		</action>
 
 		<layer name="start_knop_video_800" url="graphics/start_video_800.png" onclick="start_deze_video(); set(layer[start_knop_video_800].visible,false); set(layer[mapicon].visible,true); 	  closemap(); " 
-		keep="true" visible="false" zorder="2" handcursor="true" capture="false"  align="center"  />		
+		keep="true" visible="true" zorder="2" handcursor="true" capture="false"  align="center"  />		
 		
 		<action name="start_deze_video">
 			plugin[video].play();
-		</action>
+			set(layer[start_knop_video_800].visible,false);
+
+			</action>
 
 </scene>
 
@@ -972,8 +995,7 @@ BerekenHoogteBreedte2();
 		        loop="true"
 				volume="1.0"
 				
-				onloaded="add_video_sources(); maat_bepalen2(); set(layer[activespot].parent, spot5); hide_vtourskin(); rnskin();set(layer[start_knop_video_1000].visible,true); set(layer[mapicon].visible,false); closemap();
-					 "
+				onloaded="add_video_sources(); maat_bepalen2(); set(layer[activespot].parent, spot5); hide_vtourskin(); rnskin();set(layer[start_knop_video_1000].visible,true); set(layer[mapicon].visible,false);	 "
 					
 		/>
 
@@ -1002,17 +1024,18 @@ BerekenHoogteBreedte2();
 		<action name="maat_bepalen2">
 			set (layer[start_knop_video_1000].width, calc(stagewidth*0.4)); 		
 			set (layer[start_knop_video_1000].height, calc(stagewidth*0.4) );
-			set(layer[mapicon].visible,true); 
+
 			set(autorotate.enabled,false); "  
 			
 		</action>
 
-		<layer name="start_knop_video_1000" url="graphics/start_video_1000.png" onclick="start_deze_video(); set(layer[start_knop_video_1000].visible,false); set(layer[mapicon].visible,true); 	  closemap(); " 
-		keep="true" visible="false" zorder="2" handcursor="true" capture="false"  align="center"  />
+		<layer name="start_knop_video_1000" url="graphics/start_video_1000.png" onclick="start_deze_video(); set(layer[start_knop_video_1000].visible,false); set(layer[mapicon].visible,true);  " 
+		keep="true" visible="true" zorder="2" handcursor="true" capture="false"  align="center"  />
 
 
 		<action name="start_deze_video">
 			plugin[video].play();
+			set(layer[start_knop_video_1000].visible,false);
 		</action>
 
 </scene>
