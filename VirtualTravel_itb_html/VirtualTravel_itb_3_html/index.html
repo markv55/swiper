@@ -41,7 +41,6 @@
 	</head>
 
 	
-	
 	<body>
 
 		<script src="/static/krpano/tour.js"></script>
@@ -60,180 +59,6 @@
 
 		</div>
 
-
-
-<script>
-
-
-
-
-
-	
-		jQuery(document).ready(function($){ 
-			
-			$('#scene0').click(function() {   
-				var krpano = document.getElementById("krpanoSWFObject");
-				krpano.call( "laad_foto0()" );	
-				laad_foto0();
-				changeCollorBack();
-			});			
-				
-			
-			$('#scene1').click(function() {   
-				var krpano = document.getElementById("krpanoSWFObject");
-				krpano.call( "laad_foto1()" );	
-				laad_foto1();
-				changeCollorBack();
-				$(this).css('background-color', 'red');
-			});
-			
-			$('#scene2').click(function() {   
-				var krpano = document.getElementById("krpanoSWFObject");
-				krpano.call( "laad_foto2()" );	
-				laad_foto2();
-				changeCollorBack();
-				$(this).css('background-color', 'red');
-			
-			});
-			
-			$('#scene3').click(function() {   
-				var krpano = document.getElementById("krpanoSWFObject");
-				krpano.call( "laad_foto3()" );	
-				laad_foto3();
-				changeCollorBack();
-				$(this).css('background-color', 'red');
-			
-			});
-
-			$('#scene4').click(function() {   
-				var krpano = document.getElementById("krpanoSWFObject");
-				krpano.call( "laad_foto4()" );
-				laad_foto4();				
-				changeCollorBack();
-				$(this).css('background-color', 'red');
-			
-			});
-
-			$('#scene5').click(function() {   
-				var krpano = document.getElementById("krpanoSWFObject");
-				krpano.call( "laad_foto5()" );	
-				laad_foto5();
-				changeCollorBack();
-				$(this).css('background-color', 'red');
-			
-			});
-
-			$('#scene6').click(function() {   
-				var krpano = document.getElementById("krpanoSWFObject");
-				krpano.call( "laad_foto6()" );	
-				laad_foto6();
-				changeCollorBack();
-				$(this).css('background-color', 'red');
-			
-			});
-
-			$('#scene7').click(function() {   
-				var krpano = document.getElementById("krpanoSWFObject");
-				krpano.call( "laad_foto7()" );	
-				laad_foto7();
-				changeCollorBack();
-				$(this).css('background-color', 'red');
-			});
-			
-			$('#scene8').click(function() {   
-				var krpano = document.getElementById("krpanoSWFObject");
-				krpano.call( "laad_foto8()" );	
-				laad_foto8();
-				changeCollorBack();
-				$(this).css('background-color', 'red');
-			
-			});
-			
-			$('#scene9').click(function() {   
-				var krpano = document.getElementById("krpanoSWFObject");
-				krpano.call( "laad_foto9()" );	
-				laad_foto9();
-				changeCollorBack();
-				$(this).css('background-color', 'red');
-			
-			});
-
-			$('#scene10').click(function() {   
-				var krpano = document.getElementById("krpanoSWFObject");
-				krpano.call( "laad_foto10()" );	
-				laad_foto10();
-				changeCollorBack();
-				$(this).css('background-color', 'red');
-			
-			});
-
-			$('#scene11').click(function() {   
-				var krpano = document.getElementById("krpanoSWFObject");
-				krpano.call( "laad_foto11()" );	
-				laad_foto11();
-				changeCollorBack();
-				$(this).css('background-color', 'red');
-			
-			});
-
-			$('#scene12').click(function() {   
-				var krpano = document.getElementById("krpanoSWFObject");
-				krpano.call( "laad_foto12()" );	
-				laad_foto12();
-				changeCollorBack();
-				$(this).css('background-color', 'red');
-			
-			});			
-
-			$('#scene13').click(function() {   
-				var krpano = document.getElementById("krpanoSWFObject");
-				krpano.call( "laad_foto13()" );	
-				laad_foto13();
-				changeCollorBack();
-				$(this).css('background-color', 'red');
-			});
-			
-			$('#scene14').click(function() {   
-				var krpano = document.getElementById("krpanoSWFObject");
-				krpano.call( "laad_foto14()" );	
-				laad_foto14();
-				changeCollorBack();
-				$(this).css('background-color', 'red');
-			
-			});
-			
-			$('#scene15').click(function() {   
-				var krpano = document.getElementById("krpanoSWFObject");
-				krpano.call( "laad_foto15()" );	
-				laad_foto15();
-				changeCollorBack();
-				$(this).css('background-color', 'red');
-			
-			});
-
-			$('#scene16').click(function() {   
-				var krpano = document.getElementById("krpanoSWFObject");
-				krpano.call( "laad_foto16()" );	
-				laad_foto16();
-				changeCollorBack();
-				$(this).css('background-color', 'red');
-			
-			});
-
-			$('#scene17').click(function() {   
-				var krpano = document.getElementById("krpanoSWFObject");
-				krpano.call( "laad_foto17()" );	
-				laad_foto17();
-				changeCollorBack();
-				$(this).css('background-color', 'red');
-			
-			});
-	});  // einde jquery druk knoppen
-
-
-</script>
-
-		
 		
 <script>
 	
@@ -367,7 +192,15 @@
 							if (msg == 'laad_foto1'){	
 								var krpano = document.getElementById("krpanoSWFObject");
 								krpano.call( "laad_foto1()" );		
-							}								
+							}				
+							if (msg == 'laad_foto1_1'){	
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "laad_foto1_1()" );		
+							}	
+
+
+
+							
 							
 							if (msg == 'laad_foto2'){	
 								var krpano = document.getElementById("krpanoSWFObject");
@@ -480,6 +313,19 @@
 				console.log ('laad_foto1'); 
 				socket.emit('stuur', 'laad_foto1','',customer,project);	
 			}
+			window.laad_foto1_1 = function(){
+				console.log ('laad_foto1_1'); 
+				socket.emit('stuur', 'laad_foto1_1','',customer,project);	
+			}			
+			
+			
+			
+			
+			
+			
+			
+			
+			
 			window.laad_foto2 = function(){
 				console.log ('laad_foto2'); 
 				socket.emit('stuur', 'laad_foto2','',customer,project);	
