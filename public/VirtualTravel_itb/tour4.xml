@@ -140,7 +140,7 @@ if(device.desktop, set (hoogte_factor, calc(stageheight*0.5)); 	set (breedte_fac
 <action name="zet_aan">
 set(hotspot[inzets100].visible,true);
 
-set(breedte_plaatje,0.7);
+set(breedte_plaatje,0.4);
 set (hotspot[logo1].scale, calc(breedte_plaatje*1));	
 set (hotspot[logo2].scale, calc(breedte_plaatje*1));	
 set (hotspot[logo3].scale, calc(breedte_plaatje*1));	
@@ -292,7 +292,7 @@ set (layer[helemaal_terug].width, calc(breedte_factor*0.1));
 		<scene name="scene_0" title="MEMBERS" onstart="zet_aan(); Bepaal_Scale () ; set(layer[helemaal_terug].visible,false);  " havevrimage="true" thumburl="panos/ruimte.tiles/thumb.jpg" lat="" lng="" heading="" 	>
 
 
-		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="65" maxpixelzoom="1.0" fovmin="65" fovmax="65" limitview="true" distortion="7.0"  hlookatmin ="0.000000" hlookatmax ="360.000000" 
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="66" maxpixelzoom="1.0" fovmin="66" fovmax="66" limitview="true" distortion="7.0"  hlookatmin ="0.000000" hlookatmax ="360.000000" 
 		vlookatmin ="-0.000000" vlookatmax ="00.000000" />
 
 		<preview url="panos/2_no_clouds_8k.tiles/preview.jpg" />
@@ -317,12 +317,10 @@ set (layer[helemaal_terug].width, calc(breedte_factor*0.1));
 				 ath="0"  
 				 atv="40" 
 				 zorder = "3"
-				 zoom="true"
+				 zoom="false"
 				 distorted="false"
-
 				 enabled="true"
 				 capture="false"
-
 				 onclick="loadscene (scene_1); send_scene1(); "
 			   />
 					
@@ -330,7 +328,7 @@ set (layer[helemaal_terug].width, calc(breedte_factor*0.1));
 				 url="leden/2.png"
 				 ath="45"  
 				 atv="-40" 
-				 zoom="true"		 
+				 zoom="false"		 
 				 distorted="false"
 				 enabled="true"
 				 capture="false"
@@ -340,7 +338,7 @@ set (layer[helemaal_terug].width, calc(breedte_factor*0.1));
 				 url="leden/3.png"
 				 ath="90"  
 				 atv="40" 
-				 zoom="true"		 
+				 zoom="false"		 
 				 distorted="false"
 				 enabled="true"
 				 capture="false"		 
@@ -350,7 +348,7 @@ set (layer[helemaal_terug].width, calc(breedte_factor*0.1));
 				 url="leden/4.png"
 				 ath="135"  
 				 atv="-40" 
-				 zoom="true"		 
+				 zoom="false"		 
 				 distorted="false"
 				 enabled="true"
 				 capture="false"		 
@@ -361,7 +359,7 @@ set (layer[helemaal_terug].width, calc(breedte_factor*0.1));
 				 ath="180"  
 				 atv="30" 
 				 zorder = "3"				 
-				 zoom="true"		 
+				 zoom="false"		 
 				 distorted="false"
 				 enabled="true"
 				 capture="false"		 
@@ -371,7 +369,7 @@ set (layer[helemaal_terug].width, calc(breedte_factor*0.1));
 				 url="leden/2.png"
 				 ath="225"  
 				 atv="-30" 
-				 zoom="true"		 
+				 zoom="false"		 
 				 distorted="false"
 				 enabled="true"
 				 capture="false"		 
@@ -381,7 +379,7 @@ set (layer[helemaal_terug].width, calc(breedte_factor*0.1));
 				 url="leden/3.png"
 				 ath="270"  
 				 atv="30" 
-				 zoom="true"		 
+				 zoom="false"		 
 				 distorted="false"
 				 enabled="true"
 				 capture="false"		 
@@ -391,7 +389,7 @@ set (layer[helemaal_terug].width, calc(breedte_factor*0.1));
 				 url="leden/4.png"
 				 ath="315"  
 				 atv="-30" 
-				 zoom="true"		 
+				 zoom="false"		 
 				 distorted="false"
 				 enabled="true"
 				 capture="false"		 
