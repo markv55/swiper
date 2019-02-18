@@ -348,6 +348,49 @@ onderstaande class  (bijvoorbeeld js-ajx-url-zeilenSlaveSocket)  wordt onderaan 
 			<a href="/return/VirtualTravel_4" class="ajx_url_VirtualTravel_4 btn btn_green">MEEKIJKEN AFSTANDBEDIENING</a> 		
 			<br>		
 			
+
+<!-- ITB      ITB       ITB      ITB       ITB      ITB       ITB      ITB       ITB      ITB       ITB      ITB       ITB      ITB       ITB      ITB      -->			
+<!-- ITB      ITB       ITB      ITB       ITB      ITB       ITB      ITB       ITB      ITB       ITB      ITB       ITB      ITB       ITB      ITB      -->
+<!-- ITB      ITB       ITB      ITB       ITB      ITB       ITB      ITB       ITB      ITB       ITB      ITB       ITB      ITB       ITB      ITB      -->
+			<br>		
+			<br>			
+				<p>VIRTUAL TRAVEL ITB</p>		
+			<br>						
+			<br>
+
+				<p>WEB VIRTUAL REALITY ITB (MASTER)</p>	
+			<a href="/return/VirtualTravel_itb_1" class="ajx_url_VirtualTravel_itb_1 btn btn_green">WEB VIRTUAL REALITY (MASTER)</a> 		
+			<br>
+			<br>
+		
+				<p>WEB VIRTUAL REALITY ITB(MEEKIJKEN)</p>	
+			<a href="/return/VirtualTravel_itb_2" class="ajx_url_VirtualTravel_itb_2 btn btn_green">WEB VIRTUAL REALITY (MEEKIJKEN)</a> 		
+			<br>
+			<br>
+			<br>
+
+
+				<p>full screen scherm op TV ITB  //  </p>	
+			<a href="/return/VirtualTravel_itb_3" class="ajx_url_VirtualTravel_itb_3 btn btn_green"> MEEKIJKEN FULL SCREEN</a> 		
+			<br>
+
+				<p>afstandbediening op telefoon ITB // </p>	
+			<a href="/return/VirtualTravel_itb_4" class="ajx_url_VirtualTravel_itb_4 btn btn_green">MEEKIJKEN AFSTANDBEDIENING</a> 		
+			<br>		
+			
+			
+
+
+
+
+
+
+
+
+
+
+
+
 			
 <!--  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  -->
 <!--  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  -->
@@ -644,7 +687,58 @@ onderstaande class  (bijvoorbeeld js-ajx-url-zeilenSlaveSocket)  wordt onderaan 
 				});
 			});				
 			
-	
+
+<!-- ITB          ITB     ITB          ITB          ITB          ITB           ITB          ITB           ITB          ITB           ITB          ITB           ITB          ITB       -->			
+<!-- ITB          ITB     ITB          ITB          ITB          ITB           ITB          ITB           ITB          ITB           ITB          ITB           ITB          ITB       -->		
+
+<!--WEB VR MASTER (SEND SOCKET) -->
+			$('.ajx_url_VirtualTravel_itb_1').on('click', function(e) {
+				e.preventDefault();
+				$.ajax({
+					url: $(this).attr('href')
+				}).done(function() {
+					
+					window.location = '/VirtualTravel_itb_1_html';
+					console.log('Ajax request successfull');
+				});
+			});				
+
+<!--WEB VR (MEEKIJKEN)  -->			
+			$('.ajx_url_VirtualTravel_itb_2').on('click', function(e) {
+				e.preventDefault();
+				$.ajax({
+					url: $(this).attr('href')
+				}).done(function() {
+					
+					window.location = '/VirtualTravel_itb_2_html';
+					console.log('Ajax request successfull');
+				});
+			});	
+
+<!--FULL SCREEN SCHERM -->			
+			$('.ajx_url_VirtualTravel_itb_3').on('click', function(e) {
+				e.preventDefault();
+				$.ajax({
+					url: $(this).attr('href')
+				}).done(function() {
+					
+					window.location = '/VirtualTravel_itb_3_html';
+					console.log('Ajax request successfull');
+				});
+			});				
+
+<!--REMOTE CONTROLLER  -->		
+			$('.ajx_url_VirtualTravel_itb_4').on('click', function(e) {
+				e.preventDefault();
+				$.ajax({
+					url: $(this).attr('href')
+				}).done(function() {
+					
+					window.location = '/VirtualTravel_itb_4_html';
+					console.log('Ajax request successfull');
+				});
+			});				
+			
 			
 			
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

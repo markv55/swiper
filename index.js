@@ -330,6 +330,39 @@ app.get('/VirtualTravel_4_html', function(req, res) {
 });
 
 
+// ITB		ITB		 ITB		ITB		ITB		ITB		ITB		ITB		ITB		ITB		ITB		ITB		ITB		ITB		ITB		ITB		ITB		ITB		   
+// ITB		ITB		 ITB		ITB		ITB		ITB		ITB		ITB		ITB		ITB		ITB		ITB		ITB		ITB		ITB		ITB		ITB		ITB		   
+
+app.get('/VirtualTravel_itb_1_html', function(req, res) {
+	res.sendFile(path.join(__dirname+'/VirtualTravel_itb_html/VirtualTravel_itb_1_html/index.html'));
+});
+
+app.get('/VirtualTravel_itb_2_html', function(req, res) {
+	res.sendFile(path.join(__dirname+'/VirtualTravel_itb_html/VirtualTravel_itb_2_html/index.html'));
+});
+
+app.get('/VirtualTravel_itb_3_html', function(req, res) {
+	res.sendFile(path.join(__dirname+'/VirtualTravel_itb_html/VirtualTravel_itb_3_html/index.html'));
+});
+
+
+app.get('/VirtualTravel_itb_4_html', function(req, res) {
+	res.sendFile(path.join(__dirname+'/VirtualTravel_itb_html/VirtualTravel_itb_4_html/index.html'));
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //  EINDE    EINDE     EINDE     EINDE     EINDE     EINDE     EINDE     EINDE     EINDE     EINDE     EINDE     EINDE     EINDE     EINDE     EINDE      
 //  EINDE    EINDE     EINDE     EINDE     EINDE     EINDE     EINDE     EINDE     EINDE     EINDE     EINDE     EINDE     EINDE     EINDE     EINDE 
 

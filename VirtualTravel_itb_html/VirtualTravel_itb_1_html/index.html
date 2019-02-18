@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+
+<!--  PROJECT SETTINGS        PROJECT SETTINGS        PROJECT SETTINGS        PROJECT SETTINGS        -->
+	<script>
+		var customer = 'VirtualTravel';  // customer name
+		var project = 'P_01';	//  project name
+	</script>
+
+
+	<head>
+	
+		<title>Switcher</title>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta http-equiv="x-ua-compatible" content="IE=edge" />
+		
+		<style>
+				body {
+					background: white;
+					font-family:      TradeGothic, sans-serif;
+					font-size: 30px;		
+				}
+					
+				.size{
+				font-family:      TradeGothic, sans-serif;
+				font-size: 30px;		
+				}
+				
+			@-ms-viewport { width:device-width; }
+			@media only screen and (min-device-width:800px) { html { overflow:hidden; } }
+			html { height:100%; }
+			body { height:100%; overflow:hidden; margin:0; padding:0; font-family:Arial, Helvetica, sans-serif; font-size:16px; color:#FFFFFF; background-color:#000000; }
+
+		</style>
+
+</head>
+
+	<body>
+		<!-- <a href="/"   >home</a>-->	
+		
+
+		<script src="/static/krpano/tour.js"></script>
+		<!-- 
+		<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+		-->
+		<script src="/static/js/jquery-1.11.1.js"></script>
+		<script src="/static/js/socket.io.js"></script>
+		<script src="/static/js/slider.js"></script> 	
+	
+		<div id="pano" style="width:100%;height:100%;">
+		
+			<div id="myDIV">
+			</div>
+	
+			<noscript><table style="width:100%;height:100%;"><tr style="vertical-align:middle;"><td><div style="text-align:center;">ERROR:<br/><br/>Javascript not activated<br/><br/></div></td></tr></table></noscript>
+				
+			<script>
+			embedpano({swf:"/static/krpano/tour.swf", xml:"/static/VirtualTravel_itb/tour1.xml", target:"pano", html5:"auto", mobilescale:1.0, passQueryParameters:true});			
+			</script>
+		</div>
+
+		
+	<script>
+
+
+			
+	$(function () {
+			var socket = io();
+			
+			
+	
+			
+			
+			
+
+	// LEES HLOOKAT EN SEND SOCKET TO BACKEND  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// LEES HLOOKAT EN SEND SOCKET TO BACKEND  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// LEES HLOOKAT EN SEND SOCKET TO BACKEND  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+<!-- aanpassen voor VR!!!!!!!!!!!!!!!!!! -->				
+<!-- let op onderstaande code aanzetten voor de VR versie van dit script . maar let op ook het ontvangen van x,y vlookat en hlookat hieronder juist weer uitzetten-->
+	
+	
+/*	copy van origineel werkend veilig gesteld
+			var hlookat = 0;
+				setInterval(function() {
+				var krpano = document.getElementById("krpanoSWFObject");
+				var current_hlookat = krpano.get('view.hlookat');
+				
+				if (current_hlookat - hlookat > 2 || current_hlookat - hlookat < -2 ) {
+				//if (current_hlookat != hlookat) {
+					hlookat = current_hlookat;
+
+					//socket.emit('hlookat', krpano.get('view.hlookat'));						
+					var hlook_sent = krpano.get('view.hlookat') + 0;					
+					socket.emit('hlookat', hlook_sent);	
+				}
+			}, 100); 
+*/		  
+
+
+
+			var correctie = 0;
+			var hlookat = 0;
+			var isRechts = 0;
+			var isLinks = 0;
+			var current_hlookat ;
+			var doorgaanLinks = true;
+			var doorgaanRechts = true;
+			
+			setInterval(function() {
+			
+				var krpano = document.getElementById("krpanoSWFObject");
+				var current_hlookat = krpano.get('view.hlookat');
+				
+				// RECHTS    RECHTS    RECHTS    RECHTS    RECHTS    RECHTS    RECHTS    RECHTS    
+			
+				if (current_hlookat > 175 && current_hlookat < 180){
+				isRechts = 1;
+				}
+				
+				if (isRechts = 1){
+					if (current_hlookat > -180 && current_hlookat < -175){
+						if(doorgaanRechts == true){
+						correctie = correctie + 360;
+						doorgaanRechts = false;
+						}
+						isRechts = 0;					
+					}
+				}
+				
+				// LINKS    LINKS    LINKS    LINKS    LINKS    LINKS    LINKS    LINKS   LINKS    
+				
+				if(current_hlookat > -180 && current_hlookat < -175) {
+				isLinks = 1;
+				}
+				
+				if (isLinks == 1){
+					if (current_hlookat > 175 && current_hlookat < 180){
+						if(doorgaanLinks == true){
+						correctie = correctie - 360;
+						doorgaanLinks = false;
+						}
+						isLinks = 0;						
+					}
+				}
+
+				// RESET    RESET     RESET    RESET     RESET    RESET     RESET    RESET     RESET    
+				if (current_hlookat > 0 && current_hlookat < 175)  {
+				isLinks = 0;
+				isRechts = 0;
+				doorgaanRechts = true;
+				doorgaanLinks = true;
+				}
+
+				if (current_hlookat > -175 && current_hlookat < 0) {
+				isLinks = 0;
+				isRechts = 0;
+				doorgaanRechts = true;
+				doorgaanLinks = true;
+				}
+				
+				var hlook_sent = current_hlookat + correctie + 0 ;
+				
+				if (hlook_sent - hlookat > 2 || hlook_sent - hlookat < -2 ) {
+					hlookat = hlook_sent;
+
+					//socket.emit('hlookat', krpano.get('view.hlookat'));		// spare code?				
+					
+					//socket.emit('hlookat', hlook_sent);	// deze weer aanzetten
+					
+					socket.emit('stuur', 'hlookat', hlook_sent, customer , project);		// deze werkt!!!!!!!!!!!			
+					
+				}
+			
+			}, 10); 	
+
+
+
+			
+			var vlookat = 0;
+			setInterval(function() {
+				var krpano = document.getElementById("krpanoSWFObject");
+				var current_vlookat = krpano.get('view.vlookat') ;
+				
+				if (current_vlookat - vlookat > 2 || current_vlookat - vlookat < -2 ) {
+				//if (current_vlookat != vlookat) {
+					vlookat = current_vlookat;
+					
+					//socket.emit('vlookat', krpano.get('view.vlookat'));	
+					
+					var vlook_sent = krpano.get('view.vlookat');	
+					
+					//socket.emit('vlookat', vlook_sent);	// deze zo weer aanzettten		
+
+					socket.emit('stuur', 'vlookat', vlook_sent, customer , project);		// deze werkt!!!!!!!!!!!						
+					
+				}
+			}, 100); 				
+								
+			
+
+			
+		/// ONTVANGEN SOCKET VAN BACKEND   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		/// ONTVANGEN SOCKET VAN BACKEND   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		/// ONTVANGEN SOCKET VAN BACKEND   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+					
+		socket.on('message', function(msg, vid, scale,d){  
+
+					console.log (msg);
+					console.log(vid);
+					console.log(scale);
+					
+					if ((scale == customer) && (d == project )){
+
+
+					
+							if (msg == 'laad_foto0'){	
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "laad_foto0()" );		
+							}								
+					
+							if (msg == 'laad_foto1'){	
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "laad_foto1()" );		
+							}								
+							
+							if (msg == 'laad_foto2'){	
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "laad_foto2()" );		
+							}	
+
+							if (msg == 'laad_foto3'){	
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "laad_foto3()" );		
+							}	
+
+							if (msg == 'laad_foto4'){	
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "laad_foto4()" );		
+							}	
+
+							if (msg == 'laad_foto5'){	
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "laad_foto5()" );		
+							}	
+
+							if (msg == 'laad_foto6'){	
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "laad_foto6()" );		
+							}	
+
+							if (msg == 'laad_foto7'){	
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "laad_foto7()" );		
+							}							
+
+							if (msg == 'laad_foto8'){	
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "laad_foto8()" );		
+							}	
+
+							if (msg == 'laad_foto9'){	
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "laad_foto9()" );		
+							}	
+
+							if (msg == 'laad_foto10'){	
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "laad_foto10()" );		
+							}	
+							if (msg == 'laad_foto11'){	
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "laad_foto11()" );		
+							}	
+
+							if (msg == 'laad_foto12'){	
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "laad_foto12()" );		
+							}	
+
+							if (msg == 'laad_foto13'){	
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "laad_foto13()" );		
+							}	
+
+							if (msg == 'laad_foto14'){	
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "laad_foto14()" );		
+							}	
+
+							if (msg == 'laad_foto15'){	
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "laad_foto15()" );		
+							}	
+
+							if (msg == 'laad_foto16'){	
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "laad_foto16()" );		
+							}	
+
+							if (msg == 'laad_foto17'){	
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "laad_foto17()" );		
+							}	
+				
+					}
+				
+				
+				
+				});  //einde on-message  ///////////////////////////////////////////////////////////////////
+
+	// INTRODUCTIE STARTSCHERM
+
+			window.send_call_start_film_via_socket = function(){
+				console.log ("komt hij hier send van startfilm"); 
+				//socket.emit('vraag', 'call_delete_startscherm');
+				socket.emit('stuur', 'startfilm','',customer,project);	
+				//krpano.call( "start_deze_video()" );						
+			}	
+
+		
+		
+			
+			
+			
+
+			
+		}); // einde function
+		</script>
+		
+	
+
+	</body>
+</html>
