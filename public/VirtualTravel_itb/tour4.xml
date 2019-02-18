@@ -126,7 +126,7 @@ if(device.desktop, set (hoogte_factor, calc(stageheight*0.5)); 	set (breedte_fac
 <style name="close_btn_style" keep="true" url="images/close.png" parent="magic_content_info" align="righttop" edge="center" scale= "0.6" scale.mobile = "1"  />
 <style name="go_to_site" keep="true" url="images/ga_naar_website2.png" parent="magic_content_info" align="centerbottom" edge="center" scale= "2" scale.mobile = "2"  />
 
-<autorotate enabled="false" waittime="1.0" speed="10.0"  accel="30.0"    horizon="10.0"     tofov="120.0"    interruptionevents="userviewchange|layers|keyboard" />  		
+<autorotate enabled="true" waittime="1.0" speed="10.0"  accel="30.0"    horizon="10.0"     tofov="120.0"    interruptionevents="userviewchange|layers|keyboard" />  		
 
 
 <layer name="helemaal_terug" keep="true" visible= "true" url="images/close.png" parent="" align="righttop" edge="center"  x="30" y="30"  onclick="loadscene (scene_0); send_scene0() "  />
