@@ -286,31 +286,36 @@ set (layer[helemaal_terug].width, calc(breedte_factor*0.1));
 <!--  EINDE         EINDE         EINDE         EINDE         EINDE         EINDE         EINDE         EINDE         EINDE         EINDE         EINDE         EINDE         EINDE          -->
 
 
-<scene name="scene_0" title="MEMBERS" onstart="zet_aan(); Bepaal_Scale () ; set(layer[helemaal_terug].visible,false);  " havevrimage="true" thumburl="panos/ruimte.tiles/thumb.jpg" lat="" lng="" heading="">
-		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmin="160" fovmax="160"  limitview ="range"   hlookatmin ="0.000000" hlookatmax ="360.000000" 
-		vlookatmin ="-40.000000" vlookatmax ="60.000000"   />
 
-		<preview url="panos/ruimte.tiles/preview.jpg" />
-		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/ruimte.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/ruimte.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
+
+
+		<scene name="scene_0" title="MEMBERS" onstart="zet_aan(); Bepaal_Scale () ; set(layer[helemaal_terug].visible,false);  " havevrimage="true" thumburl="panos/ruimte.tiles/thumb.jpg" lat="" lng="" heading="" 	>
+
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="70" maxpixelzoom="1.0" fovmin="70" fovmax="70" limitview="true" distortion="7.0"  hlookatmin ="0.000000" hlookatmax ="360.000000" 
+		vlookatmin ="-0.000000" vlookatmax ="00.000000" />
+
+		<preview url="panos/2_no_clouds_8k.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/2_no_clouds_8k.tiles/pano_%s.jpg" />
+
+			<cube url="panos/2_no_clouds_8k.tiles/mobile/pano_%s.jpg" devices="mobile" />
 		</image>
-		<image if="webvr.isenabled">
-			<cube url="panos/ruimte.tiles/vr/pano_%s.jpg" />
-		</image>
+
+		<!-- place your scene hotspots here -->
+		
+		
+		
 
 		<!-- place your scene hotspots here -->
 
 			 <hotspot name="logo1"
 				 url="leden/1.png"
 				 ath="0"  
-				 atv="0" 
+				 atv="30" 
 				 zoom="true"
-				 distorted="false"
+				 distorted="true"
 				 renderer="css3d"
 				 enabled="true"
 				 capture="false"
@@ -320,7 +325,7 @@ set (layer[helemaal_terug].width, calc(breedte_factor*0.1));
 			 <hotspot name="logo2"
 				 url="leden/2.png"
 				 ath="45"  
-				 atv="0" 
+				 atv="-30" 
 				 zoom="true"		 
 				 distorted="false"
 				 renderer="css3d"
@@ -331,7 +336,7 @@ set (layer[helemaal_terug].width, calc(breedte_factor*0.1));
 			 <hotspot name="logo3"
 				 url="leden/3.png"
 				 ath="90"  
-				 atv="0" 
+				 atv="30" 
 				 zoom="true"		 
 				 distorted="false"
 				 renderer="css3d"
@@ -342,7 +347,7 @@ set (layer[helemaal_terug].width, calc(breedte_factor*0.1));
 			 <hotspot name="logo4"
 				 url="leden/4.png"
 				 ath="135"  
-				 atv="0" 
+				 atv="-30" 
 				 zoom="true"		 
 				 distorted="false"
 				 renderer="css3d"
@@ -353,7 +358,7 @@ set (layer[helemaal_terug].width, calc(breedte_factor*0.1));
 			 <hotspot name="logo5"
 				 url="leden/1.png"
 				 ath="180"  
-				 atv="0" 
+				 atv="30" 
 				 zoom="true"		 
 				 distorted="false"
 				 renderer="css3d"
@@ -364,7 +369,7 @@ set (layer[helemaal_terug].width, calc(breedte_factor*0.1));
 			 <hotspot name="logo6"
 				 url="leden/2.png"
 				 ath="225"  
-				 atv="0" 
+				 atv="-30" 
 				 zoom="true"		 
 				 distorted="false"
 				 renderer="css3d"
@@ -375,7 +380,7 @@ set (layer[helemaal_terug].width, calc(breedte_factor*0.1));
 			 <hotspot name="logo7"
 				 url="leden/3.png"
 				 ath="270"  
-				 atv="0" 
+				 atv="30" 
 				 zoom="true"		 
 				 distorted="false"
 				 renderer="css3d"
@@ -386,7 +391,7 @@ set (layer[helemaal_terug].width, calc(breedte_factor*0.1));
 			 <hotspot name="logo8"
 				 url="leden/4.png"
 				 ath="315"  
-				 atv="0" 
+				 atv="-30" 
 				 zoom="true"		 
 				 distorted="false"
 				 renderer="css3d"
@@ -896,7 +901,121 @@ set (layer[helemaal_terug].width, calc(breedte_factor*0.1));
 </scene>	
 
 
+<!--   ORIGINELE 1E SCENE              ORIGINELE 1E SCENE                ORIGINELE 1E SCENE                ORIGINELE 1E SCENE                ORIGINELE 1E SCENE                ORIGINELE 1E SCENE                  -->
 
+
+<scene name="scene_0 SPARE" title="MEMBERS" onstart="zet_aan(); Bepaal_Scale () ; set(layer[helemaal_terug].visible,false);  " havevrimage="true" thumburl="panos/ruimte.tiles/thumb.jpg" lat="" lng="" heading="">
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmin="160" fovmax="160"  limitview ="range"   hlookatmin ="0.000000" hlookatmax ="360.000000" 
+		vlookatmin ="-40.000000" vlookatmax ="60.000000"   />
+
+		<preview url="panos/ruimte.tiles/preview.jpg" />
+		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+			<level tiledimagewidth="2048" tiledimageheight="2048">
+				<cube url="panos/ruimte.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1024" tiledimageheight="1024">
+				<cube url="panos/ruimte.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<image if="webvr.isenabled">
+			<cube url="panos/ruimte.tiles/vr/pano_%s.jpg" />
+		</image>
+
+		<!-- place your scene hotspots here -->
+
+			 <hotspot name="logo1"
+				 url="leden/1.png"
+				 ath="0"  
+				 atv="0" 
+				 zoom="true"		 
+				 distorted="false"
+				 renderer="css3d"
+				 enabled="true"
+				 capture="false"
+				 onclick="loadscene (scene_1); send_scene1(); "
+			   />
+					
+			 <hotspot name="logo2"
+				 url="leden/2.png"
+				 ath="45"  
+				 atv="0" 
+				 zoom="true"		 
+				 distorted="false"
+				 renderer="css3d"
+				 enabled="true"
+				 capture="false"
+				 onclick="loadscene (scene_2);send_scene2(); "
+			   />		
+			 <hotspot name="logo3"
+				 url="leden/3.png"
+				 ath="90"  
+				 atv="0" 
+				 zoom="true"		 
+				 distorted="false"
+				 renderer="css3d"
+				 enabled="true"
+				 capture="false"		 
+				 onclick="loadscene (scene_3); send_scene3(); "
+			   />		
+			 <hotspot name="logo4"
+				 url="leden/4.png"
+				 ath="135"  
+				 atv="0" 
+				 zoom="true"		 
+				 distorted="false"
+				 renderer="css3d"
+				 enabled="true"
+				 capture="false"		 
+				 onclick="loadscene (scene_4); send_scene4(); "
+			   />		
+			 <hotspot name="logo5"
+				 url="leden/1.png"
+				 ath="180"  
+				 atv="0" 
+				 zoom="true"		 
+				 distorted="false"
+				 renderer="css3d"
+				 enabled="true"
+				 capture="false"		 
+				 onclick="loadscene (scene_1) ; send_scene1(); "
+			   />		
+			 <hotspot name="logo6"
+				 url="leden/2.png"
+				 ath="225"  
+				 atv="0" 
+				 zoom="true"		 
+				 distorted="false"
+				 renderer="css3d"
+				 enabled="true"
+				 capture="false"		 
+				 onclick="loadscene (scene_2); send_scene2(); "
+			   />		
+			 <hotspot name="logo7"
+				 url="leden/3.png"
+				 ath="270"  
+				 atv="0" 
+				 zoom="true"		 
+				 distorted="false"
+				 renderer="css3d"
+				 enabled="true"
+				 capture="false"		 
+				 onclick="loadscene (scene_3); send_scene3(); "
+			   />		
+			 <hotspot name="logo8"
+				 url="leden/4.png"
+				 ath="315"  
+				 atv="0" 
+				 zoom="true"		 
+				 distorted="false"
+				 renderer="css3d"
+				 enabled="true"
+				 capture="false"		 
+				 onclick="loadscene (scene_4); send_scene4(); "
+			   />			   
+		
+			<layer name="logo_0" url="images/global_discovery_logo3.png"  visible= "true" keep="false" handcursor="false" capture="false"   align="centerbottom" x="0" y="-50"  />	
+	
+</scene>
 
 
 
