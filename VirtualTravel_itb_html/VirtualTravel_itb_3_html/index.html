@@ -134,6 +134,36 @@
 		// RECEIVE X EN Y POSITIE VAN VR BRIL        // RECEIVE X EN Y POSITIE VAN VR BRIL        // RECEIVE X EN Y POSITIE VAN VR BRIL        // RECEIVE X EN Y POSITIE VAN VR BRIL 
 		// RECEIVE X EN Y POSITIE VAN VR BRIL        // RECEIVE X EN Y POSITIE VAN VR BRIL        // RECEIVE X EN Y POSITIE VAN VR BRIL        // RECEIVE X EN Y POSITIE VAN VR BRIL 
 
+		
+		
+		
+							<!--y-->
+							if (msg == 'y'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.set("view.hlookat", vid);  //dit werkt. tijdelijk uitgezet om onderstaand te testen
+								
+								//krpano.call("ga_naar_y()");	// nieuw probeersel!!!! stuur een variable naar krpano.
+								//krpano.set("vid_y",vid);
+								
+								//console.log("Horizontal lookat: " + krpano.get("view.hlookat"));	
+							}				
+
+							<!--x-->
+							if (msg == 'x'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.set("view.vlookat", vid);  //dit werkt. tijdelijk uitgezet om onderstaand te testen
+								
+								//krpano.call("ga_naar_x()"); // nieuw probeersel!!!!	stuur een variable naar krpano.		
+								//krpano.set("vid_x",vid);
+								
+								//krpano.set("view.vlookat", 200);
+							}			
+		
+		
+		
+		
+		
+		
 
 						if ((scale == customer) && (d == project )){
 		
@@ -160,24 +190,8 @@
 // 9 FEBR ONDERSTAANDE UITGEZET. DE ALERT ONLINE 2.0 (VGZ) GAME STUURT DE WAARDE X EN Y EN DAAR REAGEERDE KRPANO B&B OOK OP.
 // DOEL IS X,Y GEBRUIKEN VOOR ALERT ONLINE 2.0 EN DE HLOOKAT EN VLOOKAT VOOR B&B SITE.	
 							
-							<!--y-->
-/*							if (msg == 'y'){			
-								var krpano = document.getElementById("krpanoSWFObject");
-								//krpano.set("view.hlookat", vid);  //dit werkt. tijdelijk uitgezet om onderstaand te testen
-								krpano.call("ga_naar_y()");	// nieuw probeersel!!!! stuur een variable naar krpano.
-								krpano.set("vid_y",vid);
-								//console.log("Horizontal lookat: " + krpano.get("view.hlookat"));	
-							}				
 
-							<!--x-->
-							if (msg == 'x'){			
-								var krpano = document.getElementById("krpanoSWFObject");
-								//krpano.set("view.vlookat", vid);  //dit werkt. tijdelijk uitgezet om onderstaand te testen
-								krpano.call("ga_naar_x()"); // nieuw probeersel!!!!	stuur een variable naar krpano.		
-								krpano.set("vid_x",vid);
-								//krpano.set("view.vlookat", 200);
-							}	
-*/							
+						
 
 					
 		//  RECEIVE SOCKETS WITHIN KRPANO    // RECEIVE SOCKETS WITHIN KRPANO	    // RECEIVE SOCKETS WITHIN KRPANO	    // RECEIVE SOCKETS WITHIN KRPANO	    // RECEIVE SOCKETS WITHIN KRPANO	
