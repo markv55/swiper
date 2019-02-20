@@ -313,7 +313,7 @@ set (layer[helemaal_terug].width, calc(breedte_factor*0.1));
 		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="50" maxpixelzoom="2,5" fovmin="30" fovmax="90" limitview="true" distortion="7.0"  hlookatmin ="0.000000" hlookatmax ="360.000000"  vlookatmax = "0"  vlookatmin = "0 "/>
 
 
-<!-- originele wereld
+<!--
 		<preview url="panos/wereldbol.tiles/preview.jpg" />
 
 		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
@@ -325,8 +325,8 @@ set (layer[helemaal_terug].width, calc(breedte_factor*0.1));
 		<image if="webvr.isenabled">
 			<cube url="panos/wereldbol.tiles/vr/pano_%s.jpg" />
 		</image>
--->
 
+-->
 		<preview url="panos/world2.tiles/preview.jpg" />
 
 		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
@@ -339,26 +339,7 @@ set (layer[helemaal_terug].width, calc(breedte_factor*0.1));
 			<cube url="panos/world2.tiles/vr/pano_%s.jpg" />
 		</image>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 		<!-- place your scene hotspots here -->
-	
 
 
 		<hotspot name="logo1"
@@ -368,7 +349,7 @@ set (layer[helemaal_terug].width, calc(breedte_factor*0.1));
 				 zorder = "3"
 				 
 				 zoom="true"
-				 distorted="false"
+				 distorted="true"
 				 enabled="true"
 				 capture="false"
 				 onclick="loadscene (scene_1); send_scene1(); "
@@ -379,7 +360,7 @@ set (layer[helemaal_terug].width, calc(breedte_factor*0.1));
 				 ath="45"  
 				 atv="-40" 
 				 zoom="true"		 
-				 distorted="false"
+				 distorted="true"
 				 enabled="true"
 				 capture="false"
 				 onclick="loadscene (scene_2);send_scene2(); "
@@ -389,7 +370,7 @@ set (layer[helemaal_terug].width, calc(breedte_factor*0.1));
 				 ath="90"  
 				 atv="40" 
 				 zoom="true"		 
-				 distorted="false"
+				 distorted="true"
 				 enabled="true"
 				 capture="false"		 
 				 onclick="loadscene (scene_3); send_scene3(); "
@@ -399,48 +380,48 @@ set (layer[helemaal_terug].width, calc(breedte_factor*0.1));
 				 ath="135"  
 				 atv="-40" 
 				 zoom="true"		 
-				 distorted="false"
+				 distorted="true"
 				 enabled="true"
 				 capture="false"		 
 				 onclick="loadscene (scene_4); send_scene4(); "
 			   />		
 			 <hotspot name="logo5"
-				 url="leden/1.png"
+				 url="leden/5.png"
 				 ath="180"  
 				 atv="30" 
 				 zorder = "3"				 
 				 zoom="true"		 
-				 distorted="false"
+				 distorted="true"
 				 enabled="true"
 				 capture="false"		 
 				 onclick="loadscene (scene_1) ; send_scene1(); "
 			   />		
 			 <hotspot name="logo6"
-				 url="leden/2.png"
+				 url="leden/6.png"
 				 ath="225"  
 				 atv="-30" 
 				 zoom="true"		 
-				 distorted="false"
+				 distorted="true"
 				 enabled="true"
 				 capture="false"		 
 				 onclick="loadscene (scene_2); send_scene2(); "
 			   />		
 			 <hotspot name="logo7"
-				 url="leden/3.png"
+				 url="leden/7.png"
 				 ath="270"  
 				 atv="30" 
 				 zoom="true"		 
-				 distorted="false"
+				 distorted="true"
 				 enabled="true"
 				 capture="false"		 
 				 onclick="loadscene (scene_3); send_scene3(); "
 			   />		
 			 <hotspot name="logo8"
-				 url="leden/4.png"
+				 url="leden/8.png"
 				 ath="315"  
 				 atv="-30" 
 				 zoom="true"		 
-				 distorted="false"
+				 distorted="true"
 				 enabled="true"
 				 capture="false"		 
 				 onclick="loadscene (scene_4); send_scene4(); "
