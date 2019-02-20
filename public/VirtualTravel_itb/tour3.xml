@@ -315,7 +315,7 @@ set (layer[helemaal_terug].width, calc(breedte_factor*0.1));
 		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="50" maxpixelzoom="2,5" fovmin="30" fovmax="90" limitview="true" distortion="7.0"  hlookatmin ="0.000000" hlookatmax ="360.000000"  vlookatmax = "0"  vlookatmin = "0 "/>
 
 
-
+<!--  ORIGINELE WERELDBOL
 		<preview url="panos/wereldbol.tiles/preview.jpg" />
 
 		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
@@ -327,6 +327,33 @@ set (layer[helemaal_terug].width, calc(breedte_factor*0.1));
 		<image if="webvr.isenabled">
 			<cube url="panos/wereldbol.tiles/vr/pano_%s.jpg" />
 		</image>
+-->
+
+
+		<preview url="panos/world2.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+			<level tiledimagewidth="512" tiledimageheight="512">
+				<cube url="panos/world2.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+
+		<image if="webvr.isenabled">
+			<cube url="panos/world2.tiles/vr/pano_%s.jpg" />
+		</image>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 		<!-- place your scene hotspots here -->
 	
