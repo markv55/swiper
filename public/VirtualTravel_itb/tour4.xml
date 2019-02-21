@@ -140,7 +140,9 @@ if(device.desktop, set (hoogte_factor, calc(stageheight*0.5)); 	set (breedte_fac
 <action name="zet_aan">
 set(hotspot[inzets100].visible,true);
 
-set(breedte_plaatje,0.4);
+set(breedte_plaatje,0.25);
+set(breedte_dia,0.2);
+
 set (hotspot[logo1].scale, calc(breedte_plaatje*1));	
 set (hotspot[logo2].scale, calc(breedte_plaatje*1));	
 set (hotspot[logo3].scale, calc(breedte_plaatje*1));	
@@ -148,7 +150,35 @@ set (hotspot[logo4].scale, calc(breedte_plaatje*1));
 set (hotspot[logo5].scale, calc(breedte_plaatje*1));	
 set (hotspot[logo6].scale, calc(breedte_plaatje*1));	
 set (hotspot[logo7].scale, calc(breedte_plaatje*1));	
-set (hotspot[logo8].scale, calc(breedte_plaatje*1));	
+set (hotspot[logo8].scale, calc(breedte_plaatje*1));
+
+set (hotspot[logo9].scale, calc(breedte_plaatje*1));	
+set (hotspot[logo10].scale, calc(breedte_plaatje*1));	
+set (hotspot[logo11].scale, calc(breedte_plaatje*1));	
+set (hotspot[logo12].scale, calc(breedte_plaatje*1));	
+set (hotspot[logo13].scale, calc(breedte_plaatje*1));	
+set (hotspot[logo14].scale, calc(breedte_plaatje*1));	
+
+set (hotspot[logo15].scale, calc(breedte_plaatje*1));
+set (hotspot[logo16].scale, calc(breedte_plaatje*1));	
+set (hotspot[logo17].scale, calc(breedte_plaatje*1));
+set (hotspot[logo18].scale, calc(breedte_plaatje*1));	
+set (hotspot[logo19].scale, calc(breedte_plaatje*1));
+set (hotspot[logo20].scale, calc(breedte_plaatje*1));	
+set (hotspot[logo21].scale, calc(breedte_plaatje*1));
+set (hotspot[logo22].scale, calc(breedte_plaatje*1));	
+
+set (hotspot[dia1].scale, calc(breedte_dia*1));	
+set (hotspot[dia2].scale, calc(breedte_dia*1));	
+set (hotspot[dia3].scale, calc(breedte_dia*1));	
+set (hotspot[dia4].scale, calc(breedte_dia*1));	
+set (hotspot[dia5].scale, calc(breedte_dia*1));	
+set (hotspot[dia6].scale, calc(breedte_dia*1));	
+set (hotspot[dia7].scale, calc(breedte_dia*1));	
+set (hotspot[dia8].scale, calc(breedte_dia*1));
+
+
+
 
 set (layer[logo_0].height, calc(hoogte_factor*0.8));	
 set (layer[logo_0].width, calc(breedte_factor*0.8));
@@ -306,6 +336,9 @@ set (layer[helemaal_terug].width, calc(breedte_factor*0.1));
 
 
 
+<!--  WERELDBOL               WERELDBOL               WERELDBOL               WERELDBOL               WERELDBOL               WERELDBOL               WERELDBOL               WERELDBOL               WERELDBOL               WERELDBOL               -->
+<!--  WERELDBOL               WERELDBOL               WERELDBOL               WERELDBOL               WERELDBOL               WERELDBOL               WERELDBOL               WERELDBOL               WERELDBOL               WERELDBOL               -->
+<!--  WERELDBOL               WERELDBOL               WERELDBOL               WERELDBOL               WERELDBOL               WERELDBOL               WERELDBOL               WERELDBOL               WERELDBOL               WERELDBOL               -->
 
 <scene name="scene_0" title="MEMBERS" onstart="zet_aan(); Bepaal_Scale () ; set(layer[helemaal_terug].visible,false);  " havevrimage="true"  lat="" lng="" heading="" 	>
 
@@ -313,39 +346,29 @@ set (layer[helemaal_terug].width, calc(breedte_factor*0.1));
 		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="50" maxpixelzoom="2,5" fovmin="30" fovmax="90" limitview="true" distortion="7.0"  hlookatmin ="0.000000" hlookatmax ="360.000000"  vlookatmax = "0"  vlookatmin = "0 "/>
 
 
-<!--
-		<preview url="panos/wereldbol.tiles/preview.jpg" />
+		<preview url="panos/wereldbol_def_def.tiles/preview.jpg" />
 
 		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
-			<level tiledimagewidth="768" tiledimageheight="768">
-				<cube url="panos/wereldbol.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			<level tiledimagewidth="640" tiledimageheight="640">
+				<cube url="panos/wereldbol_def_def.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
 			</level>
 		</image>
 
 		<image if="webvr.isenabled">
-			<cube url="panos/wereldbol.tiles/vr/pano_%s.jpg" />
+			<cube url="panos/wereldbol_def_def.tiles/vr/pano_%s.jpg" />
 		</image>
 
--->
-		<preview url="panos/world2.tiles/preview.jpg" />
 
-		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
-			<level tiledimagewidth="512" tiledimageheight="512">
-				<cube url="panos/world2.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
 
-		<image if="webvr.isenabled">
-			<cube url="panos/world2.tiles/vr/pano_%s.jpg" />
-		</image>
-
+		
+		
 		<!-- place your scene hotspots here -->
-
-
+		
+		
 		<hotspot name="logo1"
-				 url="leden/1.png"
-				 ath="0"  
-				 atv="60" 
+				 url="leden/grijs/1.png"
+				 ath="31"  
+				 atv="17" 
 				 zorder = "3"
 				 
 				 zoom="true"
@@ -356,9 +379,9 @@ set (layer[helemaal_terug].width, calc(breedte_factor*0.1));
 			   />
 				
 			 <hotspot name="logo2"
-				 url="leden/2.png"
-				 ath="45"  
-				 atv="-40" 
+				 url="leden/grijs/2.png"
+				 ath="35"  
+				 atv="-61" 
 				 zoom="true"		 
 				 distorted="true"
 				 enabled="true"
@@ -366,9 +389,9 @@ set (layer[helemaal_terug].width, calc(breedte_factor*0.1));
 				 onclick="loadscene (scene_2);send_scene2(); "
 			   />		
 			 <hotspot name="logo3"
-				 url="leden/3.png"
-				 ath="90"  
-				 atv="40" 
+				 url="leden/grijs/3.png"
+				 ath="147"  
+				 atv="-34" 
 				 zoom="true"		 
 				 distorted="true"
 				 enabled="true"
@@ -376,30 +399,33 @@ set (layer[helemaal_terug].width, calc(breedte_factor*0.1));
 				 onclick="loadscene (scene_3); send_scene3(); "
 			   />		
 			 <hotspot name="logo4"
-				 url="leden/4.png"
-				 ath="135"  
-				 atv="-40" 
+				 url="leden/grijs/4.png"
+				 ath="112"  
+				 atv="-31" 
 				 zoom="true"		 
 				 distorted="true"
 				 enabled="true"
 				 capture="false"		 
 				 onclick="loadscene (scene_4); send_scene4(); "
 			   />		
-			 <hotspot name="logo5"
-				 url="leden/5.png"
-				 ath="180"  
-				 atv="30" 
+
+			   	<hotspot name="logo5"
+				 url="leden/grijs/5.png"
+				 ath="29"  
+				 atv="-23" 
 				 zorder = "3"				 
 				 zoom="true"		 
 				 distorted="true"
 				 enabled="true"
 				 capture="false"		 
 				 onclick="loadscene (scene_1) ; send_scene1(); "
-			   />		
+			   />	
+
+			   
 			 <hotspot name="logo6"
-				 url="leden/6.png"
-				 ath="225"  
-				 atv="-30" 
+				 url="leden/grijs/6.png"
+				 ath="-65"  
+				 atv="-18" 
 				 zoom="true"		 
 				 distorted="true"
 				 enabled="true"
@@ -407,9 +433,9 @@ set (layer[helemaal_terug].width, calc(breedte_factor*0.1));
 				 onclick="loadscene (scene_2); send_scene2(); "
 			   />		
 			 <hotspot name="logo7"
-				 url="leden/7.png"
-				 ath="270"  
-				 atv="30" 
+				 url="leden/grijs/7.png"
+				 ath="35"  
+				 atv="-8" 
 				 zoom="true"		 
 				 distorted="true"
 				 enabled="true"
@@ -417,27 +443,197 @@ set (layer[helemaal_terug].width, calc(breedte_factor*0.1));
 				 onclick="loadscene (scene_3); send_scene3(); "
 			   />		
 			 <hotspot name="logo8"
-				 url="leden/8.png"
-				 ath="315"  
-				 atv="-30" 
+				 url="leden/grijs/8.png"
+				 ath="114"  
+				 atv="4" 
 				 zoom="true"		 
 				 distorted="true"
 				 enabled="true"
 				 capture="false"		 
 				 onclick="loadscene (scene_4); send_scene4(); "
 			   />			   
+			   
+			   
+			 <hotspot name="logo9"
+				 url="leden/grijs/9.png"
+				 ath="30"  
+				 atv="-44" 
+				 zoom="true"		 
+				 distorted="true"
+				 enabled="true"
+				 capture="false"		 
+				 onclick="loadscene (scene_3); send_scene3(); "
+			   />		
+			 <hotspot name="logo10"
+				 url="leden/grijs/10.png"
+				 ath="-47"  
+				 atv="9" 
+				 zoom="true"		 
+				 distorted="true"
+				 enabled="true"
+				 capture="false"		 
+				 onclick="loadscene (scene_4); send_scene4(); "
+			   />				   
+			   
+			 <hotspot name="logo11"
+				 url="leden/grijs/11.png"
+				 ath="48"  
+				 atv="-31" 
+				 zoom="true"		 
+				 distorted="true"
+				 enabled="true"
+				 capture="false"		 
+				 onclick="loadscene (scene_3); send_scene3(); "
+			   />		
+			 <hotspot name="logo12"
+				 url="leden/grijs/12.png"
+				 ath="102"  
+				 atv="-11" 
+				 zoom="true"		 
+				 distorted="true"
+				 enabled="true"
+				 capture="false"		 
+				 onclick="loadscene (scene_4); send_scene4(); "
+			   />				   
+
+			 <hotspot name="logo13"
+				 url="leden/grijs/13.png"
+				 ath="-65"  
+				 atv="32" 
+				 zoom="true"		 
+				 distorted="true"
+				 enabled="true"
+				 capture="false"		 
+				 onclick="loadscene (scene_4); send_scene4(); "
+			   />				   
+			   
+			 <hotspot name="logo14"
+				 url="leden/grijs/14.png"
+				 ath="140"  
+				 atv="27" 
+				 zoom="true"		 
+				 distorted="true"
+				 enabled="true"
+				 capture="false"		 
+				 onclick="loadscene (scene_3); send_scene3(); "
+			   />					   
+			   
+	
+			 <hotspot name="logo15"
+				 url="leden/grijs/15.png"
+				 ath="-1"  
+				 atv="-23" 
+				 zorder = "3"				 
+				 zoom="true"		 
+				 distorted="true"
+				 enabled="true"
+				 capture="false"		 
+				 onclick="loadscene (scene_1) ; send_scene1(); "
+			   />	
+			   			   
+			   
+			   
+			 <hotspot name="logo16"
+				 url="leden/grijs/16.png"
+				 ath="-72"  
+				 atv="3" 
+				 zoom="true"		 
+				 distorted="true"
+				 enabled="true"
+				 capture="false"		 
+				 onclick="loadscene (scene_4); send_scene4(); "
+			   />				   
+			   
+			 <hotspot name="logo17"
+				 url="leden/grijs/17.png"
+				 ath="82"  
+				 atv="-32" 
+				 zoom="true"		 
+				 distorted="true"
+				 enabled="true"
+				 capture="false"		 
+				 onclick="loadscene (scene_3); send_scene3(); "
+			   />					   
+			   
+	
+			 <hotspot name="logo18"
+				 url="leden/grijs/18.png"
+				 ath="-102"  
+				 atv="-26" 
+				 zorder = "3"				 
+				 zoom="true"		 
+				 distorted="true"
+				 enabled="true"
+				 capture="false"		 
+				 onclick="loadscene (scene_1) ; send_scene1(); "
+			   />				   
+			   
+			   
+			   
+			 <hotspot name="logo19"
+				 url="leden/grijs/19.png"
+				 ath="4"  
+				 atv="-47" 
+				 zoom="true"		 
+				 distorted="true"
+				 enabled="true"
+				 capture="false"		 
+				 onclick="loadscene (scene_4); send_scene4(); "
+			   />				   
+			   
+			 <hotspot name="logo20"
+				 url="leden/grijs/20.png"
+				 ath="170"  
+				 atv="22" 
+				 zoom="true"		 
+				 distorted="true"
+				 enabled="true"
+				 capture="false"		 
+				 onclick="loadscene (scene_3); send_scene3(); "
+			   />					   
+			   
+	
+			 <hotspot name="logo21"
+				 url="leden/grijs/21.png"
+				 ath="79"  
+				 atv="-15" 
+				 zoom="true"		 
+				 distorted="true"
+				 enabled="true"
+				 capture="false"		 
+				 onclick="loadscene (scene_4); send_scene4(); "
+			   />				   
+			   
+			 <hotspot name="logo22"
+				 url="leden/grijs/22.png"
+				 ath="101"  
+				 atv="-51" 
+				 zoom="true"		 
+				 distorted="true"
+				 enabled="true"
+				 capture="false"		 
+				 onclick="loadscene (scene_3); send_scene3(); "
+			   />					   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
 		
 			<layer name="logo_0" url="images/global_discovery_logo3.png"  visible= "false" keep="false" handcursor="false" capture="false"   align="centerbottom" x="0" y="-50" zorder = "0"  />	
 	
 </scene>
 
-
+<!--   1E SCENE           1E SCENE            1E SCENE            1E SCENE            1E SCENE            1E SCENE            1E SCENE            1E SCENE            1E SCENE            1E SCENE            1E SCENE             -->	
+<!--   1E SCENE           1E SCENE            1E SCENE            1E SCENE            1E SCENE            1E SCENE            1E SCENE            1E SCENE            1E SCENE            1E SCENE            1E SCENE             -->	
+<!--   1E SCENE           1E SCENE            1E SCENE            1E SCENE            1E SCENE            1E SCENE            1E SCENE            1E SCENE            1E SCENE            1E SCENE            1E SCENE             -->	
 	
-	
-<scene name="scene_1" title="1 ROYAL MOUNTAIN" onstart="zet_aan() ; Bepaal_Scale (); set(layer[helemaal_terug].visible,true); " havevrimage="true" thumburl="panos/strand.tiles/thumb.jpg" lat="" lng="" heading="">
+<scene name="scene_1" title="1 AAA TRAVEL " onstart="zet_aan() ; Bepaal_Scale (); set(layer[helemaal_terug].visible,true); " havevrimage="true" thumburl="panos/strand.tiles/thumb.jpg" lat="" lng="" heading="">
 
-		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmin="160" fovmax="160"  limitview ="range"   hlookatmin ="0.000000" hlookatmax ="360.000000" 
-		vlookatmin ="-40.000000" vlookatmax ="60.000000"   />
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmin="160" fovmax="160"  limitview ="range"     />
 
 		<preview url="panos/200.tiles/preview.jpg" />
 
@@ -457,97 +653,136 @@ set (layer[helemaal_terug].width, calc(breedte_factor*0.1));
 			<cube url="panos/200.tiles/vr/pano_%s.jpg" />
 		</image>		
 		
+		
+	<!--  mooie foto baai fetiye 
+	
+			<preview url="panos/100.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+			<level tiledimagewidth="2304" tiledimageheight="2304">
+				<cube url="panos/100.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1152" tiledimageheight="1152">
+				<cube url="panos/100.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+
+		<image if="webvr.isenabled">
+			<cube url="panos/100.tiles/vr/pano_%s.jpg" />
+		</image>	
+		
+	-->	
+		
+		
+		
+		
+		
+		
+		
+<!--
+		<preview url="panos/200.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+			<level tiledimagewidth="2560" tiledimageheight="2560">
+				<cube url="panos/200.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1280" tiledimageheight="1280">
+				<cube url="panos/200.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="640" tiledimageheight="640">
+				<cube url="panos/200.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+
+		<image if="webvr.isenabled">
+			<cube url="panos/200.tiles/vr/pano_%s.jpg" />
+		</image>		
+	-->
+
+	
 			
 		<!-- place your scene hotspots here -->
 
 	
 	
- 	 <hotspot name="logo1"
-         url="places/1/1.png"
+ 	 <hotspot name="dia1"
+         url="places/1/Dia2.JPG"   
 		 ath="0"  
 		 atv="0" 
 		 zoom="true"
-         distorted="false"
-		 renderer="css3d"
+         distorted="true"
 		 enabled="true"
 		 capture="false"
 		 onclick=" loadscene (scene_1_1); send_scene1_1() "
 	   />
 	   		
- 	 <hotspot name="logo2"
-         url="places/1/2.png"
+ 	 <hotspot name="dia2"
+         url="places/1/Dia3.JPG"
 		 ath="45"  
 		 atv="0" 
 		 zoom="true"		 
-         distorted="false"
-		 renderer="css3d"
+         distorted="true"
 		 enabled="true"
 		 capture="false"
 		 onclick=" "	   
 	/>		
  	
-	<hotspot name="logo3"
-         url="places/1/3.png"
+	<hotspot name="dia3"
+         url="places/1/Dia4.JPG"
 		 ath="90"  
 		 atv="0" 
 		 zoom="true"		 
-         distorted="false"
-		 renderer="css3d"
+         distorted="true"
 		 enabled="true"
 		 capture="false"		 
 		 onclick=" "	   
 	   />		
- 	 <hotspot name="logo4"
-         url="places/1/4.png"
+ 	 <hotspot name="dia4"
+         url="places/1/Dia5.JPG"
 		 ath="135"  
 		 atv="0" 
    		 zoom="true"		 
-         distorted="false"
-		 renderer="css3d"
+         distorted="true"
 		 enabled="true"
 		 capture="false"		 
 		 onclick=" "	   
 	   />		
- 	 <hotspot name="logo5"
-         url="places/1/1.png"
+ 	 <hotspot name="dia5"
+         url="places/1/Dia6.JPG"
 		 ath="180"  
 		 atv="0" 
    		 zoom="true"		 
-         distorted="false"
-		 renderer="css3d"
+         distorted="true"
 		 enabled="true"
 		 capture="false"		 
 		 onclick=" "	   
 	   />		
- 	 <hotspot name="logo6"
-         url="places/1/2.png"
+ 	 <hotspot name="dia6"
+         url="places/1/Dia7.JPG"
 		 ath="225"  
 		 atv="0" 
    		 zoom="true"		 
-         distorted="false"
-		 renderer="css3d"
+         distorted="true"
 		 enabled="true"
 		 capture="false"		 
 		 onclick=" "	   
 	   />		
- 	 <hotspot name="logo7"
-         url="places/1/3.png"
+ 	 <hotspot name="dia7"
+         url="places/1/Dia8.JPG"
 		 ath="270"  
 		 atv="0" 
    		 zoom="true"		 
-         distorted="false"
-		 renderer="css3d"
+         distorted="true"
 		 enabled="true"
 		 capture="false"		 
 		 onclick=" "	   
 	   />		
- 	 <hotspot name="logo8"
-         url="places/1/4.png"
+ 	 <hotspot name="dia8"
+         url="places/1/Dia9.JPG"
 		 ath="315"  
 		 atv="0" 
    		 zoom="true"		 
-         distorted="false"
-		 renderer="css3d"
+         distorted="true"
 		 enabled="true"
 		 capture="false"		 
 		 onclick=" "	   
@@ -558,10 +793,12 @@ set (layer[helemaal_terug].width, calc(breedte_factor*0.1));
 </scene>
 
 
+
+
+
 <scene name="scene_1_1" title="1.1 ROYAL MOUNTAIN" onstart="zet_aan() ; Bepaal_Scale (); set(layer[helemaal_terug].visible,true); " havevrimage="true" thumburl="panos/strand.tiles/thumb.jpg" lat="" lng="" heading="">
 
-		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmin="160" fovmax="160"  limitview ="range"   hlookatmin ="0.000000" hlookatmax ="360.000000" 
-		vlookatmin ="-40.000000" vlookatmax ="60.000000"   />
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmin="160" fovmax="160"  limitview ="range"   hlookatmin ="0.000000" hlookatmax ="360.000000" vlookatmin ="-40.000000" vlookatmax ="60.000000"   />
 
 		<preview url="panos/200.tiles/preview.jpg" />
 
@@ -589,29 +826,6 @@ set (layer[helemaal_terug].width, calc(breedte_factor*0.1));
 		<layer name="back" url="images/back.png"  visible= "true" keep="false" handcursor="false" capture="false"   align="centerbottom" x="0" y="10"  onclick= "loadscene (scene_1); send_scene1()"  />	   
 	   
 </scene>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
