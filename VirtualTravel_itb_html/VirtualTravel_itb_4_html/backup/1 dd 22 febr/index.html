@@ -7,9 +7,7 @@
 		var project = 'P_01';	//  project name
 	</script>
 
-
 	<head>
-	
 		<title>Virtual-Travel-ITB remote</title>
 		
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
@@ -17,7 +15,6 @@
 		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 		<meta http-equiv="x-ua-compatible" content="IE=edge" />
-		
 		<link rel="apple-touch-icon" href="/static/zeilenControl/icon.png">
 		
 		<style>
@@ -40,50 +37,47 @@
 			</style>
 	</head>
 
-	
+		
 	<body>
 
 		<script src="/static/krpano/tour.js"></script>
-				
 		<script src="/static/js/jquery-1.11.1.js"></script>
 		<script src="/static/js/socket.io.js"></script>
 		<script src="/static/js/slider.js"></script> 	
-	
+
 		<div id="pano" style="width:100%;height:100%;">
 
 		<noscript><table style="width:100%;height:100%;"><tr style="vertical-align:middle;"><td><div style="text-align:center;">ERROR:<br/><br/>Javascript not activated<br/><br/></div></td></tr></table></noscript>
 				
 			<script>				
-				embedpano({swf:"/static/krpano/tour.swf", xml:"/static/VirtualTravel_itb/tour3.xml", target:"pano", html5:"auto", mobilescale:1.0, passQueryParameters:true});					
+				embedpano({swf:"/static/krpano/tour.swf", xml:"/static/VirtualTravel_itb/tour4.xml", target:"pano", html5:"auto", mobilescale:1.0, passQueryParameters:true});					
 			</script>
 
 		</div>
 
 		
+		
 <script>
 	
 	$(function () {
 		var socket = io();
-	//		
-	
 
 	// LEES HLOOKAT EN SEND SOCKET TO BACKEND  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// LEES HLOOKAT EN SEND SOCKET TO BACKEND  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// LEES HLOOKAT EN SEND SOCKET TO BACKEND  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
 	
-/*
 			var hlookat = 0;
 				setInterval(function() {
 				var krpano = document.getElementById("krpanoSWFObject");
 				var current_hlookat = krpano.get('view.hlookat');
 				
-				if (current_hlookat - hlookat > 2 || current_hlookat - hlookat < -2 ) {
+				if (current_hlookat - hlookat > 1 || current_hlookat - hlookat < -1 ) {
 				//if (current_hlookat != hlookat) {
 					hlookat = current_hlookat;
 
 					//socket.emit('hlookat', krpano.get('view.hlookat'));						
-						
+					var hlook_sent = krpano.get('view.hlookat');							
 					//socket.emit('hlookat', hlook_sent);	
 					socket.emit('stuur', 'hlookat', hlook_sent, customer , project);		// deze werkt!!!!!!!!!!!						
 				}
@@ -96,7 +90,7 @@
 				var krpano = document.getElementById("krpanoSWFObject");
 				var current_vlookat = krpano.get('view.vlookat') ;
 				
-				if (current_vlookat - vlookat > 2 || current_vlookat - vlookat < -2 ) {
+				if (current_vlookat - vlookat > 1 || current_vlookat - vlookat < -1 ) {
 				//if (current_vlookat != vlookat) {
 					vlookat = current_vlookat;
 					
@@ -111,17 +105,7 @@
 				}
 			}, 100); 				
 
-
-
-*/
-
-
-
-
 	
-			
-			
-	//		
 			
 		socket.on('message', function(msg, vid, scale,d){  
 
@@ -134,48 +118,15 @@
 		// RECEIVE X EN Y POSITIE VAN VR BRIL        // RECEIVE X EN Y POSITIE VAN VR BRIL        // RECEIVE X EN Y POSITIE VAN VR BRIL        // RECEIVE X EN Y POSITIE VAN VR BRIL 
 		// RECEIVE X EN Y POSITIE VAN VR BRIL        // RECEIVE X EN Y POSITIE VAN VR BRIL        // RECEIVE X EN Y POSITIE VAN VR BRIL        // RECEIVE X EN Y POSITIE VAN VR BRIL 
 
-		
-		<!--  onderstaande 2 functies even buiten de check van customer en project gehaaald -->
-		
-							<!--y-->
-							if (msg == 'y'){			
-								var krpano = document.getElementById("krpanoSWFObject");
-								krpano.set("view.hlookat", vid);  //dit werkt. tijdelijk uitgezet om onderstaand te testen
-								
-								//krpano.call("ga_naar_y()");	// nieuw probeersel!!!! stuur een variable naar krpano.
-								//krpano.set("vid_y",vid);
-								
-								//console.log("Horizontal lookat: " + krpano.get("view.hlookat"));	
-							}				
-
-							<!--x-->
-							if (msg == 'x'){			
-								var krpano = document.getElementById("krpanoSWFObject");
-								krpano.set("view.vlookat", vid);  //dit werkt. tijdelijk uitgezet om onderstaand te testen
-								
-								//krpano.call("ga_naar_x()"); // nieuw probeersel!!!!	stuur een variable naar krpano.		
-								//krpano.set("vid_x",vid);
-								
-								//krpano.set("view.vlookat", 200);
-							}			
-		
-		
-		
-		
-		
-		
 
 						if ((scale == customer) && (d == project )){
 		
-							<!-- hlookat-->
+	/*						<!-- hlookat-->
 							if (msg == 'hlookat'){			
 								var krpano = document.getElementById("krpanoSWFObject");
-								
-								krpano.set("view.hlookat", vid);  <!--uitgezet om hem met onderstaande regel smoother te maken-->
-								
-								//krpano.call("ga_naar_y()");	// nieuw probeersel!!!! stuur een variable naar krpano.
-								//krpano.set("vid_y",vid);							
-								
+								<!--krpano.set("view.hlookat", vid);  uitgezet om hem met onderstaande regel smoother te maken-->
+								krpano.call("ga_naar_y()");	// nieuw probeersel!!!! stuur een variable naar krpano.
+								krpano.set("vid_y",vid);							
 								//console.log("Horizontal lookat via socket: " + krpano.get("view.hlookat"));	
 							}				
 
@@ -183,21 +134,34 @@
 							<!-- vlookat-->
 							if (msg == 'vlookat'){			
 								var krpano = document.getElementById("krpanoSWFObject");
-								
-								krpano.set("view.vlookat", vid);  <!--uitgezet om hem met onderstaande regel smoother te maken-->
-								
-								//krpano.call("ga_naar_x()");	// nieuw probeersel!!!! stuur een variable naar krpano.
-								//krpano.set("vid_x",vid);								
-								
+								<!-- krpano.set("view.vlookat", vid);  uitgezet om hem met onderstaande regel smoother te maken-->
+								krpano.call("ga_naar_x()");	// nieuw probeersel!!!! stuur een variable naar krpano.
+								krpano.set("vid_x",vid);								
 								//console.log("vertical lookat via socket: " + krpano.get("view.vlookat"));	
 							}				
-					
+		*/			
 
 // 9 FEBR ONDERSTAANDE UITGEZET. DE ALERT ONLINE 2.0 (VGZ) GAME STUURT DE WAARDE X EN Y EN DAAR REAGEERDE KRPANO B&B OOK OP.
 // DOEL IS X,Y GEBRUIKEN VOOR ALERT ONLINE 2.0 EN DE HLOOKAT EN VLOOKAT VOOR B&B SITE.	
 							
+							<!--y-->
+/*							if (msg == 'y'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								//krpano.set("view.hlookat", vid);  //dit werkt. tijdelijk uitgezet om onderstaand te testen
+								krpano.call("ga_naar_y()");	// nieuw probeersel!!!! stuur een variable naar krpano.
+								krpano.set("vid_y",vid);
+								//console.log("Horizontal lookat: " + krpano.get("view.hlookat"));	
+							}				
 
-						
+							<!--x-->
+							if (msg == 'x'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								//krpano.set("view.vlookat", vid);  //dit werkt. tijdelijk uitgezet om onderstaand te testen
+								krpano.call("ga_naar_x()"); // nieuw probeersel!!!!	stuur een variable naar krpano.		
+								krpano.set("vid_x",vid);
+								//krpano.set("view.vlookat", 200);
+							}	
+*/							
 
 					
 		//  RECEIVE SOCKETS WITHIN KRPANO    // RECEIVE SOCKETS WITHIN KRPANO	    // RECEIVE SOCKETS WITHIN KRPANO	    // RECEIVE SOCKETS WITHIN KRPANO	    // RECEIVE SOCKETS WITHIN KRPANO	
@@ -212,13 +176,11 @@
 							if (msg == 'laad_foto1'){	
 								var krpano = document.getElementById("krpanoSWFObject");
 								krpano.call( "laad_foto1()" );		
-							}				
+							}	
 							if (msg == 'laad_foto1_1'){	
 								var krpano = document.getElementById("krpanoSWFObject");
 								krpano.call( "laad_foto1_1()" );		
 							}	
-
-
 
 							
 							
@@ -301,23 +263,16 @@
 								krpano.call( "laad_foto17()" );		
 							}	
 
-// nieuwe socket   							
-							
-							
+							// nieuwe socket   							
 							
 							if (msg == 'startfilm'){	
 								var krpano = document.getElementById("krpanoSWFObject");
 								krpano.call( "start_deze_video()" );	
 							}								
-							
-						
-				
+					
 						}  // einde customer / project
 				
 					});  //einde on-message  ///////////////////////////////////////////////////////////////////
-
-
-
 
 
 // EEN INTERNE CALL VAN KRPANO, SEND SOCKET TO BACKEND  ///////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -337,11 +292,6 @@
 				console.log ('laad_foto1_1'); 
 				socket.emit('stuur', 'laad_foto1_1','',customer,project);	
 			}			
-			
-			
-			
-			
-			
 			
 			
 			
@@ -414,7 +364,6 @@
 		}); // einde function
 		</script>
 		
-	
 
 	</body>
 </html>

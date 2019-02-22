@@ -170,12 +170,9 @@
 							<!-- hlookat-->
 							if (msg == 'hlookat'){			
 								var krpano = document.getElementById("krpanoSWFObject");
-								
 								krpano.set("view.hlookat", vid);  <!--uitgezet om hem met onderstaande regel smoother te maken-->
-								
 								//krpano.call("ga_naar_y()");	// nieuw probeersel!!!! stuur een variable naar krpano.
 								//krpano.set("vid_y",vid);							
-								
 								//console.log("Horizontal lookat via socket: " + krpano.get("view.hlookat"));	
 							}				
 
@@ -183,12 +180,9 @@
 							<!-- vlookat-->
 							if (msg == 'vlookat'){			
 								var krpano = document.getElementById("krpanoSWFObject");
-								
-								krpano.set("view.vlookat", vid);  <!--uitgezet om hem met onderstaande regel smoother te maken-->
-								
+								 krpano.set("view.vlookat", vid);  <!--uitgezet om hem met onderstaande regel smoother te maken-->
 								//krpano.call("ga_naar_x()");	// nieuw probeersel!!!! stuur een variable naar krpano.
 								//krpano.set("vid_x",vid);								
-								
 								//console.log("vertical lookat via socket: " + krpano.get("view.vlookat"));	
 							}				
 					
