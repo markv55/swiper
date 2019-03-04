@@ -1,0 +1,17 @@
+
+<scene name="scene_1_1" title="1.1 ROYAL MOUNTAIN" onstart="zet_aan() ; Bepaal_Scale (); set(layer[helemaal_terug].visible,true); " havevrimage="true" thumburl="panos/strand.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<!-- grid preview pano -->
+		<preview type="grid(cube,64,64,512,0xCCCCCC,0xF6F6F6,0x999999);" />
+
+		<!-- view/fov settings -->
+		<view hlookat="0" vlookat="0" fovtype="VFOV" fov="90" fovmin="30" fovmax="150" />
+		
+
+		
+		<!-- place your scene hotspots here -->
+		
+		<layer name="continue" url="images/continue_movie.png"  visible= "true" keep="false" handcursor="false" capture="false"   align="centerbottom" x="0" y="40"  onclick= "loadscene (scene_17); send_scene17()"  />	  		
+		<layer name="back" url="images/stop_movie.png"  visible= "true" keep="false" handcursor="false" capture="false"   align="centerbottom" x="0" y="160"  onclick= "loadscene (scene_17); send_scene17()"  />	   
+	   
+</scene>
