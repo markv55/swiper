@@ -19,7 +19,8 @@
 			set (layer[logo_0].visible,false);
 			set (layer[logo_0_tekst].visible,false);	
 
-
+			set (layer[mm_logo_0].visible,false);
+			set (layer[vt_logo_0].visible,false);	
 			
 		
 		</action>		
@@ -58,7 +59,10 @@
 	
 		<action name="laad_foto0">
 			set (layer[logo_0].visible,false);
-			set (layer[logo_0_tekst].visible,false);			
+			set (layer[logo_0_tekst].visible,false);	
+
+			set (layer[mm_logo_0].visible,false);
+			set (layer[vt_logo_0].visible,false);				
 		</action>	
 
 	
