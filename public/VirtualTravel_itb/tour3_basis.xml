@@ -919,7 +919,7 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 			<layer name="logo_0_tekst" url="images/global_discovery_logo4_text.png"  visible= "true" keep="false" handcursor="false" capture="false"   align="bottomright" x="-50" y="-100" zorder = "0"  />		
 -->
 			<layer name="logo_0" url="images/logo_virtualtravel.png"  visible= "true" keep="false" handcursor="false" capture="false"   align="bottomleft" x="50" y="-50" zorder = "-50"  />	
-			<layer name="logo_0_tekst" url="images/logo_360mm.png"  visible= "true" keep="false" handcursor="false" capture="false"   align="bottomright" x="-50" y="-110" zorder = "-50"  />		
+			<layer name="logo_0_tekst" url="images/logo_360mm.png"  visible= "true" keep="false" handcursor="false" capture="false"   align="bottomright" x="-50" y="-50" zorder = "-50"  />		
 			
 	
 </scene>
