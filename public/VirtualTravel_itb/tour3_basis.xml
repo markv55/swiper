@@ -192,6 +192,28 @@ set (hotspot[dia8].scale, calc(breedte_dia*1));
 
 
 
+
+<!-- 
+set (layer[vt_logo_0].scale, 0.2);
+set (layer[mm_logo_0].scale, 0.2);
+
+
+-->
+ set (layer[vt_logo_0].height, calc(breedte_factor*0.5));
+  set (layer[vt_logo_0].width, calc(breedte_factor*0.5));
+ 
+set (layer[mm_logo_0].height, calc(breedte_factor*0.5) );
+ set (layer[mm_logo_0].width, calc(breedte_factor*0.5) );
+
+<!-- 
+
+
+
+-->
+
+
+
+
 set (layer[logo_0].height, calc(hoogte_factor*0.8));	
 set (layer[logo_0].width, calc(breedte_factor*0.8));
 
@@ -918,8 +940,8 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 		<!--	<layer name="logo_0" url="images/global_discovery_logo4.png"  visible= "true" keep="false" handcursor="false" capture="false"   align="bottomleft" x="50" y="-50" zorder = "0"  />	
 			<layer name="logo_0_tekst" url="images/global_discovery_logo4_text.png"  visible= "true" keep="false" handcursor="false" capture="false"   align="bottomright" x="-50" y="-100" zorder = "0"  />		
 -->
-			<layer name="logo_0" url="images/logo_virtualtravel.png"  visible= "true" keep="false" handcursor="false" capture="false"   align="bottomleft" x="50" y="-50" zorder = "-50"  />	
-			<layer name="logo_0_tekst" url="images/logo_360mm.png"  visible= "true" keep="false" handcursor="false" capture="false"   align="bottomright" x="-50" y="-50" zorder = "-50"  />		
+			<layer name="vt_logo_0" url="images/logo_virtualtravel.png"  visible= "true" keep="false" handcursor="false" capture="false"   align="bottomleft" x="0" y="0" zorder = "-50"  />	
+			<layer name="mm_logo_0" url="images/logo_360mm.png"  visible= "true" keep="false" handcursor="false" capture="false"   align="bottomright" x="0" y="0" zorder = "-50"  />		
 			
 	
 </scene>

@@ -17,7 +17,10 @@
 	
 		<action name="start_in_tour4">
 			set (layer[logo_0].visible,false);
-			set (layer[logo_0_tekst].visible,false);			
+			set (layer[logo_0_tekst].visible,false);	
+
+
+			
 		
 		</action>		
 	
