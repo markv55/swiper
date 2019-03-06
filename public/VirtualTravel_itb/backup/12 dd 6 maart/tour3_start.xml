@@ -1,0 +1,20 @@
+<krpano version="1.19" title="Virtual Tour"     >
+
+
+<!-- 
+tour3_video.xml is de tour die gebruikt wordt op de laptop/scherm met grote films die via het locale netwerk lopen. films meer dan 200 mb
+
+tour3_video_1min.xml is de tour die met korte demo films van max 1 minuut draait vanuit de cloud!
+bij deze tour verwijzen we naar korte filmpjes 1min.mp4.  dit is mp4 ipv mov!!!!
+   -->
+
+	<include url="tour3_basis.xml" />  <!-- tour 3 basis is het grote xml met alle members en alle losse fotos. deze wordt zowel voor tour3 als tour 4 als basis gebruikt  -->
+	
+	
+	<!--  <include url="tour3_video.xml"/>     -->	<!-- hier draaien de videos voor op de PC -->
+
+	<include url="tour3_video_1min.xml" />	
+
+	
+	
+</krpano>

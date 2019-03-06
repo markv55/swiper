@@ -137,7 +137,7 @@ if(device.desktop, set (hoogte_factor, calc(stageheight*0.5)); 	set (breedte_fac
 <style name="close_btn_style" keep="true" url="images/close.png" parent="magic_content_info" align="righttop" edge="center" scale= "0.6" scale.mobile = "1"  />
 <style name="go_to_site" keep="true" url="images/ga_naar_website2.png" parent="magic_content_info" align="centerbottom" edge="center" scale= "2" scale.mobile = "2"  />
 
-<autorotate enabled="false" waittime="3.0" speed="10.0"  accel="30.0"    horizon="0.0"       interruptionevents="userviewchange|layers|keyboard" />  		
+<autorotate enabled="false" waittime="1.0" speed="10.0"  accel="30.0"    horizon="0.0"       interruptionevents="userviewchange|layers|keyboard" />  		
 <!-- tofov="100.0"  -->
 
 <layer name="helemaal_terug" keep="true" visible= "true" url="images/close.png" parent="" align="righttop" edge="center"  x="30" y="30"  onclick="loadscene (scene_0); send_scene0() "  />
@@ -192,33 +192,8 @@ set (hotspot[dia8].scale, calc(breedte_dia*1));
 
 
 
-
-<!-- 
-set (layer[vt_logo_0].scale, 0.2);
-set (layer[mm_logo_0].scale, 0.2);
-
-
--->
- set (layer[vt_logo_0].height, calc(breedte_factor*0.5));
-  set (layer[vt_logo_0].width, calc(breedte_factor*0.5));
- 
-set (layer[mm_logo_0].height, calc(breedte_factor*0.5) );
- set (layer[mm_logo_0].width, calc(breedte_factor*0.5) );
-
-<!-- 
-
-
-
--->
-
-
-
-
 set (layer[logo_0].height, calc(hoogte_factor*0.8));	
 set (layer[logo_0].width, calc(breedte_factor*0.8));
-
-set (layer[logo_0_tekst].height, calc(hoogte_factor*1));	
-set (layer[logo_0_tekst].width, calc(breedte_factor*1));
 
 set (layer[logo_1].height, calc(hoogte_factor*0.3));	
 set (layer[logo_1].width, calc(breedte_factor*0.3));
@@ -264,162 +239,117 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 		<action name="laad_foto0">
 		loadscene(scene_0);
 		laad_standaard_view();
-		set (autorotate.enabled,true);
 		</action>
 
 		
 		<action name="laad_foto1">
 		loadscene(scene_1);
 		laad_standaard_view();
-				set (autorotate.enabled,false);
-
 		</action>
 		
 		<action name="laad_foto2">
 		loadscene(scene_2);
 		laad_standaard_view();
-						set (autorotate.enabled,false);
-
 		</action>
 
 		<action name="laad_foto3">
 		loadscene(scene_3);
 		laad_standaard_view();
-						set (autorotate.enabled,false);
-
 		</action>
 
 		<action name="laad_foto4">
 		loadscene(scene_4);
 		laad_standaard_view();
-						set (autorotate.enabled,false);
-
 		</action>
 
 		<action name="laad_foto5">
 		loadscene(scene_5);
 		laad_standaard_view();
-						set (autorotate.enabled,false);
-
 		</action>
 
 		<action name="laad_foto6">
 		loadscene(scene_6);
 		laad_standaard_view();
-						set (autorotate.enabled,false);
-
 		</action>
 		
 		<action name="laad_foto7">
 		loadscene(scene_7);
 		laad_standaard_view();
-						set (autorotate.enabled,false);
-
 		</action>
 
 		<action name="laad_foto8">
 		loadscene(scene_8);
 		laad_standaard_view();
-						set (autorotate.enabled,false);
-
 		</action>
 
 		<action name="laad_foto9">
 		loadscene(scene_9);
 		laad_standaard_view();
-						set (autorotate.enabled,false);
-
 		</action>
 
 		<action name="laad_foto10">
 		loadscene(scene_10);
 		laad_standaard_view();
-						set (autorotate.enabled,false);
-
 		</action>
 
 		<action name="laad_foto11">
 		loadscene(scene_11);
 		laad_standaard_view();
-						set (autorotate.enabled,false);
-
 		</action>		
 		
 		<action name="laad_foto12">
 		loadscene(scene_12);
 		laad_standaard_view();
-						set (autorotate.enabled,false);
-
 		</action>		
 		
 		<action name="laad_foto13">
 		loadscene(scene_13);
 		laad_standaard_view();
-						set (autorotate.enabled,false);
-
 		</action>		
 		
 		<action name="laad_foto14">
 		loadscene(scene_14);
 		laad_standaard_view();
-						set (autorotate.enabled,false);
-
 		</action>		
 		
 		<action name="laad_foto15">
 		loadscene(scene_15);
 		laad_standaard_view();
-						set (autorotate.enabled,false);
-
 		</action>		
 		
 		<action name="laad_foto16">
 		loadscene(scene_16);
 		laad_standaard_view();
-						set (autorotate.enabled,false);
-
 		</action>		
 		
 		<action name="laad_foto17">
 		loadscene(scene_17);
 		laad_standaard_view();
-						set (autorotate.enabled,false);
-
 		</action>		
 		
 		<action name="laad_foto18">
 		loadscene(scene_18);
 		laad_standaard_view();
-						set (autorotate.enabled,false);
-
 		</action>				
 		
 		<action name="laad_foto19">
 		loadscene(scene_19);
 		laad_standaard_view();
-						set (autorotate.enabled,false);
-
 		</action>		
 		
 		<action name="laad_foto20">
 		loadscene(scene_20);
 		laad_standaard_view();
-						set (autorotate.enabled,false);
-
 		</action>		
 		
 		<action name="laad_foto21">
 		loadscene(scene_21);
 		laad_standaard_view();
-						set (autorotate.enabled,false);
-
 		</action>		
 		
 		<action name="laad_foto22">
 		loadscene(scene_22);
 		laad_standaard_view();
-						set (autorotate.enabled,false);
-
 		</action>				
 		
 <!--  video scripts -->
@@ -427,45 +357,33 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 		<action name="laad_foto17_1">
 				loadscene(scene_17_1);
 				laad_standaard_view();
-								set (autorotate.enabled,false);
-
 		</action>				
 		
 		<action name="send_scene17_1" type="Javascript">
 				 <!--window.send_scene1();-->
 				 window.laad_foto17_1();
-				 				set (autorotate.enabled,false);
-
 		</action>			
 
 
 		<action name="laad_foto17_2">
 				loadscene(scene_17_2);
 				laad_standaard_view();
-								set (autorotate.enabled,false);
-
 		</action>				
 		
 		<action name="send_scene17_2" type="Javascript">
 				 <!--window.send_scene1();-->
 				 window.laad_foto17_2();
-				 				set (autorotate.enabled,false);
-
 		</action>			
 		
 		
 		<action name="laad_foto17_3">
 				loadscene(scene_17_3);
 				laad_standaard_view();
-								set (autorotate.enabled,false);
-
 		</action>				
 		
 		<action name="send_scene17_3" type="Javascript">
 				 <!--window.send_scene1();-->
 				 window.laad_foto17_3();
-				 				set (autorotate.enabled,false);
-
 		</action>					
 
 
@@ -473,30 +391,22 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 		<action name="laad_foto17_4">
 				loadscene(scene_17_4);
 				laad_standaard_view();
-								set (autorotate.enabled,false);
-
 		</action>				
 		
 		<action name="send_scene17_4" type="Javascript">
 				 <!--window.send_scene1();-->
 				 window.laad_foto17_4();
-				 				set (autorotate.enabled,false);
-
 		</action>			
 
 
 		<action name="laad_foto17_5">
 				loadscene(scene_17_5);
 				laad_standaard_view();
-								set (autorotate.enabled,false);
-
 		</action>				
 		
 		<action name="send_scene17_5" type="Javascript">
 				 <!--window.send_scene1();-->
 				 window.laad_foto17_5();
-				 				set (autorotate.enabled,false);
-
 		</action>			
 
 
@@ -504,8 +414,6 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 		<action name="laad_foto17_6">
 				loadscene(scene_17_6);
 				laad_standaard_view();
-								set (autorotate.enabled,false);
-
 		</action>				
 		
 		<action name="send_scene17_6" type="Javascript">
@@ -519,15 +427,11 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 		<action name="laad_foto17_7">
 				loadscene(scene_17_7);
 				laad_standaard_view();
-								set (autorotate.enabled,false);
-
 		</action>				
 		
 		<action name="send_scene17_7" type="Javascript">
 				 <!--window.send_scene1();-->
 				 window.laad_foto17_7();
-				 				set (autorotate.enabled,false);
-
 		</action>			
 
 
@@ -535,8 +439,6 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 		<action name="laad_foto17_8">
 				loadscene(scene_17_8);
 				laad_standaard_view();
-								set (autorotate.enabled,false);
-
 		</action>				
 		
 		<action name="send_scene17_8" type="Javascript">
@@ -550,8 +452,6 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 		<action name="laad_foto11_1">
 				loadscene(scene_11_1);
 				laad_standaard_view();
-								set (autorotate.enabled,false);
-
 		</action>				
 		
 		<action name="send_scene11_1" type="Javascript">
@@ -564,8 +464,6 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 		<action name="laad_foto11_2">
 				loadscene(scene_11_2);
 				laad_standaard_view();
-								set (autorotate.enabled,false);
-
 		</action>				
 		
 		<action name="send_scene11_2" type="Javascript">
@@ -743,7 +641,6 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 
 		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="65" maxpixelzoom="2,5" fovmin="30" fovmax="90" limitview="true" distortion="7.0"  hlookatmin ="0.000000" hlookatmax ="360.000000"  vlookatmax = "0"  vlookatmin = "0 "/>
 
-<!-- originele vlekkerige wereldbol
 
 		<preview url="panos/wereldbol_def_def.tiles/preview.jpg" />
 
@@ -757,23 +654,7 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 			<cube url="panos/wereldbol_def_def.tiles/vr/pano_%s.jpg" />
 		</image>
 
--->
-		
-		
-		<preview url="panos/360wereld.tiles/preview.jpg" />
 
-		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
-			<level tiledimagewidth="640" tiledimageheight="640">
-				<cube url="panos/360wereld.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-		<image if="webvr.isenabled">
-			<cube url="panos/360wereld.tiles/vr/pano_%s.jpg" />
-		</image>		
-		
-		
-		
 
 		
 		
@@ -1031,12 +912,7 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 			   />					   
 			   
 		
-		<!--	<layer name="logo_0" url="images/global_discovery_logo4.png"  visible= "true" keep="false" handcursor="false" capture="false"   align="bottomleft" x="50" y="-50" zorder = "0"  />	
-			<layer name="logo_0_tekst" url="images/global_discovery_logo4_text.png"  visible= "true" keep="false" handcursor="false" capture="false"   align="bottomright" x="-50" y="-100" zorder = "0"  />		
--->
-			<layer name="vt_logo_0" url="images/logo_virtualtravel.png"  visible= "true" keep="false" handcursor="false" capture="false"   align="bottomleft" x="0" y="0" zorder = "-50"  />	
-			<layer name="mm_logo_0" url="images/logo_360mm.png"  visible= "true" keep="false" handcursor="false" capture="false"   align="bottomright" x="0" y="0" zorder = "-50"  />		
-			
+			<layer name="logo_0" url="images/global_discovery_logo3.png"  visible= "true" keep="false" handcursor="false" capture="false"   align="bottomleft" x="50" y="-50" zorder = "0"  />	
 	
 </scene>
 
@@ -1163,22 +1039,22 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 
 		<view hlookat="0" vlookat="0" fovtype="MFOV"  maxpixelzoom="1.5" fovmin="40" fovmax="160"     />
 
-		<preview url="panos/360Europe.tiles/preview.jpg" />
+		<preview url="panos/360VirtualTravel.tiles/preview.jpg" />
 
 		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
 			<level tiledimagewidth="2560" tiledimageheight="2560">
-				<cube url="panos/360Europe.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+				<cube url="panos/360VirtualTravel.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
 			</level>
 			<level tiledimagewidth="1280" tiledimageheight="1280">
-				<cube url="panos/360Europe.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+				<cube url="panos/360VirtualTravel.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
 			</level>
 			<level tiledimagewidth="640" tiledimageheight="640">
-				<cube url="panos/360Europe.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+				<cube url="panos/360VirtualTravel.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
 			</level>
 		</image>
 
 		<image if="webvr.isenabled">
-			<cube url="panos/360Europe.tiles/vr/pano_%s.jpg" />
+			<cube url="panos/360VirtualTravel.tiles/vr/pano_%s.jpg" />
 		</image>
 			
 		<!-- place your scene hotspots here -->
@@ -1275,23 +1151,23 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 
 		<view hlookat="0" vlookat="0" fovtype="MFOV"  maxpixelzoom="1.5" fovmin="40" fovmax="160"     />
 
-		<preview url="panos/360Asia.tiles/preview.jpg" />
+			<preview url="panos/360Asia.tiles/preview.jpg" />
 
-		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
-			<level tiledimagewidth="2560" tiledimageheight="2560">
-				<cube url="panos/360Asia.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="1280" tiledimageheight="1280">
-				<cube url="panos/360Asia.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="640" tiledimageheight="640">
-				<cube url="panos/360Asia.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
+			<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+				<level tiledimagewidth="2560" tiledimageheight="2560">
+					<cube url="panos/360Asia.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+				</level>
+				<level tiledimagewidth="1280" tiledimageheight="1280">
+					<cube url="panos/360Asia.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+				</level>
+				<level tiledimagewidth="640" tiledimageheight="640">
+					<cube url="panos/360Asia.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+				</level>
+			</image>
 
-		<image if="webvr.isenabled">
-			<cube url="panos/360Asia.tiles/vr/pano_%s.jpg" />
-		</image>
+			<image if="webvr.isenabled">
+				<cube url="panos/360Asia.tiles/vr/pano_%s.jpg" />
+			</image>
 			
 		<!-- place your scene hotspots here -->
 
@@ -1387,23 +1263,23 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 
 		<view hlookat="0" vlookat="0" fovtype="MFOV"  maxpixelzoom="1.5" fovmin="40" fovmax="160"     />
 		
-		<preview url="panos/360Asia.tiles/preview.jpg" />
+			<preview url="panos/360Asia.tiles/preview.jpg" />
 
-		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
-			<level tiledimagewidth="2560" tiledimageheight="2560">
-				<cube url="panos/360Asia.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="1280" tiledimageheight="1280">
-				<cube url="panos/360Asia.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="640" tiledimageheight="640">
-				<cube url="panos/360Asia.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
+			<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+				<level tiledimagewidth="2560" tiledimageheight="2560">
+					<cube url="panos/360Asia.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+				</level>
+				<level tiledimagewidth="1280" tiledimageheight="1280">
+					<cube url="panos/360Asia.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+				</level>
+				<level tiledimagewidth="640" tiledimageheight="640">
+					<cube url="panos/360Asia.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+				</level>
+			</image>
 
-		<image if="webvr.isenabled">
-			<cube url="panos/360Asia.tiles/vr/pano_%s.jpg" />
-		</image>
+			<image if="webvr.isenabled">
+				<cube url="panos/360Asia.tiles/vr/pano_%s.jpg" />
+			</image>
 			
 		<!-- place your scene hotspots here -->
 
@@ -1612,21 +1488,20 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 
 		<view hlookat="0" vlookat="0" fovtype="MFOV"  maxpixelzoom="1.5" fovmin="40" fovmax="160"     />
 
-		<preview url="panos/360N-America.tiles/preview.jpg" />
+				<preview url="panos/360Africa.tiles/preview.jpg" />
 
-		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
-			<level tiledimagewidth="1280" tiledimageheight="1280">
-				<cube url="panos/360N-America.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="640" tiledimageheight="640">
-				<cube url="panos/360N-America.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
+				<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+					<level tiledimagewidth="1280" tiledimageheight="1280">
+						<cube url="panos/360Africa.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+					</level>
+					<level tiledimagewidth="640" tiledimageheight="640">
+						<cube url="panos/360Africa.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+					</level>
+				</image>
 
-		<image if="webvr.isenabled">
-			<cube url="panos/360N-America.tiles/vr/pano_%s.jpg" />
-		</image>
-
+				<image if="webvr.isenabled">
+					<cube url="panos/360Africa.tiles/vr/pano_%s.jpg" />
+				</image>		
 			
 		<!-- place your scene hotspots here -->
 	
@@ -1825,24 +1700,20 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 
 		<view hlookat="0" vlookat="0" fovtype="MFOV"  maxpixelzoom="1.5" fovmin="40" fovmax="160"     />
 
+				<preview url="panos/360Africa.tiles/preview.jpg" />
 
-		<preview url="panos/360Asia.tiles/preview.jpg" />
+				<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+					<level tiledimagewidth="1280" tiledimageheight="1280">
+						<cube url="panos/360Africa.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+					</level>
+					<level tiledimagewidth="640" tiledimageheight="640">
+						<cube url="panos/360Africa.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+					</level>
+				</image>
 
-		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
-			<level tiledimagewidth="2560" tiledimageheight="2560">
-				<cube url="panos/360Asia.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="1280" tiledimageheight="1280">
-				<cube url="panos/360Asia.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="640" tiledimageheight="640">
-				<cube url="panos/360Asia.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-		<image if="webvr.isenabled">
-			<cube url="panos/360Asia.tiles/vr/pano_%s.jpg" />
-		</image>		
+				<image if="webvr.isenabled">
+					<cube url="panos/360Africa.tiles/vr/pano_%s.jpg" />
+				</image>		
 			
 		<!-- place your scene hotspots here -->
 	
@@ -1942,24 +1813,20 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 
 		<view hlookat="0" vlookat="0" fovtype="MFOV"  maxpixelzoom="1.5" fovmin="40" fovmax="160"     />
 
-		<preview url="panos/360Europe.tiles/preview.jpg" />
+				<preview url="panos/360Africa.tiles/preview.jpg" />
 
-		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
-			<level tiledimagewidth="2560" tiledimageheight="2560">
-				<cube url="panos/360Europe.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="1280" tiledimageheight="1280">
-				<cube url="panos/360Europe.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="640" tiledimageheight="640">
-				<cube url="panos/360Europe.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
+				<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+					<level tiledimagewidth="1280" tiledimageheight="1280">
+						<cube url="panos/360Africa.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+					</level>
+					<level tiledimagewidth="640" tiledimageheight="640">
+						<cube url="panos/360Africa.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+					</level>
+				</image>
 
-		<image if="webvr.isenabled">
-			<cube url="panos/360Europe.tiles/vr/pano_%s.jpg" />
-		</image>
-
+				<image if="webvr.isenabled">
+					<cube url="panos/360Africa.tiles/vr/pano_%s.jpg" />
+				</image>		
 			
 		<!-- place your scene hotspots here -->
 	
@@ -2052,20 +1919,20 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 
 		<view hlookat="0" vlookat="0" fovtype="MFOV"  maxpixelzoom="1.5" fovmin="40" fovmax="160"     />
 
-		<preview url="panos/360Z-_Amerika.tiles/preview.jpg" />
+				<preview url="panos/360Africa.tiles/preview.jpg" />
 
-		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
-			<level tiledimagewidth="1280" tiledimageheight="1280">
-				<cube url="panos/360Z-_Amerika.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="640" tiledimageheight="640">
-				<cube url="panos/360Z-_Amerika.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
+				<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+					<level tiledimagewidth="1280" tiledimageheight="1280">
+						<cube url="panos/360Africa.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+					</level>
+					<level tiledimagewidth="640" tiledimageheight="640">
+						<cube url="panos/360Africa.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+					</level>
+				</image>
 
-		<image if="webvr.isenabled">
-			<cube url="panos/360Z-_Amerika.tiles/vr/pano_%s.jpg" />
-		</image>	
+				<image if="webvr.isenabled">
+					<cube url="panos/360Africa.tiles/vr/pano_%s.jpg" />
+				</image>		
 			
 		<!-- place your scene hotspots here -->
 	
@@ -2158,23 +2025,20 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 
 		<view hlookat="0" vlookat="0" fovtype="MFOV"  maxpixelzoom="1.5" fovmin="40" fovmax="160"     />
 
-		<preview url="panos/360Asia.tiles/preview.jpg" />
+				<preview url="panos/360Africa.tiles/preview.jpg" />
 
-		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
-			<level tiledimagewidth="2560" tiledimageheight="2560">
-				<cube url="panos/360Asia.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="1280" tiledimageheight="1280">
-				<cube url="panos/360Asia.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="640" tiledimageheight="640">
-				<cube url="panos/360Asia.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
+				<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+					<level tiledimagewidth="1280" tiledimageheight="1280">
+						<cube url="panos/360Africa.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+					</level>
+					<level tiledimagewidth="640" tiledimageheight="640">
+						<cube url="panos/360Africa.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+					</level>
+				</image>
 
-		<image if="webvr.isenabled">
-			<cube url="panos/360Asia.tiles/vr/pano_%s.jpg" />
-		</image>
+				<image if="webvr.isenabled">
+					<cube url="panos/360Africa.tiles/vr/pano_%s.jpg" />
+				</image>		
 			
 		<!-- place your scene hotspots here -->
 	
@@ -2267,23 +2131,20 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 
 		<view hlookat="0" vlookat="0" fovtype="MFOV"  maxpixelzoom="1.5" fovmin="40" fovmax="160"     />
 
-		<preview url="panos/360Asia.tiles/preview.jpg" />
+				<preview url="panos/360Africa.tiles/preview.jpg" />
 
-		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
-			<level tiledimagewidth="2560" tiledimageheight="2560">
-				<cube url="panos/360Asia.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="1280" tiledimageheight="1280">
-				<cube url="panos/360Asia.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="640" tiledimageheight="640">
-				<cube url="panos/360Asia.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
+				<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+					<level tiledimagewidth="1280" tiledimageheight="1280">
+						<cube url="panos/360Africa.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+					</level>
+					<level tiledimagewidth="640" tiledimageheight="640">
+						<cube url="panos/360Africa.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+					</level>
+				</image>
 
-		<image if="webvr.isenabled">
-			<cube url="panos/360Asia.tiles/vr/pano_%s.jpg" />
-		</image>
+				<image if="webvr.isenabled">
+					<cube url="panos/360Africa.tiles/vr/pano_%s.jpg" />
+				</image>		
 			
 		<!-- place your scene hotspots here -->
 	
@@ -2383,20 +2244,20 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 
 		<view hlookat="0" vlookat="0" fovtype="MFOV"  maxpixelzoom="1.5" fovmin="40" fovmax="160"     />
 
-		<preview url="panos/360Z-_Amerika.tiles/preview.jpg" />
+				<preview url="panos/360Africa.tiles/preview.jpg" />
 
-		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
-			<level tiledimagewidth="1280" tiledimageheight="1280">
-				<cube url="panos/360Z-_Amerika.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="640" tiledimageheight="640">
-				<cube url="panos/360Z-_Amerika.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
+				<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+					<level tiledimagewidth="1280" tiledimageheight="1280">
+						<cube url="panos/360Africa.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+					</level>
+					<level tiledimagewidth="640" tiledimageheight="640">
+						<cube url="panos/360Africa.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+					</level>
+				</image>
 
-		<image if="webvr.isenabled">
-			<cube url="panos/360Z-_Amerika.tiles/vr/pano_%s.jpg" />
-		</image>	
+				<image if="webvr.isenabled">
+					<cube url="panos/360Africa.tiles/vr/pano_%s.jpg" />
+				</image>		
 			
 		<!-- place your scene hotspots here -->
 	
@@ -2489,23 +2350,20 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 
 		<view hlookat="0" vlookat="0" fovtype="MFOV"  maxpixelzoom="1.5" fovmin="40" fovmax="160"     />
 
-		<preview url="panos/360Oceania.tiles/preview.jpg" />
+				<preview url="panos/360Africa.tiles/preview.jpg" />
 
-		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
-			<level tiledimagewidth="2560" tiledimageheight="2560">
-				<cube url="panos/360Oceania.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="1280" tiledimageheight="1280">
-				<cube url="panos/360Oceania.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="640" tiledimageheight="640">
-				<cube url="panos/360Oceania.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
+				<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+					<level tiledimagewidth="1280" tiledimageheight="1280">
+						<cube url="panos/360Africa.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+					</level>
+					<level tiledimagewidth="640" tiledimageheight="640">
+						<cube url="panos/360Africa.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+					</level>
+				</image>
 
-		<image if="webvr.isenabled">
-			<cube url="panos/360Oceania.tiles/vr/pano_%s.jpg" />
-		</image>	
+				<image if="webvr.isenabled">
+					<cube url="panos/360Africa.tiles/vr/pano_%s.jpg" />
+				</image>		
 			
 		<!-- place your scene hotspots here -->
 	
@@ -2704,21 +2562,20 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 
 		<view hlookat="0" vlookat="0" fovtype="MFOV"  maxpixelzoom="1.5" fovmin="40" fovmax="160"     />
 
-		<preview url="panos/360Z-_Amerika.tiles/preview.jpg" />
+				<preview url="panos/360Africa.tiles/preview.jpg" />
 
-		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
-			<level tiledimagewidth="1280" tiledimageheight="1280">
-				<cube url="panos/360Z-_Amerika.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="640" tiledimageheight="640">
-				<cube url="panos/360Z-_Amerika.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
+				<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+					<level tiledimagewidth="1280" tiledimageheight="1280">
+						<cube url="panos/360Africa.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+					</level>
+					<level tiledimagewidth="640" tiledimageheight="640">
+						<cube url="panos/360Africa.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+					</level>
+				</image>
 
-		<image if="webvr.isenabled">
-			<cube url="panos/360Z-_Amerika.tiles/vr/pano_%s.jpg" />
-		</image>
-
+				<image if="webvr.isenabled">
+					<cube url="panos/360Africa.tiles/vr/pano_%s.jpg" />
+				</image>		
 			
 		<!-- place your scene hotspots here -->
 	
@@ -2931,20 +2788,20 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 
 		<view hlookat="0" vlookat="0" fovtype="MFOV"  maxpixelzoom="1.5" fovmin="40" fovmax="160"     />
 
-		<preview url="panos/360N-America.tiles/preview.jpg" />
+				<preview url="panos/360Africa.tiles/preview.jpg" />
 
-		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
-			<level tiledimagewidth="1280" tiledimageheight="1280">
-				<cube url="panos/360N-America.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="640" tiledimageheight="640">
-				<cube url="panos/360N-America.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
+				<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+					<level tiledimagewidth="1280" tiledimageheight="1280">
+						<cube url="panos/360Africa.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+					</level>
+					<level tiledimagewidth="640" tiledimageheight="640">
+						<cube url="panos/360Africa.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+					</level>
+				</image>
 
-		<image if="webvr.isenabled">
-			<cube url="panos/360N-America.tiles/vr/pano_%s.jpg" />
-		</image>
+				<image if="webvr.isenabled">
+					<cube url="panos/360Africa.tiles/vr/pano_%s.jpg" />
+				</image>		
 			
 		<!-- place your scene hotspots here -->
 	
@@ -3037,24 +2894,20 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 
 		<view hlookat="0" vlookat="0" fovtype="MFOV"  maxpixelzoom="1.5" fovmin="40" fovmax="160"     />
 
-		<preview url="panos/360Europe.tiles/preview.jpg" />
+				<preview url="panos/360Africa.tiles/preview.jpg" />
 
-		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
-			<level tiledimagewidth="2560" tiledimageheight="2560">
-				<cube url="panos/360Europe.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="1280" tiledimageheight="1280">
-				<cube url="panos/360Europe.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="640" tiledimageheight="640">
-				<cube url="panos/360Europe.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
+				<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+					<level tiledimagewidth="1280" tiledimageheight="1280">
+						<cube url="panos/360Africa.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+					</level>
+					<level tiledimagewidth="640" tiledimageheight="640">
+						<cube url="panos/360Africa.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+					</level>
+				</image>
 
-		<image if="webvr.isenabled">
-			<cube url="panos/360Europe.tiles/vr/pano_%s.jpg" />
-		</image>
-
+				<image if="webvr.isenabled">
+					<cube url="panos/360Africa.tiles/vr/pano_%s.jpg" />
+				</image>		
 			
 		<!-- place your scene hotspots here -->
 	
@@ -3147,23 +3000,20 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 
 		<view hlookat="0" vlookat="0" fovtype="MFOV"  maxpixelzoom="1.5" fovmin="40" fovmax="160"     />
 
-		<preview url="panos/360Oceania.tiles/preview.jpg" />
+				<preview url="panos/360Africa.tiles/preview.jpg" />
 
-		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
-			<level tiledimagewidth="2560" tiledimageheight="2560">
-				<cube url="panos/360Oceania.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="1280" tiledimageheight="1280">
-				<cube url="panos/360Oceania.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="640" tiledimageheight="640">
-				<cube url="panos/360Oceania.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
+				<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+					<level tiledimagewidth="1280" tiledimageheight="1280">
+						<cube url="panos/360Africa.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+					</level>
+					<level tiledimagewidth="640" tiledimageheight="640">
+						<cube url="panos/360Africa.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+					</level>
+				</image>
 
-		<image if="webvr.isenabled">
-			<cube url="panos/360Oceania.tiles/vr/pano_%s.jpg" />
-		</image>	
+				<image if="webvr.isenabled">
+					<cube url="panos/360Africa.tiles/vr/pano_%s.jpg" />
+				</image>		
 			
 		<!-- place your scene hotspots here -->
 	
@@ -3262,24 +3112,21 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 
 		<view hlookat="0" vlookat="0" fovtype="MFOV"  maxpixelzoom="1.5" fovmin="40" fovmax="160"     />
 
+				<preview url="panos/360Africa.tiles/preview.jpg" />
 
-		<preview url="panos/360Asia.tiles/preview.jpg" />
+				<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+					<level tiledimagewidth="1280" tiledimageheight="1280">
+						<cube url="panos/360Africa.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+					</level>
+					<level tiledimagewidth="640" tiledimageheight="640">
+						<cube url="panos/360Africa.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+					</level>
+				</image>
 
-		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
-			<level tiledimagewidth="2560" tiledimageheight="2560">
-				<cube url="panos/360Asia.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="1280" tiledimageheight="1280">
-				<cube url="panos/360Asia.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="640" tiledimageheight="640">
-				<cube url="panos/360Asia.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-		<image if="webvr.isenabled">
-			<cube url="panos/360Asia.tiles/vr/pano_%s.jpg" />
-		</image>
+				<image if="webvr.isenabled">
+					<cube url="panos/360Africa.tiles/vr/pano_%s.jpg" />
+				</image>		
+			
 		<!-- place your scene hotspots here -->
 	
  	 <hotspot name="dia1"
@@ -3371,24 +3218,20 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 
 		<view hlookat="0" vlookat="0" fovtype="MFOV"  maxpixelzoom="1.5" fovmin="40" fovmax="160"     />
 
+				<preview url="panos/360Africa.tiles/preview.jpg" />
 
-		<preview url="panos/360Asia.tiles/preview.jpg" />
+				<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+					<level tiledimagewidth="1280" tiledimageheight="1280">
+						<cube url="panos/360Africa.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+					</level>
+					<level tiledimagewidth="640" tiledimageheight="640">
+						<cube url="panos/360Africa.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+					</level>
+				</image>
 
-		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
-			<level tiledimagewidth="2560" tiledimageheight="2560">
-				<cube url="panos/360Asia.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="1280" tiledimageheight="1280">
-				<cube url="panos/360Asia.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="640" tiledimageheight="640">
-				<cube url="panos/360Asia.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-		<image if="webvr.isenabled">
-			<cube url="panos/360Asia.tiles/vr/pano_%s.jpg" />
-		</image>
+				<image if="webvr.isenabled">
+					<cube url="panos/360Africa.tiles/vr/pano_%s.jpg" />
+				</image>		
 			
 		<!-- place your scene hotspots here -->
 	
