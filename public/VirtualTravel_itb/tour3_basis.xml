@@ -434,7 +434,6 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 		<action name="send_scene17_1" type="Javascript">
 				 <!--window.send_scene1();-->
 				 window.laad_foto17_1();
-				 				set (autorotate.enabled,false);
 
 		</action>			
 
@@ -449,7 +448,6 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 		<action name="send_scene17_2" type="Javascript">
 				 <!--window.send_scene1();-->
 				 window.laad_foto17_2();
-				 				set (autorotate.enabled,false);
 
 		</action>			
 		
@@ -464,7 +462,6 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 		<action name="send_scene17_3" type="Javascript">
 				 <!--window.send_scene1();-->
 				 window.laad_foto17_3();
-				 				set (autorotate.enabled,false);
 
 		</action>					
 
@@ -480,7 +477,6 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 		<action name="send_scene17_4" type="Javascript">
 				 <!--window.send_scene1();-->
 				 window.laad_foto17_4();
-				 				set (autorotate.enabled,false);
 
 		</action>			
 
@@ -495,7 +491,6 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 		<action name="send_scene17_5" type="Javascript">
 				 <!--window.send_scene1();-->
 				 window.laad_foto17_5();
-				 				set (autorotate.enabled,false);
 
 		</action>			
 
@@ -526,7 +521,6 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 		<action name="send_scene17_7" type="Javascript">
 				 <!--window.send_scene1();-->
 				 window.laad_foto17_7();
-				 				set (autorotate.enabled,false);
 
 		</action>			
 
