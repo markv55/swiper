@@ -147,15 +147,6 @@
 			 <a href="/return/ad_product" class="js-ajx-url-ad btn btn_red">ad_product</a> 
 			<br>
 			<br>
-			
-			
-<!-- nieuw rotterdam -->			
-			
-				 <a href="/return/ad_product_rotterdam" class="js-ajx-url-ad-rotterdam btn btn_red">ad_product_rotterdam</a> 
-			<br>
-			<br>		
-<!-- einde nieuw rotterdam -->			
-			
 		
 			<!-- <p>change product </p> -->
 			<!-- <a href="/change_product_html" class="btn">change_product</a> -->
@@ -472,24 +463,7 @@ onderstaande class  (bijvoorbeeld js-ajx-url-zeilenSlaveSocket)  wordt onderaan 
 					console.log('Ajax request successfull');
 				});
 			});
-
-
-
-			$('.js-ajx-url-ad-rotterdam').on('click', function(e) {
-				e.preventDefault();
-				$.ajax({
-					url: $(this).attr('href')
-				}).done(function() {
-					
-					window.location = '/ad_product_html_rotterdam';
-					console.log('Ajax request successfull');
-				});
-			});
-
-
-
-
-			
+	
 			$('.js-ajx-url-change').on('click', function(e) {
 				e.preventDefault();
 				$.ajax({

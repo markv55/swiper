@@ -378,13 +378,6 @@ app.get('/ad_product_html', function(req, res) {
 	res.sendFile(path.join(__dirname+'/ad_product_html/index.html'));
 });
 
-app.get('/ad_product_html_rotterdam', function(req, res) {
-	res.sendFile(path.join(__dirname+'/ad_product_html_rotterdam/index.html'));
-});
-
-
-
-
 
 app.get('/change_product_html', function(req, res) {
 	res.sendFile(path.join(__dirname+'/change_product_html/index.html'));
@@ -579,12 +572,7 @@ app.get('/camera', function (req, res) {
 });
 
 
-
-
-
-
-
-
+// nieuwe // nieuwe // nieuwe // nieuwe // nieuwe // nieuwe // nieuwe // nieuwe // nieuwe // nieuwe 
 
 
 
@@ -594,18 +582,6 @@ app.get('/ad_product', function (req, res) {
 	console.log ('ad_product');		
 	res.redirect('/');
 });
-
-
-
-app.get('/ad_product_rotterdam', function (req, res) {
-	//KlikAanKlikUit(11, 260, 7, 5).off(1, 2);
-	io.emit('message', 'pi', 'ad_product_rotterdam' );
-	console.log ('ad_product_rotterdam');		
-	res.redirect('/');
-});
-
-
-
 
 app.get('/ad_ready', function (req, res) {
 	//KlikAanKlikUit(11, 260, 7, 5).off(1, 2);
@@ -701,22 +677,6 @@ app.get('/objecten_uit', function (req, res) {
 ///////////////////
 ///////////////////
 //////////////////
-
-app.get('/rotterdam_aan', function (req, res) {
-	//KlikAanKlikUit(11, 260, 7, 5).off(1, 2);
-	io.emit('message', 'pi', 'wereld1_aan' );
-	console.log ('rotterdam_aan');		
-	res.redirect('/');
-});
-
-app.get('/rotterdam_uit', function (req, res) {
-	//KlikAanKlikUit(11, 260, 7, 5).off(1, 2);
-	io.emit('message', 'pi', 'wereld1_uit' );
-	console.log ('rotterdam_uit');		
-	res.redirect('/');
-});
-
-
 
 app.get('/product1', function (req, res) {
 	//KlikAanKlikUit(11, 260, 7, 5).off(1, 2);
