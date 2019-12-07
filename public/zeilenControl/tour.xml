@@ -147,6 +147,7 @@
 		<action name="laad_foto5">
 		loadscene(scene_302, null, MERGE, BLEND(1));
 		laad_standaard_view();
+		set(layer[activespot].parent, spot4);
 		</action>
 
 		<action name="laad_foto6">
@@ -163,17 +164,20 @@
 		<action name="laad_foto8">
 		loadscene(scene_305, null, MERGE, BLEND(1));
 		laad_standaard_view();
+		set(layer[activespot].parent, spot5);
 		</action>
 
 
 		<action name="laad_foto9">
 		loadscene(scene_306, null, MERGE, BLEND(1));
 		laad_standaard_view();
+
 		</action>
 
 		<action name="laad_foto10">
 		loadscene(scene_307, null, MERGE, BLEND(1));
 		laad_standaard_view();
+		set(layer[activespot].parent, spot6);
 		</action>
 
 
@@ -185,11 +189,13 @@
 		<action name="laad_foto12">
 		loadscene(scene_400, null, MERGE, BLEND(1));
 		laad_standaard_view();
+		set(layer[activespot].parent, spot7);
 		</action>
 	
 		<action name="laad_foto13">
 		loadscene(scene_500, null, MERGE, BLEND(1));
 		laad_standaard_view();
+		set(layer[activespot].parent, spot8);
 		</action>
 
 		<action name="laad_foto14">
@@ -212,6 +218,7 @@
 		<action name="laad_foto17">
 		loadscene(scene_600, null, MERGE, BLEND(1));
 		laad_standaard_view();
+		set(layer[activespot].parent, spot9);
 		</action>
 
 			<action name="window_foto_1" type="Javascript">
