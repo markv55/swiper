@@ -267,8 +267,8 @@ keep="true" visible="false" zorder="2" handcursor="false" capture="false"  align
 <layer name="spot6" style="mapspot" x="155" y="1205" zorder="1" onclick="laad_foto10(); window_foto_10();set(layer[activespot].parent, spot6); set(layer[activespot].visible,true); "/>
 
 <layer name="spot7" style="mapspot" x="480" y="210" zorder="1" onclick="laad_foto12(); window_foto_12() ;set(layer[activespot].parent, spot7); set(layer[activespot].visible,true);"/>
-<layer name="spot8" style="mapspot" x="940" y="1150" zorder="1" onclick="laad_foto13(); window_foto_13 ;set(layer[activespot].parent, spot8); set(layer[activespot].visible,true);"/>
-<layer name="spot9" style="mapspot" x="260" y="730" zorder="1" onclick="laad_foto17(); window_foto_17 ;set(layer[activespot].parent, spot9); set(layer[activespot].visible,true);"/>
+<layer name="spot8" style="mapspot" x="940" y="1150" zorder="1" onclick="laad_foto13(); window_foto_13() ;set(layer[activespot].parent, spot8); set(layer[activespot].visible,true);"/>
+<layer name="spot9" style="mapspot" x="260" y="730" zorder="1" onclick="laad_foto17(); window_foto_17() ;set(layer[activespot].parent, spot9); set(layer[activespot].visible,true);"/>
 
 
 		
