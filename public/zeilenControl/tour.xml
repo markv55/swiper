@@ -224,7 +224,7 @@
 		
 <layer name="terug1" url="images/logo.png" onclick="laad_foto2(); window_foto_2(); " keep="true" visible="true" zorder="2" handcursor="false" capture="false"  align="rightbottom" x="30" y="30" scale="0.7"  scale.mobile="0.3" />			
 		
-<layer name="terug3" url="images/logo.png" onclick="switch(fullscreen);  " keep="true" visible="true" zorder="2" handcursor="false" capture="false"  align="center" x="30" y="30" scale="0.7"  scale.mobile="0.3" />	
+<layer name="terug3" url="images/logo.png" onclick="switch(fullscreen);  " keep="true" visible="true" zorder="2" handcursor="false" capture="false"  align="righttop" x="30" y="30" scale="0.7"  scale.mobile="0.3" />	
 				
 		
 		
