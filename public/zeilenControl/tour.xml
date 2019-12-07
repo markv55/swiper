@@ -72,6 +72,7 @@
 		if(startscene === null OR !scene[get(startscene)], copy(startscene,scene[0].name); );
 		loadscene(get(startscene), null, MERGE);
 		if(startactions !== null, startactions() );
+		BerekenHoogteBreedte2();
 
 	</action>
 
@@ -248,7 +249,7 @@
 			
 <!-- -->
 <!-- DE PLATTEGROND MET DE ICONS!!!! -->
-<layer name="map" url="graphics/floor.jpg" visible = "true" keep="true" handcursor="false" capture="false" align="center" scale="0.5" scale.mobile="0.25" scalechildren="true" />
+<layer name="map" url="graphics/floor.jpg" visible = "true" keep="true" handcursor="false" capture="false" align="center"  scalechildren="true" />
 
 	<!--  DE KNOP 'SPOTS' RECHTSOVEN OP DE 360 PANO FOTO. SOMS IS NAAM SPOTS OF BAAIEN. BIJ KLIKKEN OPEN JE DE PLATTEGROND-->
 <layer name="mapicon" url="graphics/knopSpots.png" onclick=" " 
@@ -303,12 +304,9 @@ if(device.desktop, set (layer[map].width, calc(stagewidth*0.9)); 	set (layer[map
 <!-- LANDSCAPE -->
 if(device.tablet,  set (layer[map].height, calc(stageheight*0.8)); 	set (layer[map].width, calc(stageheight*0.8) ););
 if(device.mobile,  set (layer[map].height, calc(stageheight*0.9)); 	set (layer[map].width, calc(stageheight*0.9) );); 	
-<!--if(device.desktop, set (layer[map].height, calc(stageheight*0.9)); 	set (layer[map].width, calc(stageheight*0.9) ););	-->
+if(device.desktop, set (layer[map].height, calc(stageheight*0.8)); 	set (layer[map].width, calc(stageheight*0.8) ););	
 );
 </action>
-
-
-
 
 
 
