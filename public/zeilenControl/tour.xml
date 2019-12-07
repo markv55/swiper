@@ -284,10 +284,38 @@ keep="true" visible="false" zorder="2" handcursor="false" capture="false"  align
 	  scale.mobile="0.4"      
 />	
 
-
-
 <!-- AUTOROTATE -->
 <autorotate enabled="true" waittime="1.0" speed="5.0"  accel="30.0"    horizon="0.0"     tofov="130"    interruptionevents="userviewchange|layers|keyboard" />  	
+
+
+
+<!-- BIJ EEN EVENT (DRAAIEN VAN SCHERM) VAN WORDT OPNIEUW DE HOOGTE/BREEDTE VAN DE BUBBLE STORIES CONTENT BEPAALD-->
+<events name="orientation" keep="true" onresize="BerekenHoogteBreedte2();"  />
+
+<action name="BerekenHoogteBreedte2">
+if(stagewidth LT stageheight  <!-- breedte kleiner dan hoogte =  portrait-->
+,  
+<!-- PORTRAIT -->
+if(device.tablet, set (layer[map].width, calc(stagewidth*0.8)); 		set (layer[map].height, calc(stagewidth*0.8) ););
+if(device.mobile, set (layer[map].width, calc(stagewidth*0.9)); 		set (layer[map].height, calc(stagewidth*0.9) ););	
+if(device.desktop, set (layer[map].width, calc(stagewidth*0.9)); 	set (layer[map].height, calc(stagewidth*0.9) ););	
+,
+<!-- LANDSCAPE -->
+if(device.tablet,  set (layer[map].height, calc(stageheight*0.8)); 	set (layer[map].width, calc(stageheight*0.8) ););
+if(device.mobile,  set (layer[map].height, calc(stageheight*0.9)); 	set (layer[map].width, calc(stageheight*0.9) );); 	
+<!--if(device.desktop, set (layer[map].height, calc(stageheight*0.9)); 	set (layer[map].width, calc(stageheight*0.9) ););	-->
+);
+</action>
+
+
+
+
+
+
+
+
+
+
 
 	
 		
