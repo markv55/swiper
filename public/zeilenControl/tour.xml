@@ -291,7 +291,7 @@ keep="true" visible="false" zorder="2" handcursor="false" capture="false"  align
 				
 <layer name="activespot" 
 	  url="graphics/camera_aan_origineel.png" 
-	  keep="true" visible="false" align="righttop"  zorder="2" scale= "0.3" 
+	  keep="true" visible="false" align="righttop"  zorder="2" scale= "0.45"  scale.mobile="0.6" 
 	  scale.mobile="0.4"      
 />	
 
