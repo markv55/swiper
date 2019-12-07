@@ -178,6 +178,30 @@
 
 
 <script>
+
+		function alle_geluiden_stop () {
+		sound_1.pause();
+		sound_1.currentTime = 0;
+
+		sound_2.pause();
+		sound_2.currentTime = 0;	
+
+		sound_3.pause();
+		sound_3.currentTime = 0;	
+
+		sound_4.pause();
+		sound_4.currentTime = 0;
+
+		sound_5.pause();
+		sound_5.currentTime = 0;
+
+		sound_6.pause();
+		sound_6.currentTime = 0;		
+		
+		}
+
+
+
 		
 		function myFunction() {
 			var x = document.getElementById("myDIV");
@@ -553,16 +577,24 @@ op 7 december 2019
 			window.laad_foto1 = function(){
 				console.log ('laad_foto1'); 
 				socket.emit('stuur', 'laad_foto1','',customer,project);	
-		sound_1.play();
+			alle_geluiden_stop();
+			sound_1.play();
+
 			}
 			window.laad_foto2 = function(){
 				console.log ('laad_foto2'); 
 				socket.emit('stuur', 'laad_foto2','',customer,project);	
-		sound_2.play();
+			alle_geluiden_stop();
+			sound_2.play();
+		
 			}
 			window.laad_foto3 = function(){
 				console.log ('laad_foto3'); 
 				socket.emit('stuur', 'laad_foto3','',customer,project);	
+			alle_geluiden_stop();
+			sound_3.play();
+
+				
 			}
 			window.laad_foto4 = function(){
 				console.log ('laad_foto4'); 
@@ -598,11 +630,17 @@ op 7 december 2019
 			}
 			window.laad_foto12 = function(){
 				console.log ('laad_foto12'); 
-				socket.emit('stuur', 'laad_foto12','',customer,project);	
+				socket.emit('stuur', 'laad_foto12','',customer,project);
+			alle_geluiden_stop();
+			sound_4.play();
+				
 			}
 			window.laad_foto13 = function(){
 				console.log ('laad_foto13'); 
-				socket.emit('stuur', 'laad_foto13','',customer,project);	
+				socket.emit('stuur', 'laad_foto13','',customer,project);
+			alle_geluiden_stop();
+			sound_5.play();
+				
 			}
 			window.laad_foto14 = function(){
 				console.log ('laad_foto14'); 
@@ -619,6 +657,9 @@ op 7 december 2019
 			window.laad_foto17 = function(){
 				console.log ('laad_foto17'); 
 				socket.emit('stuur', 'laad_foto17','',customer,project);	
+				
+			alle_geluiden_stop();
+			sound_6.play();				
 			}
 			
 		}); // einde function
