@@ -276,7 +276,7 @@ keep="true" visible="false" zorder="2" handcursor="false" capture="false"  align
 <layer name="terug" url="images/logo.png" onclick=" set(layer[map].visible,false); set(layer[terug].visible,false); set(layer[terug4].visible,true);    " keep="true" visible="true" zorder="2" handcursor="false" capture="false"  align="leftbottom" x="30" y="30" scale="0.7"  scale.mobile="0.3" />		
 <layer name="terug4" url="images/logo.png" onclick=" set(layer[map].visible,true);  set(layer[terug].visible,true); set(layer[terug4].visible,false);  " keep="true" visible="true" zorder="2" handcursor="false" capture="false"  align="leftbottom" x="30" y="30" scale="0.7"  scale.mobile="0.3" />	
 	
-<layer name="terug3" url="images/icon_full_screen.png" onclick="switch(fullscreen);  " keep="true" visible="true" zorder="2" handcursor="false" capture="false"  align="righttop" x="30" y="30" scale="0.5"  scale.mobile="0.2"  />	
+<layer name="terug3" url="images/icon_full_screen.png" onclick="switch(fullscreen);  " keep="true" visible="true" zorder="2" handcursor="false" capture="false"  align="righttop" x="30" y="30" scale="0.2"  scale.mobile="0.1"  />	
 				
 <layer name="activespot" 
 	  url="graphics/camera_aan_origineel.png" 
