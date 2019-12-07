@@ -217,14 +217,43 @@
 			<action name="window_foto_2" type="Javascript">
 				window.laad_foto2();
 			</action>	
+			
+			<action name="window_foto_3" type="Javascript">
+				window.laad_foto3();
+			</action>			
+
+			<action name="window_foto_4" type="Javascript">
+				window.laad_foto4();
+			</action>	
+
 
 
 			
-<layer name="terug" url="images/logo.png" onclick=" laad_foto1(); window_foto_1();  " keep="true" visible="true" zorder="2" handcursor="false" capture="false"  align="leftbottom" x="30" y="30" scale="0.7"  scale.mobile="0.3" />		
+			
+<!-- -->
+<!-- DE PLATTEGROND MET DE ICONS!!!! -->
+<layer name="map" url="graphics/floor.jpg" visible = "true" keep="true" handcursor="false" capture="false" align="center" scale="0.5" scale.mobile="0.5" scalechildren="true" />
+
+	<!--  DE KNOP 'SPOTS' RECHTSOVEN OP DE 360 PANO FOTO. SOMS IS NAAM SPOTS OF BAAIEN. BIJ KLIKKEN OPEN JE DE PLATTEGROND-->
+<layer name="mapicon" url="graphics/knopSpots.png" onclick=" " 
+keep="true" visible="false" zorder="2" handcursor="false" capture="false"  align="righttop" scale="1.5"  scale.mobile="0.5" />
+
+
+<!--  ICONEN OP DE PLATTEGROND INCL DE GEKOZEN ICON MET WITTE KADER -->
+<style name="mapspot" keep="true" url="graphics/camera_uit.png" parent="map" align="lefttop" edge="center" scale= "0.3"  scale.mobile="0.4"/>
+
+<layer name="spot1" style="mapspot" x="1180" y="715" zorder="1" onclick=" laad_foto1(); window_foto_1()  "/>
+<layer name="spot2" style="mapspot" x="240" y="570" zorder="1" onclick="laad_foto2(); window_foto_2() "/>
+<layer name="spot3" style="mapspot" x="360" y="700" zorder="1" onclick="laad_foto3(); window_foto_3() "/> 
+<layer name="spot4" style="mapspot" x="480" y="210" zorder="1" onclick="laad_foto4(); window_foto_4() "/>
+<layer name="spot5" style="mapspot" x="940" y="1150" zorder="1" onclick="send_scene5(); mapspot_loadscene(scene_500);set (layer[map500].visible,true); "/>
+<layer name="spot6" style="mapspot" x="260" y="730" zorder="1" onclick="send_scene6(); mapspot_loadscene(scene_600);set (layer[map600].visible,true); "/>
+<!--  -->			
+
+<layer name="terug" url="images/logo.png" onclick="   " keep="true" visible="true" zorder="2" handcursor="false" capture="false"  align="leftbottom" x="30" y="30" scale="0.7"  scale.mobile="0.3" />		
 		
-<layer name="terug1" url="images/logo.png" onclick="laad_foto2(); window_foto_2(); " keep="true" visible="true" zorder="2" handcursor="false" capture="false"  align="rightbottom" x="30" y="30" scale="0.7"  scale.mobile="0.3" />			
-		
-<layer name="terug3" url="images/logo.png" onclick="switch(fullscreen);  " keep="true" visible="true" zorder="2" handcursor="false" capture="false"  align="righttop" x="30" y="30" scale="0.7"  scale.mobile="0.3" />	
+	
+<layer name="terug3" url="images/icon_full_screen.png" onclick="switch(fullscreen);  " keep="true" visible="true" zorder="2" handcursor="false" capture="false"  align="righttop" x="30" y="30" scale="0.5"  scale.mobile="0.2"  />	
 				
 		
 		
