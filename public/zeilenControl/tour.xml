@@ -122,17 +122,20 @@
 		<action name="laad_foto1">
 		loadscene(scene_100, null, MERGE, BLEND(1));
 		laad_standaard_view();
+		set(layer[activespot].parent, spot1);
 		</action>
 
 		<action name="laad_foto2">
 		loadscene(scene_200, null, MERGE, BLEND(1));
 		laad_standaard_view();
+		set(layer[activespot].parent, spot2);
 		</action>
 
 
 		<action name="laad_foto3">
 		loadscene(scene_300, null, MERGE, BLEND(1));
 		laad_standaard_view();
+		set(layer[activespot].parent, spot3);
 		</action>
 
 		<action name="laad_foto4">
@@ -213,47 +216,38 @@
 
 			<action name="window_foto_1" type="Javascript">
 				window.laad_foto1();
-				set(layer[activespot].parent, spot1);
 			</action>			
 
 			<action name="window_foto_2" type="Javascript">
 				window.laad_foto2();
-				set(layer[activespot].parent, spot2);
 			</action>	
 			
 			<action name="window_foto_3" type="Javascript">
 				window.laad_foto3();
-				set(layer[activespot].parent, spot3);
 			</action>			
 
 			<action name="window_foto_5" type="Javascript">
 				window.laad_foto5();
-				set(layer[activespot].parent, spot4);
 			</action>	
 
 			<action name="window_foto_8" type="Javascript">
 				window.laad_foto8();
-				set(layer[activespot].parent, spot5);
 			</action>	
 
 			<action name="window_foto_10" type="Javascript">
 				window.laad_foto10();
-				set(layer[activespot].parent, spot6);
 			</action>
 
 			<action name="window_foto_12" type="Javascript">
 				window.laad_foto12();
-				set(layer[activespot].parent, spot7);
 			</action>
 
 			<action name="window_foto_13" type="Javascript">
 				window.laad_foto13();
-				set(layer[activespot].parent, spot8);
 			</action>			
 
 			<action name="window_foto_17" type="Javascript">
 				window.laad_foto17();
-				set(layer[activespot].parent, spot9);
 			</action>
 			
 <!-- -->
