@@ -256,29 +256,41 @@ keep="true" visible="false" zorder="2" handcursor="false" capture="false"  align
 
 
 <!--  ICONEN OP DE PLATTEGROND INCL DE GEKOZEN ICON MET WITTE KADER -->
-<style name="mapspot" keep="true" url="graphics/camera_uit.png" parent="map" align="lefttop" edge="center" scale= "0.3"  scale.mobile="0.4"/>
+<style name="mapspot" keep="true" url="graphics/camera_uit_origineel.png" parent="map" align="lefttop" edge="center" scale= "0.3"  scale.mobile="0.4"/>
 
-<layer name="spot1" style="mapspot" x="1180" y="715" zorder="1" onclick=" laad_foto1(); window_foto_1()  "/>
-<layer name="spot2" style="mapspot" x="240" y="570" zorder="1" onclick="laad_foto2(); window_foto_2() "/>
-<layer name="spot3" style="mapspot" x="360" y="700" zorder="1" onclick="laad_foto3(); window_foto_3() "/> 
+<layer name="spot1" style="mapspot" x="1180" y="715" zorder="1" onclick=" laad_foto1(); window_foto_1(); 	set(layer[activespot].parent, spot1); set(layer[activespot].visible,true);  "/>
+<layer name="spot2" style="mapspot" x="240" y="570" zorder="1" onclick="laad_foto2(); window_foto_2() ;set(layer[activespot].parent, spot2); set(layer[activespot].visible,true); "/>
+<layer name="spot3" style="mapspot" x="360" y="700" zorder="1" onclick="laad_foto3(); window_foto_3()  ;set(layer[activespot].parent, spot3); set(layer[activespot].visible,true);"/> 
 
-<layer name="spot4" style="mapspot" x="155" y="1120" zorder="1" onclick="laad_foto5(); window_foto_5() "/>
-<layer name="spot5" style="mapspot" x="155" y="1030" zorder="1" onclick="laad_foto8(); window_foto_8() "/>
-<layer name="spot6" style="mapspot" x="155" y="1205" zorder="1" onclick="laad_foto10(); window_foto_10() "/>
+<layer name="spot4" style="mapspot" x="155" y="1120" zorder="1" onclick="laad_foto5(); window_foto_5() ;set(layer[activespot].parent, spot4); set(layer[activespot].visible,true);"/>
+<layer name="spot5" style="mapspot" x="155" y="1030" zorder="1" onclick="laad_foto8(); window_foto_8();set(layer[activespot].parent, spot5); set(layer[activespot].visible,true); "/>
+<layer name="spot6" style="mapspot" x="155" y="1205" zorder="1" onclick="laad_foto10(); window_foto_10();set(layer[activespot].parent, spot6); set(layer[activespot].visible,true); "/>
 
-<layer name="spot7" style="mapspot" x="480" y="210" zorder="1" onclick="laad_foto12(); window_foto_12() "/>
-<layer name="spot8" style="mapspot" x="940" y="1150" zorder="1" onclick="laad_foto13(); window_foto_13"/>
-<layer name="spot9" style="mapspot" x="260" y="730" zorder="1" onclick="laad_foto17(); window_foto_17"/>
+<layer name="spot7" style="mapspot" x="480" y="210" zorder="1" onclick="laad_foto12(); window_foto_12() ;set(layer[activespot].parent, spot7); set(layer[activespot].visible,true);"/>
+<layer name="spot8" style="mapspot" x="940" y="1150" zorder="1" onclick="laad_foto13(); window_foto_13 ;set(layer[activespot].parent, spot8); set(layer[activespot].visible,true);"/>
+<layer name="spot9" style="mapspot" x="260" y="730" zorder="1" onclick="laad_foto17(); window_foto_17 ;set(layer[activespot].parent, spot9); set(layer[activespot].visible,true);"/>
 
 
 		
 
-<layer name="terug" url="images/logo.png" onclick=" set(layer[map].visible,false);   " keep="true" visible="true" zorder="2" handcursor="false" capture="false"  align="leftbottom" x="30" y="30" scale="0.7"  scale.mobile="0.3" />		
-		
+<layer name="terug" url="images/logo.png" onclick=" set(layer[map].visible,false); set(layer[terug].visible,false); set(layer[terug4].visible,true);    " keep="true" visible="true" zorder="2" handcursor="false" capture="false"  align="leftbottom" x="30" y="30" scale="0.7"  scale.mobile="0.3" />		
+<layer name="terug4" url="images/logo.png" onclick=" set(layer[map].visible,true);  set(layer[terug].visible,true); set(layer[terug4].visible,false);  " keep="true" visible="true" zorder="2" handcursor="false" capture="false"  align="leftbottom" x="30" y="30" scale="0.7"  scale.mobile="0.3" />	
 	
 <layer name="terug3" url="images/icon_full_screen.png" onclick="switch(fullscreen);  " keep="true" visible="true" zorder="2" handcursor="false" capture="false"  align="righttop" x="30" y="30" scale="0.5"  scale.mobile="0.2"  />	
 				
-		
+<layer name="activespot" 
+	  url="graphics/camera_aan_origineel.png" 
+	  keep="true" visible="false" align="righttop"  zorder="2" scale= "0.3" 
+	  scale.mobile="0.4"      
+
+/>	
+
+
+
+
+
+
+				
 		
 		
 	<scene name="scene_0" title="0" onstart="" havevrimage="true" thumburl="panos/0.tiles/thumb.jpg" lat="" lng="" heading="">
