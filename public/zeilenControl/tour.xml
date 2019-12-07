@@ -267,7 +267,7 @@ keep="true" visible="false" zorder="2" handcursor="false" capture="false"  align
 
 
 <!--  ICONEN OP DE PLATTEGROND INCL DE GEKOZEN ICON MET WITTE KADER -->
-<style name="mapspot" keep="true" url="graphics/camera_uit_origineel.png" parent="map" align="lefttop" edge="center" scale= "0.3"  scale.mobile="0.4"/>
+<style name="mapspot" keep="true" url="graphics/camera_uit_origineel.png" parent="map" align="lefttop" edge="center" scale= "0.45"  scale.mobile="0.6"/>
 
 <layer name="spot1" style="mapspot" x="1180" y="715" zorder="1" onclick=" laad_foto1(); window_foto_1(); 	set(layer[activespot].parent, spot1); set(layer[activespot].visible,true);  "/>
 <layer name="spot2" style="mapspot" x="240" y="570" zorder="1" onclick="laad_foto2(); window_foto_2() ;set(layer[activespot].parent, spot2); set(layer[activespot].visible,true); "/>
