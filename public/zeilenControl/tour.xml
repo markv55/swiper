@@ -248,7 +248,7 @@
 			
 <!-- -->
 <!-- DE PLATTEGROND MET DE ICONS!!!! -->
-<layer name="map" url="graphics/floor.jpg" visible = "true" keep="true" handcursor="false" capture="false" align="center" scale="0.5" scale.mobile="0.2" scalechildren="true" />
+<layer name="map" url="graphics/floor.jpg" visible = "true" keep="true" handcursor="false" capture="false" align="center" scale="0.5" scale.mobile="0.25" scalechildren="true" />
 
 	<!--  DE KNOP 'SPOTS' RECHTSOVEN OP DE 360 PANO FOTO. SOMS IS NAAM SPOTS OF BAAIEN. BIJ KLIKKEN OPEN JE DE PLATTEGROND-->
 <layer name="mapicon" url="graphics/knopSpots.png" onclick=" " 
@@ -282,16 +282,14 @@ keep="true" visible="false" zorder="2" handcursor="false" capture="false"  align
 	  url="graphics/camera_aan_origineel.png" 
 	  keep="true" visible="false" align="righttop"  zorder="2" scale= "0.3" 
 	  scale.mobile="0.4"      
-
 />	
 
 
 
+<!-- AUTOROTATE -->
+<autorotate enabled="true" waittime="1.0" speed="5.0"  accel="30.0"    horizon="20.0"     tofov="90.0"    interruptionevents="userviewchange|layers|keyboard" />  	
 
-
-
-				
-		
+	
 		
 	<scene name="scene_0" title="0" onstart="" havevrimage="true" thumburl="panos/0.tiles/thumb.jpg" lat="" lng="" heading="">
 
