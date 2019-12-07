@@ -104,7 +104,12 @@
 		set(view.fov,140);
 		</action>
 
-	
+
+
+
+
+
+		
 
 		<action name="laad_foto0">
 		loadscene(scene_0, null, MERGE, BLEND(1));
@@ -204,11 +209,19 @@
 		laad_standaard_view();
 		</action>
 
+			<action name="window_foto_1" type="Javascript">
+				window.laad_foto1();
+			</action>			
+
+			<action name="window_foto_2" type="Javascript">
+				window.laad_foto2();
+			</action>	
+
+
+			
+<layer name="terug" url="images/logo.png" onclick=" laad_foto1(); window_foto_1();  " keep="true" visible="true" zorder="2" handcursor="false" capture="false"  align="leftbottom" x="30" y="30" scale="0.7"  scale.mobile="0.3" />		
 		
-		
-<layer name="terug" url="images/logo.png" onclick=" " keep="true" visible="true" zorder="2" handcursor="false" capture="false"  align="leftbottom" x="30" y="30" scale="0.7"  scale.mobile="0.3" />		
-		
-	
+<layer name="terug1" url="images/logo.png" onclick="laad_foto2(); window_foto_2(); " keep="true" visible="true" zorder="2" handcursor="false" capture="false"  align="rightbottom" x="30" y="30" scale="0.7"  scale.mobile="0.3" />			
 		
 
 	<scene name="scene_0" title="0" onstart="" havevrimage="true" thumburl="panos/0.tiles/thumb.jpg" lat="" lng="" heading="">
