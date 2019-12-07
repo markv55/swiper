@@ -297,12 +297,12 @@ keep="true" visible="false" zorder="2" handcursor="false" capture="false"  align
 if(stagewidth LT stageheight  <!-- breedte kleiner dan hoogte =  portrait-->
 ,  
 <!-- PORTRAIT -->
-if(device.tablet, set (layer[map].width, calc(stagewidth*0.8)); 		set (layer[map].height, calc(stagewidth*0.8) ););
+if(device.tablet, set (layer[map].width, calc(stagewidth*0.9)); 		set (layer[map].height, calc(stagewidth*0.9) ););
 if(device.mobile, set (layer[map].width, calc(stagewidth*0.9)); 		set (layer[map].height, calc(stagewidth*0.9) ););	
 if(device.desktop, set (layer[map].width, calc(stagewidth*0.9)); 	set (layer[map].height, calc(stagewidth*0.9) ););	
 ,
 <!-- LANDSCAPE -->
-if(device.tablet,  set (layer[map].height, calc(stageheight*0.8)); 	set (layer[map].width, calc(stageheight*0.8) ););
+if(device.tablet,  set (layer[map].height, calc(stageheight*0.9)); 	set (layer[map].width, calc(stageheight*0.9) ););
 if(device.mobile,  set (layer[map].height, calc(stageheight*0.9)); 	set (layer[map].width, calc(stageheight*0.9) );); 	
 if(device.desktop, set (layer[map].height, calc(stageheight*0.8)); 	set (layer[map].width, calc(stageheight*0.8) ););	
 );
