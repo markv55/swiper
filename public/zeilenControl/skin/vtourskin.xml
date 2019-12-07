@@ -407,8 +407,8 @@
 				
 				
 	<!-- wel of geen onderknop zichbaar  -->			
-	 <layer name="skin_btn_hide"      style="skin_base|skin_glow" crop="0|448|64|64"  align="right"       x="50"   y="0"  scale="0.5" onclick="skin_hideskin()" onloaded="skin_hideskin()" />  
-<!--		<layer name="skin_btn_hide"      style="skin_base|skin_glow" crop="0|448|64|64"  align="right"       x="50"   y="0"  scale="0.5" onclick="skin_hideskin()" />  -->
+<!--	 <layer name="skin_btn_hide"      style="skin_base|skin_glow" crop="0|448|64|64"  align="right"       x="50"   y="0"  scale="0.5" onclick="skin_hideskin()" onloaded="skin_hideskin()" />  -->
+		<layer name="skin_btn_hide"      style="skin_base|skin_glow" crop="0|448|64|64"  align="right"       x="50"   y="0"  scale="0.5" onclick="skin_hideskin()" />  
 
 
 
