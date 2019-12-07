@@ -222,13 +222,29 @@
 				window.laad_foto3();
 			</action>			
 
-			<action name="window_foto_4" type="Javascript">
-				window.laad_foto4();
+			<action name="window_foto_5" type="Javascript">
+				window.laad_foto5();
 			</action>	
 
+			<action name="window_foto_8" type="Javascript">
+				window.laad_foto8();
+			</action>	
 
+			<action name="window_foto_10" type="Javascript">
+				window.laad_foto10();
+			</action>
 
-			
+			<action name="window_foto_12" type="Javascript">
+				window.laad_foto12();
+			</action>
+
+			<action name="window_foto_13" type="Javascript">
+				window.laad_foto13();
+			</action>			
+
+			<action name="window_foto_17" type="Javascript">
+				window.laad_foto17();
+			</action>
 			
 <!-- -->
 <!-- DE PLATTEGROND MET DE ICONS!!!! -->
@@ -245,10 +261,17 @@ keep="true" visible="false" zorder="2" handcursor="false" capture="false"  align
 <layer name="spot1" style="mapspot" x="1180" y="715" zorder="1" onclick=" laad_foto1(); window_foto_1()  "/>
 <layer name="spot2" style="mapspot" x="240" y="570" zorder="1" onclick="laad_foto2(); window_foto_2() "/>
 <layer name="spot3" style="mapspot" x="360" y="700" zorder="1" onclick="laad_foto3(); window_foto_3() "/> 
-<layer name="spot4" style="mapspot" x="480" y="210" zorder="1" onclick="laad_foto4(); window_foto_4() "/>
-<layer name="spot5" style="mapspot" x="940" y="1150" zorder="1" onclick="send_scene5(); mapspot_loadscene(scene_500);set (layer[map500].visible,true); "/>
-<layer name="spot6" style="mapspot" x="260" y="730" zorder="1" onclick="send_scene6(); mapspot_loadscene(scene_600);set (layer[map600].visible,true); "/>
-<!--  -->			
+
+<layer name="spot4" style="mapspot" x="155" y="1120" zorder="1" onclick="laad_foto5(); window_foto_5() "/>
+<layer name="spot5" style="mapspot" x="155" y="1030" zorder="1" onclick="laad_foto8(); window_foto_8() "/>
+<layer name="spot6" style="mapspot" x="155" y="1205" zorder="1" onclick="laad_foto10(); window_foto_10() "/>
+
+<layer name="spot7" style="mapspot" x="480" y="210" zorder="1" onclick="laad_foto12(); window_foto_12() "/>
+<layer name="spot8" style="mapspot" x="940" y="1150" zorder="1" onclick="laad_foto13(); window_foto_13"/>
+<layer name="spot9" style="mapspot" x="260" y="730" zorder="1" onclick="laad_foto17(); window_foto_17"/>
+
+
+		
 
 <layer name="terug" url="images/logo.png" onclick="   " keep="true" visible="true" zorder="2" handcursor="false" capture="false"  align="leftbottom" x="30" y="30" scale="0.7"  scale.mobile="0.3" />		
 		
