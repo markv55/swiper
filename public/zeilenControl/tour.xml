@@ -259,7 +259,7 @@
 			
 <!-- -->
 <!-- DE PLATTEGROND MET DE ICONS!!!! -->
-<layer name="map" url="graphics/floor.jpg" visible = "true" keep="true" handcursor="false" capture="false" align="center"  scalechildren="true" />
+<layer name="map" url="graphics/floor.jpg" visible = "false" keep="true" handcursor="false" capture="false" align="center"  scalechildren="true" />
 
 	<!--  DE KNOP 'SPOTS' RECHTSOVEN OP DE 360 PANO FOTO. SOMS IS NAAM SPOTS OF BAAIEN. BIJ KLIKKEN OPEN JE DE PLATTEGROND-->
 <layer name="mapicon" url="graphics/knopSpots.png" onclick=" " 
