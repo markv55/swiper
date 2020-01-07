@@ -714,7 +714,7 @@ app.get('/rotterdam_aan', function (req, res) {
 
 app.get('/rotterdam_uit', function (req, res) {
 	//KlikAanKlikUit(11, 260, 7, 5).off(1, 2);
-	io.emit('message', 'pi', 'wereld1_uit' );
+	io.emit('message', 'laad_foto17_2', '' );
 	console.log ('rotterdam_uit werkt dit?????????');		
 	res.redirect('/');
 });
