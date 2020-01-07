@@ -24,6 +24,31 @@ var io = require('socket.io')(server);
 io.on('connection', function(socket) {
 	//console.log ('userconnected' );
 
+// nieuwe code voor de vakantiebeurs
+	
+	// tablet tb1 stuurt een socket 
+	//"laad_foto17_1", "ontvangen_van", "device_id" , "set_id"
+	// "laad_foto17_1", "ontvangen_van", "tb1" , "vt1"
+	// er wordt een doorsturen_aan socket verstuurd naar diverse ontvangers welke bij deze set horen.
+	
+	
+		socket.on('stuur', function(param0, param1, param2, param3) {
+        if( (param1 == 'ontvangen_van') && (param2== 'tb1') && (param3== 'vt1')   )  {
+
+		console.log ( "doorsturen_aan tv1,tb1,vr1 o.b.v: " + param0 ,    param1 , "device_id: "+ param2  , "set_id: "+  param3  );
+		
+		io.emit('message', param0, "doorsturen_aan", "tv1", param3);	
+		io.emit('message', param0, "doorsturen_aan", "tb1", param3);	
+		io.emit('message', param0, "doorsturen_aan", "vr1", param3);	
+
+		}
+	});	
+
+	
+	// tablet tb2 stuurt aan: tb2, tv2 en vr2 en vr3
+	
+	
+	
 	
 	socket.on('message', function(msg){  // deze functie ontvangt de socket van de client en zet ze door naar unity
         if (msg[0] == 'photo') {
@@ -146,6 +171,8 @@ io.on('connection', function(socket) {
 		console.log (param4);
 	
 	});
+	
+	
 	
 ///////////////////  vanuit krpano_html komt een scene nummer. dit is 1 of 2. hij ontvangt 2 variable. scene en scene1_krpano. scene_krpano is msg. 
 // vervolgens stuurt hij 3 variable. voor unity is message altijd nodig (dacht ik?). message is in unity arg[0] (dacht ik?)
@@ -705,17 +732,29 @@ app.get('/objecten_uit', function (req, res) {
 
 app.get('/rotterdam_aan', function (req, res) {
 	//KlikAanKlikUit(11, 260, 7, 5).off(1, 2);
-	io.emit('message', 'laad_foto17', '' );
+	io.emit('message', 'laad_foto17_1', 'doorsturen_aan', 'tb1', 'vt1' );	
+	io.emit('message', 'laad_foto17_1', 'doorsturen_aan', 'vr1', 'vt1' );
+	io.emit('message', 'laad_foto17_1', 'doorsturen_aan', 'tv1', 'vt1' );
 	
+	console.log ("content: --  laad_foto17_1  -- doorsturen_aan  --  tb1 en set_id vt1");
+	console.log ("content: --  laad_foto17_1  -- doorsturen_aan  --  vr1 en set_id vt1");
+	console.log ("content: --  laad_foto17_1  -- doorsturen_aan  --  tv1 en set_id vt1");
 	
-	console.log ('rotterdam_aan werkt dit?????????');		
 	res.redirect('/');
 });
 
 app.get('/rotterdam_uit', function (req, res) {
 	//KlikAanKlikUit(11, 260, 7, 5).off(1, 2);
-	io.emit('message', 'laad_foto18', '' );
-	console.log ('rotterdam_uit werkt dit?????????');		
+	
+	io.emit('message', 'laad_foto17_2', 'doorsturen_aan', 'tb1', 'vt1' );	
+	io.emit('message', 'laad_foto17_2', 'doorsturen_aan', 'vr1', 'vt1' );
+	io.emit('message', 'laad_foto17_2', 'doorsturen_aan', 'tv1', 'vt1' );
+
+
+	console.log ("content: --  laad_foto17_2  -- doorsturen_aan  --  tb1 en set_id vt1");
+	console.log ("content: --  laad_foto17_2  -- doorsturen_aan  --  vr1 en set_id vt1");
+	console.log ("content: --  laad_foto17_2  -- doorsturen_aan  --  tv1 en set_id vt1");
+
 	res.redirect('/');
 });
 

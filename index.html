@@ -785,10 +785,13 @@ onderstaande class  (bijvoorbeeld js-ajx-url-zeilenSlaveSocket)  wordt onderaan 
 
 
 		
-		socket.on('message', function(msg, vid){  
+		socket.on('message', function(msg, vid , c,d){  
 		
 				console.log(msg);
 				console.log(vid);
+				console.log(c);
+				console.log(d);				
+				
 				
 				if (msg == 'videotimo1'){
 					window.location = '/timo1_html';  //op deze simpele manier kun je naar een andere website toe gaan!!!!	
@@ -806,6 +809,13 @@ onderstaande class  (bijvoorbeeld js-ajx-url-zeilenSlaveSocket)  wordt onderaan 
 
 
 		});
+
+
+
+
+
+
+
 		
 		//	
 			
