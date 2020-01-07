@@ -600,7 +600,8 @@ app.get('/ad_product', function (req, res) {
 app.get('/ad_product_rotterdam', function (req, res) {
 	//KlikAanKlikUit(11, 260, 7, 5).off(1, 2);
 	
-	io.emit('message', 'pi', 'ad_product_rotterdam' );
+	//io.emit('message', 'pi', 'ad_product_rotterdam' );
+	io.emit('message', 'stuur', '1', '2', '3', '4' );
 	console.log ('wat staat hier');		
 	res.redirect('/');
 });
