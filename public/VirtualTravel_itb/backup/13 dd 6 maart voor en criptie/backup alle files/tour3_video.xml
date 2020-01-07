@@ -1,0 +1,545 @@
+<krpano version="1.19" title="Virtual Tour"     >
+
+<scene name="scene_17_1" title="1.1 ROYAL MOUNTAIN" onstart="zet_aan() ; Bepaal_Scale (); set(layer[helemaal_terug].visible,true); " havevrimage="true" thumburl="panos/strand.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<!-- grid preview pano -->
+		<preview type="grid(cube,64,64,512,0xCCCCCC,0xF6F6F6,0x999999);" />
+
+		<!-- view/fov settings -->
+		<view hlookat="0" vlookat="0" fovtype="VFOV" fov="90" fovmin="30" fovmax="150" />
+		
+		<include url="skin/videointerface.xml" />  
+ 
+		<!-- include the videoplayer plugin -->
+		<plugin name="video"
+		        url.html5="%SWFPATH%/plugins/videoplayer.js"
+		        url.flash="%SWFPATH%/plugins/videoplayer.swf"
+		        pausedonstart="false"
+		        loop="true"
+				volume="1.0"
+				
+				onloaded="add_video_sources();  "
+				onvideoready = "start_deze_video(); "	
+		/>
+
+		<!-- use the videoplayer plugin as panoramic image source -->
+		<image>
+			<sphere url="plugin:video" />
+		</image>
+
+		<!-- set the default view -->
+		<view hlookat="0" vlookat="0" fovtype="DFOV" fov="130" fovmin="75" fovmax="150" distortion="0.0" />
+
+		<!-- add the video sources and play the video -->
+		<action name="add_video_sources">
+		
+			videointerface_addsource('start', '%CURRENTXML%/film/17_1_ nepal_elements/nepal_elements_1920.mov|%CURRENTXML%/iphone-audio.m4a', '%CURRENTXML%/video-1920x960-poster.jpg');	
+			videointerface_addsource('4096x2048', '%CURRENTXML%/film/17_1_ nepal_elements/nepal_elements_1920.mov|%CURRENTXML%/iphone-audio.m4a', '%CURRENTXML%/video-1024x512-poster.jpg');
+			
+			<!--
+			videointerface_addsource('start', '%CURRENTXML%/film/17_1_ nepal_elements/1min.mp4|%CURRENTXML%/iphone-audio.m4a', '%CURRENTXML%/video-1920x960-poster.jpg');	
+			videointerface_addsource('4096x2048', '%CURRENTXML%/film/17_1_ nepal_elements/1min.mp4|%CURRENTXML%/iphone-audio.m4a', '%CURRENTXML%/video-1024x512-poster.jpg');			
+			-->
+			
+		
+			if(device.ios,
+				<!-- iOS Safari has a very slow 'video-to-webgl-texture' transfer, therefore use a low-res video by default -->
+				videointerface_play('start');
+			  ,
+				 videointerface_play('4096x2048');
+			  );			  
+		</action>
+
+		<action name="start_deze_video">
+			plugin[video].play();
+		</action>
+		
+		<!-- place your scene hotspots here 
+		<layer name="back" url="images/back.png"  visible= "true" keep="false" handcursor="false" capture="false"   align="centerbottom" x="0" y="10"  onclick= "loadscene (scene_17); send_scene17()"  />	   
+	   -->
+</scene>
+
+
+<scene name="scene_17_2" title="1.1 ROYAL MOUNTAIN" onstart="zet_aan() ; Bepaal_Scale (); set(layer[helemaal_terug].visible,true); " havevrimage="true" thumburl="panos/strand.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<!-- grid preview pano -->
+		<preview type="grid(cube,64,64,512,0xCCCCCC,0xF6F6F6,0x999999);" />
+
+		<!-- view/fov settings -->
+		<view hlookat="0" vlookat="0" fovtype="VFOV" fov="90" fovmin="30" fovmax="150" />
+		
+		<include url="skin/videointerface.xml" />  
+ 
+		<!-- include the videoplayer plugin -->
+		<plugin name="video"
+		        url.html5="%SWFPATH%/plugins/videoplayer.js"
+		        url.flash="%SWFPATH%/plugins/videoplayer.swf"
+		        pausedonstart="false"
+		        loop="true"
+				volume="1.0"
+				
+				onloaded="add_video_sources();  "
+				onvideoready = "start_deze_video(); "	
+		/>
+
+		<!-- use the videoplayer plugin as panoramic image source -->
+		<image>
+			<sphere url="plugin:video" />
+		</image>
+
+		<!-- set the default view -->
+		<view hlookat="0" vlookat="0" fovtype="DFOV" fov="130" fovmin="75" fovmax="150" distortion="0.0" />
+
+		<!-- add the video sources and play the video -->
+		<action name="add_video_sources">
+			
+			videointerface_addsource('start', '%CURRENTXML%/film/17_2_homestay/homestay_1920.mov|%CURRENTXML%/iphone-audio.m4a', '%CURRENTXML%/video-1920x960-poster.jpg');	
+			videointerface_addsource('4096x2048', '%CURRENTXML%/film/17_2_homestay/homestay_1920.mov|%CURRENTXML%/iphone-audio.m4a', '%CURRENTXML%/video-1024x512-poster.jpg');
+
+<!--
+			videointerface_addsource('start', '%CURRENTXML%/film/17_2_homestay/1min.mp4|%CURRENTXML%/iphone-audio.m4a', '%CURRENTXML%/video-1920x960-poster.jpg');	
+			videointerface_addsource('4096x2048', '%CURRENTXML%/film/17_2_homestay/1min.mp4|%CURRENTXML%/iphone-audio.m4a', '%CURRENTXML%/video-1024x512-poster.jpg');
+-->				
+			
+		
+			if(device.ios,
+				<!-- iOS Safari has a very slow 'video-to-webgl-texture' transfer, therefore use a low-res video by default -->
+				videointerface_play('start');
+			  ,
+				 videointerface_play('4096x2048');
+			  );			  
+		</action>
+
+		<action name="start_deze_video">
+			plugin[video].play();
+		</action>
+		
+		<!-- place your scene hotspots here 
+		<layer name="back" url="images/back.png"  visible= "true" keep="false" handcursor="false" capture="false"   align="centerbottom" x="0" y="10"  onclick= "loadscene (scene_17); send_scene17()"  />	   
+	   -->
+</scene>
+
+<scene name="scene_17_3" title="1.1 ROYAL MOUNTAIN" onstart="zet_aan() ; Bepaal_Scale (); set(layer[helemaal_terug].visible,true); " havevrimage="true" thumburl="panos/strand.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<!-- grid preview pano -->
+		<preview type="grid(cube,64,64,512,0xCCCCCC,0xF6F6F6,0x999999);" />
+
+		<!-- view/fov settings -->
+		<view hlookat="0" vlookat="0" fovtype="VFOV" fov="90" fovmin="30" fovmax="150" />
+		
+		<include url="skin/videointerface.xml" />  
+ 
+		<!-- include the videoplayer plugin -->
+		<plugin name="video"
+		        url.html5="%SWFPATH%/plugins/videoplayer.js"
+		        url.flash="%SWFPATH%/plugins/videoplayer.swf"
+		        pausedonstart="false"
+		        loop="true"
+				volume="1.0"
+				
+				onloaded="add_video_sources();  "
+				onvideoready = "start_deze_video(); "	
+		/>
+
+		<!-- use the videoplayer plugin as panoramic image source -->
+		<image>
+			<sphere url="plugin:video" />
+		</image>
+
+		<!-- set the default view -->
+		<view hlookat="0" vlookat="0" fovtype="DFOV" fov="130" fovmin="75" fovmax="150" distortion="0.0" />
+
+		<!-- add the video sources and play the video -->
+		<action name="add_video_sources">
+			videointerface_addsource('start', '%CURRENTXML%/film/17_3_helicopter/helicopter_1920.mov|%CURRENTXML%/iphone-audio.m4a', '%CURRENTXML%/video-1920x960-poster.jpg');	
+			videointerface_addsource('4096x2048', '%CURRENTXML%/film/17_3_helicopter/helicopter_1920.mov|%CURRENTXML%/iphone-audio.m4a', '%CURRENTXML%/video-1024x512-poster.jpg');
+		
+			if(device.ios,
+				<!-- iOS Safari has a very slow 'video-to-webgl-texture' transfer, therefore use a low-res video by default -->
+				videointerface_play('start');
+			  ,
+				 videointerface_play('4096x2048');
+			  );			  
+		</action>
+
+		<action name="start_deze_video">
+			plugin[video].play();
+		</action>
+		
+		<!-- place your scene hotspots here 
+		<layer name="back" url="images/back.png"  visible= "true" keep="false" handcursor="false" capture="false"   align="centerbottom" x="0" y="10"  onclick= "loadscene (scene_17); send_scene17()"  />	   
+	   -->
+</scene>
+
+<scene name="scene_17_4" title="1.1 ROYAL MOUNTAIN" onstart="zet_aan() ; Bepaal_Scale (); set(layer[helemaal_terug].visible,true); " havevrimage="true" thumburl="panos/strand.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<!-- grid preview pano -->
+		<preview type="grid(cube,64,64,512,0xCCCCCC,0xF6F6F6,0x999999);" />
+
+		<!-- view/fov settings -->
+		<view hlookat="0" vlookat="0" fovtype="VFOV" fov="90" fovmin="30" fovmax="150" />
+		
+		<include url="skin/videointerface.xml" />  
+ 
+		<!-- include the videoplayer plugin -->
+		<plugin name="video"
+		        url.html5="%SWFPATH%/plugins/videoplayer.js"
+		        url.flash="%SWFPATH%/plugins/videoplayer.swf"
+		        pausedonstart="false"
+		        loop="true"
+				volume="1.0"
+				
+				onloaded="add_video_sources();  "
+				onvideoready = "start_deze_video(); "	
+		/>
+
+		<!-- use the videoplayer plugin as panoramic image source -->
+		<image>
+			<sphere url="plugin:video" />
+		</image>
+
+		<!-- set the default view -->
+		<view hlookat="0" vlookat="0" fovtype="DFOV" fov="130" fovmin="75" fovmax="150" distortion="0.0" />
+
+		<!-- add the video sources and play the video -->
+		<action name="add_video_sources">
+			videointerface_addsource('start', '%CURRENTXML%/film/17_4_bridge/bridge_1920.mov|%CURRENTXML%/iphone-audio.m4a', '%CURRENTXML%/video-1920x960-poster.jpg');	
+			videointerface_addsource('4096x2048', '%CURRENTXML%/film/17_4_bridge/bridge_1920.mov|%CURRENTXML%/iphone-audio.m4a', '%CURRENTXML%/video-1024x512-poster.jpg');
+		
+			if(device.ios,
+				<!-- iOS Safari has a very slow 'video-to-webgl-texture' transfer, therefore use a low-res video by default -->
+				videointerface_play('start');
+			  ,
+				 videointerface_play('4096x2048');
+			  );			  
+		</action>
+
+		<action name="start_deze_video">
+			plugin[video].play();
+		</action>
+		
+		<!-- place your scene hotspots here 
+		<layer name="back" url="images/back.png"  visible= "true" keep="false" handcursor="false" capture="false"   align="centerbottom" x="0" y="10"  onclick= "loadscene (scene_17); send_scene17()"  />	   
+	   -->
+</scene>
+
+<scene name="scene_17_5" title="1.1 ROYAL MOUNTAIN" onstart="zet_aan() ; Bepaal_Scale (); set(layer[helemaal_terug].visible,true); " havevrimage="true" thumburl="panos/strand.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<!-- grid preview pano -->
+		<preview type="grid(cube,64,64,512,0xCCCCCC,0xF6F6F6,0x999999);" />
+
+		<!-- view/fov settings -->
+		<view hlookat="0" vlookat="0" fovtype="VFOV" fov="90" fovmin="30" fovmax="150" />
+		
+		<include url="skin/videointerface.xml" />  
+ 
+		<!-- include the videoplayer plugin -->
+		<plugin name="video"
+		        url.html5="%SWFPATH%/plugins/videoplayer.js"
+		        url.flash="%SWFPATH%/plugins/videoplayer.swf"
+		        pausedonstart="false"
+		        loop="true"
+				volume="1.0"
+				
+				onloaded="add_video_sources();  "
+				onvideoready = "start_deze_video(); "	
+		/>
+
+		<!-- use the videoplayer plugin as panoramic image source -->
+		<image>
+			<sphere url="plugin:video" />
+		</image>
+
+		<!-- set the default view -->
+		<view hlookat="0" vlookat="0" fovtype="DFOV" fov="130" fovmin="75" fovmax="150" distortion="0.0" />
+
+		<!-- add the video sources and play the video -->
+		<action name="add_video_sources">
+			videointerface_addsource('start', '%CURRENTXML%/film/17_5_paragliden/paragliden_1920.mov|%CURRENTXML%/iphone-audio.m4a', '%CURRENTXML%/video-1920x960-poster.jpg');	
+			videointerface_addsource('4096x2048', '%CURRENTXML%/film/17_5_paragliden/paragliden_1920.mov|%CURRENTXML%/iphone-audio.m4a', '%CURRENTXML%/video-1024x512-poster.jpg');
+		
+			if(device.ios,
+				<!-- iOS Safari has a very slow 'video-to-webgl-texture' transfer, therefore use a low-res video by default -->
+				videointerface_play('start');
+			  ,
+				 videointerface_play('4096x2048');
+			  );			  
+		</action>
+
+		<action name="start_deze_video">
+			plugin[video].play();
+		</action>
+		
+		<!-- place your scene hotspots here 
+		<layer name="back" url="images/back.png"  visible= "true" keep="false" handcursor="false" capture="false"   align="centerbottom" x="0" y="10"  onclick= "loadscene (scene_17); send_scene17()"  />	   
+	   -->
+</scene>
+
+<scene name="scene_17_6" title="1.1 ROYAL MOUNTAIN" onstart="zet_aan() ; Bepaal_Scale (); set(layer[helemaal_terug].visible,true); " havevrimage="true" thumburl="panos/strand.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<!-- grid preview pano -->
+		<preview type="grid(cube,64,64,512,0xCCCCCC,0xF6F6F6,0x999999);" />
+
+		<!-- view/fov settings -->
+		<view hlookat="0" vlookat="0" fovtype="VFOV" fov="90" fovmin="30" fovmax="150" />
+		
+		<include url="skin/videointerface.xml" />  
+ 
+		<!-- include the videoplayer plugin -->
+		<plugin name="video"
+		        url.html5="%SWFPATH%/plugins/videoplayer.js"
+		        url.flash="%SWFPATH%/plugins/videoplayer.swf"
+		        pausedonstart="false"
+		        loop="true"
+				volume="1.0"
+				
+				onloaded="add_video_sources();  "
+				onvideoready = "start_deze_video(); "	
+		/>
+
+		<!-- use the videoplayer plugin as panoramic image source -->
+		<image>
+			<sphere url="plugin:video" />
+		</image>
+
+		<!-- set the default view -->
+		<view hlookat="0" vlookat="0" fovtype="DFOV" fov="130" fovmin="75" fovmax="150" distortion="0.0" />
+
+		<!-- add the video sources and play the video -->
+		<action name="add_video_sources">
+			videointerface_addsource('start', '%CURRENTXML%/film/17_6_chitwan_park/chitwan_park_1920.mov|%CURRENTXML%/iphone-audio.m4a', '%CURRENTXML%/video-1920x960-poster.jpg');	
+			videointerface_addsource('4096x2048', '%CURRENTXML%/film/17_6_chitwan_park/chitwan_park_1920.mov|%CURRENTXML%/iphone-audio.m4a', '%CURRENTXML%/video-1024x512-poster.jpg');
+		
+			if(device.ios,
+				<!-- iOS Safari has a very slow 'video-to-webgl-texture' transfer, therefore use a low-res video by default -->
+				videointerface_play('start');
+			  ,
+				 videointerface_play('4096x2048');
+			  );			  
+		</action>
+
+		<action name="start_deze_video">
+			plugin[video].play();
+		</action>
+		
+		<!-- place your scene hotspots here 
+		<layer name="back" url="images/back.png"  visible= "true" keep="false" handcursor="false" capture="false"   align="centerbottom" x="0" y="10"  onclick= "loadscene (scene_17); send_scene17()"  />	   
+	   -->
+</scene>
+
+<scene name="scene_17_7" title="1.1 ROYAL MOUNTAIN" onstart="zet_aan() ; Bepaal_Scale (); set(layer[helemaal_terug].visible,true); " havevrimage="true" thumburl="panos/strand.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<!-- grid preview pano -->
+		<preview type="grid(cube,64,64,512,0xCCCCCC,0xF6F6F6,0x999999);" />
+
+		<!-- view/fov settings -->
+		<view hlookat="0" vlookat="0" fovtype="VFOV" fov="90" fovmin="30" fovmax="150" />
+		
+		<include url="skin/videointerface.xml" />  
+ 
+		<!-- include the videoplayer plugin -->
+		<plugin name="video"
+		        url.html5="%SWFPATH%/plugins/videoplayer.js"
+		        url.flash="%SWFPATH%/plugins/videoplayer.swf"
+		        pausedonstart="false"
+		        loop="true"
+				volume="1.0"
+				
+				onloaded="add_video_sources();  "
+				onvideoready = "start_deze_video(); "	
+		/>
+
+		<!-- use the videoplayer plugin as panoramic image source -->
+		<image>
+			<sphere url="plugin:video" />
+		</image>
+
+		<!-- set the default view -->
+		<view hlookat="0" vlookat="0" fovtype="DFOV" fov="130" fovmin="75" fovmax="150" distortion="0.0" />
+
+		<!-- add the video sources and play the video -->
+		<action name="add_video_sources">
+			videointerface_addsource('start', '%CURRENTXML%/film/17_7_swayam/swayam_1920.mov|%CURRENTXML%/iphone-audio.m4a', '%CURRENTXML%/video-1920x960-poster.jpg');	
+			videointerface_addsource('4096x2048', '%CURRENTXML%/film/17_7_swayam/swayam_1920.mov|%CURRENTXML%/iphone-audio.m4a', '%CURRENTXML%/video-1024x512-poster.jpg');
+		
+			if(device.ios,
+				<!-- iOS Safari has a very slow 'video-to-webgl-texture' transfer, therefore use a low-res video by default -->
+				videointerface_play('start');
+			  ,
+				 videointerface_play('4096x2048');
+			  );			  
+		</action>
+
+		<action name="start_deze_video">
+			plugin[video].play();
+		</action>
+		
+		<!-- place your scene hotspots here 
+		<layer name="back" url="images/back.png"  visible= "true" keep="false" handcursor="false" capture="false"   align="centerbottom" x="0" y="10"  onclick= "loadscene (scene_17); send_scene17()"  />	   
+	   -->
+</scene>
+
+<scene name="scene_17_8" title="1.1 ROYAL MOUNTAIN" onstart="zet_aan() ; Bepaal_Scale (); set(layer[helemaal_terug].visible,true); " havevrimage="true" thumburl="panos/strand.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<!-- grid preview pano -->
+		<preview type="grid(cube,64,64,512,0xCCCCCC,0xF6F6F6,0x999999);" />
+
+		<!-- view/fov settings -->
+		<view hlookat="0" vlookat="0" fovtype="VFOV" fov="90" fovmin="30" fovmax="150" />
+		
+		<include url="skin/videointerface.xml" />  
+ 
+		<!-- include the videoplayer plugin -->
+		<plugin name="video"
+		        url.html5="%SWFPATH%/plugins/videoplayer.js"
+		        url.flash="%SWFPATH%/plugins/videoplayer.swf"
+		        pausedonstart="false"
+		        loop="true"
+				volume="1.0"
+				
+				onloaded="add_video_sources();  "
+				onvideoready = "start_deze_video(); "	
+		/>
+
+		<!-- use the videoplayer plugin as panoramic image source -->
+		<image>
+			<sphere url="plugin:video" />
+		</image>
+
+		<!-- set the default view -->
+		<view hlookat="0" vlookat="0" fovtype="DFOV" fov="130" fovmin="75" fovmax="150" distortion="0.0" />
+
+		<!-- add the video sources and play the video -->
+		<action name="add_video_sources">
+			videointerface_addsource('start', '%CURRENTXML%/film/17_8_boudanath/boudanath_1920.mov|%CURRENTXML%/iphone-audio.m4a', '%CURRENTXML%/video-1920x960-poster.jpg');	
+			videointerface_addsource('4096x2048', '%CURRENTXML%/film/17_8_boudanath/boudanath_1920.mov|%CURRENTXML%/iphone-audio.m4a', '%CURRENTXML%/video-1024x512-poster.jpg');
+		
+			if(device.ios,
+				<!-- iOS Safari has a very slow 'video-to-webgl-texture' transfer, therefore use a low-res video by default -->
+				videointerface_play('start');
+			  ,
+				 videointerface_play('4096x2048');
+			  );			  
+		</action>
+
+		<action name="start_deze_video">
+			plugin[video].play();
+		</action>
+		
+		<!-- place your scene hotspots here 
+		<layer name="back" url="images/back.png"  visible= "true" keep="false" handcursor="false" capture="false"   align="centerbottom" x="0" y="10"  onclick= "loadscene (scene_17); send_scene17()"  />	   
+	   -->
+</scene>
+
+<scene name="scene_11_1" title="1.1 ROYAL MOUNTAIN" onstart="zet_aan() ; Bepaal_Scale (); set(layer[helemaal_terug].visible,true); " havevrimage="true" thumburl="panos/strand.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<!-- grid preview pano -->
+		<preview type="grid(cube,64,64,512,0xCCCCCC,0xF6F6F6,0x999999);" />
+
+		<!-- view/fov settings -->
+		<view hlookat="0" vlookat="0" fovtype="VFOV" fov="90" fovmin="30" fovmax="150" />
+		
+		<include url="skin/videointerface.xml" />  
+ 
+		<!-- include the videoplayer plugin -->
+		<plugin name="video"
+		        url.html5="%SWFPATH%/plugins/videoplayer.js"
+		        url.flash="%SWFPATH%/plugins/videoplayer.swf"
+		        pausedonstart="false"
+		        loop="true"
+				volume="1.0"
+				
+				onloaded="add_video_sources();  "
+				onvideoready = "start_deze_video(); "	
+		/>
+
+		<!-- use the videoplayer plugin as panoramic image source -->
+		<image>
+			<sphere url="plugin:video" />
+		</image>
+
+		<!-- set the default view -->
+		<view hlookat="0" vlookat="0" fovtype="DFOV" fov="130" fovmin="75" fovmax="150" distortion="0.0" />
+
+		<!-- add the video sources and play the video -->
+		<action name="add_video_sources">
+			videointerface_addsource('start', '%CURRENTXML%/film/11_1_israel/israel_1920.mov|%CURRENTXML%/iphone-audio.m4a', '%CURRENTXML%/video-1920x960-poster.jpg');	
+			videointerface_addsource('4096x2048', '%CURRENTXML%/film/11_1_israel/israel_1920.mov|%CURRENTXML%/iphone-audio.m4a', '%CURRENTXML%/video-1024x512-poster.jpg');
+		
+			if(device.ios,
+				<!-- iOS Safari has a very slow 'video-to-webgl-texture' transfer, therefore use a low-res video by default -->
+				videointerface_play('start');
+			  ,
+				 videointerface_play('4096x2048');
+			  );			  
+		</action>
+
+		<action name="start_deze_video">
+			plugin[video].play();
+		</action>
+		
+		<!-- place your scene hotspots here 
+		<layer name="back" url="images/back.png"  visible= "true" keep="false" handcursor="false" capture="false"   align="centerbottom" x="0" y="10"  onclick= "loadscene (scene_11); send_scene11()"  />	   
+	   -->
+</scene>
+
+<scene name="scene_11_2" title="1.1 ROYAL MOUNTAIN" onstart="zet_aan() ; Bepaal_Scale (); set(layer[helemaal_terug].visible,true); " havevrimage="true" thumburl="panos/strand.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<!-- grid preview pano -->
+		<preview type="grid(cube,64,64,512,0xCCCCCC,0xF6F6F6,0x999999);" />
+
+		<!-- view/fov settings -->
+		<view hlookat="0" vlookat="0" fovtype="VFOV" fov="90" fovmin="30" fovmax="150" />
+		
+		<include url="skin/videointerface.xml" />  
+ 
+		<!-- include the videoplayer plugin -->
+		<plugin name="video"
+		        url.html5="%SWFPATH%/plugins/videoplayer.js"
+		        url.flash="%SWFPATH%/plugins/videoplayer.swf"
+		        pausedonstart="false"
+		        loop="true"
+				volume="1.0"
+				
+				onloaded="add_video_sources();  "
+				onvideoready = "start_deze_video(); "	
+		/>
+
+		<!-- use the videoplayer plugin as panoramic image source -->
+		<image>
+			<sphere url="plugin:video" />
+		</image>
+
+		<!-- set the default view -->
+		<view hlookat="0" vlookat="0" fovtype="DFOV" fov="130" fovmin="75" fovmax="150" distortion="0.0" />
+
+		<!-- add the video sources and play the video -->
+		<action name="add_video_sources">
+			videointerface_addsource('start', '%CURRENTXML%/film/11_2_jordanie/jordanie_1920.mov|%CURRENTXML%/iphone-audio.m4a', '%CURRENTXML%/video-1920x960-poster.jpg');	
+			videointerface_addsource('4096x2048', '%CURRENTXML%/film/11_2_jordanie/jordanie_1920.mov|%CURRENTXML%/iphone-audio.m4a', '%CURRENTXML%/video-1024x512-poster.jpg');		
+			<!--
+			videointerface_addsource('start', '%CURRENTXML%/film/11_2_jordanie/1min.mp4|%CURRENTXML%/iphone-audio.m4a', '%CURRENTXML%/video-1920x960-poster.jpg');
+			videointerface_addsource('4096x2048', '%CURRENTXML%/film/11_2_jordanie/1min.mp4|%CURRENTXML%/iphone-audio.m4a', '%CURRENTXML%/video-1024x512-poster.jpg');
+			-->
+			if(device.ios,
+				<!-- iOS Safari has a very slow 'video-to-webgl-texture' transfer, therefore use a low-res video by default -->
+				videointerface_play('start');
+			  ,
+				 videointerface_play('4096x2048');
+			  );			  
+		</action>
+
+		<action name="start_deze_video">
+			plugin[video].play();
+		</action>
+		
+		<!-- place your scene hotspots here 
+		<layer name="back" url="images/back.png"  visible= "true" keep="false" handcursor="false" capture="false"   align="centerbottom" x="0" y="10"  onclick= "loadscene (scene_11); send_scene11()"  />	   
+	   -->
+</scene>
+
+
+
+	
+	
+</krpano>
