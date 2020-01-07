@@ -707,14 +707,14 @@ app.get('/objecten_uit', function (req, res) {
 app.get('/rotterdam_aan', function (req, res) {
 	//KlikAanKlikUit(11, 260, 7, 5).off(1, 2);
 	io.emit('message', 'pi', 'wereld1_aan' );
-	console.log ('rotterdam_aan');		
+	console.log ('rotterdam_aan werkt dit?????????');		
 	res.redirect('/');
 });
 
 app.get('/rotterdam_uit', function (req, res) {
 	//KlikAanKlikUit(11, 260, 7, 5).off(1, 2);
 	io.emit('message', 'pi', 'wereld1_uit' );
-	console.log ('rotterdam_uit');		
+	console.log ('rotterdam_uit werkt dit?????????');		
 	res.redirect('/');
 });
 
