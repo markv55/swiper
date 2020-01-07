@@ -705,7 +705,7 @@ app.get('/objecten_uit', function (req, res) {
 
 app.get('/rotterdam_aan', function (req, res) {
 	//KlikAanKlikUit(11, 260, 7, 5).off(1, 2);
-	io.emit('message', 'laad_foto17_1', '' );
+	io.emit('message', 'laad_foto17', '' );
 	
 	
 	console.log ('rotterdam_aan werkt dit?????????');		
@@ -714,7 +714,7 @@ app.get('/rotterdam_aan', function (req, res) {
 
 app.get('/rotterdam_uit', function (req, res) {
 	//KlikAanKlikUit(11, 260, 7, 5).off(1, 2);
-	io.emit('message', 'laad_foto17_2', '' );
+	io.emit('message', 'laad_foto18', '' );
 	console.log ('rotterdam_uit werkt dit?????????');		
 	res.redirect('/');
 });
