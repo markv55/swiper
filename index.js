@@ -602,7 +602,7 @@ app.get('/ad_product_rotterdam', function (req, res) {
 	
 	//io.emit('message', 'pi', 'ad_product_rotterdam' );
 	io.emit('stuur', '1', '2', '3', '4' );
-	console.log ('1,2,3,4');		
+	console.log ('wat staat hier');		
 	res.redirect('/');
 });
 
