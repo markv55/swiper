@@ -705,7 +705,7 @@ app.get('/objecten_uit', function (req, res) {
 
 app.get('/rotterdam_aan', function (req, res) {
 	//KlikAanKlikUit(11, 260, 7, 5).off(1, 2);
-	io.emit('stuur', 'pi', 'wereld1_aan' );
+	io.emit('message', 'stuur', 'wereld1_aan' );
 	
 	
 	console.log ('rotterdam_aan werkt dit?????????');		
