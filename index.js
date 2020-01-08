@@ -27,7 +27,9 @@ io.on('connection', function(socket) {
 // nieuwe code voor de vakantiebeurs
 
 // 
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////       IN DE SOFTWARE WORDT DE SET GEMAAKT     (SET_ID)                               //////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
 	// tablet tb1 stuurt een socket 
 	//"laad_foto17_1", "ontvangen_van", "device_id" , "location_id"
@@ -35,39 +37,36 @@ io.on('connection', function(socket) {
 	// er wordt een doorsturen_aan socket verstuurd naar diverse ontvangers welke bij deze location_id horen.
 	
 
-// info ontvangen van TABLET DEVICE_ID: TB1 / LOCATION_ID: VT1
+// TABLET DEVICE_ID: TB1 
 		socket.on('stuur', function(param0, param1, param2, param3) {
         if( (param1 == 'ontvangen_van') && (param2== 'tb1') && (param3== 'vt1')){
 
 		console.log ( "TABLET DEVICE_ID: TB1 / LOCATION_ID: VT1 " + param0 ,    param1 , "device_id: "+ param2  , "location_id: "+  param3  );
 		
-		io.emit('message', param0, "doorsturen_aan", "tv1", param3);	
-		io.emit('message', param0, "doorsturen_aan", "tb1", param3);	
-		io.emit('message', param0, "doorsturen_aan", "vr1", param3);	
-
+		io.emit('message', param0, "doorsturen_aan", "tv1", param3);	// televisie 1
+		io.emit('message', param0, "doorsturen_aan", "tb1", param3);	// tablet 1
+		io.emit('message', param0, "doorsturen_aan", "vr1", param3);	// VR bril 1
+		io.emit('message', param0, "doorsturen_aan", "vr2", param3);	// VR bril 2	
+		io.emit('message', param0, "doorsturen_aan", "wb1", param3);	// website 1
+		
 		}
 	});	
 
-// info ontvangen van TABLET DEVICE_ID TB1 / LOCATION_ID: VT2
+// TABLET DEVICE_ID TB2 
 		socket.on('stuur', function(param0, param1, param2, param3) {
-        if( (param1 == 'ontvangen_van') && (param2== 'tb1') && (param3== 'vt2')){
+        if( (param1 == 'ontvangen_van') && (param2== 'tb2') && (param3== 'vt1')){
 
-		console.log ( "TABLET DEVICE_ID TB1 / LOCATIE_ID: VT2 " + param0 ,    param1 , "device_id: "+ param2  , "location_id: "+  param3  );
+		console.log ( "TABLET DEVICE_ID TB2 / LOCATIE_ID: VT1 " + param0 ,    param1 , "device_id: "+ param2  , "location_id: "+  param3  );
 		
-		io.emit('message', param0, "doorsturen_aan", "tv1", param3);	
-		io.emit('message', param0, "doorsturen_aan", "tb1", param3);	
-		io.emit('message', param0, "doorsturen_aan", "vr1", param3);	
-		//io.emit('message', param0, "doorsturen_aan", "vr2", param3);		// EXTRA HEADSET MEE STUREN
+		io.emit('message', param0, "doorsturen_aan", "tv2", param3);	
+		io.emit('message', param0, "doorsturen_aan", "tb2", param3);	
+		io.emit('message', param0, "doorsturen_aan", "vr3", param3);	
+		io.emit('message', param0, "doorsturen_aan", "wb2", param3);			
 
 		}
 	});		
 	
-	
-	
-	
-	
-	
-// info ontvangen van de VR headset	 DEVICE_ID: VR1   LOCATION_ID: VT1
+// VR headset	 DEVICE_ID: VR1   
 		socket.on('stuur', function(param0, param1, param2, param3) {
         if(  (param2== 'vr1') && (param3== 'vt1')){
 
@@ -75,18 +74,20 @@ io.on('connection', function(socket) {
 		
 		io.emit('message', param0, param1, "tv1", param3);	
 		io.emit('message', param0, param1, "tb1", param3);	
+		io.emit('message', param0, param1, "wb1", param3);	
 
 		}
 	});	
 	
-// info ontvangen van de VR headset	 DEVICE_ID: VR1   LOCATION_ID: VT2
+// VR headset    DEVICE_ID: VR3   
 		socket.on('stuur', function(param0, param1, param2, param3) {
-        if(  (param2== 'vr1') && (param3== 'vt2')){
+        if(  (param2== 'vr3') && (param3== 'vt1')){
 
 		console.log ( "van VR headset data doorsturen " + param0 ,    param1 , "device_id: "+ param2  , "location_id: "+  param3  );
 		
-		io.emit('message', param0, param1, "tv1", param3);	
-		io.emit('message', param0, param1, "tb1", param3);	
+		io.emit('message', param0, param1, "tv2", param3);	
+		io.emit('message', param0, param1, "tb2", param3);	
+		io.emit('message', param0, param1, "wb2", param3);		
 
 		}
 	});	
@@ -784,27 +785,24 @@ app.get('/rotterdam_aan', function (req, res) {
 	//KlikAanKlikUit(11, 260, 7, 5).off(1, 2);
 	io.emit('message', 'laad_foto17_1', 'doorsturen_aan', 'tb1', 'vt1' );	
 	io.emit('message', 'laad_foto17_1', 'doorsturen_aan', 'vr1', 'vt1' );
+	io.emit('message', 'laad_foto17_1', 'doorsturen_aan', 'vr2', 'vt1' );	
 	io.emit('message', 'laad_foto17_1', 'doorsturen_aan', 'tv1', 'vt1' );
+	io.emit('message', 'laad_foto17_1', 'doorsturen_aan', 'wb1', 'vt1' );
 	
-	console.log ("content: --  laad_foto17_1  -- doorsturen_aan  --  tb1 en location_id -- vt1");
-	console.log ("content: --  laad_foto17_1  -- doorsturen_aan  --  vr1 en location_id -- vt1");
-	console.log ("content: --  laad_foto17_1  -- doorsturen_aan  --  tv1 en location_id -- vt1");
-	
+
 	res.redirect('/');
 });
 
 app.get('/rotterdam_uit', function (req, res) {
 	//KlikAanKlikUit(11, 260, 7, 5).off(1, 2);
 	
-	io.emit('message', 'laad_foto17_2', 'doorsturen_aan', 'tb1', 'vt2' );	
-	io.emit('message', 'laad_foto17_2', 'doorsturen_aan', 'vr1', 'vt2' );
-	io.emit('message', 'laad_foto17_2', 'doorsturen_aan', 'tv1', 'vt2' );
+	io.emit('message', 'laad_foto17_2', 'doorsturen_aan', 'tb2', 'vt1' );	
+	io.emit('message', 'laad_foto17_2', 'doorsturen_aan', 'vr3', 'vt1' );
+	io.emit('message', 'laad_foto17_2', 'doorsturen_aan', 'tv2', 'vt1' );
+	io.emit('message', 'laad_foto17_2', 'doorsturen_aan', 'wb2', 'vt1' );
 
 
-	console.log ("content: --  laad_foto17_2  -- doorsturen_aan  --  tb1 en location_id -- vt2");
-	console.log ("content: --  laad_foto17_2  -- doorsturen_aan  --  vr1 en location_id --  vt2");
-	console.log ("content: --  laad_foto17_2  -- doorsturen_aan  --  tv1 en location_id -- vt2");
-
+	
 	res.redirect('/');
 });
 
