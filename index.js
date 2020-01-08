@@ -48,7 +48,17 @@ io.on('connection', function(socket) {
 	});	
 
 	
-	// tablet tb2 stuurt aan: tb2, tv2 en vr2 en vr3
+		socket.on('stuur', function(param0, param1, param2, param3) {
+        if(  (param2== 'vr1') && (param3== 'vt1')   )  {
+
+		console.log ( "van VR headset data doorsturen " + param0 ,    param1 , "device_id: "+ param2  , "location_id: "+  param3  );
+		
+		io.emit('message', param0, param1, "tv1", param3);	
+		io.emit('message', param0, param1, "tb1", param3);	
+		io.emit('message', param0, param1, "vr1", param3);	
+
+		}
+	});	
 	
 	
 	
