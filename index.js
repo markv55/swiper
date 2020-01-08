@@ -68,12 +68,12 @@ io.on('connection', function(socket) {
 // STUURT DEZE 3 WAARDE 1 OP 1 DOOR NAAR KRPANO WAARDOOR DE WEBSITE MEE BEWEEGT
 
     socket.on('x', function(x) {
-		console.log("The x is: " + x);
+		//console.log("The x is: " + x);
 		io.emit('message', 'x', x);
 	});
 
     socket.on('y', function(y) {
-		console.log("The y is: " + y);
+		//console.log("The y is: " + y);
 		io.emit('message', 'y', y);
 	});
 	
