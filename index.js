@@ -165,10 +165,11 @@ io.on('connection', function(socket) {
 	
 	socket.on('stuur', function(param1, param2, param3, param4) {
 		io.emit('message', param1, param2, param3, param4);
-		console.log (param1);
-		console.log (param2);
-		console.log (param3);
-		console.log (param4);
+		
+		//console.log (param1);
+		//console.log (param2);
+		//console.log (param3);
+		//console.log (param4);
 	
 	});
 	
