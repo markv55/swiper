@@ -1,0 +1,829 @@
+<!-- let op in alle ajax verzoeken de return toevoegen dan is de js code heel simpel -->
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Switcher</title>
+		<style>
+		
+			body
+					{
+						background-color:                   gray;
+						font-family:      TradeGothic, sans-serif;
+						font-size: 30px;						
+					}
+			
+			.btn {
+				padding: 10px 10px;
+				background: blue;
+				color: #fff;
+				text-decoration: none;
+				border-radius: 10px;
+				font-family: Arial;
+
+				font-size: 40px;
+
+				margin:  5px;
+				}
+
+			.btn_green {
+				padding: 10px 10px;
+				background: green;
+				color: white;
+				text-decoration: none;
+				border-radius: 10px;
+				font-family: Arial;
+				font-weight: bold;
+				font-size: 40px;
+			
+				}
+
+			.btn_red {
+				font-weight: bold;				
+				background: red;
+				color: white;
+				
+				}						
+			
+			.btn-container-left {
+				max-width: 900px;
+				margin: 30px auto;
+				text-align: left;
+			}
+	
+			.btn-container-right {
+				max-width: 900px;
+				margin: 30px auto;
+				text-align: right;
+			}
+			
+			.btn-container-center {
+				max-width: 900px;
+				margin: 30px auto;
+				text-align: center;
+			}
+	
+			.touch {
+				width: 40%;
+			}
+
+			.custom {
+				margin: 50px 0;
+				
+			  width: 80%;
+			  -webkit-appearance: none !important;
+			  height:20px;
+			  border-radius: 8px;
+			  background:-webkit-gradient(linear,center top, center bottom, from(#CFDCDD),to(#DFE9EA),color-stop(50%,#DFE9EA));
+			-webkit-transition: background 450ms;
+			  transition: background 450ms;
+
+			}
+
+			/* Change the Slider Button Color Here */
+			.custom::-webkit-slider-thumb {
+				-webkit-appearance: none !important;
+				background:#108A93;
+				height:100px;
+				width:100px;
+				border-radius: 100px;
+			}
+
+			.custom::-webkit-slider-thumb:before {
+			  background-color: yellow;
+			}
+		</style>
+	</head>
+	
+	<body>
+
+		
+		<!-- <a href= "/film" class="btn"  >klik voor film</a> -->
+
+		<!-- let op in alle ajax verzoeken de return toevoegen dan is de js code heel simpel -->
+			<p> </p>
+			
+			
+
+
+			
+			<!--
+			<div class="text-center" style="margin: 20px auto;">
+				<iframe src="/swiper3" style="width: 500px; height: 500px;" border="0"></iframe>
+			</div>
+			
+			
+			<input class="js-ajx-slider custom" type="range" min="0.2" max="1.5" step="0.1" />
+
+			<p>selecteer product </p>			
+			<a href="/product1" class="js-ajx btn">avatar1</a>			
+			<a href="/product2" class="js-ajx btn">avatar2</a>				
+			<a href="/product3" class="js-ajx btn">avatar3</a>				
+			<a href="/product4" class="js-ajx btn">spinner1</a>	
+			<p>selecteer product </p>	
+			<a href="/product5" class="js-ajx btn">video</a>			
+			<a href="/product6" class="js-ajx btn">kaku</a>				
+			<a href="/product7" class="js-ajx btn">product7</a>				
+			<a href="/product8" class="js-ajx btn">product8</a>	
+			
+			-->
+			
+		
+		
+		<!--  <div class="btn-container-right">	-->
+		<div class="btn-container-center">		
+
+			<p>BUILD_MODUS </p>	
+			  <a href="/return/wereld1_make" class="js-ajx btn">wereld1_make</a>  
+			  <a href="/return/wereld2_make" class="js-ajx btn">wereld2_make</a>  				
+			
+			<p>PLACE OBJECTS</p>			
+			<a href="/return/recenter" class="js-ajx btn btn_green">recenter</a>
+			<br>
+			<br>			
+				
+			<!-- <a href="/ad_product_html" class="btn">ad_product</a> -->
+			 <a href="/return/ad_product" class="js-ajx-url-ad btn btn_red">ad_product</a> 
+			<br>
+			<br>
+			
+			
+<!-- nieuw rotterdam -->			
+			
+				 <a href="/return/ad_product_rotterdam" class="js-ajx-url-ad-rotterdam btn btn_red">ad_product_rotterdam</a> 
+			<br>
+			<br>		
+<!-- einde nieuw rotterdam -->			
+			
+		
+			<!-- <p>change product </p> -->
+			<!-- <a href="/change_product_html" class="btn">change_product</a> -->
+			<a href="/return/change_product" class="js-ajx-url-change btn btn_red">change_product</a>	
+			<br>
+			<br>		
+			<!-- <p>delete product </p> -->
+			<a href="/return/delete_product" class="js-ajx-url-delete btn btn_red">delete_product</a>
+			
+		
+			
+	
+			
+			
+			<!-- <p>PLAY MODUS </p>	
+			<a href="/play_modus" class="js-ajx btn_green">play_modus</a>		
+			-->
+		</div>
+
+		<!-- <div class="btn-container-left"> -->
+		<div class="btn-container-center">		
+		
+			
+			
+			
+			<p>PLAY_MODUS </p>					
+			<!--<a href="/recenter" class="js-ajx btn btn-container-left">recenter</a>		
+			<br>	
+			<br>
+-->			
+			<!-- <p>WERELD1</p>	-->	 
+			  <a href="/return/wereld1_aan" class="js-ajx btn">wereld1_aan</a>  
+			  <a href="/return/wereld1_play" class="js-ajx btn_green">w1_play</a>  			  
+			  <a href="/return/wereld1_uit" class="js-ajx btn btn_red">w1_uit</a>  			  
+			<!-- <p>WERELD2</p> -->
+			<br>	
+			<br>				
+			  <a href="/return/wereld2_aan" class="js-ajx btn">wereld2_aan</a>  
+			  <a href="/return/wereld2_play" class="js-ajx btn_green">w2_play</a>			  
+			  <a href="/return/wereld2_uit" class="js-ajx btn btn_red">w2_uit</a>  			 
+			<br>							
+			<br>
+			<br>			
+			<p>FRISSE START </p>	
+			<a href="/return/wereld1_ready" class="js-ajx btn_green">wereld1_ready</a>  
+			<a href="/return/wereld2_ready" class="js-ajx btn_green">wereld2_ready</a>  	
+			
+			
+			
+			
+			<br>
+			<p>RESET_MODUS </p>	
+				<a href="/return/wereld1_reset" class="js-ajx btn btn_red">wereld1_reset</a>  
+				<a href="/return/wereld2_reset" class="js-ajx btn btn_red">wereld2_reset</a>  
+				
+				
+				
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			  <a href="/return/build_modus" class="js-ajx btn btn">build_modus</a>  	
+			<br>
+			<br>			
+			
+			<p>GAME OBJECTEN </p>
+			<a href="/return/objecten_aan" class="js-ajx btn_green">objecten_aan</a>	
+			<a href="/return/objecten_uit" class="js-ajx btn btn_red">objecten_uit</a>		
+			  <a href="/return/ready" class="js-ajx btn">ready</a>  			
+			
+			<!-- <a href="/return/inputisoutput" class="js-ajx btn btn_red">input is output</a>		-->			
+			
+						
+			<br>		
+			<p> </p>
+			<p>RECENTER</p>				
+			<a href="/recenter" class="js-ajx btn_green btn-container-left">recenter</a>
+			<a href="/aan" class="js-ajx btn btn-container-left">aan</a>
+			<a href="/uit" class="js-ajx btn_green btn-container-left">uit</a>
+			 <a href="/foto_html" class="js-ajx-url-foto_html btn">foto_html</a> 	
+			 <!--  <p>VIDEO</p>		-->
+			<a href="/return/aan" class="js-ajx btn_green">aan</a>  
+			<a href="/return/uit" class="js-ajx btn btn_red">uit</a>  			
+			
+			<br>		
+			<p> </p>
+			<p>longjpg</p>	
+			<a href="/return/longjpg" class="js-ajx-url-longjpg btn btn_red">longjpg</a> 
+
+			<br>		
+			<p> </p>
+			<p>catapult</p>	
+			<a href="/return/catapult" class="js-ajx-url-catapult btn btn_red">catapult</a> 		
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+				<p>concept School game Marco</p>	
+			<a href="/return/krpano" class="js-ajx-url-krpano btn btn_red">School game Marco</a> 		
+			<br>
+			<br>
+			<br>		
+				<p>Alert Online 2.0 (VGZ)</p>	
+			<a href="/return/feesttimo" class="js-ajx-url-feesttimo btn btn_red">Alert Online 2.0 (VGZ)</a> 		
+			<br>
+			<br>
+			<br>	
+
+
+
+
+			
+			<br>
+				<p>AR</p>	
+			<a href="/return/AR" class="js-ajx-url-AR btn btn_red">AR</a> 		
+			<br>
+			<br>
+			
+			<br>			
+			<br>
+				<p>krpanoControl</p>	
+			<a href="/return/krpanoControl" class="js-ajx-url-krpanoControl btn btn_red">krpanoControl</a> 		
+
+
+			<br>
+				<p>krpanoSlave</p>	
+			<a href="/return/krpanoSlave" class="js-ajx-url-krpanoSlave btn btn_red">krpanoSlave</a> 		
+
+			<br>
+			<br>
+			<br>
+			<br>
+	
+
+			
+<!-- ZEILEN      ZEILEN       ZEILEN      ZEILEN      ZEILEN       ZEILEN      ZEILEN      ZEILEN       ZEILEN      ZEILEN      ZEILEN       ZEILEN       -->			
+<!-- ZEILEN      ZEILEN       ZEILEN      ZEILEN      ZEILEN       ZEILEN      ZEILEN      ZEILEN       ZEILEN      ZEILEN      ZEILEN       ZEILEN       -->	
+
+<!-- uitleg
+onderstaande href="/return/zeilenSlaveSocket". De tekst zeilenSlaveSocket wordt als socket verstuurd in index.js in de functie app.get('/return/:rec',
+onderstaande class  (bijvoorbeeld js-ajx-url-zeilenSlaveSocket)  wordt onderaan deze pagina gekoppeld aan een sub web pagina
+ -->
+
+			<br>		
+			<br>			
+				<p>B&B VR DEMO OP VAKANTIEBEURS</p>		
+				<p>B&B VR DEMO OP VAKANTIEBEURS</p>						
+			<br>						
+			<br>
+
+				<p>WEB VIRTUAL REALITY (MASTER)</p>	
+			<a href="/return/zeilenSlaveSocket" class="js-ajx-url-zeilenSlaveSocket btn btn_red">WEB VIRTUAL REALITY (MASTER)</a> 		
+			<br>
+			<br>
+		
+				<p>WEB VIRTUAL REALITY (MEEKIJKEN)</p>	
+			<a href="/return/zeilenSlave" class="js-ajx-url-zeilenSlave btn btn_red">WEB VIRTUAL REALITY (MEEKIJKEN)</a> 		
+			<br>
+			<br>
+			<br>
+
+
+				<p>full screen scherm op TV  //  zeilenScherm</p>	
+			<a href="/return/zeilenScherm" class="js-ajx-url-zeilenScherm btn btn_red"> MEEKIJKEN FULL SCREEN</a> 		
+			<br>
+
+				<p>afstandbediening op telefoon  // zeilenControl</p>	
+			<a href="/return/zeilenControl" class="js-ajx-url-zeilenControl btn btn_red">MEEKIJKEN AFSTANDBEDIENING</a> 		
+			<br>
+
+			
+<!-- VIRTUAL TRAVEL       VIRTUAL TRAVEL       VIRTUAL TRAVEL       VIRTUAL TRAVEL       VIRTUAL TRAVEL       VIRTUAL TRAVEL       VIRTUAL TRAVEL       -->			
+<!-- VIRTUAL TRAVEL       VIRTUAL TRAVEL       VIRTUAL TRAVEL       VIRTUAL TRAVEL       VIRTUAL TRAVEL       VIRTUAL TRAVEL       VIRTUAL TRAVEL       -->		
+			<br>		
+			<br>			
+				<p>VIRTUAL TRAVEL</p>		
+			<br>						
+			<br>
+
+				<p>WEB VIRTUAL REALITY (MASTER)</p>	
+			<a href="/return/VirtualTravel_1" class="ajx_url_VirtualTravel_1 btn btn_green">WEB VIRTUAL REALITY (MASTER)</a> 		
+			<br>
+			<br>
+		
+				<p>WEB VIRTUAL REALITY (MEEKIJKEN)</p>	
+			<a href="/return/VirtualTravel_2" class="ajx_url_VirtualTravel_2 btn btn_green">WEB VIRTUAL REALITY (MEEKIJKEN)</a> 		
+			<br>
+			<br>
+			<br>
+
+
+				<p>full screen scherm op TV  //  zeilenScherm</p>	
+			<a href="/return/VirtualTravel_3" class="ajx_url_VirtualTravel_3 btn btn_green"> MEEKIJKEN FULL SCREEN</a> 		
+			<br>
+
+				<p>afstandbediening op telefoon  // zeilenControl</p>	
+			<a href="/return/VirtualTravel_4" class="ajx_url_VirtualTravel_4 btn btn_green">MEEKIJKEN AFSTANDBEDIENING</a> 		
+			<br>		
+			
+
+<!-- ITB      ITB       ITB      ITB       ITB      ITB       ITB      ITB       ITB      ITB       ITB      ITB       ITB      ITB       ITB      ITB      -->			
+<!-- ITB      ITB       ITB      ITB       ITB      ITB       ITB      ITB       ITB      ITB       ITB      ITB       ITB      ITB       ITB      ITB      -->
+<!-- ITB      ITB       ITB      ITB       ITB      ITB       ITB      ITB       ITB      ITB       ITB      ITB       ITB      ITB       ITB      ITB      -->
+			<br>		
+			<br>			
+				<p>VIRTUAL TRAVEL ITB</p>		
+			<br>						
+			<br>
+
+				<p>WEB VIRTUAL REALITY ITB (MASTER)</p>	
+			<a href="/return/VirtualTravel_itb_1" class="ajx_url_VirtualTravel_itb_1 btn btn_green">WEB VIRTUAL REALITY (MASTER)</a> 		
+			<br>
+			<br>
+		
+				<p>WEB VIRTUAL REALITY ITB(MEEKIJKEN)</p>	
+			<a href="/return/VirtualTravel_itb_2" class="ajx_url_VirtualTravel_itb_2 btn btn_green">WEB VIRTUAL REALITY (MEEKIJKEN)</a> 		
+			<br>
+			<br>
+			<br>
+
+
+				<p>full screen scherm op TV ITB  //  </p>	
+			<a href="/return/VirtualTravel_itb_3" class="ajx_url_VirtualTravel_itb_3 btn btn_green"> MEEKIJKEN FULL SCREEN</a> 		
+			<br>
+
+				<p>afstandbediening op telefoon ITB // </p>	
+			<a href="/return/VirtualTravel_itb_4" class="ajx_url_VirtualTravel_itb_4 btn btn_green">MEEKIJKEN AFSTANDBEDIENING</a> 		
+			<br>		
+			
+			
+
+
+
+
+
+
+
+
+
+
+
+
+			
+<!--  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  -->
+<!--  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  -->
+<!--  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  -->			
+			<br>			
+			<br>		
+			<br>
+
+			<br>			
+			<br>		
+			<br>
+			<br>
+			<br>			
+				<p>load from internet 2d plaatje</p>	
+
+			<a href="/return/scene_1_load360_from_internet" class="js-ajx btn_green">load internet</a> 
+			<a href="/return/scene_1_load360_from_default" class="js-ajx btn_green">load default</a> 
+			
+				
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+				<p>load from internet  foto</p>	
+
+			<a href="/return/scene_1_load360_from_internet_360" class="js-ajx btn_green">360 internett</a> 
+			<a href="/return/scene_1_load360_from_default_360" class="js-ajx btn_green">360 defaulltt</a> 
+			
+		<br>
+			<br>
+			<br>		
+		
+			
+		</div>		
+		
+		
+		
+		<!-- onderstaande twee regels werken wanneer er internet is. stand alone niet!!!
+		<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+		-->
+		<script src="/static/js/jquery-1.11.1.js"></script>
+		<script src="/static/js/socket.io.js"></script>
+		
+		<script src="/static/js/slider.js"></script>
+
+		<script>
+
+	$(function () {
+	
+			var socket = io();
+			
+			$('.js-ajx').on('click', function(e) {
+				e.preventDefault();
+				$.ajax({
+					url: $(this).attr('href')
+				}).done(function() {
+					console.log('Ajax request successfull');
+				});
+			});
+	
+			$('.js-ajx-url-ad').on('click', function(e) {
+				e.preventDefault();
+				$.ajax({
+					url: $(this).attr('href')
+				}).done(function() {
+					
+					window.location = '/ad_product_html';
+					console.log('Ajax request successfull');
+				});
+			});
+
+
+
+			$('.js-ajx-url-ad-rotterdam').on('click', function(e) {
+				e.preventDefault();
+				$.ajax({
+					url: $(this).attr('href')
+				}).done(function() {
+					
+					window.location = '/ad_product_html_rotterdam';
+					console.log('Ajax request successfull');
+				});
+			});
+
+
+
+
+			
+			$('.js-ajx-url-change').on('click', function(e) {
+				e.preventDefault();
+				$.ajax({
+					url: $(this).attr('href')
+				}).done(function() {
+					
+					window.location = '/change_product_html';
+					console.log('Ajax request successfull');
+				});
+			});
+
+			$('.js-ajx-url-delete').on('click', function(e) {
+				e.preventDefault();
+				$.ajax({
+					url: $(this).attr('href')
+				}).done(function() {
+					
+					window.location = '/delete_product_html';
+					console.log('Ajax request successfull');
+				});
+			});
+
+			$('.js-ajx-url-foto_html').on('click', function(e) {
+				e.preventDefault();
+				$.ajax({
+					url: $(this).attr('href')
+				}).done(function() {
+					
+					window.location = '/foto_html';
+					console.log('Ajax request successfull');
+				});
+			});
+			
+	
+
+			$('.js-ajx-url-longjpg').on('click', function(e) {
+				e.preventDefault();
+				$.ajax({
+					url: $(this).attr('href')
+				}).done(function() {
+					
+					window.location = '/longjpg_html';
+					console.log('Ajax request successfull');
+				});
+			});	
+			
+			$('.js-ajx-url-catapult').on('click', function(e) {
+				e.preventDefault();
+				$.ajax({
+					url: $(this).attr('href')
+				}).done(function() {
+					
+					window.location = '/catapult_html';
+					console.log('Ajax request successfull');
+				});
+			});	
+
+
+			$('.js-ajx-url-krpano').on('click', function(e) {
+				e.preventDefault();
+				$.ajax({
+					url: $(this).attr('href')
+				}).done(function() {
+					
+					window.location = '/krpano_html';
+					console.log('Ajax request successfull');
+				});
+			});	
+			
+			
+			$('.js-ajx-url-feesttimo').on('click', function(e) {
+				e.preventDefault();
+				$.ajax({
+					url: $(this).attr('href')
+				}).done(function() {
+					
+					window.location = '/feesttimo_html';
+					console.log('Ajax request successfull');
+				});
+			});				
+			
+		
+
+			$('.js-ajx-url-AR').on('click', function(e) {
+				e.preventDefault();
+				$.ajax({
+					url: $(this).attr('href')
+				}).done(function() {
+					
+					window.location = '/AR_html';
+					console.log('Ajax request successfull');
+				});
+			});	
+
+			$('.js-ajx-url-krpanoControl').on('click', function(e) {
+				e.preventDefault();
+				$.ajax({
+					url: $(this).attr('href')
+				}).done(function() {
+					
+					window.location = '/krpanoControl_html';
+					console.log('Ajax request successfull');
+				});
+			});	
+
+			$('.js-ajx-url-krpanoSlave').on('click', function(e) {
+				e.preventDefault();
+				$.ajax({
+					url: $(this).attr('href')
+				}).done(function() {
+					
+					window.location = '/krpanoSlave_html';
+					console.log('Ajax request successfull');
+				});
+			});	
+
+
+			
+			
+<!-- ZEILEN      ZEILEN       ZEILEN      ZEILEN      ZEILEN       ZEILEN      ZEILEN      ZEILEN       ZEILEN      ZEILEN      ZEILEN       ZEILEN       -->			
+<!-- ZEILEN      ZEILEN       ZEILEN      ZEILEN      ZEILEN       ZEILEN      ZEILEN      ZEILEN       ZEILEN      ZEILEN      ZEILEN       ZEILEN       -->	
+
+<!--WEB VR MASTER (SEND SOCKET) -->
+			$('.js-ajx-url-zeilenSlaveSocket').on('click', function(e) {
+				e.preventDefault();
+				$.ajax({
+					url: $(this).attr('href')
+				}).done(function() {
+					
+					window.location = '/zeilenSlaveSocket_html';
+					console.log('Ajax request successfull');
+				});
+			});				
+
+<!--WEB VR (MEEKIJKEN)  -->			
+			$('.js-ajx-url-zeilenSlave').on('click', function(e) {
+				e.preventDefault();
+				$.ajax({
+					url: $(this).attr('href')
+				}).done(function() {
+					
+					window.location = '/zeilenSlave_html';
+					console.log('Ajax request successfull');
+				});
+			});	
+
+<!--FULL SCREEN SCHERM -->			
+			$('.js-ajx-url-zeilenScherm').on('click', function(e) {
+				e.preventDefault();
+				$.ajax({
+					url: $(this).attr('href')
+				}).done(function() {
+					
+					window.location = '/zeilenScherm_html';
+					console.log('Ajax request successfull');
+				});
+			});				
+
+<!--REMOTE CONTROLLER  -->		
+			$('.js-ajx-url-zeilenControl').on('click', function(e) {
+				e.preventDefault();
+				$.ajax({
+					url: $(this).attr('href')
+				}).done(function() {
+					
+					window.location = '/zeilenControl_html';
+					console.log('Ajax request successfull');
+				});
+			});	
+			
+
+			
+<!-- VIRTUAL TRAVEL       VIRTUAL TRAVEL       VIRTUAL TRAVEL       VIRTUAL TRAVEL       VIRTUAL TRAVEL       VIRTUAL TRAVEL       VIRTUAL TRAVEL       VIRTUAL TRAVEL            -->			
+<!-- VIRTUAL TRAVEL       VIRTUAL TRAVEL       VIRTUAL TRAVEL       VIRTUAL TRAVEL       VIRTUAL TRAVEL       VIRTUAL TRAVEL       VIRTUAL TRAVEL       VIRTUAL TRAVEL            -->			
+
+<!--WEB VR MASTER (SEND SOCKET) -->
+			$('.ajx_url_VirtualTravel_1').on('click', function(e) {
+				e.preventDefault();
+				$.ajax({
+					url: $(this).attr('href')
+				}).done(function() {
+					
+					window.location = '/VirtualTravel_1_html';
+					console.log('Ajax request successfull');
+				});
+			});				
+
+<!--WEB VR (MEEKIJKEN)  -->			
+			$('.ajx_url_VirtualTravel_2').on('click', function(e) {
+				e.preventDefault();
+				$.ajax({
+					url: $(this).attr('href')
+				}).done(function() {
+					
+					window.location = '/VirtualTravel_2_html';
+					console.log('Ajax request successfull');
+				});
+			});	
+
+<!--FULL SCREEN SCHERM -->			
+			$('.ajx_url_VirtualTravel_3').on('click', function(e) {
+				e.preventDefault();
+				$.ajax({
+					url: $(this).attr('href')
+				}).done(function() {
+					
+					window.location = '/VirtualTravel_3_html';
+					console.log('Ajax request successfull');
+				});
+			});				
+
+<!--REMOTE CONTROLLER  -->		
+			$('.ajx_url_VirtualTravel_4').on('click', function(e) {
+				e.preventDefault();
+				$.ajax({
+					url: $(this).attr('href')
+				}).done(function() {
+					
+					window.location = '/VirtualTravel_4_html';
+					console.log('Ajax request successfull');
+				});
+			});				
+			
+
+<!-- ITB          ITB     ITB          ITB          ITB          ITB           ITB          ITB           ITB          ITB           ITB          ITB           ITB          ITB       -->			
+<!-- ITB          ITB     ITB          ITB          ITB          ITB           ITB          ITB           ITB          ITB           ITB          ITB           ITB          ITB       -->		
+
+<!--WEB VR MASTER (SEND SOCKET) -->
+			$('.ajx_url_VirtualTravel_itb_1').on('click', function(e) {
+				e.preventDefault();
+				$.ajax({
+					url: $(this).attr('href')
+				}).done(function() {
+					
+					window.location = '/VirtualTravel_itb_1_html';
+					console.log('Ajax request successfull');
+				});
+			});				
+
+<!--WEB VR (MEEKIJKEN)  -->			
+			$('.ajx_url_VirtualTravel_itb_2').on('click', function(e) {
+				e.preventDefault();
+				$.ajax({
+					url: $(this).attr('href')
+				}).done(function() {
+					
+					window.location = '/VirtualTravel_itb_2_html';
+					console.log('Ajax request successfull');
+				});
+			});	
+
+<!--FULL SCREEN SCHERM -->			
+			$('.ajx_url_VirtualTravel_itb_3').on('click', function(e) {
+				e.preventDefault();
+				$.ajax({
+					url: $(this).attr('href')
+				}).done(function() {
+					
+					window.location = '/VirtualTravel_itb_3_html';
+					console.log('Ajax request successfull');
+				});
+			});				
+
+<!--REMOTE CONTROLLER  -->		
+			$('.ajx_url_VirtualTravel_itb_4').on('click', function(e) {
+				e.preventDefault();
+				$.ajax({
+					url: $(this).attr('href')
+				}).done(function() {
+					
+					window.location = '/VirtualTravel_itb_4_html';
+					console.log('Ajax request successfull');
+				});
+			});				
+			
+			
+			
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+		$('.js-ajx-slider').on('input change', function(e) {
+					var v = $(this).val();
+					$.ajax({
+						url: '/scale_100',
+						data: { val: v },
+						type: 'GET',
+					}).done(function() {
+						console.log('Ajax request successfull');
+					});
+		});
+			
+
+
+
+		
+		socket.on('message', function(msg, vid , c,d){  
+		
+				console.log(msg);
+				console.log(vid);
+				console.log(c);
+				console.log(d);				
+				
+				
+				if (msg == 'videotimo1'){
+					window.location = '/timo1_html';  //op deze simpele manier kun je naar een andere website toe gaan!!!!	
+					navigator.vibrate([100, 200, 200, 200, 500]);
+				}	
+
+				if (msg == 'videotimo2'){
+					window.location = '/timo2_html';  //op deze simpele manier kun je naar een andere website toe gaan!!!!	
+					navigator.vibrate([100, 200, 200, 200, 500]);
+				}	
+				if (msg == 'videotimo3'){
+					window.location = '/timo3_html';  //op deze simpele manier kun je naar een andere website toe gaan!!!!	
+					navigator.vibrate([100, 200, 200, 200, 500]);
+				}	
+
+
+		});
+
+
+
+
+
+
+
+		
+		//	
+			
+			
+			
+	});
+		
+		
+		</script>
+	</body>
+</html>
