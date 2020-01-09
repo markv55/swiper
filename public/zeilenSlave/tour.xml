@@ -64,6 +64,12 @@
 		if(startactions !== null, startactions() );
 	</action>
 
+	
+<layer name="close_button" style="close_btn_style" x="5" y="5" zorder="1" onclick="set (layer[startscherm_tablet].visible,false);   "/>
+<style name="close_btn_style" keep="true" url="images/close.png" parent="startscherm_tablet" align="righttop" edge="center" scale= "0.6" scale.mobile = "1"  />	
+	
+	
+	
 
 	<layer name="startscherm_tablet" url="images/startscherm_tablet2.png" onclick= "set (layer[startscherm_tablet].visible,false); " keep="true" visible="true" zorder="10" handcursor="false" capture="false"  align="center" 
 		 scalechildren="true"/>
