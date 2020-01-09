@@ -802,7 +802,6 @@ app.get('/rotterdam_aan', function (req, res) {
 	io.emit('message', 'laad_foto17_1', 'doorsturen_aan', 'vr2', 'vt1' );	
 	io.emit('message', 'laad_foto17_1', 'doorsturen_aan', 'tv1', 'vt1' );
 	io.emit('message', 'laad_foto17_1', 'doorsturen_aan', 'wb1', 'vt1' );
-	
 
 	res.redirect('/');
 });
@@ -814,11 +813,45 @@ app.get('/rotterdam_uit', function (req, res) {
 	io.emit('message', 'laad_foto17_2', 'doorsturen_aan', 'vr3', 'vt1' );
 	io.emit('message', 'laad_foto17_2', 'doorsturen_aan', 'tv2', 'vt1' );
 	io.emit('message', 'laad_foto17_2', 'doorsturen_aan', 'wb2', 'vt1' );
-
-
 	
 	res.redirect('/');
 });
+
+
+
+// knoppen vanuit webcontroller_3_html
+
+app.get('/tv1_aan_webcontroller_3', function (req, res) {
+	//KlikAanKlikUit(11, 260, 7, 5).off(1, 2);
+	io.emit('message', 'laad_foto17_1', 'doorsturen_aan', 'tb1-test', 'vt1' );	
+	io.emit('message', 'laad_foto17_1', 'doorsturen_aan', 'vr1-test', 'vt1' );
+	io.emit('message', 'laad_foto17_1', 'doorsturen_aan', 'vr2-test', 'vt1' );	
+	io.emit('message', 'laad_foto17_1', 'doorsturen_aan', 'tv1-test', 'vt1' );
+	io.emit('message', 'laad_foto17_1', 'doorsturen_aan', 'wb1-test', 'vt1' );
+
+	res.redirect('/');
+});
+
+app.get('/tv1_uit_webcontroller_3', function (req, res) {
+	//KlikAanKlikUit(11, 260, 7, 5).off(1, 2);
+	
+	io.emit('message', 'laad_foto17_2', 'doorsturen_aan', 'tb2-test', 'vt1' );	
+	io.emit('message', 'laad_foto17_2', 'doorsturen_aan', 'vr3-test', 'vt1' );
+	io.emit('message', 'laad_foto17_2', 'doorsturen_aan', 'tv2-test', 'vt1' );
+	io.emit('message', 'laad_foto17_2', 'doorsturen_aan', 'wb2-test', 'vt1' );
+	
+	res.redirect('/');
+});
+
+
+
+
+
+
+
+
+
+
 
 
 
