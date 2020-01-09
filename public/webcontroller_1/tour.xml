@@ -259,12 +259,12 @@
 			
 <!-- -->
 <!-- DE PLATTEGROND MET DE ICONS!!!! -->
-<layer name="map" url="graphics/floor.jpg" visible = "false" keep="true" handcursor="false" capture="false" align="center"  scalechildren="true" />
+<layer name="map" url="graphics/floor.jpg" visible = "true" keep="true" handcursor="false" capture="false" align="center"  scalechildren="true" />
 
-<!--	na copieren van deze site onderstaande aan zetten en bij layer map vidible true zetten
+
 <layer name="close_button" style="close_btn_style" x="5" y="5" zorder="1" onclick="set (layer[map].visible,false);   "/>
 <style name="close_btn_style" keep="true" url="images/close.png" parent="map" align="righttop" edge="center" scale= "0.6" scale.mobile = "1"  />	
--->
+
 
 
 

@@ -400,12 +400,16 @@ onderstaande class  (bijvoorbeeld js-ajx-url-zeilenSlaveSocket)  wordt onderaan 
 			<br>
 
 				<p>AFSTANDBEDIENING VAKANTIEBEURS 2020 // </p>	
-			<a href=" " class=" ajx_url_webcontroller_1 btn ">MEEKIJKEN AFSTANDBEDIENING</a> 		
+			<a href=" " class=" ajx_url_webcontroller_1 btn ">virtuele reisadviseur</a> 		
 			<br>	
-
-
-
-
+			<a href=" " class=" ajx_url_webcontroller_2 btn ">klant thuis</a> 		
+			<br>	
+			<a href=" " class=" ajx_url_webcontroller_3 btn ">beurs remote</a> 		
+			<br>	
+			<a href=" " class=" ajx_url_webcontroller_4 btn ">reserve</a> 		
+			<br>	
+			<a href=" " class=" ajx_url_webcontroller_5 btn ">reserve</a> 		
+			<br>	
 
 
 
@@ -791,14 +795,50 @@ onderstaande class  (bijvoorbeeld js-ajx-url-zeilenSlaveSocket)  wordt onderaan 
 				});
 			});		
 
+			$('.ajx_url_webcontroller_2').on('click', function(e) {
+				e.preventDefault();
+				$.ajax({
+					url: $(this).attr('href')
+				}).done(function() {
+					
+					window.location = '/webcontroller_2_html';
+					console.log('Ajax request successfull');
+				});
+			});	
+
+			$('.ajx_url_webcontroller_3').on('click', function(e) {
+				e.preventDefault();
+				$.ajax({
+					url: $(this).attr('href')
+				}).done(function() {
+					
+					window.location = '/webcontroller_3_html';
+					console.log('Ajax request successfull');
+				});
+			});	
+
+			$('.ajx_url_webcontroller_4').on('click', function(e) {
+				e.preventDefault();
+				$.ajax({
+					url: $(this).attr('href')
+				}).done(function() {
+					
+					window.location = '/webcontroller_4_html';
+					console.log('Ajax request successfull');
+				});
+			});	
 
 
-
-
-
-
-
-
+			$('.ajx_url_webcontroller_5').on('click', function(e) {
+				e.preventDefault();
+				$.ajax({
+					url: $(this).attr('href')
+				}).done(function() {
+					
+					window.location = '/webcontroller_5_html';
+					console.log('Ajax request successfull');
+				});
+			});	
 
 
 

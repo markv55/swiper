@@ -435,9 +435,24 @@ app.get('/VirtualTravel_itb_4_html', function(req, res) {
 
 
 app.get('/webcontroller_1_html', function(req, res) {
-	res.sendFile(path.join(__dirname+'/webcontroller_1_html/index.html'));
+	res.sendFile(path.join(__dirname+'/webcontroller_html/webcontroller_1_html/index.html'));
 });
 
+app.get('/webcontroller_2_html', function(req, res) {
+	res.sendFile(path.join(__dirname+'/webcontroller_html/webcontroller_2_html/index.html'));
+});
+
+app.get('/webcontroller_3_html', function(req, res) {
+	res.sendFile(path.join(__dirname+'/webcontroller_html/webcontroller_3_html/index.html'));
+});
+
+app.get('/webcontroller_4_html', function(req, res) {
+	res.sendFile(path.join(__dirname+'/webcontroller_html/webcontroller_4_html/index.html'));
+});
+
+app.get('/webcontroller_5_html', function(req, res) {
+	res.sendFile(path.join(__dirname+'/webcontroller_html/webcontroller_5_html/index.html'));
+});
 
 
 //  EINDE    EINDE     EINDE     EINDE     EINDE     EINDE     EINDE     EINDE     EINDE     EINDE     EINDE     EINDE     EINDE     EINDE     EINDE      
