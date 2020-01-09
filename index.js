@@ -434,7 +434,9 @@ app.get('/VirtualTravel_itb_4_html', function(req, res) {
 //  VAKANTIEBEURS 2020       VAKANTIEBEURS 2020       VAKANTIEBEURS 2020       VAKANTIEBEURS 2020       VAKANTIEBEURS 2020       VAKANTIEBEURS 2020       VAKANTIEBEURS 2020   
 
 
-
+app.get('/webcontroller_1_html', function(req, res) {
+	res.sendFile(path.join(__dirname+'/VirtualTravel_itb_html/webcontroller_1_html/index.html'));
+});
 
 
 

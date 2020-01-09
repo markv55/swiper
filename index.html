@@ -392,11 +392,15 @@ onderstaande class  (bijvoorbeeld js-ajx-url-zeilenSlaveSocket)  wordt onderaan 
 <!--//////////////   VAKANTIEBEURS    2020               ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //////////////   VAKANTIEBEURS    2020               ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
 
-
+	
+	<!--let op bij de href/return/blabla  zorgt ervoor dat de tekst blabla direct bij indrukken van de knop wordt verstuurd. 
+	in de class ajx_url etc wordt onderstaand in de code de sub-pagina geopend-->
+	
+			<br>
 			<br>
 
 				<p>AFSTANDBEDIENING VAKANTIEBEURS 2020 // </p>	
-			<a href=" " class=" ajx_url_VirtualTravel_itb_4 btn ">MEEKIJKEN AFSTANDBEDIENING</a> 		
+			<a href=" " class=" ajx_url_webcontroller_1 btn ">MEEKIJKEN AFSTANDBEDIENING</a> 		
 			<br>	
 
 
@@ -776,7 +780,16 @@ onderstaande class  (bijvoorbeeld js-ajx-url-zeilenSlaveSocket)  wordt onderaan 
 //////////////   VAKANTIEBEURS    2020               ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-
+			$('.ajx_url_webcontroller_1').on('click', function(e) {
+				e.preventDefault();
+				$.ajax({
+					url: $(this).attr('href')
+				}).done(function() {
+					
+					window.location = '/webcontroller1_html';
+					console.log('Ajax request successfull');
+				});
+			});		
 
 
 
