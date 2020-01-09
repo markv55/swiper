@@ -65,7 +65,7 @@
 	</action>
 
 
-	<layer name="startscherm_tablet" url="images/startscherm_tablet2.png" onclick= "set (layer[startscherm_tablet].visible,false); " keep="true" visible="true" zorder="10" handcursor="false" capture="false"  align="center" 
+	<layer name="startscherm_tablet" url="images/startscherm_tablet2.png" onclick= " " keep="true" visible="true" zorder="10" handcursor="false" capture="false"  align="center" 
 		 scalechildren="true"/>
 
 	<layer name="startscherm_tablet_verder" style="style_startscherm_tablet_verder" visible= "true" x="0" y="100" zorder="10" 
