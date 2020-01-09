@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Switcher</title>
+		<style>
+		
+			body
+					{
+						background-color:                   grey;
+						font-family:      TradeGothic, sans-serif;
+						font-size: 60px;						
+
+					}
+		
+			.btn {
+				padding: 60px 120px;
+				background: red;
+				color: #fff;
+				text-decoration: none;
+				border-radius: 10px;
+				font-family: Arial;
+
+				font-size: 40px;
+
+				margin:  5px;
+				}
+
+			.btn_green {
+				padding: 60px 120px;
+				background: green;
+				color: white;
+				text-decoration: none;
+				border-radius: 10px;
+				font-family: Arial;
+				font-weight: bold;
+				font-size: 40px;
+			
+				}		
+			
+			.btn-container {
+				max-width: 900px;
+				margin: 30px auto;
+				text-align: center;
+				
+				
+				
+			}
+			
+			.touch {
+				width: 40%;
+			}
+
+			.custom {
+				margin: 50px 0;
+				
+			  width: 80%;
+			  -webkit-appearance: none !important;
+			  height:20px;
+			  border-radius: 8px;
+			  background:-webkit-gradient(linear,center top, center bottom, from(#CFDCDD),to(#DFE9EA),color-stop(50%,#DFE9EA));
+			-webkit-transition: background 450ms;
+			  transition: background 450ms;
+
+			}
+
+			/* Change the Slider Button Color Here */
+			.custom::-webkit-slider-thumb {
+				-webkit-appearance: none !important;
+				background:#108A93;
+				height:100px;
+				width:100px;
+				border-radius: 100px;
+			}
+
+			.custom::-webkit-slider-thumb:before {
+			  background-color: yellow;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div class="btn-container">
+		
+		
+			
+	
+		
+						
+			<br>
+			<p>VR ESCAPE GAME </p>	
+			<br>
+		
+			
+			<a href="/rotterdam_aan" class="js-ajx btn_green">AAN</a>			
+			<a href="/rotterdam_uit" class="js-ajx btn">UIT</a>				
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</div>
+		<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+		<script src="/static/js/slider.js"></script>
+		<script>
+		  $(function () {
+			var socket = io();
+			
+			$('.js-ajx').on('click', function(e) {
+				e.preventDefault();
+				$.ajax({
+					url: $(this).attr('href')
+				}).done(function() {
+					console.log('Ajax request successfull');
+				});
+			});
+			
+			
+		  });
+		</script>
+	</body>
+</html>
