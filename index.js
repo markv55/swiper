@@ -435,7 +435,7 @@ app.get('/VirtualTravel_itb_4_html', function(req, res) {
 
 
 app.get('/webcontroller_1_html', function(req, res) {
-	res.sendFile(path.join(__dirname+'/VirtualTravel_itb_html/webcontroller_1_html/index.html'));
+	res.sendFile(path.join(__dirname+'/webcontroller_1_html/index.html'));
 });
 
 
