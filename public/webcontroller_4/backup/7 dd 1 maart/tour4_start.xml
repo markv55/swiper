@@ -1,0 +1,41 @@
+
+<krpano version="1.19" title="Virtual Tour"     >
+
+
+
+
+	<include url="tour3_basis.xml" />  <!-- tour 3 basis is het grote xml met alle members en alle losse fotos. deze wordt zowel voor tour3 als tour 4 als basis gebruikt  -->
+	<include url="tour4_foto.xml" />	<!--  tour4 video is nagenoeg gelijk als tour3 video, maar in tour3 video draaien de videos op pc, maar tour4 video draaien op de mobiel geen videos!!!! -->	
+	<!-- onderstaande aanpassingen gelden op de tour3_basis.xml -->
+	
+	<autorotate enabled="false" waittime="1.0" speed="10.0"  accel="30.0"    horizon="0.0"       interruptionevents="userviewchange|layers|keyboard" />  		
+
+	<layer name="VR_leading" keep="true" visible= "false" url="images/vr_leading.png" parent="" align="rightbottom"   scale= "4"  onclick="set (layer[VR_leading].visible,false); set (layer[mobile_leading].visible,true); mobile_leading(); "  />
+	<layer name="mobile_leading" keep="true" visible= "true" url="images/mobile_leading.png" parent="" align="rightbottom"  scale= "4"    onclick="set (layer[VR_leading].visible,true); set (layer[mobile_leading].visible,false); VR_leading();"  />
+
+	
+		<action name="start_in_tour4">
+			set (layer[logo_0].visible,false);
+		
+		</action>		
+	
+	
+	
+		<action name="VR_leading" type="Javascript">
+				 <!--window.send_scene6();-->
+				 window.VR_leading();
+		</action>	
+
+		<action name="mobile_leading" type="Javascript">
+				 <!--window.send_scene6();-->
+				 window.mobile_leading();
+		</action>		
+	
+	
+		<action name="laad_foto0">
+			set (layer[logo_0].visible,false);
+		</action>	
+
+	
+	
+</krpano>

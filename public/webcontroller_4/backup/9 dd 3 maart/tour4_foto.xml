@@ -1,0 +1,349 @@
+<krpano version="1.19" title="Virtual Tour"     >
+
+<scene name="scene_17_1" title="1.1 ROYAL MOUNTAIN" onstart="zet_aan() ; Bepaal_Scale (); set(layer[helemaal_terug].visible,true); " havevrimage="true" thumburl="panos/strand.tiles/thumb.jpg" lat="" lng="" heading="">
+
+			<view hlookat="0" vlookat="0" fovtype="MFOV"  maxpixelzoom="1.5" fovmin="40" fovmax="160"     />
+
+			<preview url="panos/360Asia.tiles/preview.jpg" />
+
+			<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+				<level tiledimagewidth="2560" tiledimageheight="2560">
+					<cube url="panos/360Asia.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+				</level>
+				<level tiledimagewidth="1280" tiledimageheight="1280">
+					<cube url="panos/360Asia.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+				</level>
+				<level tiledimagewidth="640" tiledimageheight="640">
+					<cube url="panos/360Asia.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+				</level>
+			</image>
+
+			<image if="webvr.isenabled">
+				<cube url="panos/360Asia.tiles/vr/pano_%s.jpg" />
+			</image>
+		
+		<!-- place your scene hotspots here -->
+	
+		<layer name="continue_current_movie" url="images/continue_movie.png"  visible= "true" keep="false" handcursor="false" capture="false"   align="centerbottom" x="0" y="40"  
+		onclick= " set(layer[movie_finish_1_minute].visible,true);  set(layer[continue_current_movie].visible,false);   set(layer[stop_current_movie].visible,false);  loadscene (scene_17); send_scene17() ; continue_current_movie(); "  />	  		
+			
+		<layer name="stop_current_movie" url="images/stop_movie.png"  visible= "true" keep="false" handcursor="false" capture="false"   align="centerbottom" x="0" y="160"  onclick= "loadscene (scene_17); send_scene17();  stop_current_movie();"  />	   
+	
+		<layer name="movie_finish_1_minute" url="images/movie_finish_1_minute.png"  zorder = "100"  visible= "false" keep="true" handcursor="true" capture="false"   align="centerbottom" x="0" y="160"  
+		onclick= "set(layer[movie_finish_1_minute].visible,false); "   />	  		
+	   
+</scene>
+
+
+<scene name="scene_17_2" title="1.1 ROYAL MOUNTAIN" onstart="zet_aan() ; Bepaal_Scale (); set(layer[helemaal_terug].visible,true); " havevrimage="true" thumburl="panos/strand.tiles/thumb.jpg" lat="" lng="" heading="">
+
+			<view hlookat="0" vlookat="0" fovtype="MFOV"  maxpixelzoom="1.5" fovmin="40" fovmax="160"     />
+
+			<preview url="panos/360Asia.tiles/preview.jpg" />
+
+			<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+				<level tiledimagewidth="2560" tiledimageheight="2560">
+					<cube url="panos/360Asia.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+				</level>
+				<level tiledimagewidth="1280" tiledimageheight="1280">
+					<cube url="panos/360Asia.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+				</level>
+				<level tiledimagewidth="640" tiledimageheight="640">
+					<cube url="panos/360Asia.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+				</level>
+			</image>
+
+			<image if="webvr.isenabled">
+				<cube url="panos/360Asia.tiles/vr/pano_%s.jpg" />
+			</image>
+		
+		<!-- place your scene hotspots here -->
+	
+		<layer name="continue_current_movie" url="images/continue_movie.png"  visible= "true" keep="false" handcursor="false" capture="false"   align="centerbottom" x="0" y="40"  
+		onclick= " set(layer[movie_finish_1_minute].visible,true);  set(layer[continue_current_movie].visible,false);   set(layer[stop_current_movie].visible,false);  loadscene (scene_17); send_scene17() ; continue_current_movie(); "  />	  		
+			
+		<layer name="stop_current_movie" url="images/stop_movie.png"  visible= "true" keep="false" handcursor="false" capture="false"   align="centerbottom" x="0" y="160"  onclick= "loadscene (scene_17); send_scene17();  stop_current_movie();"  />	   
+	
+		<layer name="movie_finish_1_minute" url="images/movie_finish_1_minute.png"  zorder = "100"  visible= "false" keep="true" handcursor="true" capture="false"   align="centerbottom" x="0" y="160"  
+		onclick= "set(layer[movie_finish_1_minute].visible,false); "   />	  		
+	   
+</scene>
+
+
+<scene name="scene_17_3" title="1.1 ROYAL MOUNTAIN" onstart="zet_aan() ; Bepaal_Scale (); set(layer[helemaal_terug].visible,true); " havevrimage="true" thumburl="panos/strand.tiles/thumb.jpg" lat="" lng="" heading="">
+
+			<view hlookat="0" vlookat="0" fovtype="MFOV"  maxpixelzoom="1.5" fovmin="40" fovmax="160"     />
+
+			<preview url="panos/360Asia.tiles/preview.jpg" />
+
+			<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+				<level tiledimagewidth="2560" tiledimageheight="2560">
+					<cube url="panos/360Asia.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+				</level>
+				<level tiledimagewidth="1280" tiledimageheight="1280">
+					<cube url="panos/360Asia.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+				</level>
+				<level tiledimagewidth="640" tiledimageheight="640">
+					<cube url="panos/360Asia.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+				</level>
+			</image>
+
+			<image if="webvr.isenabled">
+				<cube url="panos/360Asia.tiles/vr/pano_%s.jpg" />
+			</image>
+		
+		<!-- place your scene hotspots here -->
+	
+		<layer name="continue_current_movie" url="images/continue_movie.png"  visible= "true" keep="false" handcursor="false" capture="false"   align="centerbottom" x="0" y="40"  
+		onclick= " set(layer[movie_finish_1_minute].visible,true);  set(layer[continue_current_movie].visible,false);   set(layer[stop_current_movie].visible,false);  loadscene (scene_17); send_scene17() ; continue_current_movie(); "  />	  		
+			
+		<layer name="stop_current_movie" url="images/stop_movie.png"  visible= "true" keep="false" handcursor="false" capture="false"   align="centerbottom" x="0" y="160"  onclick= "loadscene (scene_17); send_scene17();  stop_current_movie();"  />	   
+	
+		<layer name="movie_finish_1_minute" url="images/movie_finish_1_minute.png"  zorder = "100"  visible= "false" keep="true" handcursor="true" capture="false"   align="centerbottom" x="0" y="160"  
+		onclick= "set(layer[movie_finish_1_minute].visible,false); "   />	  		
+	   
+</scene>
+
+<scene name="scene_17_4" title="1.1 ROYAL MOUNTAIN" onstart="zet_aan() ; Bepaal_Scale (); set(layer[helemaal_terug].visible,true); " havevrimage="true" thumburl="panos/strand.tiles/thumb.jpg" lat="" lng="" heading="">
+
+			<view hlookat="0" vlookat="0" fovtype="MFOV"  maxpixelzoom="1.5" fovmin="40" fovmax="160"     />
+
+			<preview url="panos/360Asia.tiles/preview.jpg" />
+
+			<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+				<level tiledimagewidth="2560" tiledimageheight="2560">
+					<cube url="panos/360Asia.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+				</level>
+				<level tiledimagewidth="1280" tiledimageheight="1280">
+					<cube url="panos/360Asia.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+				</level>
+				<level tiledimagewidth="640" tiledimageheight="640">
+					<cube url="panos/360Asia.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+				</level>
+			</image>
+
+			<image if="webvr.isenabled">
+				<cube url="panos/360Asia.tiles/vr/pano_%s.jpg" />
+			</image>
+		
+		<!-- place your scene hotspots here -->
+	
+		<layer name="continue_current_movie" url="images/continue_movie.png"  visible= "true" keep="false" handcursor="false" capture="false"   align="centerbottom" x="0" y="40"  
+		onclick= " set(layer[movie_finish_1_minute].visible,true);  set(layer[continue_current_movie].visible,false);   set(layer[stop_current_movie].visible,false);  loadscene (scene_17); send_scene17() ; continue_current_movie(); "  />	  		
+			
+		<layer name="stop_current_movie" url="images/stop_movie.png"  visible= "true" keep="false" handcursor="false" capture="false"   align="centerbottom" x="0" y="160"  onclick= "loadscene (scene_17); send_scene17();  stop_current_movie();"  />	   
+	
+		<layer name="movie_finish_1_minute" url="images/movie_finish_1_minute.png"  zorder = "100"  visible= "false" keep="true" handcursor="true" capture="false"   align="centerbottom" x="0" y="160"  
+		onclick= "set(layer[movie_finish_1_minute].visible,false); "   />	  		
+	   
+</scene>
+
+<scene name="scene_17_5" title="1.1 ROYAL MOUNTAIN" onstart="zet_aan() ; Bepaal_Scale (); set(layer[helemaal_terug].visible,true); " havevrimage="true" thumburl="panos/strand.tiles/thumb.jpg" lat="" lng="" heading="">
+
+			<view hlookat="0" vlookat="0" fovtype="MFOV"  maxpixelzoom="1.5" fovmin="40" fovmax="160"     />
+
+			<preview url="panos/360Asia.tiles/preview.jpg" />
+
+			<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+				<level tiledimagewidth="2560" tiledimageheight="2560">
+					<cube url="panos/360Asia.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+				</level>
+				<level tiledimagewidth="1280" tiledimageheight="1280">
+					<cube url="panos/360Asia.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+				</level>
+				<level tiledimagewidth="640" tiledimageheight="640">
+					<cube url="panos/360Asia.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+				</level>
+			</image>
+
+			<image if="webvr.isenabled">
+				<cube url="panos/360Asia.tiles/vr/pano_%s.jpg" />
+			</image>
+		
+		<!-- place your scene hotspots here -->
+	
+		<layer name="continue_current_movie" url="images/continue_movie.png"  visible= "true" keep="false" handcursor="false" capture="false"   align="centerbottom" x="0" y="40"  
+		onclick= " set(layer[movie_finish_1_minute].visible,true);  set(layer[continue_current_movie].visible,false);   set(layer[stop_current_movie].visible,false);  loadscene (scene_17); send_scene17() ; continue_current_movie(); "  />	  		
+			
+		<layer name="stop_current_movie" url="images/stop_movie.png"  visible= "true" keep="false" handcursor="false" capture="false"   align="centerbottom" x="0" y="160"  onclick= "loadscene (scene_17); send_scene17();  stop_current_movie();"  />	   
+	
+		<layer name="movie_finish_1_minute" url="images/movie_finish_1_minute.png"  zorder = "100"  visible= "false" keep="true" handcursor="true" capture="false"   align="centerbottom" x="0" y="160"  
+		onclick= "set(layer[movie_finish_1_minute].visible,false); "   />	  		
+	   
+</scene>
+
+<scene name="scene_17_6" title="1.1 ROYAL MOUNTAIN" onstart="zet_aan() ; Bepaal_Scale (); set(layer[helemaal_terug].visible,true); " havevrimage="true" thumburl="panos/strand.tiles/thumb.jpg" lat="" lng="" heading="">
+
+			<view hlookat="0" vlookat="0" fovtype="MFOV"  maxpixelzoom="1.5" fovmin="40" fovmax="160"     />
+
+			<preview url="panos/360Asia.tiles/preview.jpg" />
+
+			<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+				<level tiledimagewidth="2560" tiledimageheight="2560">
+					<cube url="panos/360Asia.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+				</level>
+				<level tiledimagewidth="1280" tiledimageheight="1280">
+					<cube url="panos/360Asia.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+				</level>
+				<level tiledimagewidth="640" tiledimageheight="640">
+					<cube url="panos/360Asia.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+				</level>
+			</image>
+
+			<image if="webvr.isenabled">
+				<cube url="panos/360Asia.tiles/vr/pano_%s.jpg" />
+			</image>
+		
+		<!-- place your scene hotspots here -->
+	
+		<layer name="continue_current_movie" url="images/continue_movie.png"  visible= "true" keep="false" handcursor="false" capture="false"   align="centerbottom" x="0" y="40"  
+		onclick= " set(layer[movie_finish_1_minute].visible,true);  set(layer[continue_current_movie].visible,false);   set(layer[stop_current_movie].visible,false);  loadscene (scene_17); send_scene17() ; continue_current_movie(); "  />	  		
+			
+		<layer name="stop_current_movie" url="images/stop_movie.png"  visible= "true" keep="false" handcursor="false" capture="false"   align="centerbottom" x="0" y="160"  onclick= "loadscene (scene_17); send_scene17();  stop_current_movie();"  />	   
+	
+		<layer name="movie_finish_1_minute" url="images/movie_finish_1_minute.png"  zorder = "100"  visible= "false" keep="true" handcursor="true" capture="false"   align="centerbottom" x="0" y="160"  
+		onclick= "set(layer[movie_finish_1_minute].visible,false); "   />	  		
+	   
+</scene>
+
+<scene name="scene_17_7" title="1.1 ROYAL MOUNTAIN" onstart="zet_aan() ; Bepaal_Scale (); set(layer[helemaal_terug].visible,true); " havevrimage="true" thumburl="panos/strand.tiles/thumb.jpg" lat="" lng="" heading="">
+
+			<view hlookat="0" vlookat="0" fovtype="MFOV"  maxpixelzoom="1.5" fovmin="40" fovmax="160"     />
+
+			<preview url="panos/360Asia.tiles/preview.jpg" />
+
+			<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+				<level tiledimagewidth="2560" tiledimageheight="2560">
+					<cube url="panos/360Asia.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+				</level>
+				<level tiledimagewidth="1280" tiledimageheight="1280">
+					<cube url="panos/360Asia.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+				</level>
+				<level tiledimagewidth="640" tiledimageheight="640">
+					<cube url="panos/360Asia.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+				</level>
+			</image>
+
+			<image if="webvr.isenabled">
+				<cube url="panos/360Asia.tiles/vr/pano_%s.jpg" />
+			</image>
+		
+		<!-- place your scene hotspots here -->
+	
+		<layer name="continue_current_movie" url="images/continue_movie.png"  visible= "true" keep="false" handcursor="false" capture="false"   align="centerbottom" x="0" y="40"  
+		onclick= " set(layer[movie_finish_1_minute].visible,true);  set(layer[continue_current_movie].visible,false);   set(layer[stop_current_movie].visible,false);  loadscene (scene_17); send_scene17() ; continue_current_movie(); "  />	  		
+			
+		<layer name="stop_current_movie" url="images/stop_movie.png"  visible= "true" keep="false" handcursor="false" capture="false"   align="centerbottom" x="0" y="160"  onclick= "loadscene (scene_17); send_scene17();  stop_current_movie();"  />	   
+	
+		<layer name="movie_finish_1_minute" url="images/movie_finish_1_minute.png"  zorder = "100"  visible= "false" keep="true" handcursor="true" capture="false"   align="centerbottom" x="0" y="160"  
+		onclick= "set(layer[movie_finish_1_minute].visible,false); "   />	  		
+	   
+</scene>
+
+<scene name="scene_17_8" title="1.1 ROYAL MOUNTAIN" onstart="zet_aan() ; Bepaal_Scale (); set(layer[helemaal_terug].visible,true); " havevrimage="true" thumburl="panos/strand.tiles/thumb.jpg" lat="" lng="" heading="">
+
+			<view hlookat="0" vlookat="0" fovtype="MFOV"  maxpixelzoom="1.5" fovmin="40" fovmax="160"     />
+
+			<preview url="panos/360Asia.tiles/preview.jpg" />
+
+			<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+				<level tiledimagewidth="2560" tiledimageheight="2560">
+					<cube url="panos/360Asia.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+				</level>
+				<level tiledimagewidth="1280" tiledimageheight="1280">
+					<cube url="panos/360Asia.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+				</level>
+				<level tiledimagewidth="640" tiledimageheight="640">
+					<cube url="panos/360Asia.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+				</level>
+			</image>
+
+			<image if="webvr.isenabled">
+				<cube url="panos/360Asia.tiles/vr/pano_%s.jpg" />
+			</image>
+		
+		<!-- place your scene hotspots here -->
+	
+		<layer name="continue_current_movie" url="images/continue_movie.png"  visible= "true" keep="false" handcursor="false" capture="false"   align="centerbottom" x="0" y="40"  
+		onclick= " set(layer[movie_finish_1_minute].visible,true);  set(layer[continue_current_movie].visible,false);   set(layer[stop_current_movie].visible,false);  loadscene (scene_17); send_scene17() ; continue_current_movie(); "  />	  		
+			
+		<layer name="stop_current_movie" url="images/stop_movie.png"  visible= "true" keep="false" handcursor="false" capture="false"   align="centerbottom" x="0" y="160"  onclick= "loadscene (scene_17); send_scene17();  stop_current_movie();"  />	   
+	
+		<layer name="movie_finish_1_minute" url="images/movie_finish_1_minute.png"  zorder = "100"  visible= "false" keep="true" handcursor="true" capture="false"   align="centerbottom" x="0" y="160"  
+		onclick= "set(layer[movie_finish_1_minute].visible,false); "   />	  		
+	   
+</scene>
+
+<scene name="scene_11_1" title="1.1 ROYAL MOUNTAIN" onstart="zet_aan() ; Bepaal_Scale (); set(layer[helemaal_terug].visible,true); " havevrimage="true" thumburl="panos/strand.tiles/thumb.jpg" lat="" lng="" heading="">
+
+			<view hlookat="0" vlookat="0" fovtype="MFOV"  maxpixelzoom="1.5" fovmin="40" fovmax="160"     />
+
+			<preview url="panos/360Asia.tiles/preview.jpg" />
+
+			<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+				<level tiledimagewidth="2560" tiledimageheight="2560">
+					<cube url="panos/360Asia.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+				</level>
+				<level tiledimagewidth="1280" tiledimageheight="1280">
+					<cube url="panos/360Asia.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+				</level>
+				<level tiledimagewidth="640" tiledimageheight="640">
+					<cube url="panos/360Asia.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+				</level>
+			</image>
+
+			<image if="webvr.isenabled">
+				<cube url="panos/360Asia.tiles/vr/pano_%s.jpg" />
+			</image>
+		
+		<!-- place your scene hotspots here -->
+	
+		<layer name="continue_current_movie" url="images/continue_movie.png"  visible= "true" keep="false" handcursor="false" capture="false"   align="centerbottom" x="0" y="40"  
+		onclick= " set(layer[movie_finish_1_minute].visible,true);  set(layer[continue_current_movie].visible,false);   set(layer[stop_current_movie].visible,false);  loadscene (scene_17); send_scene17() ; continue_current_movie(); "  />	  		
+			
+		<layer name="stop_current_movie" url="images/stop_movie.png"  visible= "true" keep="false" handcursor="false" capture="false"   align="centerbottom" x="0" y="160"  onclick= "loadscene (scene_17); send_scene17();  stop_current_movie();"  />	   
+	
+		<layer name="movie_finish_1_minute" url="images/movie_finish_1_minute.png"  zorder = "100"  visible= "false" keep="true" handcursor="true" capture="false"   align="centerbottom" x="0" y="160"  
+		onclick= "set(layer[movie_finish_1_minute].visible,false); "   />	  		
+	   
+</scene>
+
+<scene name="scene_11_2" title="1.1 ROYAL MOUNTAIN" onstart="zet_aan() ; Bepaal_Scale (); set(layer[helemaal_terug].visible,true); " havevrimage="true" thumburl="panos/strand.tiles/thumb.jpg" lat="" lng="" heading="">
+
+			<view hlookat="0" vlookat="0" fovtype="MFOV"  maxpixelzoom="1.5" fovmin="40" fovmax="160"     />
+
+			<preview url="panos/360Asia.tiles/preview.jpg" />
+
+			<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+				<level tiledimagewidth="2560" tiledimageheight="2560">
+					<cube url="panos/360Asia.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+				</level>
+				<level tiledimagewidth="1280" tiledimageheight="1280">
+					<cube url="panos/360Asia.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+				</level>
+				<level tiledimagewidth="640" tiledimageheight="640">
+					<cube url="panos/360Asia.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+				</level>
+			</image>
+
+			<image if="webvr.isenabled">
+				<cube url="panos/360Asia.tiles/vr/pano_%s.jpg" />
+			</image>
+		
+		<!-- place your scene hotspots here -->
+	
+		<layer name="continue_current_movie" url="images/continue_movie.png"  visible= "true" keep="false" handcursor="false" capture="false"   align="centerbottom" x="0" y="40"  
+		onclick= " set(layer[movie_finish_1_minute].visible,true);  set(layer[continue_current_movie].visible,false);   set(layer[stop_current_movie].visible,false);  loadscene (scene_17); send_scene17() ; continue_current_movie(); "  />	  		
+			
+		<layer name="stop_current_movie" url="images/stop_movie.png"  visible= "true" keep="false" handcursor="false" capture="false"   align="centerbottom" x="0" y="160"  onclick= "loadscene (scene_17); send_scene17();  stop_current_movie();"  />	   
+	
+		<layer name="movie_finish_1_minute" url="images/movie_finish_1_minute.png"  zorder = "100"  visible= "false" keep="true" handcursor="true" capture="false"   align="centerbottom" x="0" y="160"  
+		onclick= "set(layer[movie_finish_1_minute].visible,false); "   />	  		
+	   
+</scene>
+
+
+
+	
+	
+</krpano>

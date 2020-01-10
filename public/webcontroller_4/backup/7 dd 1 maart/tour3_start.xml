@@ -1,0 +1,10 @@
+<krpano version="1.19" title="Virtual Tour"     >
+
+
+	<include url="tour3_basis.xml" />  <!-- tour 3 basis is het grote xml met alle members en alle losse fotos. deze wordt zowel voor tour3 als tour 4 als basis gebruikt  -->
+	<include url="tour3_video.xml" />	<!-- hier draaien de videos voor op de PC -->
+	
+
+	
+	
+</krpano>
