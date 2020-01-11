@@ -39,7 +39,7 @@ io.on('connection', function(socket) {
 
 // TABLET DEVICE_ID: TB1 
 		socket.on('stuur', function(param0, param1, param2, param3) {
-        if( (param1 == 'ontvangen_van') && (param2== 'vr1') && (param3== 'vt1')){
+        if( (param1 == 'ontvangen_van') && (param2== 'tb1') && (param3== 'vt1')){
 
 		console.log ( "TABLET DEVICE_ID: TB1 / LOCATION_ID: VT1 " + param0 ,    param1 , "device_id: "+ param2  , "location_id: "+  param3  );
 		
