@@ -797,6 +797,9 @@ app.get('/objecten_uit', function (req, res) {
 
 app.get('/rotterdam_aan', function (req, res) {
 	//KlikAanKlikUit(11, 260, 7, 5).off(1, 2);
+	
+	io.emit('message', 'reset_headset', 'doorsturen_aan', 'vr1', 'vt1' );	
+	
 	io.emit('message', 'laad_foto0', 'doorsturen_aan', 'tb1', 'vt1' );	
 	io.emit('message', 'laad_foto0', 'doorsturen_aan', 'vr1', 'vt1' );
 	io.emit('message', 'laad_foto0', 'doorsturen_aan', 'vr2', 'vt1' );	
@@ -823,6 +826,9 @@ app.get('/rotterdam_uit', function (req, res) {
 
 app.get('/tv1_aan_webcontroller_3', function (req, res) {
 	//KlikAanKlikUit(11, 260, 7, 5).off(1, 2);
+	
+	io.emit('message', 'reset_headset', 'doorsturen_aan', 'vr1', 'vt1' );	
+	
 	io.emit('message', 'laad_foto17_1', 'doorsturen_aan', 'tb1-test', 'vt1' );	
 	io.emit('message', 'laad_foto17_1', 'doorsturen_aan', 'vr1-test', 'vt1' );
 	io.emit('message', 'laad_foto17_1', 'doorsturen_aan', 'vr2-test', 'vt1' );	
@@ -834,6 +840,8 @@ app.get('/tv1_aan_webcontroller_3', function (req, res) {
 
 app.get('/tv1_uit_webcontroller_3', function (req, res) {
 	//KlikAanKlikUit(11, 260, 7, 5).off(1, 2);
+	
+	io.emit('message', 'laad_foto17_1', 'doorsturen_aan', 'vr1', 'vt1' );	
 	
 	io.emit('message', 'laad_foto17_2', 'doorsturen_aan', 'tb2-test', 'vt1' );	
 	io.emit('message', 'laad_foto17_2', 'doorsturen_aan', 'vr3-test', 'vt1' );
