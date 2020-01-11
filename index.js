@@ -797,11 +797,11 @@ app.get('/objecten_uit', function (req, res) {
 
 app.get('/rotterdam_aan', function (req, res) {
 	//KlikAanKlikUit(11, 260, 7, 5).off(1, 2);
-	io.emit('message', 'laad_foto17_1', 'doorsturen_aan', 'tb1', 'vt1' );	
-	io.emit('message', 'laad_foto17_1', 'doorsturen_aan', 'vr1', 'vt1' );
-	io.emit('message', 'laad_foto17_1', 'doorsturen_aan', 'vr2', 'vt1' );	
-	io.emit('message', 'laad_foto17_1', 'doorsturen_aan', 'tv1', 'vt1' );
-	io.emit('message', 'laad_foto17_1', 'doorsturen_aan', 'wb1', 'vt1' );
+	io.emit('message', 'laad_foto0', 'doorsturen_aan', 'tb1', 'vt1' );	
+	io.emit('message', 'laad_foto0', 'doorsturen_aan', 'vr1', 'vt1' );
+	io.emit('message', 'laad_foto0', 'doorsturen_aan', 'vr2', 'vt1' );	
+	io.emit('message', 'laad_foto0', 'doorsturen_aan', 'tv1', 'vt1' );
+	io.emit('message', 'laad_foto0', 'doorsturen_aan', 'wb1', 'vt1' );
 
 	res.redirect('/');
 });
@@ -809,10 +809,10 @@ app.get('/rotterdam_aan', function (req, res) {
 app.get('/rotterdam_uit', function (req, res) {
 	//KlikAanKlikUit(11, 260, 7, 5).off(1, 2);
 	
-	io.emit('message', 'laad_foto17_2', 'doorsturen_aan', 'tb2', 'vt1' );	
-	io.emit('message', 'laad_foto17_2', 'doorsturen_aan', 'vr3', 'vt1' );
-	io.emit('message', 'laad_foto17_2', 'doorsturen_aan', 'tv2', 'vt1' );
-	io.emit('message', 'laad_foto17_2', 'doorsturen_aan', 'wb2', 'vt1' );
+	io.emit('message', 'laad_foto17_1', 'doorsturen_aan', 'tb2', 'vt1' );	
+	io.emit('message', 'laad_foto17_1', 'doorsturen_aan', 'vr3', 'vt1' );
+	io.emit('message', 'laad_foto17_1', 'doorsturen_aan', 'tv2', 'vt1' );
+	io.emit('message', 'laad_foto17_1', 'doorsturen_aan', 'wb2', 'vt1' );
 	
 	res.redirect('/');
 });
