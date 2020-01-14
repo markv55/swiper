@@ -2,12 +2,6 @@
 
 <!--
 
-
-10 januari 2020 vakantiebeurs
-opletten regel 446 aanpassen. daar de call tijdelijk uitgezet
-of voor allemaaluitzetten of iets anders in de code
-
-
 let op. de bron is xml 3!!!!!!!!!!!!!!!!!
 de volledige inhoud van xml 3 moet je copieren naar de xml 4
 daarna onderstaande aanpassingen in de xml 4 maken:
@@ -156,7 +150,7 @@ if(device.desktop, set (hoogte_factor, calc(stageheight*0.5)); 	set (breedte_fac
 
 <action name="zet_aan">
 
-set(breedte_plaatje,0.2); 	<!--  de grootte van de members hotspot -->
+set(breedte_plaatje,0.25); 	<!--  de grootte van de members hotspot -->
 set(breedte_dia,0.20);		<!--  de breedte van de 8 plaatjes in de 22 scenes -->
 
 set (fov_default,110);		<!-- de field of view van de 22 scenes   vof 200 ie een hele brede kijk, dus je ziet veel plaatjes maar deze zijn klein.  60 is een hele smalle kijk dus de plaatjes zijn heel groot in beeld-->
@@ -210,22 +204,6 @@ set (layer[mm_logo_0].scale, 0.2);
  
 set (layer[mm_logo_0].height, calc(breedte_factor*0.5) );
  set (layer[mm_logo_0].width, calc(breedte_factor*0.5) );
- 
-
-  set (layer[vraag0].height, calc(breedte_factor*1));
-  set (layer[vraag0].width, calc(breedte_factor*1));
- 
-  set (layer[vraag1].height, calc(breedte_factor*1));
-  set (layer[vraag1].width, calc(breedte_factor*1));
- 
-   set (layer[vraag2].height, calc(breedte_factor*1));
-  set (layer[vraag2].width, calc(breedte_factor*1));
-  
-    set (layer[vraag3].height, calc(breedte_factor*1));
-  set (layer[vraag3].width, calc(breedte_factor*1));
-  
-    set (layer[vraag4].height, calc(breedte_factor*1));
-  set (layer[vraag4].width, calc(breedte_factor*1));
 
 <!-- 
 
@@ -293,10 +271,7 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 		<action name="laad_foto1">
 		loadscene(scene_1);
 		laad_standaard_view();
-				
-				<!--  aangepast op 15 maart als demo uitgezet -->set (autorotate.enabled,true);
-				
-						
+				set (autorotate.enabled,false);
 
 		</action>
 		
@@ -450,7 +425,7 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 <!--  video scripts -->
 		
 		<action name="laad_foto17_1">
-				<!-- let op uitgezet om te voorkomen dat hij scene 17_1 laadt        loadscene(scene_17_1);-->
+				loadscene(scene_17_1);
 				laad_standaard_view();
 								set (autorotate.enabled,false);
 
@@ -464,7 +439,7 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 
 
 		<action name="laad_foto17_2">
-				<!-- loadscene(scene_17_2);-->
+				loadscene(scene_17_2);
 				laad_standaard_view();
 								set (autorotate.enabled,false);
 
@@ -478,7 +453,7 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 		
 		
 		<action name="laad_foto17_3">
-				<!-- loadscene(scene_17_3);-->
+				loadscene(scene_17_3);
 				laad_standaard_view();
 								set (autorotate.enabled,false);
 
@@ -493,7 +468,7 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 
 
 		<action name="laad_foto17_4">
-				<!-- loadscene(scene_17_4); -->
+				loadscene(scene_17_4);
 				laad_standaard_view();
 								set (autorotate.enabled,false);
 
@@ -507,7 +482,7 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 
 
 		<action name="laad_foto17_5">
-			<!--	loadscene(scene_17_5);  -->
+				loadscene(scene_17_5);
 				laad_standaard_view();
 								set (autorotate.enabled,false);
 
@@ -522,7 +497,7 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 
 
 		<action name="laad_foto17_6">
-				 <!--loadscene(scene_17_6); -->
+				loadscene(scene_17_6);
 				laad_standaard_view();
 								set (autorotate.enabled,false);
 
@@ -537,7 +512,7 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 
 
 		<action name="laad_foto17_7">
-			<!--	loadscene(scene_17_7);  -->
+				loadscene(scene_17_7);
 				laad_standaard_view();
 								set (autorotate.enabled,false);
 
@@ -552,7 +527,7 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 
 
 		<action name="laad_foto17_8">
-			<!--	loadscene(scene_17_8);-->
+				loadscene(scene_17_8);
 				laad_standaard_view();
 								set (autorotate.enabled,false);
 
@@ -563,74 +538,7 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 				 window.laad_foto17_8();
 		</action>			
 
-<!--  vakantiebeurs
 
--->
-		
-			<action name="laad_foto17_9">
-			<!--	loadscene(scene_17_9);-->
-				laad_standaard_view();
-								set (autorotate.enabled,false);
-
-		</action>				
-		
-		<action name="send_scene17_9" type="Javascript">
-				 <!--window.send_scene1();-->
-				 window.laad_foto17_9();
-		</action>				
-		
-		
-		<action name="laad_foto17_10">
-			<!--	loadscene(scene_17_10); -->
-				laad_standaard_view();
-								set (autorotate.enabled,false);
-
-		</action>				
-		
-		<action name="send_scene17_10" type="Javascript">
-				 <!--window.send_scene1();-->
-				 window.laad_foto17_10();
-		</action>					
-		
-		
-		<action name="laad_foto17_11">
-			<!-- 	loadscene(scene_17_11); -->
-				laad_standaard_view();
-								set (autorotate.enabled,false);
-
-		</action>				
-		
-		<action name="send_scene17_11" type="Javascript">
-				 <!--window.send_scene1();-->
-				 window.laad_foto17_11();
-		</action>					
-		
-		<action name="laad_foto17_12">
-				<!-- loadscene(scene_17_12); -->
-				laad_standaard_view();
-								set (autorotate.enabled,false);
-
-		</action>				
-		
-		<action name="send_scene17_12" type="Javascript">
-				 <!--window.send_scene1();-->
-				 window.laad_foto17_12();
-		</action>					
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 
 
 		<action name="laad_foto11_1">
@@ -824,16 +732,26 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 <!--  WERELDBOL               WERELDBOL               WERELDBOL               WERELDBOL               WERELDBOL               WERELDBOL               WERELDBOL               WERELDBOL               WERELDBOL               WERELDBOL               -->
 <!--  WERELDBOL               WERELDBOL               WERELDBOL               WERELDBOL               WERELDBOL               WERELDBOL               WERELDBOL               WERELDBOL               WERELDBOL               WERELDBOL               -->
 
-<!-- copy wereldbol
-
-
-
 <scene name="scene_0" title="MEMBERS" onstart="zet_aan(); Bepaal_Scale () ; set(layer[helemaal_terug].visible,false);  " havevrimage="true"  lat="" lng="" heading="" 	>
 
 
 		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="65" maxpixelzoom="2,5" fovmin="30" fovmax="90" limitview="true" distortion="7.0"  hlookatmin ="0.000000" hlookatmax ="360.000000"  vlookatmax = "0"  vlookatmin = "0 "/>
 
+<!-- originele vlekkerige wereldbol
 
+		<preview url="panos/wereldbol_def_def.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+			<level tiledimagewidth="640" tiledimageheight="640">
+				<cube url="panos/wereldbol_def_def.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+
+		<image if="webvr.isenabled">
+			<cube url="panos/wereldbol_def_def.tiles/vr/pano_%s.jpg" />
+		</image>
+
+-->
 		
 		
 		<preview url="panos/360wereld.tiles/preview.jpg" />
@@ -853,7 +771,7 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 
 		
 		
-
+		<!-- place your scene hotspots here -->
 		
 		
 		<hotspot name="logo1"
@@ -1107,629 +1025,14 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 			   />					   
 			   
 		
-
+		<!--	<layer name="logo_0" url="images/global_discovery_logo4.png"  visible= "true" keep="false" handcursor="false" capture="false"   align="bottomleft" x="50" y="-50" zorder = "0"  />	
+			<layer name="logo_0_tekst" url="images/global_discovery_logo4_text.png"  visible= "true" keep="false" handcursor="false" capture="false"   align="bottomright" x="-50" y="-100" zorder = "0"  />		
+-->
 			<layer name="vt_logo_0" url="images/logo_virtualtravel.png"  visible= "true" keep="false" handcursor="false" capture="false"   align="bottomleft" x="0" y="0" zorder = "-50"  />	
 			<layer name="mm_logo_0" url="images/logo_360mm.png"  visible= "true" keep="false" handcursor="false" capture="false"   align="bottomright" x="0" y="0" zorder = "-50"  />		
 			
 	
 </scene>
--->
-
-
-<!-- vakantiebeurs  -->
-
-<scene name="scene_0" title="MEMBERS" onstart="zet_aan(); Bepaal_Scale () ; set(layer[helemaal_terug].visible,false);  " havevrimage="true"  lat="" lng="" heading="" 	>
-
-		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="60" maxpixelzoom="2,5" fovmin="60" fovmax="60" limitview="true" distortion="7.0"  hlookatmin ="0.000000" hlookatmax ="360.000000"  vlookatmax = "0"  vlookatmin = "0 "/>
-	
-		<preview url="panos/360wereld.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
-			<level tiledimagewidth="640" tiledimageheight="640">
-				<cube url="panos/360wereld.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-		<image if="webvr.isenabled">
-			<cube url="panos/360wereld.tiles/vr/pano_%s.jpg" />
-		</image>		
-		
-		
-		<!-- place your scene hotspots here -->
-
-		<layer name="vraag0" url="leden/grijs/intro.png"  visible= "true" keep="false" handcursor="false" capture="true"   align="center" x="0" y="0" zorder = "-50"  onclick = "loadscene (scene_01); " />	
-
-	
-</scene>
-
-
-
-
-<scene name="scene_01" title="MEMBERS" onstart="zet_aan(); Bepaal_Scale () ; set(layer[helemaal_terug].visible,false);  " havevrimage="true"  lat="" lng="" heading="" 	>
-
-
-		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="60" maxpixelzoom="2,5" fovmin="60" fovmax="60" limitview="true" distortion="7.0"  hlookatmin ="0.000000" hlookatmax ="360.000000"  vlookatmax = "0"  vlookatmin = "0 "/>
-	
-		<preview url="panos/360wereld.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
-			<level tiledimagewidth="640" tiledimageheight="640">
-				<cube url="panos/360wereld.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-		<image if="webvr.isenabled">
-			<cube url="panos/360wereld.tiles/vr/pano_%s.jpg" />
-		</image>		
-		
-		
-		
-		<hotspot name="logo1"
-				 url="leden/grijs/1.png"
-				 ath="-45"  
-				 atv="0" 
-				 zorder = "3"
-				 zoom="false"
-				 distorted="false"
-				 enabled="true"
-				 capture="true"
-				 onclick="loadscene (scene_02);  "
-			   />
-				
-			 <hotspot name="logo2"
-				 url="leden/grijs/2.png"
-				 ath="-15"  
-				 atv="-0" 
-				 zoom="false"		 
-				 distorted="false"
-				 enabled="true"
-				 capture="true"
-				 onclick="loadscene (scene_02); "
-			   />		
-			 <hotspot name="logo3"
-				 url="leden/grijs/3.png"
-				 ath="15"  
-				 atv="-0" 
-				 zoom="false"		 
-				 distorted="false"
-				 enabled="true"
-				 capture="true"		 
-				 onclick="loadscene (scene_02);  "
-			   />		
-			 <hotspot name="logo4"
-				 url="leden/grijs/4.png"
-				 ath="45"  
-				 atv="-0" 
-				 zoom="false"		 
-				 distorted="false"
-				 enabled="true"
-				 capture="true"		 
-				 onclick="loadscene (scene_02);  "
-			   />		
-
-
-			<layer name="vraag1" url="leden/grijs/vraag1.png"  visible= "true" keep="false" handcursor="false" capture="false"   align="top center" x="0" y="0" zorder = "-50"  onclick = " " />	
-	
-</scene>
-
-
-
-<scene name="scene_02" title="MEMBERS" onstart="zet_aan(); Bepaal_Scale () ; set(layer[helemaal_terug].visible,false);  " havevrimage="true"  lat="" lng="" heading="" 	>
-
-
-		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="60" maxpixelzoom="2,5" fovmin="60" fovmax="60" limitview="true" distortion="7.0"  hlookatmin ="0.000000" hlookatmax ="360.000000"  vlookatmax = "0"  vlookatmin = "0 "/>
-	
-		<preview url="panos/360wereld.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
-			<level tiledimagewidth="640" tiledimageheight="640">
-				<cube url="panos/360wereld.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-		<image if="webvr.isenabled">
-			<cube url="panos/360wereld.tiles/vr/pano_%s.jpg" />
-		</image>		
-		
-		
-		
-		<hotspot name="logo1"
-				 url="leden/grijs/5.png"
-				 ath="-15"  
-				 atv="0" 
-				 zorder = "3"
-				 zoom="false"
-				 distorted="false"
-				 enabled="true"
-				 capture="true"
-				 onclick="loadscene (scene_03);  "
-			   />
-				
-			 <hotspot name="logo2"
-				 url="leden/grijs/6.png"
-				 ath="15"  
-				 atv="-0" 
-				 zoom="false"		 
-				 distorted="false"
-				 enabled="true"
-				 capture="true"
-				 onclick="loadscene (scene_03); "
-			   />		
-	
-
-
-			<layer name="vraag2" url="leden/grijs/vraag2.png"  visible= "true" keep="false" handcursor="false" capture="false"   align="top center" x="0" y="0" zorder = "-50"  onclick = " " />	
-	
-</scene>
-
-<scene name="scene_03" title="MEMBERS" onstart="zet_aan(); Bepaal_Scale () ; set(layer[helemaal_terug].visible,false);  " havevrimage="true"  lat="" lng="" heading="" 	>
-
-
-		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="60" maxpixelzoom="2,5" fovmin="60" fovmax="60" limitview="true" distortion="7.0"  hlookatmin ="0.000000" hlookatmax ="360.000000"  vlookatmax = "0"  vlookatmin = "0 "/>
-	
-		<preview url="panos/360wereld.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
-			<level tiledimagewidth="640" tiledimageheight="640">
-				<cube url="panos/360wereld.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-		<image if="webvr.isenabled">
-			<cube url="panos/360wereld.tiles/vr/pano_%s.jpg" />
-		</image>		
-		
-		
-		
-		<hotspot name="logo1"
-				 url="leden/grijs/7.png"
-				 ath="-30"  
-				 atv="0" 
-				 zorder = "3"
-				 zoom="false"
-				 distorted="false"
-				 enabled="true"
-				 capture="true"
-				 onclick="loadscene (scene_04);  "
-			   />
-				
-			 <hotspot name="logo2"
-				 url="leden/grijs/8.png"
-				 ath="0"  
-				 atv="-0" 
-				 zoom="false"		 
-				 distorted="false"
-				 enabled="true"
-				 capture="true"
-				 onclick="loadscene (scene_04); "
-			   />		
-			 <hotspot name="logo3"
-				 url="leden/grijs/9.png"
-				 ath="30"  
-				 atv="-0" 
-				 zoom="false"		 
-				 distorted="false"
-				 enabled="true"
-				 capture="true"		 
-				 onclick="loadscene (scene_04);  "
-			   />		
-	
-
-
-			<layer name="vraag3" url="leden/grijs/vraag3.png"  visible= "true" keep="false" handcursor="false" capture="false"   align="top center" x="0" y="0" zorder = "-50"  onclick = " " />	
-	
-</scene>
-
-
-<scene name="scene_04" title="MEMBERS" onstart="zet_aan(); Bepaal_Scale () ; set(layer[helemaal_terug].visible,false);  " havevrimage="true"  lat="" lng="" heading="" 	>
-
-
-		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="60" maxpixelzoom="2,5" fovmin="60" fovmax="60" limitview="true" distortion="7.0"  hlookatmin ="0.000000" hlookatmax ="360.000000"  vlookatmax = "0"  vlookatmin = "0 "/>
-	
-		<preview url="panos/360wereld.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
-			<level tiledimagewidth="640" tiledimageheight="640">
-				<cube url="panos/360wereld.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-		<image if="webvr.isenabled">
-			<cube url="panos/360wereld.tiles/vr/pano_%s.jpg" />
-		</image>		
-		
-		
-		
-		<hotspot name="logo1"
-				 url="leden/grijs/10.png"
-				 ath="-60"  
-				 atv="0" 
-				 zorder = "3"
-				 zoom="false"
-				 distorted="false"
-				 enabled="true"
-				 capture="true"
-				 onclick="loadscene (scene_05_1);  "
-			   />
-				
-			 <hotspot name="logo2"
-				 url="leden/grijs/11.png"
-				 ath="-30"  
-				 atv="-0" 
-				 zoom="false"		 
-				 distorted="false"
-				 enabled="true"
-				 capture="true"
-				 onclick="loadscene (scene_05_2); "
-			   />		
-			 <hotspot name="logo3"
-				 url="leden/grijs/12.png"
-				 ath="0"  
-				 atv="-0" 
-				 zoom="false"		 
-				 distorted="false"
-				 enabled="true"
-				 capture="true"		 
-				 onclick="loadscene (scene_05_3);  "
-			   />		
-			 <hotspot name="logo4"
-				 url="leden/grijs/13.png"
-				 ath="30"  
-				 atv="-0" 
-				 zoom="false"		 
-				 distorted="false"
-				 enabled="true"
-				 capture="true"		 
-				 onclick="loadscene (scene_05_4);  "
-			   />		
-			 <hotspot name="logo5"
-				 url="leden/grijs/14.png"
-				 ath="60"  
-				 atv="-0" 
-				 zoom="false"		 
-				 distorted="false"
-				 enabled="true"
-				 capture="true"		 
-				 onclick="loadscene (scene_05_5);  "
-			   />
-			   
-			<layer name="vraag4" url="leden/grijs/vraag4.png"  visible= "true" keep="false" handcursor="false" capture="false"   align="top center" x="0" y="0" zorder = "-50"  onclick = " " />	
-	
-</scene>
-
-<scene name="scene_05_1" title="MEMBERS" onstart="zet_aan(); Bepaal_Scale () ; set(layer[helemaal_terug].visible,false);  " havevrimage="true"  lat="" lng="" heading="" 	>
-
-
-		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="60" maxpixelzoom="2,5" fovmin="60" fovmax="60" limitview="true" distortion="7.0"  hlookatmin ="0.000000" hlookatmax ="360.000000"  vlookatmax = "0"  vlookatmin = "0 "/>
-	
-		<preview url="panos/360wereld.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
-			<level tiledimagewidth="640" tiledimageheight="640">
-				<cube url="panos/360wereld.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-		<image if="webvr.isenabled">
-			<cube url="panos/360wereld.tiles/vr/pano_%s.jpg" />
-		</image>		
-		
-		
-		<hotspot name="logo1"
-				 url="leden/grijs/knop1.png"
-				 ath="-30"  
-				 atv="0" 
-				 zorder = "3"
-				 zoom="false"
-				 distorted="false"
-				 enabled="true"
-				 capture="true"
-				 onclick="loadscene (scene_06); send_scene17_1(); "
-			   />
-				
-			 <hotspot name="logo2"
-				 url="leden/grijs/knop2.png"
-				 ath="-0"  
-				 atv="-0" 
-				 zoom="false"		 
-				 distorted="false"
-				 enabled="true"
-				 capture="true"
-				 onclick="loadscene (scene_06); send_scene17_5(); "
-			   />		
-			 <hotspot name="logo3"
-				 url="leden/grijs/knop3.png"
-				 ath="30"  
-				 atv="-0" 
-				 zoom="false"		 
-				 distorted="false"
-				 enabled="true"
-				 capture="true"		 
-				 onclick="loadscene (scene_06); send_scene17_3(); "
-			   />		
-
-			<layer name="vraag4" url="leden/grijs/thema1.png"  visible= "true" keep="false" handcursor="false" capture="false"   align="top center" x="0" y="0" zorder = "-50"  onclick = " " />	
-	
-</scene>
-
-
-<scene name="scene_05_2" title="MEMBERS" onstart="zet_aan(); Bepaal_Scale () ; set(layer[helemaal_terug].visible,false);  " havevrimage="true"  lat="" lng="" heading="" 	>
-
-
-		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="60" maxpixelzoom="2,5" fovmin="60" fovmax="60" limitview="true" distortion="7.0"  hlookatmin ="0.000000" hlookatmax ="360.000000"  vlookatmax = "0"  vlookatmin = "0 "/>
-	
-		<preview url="panos/360wereld.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
-			<level tiledimagewidth="640" tiledimageheight="640">
-				<cube url="panos/360wereld.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-		<image if="webvr.isenabled">
-			<cube url="panos/360wereld.tiles/vr/pano_%s.jpg" />
-		</image>		
-		
-		<hotspot name="logo1"
-				 url="leden/grijs/knop4.png"
-				 ath="-30"  
-				 atv="0" 
-				 zorder = "3"
-				 zoom="false"
-				 distorted="false"
-				 enabled="true"
-				 capture="true"
-				 onclick="loadscene (scene_06); send_scene17_9(); "
-			   />
-				
-			 <hotspot name="logo2"
-				 url="leden/grijs/knop5.png"
-				 ath="-0"  
-				 atv="-0" 
-				 zoom="false"		 
-				 distorted="false"
-				 enabled="true"
-				 capture="true"
-				 onclick="loadscene (scene_06); send_scene17_6(); "
-			   />		
-			 <hotspot name="logo3"
-				 url="leden/grijs/knop6.png"
-				 ath="30"  
-				 atv="-0" 
-				 zoom="false"		 
-				 distorted="false"
-				 enabled="true"
-				 capture="true"		 
-				 onclick="loadscene (scene_06); send_scene17_12(); "
-			   />		
-
-			<layer name="vraag4" url="leden/grijs/thema1.png"  visible= "true" keep="false" handcursor="false" capture="false"   align="top center" x="0" y="0" zorder = "-50"  onclick = " " />	
-	
-</scene>
-
-
-<scene name="scene_05_3" title="MEMBERS" onstart="zet_aan(); Bepaal_Scale () ; set(layer[helemaal_terug].visible,false);  " havevrimage="true"  lat="" lng="" heading="" 	>
-
-
-		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="60" maxpixelzoom="2,5" fovmin="60" fovmax="60" limitview="true" distortion="7.0"  hlookatmin ="0.000000" hlookatmax ="360.000000"  vlookatmax = "0"  vlookatmin = "0 "/>
-	
-		<preview url="panos/360wereld.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
-			<level tiledimagewidth="640" tiledimageheight="640">
-				<cube url="panos/360wereld.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-		<image if="webvr.isenabled">
-			<cube url="panos/360wereld.tiles/vr/pano_%s.jpg" />
-		</image>		
-		
-		<hotspot name="logo1"
-				 url="leden/grijs/knop7.png"
-				 ath="-30"  
-				 atv="0" 
-				 zorder = "3"
-				 zoom="false"
-				 distorted="false"
-				 enabled="true"
-				 capture="true"
-				 onclick="loadscene (scene_06); send_scene17_2(); "
-			   />
-				
-			 <hotspot name="logo2"
-				 url="leden/grijs/knop8.png"
-				 ath="-0"  
-				 atv="-0" 
-				 zoom="false"		 
-				 distorted="false"
-				 enabled="true"
-				 capture="true"
-				 onclick="loadscene (scene_06); send_scene17_11(); "
-			   />		
-			 <hotspot name="logo3"
-				 url="leden/grijs/knop9.png"
-				 ath="30"  
-				 atv="-0" 
-				 zoom="false"		 
-				 distorted="false"
-				 enabled="true"
-				 capture="true"		 
-				 onclick="loadscene (scene_06); send_scene17_10(); "
-			   />		
-
-			<layer name="vraag4" url="leden/grijs/thema1.png"  visible= "true" keep="false" handcursor="false" capture="false"   align="top center" x="0" y="0" zorder = "-50"  onclick = " " />	
-	
-</scene>
-
-
-<scene name="scene_05_4" title="MEMBERS" onstart="zet_aan(); Bepaal_Scale () ; set(layer[helemaal_terug].visible,false);  " havevrimage="true"  lat="" lng="" heading="" 	>
-
-
-		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="60" maxpixelzoom="2,5" fovmin="60" fovmax="60" limitview="true" distortion="7.0"  hlookatmin ="0.000000" hlookatmax ="360.000000"  vlookatmax = "0"  vlookatmin = "0 "/>
-	
-		<preview url="panos/360wereld.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
-			<level tiledimagewidth="640" tiledimageheight="640">
-				<cube url="panos/360wereld.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-		<image if="webvr.isenabled">
-			<cube url="panos/360wereld.tiles/vr/pano_%s.jpg" />
-		</image>		
-		
-		<hotspot name="logo1"
-				 url="leden/grijs/knop10.png"
-				 ath="-30"  
-				 atv="0" 
-				 zorder = "3"
-				 zoom="false"
-				 distorted="false"
-				 enabled="true"
-				 capture="true"
-				 onclick="loadscene (scene_06); send_scene17_8(); "
-			   />
-				
-			 <hotspot name="logo2"
-				 url="leden/grijs/knop11.png"
-				 ath="-0"  
-				 atv="-0" 
-				 zoom="false"		 
-				 distorted="false"
-				 enabled="true"
-				 capture="true"
-				 onclick="loadscene (scene_06); send_scene17_6(); "
-			   />		
-			 <hotspot name="logo3"
-				 url="leden/grijs/knop12.png"
-				 ath="30"  
-				 atv="-0" 
-				 zoom="false"		 
-				 distorted="false"
-				 enabled="true"
-				 capture="true"		 
-				 onclick="loadscene (scene_06); send_scene17_9(); "
-			   />		
-
-			<layer name="vraag4" url="leden/grijs/thema1.png"  visible= "true" keep="false" handcursor="false" capture="false"   align="top center" x="0" y="0" zorder = "-50"  onclick = " " />	
-	
-</scene>
-
-
-<scene name="scene_05_5" title="MEMBERS" onstart="zet_aan(); Bepaal_Scale () ; set(layer[helemaal_terug].visible,false);  " havevrimage="true"  lat="" lng="" heading="" 	>
-
-
-		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="60" maxpixelzoom="2,5" fovmin="60" fovmax="60" limitview="true" distortion="7.0"  hlookatmin ="0.000000" hlookatmax ="360.000000"  vlookatmax = "0"  vlookatmin = "0 "/>
-	
-		<preview url="panos/360wereld.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
-			<level tiledimagewidth="640" tiledimageheight="640">
-				<cube url="panos/360wereld.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-		<image if="webvr.isenabled">
-			<cube url="panos/360wereld.tiles/vr/pano_%s.jpg" />
-		</image>		
-		
-		<hotspot name="logo1"
-				 url="leden/grijs/knop13.png"
-				 ath="-30"  
-				 atv="0" 
-				 zorder = "3"
-				 zoom="false"
-				 distorted="false"
-				 enabled="true"
-				 capture="true"
-				 onclick="loadscene (scene_06); send_scene17_10(); "
-			   />
-				
-			 <hotspot name="logo2"
-				 url="leden/grijs/knop14.png"
-				 ath="-0"  
-				 atv="-0" 
-				 zoom="false"		 
-				 distorted="false"
-				 enabled="true"
-				 capture="true"
-				 onclick="loadscene (scene_06); send_scene17_4(); "
-			   />		
-			 <hotspot name="logo3"
-				 url="leden/grijs/knop15.png"
-				 ath="30"  
-				 atv="-0" 
-				 zoom="false"		 
-				 distorted="false"
-				 enabled="true"
-				 capture="true"		 
-				 onclick="loadscene (scene_06); send_scene17_7(); "
-			   />		
-
-			<layer name="vraag4" url="leden/grijs/thema1.png"  visible= "true" keep="false" handcursor="false" capture="false"   align="top center" x="0" y="0" zorder = "-50"  onclick = " " />	
-	
-</scene>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<scene name="scene_06" title="MEMBERS" onstart="zet_aan(); Bepaal_Scale () ; set(layer[helemaal_terug].visible,false);  " havevrimage="true"  lat="" lng="" heading="" 	>
-
-		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="60" maxpixelzoom="2,5" fovmin="60" fovmax="60" limitview="true" distortion="7.0"  hlookatmin ="0.000000" hlookatmax ="360.000000"  vlookatmax = "0"  vlookatmin = "0 "/>
-	
-		<preview url="panos/360wereld.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
-			<level tiledimagewidth="640" tiledimageheight="640">
-				<cube url="panos/360wereld.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-		<image if="webvr.isenabled">
-			<cube url="panos/360wereld.tiles/vr/pano_%s.jpg" />
-		</image>		
-		
-		
-		<!-- place your scene hotspots here -->
-
-		<layer name="vraag0" url="leden/grijs/opnieuw.png"  visible= "true" keep="false" handcursor="false" capture="true"   align="center" x="0" y="0" zorder = "-50"  onclick = "loadscene (scene_0); " />	
-
-	
-</scene>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

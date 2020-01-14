@@ -464,7 +464,7 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 
 
 		<action name="laad_foto17_2">
-				<!-- loadscene(scene_17_2);-->
+				loadscene(scene_17_2);
 				laad_standaard_view();
 								set (autorotate.enabled,false);
 
@@ -478,7 +478,7 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 		
 		
 		<action name="laad_foto17_3">
-				<!-- loadscene(scene_17_3);-->
+				loadscene(scene_17_3);
 				laad_standaard_view();
 								set (autorotate.enabled,false);
 
@@ -493,7 +493,7 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 
 
 		<action name="laad_foto17_4">
-				<!-- loadscene(scene_17_4); -->
+				loadscene(scene_17_4);
 				laad_standaard_view();
 								set (autorotate.enabled,false);
 
@@ -507,7 +507,7 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 
 
 		<action name="laad_foto17_5">
-			<!--	loadscene(scene_17_5);  -->
+				loadscene(scene_17_5);
 				laad_standaard_view();
 								set (autorotate.enabled,false);
 
@@ -522,7 +522,7 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 
 
 		<action name="laad_foto17_6">
-				 <!--loadscene(scene_17_6); -->
+				loadscene(scene_17_6);
 				laad_standaard_view();
 								set (autorotate.enabled,false);
 
@@ -537,7 +537,7 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 
 
 		<action name="laad_foto17_7">
-			<!--	loadscene(scene_17_7);  -->
+				loadscene(scene_17_7);
 				laad_standaard_view();
 								set (autorotate.enabled,false);
 
@@ -552,7 +552,7 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 
 
 		<action name="laad_foto17_8">
-			<!--	loadscene(scene_17_8);-->
+				loadscene(scene_17_8);
 				laad_standaard_view();
 								set (autorotate.enabled,false);
 
@@ -563,74 +563,7 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 				 window.laad_foto17_8();
 		</action>			
 
-<!--  vakantiebeurs
 
--->
-		
-			<action name="laad_foto17_9">
-			<!--	loadscene(scene_17_9);-->
-				laad_standaard_view();
-								set (autorotate.enabled,false);
-
-		</action>				
-		
-		<action name="send_scene17_9" type="Javascript">
-				 <!--window.send_scene1();-->
-				 window.laad_foto17_9();
-		</action>				
-		
-		
-		<action name="laad_foto17_10">
-			<!--	loadscene(scene_17_10); -->
-				laad_standaard_view();
-								set (autorotate.enabled,false);
-
-		</action>				
-		
-		<action name="send_scene17_10" type="Javascript">
-				 <!--window.send_scene1();-->
-				 window.laad_foto17_10();
-		</action>					
-		
-		
-		<action name="laad_foto17_11">
-			<!-- 	loadscene(scene_17_11); -->
-				laad_standaard_view();
-								set (autorotate.enabled,false);
-
-		</action>				
-		
-		<action name="send_scene17_11" type="Javascript">
-				 <!--window.send_scene1();-->
-				 window.laad_foto17_11();
-		</action>					
-		
-		<action name="laad_foto17_12">
-				<!-- loadscene(scene_17_12); -->
-				laad_standaard_view();
-								set (autorotate.enabled,false);
-
-		</action>				
-		
-		<action name="send_scene17_12" type="Javascript">
-				 <!--window.send_scene1();-->
-				 window.laad_foto17_12();
-		</action>					
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 
 
 		<action name="laad_foto11_1">
@@ -1116,8 +1049,6 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 -->
 
 
-<!-- vakantiebeurs  -->
-
 <scene name="scene_0" title="MEMBERS" onstart="zet_aan(); Bepaal_Scale () ; set(layer[helemaal_terug].visible,false);  " havevrimage="true"  lat="" lng="" heading="" 	>
 
 		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="60" maxpixelzoom="2,5" fovmin="60" fovmax="60" limitview="true" distortion="7.0"  hlookatmin ="0.000000" hlookatmax ="360.000000"  vlookatmax = "0"  vlookatmin = "0 "/>
@@ -1414,7 +1345,6 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 			<cube url="panos/360wereld.tiles/vr/pano_%s.jpg" />
 		</image>		
 		
-		
 		<hotspot name="logo1"
 				 url="leden/grijs/knop1.png"
 				 ath="-30"  
@@ -1435,7 +1365,7 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 				 distorted="false"
 				 enabled="true"
 				 capture="true"
-				 onclick="loadscene (scene_06); send_scene17_5(); "
+				 onclick="loadscene (scene_06);  "
 			   />		
 			 <hotspot name="logo3"
 				 url="leden/grijs/knop3.png"
@@ -1445,7 +1375,7 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 				 distorted="false"
 				 enabled="true"
 				 capture="true"		 
-				 onclick="loadscene (scene_06); send_scene17_3(); "
+				 onclick="loadscene (scene_06);  "
 			   />		
 
 			<layer name="vraag4" url="leden/grijs/thema1.png"  visible= "true" keep="false" handcursor="false" capture="false"   align="top center" x="0" y="0" zorder = "-50"  onclick = " " />	
@@ -1479,7 +1409,7 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 				 distorted="false"
 				 enabled="true"
 				 capture="true"
-				 onclick="loadscene (scene_06); send_scene17_9(); "
+				 onclick="loadscene (scene_06);  "
 			   />
 				
 			 <hotspot name="logo2"
@@ -1490,7 +1420,7 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 				 distorted="false"
 				 enabled="true"
 				 capture="true"
-				 onclick="loadscene (scene_06); send_scene17_6(); "
+				 onclick="loadscene (scene_06);  "
 			   />		
 			 <hotspot name="logo3"
 				 url="leden/grijs/knop6.png"
@@ -1500,7 +1430,7 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 				 distorted="false"
 				 enabled="true"
 				 capture="true"		 
-				 onclick="loadscene (scene_06); send_scene17_12(); "
+				 onclick="loadscene (scene_06);  "
 			   />		
 
 			<layer name="vraag4" url="leden/grijs/thema1.png"  visible= "true" keep="false" handcursor="false" capture="false"   align="top center" x="0" y="0" zorder = "-50"  onclick = " " />	
@@ -1534,7 +1464,7 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 				 distorted="false"
 				 enabled="true"
 				 capture="true"
-				 onclick="loadscene (scene_06); send_scene17_2(); "
+				 onclick="loadscene (scene_06);  "
 			   />
 				
 			 <hotspot name="logo2"
@@ -1545,7 +1475,7 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 				 distorted="false"
 				 enabled="true"
 				 capture="true"
-				 onclick="loadscene (scene_06); send_scene17_11(); "
+				 onclick="loadscene (scene_06);  "
 			   />		
 			 <hotspot name="logo3"
 				 url="leden/grijs/knop9.png"
@@ -1555,7 +1485,7 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 				 distorted="false"
 				 enabled="true"
 				 capture="true"		 
-				 onclick="loadscene (scene_06); send_scene17_10(); "
+				 onclick="loadscene (scene_06);  "
 			   />		
 
 			<layer name="vraag4" url="leden/grijs/thema1.png"  visible= "true" keep="false" handcursor="false" capture="false"   align="top center" x="0" y="0" zorder = "-50"  onclick = " " />	
@@ -1589,7 +1519,7 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 				 distorted="false"
 				 enabled="true"
 				 capture="true"
-				 onclick="loadscene (scene_06); send_scene17_8(); "
+				 onclick="loadscene (scene_06);  "
 			   />
 				
 			 <hotspot name="logo2"
@@ -1600,7 +1530,7 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 				 distorted="false"
 				 enabled="true"
 				 capture="true"
-				 onclick="loadscene (scene_06); send_scene17_6(); "
+				 onclick="loadscene (scene_06);  "
 			   />		
 			 <hotspot name="logo3"
 				 url="leden/grijs/knop12.png"
@@ -1610,7 +1540,7 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 				 distorted="false"
 				 enabled="true"
 				 capture="true"		 
-				 onclick="loadscene (scene_06); send_scene17_9(); "
+				 onclick="loadscene (scene_06);  "
 			   />		
 
 			<layer name="vraag4" url="leden/grijs/thema1.png"  visible= "true" keep="false" handcursor="false" capture="false"   align="top center" x="0" y="0" zorder = "-50"  onclick = " " />	
@@ -1644,7 +1574,7 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 				 distorted="false"
 				 enabled="true"
 				 capture="true"
-				 onclick="loadscene (scene_06); send_scene17_10(); "
+				 onclick="loadscene (scene_06);  "
 			   />
 				
 			 <hotspot name="logo2"
@@ -1655,7 +1585,7 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 				 distorted="false"
 				 enabled="true"
 				 capture="true"
-				 onclick="loadscene (scene_06); send_scene17_4(); "
+				 onclick="loadscene (scene_06);  "
 			   />		
 			 <hotspot name="logo3"
 				 url="leden/grijs/knop15.png"
@@ -1665,7 +1595,7 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 				 distorted="false"
 				 enabled="true"
 				 capture="true"		 
-				 onclick="loadscene (scene_06); send_scene17_7(); "
+				 onclick="loadscene (scene_06);  "
 			   />		
 
 			<layer name="vraag4" url="leden/grijs/thema1.png"  visible= "true" keep="false" handcursor="false" capture="false"   align="top center" x="0" y="0" zorder = "-50"  onclick = " " />	
