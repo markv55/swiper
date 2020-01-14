@@ -150,7 +150,8 @@ if(device.desktop, set (hoogte_factor, calc(stageheight*0.5)); 	set (breedte_fac
 
 
 
-
+<layer name="terug355" url="images/icon_full_screen.png" onclick="switch(fullscreen); set (layer[terug355].visible,false);   	  " keep="true" visible="true" zorder="2" handcursor="false" capture="false"  align="righttop" x="30" y="30" scale="0.2"  scale.mobile="0.1"  
+			/>	
 
 
 
