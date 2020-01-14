@@ -407,7 +407,7 @@ set (layer[mobile_leading].width, calc(breedte_factor*0.1));
 		</action>		
 		
 		<action name="laad_foto17">
-		loadscene(scene_17);
+		<!--loadscene(scene_17);-->
 		laad_standaard_view();
 						set (autorotate.enabled,false);
 
