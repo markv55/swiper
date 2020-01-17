@@ -302,11 +302,6 @@ keep="true" visible="false" zorder="2" handcursor="false" capture="false"  align
 	       
 />	
 
-	
-<layer name="welkon_in_VR" url="images/welkominvr.png" onclick="set(layer[welkon_in_VR].visible,false);  " keep="true" visible="true" zorder="2" handcursor="false" capture="false"  align="topcenter"   />	
-
-
-
 <!-- AUTOROTATE -->
 <autorotate enabled="true" waittime="1.0" speed="5.0"  accel="30.0"    horizon="0.0"     tofov="130"    interruptionevents="userviewchange|layers|keyboard" />  	
 
@@ -316,11 +311,6 @@ keep="true" visible="false" zorder="2" handcursor="false" capture="false"  align
 <events name="orientation" keep="true" onresize="BerekenHoogteBreedte2();"  />
 
 <action name="BerekenHoogteBreedte2">
-set (layer[welkon_in_VR].width, calc(stagewidth*0.7));
-set (layer[welkon_in_VR].height, calc(stagewidth*0.7));
-
-
-
 if(stagewidth LT stageheight  <!-- breedte kleiner dan hoogte =  portrait-->
 ,  
 <!-- PORTRAIT -->
