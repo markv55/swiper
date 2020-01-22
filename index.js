@@ -454,6 +454,11 @@ app.get('/webcontroller_5_html', function(req, res) {
 	res.sendFile(path.join(__dirname+'/webcontroller_html/webcontroller_5_html/index.html'));
 });
 
+app.get('/webcontroller_6_html', function(req, res) {
+	res.sendFile(path.join(__dirname+'/webcontroller_html/webcontroller_6_html/index.html'));
+});
+
+
 
 //  EINDE    EINDE     EINDE     EINDE     EINDE     EINDE     EINDE     EINDE     EINDE     EINDE     EINDE     EINDE     EINDE     EINDE     EINDE      
 //  EINDE    EINDE     EINDE     EINDE     EINDE     EINDE     EINDE     EINDE     EINDE     EINDE     EINDE     EINDE     EINDE     EINDE     EINDE 
