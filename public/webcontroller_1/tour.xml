@@ -291,7 +291,7 @@ keep="true" visible="false" zorder="2" handcursor="false" capture="false"  align
 />	
 
 <!-- AUTOROTATE -->
-<autorotate enabled="true" waittime="1.0" speed="5.0"  accel="30.0"    horizon="0.0"     tofov="130"    interruptionevents="userviewchange|layers|keyboard" />  	
+<autorotate enabled="false" waittime="1.0" speed="5.0"  accel="30.0"    horizon="0.0"     tofov="130"    interruptionevents="userviewchange|layers|keyboard" />  	
 
 
 
