@@ -55,18 +55,6 @@
 	               design_text_shadow="1"
 	               />
 
-	<!--
-	    For an alternative skin design either change the <skin_settings> values 
-	    from above or optionally include one of the predefined designs from below.
-	-->
-	<!-- <include url="skin/vtourskin_design_flat_light.xml"  /> -->
-	<!-- <include url="skin/vtourskin_design_glass.xml"       /> -->
-	<!-- <include url="skin/vtourskin_design_ultra_light.xml" /> -->
-	<!-- <include url="skin/vtourskin_design_117.xml"         /> -->
-	<!-- <include url="skin/vtourskin_design_117round.xml"    /> -->
-	<!-- <include url="skin/vtourskin_design_black.xml"       /> -->
-
-
 	<!-- startup action - load the first scene -->
 	<action name="startup" autorun="onstart">
 		if(startscene === null OR !scene[get(startscene)], copy(startscene,scene[0].name); );
@@ -76,13 +64,12 @@
 
 	</action>
 
-
-
-
 	
-<!-- HIER OPLOSSIGN VOOR VINDEN!!!!!!!!!!!!!!!!!!! -->
-<!-- HIER OPLOSSIGN VOOR VINDEN!!!!!!!!!!!!!!!!!!! -->
-<!-- HIER OPLOSSIGN VOOR VINDEN!!!!!!!!!!!!!!!!!!! -->
+	
+	
+<!-- X EN Y WAARDE VANAF INDEX VOOR ROTATIE VAN CAMERA IN KRPANO                         X EN Y WAARDE VANAF INDEX VOOR ROTATIE VAN CAMERA IN KRPANO                          X EN Y WAARDE VANAF INDEX VOOR ROTATIE VAN CAMERA IN KRPANO          -->	
+<!-- X EN Y WAARDE VANAF INDEX VOOR ROTATIE VAN CAMERA IN KRPANO                         X EN Y WAARDE VANAF INDEX VOOR ROTATIE VAN CAMERA IN KRPANO                          X EN Y WAARDE VANAF INDEX VOOR ROTATIE VAN CAMERA IN KRPANO          -->
+<!-- X EN Y WAARDE VANAF INDEX VOOR ROTATIE VAN CAMERA IN KRPANO                         X EN Y WAARDE VANAF INDEX VOOR ROTATIE VAN CAMERA IN KRPANO                          X EN Y WAARDE VANAF INDEX VOOR ROTATIE VAN CAMERA IN KRPANO          -->
 
 <!-- nieuw het inlezen van x en y en langzaam ernaar toe bewegen  -->
 		<action name="ga_naar_y">
@@ -101,23 +88,20 @@
 
 
 
+
+	<!-- LAAD FOTO ACTIONS                    //                     LAAD FOTO ACTIONS                             //                     LAAD FOTO ACTIONS                             //                     LAAD FOTO ACTIONS                               -->
+	<!-- LAAD FOTO ACTIONS                    //                     LAAD FOTO ACTIONS                             //                     LAAD FOTO ACTIONS                             //                     LAAD FOTO ACTIONS                               -->
+	<!-- LAAD FOTO ACTIONS                    //                     LAAD FOTO ACTIONS                             //                     LAAD FOTO ACTIONS                             //                     LAAD FOTO ACTIONS                               -->
+
 		<action name="laad_standaard_view">
 		set(view.hlookat, 3600);
 		set(view.fov,140);
 		</action>
 
-
-
-
-
-
-		
-
 		<action name="laad_foto0">
 		loadscene(scene_0, null, MERGE, BLEND(1));
 		laad_standaard_view();
 		</action>
-
 
 		<action name="laad_foto1">
 		loadscene(scene_100, null, MERGE, BLEND(1));
@@ -131,7 +115,6 @@
 		set(layer[activespot].parent, spot2);
 		</action>
 
-
 		<action name="laad_foto3">
 		loadscene(scene_300, null, MERGE, BLEND(1));
 		laad_standaard_view();
@@ -142,7 +125,6 @@
 		loadscene(scene_301, null, MERGE, BLEND(1));
 		laad_standaard_view();
 		</action>
-
 
 		<action name="laad_foto5">
 		loadscene(scene_302, null, MERGE, BLEND(1));
@@ -155,7 +137,6 @@
 		laad_standaard_view();
 		</action>
 	
-	
 		<action name="laad_foto7">
 		loadscene(scene_304, null, MERGE, BLEND(1));
 		laad_standaard_view();
@@ -167,11 +148,9 @@
 		set(layer[activespot].parent, spot5);
 		</action>
 
-
 		<action name="laad_foto9">
 		loadscene(scene_306, null, MERGE, BLEND(1));
 		laad_standaard_view();
-
 		</action>
 
 		<action name="laad_foto10">
@@ -179,7 +158,6 @@
 		laad_standaard_view();
 		set(layer[activespot].parent, spot6);
 		</action>
-
 
 		<action name="laad_foto11">
 		loadscene(scene_308, null, MERGE, BLEND(1));
@@ -203,7 +181,6 @@
 		laad_standaard_view();
 		</action>
 
-
 		<action name="laad_foto15">
 		loadscene(scene_502, null, MERGE, BLEND(1));
 		laad_standaard_view();
@@ -214,13 +191,17 @@
 		laad_standaard_view();
 		</action>
 
-
 		<action name="laad_foto17">
 		loadscene(scene_600, null, MERGE, BLEND(1));
 		laad_standaard_view();
 		set(layer[activespot].parent, spot9);
 		</action>
 
+		
+	<!-- JAVASCRIPT ACTIES                     //                     JAVASCRIPT ACTIES                           //                     JAVASCRIPT ACTIES                           //                     JAVASCRIPT ACTIES                             -->	
+	<!-- JAVASCRIPT ACTIES                     //                     JAVASCRIPT ACTIES                           //                     JAVASCRIPT ACTIES                           //                     JAVASCRIPT ACTIES                             -->		
+	<!-- JAVASCRIPT ACTIES                     //                     JAVASCRIPT ACTIES                           //                     JAVASCRIPT ACTIES                           //                     JAVASCRIPT ACTIES                             -->	
+	
 			<action name="window_foto_1" type="Javascript">
 				window.laad_foto1();
 			</action>			
@@ -256,6 +237,11 @@
 			<action name="window_foto_17" type="Javascript">
 				window.laad_foto17();
 			</action>
+
+			
+<!--  INTERFACE / PLATTEGROND EN FOTOS                             INTERFACE / PLATTEGROND EN FOTOS                             INTERFACE / PLATTEGROND EN FOTOS                             INTERFACE / PLATTEGROND EN FOTOS                             -->
+<!--  INTERFACE / PLATTEGROND EN FOTOS                             INTERFACE / PLATTEGROND EN FOTOS                             INTERFACE / PLATTEGROND EN FOTOS                             INTERFACE / PLATTEGROND EN FOTOS                             -->			
+<!--  INTERFACE / PLATTEGROND EN FOTOS                             INTERFACE / PLATTEGROND EN FOTOS                             INTERFACE / PLATTEGROND EN FOTOS                             INTERFACE / PLATTEGROND EN FOTOS                             -->			
 			
 <!-- -->
 <!-- DE PLATTEGROND MET DE ICONS!!!! -->
@@ -276,25 +262,27 @@ keep="true" visible="false" zorder="2" handcursor="false" capture="false"  align
 <!--  ICONEN OP DE PLATTEGROND INCL DE GEKOZEN ICON MET WITTE KADER -->
 <style name="mapspot" keep="true" url="graphics/camera_uit_origineel.png" parent="map" align="lefttop" edge="center" scale= "0.45"  scale.mobile="0.6"/>
 
-<layer name="spot1" style="mapspot" x="1180" y="715" zorder="1" onclick=" laad_foto1(); window_foto_1(); 	set(layer[activespot].parent, spot1); set(layer[activespot].visible,true);  "/>
-<layer name="spot2" style="mapspot" x="240" y="570" zorder="1" onclick="laad_foto2(); window_foto_2() ;set(layer[activespot].parent, spot2); set(layer[activespot].visible,true); "/>
-<layer name="spot3" style="mapspot" x="360" y="700" zorder="1" onclick="laad_foto3(); window_foto_3()  ;set(layer[activespot].parent, spot3); set(layer[activespot].visible,true);"/> 
+<layer name="spot1" style="mapspot" x="1180" y="715" zorder="1" onclick=" laad_foto1(); window_foto_1(); 	set(layer[activespot].parent, spot1); set(layer[activespot].visible,true); set(layer[map].visible,false);  "/>
+<layer name="spot2" style="mapspot" x="240" y="570" zorder="1" onclick="laad_foto2(); window_foto_2() ;set(layer[activespot].parent, spot2); set(layer[activespot].visible,true); set(layer[map].visible,false);"/>
+<layer name="spot3" style="mapspot" x="360" y="700" zorder="1" onclick="laad_foto3(); window_foto_3()  ;set(layer[activespot].parent, spot3); set(layer[activespot].visible,true);set(layer[map].visible,false);"/> 
 
-<layer name="spot4" style="mapspot" x="155" y="1120" zorder="1" onclick="laad_foto5(); window_foto_5() ;set(layer[activespot].parent, spot4); set(layer[activespot].visible,true);"/>
-<layer name="spot5" style="mapspot" x="155" y="1030" zorder="1" onclick="laad_foto8(); window_foto_8();set(layer[activespot].parent, spot5); set(layer[activespot].visible,true); "/>
-<layer name="spot6" style="mapspot" x="155" y="1205" zorder="1" onclick="laad_foto10(); window_foto_10();set(layer[activespot].parent, spot6); set(layer[activespot].visible,true); "/>
+<layer name="spot4" style="mapspot" x="155" y="1120" zorder="1" onclick="laad_foto5(); window_foto_5() ;set(layer[activespot].parent, spot4); set(layer[activespot].visible,true);set(layer[map].visible,false);"/>
+<layer name="spot5" style="mapspot" x="155" y="1030" zorder="1" onclick="laad_foto8(); window_foto_8();set(layer[activespot].parent, spot5); set(layer[activespot].visible,true); set(layer[map].visible,false);"/>
+<layer name="spot6" style="mapspot" x="155" y="1205" zorder="1" onclick="laad_foto10(); window_foto_10();set(layer[activespot].parent, spot6); set(layer[activespot].visible,true);set(layer[map].visible,false); "/>
 
-<layer name="spot7" style="mapspot" x="480" y="210" zorder="1" onclick="laad_foto12(); window_foto_12() ;set(layer[activespot].parent, spot7); set(layer[activespot].visible,true);"/>
-<layer name="spot8" style="mapspot" x="940" y="1150" zorder="1" onclick="laad_foto13(); window_foto_13() ;set(layer[activespot].parent, spot8); set(layer[activespot].visible,true);"/>
-<layer name="spot9" style="mapspot" x="260" y="730" zorder="1" onclick="laad_foto17(); window_foto_17() ;set(layer[activespot].parent, spot9); set(layer[activespot].visible,true);"/>
+<layer name="spot7" style="mapspot" x="480" y="210" zorder="1" onclick="laad_foto12(); window_foto_12() ;set(layer[activespot].parent, spot7); set(layer[activespot].visible,true);set(layer[map].visible,false);"/>
+<layer name="spot8" style="mapspot" x="940" y="1150" zorder="1" onclick="laad_foto13(); window_foto_13() ;set(layer[activespot].parent, spot8); set(layer[activespot].visible,true);set(layer[map].visible,false);"/>
+<layer name="spot9" style="mapspot" x="260" y="730" zorder="1" onclick="laad_foto17(); window_foto_17() ;set(layer[activespot].parent, spot9); set(layer[activespot].visible,true);set(layer[map].visible,false);"/>
 
 
 		
 
-<layer name="terug" url="images/logo.png" onclick=" set(layer[map].visible,false); set(layer[terug].visible,false); set(layer[terug4].visible,true);    " keep="true" visible="true" zorder="2" handcursor="false" capture="false"  align="leftbottom" x="30" y="30" scale="0.7"  scale.mobile="0.3" />		
-<layer name="terug4" url="images/logo.png" onclick=" set(layer[map].visible,true);  set(layer[terug].visible,true); set(layer[terug4].visible,false);  " keep="true" visible="true" zorder="2" handcursor="false" capture="false"  align="leftbottom" x="30" y="30" scale="0.7"  scale.mobile="0.3" />	
+<layer name="terug" url="graphics/knopSpots.png" onclick=" set(layer[map].visible,false); set(layer[terug].visible,false); set(layer[terug4].visible,true);    " keep="true" visible="true" zorder="2" 
+		handcursor="false" capture="false"  align="righttop" x="30" y="30" scale="0.7"  scale.mobile="0.3" />		
+<layer name="terug4" url="graphics/knopSpots.png" onclick=" set(layer[map].visible,true);  set(layer[terug].visible,true); set(layer[terug4].visible,false);  " keep="true" visible="true" zorder="2" 
+		handcursor="false" capture="false"  align="righttop" x="30" y="30" scale="0.7"  scale.mobile="0.3" />	
 	
-<layer name="terug3" url="images/icon_full_screen.png" onclick="switch(fullscreen);  " keep="true" visible="true" zorder="2" handcursor="false" capture="false"  align="righttop" x="30" y="30" scale="0.2"  scale.mobile="0.1"  />	
+<layer name="terug3" url="images/icon_full_screen.png" onclick="switch(fullscreen);  " keep="true" visible="true" zorder="2" handcursor="false" capture="false"  align="lefttop" x="30" y="30" scale="0.2"  scale.mobile="0.1"  />	
 				
 <layer name="activespot" 
 	  url="graphics/camera_aan_origineel.png" 
@@ -316,22 +304,21 @@ if(stagewidth LT stageheight  <!-- breedte kleiner dan hoogte =  portrait-->
 <!-- PORTRAIT -->
 if(device.tablet, set (layer[map].width, calc(stagewidth*0.9)); 		set (layer[map].height, calc(stagewidth*0.9) ););
 if(device.mobile, set (layer[map].width, calc(stagewidth*0.9)); 		set (layer[map].height, calc(stagewidth*0.9) ););	
-if(device.desktop, set (layer[map].width, calc(stagewidth*0.9)); 	set (layer[map].height, calc(stagewidth*0.9) ););	
+if(device.desktop, set (layer[map].width, calc(stagewidth*0.9)); 		set (layer[map].height, calc(stagewidth*0.9) ););	
 ,
 <!-- LANDSCAPE -->
-if(device.tablet,  set (layer[map].height, calc(stageheight*0.9)); 	set (layer[map].width, calc(stageheight*0.9) ););
-if(device.mobile,  set (layer[map].height, calc(stageheight*0.9)); 	set (layer[map].width, calc(stageheight*0.9) );); 	
-if(device.desktop, set (layer[map].height, calc(stageheight*0.8)); 	set (layer[map].width, calc(stageheight*0.8) ););	
+if(device.tablet,  set (layer[map].height, calc(stageheight*0.9)); 		set (layer[map].width, calc(stageheight*0.9) ););
+if(device.mobile,  set (layer[map].height, calc(stageheight*0.9)); 		set (layer[map].width, calc(stageheight*0.9) );); 	
+if(device.desktop, set (layer[map].height, calc(stageheight*0.8)); 		set (layer[map].width, calc(stageheight*0.8) ););	
 );
 </action>
 
 
 
 
-
-
-
-
+<!--  SCENES                           //                SCENES                 //               SCENES                 //               SCENES                 //               SCENES                 //               SCENES                 // -->
+<!--  SCENES                           //                SCENES                 //               SCENES                 //               SCENES                 //               SCENES                 //               SCENES                 // -->
+<!--  SCENES                           //                SCENES                 //               SCENES                 //               SCENES                 //               SCENES                 //               SCENES                 // -->
 	
 		
 	<scene name="scene_0" title="0" onstart="" havevrimage="true" thumburl="panos/0.tiles/thumb.jpg" lat="" lng="" heading="">
@@ -363,12 +350,6 @@ if(device.desktop, set (layer[map].height, calc(stageheight*0.8)); 	set (layer[m
 	
 	</scene>
 
-	
-	
-	
-
-	
-	
 
 	
 	<scene name="scene_100" title="100" onstart="" havevrimage="true" thumburl="panos/100.tiles/thumb.jpg" lat="36.63694444" lng="29.10305556" heading="0.0">
