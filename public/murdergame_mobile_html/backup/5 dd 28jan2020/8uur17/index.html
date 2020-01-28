@@ -481,37 +481,37 @@ op 7 december 2019
 							if (msg == 'laad_foto1'){	
 								var krpano = document.getElementById("krpanoSWFObject");
 								krpano.call( "laad_foto1()" );	
-								sound_1.play();
+								sound_0.play();
 							}								
 							
 							if (msg == 'laad_foto2'){	
 								var krpano = document.getElementById("krpanoSWFObject");
 								krpano.call( "laad_foto2()" );	
-								sound_2.play();
+								sound_0.play();
 								}	
 
 							if (msg == 'laad_foto3'){	
 								var krpano = document.getElementById("krpanoSWFObject");
 								krpano.call( "laad_foto3()" );		
-								sound_3.play();
+								sound_0.play();
 								}	
 
 							if (msg == 'laad_foto4'){	
 								var krpano = document.getElementById("krpanoSWFObject");
 								krpano.call( "laad_foto4()" );		
-								sound_4.play();
+								sound_0.play();
 								}	
 
 							if (msg == 'laad_foto5'){	
 								var krpano = document.getElementById("krpanoSWFObject");
 								krpano.call( "laad_foto5()" );		
-								sound_5.play();
+								sound_0.play();
 								}	
 
 							if (msg == 'laad_foto6'){	
 								var krpano = document.getElementById("krpanoSWFObject");
 								krpano.call( "laad_foto6()" );		
-								sound_6.play();
+								sound_0.play();
 								}	
 
 							if (msg == 'laad_foto7'){	
@@ -570,18 +570,19 @@ op 7 december 2019
 			window.laad_foto0 = function(){
 				console.log ('laad_foto0'); 
 				socket.emit('stuur', 'laad_foto0','',customer,project);	
-			
+				sound_0.play();				
 			}
 			window.laad_foto1 = function(){
 				console.log ('laad_foto1'); 
 				socket.emit('stuur', 'laad_foto1','',customer,project);	
-
-
+				alle_geluiden_stop();
+				sound_1.play();
 			}
 			window.laad_foto2 = function(){
 				console.log ('laad_foto2'); 
 				socket.emit('stuur', 'laad_foto2','',customer,project);	
-
+				alle_geluiden_stop();
+				sound_2.play();
 			}
 			window.laad_foto3 = function(){
 				console.log ('laad_foto3'); 

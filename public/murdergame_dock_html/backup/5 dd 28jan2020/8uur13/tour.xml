@@ -169,7 +169,7 @@
 
 		
 		<action name="stop_alle_geluiden">
-		set(layer[map].visible,false);
+		set(layer[map].visible,true);
 		</action>
 
 		<action name="close_map">
@@ -257,15 +257,15 @@ keep="true" visible="false" zorder="2" handcursor="false" capture="false"  align
 <!--  ICONEN OP DE PLATTEGROND INCL DE GEKOZEN ICON MET WITTE KADER -->
 <style name="mapspot" keep="true" url="graphics/camera_uit_origineel.png" parent="map" align="lefttop" edge="center" scale= "0.3"  scale.mobile="0.3"/>
 
-<layer name="spot1" style="mapspot" x="880" y="960" zorder="1" onclick=" laad_foto1(); window_foto_1(); window_close_map();	set(layer[activespot].parent, spot1); set(layer[activespot].visible,true); set(layer[map].visible,false);  "/>
-<layer name="spot2" style="mapspot" x="790" y="860" zorder="1" onclick="laad_foto2(); window_foto_2() ;window_close_map(); set(layer[activespot].parent, spot2); set(layer[activespot].visible,true); set(layer[map].visible,false);"/>
-<layer name="spot3" style="mapspot" x="950" y="920" zorder="1" onclick="laad_foto3(); window_foto_3()  ;window_close_map(); set(layer[activespot].parent, spot3); set(layer[activespot].visible,true);set(layer[map].visible,false);"/> 
+<layer name="spot1" style="mapspot" x="880" y="960" zorder="1" onclick=" laad_foto1(); window_foto_1(); window_close_map();window_stop_alle_geluiden();	set(layer[activespot].parent, spot1); set(layer[activespot].visible,true); set(layer[map].visible,false);  "/>
+<layer name="spot2" style="mapspot" x="790" y="860" zorder="1" onclick="laad_foto2(); window_foto_2() ;window_close_map();window_stop_alle_geluiden(); set(layer[activespot].parent, spot2); set(layer[activespot].visible,true); set(layer[map].visible,false);"/>
+<layer name="spot3" style="mapspot" x="950" y="920" zorder="1" onclick="laad_foto3(); window_foto_3()  ;window_close_map();window_stop_alle_geluiden(); set(layer[activespot].parent, spot3); set(layer[activespot].visible,true);set(layer[map].visible,false);"/> 
 
 
 
-<layer name="spot4" style="mapspot" x="880" y="1080" zorder="1" onclick="laad_foto4(); window_foto_4() ;window_close_map(); set(layer[activespot].parent, spot4); set(layer[activespot].visible,true);set(layer[map].visible,false);"/>
-<layer name="spot5" style="mapspot" x="910" y="1020" zorder="1" onclick="laad_foto5(); window_foto_5();window_close_map(); set(layer[activespot].parent, spot5); set(layer[activespot].visible,true); set(layer[map].visible,false);"/>
-<layer name="spot6" style="mapspot" x="740" y="1020" zorder="1" onclick="laad_foto6(); window_foto_6();window_close_map();set(layer[activespot].parent, spot6); set(layer[activespot].visible,true);set(layer[map].visible,false); "/>
+<layer name="spot4" style="mapspot" x="880" y="1080" zorder="1" onclick="laad_foto4(); window_foto_4() ;window_close_map();window_stop_alle_geluiden(); set(layer[activespot].parent, spot4); set(layer[activespot].visible,true);set(layer[map].visible,false);"/>
+<layer name="spot5" style="mapspot" x="910" y="1020" zorder="1" onclick="laad_foto5(); window_foto_5();window_close_map();window_stop_alle_geluiden(); set(layer[activespot].parent, spot5); set(layer[activespot].visible,true); set(layer[map].visible,false);"/>
+<layer name="spot6" style="mapspot" x="740" y="1020" zorder="1" onclick="laad_foto6(); window_foto_6();window_close_map();window_stop_alle_geluiden();set(layer[activespot].parent, spot6); set(layer[activespot].visible,true);set(layer[map].visible,false); "/>
 
 <!--
 <layer name="spot7" style="mapspot" x="480" y="210" zorder="1" onclick="laad_foto12(); window_foto_12() ;set(layer[activespot].parent, spot7); set(layer[activespot].visible,true);set(layer[map].visible,false);"/>

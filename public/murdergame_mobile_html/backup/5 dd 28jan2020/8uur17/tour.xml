@@ -108,8 +108,8 @@
 		</action>		
 		
 		<action name="stop_alle_geluiden">
-		<!--set(layer[map].url,static/murdergame_mobile_html/aanwijzingen/aanwijzing0.png);-->
-		<!--set(layer[map].visible,true);-->
+		set(layer[map].url,static/murdergame_mobile_html/aanwijzingen/aanwijzing0.png);
+		set(layer[map].visible,true);
 		</action>
 
 		<action name="close_map">
