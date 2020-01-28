@@ -1,0 +1,648 @@
+
+<!DOCTYPE html>
+<html>
+
+<!--  PROJECT SETTINGS        PROJECT SETTINGS        PROJECT SETTINGS        PROJECT SETTINGS        -->
+	<script>
+		var customer = 'BB';  // customer name
+		var project = 'P_01';	//  project name
+	</script>
+
+
+
+
+
+	<head>
+	
+		<title>BB remote</title>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta http-equiv="x-ua-compatible" content="IE=edge" />
+		
+		<link rel="apple-touch-icon" href="/static/murdergame_mobile_html/icon.png">
+		
+		<style>
+				body {
+					background: white;
+					font-family:      TradeGothic, sans-serif;
+					font-size: 30px;		
+				}
+					
+				.size{
+				font-family:      TradeGothic, sans-serif;
+				font-size: 30px;		
+				}
+				
+			@-ms-viewport { width:device-width; }
+			@media only screen and (min-device-width:800px) { html { overflow:hidden; } }
+			html { height:100%; }
+			body { height:100%; overflow:hidden; margin:0; padding:0; font-family:Arial, Helvetica, sans-serif; font-size:16px; color:#FFFFFF; background-color:#000000; }
+
+
+			.btn {
+				padding: 3px 3px;
+				background: #4dabf5;
+				color: #fff;
+				text-decoration: none;
+				border-radius: 6px;
+				font-family: Arial;
+
+				font-size: 24px;
+
+				margin:  2px;
+				}
+
+			.btn_red {
+				padding: 3px 3px;
+				background: #1769aa;
+				color: #fff;
+				text-decoration: none;
+				border-radius: 6px;
+				font-family: Arial;
+
+				font-size: 24px;
+
+				margin:  2px;
+				}
+
+			.btn_red_light {
+				padding: 3px 3px;
+				background: #2196f3;
+				color: #fff;
+				text-decoration: none;
+				border-radius: 6px;
+				font-family: Arial;
+
+				font-size: 24px;
+
+				margin:  2px;
+				}
+
+
+				
+			.btn_black {
+				padding: 3px 3px;
+				background: black;
+				color: #fff;
+				border-color: black;
+				text-decoration: none;
+				border-radius: 6px;
+				font-family: Arial;
+
+				font-size: 24px;
+
+				margin:  2px;
+				}				
+
+			.btn_zwart {
+				padding: 3px 3px;
+				background: grey;
+				color: white;
+				border-color: black;
+				text-decoration: none;
+				border-radius: 6px;
+				font-family: Arial;
+
+				font-size: 24px;
+
+				margin:  2px;
+				}							
+				
+			</style>
+	</head>
+
+	
+	
+	<body>
+
+		<script src="/static/murdergame_mobile_html/tour.js"></script>
+		
+
+		<!-- 
+		<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+		-->
+
+	  
+		<script src="/static/js/jquery-1.11.1.js"></script>
+		<script src="/static/js/socket.io.js"></script>
+		<script src="/static/js/slider.js"></script> 	
+	
+
+ <audio id="sound_0" src="/static/murdergame_mobile_html/audio/sonar.wav"       preload="auto"></audio> 
+		
+ <audio id="sound_1" src="/static/murdergame_mobile_html/audio/1.mp3"       preload="auto"></audio>  <!-- loop="loop"  eruit gehaald. dan loopt hij wel -->
+ <audio id="sound_2" src="/static/murdergame_mobile_html/audio/2.mp3"       preload="auto"></audio>  
+ <audio id="sound_3" src="/static/murdergame_mobile_html/audio/3.mp3"       preload="auto"></audio> 
+ <audio id="sound_4" src="/static/murdergame_mobile_html/audio/4.mp3"       preload="auto"></audio> 
+ <audio id="sound_5" src="/static/murdergame_mobile_html/audio/5.mp3"       preload="auto"></audio> 
+ <audio id="sound_6" src="/static/murdergame_mobile_html/audio/6.mp3"       preload="auto"></audio> 	
+		
+			  <button onclick="document.getElementById('sound_0').play();  	  "      >Play it</button>	
+
+			<div id="pano" style="width:100%;height:100%;">	
+		
+		
+		
+		
+		<!--
+		<div id="myDIV"
+
+					<button id="scene0" type="button" class="btn_zwart btn-info">Zwart</button>				
+					<button id="scene1" type="button" class="btn_red btn-info">Fethiye</button>			
+					<button id="scene2" type="button" class="btn_red btn-info">Tomb Bay</button>
+					<button id="scene3" type="button" class="btn_red btn-info">Kapi Creek</button>			
+
+					<button id="scene5" type="button" class="btn btn-info">Uitzicht</button>			
+
+					<button id="scene8" type="button" class="btn btn-info">Briefing</button>	
+
+					<button id="scene10" type="button" class="btn btn-info">Zeilen</button>
+				
+					<button id="scene12" type="button" class="btn_red btn-info">Gocek</button>	
+					<button id="scene13" type="button" class="btn_red btn-info">Karacaoren</button>			
+
+					<button id="scene17" type="button" class="btn_red btn-info">Fathom Cove</button>	
+			<button onclick="myFunction();  " class="btn_black btn-info"   >hide button</button>
+			</div>
+	-->			
+
+		
+			<noscript><table style="width:100%;height:100%;"><tr style="vertical-align:middle;"><td><div style="text-align:center;">ERROR:<br/><br/>Javascript not activated<br/><br/></div></td></tr></table></noscript>
+				
+			<script>				
+				embedpano({swf:"/static/murdergame_mobile_html/tour.swf", xml:"/static/murdergame_mobile_html/tour.xml", target:"pano", html5:"auto", mobilescale:1.0, passQueryParameters:true});
+			</script>
+
+		</div>
+
+
+
+<script>
+
+		function alle_geluiden_stop () {
+		sound_1.pause();
+		sound_1.currentTime = 0;
+
+		sound_2.pause();
+		sound_2.currentTime = 0;	
+
+		sound_3.pause();
+		sound_3.currentTime = 0;	
+
+		sound_4.pause();
+		sound_4.currentTime = 0;
+
+		sound_5.pause();
+		sound_5.currentTime = 0;
+
+		sound_6.pause();
+		sound_6.currentTime = 0;		
+		
+		}
+
+
+
+		
+		function myFunction() {
+			var x = document.getElementById("myDIV");
+			if (x.style.display === "none") {
+				x.style.display = "block";
+			} else {
+				x.style.display = "none";
+			}
+		}
+				
+	
+		jQuery(document).ready(function($){ 
+			
+			$('#scene0').click(function() {   
+				var krpano = document.getElementById("krpanoSWFObject");
+				krpano.call( "laad_foto0()" );	
+				laad_foto0();
+				changeCollorBack();
+			});			
+				
+			
+			$('#scene1').click(function() {   
+				var krpano = document.getElementById("krpanoSWFObject");
+				krpano.call( "laad_foto1()" );	
+				laad_foto1();
+				changeCollorBack();
+				$(this).css('background-color', 'red');
+			});
+			
+			$('#scene2').click(function() {   
+				var krpano = document.getElementById("krpanoSWFObject");
+				krpano.call( "laad_foto2()" );	
+				laad_foto2();
+				changeCollorBack();
+				$(this).css('background-color', 'red');
+			
+			});
+			
+			$('#scene3').click(function() {   
+				var krpano = document.getElementById("krpanoSWFObject");
+				krpano.call( "laad_foto3()" );	
+				laad_foto3();
+				changeCollorBack();
+				$(this).css('background-color', 'red');
+			
+			});
+
+			$('#scene4').click(function() {   
+				var krpano = document.getElementById("krpanoSWFObject");
+				krpano.call( "laad_foto4()" );
+				laad_foto4();				
+				changeCollorBack();
+				$(this).css('background-color', 'red');
+			
+			});
+
+			$('#scene5').click(function() {   
+				var krpano = document.getElementById("krpanoSWFObject");
+				krpano.call( "laad_foto5()" );	
+				laad_foto5();
+				changeCollorBack();
+				$(this).css('background-color', 'red');
+			
+			});
+
+			$('#scene6').click(function() {   
+				var krpano = document.getElementById("krpanoSWFObject");
+				krpano.call( "laad_foto6()" );	
+				laad_foto6();
+				changeCollorBack();
+				$(this).css('background-color', 'red');
+			
+			});
+
+			$('#scene7').click(function() {   
+				var krpano = document.getElementById("krpanoSWFObject");
+				krpano.call( "laad_foto7()" );	
+				laad_foto7();
+				changeCollorBack();
+				$(this).css('background-color', 'red');
+			});
+			
+			$('#scene8').click(function() {   
+				var krpano = document.getElementById("krpanoSWFObject");
+				krpano.call( "laad_foto8()" );	
+				laad_foto8();
+				changeCollorBack();
+				$(this).css('background-color', 'red');
+			
+			});
+			
+			$('#scene9').click(function() {   
+				var krpano = document.getElementById("krpanoSWFObject");
+				krpano.call( "laad_foto9()" );	
+				laad_foto9();
+				changeCollorBack();
+				$(this).css('background-color', 'red');
+			
+			});
+
+			$('#scene10').click(function() {   
+				var krpano = document.getElementById("krpanoSWFObject");
+				krpano.call( "laad_foto10()" );	
+				laad_foto10();
+				changeCollorBack();
+				$(this).css('background-color', 'red');
+			
+			});
+
+			$('#scene11').click(function() {   
+				var krpano = document.getElementById("krpanoSWFObject");
+				krpano.call( "laad_foto11()" );	
+				laad_foto11();
+				changeCollorBack();
+				$(this).css('background-color', 'red');
+			
+			});
+
+			$('#scene12').click(function() {   
+				var krpano = document.getElementById("krpanoSWFObject");
+				krpano.call( "laad_foto12()" );	
+				laad_foto12();
+				changeCollorBack();
+				$(this).css('background-color', 'red');
+			
+			});			
+
+			$('#scene13').click(function() {   
+				var krpano = document.getElementById("krpanoSWFObject");
+				krpano.call( "laad_foto13()" );	
+				laad_foto13();
+				changeCollorBack();
+				$(this).css('background-color', 'red');
+			});
+			
+			$('#scene14').click(function() {   
+				var krpano = document.getElementById("krpanoSWFObject");
+				krpano.call( "laad_foto14()" );	
+				laad_foto14();
+				changeCollorBack();
+				$(this).css('background-color', 'red');
+			
+			});
+			
+			$('#scene15').click(function() {   
+				var krpano = document.getElementById("krpanoSWFObject");
+				krpano.call( "laad_foto15()" );	
+				laad_foto15();
+				changeCollorBack();
+				$(this).css('background-color', 'red');
+			
+			});
+
+			$('#scene16').click(function() {   
+				var krpano = document.getElementById("krpanoSWFObject");
+				krpano.call( "laad_foto16()" );	
+				laad_foto16();
+				changeCollorBack();
+				$(this).css('background-color', 'red');
+			
+			});
+
+			$('#scene17').click(function() {   
+				var krpano = document.getElementById("krpanoSWFObject");
+				krpano.call( "laad_foto17()" );	
+				laad_foto17();
+				changeCollorBack();
+				$(this).css('background-color', 'red');
+			
+			});
+	});  // einde jquery druk knoppen
+
+			
+			function changeCollorBack(){
+			document.getElementById("scene1").style.background='#1769aa';
+			document.getElementById("scene2").style.background='#1769aa';
+			document.getElementById("scene3").style.background='#1769aa';
+			//document.getElementById("scene4").style.background='blue';
+			document.getElementById("scene5").style.background='#2196f3';
+			//document.getElementById("scene6").style.background='blue';
+			//document.getElementById("scene7").style.background='blue';
+			document.getElementById("scene8").style.background='#2196f3';
+			//document.getElementById("scene9").style.background='blue';
+			document.getElementById("scene10").style.background='#2196f3';
+			//document.getElementById("scene11").style.background='blue';
+			document.getElementById("scene12").style.background='#1769aa';			
+			document.getElementById("scene13").style.background='#1769aa';
+			//document.getElementById("scene14").style.background='blue';
+			//document.getElementById("scene15").style.background='blue';
+			//document.getElementById("scene16").style.background='blue';
+			document.getElementById("scene17").style.background='#1769aa';
+			}
+	
+
+</script>
+
+		
+		
+<script>
+	
+	$(function () {
+		var socket = io();
+			
+		socket.on('message', function(msg, vid, scale,d){  
+
+							console.log (msg);
+							console.log(vid);
+							console.log(scale);
+							console.log(d);
+							
+		// RECEIVE X EN Y POSITIE VAN VR BRIL        // RECEIVE X EN Y POSITIE VAN VR BRIL        // RECEIVE X EN Y POSITIE VAN VR BRIL        // RECEIVE X EN Y POSITIE VAN VR BRIL        					
+		// RECEIVE X EN Y POSITIE VAN VR BRIL        // RECEIVE X EN Y POSITIE VAN VR BRIL        // RECEIVE X EN Y POSITIE VAN VR BRIL        // RECEIVE X EN Y POSITIE VAN VR BRIL 
+		// RECEIVE X EN Y POSITIE VAN VR BRIL        // RECEIVE X EN Y POSITIE VAN VR BRIL        // RECEIVE X EN Y POSITIE VAN VR BRIL        // RECEIVE X EN Y POSITIE VAN VR BRIL 
+
+
+						if ((scale == customer) && (d == project )){
+		
+							<!-- hlookat-->
+							if (msg == 'hlookat'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								<!--krpano.set("view.hlookat", vid);  uitgezet om hem met onderstaande regel smoother te maken-->
+								krpano.call("ga_naar_y()");	// nieuw probeersel!!!! stuur een variable naar krpano.
+								krpano.set("vid_y",vid);							
+								//console.log("Horizontal lookat via socket: " + krpano.get("view.hlookat"));	
+							}				
+
+														
+							<!-- vlookat-->
+							if (msg == 'vlookat'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								<!-- krpano.set("view.vlookat", vid);  uitgezet om hem met onderstaande regel smoother te maken-->
+								krpano.call("ga_naar_x()");	// nieuw probeersel!!!! stuur een variable naar krpano.
+								krpano.set("vid_x",vid);								
+								//console.log("vertical lookat via socket: " + krpano.get("view.vlookat"));	
+							}				
+					
+
+// 9 FEBR ONDERSTAANDE UITGEZET. DE ALERT ONLINE 2.0 (VGZ) GAME STUURT DE WAARDE X EN Y EN DAAR REAGEERDE KRPANO B&B OOK OP.
+// DOEL IS X,Y GEBRUIKEN VOOR ALERT ONLINE 2.0 EN DE HLOOKAT EN VLOOKAT VOOR B&B SITE.	
+							
+							<!--y-->
+							if (msg == 'y'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								//krpano.set("view.hlookat", vid);  //dit werkt. tijdelijk uitgezet om onderstaand te testen
+								krpano.call("ga_naar_y()");	// nieuw probeersel!!!! stuur een variable naar krpano.
+								krpano.set("vid_y",vid);
+								//console.log("Horizontal lookat: " + krpano.get("view.hlookat"));	
+							}				
+
+							<!--x-->
+							if (msg == 'x'){			
+								var krpano = document.getElementById("krpanoSWFObject");
+								//krpano.set("view.vlookat", vid);  //dit werkt. tijdelijk uitgezet om onderstaand te testen
+								krpano.call("ga_naar_x()"); // nieuw probeersel!!!!	stuur een variable naar krpano.		
+								krpano.set("vid_x",vid);
+								//krpano.set("view.vlookat", 200);
+							}	
+/* bocenstaande y en x uitgecommanteerd
+op 7 december 2019
+*/							
+
+					
+		//  RECEIVE SOCKETS WITHIN KRPANO    // RECEIVE SOCKETS WITHIN KRPANO	    // RECEIVE SOCKETS WITHIN KRPANO	    // RECEIVE SOCKETS WITHIN KRPANO	    // RECEIVE SOCKETS WITHIN KRPANO	
+		//  RECEIVE SOCKETS WITHIN KRPANO    // RECEIVE SOCKETS WITHIN KRPANO	    // RECEIVE SOCKETS WITHIN KRPANO	    // RECEIVE SOCKETS WITHIN KRPANO	    // RECEIVE SOCKETS WITHIN KRPANO							
+		//  RECEIVE SOCKETS WITHIN KRPANO    // RECEIVE SOCKETS WITHIN KRPANO	    // RECEIVE SOCKETS WITHIN KRPANO	    // RECEIVE SOCKETS WITHIN KRPANO	    // RECEIVE SOCKETS WITHIN KRPANO	
+							
+							if (msg == 'laad_foto0'){	
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "laad_foto0()" );		
+								sound_0.play();
+							}								
+					
+							if (msg == 'laad_foto1'){	
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "laad_foto1()" );	
+								sound_0.play();
+							}								
+							
+							if (msg == 'laad_foto2'){	
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "laad_foto2()" );	
+								sound_0.play();
+								}	
+
+							if (msg == 'laad_foto3'){	
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "laad_foto3()" );		
+								sound_0.play();
+								}	
+
+							if (msg == 'laad_foto4'){	
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "laad_foto4()" );		
+								sound_0.play();
+								}	
+
+							if (msg == 'laad_foto5'){	
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "laad_foto5()" );		
+								sound_0.play();
+								}	
+
+							if (msg == 'laad_foto6'){	
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "laad_foto6()" );		
+								sound_0.play();
+								}	
+
+							if (msg == 'laad_foto7'){	
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "laad_foto7()" );		
+							}							
+
+							if (msg == 'laad_foto8'){	
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "laad_foto8()" );		
+							}	
+
+							if (msg == 'laad_foto9'){	
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "laad_foto9()" );		
+							}	
+
+							if (msg == 'laad_foto10'){	
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "laad_foto10()" );		
+							}	
+
+							
+							if (msg == 'stop_alle_geluiden'){	
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "stop_alle_geluiden()" );	
+								alle_geluiden_stop();								
+							}								
+							
+							if (msg == 'close_map'){	
+								var krpano = document.getElementById("krpanoSWFObject");
+								krpano.call( "close_map()" );	
+							
+							}								
+														
+							
+							
+							
+							
+							
+							
+				
+						}  // einde customer / project
+				
+					});  //einde on-message  ///////////////////////////////////////////////////////////////////
+
+
+
+
+
+// EEN INTERNE CALL VAN KRPANO, SEND SOCKET TO BACKEND  ///////////////////////////////////////////////////////////////////////////////////////////////////////
+// EEN INTERNE CALL VAN KRPANO, SEND SOCKET TO BACKEND  ///////////////////////////////////////////////////////////////////////////////////////////////////////
+// EEN INTERNE CALL VAN KRPANO, SEND SOCKET TO BACKEND  ///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+			window.laad_foto0 = function(){
+				console.log ('laad_foto0'); 
+				socket.emit('stuur', 'laad_foto0','',customer,project);	
+				sound_0.play();				
+			}
+			window.laad_foto1 = function(){
+				console.log ('laad_foto1'); 
+				socket.emit('stuur', 'laad_foto1','',customer,project);	
+				alle_geluiden_stop();
+				sound_1.play();
+			}
+			window.laad_foto2 = function(){
+				console.log ('laad_foto2'); 
+				socket.emit('stuur', 'laad_foto2','',customer,project);	
+				alle_geluiden_stop();
+				sound_2.play();
+			}
+			window.laad_foto3 = function(){
+				console.log ('laad_foto3'); 
+				socket.emit('stuur', 'laad_foto3','',customer,project);	
+				alle_geluiden_stop();
+				sound_3.play();
+			}
+			window.laad_foto4 = function(){
+				console.log ('laad_foto4'); 
+				socket.emit('stuur', 'laad_foto4','',customer,project);	
+				alle_geluiden_stop();
+				sound_4.play();				
+			}
+			window.laad_foto5 = function(){
+				console.log ('laad_foto5'); 
+				socket.emit('stuur', 'laad_foto5','',customer,project);	
+				alle_geluiden_stop();
+				sound_5.play();				
+			}
+			window.laad_foto6 = function(){
+				console.log ('laad_foto6'); 
+				socket.emit('stuur', 'laad_foto6','',customer,project);	
+				alle_geluiden_stop();
+				sound_6.play();				
+			}
+			window.laad_foto7 = function(){
+				console.log ('laad_foto7'); 
+				socket.emit('stuur', 'laad_foto7','',customer,project);	
+			}
+			window.laad_foto8 = function(){
+				console.log ('laad_foto8'); 
+				socket.emit('stuur', 'laad_foto8','',customer,project);	
+			}
+			window.laad_foto9 = function(){
+				console.log ('laad_foto9'); 
+				socket.emit('stuur', 'laad_foto9','',customer,project);	
+			}
+			window.laad_foto10 = function(){
+				console.log ('laad_foto10'); 
+				socket.emit('stuur', 'laad_foto10','',customer,project);	
+			}
+			
+			window.stop_alle_geluiden = function(){
+				socket.emit('stuur', 'stop_alle_geluiden','',customer,project);	
+				alle_geluiden_stop();
+			}		
+
+			window.close_map = function(){
+				socket.emit('stuur', 'close_map','',customer,project);	
+
+			}
+			
+			
+			
+			
+			
+		}); // einde function
+		</script>
+		
+	
+
+	</body>
+</html>

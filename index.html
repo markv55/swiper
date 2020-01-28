@@ -416,13 +416,31 @@ onderstaande class  (bijvoorbeeld js-ajx-url-zeilenSlaveSocket)  wordt onderaan 
 							<p>   </p>	
 			<br>	
 
-						<br>	
+			<br>	
 			<a href=" " class=" ajx_url_webcontroller_6 btn ">android 6</a> 		
 							<p>   </p>	
 			<br>	
 
+			<br>	
+			<a href=" " class=" ajx_murdergame_dock btn ">DOCK mudergame</a> 		
+							<p>   </p>	
+			<br>	
+			
+			<br>	
+			<a href=" " class=" ajx_murdergame_vr btn ">VR murdergame</a> 		
+							<p>   </p>	
+			<br>	
+
+			<br>	
+			<a href=" " class=" ajx_murdergame_mobile btn ">MOBILE murdergame</a> 		
+							<p>   </p>	
+			<br>
 
 
+			<br>	
+			<a href=" " class=" ajx_rocks_reality btn ">rocks_reality</a> 		
+							<p>   </p>	
+			<br>			
 			
 <!--  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  -->
 <!--  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  -->
@@ -860,13 +878,49 @@ onderstaande class  (bijvoorbeeld js-ajx-url-zeilenSlaveSocket)  wordt onderaan 
 				});
 			});	
 
+			$('.ajx_murdergame_dock').on('click', function(e) {
+				e.preventDefault();
+				$.ajax({
+					url: $(this).attr('href')
+				}).done(function() {
+					
+					window.location = '/murdergame_dock_html';
+					console.log('Ajax request successfull');
+				});
+			});	
 
+			$('.ajx_murdergame_vr').on('click', function(e) {
+				e.preventDefault();
+				$.ajax({
+					url: $(this).attr('href')
+				}).done(function() {
+					
+					window.location = '/murdergame_vr_html';
+					console.log('Ajax request successfull');
+				});
+			});	
 
+			$('.ajx_murdergame_mobile').on('click', function(e) {
+				e.preventDefault();
+				$.ajax({
+					url: $(this).attr('href')
+				}).done(function() {
+					
+					window.location = '/murdergame_mobile_html';
+					console.log('Ajax request successfull');
+				});
+			});	
 
-
-
-
-
+			$('.ajx_rocks_reality').on('click', function(e) {
+				e.preventDefault();
+				$.ajax({
+					url: $(this).attr('href')
+				}).done(function() {
+					
+					window.location = '/rocks_reality_html';
+					console.log('Ajax request successfull');
+				});
+			});	
 
 
 

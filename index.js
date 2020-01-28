@@ -459,6 +459,32 @@ app.get('/webcontroller_6_html', function(req, res) {
 });
 
 
+app.get('/murdergame_dock_html', function(req, res) {
+	res.sendFile(path.join(__dirname+'/public/murdergame_dock_html/index.html'));
+});
+
+app.get('/murdergame_vr_html', function(req, res) {
+	res.sendFile(path.join(__dirname+'/public/murdergame_vr_html/index.html'));
+});
+
+app.get('/murdergame_mobile_html', function(req, res) {
+	res.sendFile(path.join(__dirname+'/public/murdergame_mobile_html/index.html'));
+});
+
+app.get('/rocks_reality_html', function(req, res) {
+	res.sendFile(path.join(__dirname+'/public/rocks_reality_html/index.html'));
+});
+
+
+
+
+
+
+
+
+
+
+
 
 //  EINDE    EINDE     EINDE     EINDE     EINDE     EINDE     EINDE     EINDE     EINDE     EINDE     EINDE     EINDE     EINDE     EINDE     EINDE      
 //  EINDE    EINDE     EINDE     EINDE     EINDE     EINDE     EINDE     EINDE     EINDE     EINDE     EINDE     EINDE     EINDE     EINDE     EINDE 
