@@ -287,7 +287,10 @@
 				
 				});  //einde on-message  ///////////////////////////////////////////////////////////////////
 
-	
+				window.spot2_aanw_vr1 = function(){
+				console.log ('window.spot2_aanw_vr1'); 
+				socket.emit('stuur', 'spot2_aanw_vr1','',customer,project);	
+			}
 
 
 			

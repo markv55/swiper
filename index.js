@@ -458,6 +458,12 @@ app.get('/webcontroller_6_html', function(req, res) {
 	res.sendFile(path.join(__dirname+'/webcontroller_html/webcontroller_6_html/index.html'));
 });
 
+app.get('/brazilie_html', function(req, res) {
+	res.sendFile(path.join(__dirname+'/public/brazilie_html/index.html'));
+});
+
+
+
 
 app.get('/murdergame_dock_html', function(req, res) {
 	res.sendFile(path.join(__dirname+'/public/murdergame_dock_html/index.html'));

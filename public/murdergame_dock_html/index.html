@@ -148,28 +148,6 @@
 
 	
 		
-		
-		<!--
-		<div id="myDIV"
-
-					<button id="scene0" type="button" class="btn_zwart btn-info">Zwart</button>				
-					<button id="scene1" type="button" class="btn_red btn-info">Fethiye</button>			
-					<button id="scene2" type="button" class="btn_red btn-info">Tomb Bay</button>
-					<button id="scene3" type="button" class="btn_red btn-info">Kapi Creek</button>			
-
-					<button id="scene5" type="button" class="btn btn-info">Uitzicht</button>			
-
-					<button id="scene8" type="button" class="btn btn-info">Briefing</button>	
-
-					<button id="scene10" type="button" class="btn btn-info">Zeilen</button>
-				
-					<button id="scene12" type="button" class="btn_red btn-info">Gocek</button>	
-					<button id="scene13" type="button" class="btn_red btn-info">Karacaoren</button>			
-
-					<button id="scene17" type="button" class="btn_red btn-info">Fathom Cove</button>	
-			<button onclick="myFunction();  " class="btn_black btn-info"   >hide button</button>
-			</div>
-	-->			
 
 		
 			<noscript><table style="width:100%;height:100%;"><tr style="vertical-align:middle;"><td><div style="text-align:center;">ERROR:<br/><br/>Javascript not activated<br/><br/></div></td></tr></table></noscript>
@@ -207,202 +185,6 @@
 		sound_6.currentTime = 0;		
 		
 		}
-
-
-
-		
-		function myFunction() {
-			var x = document.getElementById("myDIV");
-			if (x.style.display === "none") {
-				x.style.display = "block";
-			} else {
-				x.style.display = "none";
-			}
-		}
-				
-	
-		jQuery(document).ready(function($){ 
-			
-			$('#scene0').click(function() {   
-				var krpano = document.getElementById("krpanoSWFObject");
-				krpano.call( "laad_foto0()" );	
-				laad_foto0();
-				changeCollorBack();
-			});			
-				
-			
-			$('#scene1').click(function() {   
-				var krpano = document.getElementById("krpanoSWFObject");
-				krpano.call( "laad_foto1()" );	
-				laad_foto1();
-				changeCollorBack();
-				$(this).css('background-color', 'red');
-			});
-			
-			$('#scene2').click(function() {   
-				var krpano = document.getElementById("krpanoSWFObject");
-				krpano.call( "laad_foto2()" );	
-				laad_foto2();
-				changeCollorBack();
-				$(this).css('background-color', 'red');
-			
-			});
-			
-			$('#scene3').click(function() {   
-				var krpano = document.getElementById("krpanoSWFObject");
-				krpano.call( "laad_foto3()" );	
-				laad_foto3();
-				changeCollorBack();
-				$(this).css('background-color', 'red');
-			
-			});
-
-			$('#scene4').click(function() {   
-				var krpano = document.getElementById("krpanoSWFObject");
-				krpano.call( "laad_foto4()" );
-				laad_foto4();				
-				changeCollorBack();
-				$(this).css('background-color', 'red');
-			
-			});
-
-			$('#scene5').click(function() {   
-				var krpano = document.getElementById("krpanoSWFObject");
-				krpano.call( "laad_foto5()" );	
-				laad_foto5();
-				changeCollorBack();
-				$(this).css('background-color', 'red');
-			
-			});
-
-			$('#scene6').click(function() {   
-				var krpano = document.getElementById("krpanoSWFObject");
-				krpano.call( "laad_foto6()" );	
-				laad_foto6();
-				changeCollorBack();
-				$(this).css('background-color', 'red');
-			
-			});
-
-			$('#scene7').click(function() {   
-				var krpano = document.getElementById("krpanoSWFObject");
-				krpano.call( "laad_foto7()" );	
-				laad_foto7();
-				changeCollorBack();
-				$(this).css('background-color', 'red');
-			});
-			
-			$('#scene8').click(function() {   
-				var krpano = document.getElementById("krpanoSWFObject");
-				krpano.call( "laad_foto8()" );	
-				laad_foto8();
-				changeCollorBack();
-				$(this).css('background-color', 'red');
-			
-			});
-			
-			$('#scene9').click(function() {   
-				var krpano = document.getElementById("krpanoSWFObject");
-				krpano.call( "laad_foto9()" );	
-				laad_foto9();
-				changeCollorBack();
-				$(this).css('background-color', 'red');
-			
-			});
-
-			$('#scene10').click(function() {   
-				var krpano = document.getElementById("krpanoSWFObject");
-				krpano.call( "laad_foto10()" );	
-				laad_foto10();
-				changeCollorBack();
-				$(this).css('background-color', 'red');
-			
-			});
-
-			$('#scene11').click(function() {   
-				var krpano = document.getElementById("krpanoSWFObject");
-				krpano.call( "laad_foto11()" );	
-				laad_foto11();
-				changeCollorBack();
-				$(this).css('background-color', 'red');
-			
-			});
-
-			$('#scene12').click(function() {   
-				var krpano = document.getElementById("krpanoSWFObject");
-				krpano.call( "laad_foto12()" );	
-				laad_foto12();
-				changeCollorBack();
-				$(this).css('background-color', 'red');
-			
-			});			
-
-			$('#scene13').click(function() {   
-				var krpano = document.getElementById("krpanoSWFObject");
-				krpano.call( "laad_foto13()" );	
-				laad_foto13();
-				changeCollorBack();
-				$(this).css('background-color', 'red');
-			});
-			
-			$('#scene14').click(function() {   
-				var krpano = document.getElementById("krpanoSWFObject");
-				krpano.call( "laad_foto14()" );	
-				laad_foto14();
-				changeCollorBack();
-				$(this).css('background-color', 'red');
-			
-			});
-			
-			$('#scene15').click(function() {   
-				var krpano = document.getElementById("krpanoSWFObject");
-				krpano.call( "laad_foto15()" );	
-				laad_foto15();
-				changeCollorBack();
-				$(this).css('background-color', 'red');
-			
-			});
-
-			$('#scene16').click(function() {   
-				var krpano = document.getElementById("krpanoSWFObject");
-				krpano.call( "laad_foto16()" );	
-				laad_foto16();
-				changeCollorBack();
-				$(this).css('background-color', 'red');
-			
-			});
-
-			$('#scene17').click(function() {   
-				var krpano = document.getElementById("krpanoSWFObject");
-				krpano.call( "laad_foto17()" );	
-				laad_foto17();
-				changeCollorBack();
-				$(this).css('background-color', 'red');
-			
-			});
-	});  // einde jquery druk knoppen
-
-			
-			function changeCollorBack(){
-			document.getElementById("scene1").style.background='#1769aa';
-			document.getElementById("scene2").style.background='#1769aa';
-			document.getElementById("scene3").style.background='#1769aa';
-			//document.getElementById("scene4").style.background='blue';
-			document.getElementById("scene5").style.background='#2196f3';
-			//document.getElementById("scene6").style.background='blue';
-			//document.getElementById("scene7").style.background='blue';
-			document.getElementById("scene8").style.background='#2196f3';
-			//document.getElementById("scene9").style.background='blue';
-			document.getElementById("scene10").style.background='#2196f3';
-			//document.getElementById("scene11").style.background='blue';
-			document.getElementById("scene12").style.background='#1769aa';			
-			document.getElementById("scene13").style.background='#1769aa';
-			//document.getElementById("scene14").style.background='blue';
-			//document.getElementById("scene15").style.background='blue';
-			//document.getElementById("scene16").style.background='blue';
-			document.getElementById("scene17").style.background='#1769aa';
-			}
-	
 
 </script>
 
@@ -545,13 +327,7 @@ op 7 december 2019
 							
 							}								
 														
-							
-							
-							
-							
-							
-							
-				
+			
 						}  // einde customer / project
 				
 					});  //einde on-message  ///////////////////////////////////////////////////////////////////
@@ -568,43 +344,44 @@ op 7 december 2019
 			window.laad_foto0 = function(){
 				console.log ('laad_foto0'); 
 				socket.emit('stuur', 'laad_foto0','',customer,project);	
-				sound_0.play();				
+				alle_geluiden_stop();
+				<!--sound_0.play();		-->		
 			}
 			window.laad_foto1 = function(){
 				console.log ('laad_foto1'); 
 				socket.emit('stuur', 'laad_foto1','',customer,project);	
 				alle_geluiden_stop();
-				sound_1.play();
+				<!--sound_1.play();-->
 			}
 			window.laad_foto2 = function(){
-				console.log ('laad_foto2'); 
+				console.log ('is dit hem? laad_foto2'); 
 				socket.emit('stuur', 'laad_foto2','',customer,project);	
 				alle_geluiden_stop();
-				sound_2.play();
+				<!--sound_2.play();-->
 			}
 			window.laad_foto3 = function(){
 				console.log ('laad_foto3'); 
 				socket.emit('stuur', 'laad_foto3','',customer,project);	
 				alle_geluiden_stop();
-				sound_3.play();
+				<!--sound_3.play();-->
 			}
 			window.laad_foto4 = function(){
 				console.log ('laad_foto4'); 
 				socket.emit('stuur', 'laad_foto4','',customer,project);	
 				alle_geluiden_stop();
-				sound_4.play();				
+				<!--sound_4.play();		-->		
 			}
 			window.laad_foto5 = function(){
 				console.log ('laad_foto5'); 
 				socket.emit('stuur', 'laad_foto5','',customer,project);	
 				alle_geluiden_stop();
-				sound_5.play();				
+				<!--sound_5.play();-->				
 			}
 			window.laad_foto6 = function(){
 				console.log ('laad_foto6'); 
 				socket.emit('stuur', 'laad_foto6','',customer,project);	
 				alle_geluiden_stop();
-				sound_6.play();				
+				<!--sound_6.play();			-->	
 			}
 			window.laad_foto7 = function(){
 				console.log ('laad_foto7'); 
@@ -631,12 +408,22 @@ op 7 december 2019
 
 			window.close_map = function(){
 				socket.emit('stuur', 'close_map','',customer,project);	
-				sound_0.play();	
-
+				<!--alle_geluiden_stop();-->
+				<!--sound_0.play();	-->
 			}
 			
+			window.spot2_aanw_tb1 = function(){
+				socket.emit('stuur', 'spot2_aanw_tb1','',customer,project);	
+				console.log ('spot2_aanw_tb1'); 
+				<!--alle_geluiden_stop();-->
+				<!--sound_0.play();	-->
+			}			
 			
-			
+
+
+
+
+
 			
 			
 		}); // einde function

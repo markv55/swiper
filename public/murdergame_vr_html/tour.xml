@@ -125,9 +125,14 @@ set (hotspot[aanw_code_fout].width, calc(info_maat*0.5)); set (hotspot[aanw_code
 
 
 
+	<action name="window_spot2_aanw_vr1" type="Javascript">
+	window.spot2_aanw_vr1();
+	</action>	
 
 
-
+			
+			
+			
 	
 		<action name="laad_foto0">
 		loadscene(scene_0, null, MERGE, BLEND(1));
@@ -219,7 +224,7 @@ set (hotspot[aanw_code_fout].width, calc(info_maat*0.5)); set (hotspot[aanw_code
 		<hotspot name="spot1" visible = "false" style="skin_hotspotstyle" ath="77.525" atv="9.019" linkedscene="scene_3" />
 		
 		
-		<hotspot name="body" url="fotos/body.png" keep="false" distorted ="true" visible="true"  ath="-30.544" atv="83.835" zorder="2" scale= "0.3" onclick=" loadscene (scene_3); "  scale.mobile="0.2"      />
+		<hotspot name="body" url="fotos/body.png" keep="false" distorted ="true" visible="true"  ath="-30.544" atv="83.835" zorder="2" scale= "0.3" onclick=" loadscene (scene_3);  window_spot2_aanw_vr1(); "  scale.mobile="0.2"      />
 		<hotspot name="aanw2" url="fotos/2.png" keep="false" enabled = " false"  distorted ="true" visible="true"  ath="-4.181" atv="47.559" zorder="2"  onclick=" "        />
 		
 

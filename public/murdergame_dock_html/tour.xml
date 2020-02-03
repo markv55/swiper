@@ -231,7 +231,12 @@
 				window.close_map();
 			</action>
 			
-
+			<action name="window_spot2_aanw_tb1" type="Javascript">
+				window.spot2_aanw_tb1();
+			</action>
+			
+			
+			
 			
 			
 <!--  INTERFACE / PLATTEGROND EN FOTOS                             INTERFACE / PLATTEGROND EN FOTOS                             INTERFACE / PLATTEGROND EN FOTOS                             INTERFACE / PLATTEGROND EN FOTOS                             -->
@@ -243,29 +248,28 @@
 <layer name="map" url="graphics/floor.jpg" visible = "true" keep="true" handcursor="false" capture="false" align="center"  scalechildren="true"  onclick="   "/>
 
 
-<layer name="close_button" style="close_btn_style" x="5" y="5" zorder="1" onclick="set (layer[map].visible,false); window_close_map();  "/>
+<layer name="close_button" style="close_btn_style" x="5" y="5" zorder="1" onclick="set (layer[map].visible,false); window_close_map(); set(layer[terug].visible,true); "/>
 <style name="close_btn_style" keep="true" url="images/close.png" parent="map" align="righttop" edge="center" scale= "0.6" scale.mobile = "1"  />	
 
 
 
 
-	<!--  DE KNOP 'SPOTS' RECHTSOVEN OP DE 360 PANO FOTO. SOMS IS NAAM SPOTS OF BAAIEN. BIJ KLIKKEN OPEN JE DE PLATTEGROND-->
-<layer name="mapicon" url="graphics/knopSpots.png" onclick=" " 
-keep="true" visible="false" zorder="2" handcursor="false" capture="false"  align="righttop" scale="1.5"  scale.mobile="0.5" />
+
+
 
 
 <!--  ICONEN OP DE PLATTEGROND INCL DE GEKOZEN ICON MET WITTE KADER -->
 <style name="mapspot" keep="true" url="graphics/camera_uit_origineel.png" parent="map" align="lefttop" edge="center" scale= "0.3"  scale.mobile="0.3"/>
 
-<layer name="spot1" style="mapspot" x="880" y="960" zorder="1" onclick=" laad_foto1(); window_foto_1(); window_close_map();	set(layer[activespot].parent, spot1); set(layer[activespot].visible,true); set(layer[map].visible,false);  "/>
-<layer name="spot2" style="mapspot" x="790" y="860" zorder="1" onclick="laad_foto2(); window_foto_2() ;window_close_map(); set(layer[activespot].parent, spot2); set(layer[activespot].visible,true); set(layer[map].visible,false);"/>
-<layer name="spot3" style="mapspot" x="950" y="920" zorder="1" onclick="laad_foto3(); window_foto_3()  ;window_close_map(); set(layer[activespot].parent, spot3); set(layer[activespot].visible,true);set(layer[map].visible,false);"/> 
+<layer name="spot1" style="mapspot" x="880" y="960" zorder="1" onclick="  window_stop_alle_geluiden();  laad_foto1(); window_foto_1(); window_close_map();	set(layer[activespot].parent, spot1); set(layer[activespot].visible,true); set(layer[map].visible,false); set(layer[terug].visible,true);  "/>
+<layer name="spot2" style="mapspot" x="790" y="860" zorder="1" onclick="  window_stop_alle_geluiden(); window_spot2_aanw_tb1(); laad_foto2(); window_foto_2() ;window_close_map(); set(layer[activespot].parent, spot2); set(layer[activespot].visible,true); set(layer[map].visible,false);set(layer[terug].visible,true); "/>
+<layer name="spot3" style="mapspot" x="950" y="920" zorder="1" onclick="window_stop_alle_geluiden(); laad_foto3(); window_foto_3()  ;window_close_map(); set(layer[activespot].parent, spot3); set(layer[activespot].visible,true);set(layer[map].visible,false);set(layer[terug].visible,true); "/> 
 
 
 
-<layer name="spot4" style="mapspot" x="880" y="1080" zorder="1" onclick="laad_foto4(); window_foto_4() ;window_close_map(); set(layer[activespot].parent, spot4); set(layer[activespot].visible,true);set(layer[map].visible,false);"/>
-<layer name="spot5" style="mapspot" x="910" y="1020" zorder="1" onclick="laad_foto5(); window_foto_5();window_close_map(); set(layer[activespot].parent, spot5); set(layer[activespot].visible,true); set(layer[map].visible,false);"/>
-<layer name="spot6" style="mapspot" x="740" y="1020" zorder="1" onclick="laad_foto6(); window_foto_6();window_close_map();set(layer[activespot].parent, spot6); set(layer[activespot].visible,true);set(layer[map].visible,false); "/>
+<layer name="spot4" style="mapspot" x="880" y="1080" zorder="1" onclick="window_stop_alle_geluiden(); laad_foto4(); window_foto_4() ;window_close_map(); set(layer[activespot].parent, spot4); set(layer[activespot].visible,true);set(layer[map].visible,false);set(layer[terug].visible,true); "/>
+<layer name="spot5" style="mapspot" x="910" y="1020" zorder="1" onclick="window_stop_alle_geluiden(); laad_foto5(); window_foto_5();window_close_map(); set(layer[activespot].parent, spot5); set(layer[activespot].visible,true); set(layer[map].visible,false);set(layer[terug].visible,true); "/>
+<layer name="spot6" style="mapspot" x="740" y="1020" zorder="1" onclick="window_stop_alle_geluiden(); laad_foto6(); window_foto_6();window_close_map();set(layer[activespot].parent, spot6); set(layer[activespot].visible,true);set(layer[map].visible,false); set(layer[terug].visible,true); "/>
 
 <!--
 <layer name="spot7" style="mapspot" x="480" y="210" zorder="1" onclick="laad_foto12(); window_foto_12() ;set(layer[activespot].parent, spot7); set(layer[activespot].visible,true);set(layer[map].visible,false);"/>
@@ -274,14 +278,14 @@ keep="true" visible="false" zorder="2" handcursor="false" capture="false"  align
 -->
 
 		
-
-<layer name="terug" url="graphics/knopSpots.png" onclick=" set(layer[map].visible,true);    " keep="true" visible="true" zorder="2" 
-		handcursor="false" capture="false"  align="righttop" x="30" y="30" scale="0.7"  scale.mobile="0.3" />		
-
+	<!--  DE KNOP 'SPOTS' RECHTSOVEN OP DE 360 PANO FOTO. SOMS IS NAAM SPOTS OF BAAIEN. BIJ KLIKKEN OPEN JE DE PLATTEGROND-->
+<layer name="terug" url="graphics/knopSpots2.png" onclick=" set(layer[map].visible,true);  set(layer[terug].visible,false);    " keep="true" visible="false" zorder="2" handcursor="false" capture="false"  align="righttop" x="30" y="30" scale="0.7"  scale.mobile="0.3" />		
 
 
-		
+
+<!--		
 <layer name="terug3" url="images/icon_full_screen.png" onclick="switch(fullscreen);  " keep="true" visible="true" zorder="2" handcursor="false" capture="false"  align="lefttop" x="30" y="30" scale="0.2"  scale.mobile="0.1"  />	
+-->
 				
 <layer name="activespot" 
 	  url="graphics/camera_aan_origineel.png" 

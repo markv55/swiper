@@ -1,0 +1,508 @@
+﻿<krpano version="1.19" title="Virtual Tour">
+<!-- alle files in skin en plugin zijn naar 1.20 geupdate!!!!!!-->
+
+	<include url="skin/vtourskin.xml" />
+
+	
+	<!-- om de controll bar uit te zetten zet title op false -->
+
+	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
+	<skin_settings maps="true"
+	               maps_type="google"
+	               maps_bing_api_key=""
+	               maps_google_api_key=""
+	               maps_zoombuttons="false"
+	               gyro="false"
+	               webvr="false"
+	               webvr_gyro_keeplookingdirection="false"
+	               webvr_prev_next_hotspots="false"
+	               littleplanetintro="false"
+	               title="false"
+	               thumbs="false"
+	               thumbs_width="120" thumbs_height="80" thumbs_padding="10" thumbs_crop="0|40|240|160"
+	               thumbs_opened="false"
+	               thumbs_text="false"
+	               thumbs_dragging="true"
+	               thumbs_onhoverscrolling="false"
+	               thumbs_scrollbuttons="false"
+	               thumbs_scrollindicator="false"
+	               thumbs_loop="false"
+	               tooltips_buttons="false"
+	               tooltips_thumbs="false"
+	               tooltips_hotspots="false"
+	               tooltips_mapspots="false"
+	               deeplinking="false"
+	               loadscene_flags="MERGE"
+	               loadscene_blend="OPENBLEND(0.5, 0.0, 0.75, 0.05, linear)"
+	               loadscene_blend_prev="SLIDEBLEND(0.5, 180, 0.75, linear)"
+	               loadscene_blend_next="SLIDEBLEND(0.5,   0, 0.75, linear)"
+	               loadingtext="loading..."
+	               layout_width="100%"
+	               layout_maxwidth="814"
+	               controlbar_width="-24"
+	               controlbar_height="40"
+	               controlbar_offset="20"
+	               controlbar_offset_closed="-40"
+	               controlbar_overlap.no-fractionalscaling="10"
+	               controlbar_overlap.fractionalscaling="0"
+	               design_skin_images="vtourskin.png"
+	               design_bgcolor="0x2D3E50"
+	               design_bgalpha="0.8"
+	               design_bgborder="0"
+	               design_bgroundedge="1"
+	               design_bgshadow="0 4 10 0x000000 0.3"
+	               design_thumbborder_bgborder="3 0xFFFFFF 1.0"
+	               design_thumbborder_padding="2"
+	               design_thumbborder_bgroundedge="0"
+	               design_text_css="color:#FFFFFF; font-family:Arial;"
+	               design_text_shadow="1"
+	               />
+
+	<!-- startup action - load the first scene -->
+	<action name="startup" autorun="onstart">
+		if(startscene === null OR !scene[get(startscene)], copy(startscene,scene[0].name); );
+		loadscene(get(startscene), null, MERGE);
+		if(startactions !== null, startactions() );
+		BerekenHoogteBreedte2();
+
+	</action>
+
+	
+	
+	
+<!-- X EN Y WAARDE VANAF INDEX VOOR ROTATIE VAN CAMERA IN KRPANO                         X EN Y WAARDE VANAF INDEX VOOR ROTATIE VAN CAMERA IN KRPANO                          X EN Y WAARDE VANAF INDEX VOOR ROTATIE VAN CAMERA IN KRPANO          -->	
+<!-- X EN Y WAARDE VANAF INDEX VOOR ROTATIE VAN CAMERA IN KRPANO                         X EN Y WAARDE VANAF INDEX VOOR ROTATIE VAN CAMERA IN KRPANO                          X EN Y WAARDE VANAF INDEX VOOR ROTATIE VAN CAMERA IN KRPANO          -->
+<!-- X EN Y WAARDE VANAF INDEX VOOR ROTATIE VAN CAMERA IN KRPANO                         X EN Y WAARDE VANAF INDEX VOOR ROTATIE VAN CAMERA IN KRPANO                          X EN Y WAARDE VANAF INDEX VOOR ROTATIE VAN CAMERA IN KRPANO          -->
+
+<!-- nieuw het inlezen van x en y en langzaam ernaar toe bewegen  -->
+		<action name="ga_naar_y">
+		 <!-- set(view.hlookat, get(vid)); deze werkt maar erg stoterig!!! -->
+		 tween(view.hlookat, get(vid_y),1 );
+		<!-- let op hij start op 0. dus de variable nog vullen!!!!!!!! -->
+		</action>
+		
+		<action name="ga_naar_x">
+		 <!-- set(view.vlookat, get(vid)); --> <!--deze functie werkte maar erg stoterig  -->
+		 tween(view.vlookat, get(vid_x), 1);
+		 <!-- let op hij start op 0. dus de variable nog vullen!!!!!!!! -->
+
+		</action>		
+<!-- einde nieuwe code -->	
+
+
+
+
+	<!-- LAAD FOTO ACTIONS                    //                     LAAD FOTO ACTIONS                             //                     LAAD FOTO ACTIONS                             //                     LAAD FOTO ACTIONS                               -->
+	<!-- LAAD FOTO ACTIONS                    //                     LAAD FOTO ACTIONS                             //                     LAAD FOTO ACTIONS                             //                     LAAD FOTO ACTIONS                               -->
+	<!-- LAAD FOTO ACTIONS                    //                     LAAD FOTO ACTIONS                             //                     LAAD FOTO ACTIONS                             //                     LAAD FOTO ACTIONS                               -->
+
+		<action name="laad_standaard_view">
+		<!--set(view.hlookat, 0);-->
+		<!--voor unity moet bovenstaande hlook op 3600 staan -->
+		set(view.fov,140);
+		</action>
+
+		<action name="laad_foto0">
+		loadscene(scene_0, null, MERGE, BLEND(1));
+		laad_standaard_view();
+		</action>
+
+		<action name="laad_foto1">
+		loadscene(scene_1, null, MERGE, BLEND(1));
+		laad_standaard_view();
+		set(layer[activespot].parent, spot1);
+		</action>
+
+		<action name="laad_foto2">
+		loadscene(scene_2, null, MERGE, BLEND(1));
+		laad_standaard_view();
+		set(layer[activespot].parent, spot2);
+		</action>
+
+		<action name="laad_foto3">
+		loadscene(scene_3, null, MERGE, BLEND(1));
+		laad_standaard_view();
+		set(layer[activespot].parent, spot3);
+		</action>
+
+		<action name="laad_foto4">
+		loadscene(scene_4, null, MERGE, BLEND(1));
+		laad_standaard_view();
+		set(layer[activespot].parent, spot4);
+		</action>
+
+		<action name="laad_foto5">
+		loadscene(scene_5, null, MERGE, BLEND(1));
+		laad_standaard_view();
+		set(layer[activespot].parent, spot5);
+		</action>
+
+		<action name="laad_foto6">
+		loadscene(scene_6, null, MERGE, BLEND(1));
+		laad_standaard_view();
+		set(layer[activespot].parent, spot6);
+		</action>
+	
+		<action name="laad_foto7">
+		loadscene(scene_7, null, MERGE, BLEND(1));
+		laad_standaard_view();
+		set(layer[activespot].parent, spot7);		
+		</action>
+
+		<action name="laad_foto8">
+		loadscene(scene_8, null, MERGE, BLEND(1));
+		laad_standaard_view();
+		set(layer[activespot].parent, spot8);
+		</action>
+
+		<action name="laad_foto9">
+		loadscene(scene_9, null, MERGE, BLEND(1));
+		laad_standaard_view();
+		set(layer[activespot].parent, spot9);		
+		</action>
+
+		<action name="laad_foto10">
+		loadscene(scene_10, null, MERGE, BLEND(1));
+		laad_standaard_view();
+		set(layer[activespot].parent, spot10);
+		</action>
+
+		
+		<action name="stop_alle_geluiden">
+		set(layer[map].visible,true);
+		</action>
+
+		<action name="close_map">
+		set(layer[map].visible,false);
+		</action>
+	
+		
+		
+		
+	<!-- JAVASCRIPT ACTIES                     //                     JAVASCRIPT ACTIES                           //                     JAVASCRIPT ACTIES                           //                     JAVASCRIPT ACTIES                             -->	
+	<!-- JAVASCRIPT ACTIES                     //                     JAVASCRIPT ACTIES                           //                     JAVASCRIPT ACTIES                           //                     JAVASCRIPT ACTIES                             -->		
+	<!-- JAVASCRIPT ACTIES                     //                     JAVASCRIPT ACTIES                           //                     JAVASCRIPT ACTIES                           //                     JAVASCRIPT ACTIES                             -->	
+	
+			<action name="window_foto_1" type="Javascript">
+				window.laad_foto1();
+			</action>			
+
+			<action name="window_foto_2" type="Javascript">
+				window.laad_foto2();
+			</action>	
+			
+			<action name="window_foto_3" type="Javascript">
+				window.laad_foto3();
+			</action>			
+
+			<action name="window_foto_4" type="Javascript">
+				window.laad_foto4();
+			</action>	
+			
+			<action name="window_foto_5" type="Javascript">
+				window.laad_foto5();
+			</action>	
+
+			<action name="window_foto_6" type="Javascript">
+				window.laad_foto6();
+			</action>	
+
+			<action name="window_foto_7" type="Javascript">
+				window.laad_foto7();
+			</action>
+
+			<action name="window_foto_8" type="Javascript">
+				window.laad_foto8();
+			</action>
+
+			<action name="window_foto_9" type="Javascript">
+				window.laad_foto9();
+			</action>			
+
+			<action name="window_foto_10" type="Javascript">
+				window.laad_foto10();
+			</action>
+
+			<action name="window_stop_alle_geluiden" type="Javascript">
+				window.stop_alle_geluiden();
+			</action>
+			
+			<action name="window_close_map" type="Javascript">
+				window.close_map();
+			</action>
+			
+
+			
+			
+<!--  INTERFACE / PLATTEGROND EN FOTOS                             INTERFACE / PLATTEGROND EN FOTOS                             INTERFACE / PLATTEGROND EN FOTOS                             INTERFACE / PLATTEGROND EN FOTOS                             -->
+<!--  INTERFACE / PLATTEGROND EN FOTOS                             INTERFACE / PLATTEGROND EN FOTOS                             INTERFACE / PLATTEGROND EN FOTOS                             INTERFACE / PLATTEGROND EN FOTOS                             -->			
+<!--  INTERFACE / PLATTEGROND EN FOTOS                             INTERFACE / PLATTEGROND EN FOTOS                             INTERFACE / PLATTEGROND EN FOTOS                             INTERFACE / PLATTEGROND EN FOTOS                             -->			
+			
+<!-- -->
+<!-- DE PLATTEGROND MET DE ICONS!!!! -->
+<layer name="map" url="graphics/floor.jpg" visible = "true" keep="true" handcursor="false" capture="false" align="center"  scalechildren="true"  onclick="   "/>
+
+
+<layer name="close_button" style="close_btn_style" x="5" y="5" zorder="1" onclick="set (layer[map].visible,false); window_close_map();  "/>
+<style name="close_btn_style" keep="true" url="images/close.png" parent="map" align="righttop" edge="center" scale= "0.6" scale.mobile = "1"  />	
+
+
+
+
+	<!--  DE KNOP 'SPOTS' RECHTSOVEN OP DE 360 PANO FOTO. SOMS IS NAAM SPOTS OF BAAIEN. BIJ KLIKKEN OPEN JE DE PLATTEGROND-->
+<layer name="mapicon" url="graphics/knopSpots.png" onclick=" " 
+keep="true" visible="false" zorder="2" handcursor="false" capture="false"  align="righttop" scale="1.5"  scale.mobile="0.5" />
+
+
+<!--  ICONEN OP DE PLATTEGROND INCL DE GEKOZEN ICON MET WITTE KADER -->
+<style name="mapspot" keep="true" url="graphics/camera_uit_origineel.png" parent="map" align="lefttop" edge="center" scale= "0.3"  scale.mobile="0.3"/>
+
+<layer name="spot1" style="mapspot" x="880" y="960" zorder="1" onclick=" laad_foto1(); window_foto_1(); window_close_map();window_stop_alle_geluiden();	set(layer[activespot].parent, spot1); set(layer[activespot].visible,true); set(layer[map].visible,false);  "/>
+<layer name="spot2" style="mapspot" x="790" y="860" zorder="1" onclick="laad_foto2(); window_foto_2() ;window_close_map();window_stop_alle_geluiden(); set(layer[activespot].parent, spot2); set(layer[activespot].visible,true); set(layer[map].visible,false);"/>
+<layer name="spot3" style="mapspot" x="950" y="920" zorder="1" onclick="laad_foto3(); window_foto_3()  ;window_close_map();window_stop_alle_geluiden(); set(layer[activespot].parent, spot3); set(layer[activespot].visible,true);set(layer[map].visible,false);"/> 
+
+
+
+<layer name="spot4" style="mapspot" x="880" y="1080" zorder="1" onclick="laad_foto4(); window_foto_4() ;window_close_map();window_stop_alle_geluiden(); set(layer[activespot].parent, spot4); set(layer[activespot].visible,true);set(layer[map].visible,false);"/>
+<layer name="spot5" style="mapspot" x="910" y="1020" zorder="1" onclick="laad_foto5(); window_foto_5();window_close_map();window_stop_alle_geluiden(); set(layer[activespot].parent, spot5); set(layer[activespot].visible,true); set(layer[map].visible,false);"/>
+<layer name="spot6" style="mapspot" x="740" y="1020" zorder="1" onclick="laad_foto6(); window_foto_6();window_close_map();window_stop_alle_geluiden();set(layer[activespot].parent, spot6); set(layer[activespot].visible,true);set(layer[map].visible,false); "/>
+
+<!--
+<layer name="spot7" style="mapspot" x="480" y="210" zorder="1" onclick="laad_foto12(); window_foto_12() ;set(layer[activespot].parent, spot7); set(layer[activespot].visible,true);set(layer[map].visible,false);"/>
+<layer name="spot8" style="mapspot" x="940" y="1150" zorder="1" onclick="laad_foto13(); window_foto_13() ;set(layer[activespot].parent, spot8); set(layer[activespot].visible,true);set(layer[map].visible,false);"/>
+<layer name="spot9" style="mapspot" x="260" y="730" zorder="1" onclick="laad_foto17(); window_foto_17() ;set(layer[activespot].parent, spot9); set(layer[activespot].visible,true);set(layer[map].visible,false);"/>
+-->
+
+		
+
+<layer name="terug" url="graphics/knopSpots.png" onclick=" set(layer[map].visible,true);    " keep="true" visible="true" zorder="2" 
+		handcursor="false" capture="false"  align="righttop" x="30" y="30" scale="0.7"  scale.mobile="0.3" />		
+
+
+
+		
+<layer name="terug3" url="images/icon_full_screen.png" onclick="switch(fullscreen);  " keep="true" visible="true" zorder="2" handcursor="false" capture="false"  align="lefttop" x="30" y="30" scale="0.2"  scale.mobile="0.1"  />	
+				
+<layer name="activespot" 
+	  url="graphics/camera_aan_origineel.png" 
+	  keep="true" visible="false" align="righttop"  zorder="2" scale= "0.3"  scale.mobile="0.3" 
+	  onclick="set (layer[map].visible,false); window_close_map(); "
+	       
+/>	
+
+<!-- AUTOROTATE -->
+<!--
+<autorotate enabled="false" waittime="1.0" speed="5.0"  accel="30.0"    horizon="0.0"     tofov="130"    interruptionevents="userviewchange|layers|keyboard" />  	
+-->
+
+
+<!-- BIJ EEN EVENT (DRAAIEN VAN SCHERM) VAN WORDT OPNIEUW DE HOOGTE/BREEDTE VAN DE BUBBLE STORIES CONTENT BEPAALD-->
+<events name="orientation" keep="true" onresize="BerekenHoogteBreedte2();"  />
+
+<action name="BerekenHoogteBreedte2">
+if(stagewidth LT stageheight  <!-- breedte kleiner dan hoogte =  portrait-->
+,  
+<!-- PORTRAIT -->
+if(device.tablet, set (layer[map].width, calc(stagewidth*0.9)); 		set (layer[map].height, calc(stagewidth*0.9) ););
+if(device.mobile, set (layer[map].width, calc(stagewidth*0.9)); 		set (layer[map].height, calc(stagewidth*0.9) ););	
+if(device.desktop, set (layer[map].width, calc(stagewidth*0.9)); 		set (layer[map].height, calc(stagewidth*0.9) ););	
+
+	if (device.mobile, set (info_maat, calc(stagewidth*0.8));  );
+	if (device.tablet, set (info_maat, calc(stagewidth*0.8));  );
+,
+<!-- LANDSCAPE -->
+if(device.tablet,  set (layer[map].height, calc(stageheight*0.9)); 		set (layer[map].width, calc(stageheight*0.9) ););
+if(device.mobile,  set (layer[map].height, calc(stageheight*0.9)); 		set (layer[map].width, calc(stageheight*0.9) );); 	
+if(device.desktop, set (layer[map].height, calc(stageheight*0.8)); 		set (layer[map].width, calc(stageheight*0.8) ););	
+
+	if (device.mobile, set (info_maat, calc(stageheight*0.8));  );
+	if (device.tablet, set (info_maat, calc(stageheight*0.8));  );
+);
+
+
+
+if (device.desktop, set (info_maat, calc(stageheight*0.5)); );
+
+<!-- onderstaande wordt altijd uitgevoerd of hij nu hierboven wel of niet bij mobile, tablet of desktop is geweest -->
+
+set (hotspot[aanw1].width, calc(info_maat*0.5)); set (hotspot[aanw1].height, calc(info_maat*0.5));
+set (hotspot[aanw2].width, calc(info_maat*0.5)); set (hotspot[aanw2].height, calc(info_maat*0.5));
+set (hotspot[aanw3].width, calc(info_maat*0.5)); set (hotspot[aanw3].height, calc(info_maat*0.5));
+set (hotspot[aanw_code].width, calc(info_maat*0.5)); set (hotspot[aanw_code].height, calc(info_maat*0.5));
+set (hotspot[aanw_code_fout].width, calc(info_maat*0.5)); set (hotspot[aanw_code_fout].height, calc(info_maat*0.5));
+
+
+</action>
+
+
+
+
+<!--  SCENES                           //                SCENES                 //               SCENES                 //               SCENES                 //               SCENES                 //               SCENES                 // -->
+<!--  SCENES                           //                SCENES                 //               SCENES                 //               SCENES                 //               SCENES                 //               SCENES                 // -->
+<!--  SCENES                           //                SCENES                 //               SCENES                 //               SCENES                 //               SCENES                 //               SCENES                 // -->
+	
+		
+	<scene name="scene_0" title="0" onstart="" havevrimage="true" thumburl="panos/0.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/0.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+			<level tiledimagewidth="576" tiledimageheight="576">
+				<cube url="panos/0.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+
+		<image if="webvr.isenabled">
+			<cube url="panos/0.tiles/vr/pano_%s.jpg" />
+		</image>
+
+		<!-- place your scene hotspots here -->
+	
+		<hotspot name="hart" url="images/bb.png" distorted="true"  visible= "true" keep="false" handcursor="false" 
+		capture="false"   ath="0" atv="0" scale= "0.3" scale.mobile = "0.5" 		/>		
+		
+		<hotspot name="hart1" url="images/bb.png" distorted="true"  visible= "true" keep="false" handcursor="false" 
+		capture="false"   ath="-30" atv="0" scale= "0.3" scale.mobile = "0.5" 		/>	
+		
+		<hotspot name="hart2" url="images/bb.png" distorted="true"  visible= "true" keep="false" handcursor="false" 
+		capture="false"   ath="30" atv="0" scale= "0.3" scale.mobile = "0.5" 		/>	
+	
+	</scene>
+
+
+	
+<!--   WILHELMINA KADE    -->	
+	<scene name="scene_1" title="1" onstart="disable_controller2();" thumburl="panos/1.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="84.212" vlookat="0" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/1.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/1.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1152,2304" />
+		</image>
+		
+		<!--
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="159.145" atv="7.347" linkedscene="scene_2" />
+		-->
+		
+		<hotspot name="aanw1" url="fotos/1.png" keep="false" distorted ="true" scale.mobile ="1" visible="true"  ath="84" atv="0" zorder="2"  onclick="	  "   enabled = " false"     />
+		
+
+	</scene>
+
+	
+	
+	<!--   OP DE ERASMUS BRUG   -->	
+	
+	<scene name="scene_2" title="2" onstart="" thumburl="panos/2.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="-112.475" vlookat="4.113" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/2.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/2.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1152,2304" />
+		</image>
+		<!--
+		<hotspot name="spot1" visible = "false" style="skin_hotspotstyle" ath="77.525" atv="9.019" linkedscene="scene_3" />
+		-->
+		
+		<hotspot name="body" url="fotos/body.png" keep="false" distorted ="true" visible="true"  ath="-30.544" atv="83.835" zorder="2" scale= "0.3" onclick=" loadscene (scene_3); "  scale.mobile="0.2"      />
+		<hotspot name="aanw2" url="fotos/2.png" keep="false" enabled = " false"  distorted ="true" visible="true"  ath="-4.181" atv="47.559" zorder="2"  onclick=" "        />
+		
+
+	</scene>
+
+	
+	
+<!--   KOP VAN ZUID    -->		
+	
+	
+	<scene name="scene_3" title="3" onstart="" thumburl="panos/3.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="-194.961" vlookat="-4.085" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/3.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/3.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1152,2304" />
+		</image>
+		<!--
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-173.195" atv="10.650" linkedscene="scene_4" />
+		-->
+	</scene>
+
+	
+	
+<!--   PRULLEBAK / WAPEN   -->		
+	
+	
+	<scene name="scene_4" title="4" onstart="" thumburl="panos/4.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="92.126" vlookat="-3.817" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/4.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/4.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1152,2304" />
+		</image>
+		<!--
+		<hotspot name="spot1" style="skin_hotspotstyle" visible = "false" ath="-115.279" atv="9.314" linkedscene="scene_5" />
+		-->
+		
+		<hotspot name="aanw3" url="fotos/3.png" keep="false"   distorted ="true" visible="true"  ath="-4.181" atv="0.559" zorder="2"  onclick=" set(hotspot[prullebak_aanwijzing].visible,true);"        />
+
+		<hotspot name="prullebak_aanwijzing" url="fotos/wapen.png" keep="false" distorted ="true" visible="false"  ath="-131.320" atv="27.434" zorder="2" scale= "0.3" 
+		onclick="set(hotspot[prullebak_aanwijzing].visible,false); set(hotspot[wapen_info].visible,true); set(hotspot[spot1].visible,true);  "  scale.mobile="0.2"      />		
+			
+			<hotspot name="wapen_info" url="fotos/wapen_info.png" keep="false" distorted ="true" visible="false"  ath="-151.367" atv="25.404" zorder="2" scale= "0.3"   scale.mobile="0.2"      />
+		
+	</scene>
+
+	
+	
+<!--   VOOR DE ROTTERDAM IN DE STRAAT   -->		
+	
+	<scene name="scene_5" title="5" onstart="" thumburl="panos/5.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="-13.456" vlookat="-13.239" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/5.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/5.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1152,2304" />
+		</image>
+		<!--
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-24.617" atv="11.716" linkedscene="scene_6" />
+		-->
+	</scene>
+
+	
+	
+	<!--   IN DE ROTTERDAM / CIJFERCODESLOT   -->	
+	
+	
+	<scene name="scene_6" title="6" onstart="" thumburl="panos/6.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="224.433" vlookat="8.776" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/6.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/6.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1152,2304" />
+		</image>
+		<!--
+		<hotspot name="spot1" style="skin_hotspotstyle" visible = "false" ath="75.513" atv="31.862" linkedscene="scene_1" />
+		-->
+		<hotspot name="aanw_code" url="fotos/code.png" keep="false"   distorted ="true" visible="true"  ath="-113.252" atv="1.608" zorder="2"  onclick=" set(hotspot[aanw_code_fout].visible,true); set(hotspot[aanw_code].visible,false); set(hotspot[spot1].visible,true); "       />
+		
+		<hotspot name="aanw_code_fout" url="fotos/code_fout.png" keep="false"   distorted ="true" visible="false"  ath="-113.252" atv="1.608" zorder="2"  onclick=" "       />		
+		
+
+	</scene>
+
+
+</krpano>

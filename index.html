@@ -421,6 +421,18 @@ onderstaande class  (bijvoorbeeld js-ajx-url-zeilenSlaveSocket)  wordt onderaan 
 							<p>   </p>	
 			<br>	
 
+			
+				<a href=" " class=" ajx_url_brazilie btn ">brazilie</a> 		
+							<p>   </p>	
+			<br>	
+		
+			
+			
+			
+			
+			
+			
+			
 			<br>	
 			<a href=" " class=" ajx_murdergame_dock btn ">DOCK mudergame</a> 		
 							<p>   </p>	
@@ -878,6 +890,37 @@ onderstaande class  (bijvoorbeeld js-ajx-url-zeilenSlaveSocket)  wordt onderaan 
 				});
 			});	
 
+				$('.ajx_url_brazilie').on('click', function(e) {
+				e.preventDefault();
+				$.ajax({
+					url: $(this).attr('href')
+				}).done(function() {
+					
+					window.location = '/brazilie_html';
+					console.log('Ajax request successfull');
+				});
+			});	
+		
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
 			$('.ajx_murdergame_dock').on('click', function(e) {
 				e.preventDefault();
 				$.ajax({

@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>test</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, viewport-fit=cover" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="mobile-web-app-capable" content="yes" />
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta http-equiv="x-ua-compatible" content="IE=edge" />
+	<style>
+		html { height:100%; }
+		body { height:100%; overflow:hidden; margin:0; padding:0; font-family:Arial, Helvetica, sans-serif; font-size:16px; color:#FFFFFF; background-color:#000000; }
+				body {
+					background: white;
+					font-family:      TradeGothic, sans-serif;
+					font-size: 30px;		
+				}
+					
+				.size{
+				font-family:      TradeGothic, sans-serif;
+				font-size: 30px;		
+				}
+				
+			@-ms-viewport { width:device-width; }
+			@media only screen and (min-device-width:800px) { html { overflow:hidden; } }
+			html { height:100%; }
+			body { height:100%; overflow:hidden; margin:0; padding:0; font-family:Arial, Helvetica, sans-serif; font-size:16px; color:#FFFFFF; background-color:#000000; }
+
+
+			.btn {
+				padding: 3px 3px;
+				background: #4dabf5;
+				color: #fff;
+				text-decoration: none;
+				border-radius: 6px;
+				font-family: Arial;
+
+				font-size: 24px;
+
+				margin:  2px;
+				}
+
+			.btn_red {
+				padding: 3px 3px;
+				background: #1769aa;
+				color: #fff;
+				text-decoration: none;
+				border-radius: 6px;
+				font-family: Arial;
+
+				font-size: 24px;
+
+				margin:  2px;
+				}
+
+			.btn_red_light {
+				padding: 3px 3px;
+				background: #2196f3;
+				color: #fff;
+				text-decoration: none;
+				border-radius: 6px;
+				font-family: Arial;
+
+				font-size: 24px;
+
+				margin:  2px;
+				}
+
+
+				
+			.btn_black {
+				padding: 3px 3px;
+				background: black;
+				color: #fff;
+				border-color: black;
+				text-decoration: none;
+				border-radius: 6px;
+				font-family: Arial;
+
+				font-size: 24px;
+
+				margin:  2px;
+				}				
+
+
+
+			.btn_zwart2 {
+				padding: 20px 65px;
+				position: absolute;
+				top: 65%;
+				left: 50%;
+				transform: translate(-50%, -65%);
+				background: red;
+				color: white;
+				border-color: red;
+				text-decoration: none;
+				border-radius: 6px;
+				font-family: Arial;
+				font-size: 20px;
+				margin:  2px;
+				}					
+				
+				
+				
+				
+     .img-container {
+     margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+	 }
+    .img-container3 {
+     margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height:90%;
+  width: 90%;
+	 }		
+	 
+     .img-container2 {
+     margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height:700px;
+  width: 700px;
+	 }				
+
+	
+			.btn_zwart {
+				padding: 20px 120px;
+				position: absolute;
+				top: 45%;
+				left: 50%;
+				transform: translate(-50%, -45%);
+				background: red;
+				color: white;
+				border-color: red;
+				text-decoration: none;
+				border-radius: 6px;
+				font-family: Arial;
+				font-size: 20px;
+				margin:  2px;
+				}	
+
+
+	 
+	</style>
+</head>
+<body>
+
+		<script src="/static/js/jquery-1.11.1.js"></script>
+
+
+<!--
+<iframe src="http://136.144.183.242/VirtualTravel_itb_4_html" width="100%" height="100%" frameborder="10" allowfullscreen="allowfullscreen"></iframe>
+-->
+
+    <div class="img-container2" > <!-- Block parent element -->
+	<iframe id="test1" src="https://crimibox.com/en/eotl/?fbclid=IwAR0NM32KO4SltW11wR3oJ2VduPEGyNcdemlkeNux32AF1wr9sZxtki1SUm0" style="width:0; height:0; border:0; border:none"   allowfullscreen="allowfullscreen"      ></iframe>	
+    </div>	
+
+	
+    <div class="img-container3" id="container3" style="display:none"> <!-- Block parent element -->
+<!--	<iframe id="test2" src="http://localhost/murdergame_dock_html" style="width:0; height:0; border:0; border:none"   allowfullscreen="allowfullscreen"      ></iframe>		-->
+<iframe id="test2" src="http://136.144.183.242/murdergame_dock_html" style="width:0; height:0; border:0; border:none"   allowfullscreen="allowfullscreen"      ></iframe>	
+    </div>	
+
+    <div class="img-container"  > <!-- Block parent element -->
+		<img id="plaatje1" src="/static/rocks_reality_html/fotos/intro1.png "  style = "  width:600px; height:600px;  ">
+		<img id="plaatje2" src="/static/rocks_reality_html/fotos/intro2.png "  style = " display:none; width:600px; height:600px;  ">		
+		<img id="plaatje3" src="/static/rocks_reality_html/fotos/intro3.png "  style = " display:none; width:600px; height:600px;  ">		
+		<img id="plaatje4" src="/static/rocks_reality_html/fotos/intro4.png "  style = " display:none; width:600px; height:600px;  ">		
+
+		<button id="scene0" type="button" style = " display:none;" class="btn_zwart ">CHATBOT</button>	
+		<button id="scene1" type="button" style = " display:none;" class="btn_zwart2 ">VIRTUAL REALITY</button>	
+				
+    </div>
+
+
+
+
+	<div id="myDIV">
+		
+		
+
+
+	
+<br>					
+		
+					<br>	
+					<button id="scene2" type="button" style = " display:none;" class="btn_red ">Tomb Bay</button>
+					<br>	
+					<button id="scene3" type="button" style = " display:none;" class="btn_red ">Kapi Creek</button>		
+<br>						
+
+					<button id="scene4" type="button" style = " display:none;" class="btn ">Uitzicht</button>			
+
+					<button id="scene5" type="button" style = " display:none;" class="btn ">Briefing</button>	
+
+					<button id="scene6" type="button" style = " display:none;" class="btn ">Briefing</button>	
+					
+			<button onclick="myFunction();  " class="btn_black " style = " display:none;"  >hide button</button>
+			</div>
+
+<input type="button"  id="terug1" value="Back" style="background-color:red;color:white;width:100px; height:40px; position:absolute; top:40px; right:40px; display:none; "   >
+
+	
+
+
+
+
+
+
+<script>
+
+
+		
+		function myFunction() {
+			var x = document.getElementById("myDIV");
+			if (x.style.display === "none") {
+				x.style.display = "block";
+			} else {
+				x.style.display = "none";
+			}
+		}
+				
+	
+		jQuery(document).ready(function($){ 
+			$('#plaatje1').click(function() {   
+				$(plaatje1).hide();
+				$(plaatje2).show();		
+			});			
+
+
+			$('#plaatje2').click(function() {   
+				$(plaatje2).hide();
+				$(plaatje3).show();		
+			});	
+
+			$('#plaatje3').click(function() {   
+				$(plaatje3).hide();
+				$(plaatje4).show();	
+				$(scene0).show();
+				$(scene1).show();
+
+
+
+				
+			});	
+
+		
+			$('#scene0').click(function() {   
+				$(scene0).hide();	
+				$(scene1).hide();					
+				$(plaatje4).hide();	
+				$(terug1).show();
+				
+				$(test1).css('width','100%');	
+				$(test1).css('height','100%');
+		
+			});			
+
+			$('#terug1').click(function() {   
+				$(scene0).show();
+				$(scene1).show();				
+				$(plaatje4).show();	
+				$(test1).css('width','0%');	
+				$(test1).css('height','0%');
+				$(test2).css('width','0%');	
+				$(test2).css('height','0%');	
+				$(container3).hide();				
+				
+				$(terug1).hide();
+		
+			});		
+
+
+
+
+
+
+
+
+
+			
+			
+			$('#scene1').click(function() {   
+
+				$(scene0).hide();	
+				$(scene1).hide();					
+				$(plaatje4).hide();	
+				$(terug1).show();
+				
+				$(container3).show();
+				$(test2).css('width','100%');	
+				$(test2).css('height','100%');			
+			});
+			
+			$('#scene2').click(function() {   
+				var krpano = document.getElementById("krpanoSWFObject");
+				krpano.call( "laad_foto2()" );	
+				laad_foto2();
+				changeCollorBack();
+				$(this).css('background-color', 'red');
+			
+			});
+			
+			$('#scene3').click(function() {   
+				var krpano = document.getElementById("krpanoSWFObject");
+				krpano.call( "laad_foto3()" );	
+				laad_foto3();
+				changeCollorBack();
+				$(this).css('background-color', 'red');
+			
+			});
+
+			$('#scene4').click(function() {   
+				var krpano = document.getElementById("krpanoSWFObject");
+				krpano.call( "laad_foto4()" );
+				laad_foto4();				
+				changeCollorBack();
+				$(this).css('background-color', 'red');
+			
+			});
+
+			$('#scene5').click(function() {   
+				var krpano = document.getElementById("krpanoSWFObject");
+				krpano.call( "laad_foto5()" );	
+				laad_foto5();
+				changeCollorBack();
+				$(this).css('background-color', 'red');
+			
+			});
+
+			$('#scene6').click(function() {   
+				var krpano = document.getElementById("krpanoSWFObject");
+				krpano.call( "laad_foto6()" );	
+				laad_foto6();
+				changeCollorBack();
+				$(this).css('background-color', 'red');
+			
+			});
+
+
+	});  // einde jquery druk knoppen
+
+			
+			function changeCollorBack(){
+			document.getElementById("scene1").style.background='#1769aa';
+			document.getElementById("scene2").style.background='#1769aa';
+			document.getElementById("scene3").style.background='#1769aa';
+			document.getElementById("scene4").style.background='blue';
+			document.getElementById("scene5").style.background='#2196f3';
+			document.getElementById("scene6").style.background='blue';
+
+			}
+	
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -77,35 +77,44 @@
 	<!-- LAAD FOTO ACTIONS                    //                     LAAD FOTO ACTIONS                             //                     LAAD FOTO ACTIONS                             //                     LAAD FOTO ACTIONS                               -->
 	<!-- LAAD FOTO ACTIONS                    //                     LAAD FOTO ACTIONS                             //                     LAAD FOTO ACTIONS                             //                     LAAD FOTO ACTIONS                               -->
 
-		<action name="laad_foto0">
-		set(layer[map].url,static/murdergame_mobile_html/aanwijzingen/aanwijzing0.png);
-		set(layer[map].visible,true);
 	
+	<!--
+		<action name="laad_foto0">
+		alle_aanwijzingen_uit();
+		set(layer[aanwijzing_0].visible,true);
 		</action>
 
 		<action name="laad_foto1">
-		set(layer[map].url,static/murdergame_mobile_html/aanwijzingen/aanwijzing1.png);
+		alle_aanwijzingen_uit();
+		set(layer[aanwijzing_1].visible,true);		
 		</action>
 
 		<action name="laad_foto2">
-		set(layer[map].url,static/murdergame_mobile_html/aanwijzingen/aanwijzing2.png);
+		alle_aanwijzingen_uit();
+		set(layer[aanwijzing_2].visible,true);
 		</action>
 
 		<action name="laad_foto3">
-		set(layer[map].url,static/murdergame_mobile_html/aanwijzingen/aanwijzing3.png);
+		alle_aanwijzingen_uit();
+		set(layer[aanwijzing_3].visible,true);
 		</action>
 		
 		<action name="laad_foto4">
-		set(layer[map].url,static/murdergame_mobile_html/aanwijzingen/aanwijzing4.png);
+		alle_aanwijzingen_uit();
+		set(layer[aanwijzing_4].visible,true);
 		</action>
 		
 		<action name="laad_foto5">
-		set(layer[map].url,static/murdergame_mobile_html/aanwijzingen/aanwijzing5.png);
+		alle_aanwijzingen_uit();
+		set(layer[aanwijzing_4].visible,true);
 		</action>
 
 		<action name="laad_foto6">
-		set(layer[map].url,static/murdergame_mobile_html/aanwijzingen/aanwijzing6.png);
+		alle_aanwijzingen_uit();
+		set(layer[aanwijzing_6].visible,true);
 		</action>		
+		
+		-->
 		
 		<action name="stop_alle_geluiden">
 		<!--set(layer[map].url,static/murdergame_mobile_html/aanwijzingen/aanwijzing0.png);-->
@@ -113,11 +122,23 @@
 		</action>
 
 		<action name="close_map">
-
 		set(layer[map].visible,true);
 		</action>
 	
+		<action name="spot2_aanw_vr1">
+		alle_aanwijzingen_uit(); 
+		set(layer[aanwijzing_2].visible,true);
+		</action>
+
+		<action name="spot2_aanw_tb1">
+		alle_aanwijzingen_uit(); 
+		set(layer[aanwijzing_1].visible,true);
+		</action>	
 		
+		
+		
+
+	
 		
 		
 	<!-- JAVASCRIPT ACTIES                     //                     JAVASCRIPT ACTIES                           //                     JAVASCRIPT ACTIES                           //                     JAVASCRIPT ACTIES                             -->	
@@ -178,7 +199,10 @@
 			<action name="window_close_map" type="Javascript">
 				window.close_map();
 			</action>
-			
+
+			<action name="window_speel_aanwijzing_1" type="Javascript">
+				window.speel_aanwijzing_1();
+			</action>			
 
 			
 			
@@ -188,7 +212,20 @@
 			
 <!-- -->
 <!-- DE PLATTEGROND MET DE ICONS!!!! -->
-<layer name="map" url="aanwijzingen/aanwijzing0.png" visible = "true" keep="true" handcursor="false" capture="false" align="center"  scalechildren="true" onclick = "window_foto_0(); "/>
+<layer name="aanwijzing_0" url="aanwijzingen/aanwijzing0.png" visible = "true" keep="true" handcursor="false" capture="false" align="center"  scalechildren="true" onclick =  " alle_aanwijzingen_uit(); set(layer[aanwijzing_1].visible,true); "/>
+<layer name="aanwijzing_1" url="aanwijzingen/aanwijzing1.png" visible = "false" keep="true" handcursor="false" capture="false" align="center"  scalechildren="true" onclick = " alle_aanwijzingen_uit(); set(layer[aanwijzing_2].visible,true); "/>
+<layer name="aanwijzing_2" url="aanwijzingen/aanwijzing2.png" visible = "false" keep="true" handcursor="false" capture="false" align="center"  scalechildren="true" onclick = " alle_aanwijzingen_uit(); set(layer[aanwijzing_3].visible,true);window_speel_aanwijzing_1();  "/>
+<layer name="aanwijzing_3" url="aanwijzingen/aanwijzing3.png" visible = "false" keep="true" handcursor="false" capture="false" align="center"  scalechildren="true" onclick = " alle_aanwijzingen_uit(); set(layer[aanwijzing_0].visible,true); window_stop_alle_geluiden();  "/>
+
+
+<action name="alle_aanwijzingen_uit">
+set(layer[aanwijzing_0].visible,false);
+set(layer[aanwijzing_1].visible,false);
+set(layer[aanwijzing_2].visible,false);
+set(layer[aanwijzing_3].visible,false);
+set(layer[aanwijzing_4].visible,false);
+</action>
+
 
 <!--
 <layer name="close_button" style="close_btn_style" x="5" y="5" zorder="1" onclick="set (layer[map].visible,false); window_close_map();  "/>
@@ -209,7 +246,7 @@ if(device.tablet, set (layer[map].width, calc(stagewidth*0.9)); 		set (layer[map
 if(device.mobile, set (layer[map].width, calc(stagewidth*0.9)); 		set (layer[map].height, calc(stagewidth*0.9) ););	
 if(device.desktop, set (layer[map].width, calc(stagewidth*0.9)); 		set (layer[map].height, calc(stagewidth*0.9) ););	
 
-	if (device.mobile, set (info_maat, calc(stagewidth*0.8));  );
+	if (device.mobile, set (info_maat, calc(stagewidth*0.9));  );
 	if (device.tablet, set (info_maat, calc(stagewidth*0.8));  );
 ,
 <!-- LANDSCAPE -->
@@ -227,7 +264,12 @@ if (device.desktop, set (info_maat, calc(stageheight*0.5)); );
 
 <!-- onderstaande wordt altijd uitgevoerd of hij nu hierboven wel of niet bij mobile, tablet of desktop is geweest -->
 
-set (hotspot[aanw1].width, calc(info_maat*0.5)); set (hotspot[aanw1].height, calc(info_maat*0.5));
+set (layer[aanwijzing_0].width, calc(info_maat*1)); set (layer[aanwijzing_0].height, calc(info_maat*1));
+set (layer[aanwijzing_1].width, calc(info_maat*1)); set (layer[aanwijzing_1].height, calc(info_maat*1));
+set (layer[aanwijzing_2].width, calc(info_maat*1)); set (layer[aanwijzing_2].height, calc(info_maat*1));
+set (layer[aanwijzing_3].width, calc(info_maat*1)); set (layer[aanwijzing_3].height, calc(info_maat*1));
+set (layer[aanwijzing_3].width, calc(info_maat*1)); set (layer[aanwijzing_3].height, calc(info_maat*1));
+
 set (hotspot[aanw2].width, calc(info_maat*0.5)); set (hotspot[aanw2].height, calc(info_maat*0.5));
 set (hotspot[aanw3].width, calc(info_maat*0.5)); set (hotspot[aanw3].height, calc(info_maat*0.5));
 set (hotspot[aanw_code].width, calc(info_maat*0.5)); set (hotspot[aanw_code].height, calc(info_maat*0.5));
