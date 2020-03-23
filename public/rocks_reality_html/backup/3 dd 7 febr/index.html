@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html>
+<!--  PROJECT SETTINGS        PROJECT SETTINGS        PROJECT SETTINGS        PROJECT SETTINGS        -->
+	<script>
+		var customer = 'BB';  // customer name
+		var project = 'P_01';	//  project name
+	</script>
+
+
+
+<head>
+	<title>test</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, viewport-fit=cover" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="mobile-web-app-capable" content="yes" />
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta http-equiv="x-ua-compatible" content="IE=edge" />
+
+	<style>
+		html { height:100%; }
+		body { height:100%; overflow:hidden; margin:0; padding:0; font-family:Arial, Helvetica, sans-serif; font-size:16px; color:#FFFFFF; background-color:#000000; }
+				
+		body {
+			background: white;
+			font-family:      TradeGothic, sans-serif;
+			font-size: 30px;		
+		}
+			
+		.size{
+			font-family:      TradeGothic, sans-serif;
+			font-size: 30px;		
+			}
+			
+		@-ms-viewport { width:device-width; }
+		@media only screen and (min-device-width:800px) { html { overflow:hidden; } }
+		html { height:100%; }
+		body { height:100%; overflow:hidden; margin:0; padding:0; font-family:Arial, Helvetica, sans-serif; font-size:16px; color:#FFFFFF; background-color:#000000; }
+
+
+			.btn {
+				padding: 3px 3px;
+				background: #4dabf5;
+				color: #fff;
+				text-decoration: none;
+				border-radius: 6px;
+				font-family: Arial;
+				font-size: 24px;
+				margin:  2px;
+				}
+
+			.btn_red {
+				padding: 3px 3px;
+				background: #1769aa;
+				color: #fff;
+				text-decoration: none;
+				border-radius: 6px;
+				font-family: Arial;
+				font-size: 24px;
+				margin:  2px;
+				}
+
+			.btn_red_light {
+				padding: 3px 3px;
+				background: #2196f3;
+				color: #fff;
+				text-decoration: none;
+				border-radius: 6px;
+				font-family: Arial;
+				font-size: 24px;
+				margin:  2px;
+				}
+
+
+				
+			.btn_black {
+				padding: 3px 3px;
+				background: black;
+				color: #fff;
+				border-color: black;
+				text-decoration: none;
+				border-radius: 6px;
+				font-family: Arial;
+				font-size: 24px;
+				margin:  2px;
+				}				
+
+			.btn_zwart2 {
+				height:70px;
+				width: 370px;
+				padding: 3px 3px;
+				position: absolute;
+				top: 65%;
+				left: 50%;
+				transform: translate(-50%, -65%);
+				background: red;
+				color: white;
+				border-color: red;
+				text-decoration: none;
+				border-radius: 12px;
+				font-family: Arial;
+				font-size: 20px;
+				font-weight: bold;
+				margin:  2px;
+				}					
+			
+			.btn_zwart {
+				height:70px;
+				width: 370px;
+				padding: 3px 3px;
+				position: absolute;
+				top: 45%;
+				left: 50%;
+				transform: translate(-50%, -45%);
+				background: red;
+				color: white;
+				border-color: red;
+				text-decoration: none;
+				border-radius: 12px;
+				font-family: Arial;
+				font-size: 20px;
+				margin:  2px;
+				font-weight: bold;
+				}					
+	
+			.btn_plek1 {
+				top: 5%;
+				left: 50%;
+				transform: translate(-50%, -5%);
+				background: grey;
+				border-color: grey;
+				}					
+
+			.btn_plek2 {
+				top: 25%;
+				left: 50%;
+				transform: translate(-50%, -25%);
+				background: red;
+				border-color: red;
+				}		
+	
+			.img-container {
+				margin: 0;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				}
+		 
+			.img-container3 {
+				margin: 0;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				height:100%;
+				width: 100%;
+				}		
+		 
+			 .img-container2 {
+				margin: 0;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				height:700px;
+				width: 700px;
+			 }				
+
+			.btn_1 {
+				height:70px;
+				width: 370px;
+				padding: 3px 3px;
+				position: absolute;
+				top: 5%;
+				left: 50%;
+				transform: translate(-50%, -5%);
+				background: red;
+				color: white;
+				border-color: red;
+				text-decoration: none;
+				border-radius: 12px;
+				font-family: Arial;
+				font-size: 20px;
+				margin:  2px;
+				font-weight: bold;
+				}					
+
+			.btn_2 {
+				top: 20%;
+				left: 50%;
+				transform: translate(-50%, -20%);
+				}
+
+			.btn_3 {
+				top: 35%;
+				left: 50%;
+				transform: translate(-50%, -35%);
+				background: grey;
+				border-color: grey;				
+				}
+
+			.btn_4 {
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				}
+			.btn_5 {
+				top: 65%;
+				left: 50%;
+				transform: translate(-50%, -65%);
+				}
+
+			.btn_6 {
+				top: 80%;
+				left: 50%;
+				transform: translate(-50%, -80%);
+		
+				}
+			.btn_7 {
+				top: 95%;
+				left: 50%;
+				transform: translate(-50%, -95%);
+				background: grey;
+				border-color: grey;				
+				}
+
+
+
+			 
+	</style>
+</head>
+
+
+
+<body>
+
+<script src="/static/js/socket.io.js"></script>
+<script src="/static/js/jquery-1.11.1.js"></script>
+
+
+<audio id="sound_0" src="/static/murdergame_dock_html/audio/dreigende_muziek.mp3"   loop="loop"     preload="auto"      >   </audio>	
+<!--
+<audio id="sound_0" src="https://youreka-virtualtours.be/tours/crimibox_rhetro_virus/media/rv_verhoor_tommy_1999.mp3"   loop="loop"     preload="auto"      >   </audio>
+-->
+
+
+
+<!--
+<iframe src="http://136.144.183.242/VirtualTravel_itb_4_html" width="100%" height="100%" frameborder="10" allowfullscreen="allowfullscreen"></iframe>
+-->
+
+    <div class="img-container2" > <!-- Block parent element -->
+		<iframe id="test1" src="https://crimibox.com/en/eotl/?fbclid=IwAR0NM32KO4SltW11wR3oJ2VduPEGyNcdemlkeNux32AF1wr9sZxtki1SUm0" style="width:0; height:0; border:0; border:none"   allowfullscreen="allowfullscreen"      ></iframe>	
+    </div>	
+
+	
+    <div class="img-container3" id="container3" style="display:none"> <!-- Block parent element -->
+		<!--	<iframe id="test2" src="http://localhost/murdergame_dock_html" style="width:0; height:0; border:0; border:none"   allowfullscreen="allowfullscreen"      ></iframe>		-->
+		 <iframe id="test2" src="http://136.144.183.242/murdergame_dock_html" style="width:0; height:0; border:0; border:none"   allowfullscreen="allowfullscreen"      ></iframe>	
+		<!--<iframe id="test2" src="http://192.168.2.38/murdergame_dock_html" style="width:0; height:0; border:0; border:none"   allowfullscreen="allowfullscreen"      ></iframe>	-->
+    </div>	
+
+	
+    <div class="img-container"   id = "intro_pagina"> <!-- Block parent element -->
+		<img id="plaatje1" src="/static/rocks_reality_html/fotos/intro1.png "  style = "  width:600px; height:600px; ">
+		<img id="plaatje2" src="/static/rocks_reality_html/fotos/intro2.png "  style = " display:none; width:600px; height:600px;  ">		
+		<img id="plaatje3" src="/static/rocks_reality_html/fotos/intro3.png "  style = " display:none; width:600px; height:600px;  ">		
+		<img id="plaatje4" src="/static/rocks_reality_html/fotos/intro5.png "  style = " display:none; width:600px; height:600px;  ">		
+
+		<button id="scene2" type="button" style = " display:none;" class="btn_zwart btn_plek1 ">INTRODUCTIE</button>	
+		<button id="scene0" type="button" style = " display:none;" class="btn_zwart ">CHATBOT</button>	
+		<button id="scene1" type="button" style = " display:none;" class="btn_zwart2 ">PLATTEGROND</button>	
+		<button id="scene3" type="button" style = " display:none;" onclick = " toon_bewijsmateriaal();   " class="btn_zwart btn_plek2 ">BEWIJSMATERIAAL</button>	
+    </div>
+
+	
+    <div class="img-container"   id = "overzicht_bewijs"  style = " display:none;"  > <!-- Block parent element -->
+		<img id="plaatje4" src="/static/rocks_reality_html/fotos/leeg.png "  style = "width:600px; height:600px;  ">		
+
+		<button id="scene3" type="button" onclick = " toon_video_4();   "  class="btn_1 ">VIDEO: VERHOOR NATAN 1</button>	
+		<button id="scene0" type="button"  onclick = " toon_video_2();   " class="btn_1 btn_2 ">VIDEO: VERHOOR NATAN 2</button>	
+		<button id="scene1" type="button"  onclick = "    " class="btn_1 btn_3 ">VERHOOR VERSLAG: TOMMY 1999</button>	
+		<button id="scene4" type="button"  onclick = " toon_foto_1();   " class="btn_1 btn_4 ">MATERIAAL:VOETBALTICKET</button>	
+		<button id="scene5" type="button"  onclick = " toon_foto_2();   " class="btn_1 btn_5 ">MATERIAAL: OVERIG</button>	
+		<button id="scene6" type="button"  onclick = "   toon_foto_3();  " class="btn_1 btn_6 ">FOTO: CRIME SCENE</button>			
+		<button id="scene6" type="button"  onclick = "     " class="btn_1 btn_7 ">FOTO: HANDLANGER</button>	
+		
+		<input type="button"  onclick = "terug_naar_overzicht();" value="TERUG" style="background-color:red;color:white;width:60px; height:60px; position:absolute; top:30px; left:30px;  border-radius: 30px; 	 "   >	
+
+		</div>
+	
+	 
+	 <div class="img-container" id = "video_natan" style = " display:none;"  > <!-- Block parent element -->
+		<img id="plaatje4" src="/static/rocks_reality_html/fotos/intro5.png "  style = " width:600px; height:600px;  ">		
+			<video width="600" height="400" controls  class="img-container" id="verhoor_natan">
+			<source src="https://youreka-virtualtours.be/tours/crimibox_rhetro_virus/media/rv_verhoor_natan_2019.mp4" type="video/mp4">
+			</video>
+				
+		<input type="button"  onclick = "sluit_video();" value="TERUG" style="background-color:red;color:white;width:60px; height:60px; position:absolute; top:30px; left:30px;  border-radius: 30px; 	 "   >	
+    </div>
+
+	
+	 <div class="img-container" id = "video_natan_2" style = " display:none;"  > <!-- Block parent element -->
+		<img id="plaatje4" src="/static/rocks_reality_html/fotos/intro5.png "  style = " width:600px; height:600px;  ">		
+			<video width="600" height="400" controls  class="img-container" id="verhoor_natan_2">
+			<source src="https://youreka-virtualtours.be/tours/crimibox_rhetro_virus/media/rv_verhoor_natan_2019_2.mp4" type="video/mp4">
+			</video>
+				
+		<input type="button"  onclick = "sluit_video();" value="TERUG" style="background-color:red;color:white;width:60px; height:60px; position:absolute; top:30px; left:30px;  border-radius: 30px; 	 "   >	
+    </div>	
+	
+	 <div class="img-container" id = "foto_1" style = " display:none;"  > <!-- Block parent element -->
+		<img id="plaatje4" src="/static/rocks_reality_html/fotos/ticket.png "  style = " width:600px; height:600px;  ">		
+			
+		<input type="button"  onclick = "sluit_video();" value="TERUG" style="background-color:red;color:white;width:60px; height:60px; position:absolute; top:30px; left:30px;  border-radius: 30px; 	 "   >	
+    </div>		
+	
+	 <div class="img-container" id = "foto_2" style = " display:none;"  > <!-- Block parent element -->
+		<img id="plaatje4" src="/static/rocks_reality_html/fotos/overig.png "  style = " width:600px; height:600px;  ">		
+			
+		<input type="button"  onclick = "sluit_video();" value="TERUG" style="background-color:red;color:white;width:60px; height:60px; position:absolute; top:30px; left:30px;  border-radius: 30px; 	 "   >	
+    </div>		
+
+	 <div class="img-container" id = "foto_3" style = " display:none;"  > <!-- Block parent element -->
+		<img id="plaatje4" src="/static/rocks_reality_html/fotos/crime_scene.png "  style = " width:600px; height:600px;  ">		
+			
+		<input type="button"  onclick = "sluit_video();" value="TERUG" style="background-color:red;color:white;width:60px; height:60px; position:absolute; top:30px; left:30px;  border-radius: 30px; 	 "   >	
+    </div>			
+	
+
+<!--
+<div id="myDIV">
+		
+		<button id="scene2" type="button" style = " " class="btn_red ">Tomb Bay</button>
+		<button onclick="myFunction();  " class="btn_black " style = " "  >hide button</button>
+</div>
+-->
+
+
+<input type="button"  id="terug1" value="MENU" style="background-color:red;color:white;width:60px; height:60px; position:absolute; top:60px; left:60px; display:none; border-radius: 30px; 	border-color: black; "   >
+
+
+<script>
+
+		function myFunction() {
+			var x = document.getElementById("myDIV");
+			if (x.style.display === "none") {
+				x.style.display = "block";
+			} else {
+				x.style.display = "none";
+			}
+		}
+
+		function toon_bewijsmateriaal() {
+			var x = document.getElementById("overzicht_bewijs");
+			if (x.style.display === "none") {
+				x.style.display = "block";
+				intro_pagina.style.display ="none";
+			} else {
+				x.style.display = "none";
+			}
+		}		
+
+
+		function toon_video_4() {
+			var x = document.getElementById("video_natan");
+			if (x.style.display === "none") {
+				x.style.display = "block";
+				intro_pagina.style.display ="none";
+				overzicht_bewijs.style.display = "none";
+			} else {
+				x.style.display = "none";
+			}
+		}		
+
+		function toon_video_2() {
+			var x = document.getElementById("video_natan_2");
+			if (x.style.display === "none") {
+				x.style.display = "block";
+				intro_pagina.style.display ="none";
+				overzicht_bewijs.style.display = "none";
+			} else {
+				x.style.display = "none";
+			}
+		}		
+
+		function toon_foto_1() {
+			var x = document.getElementById("foto_1");
+			if (x.style.display === "none") {
+				x.style.display = "block";
+				intro_pagina.style.display ="none";
+				overzicht_bewijs.style.display = "none";
+			} else {
+				x.style.display = "none";
+			}
+		}		
+
+		function toon_foto_2() {
+			var x = document.getElementById("foto_2");
+			if (x.style.display === "none") {
+				x.style.display = "block";
+				intro_pagina.style.display ="none";
+				overzicht_bewijs.style.display = "none";
+			} else {
+				x.style.display = "none";
+			}
+		}
+
+		function toon_foto_3() {
+			var x = document.getElementById("foto_3");
+			if (x.style.display === "none") {
+				x.style.display = "block";
+				intro_pagina.style.display ="none";
+				overzicht_bewijs.style.display = "none";
+			} else {
+				x.style.display = "none";
+			}
+		}		
+
+		function terug_naar_overzicht() {
+			overzicht_bewijs.style.display ="none";
+			intro_pagina.style.display="block";
+
+			}				
+
+
+
+
+
+		
+		function sluit_video() {
+			video_natan.style.display ="none";
+			video_natan_2.style.display ="none";	
+			foto_1.style.display ="none";	
+			foto_2.style.display ="none";			
+			foto_3.style.display ="none";				
+			overzicht_bewijs.style.display="block";
+
+			verhoor_natan.pause();
+			verhoor_natan.currentTime = 0;	
+			verhoor_natan_2.pause();
+			verhoor_natan_2.currentTime = 0;				
+			}				
+		
+		
+		
+				
+		jQuery(document).ready(function($){ 
+			$('#plaatje1').click(function() {   
+				$(plaatje1).hide();
+				$(plaatje2).show();	
+				document.documentElement.requestFullscreen();				
+				
+			});			
+
+
+			$('#plaatje2').click(function() {   
+				$(plaatje2).hide();
+				$(plaatje3).show();		
+			});	
+
+			$('#plaatje3').click(function() {   
+				$(plaatje3).hide();
+				$(plaatje4).show();	
+				$(scene0).show();
+				$(scene1).show();
+				$(scene2).show();
+				$(scene3).show();				
+			});	
+
+		
+			$('#scene0').click(function() {   
+				$(scene0).hide();	
+				$(scene1).hide();	
+				$(scene2).hide();	
+				$(scene3).hide();					
+				$(plaatje4).hide();	
+				$(terug1).show();
+				
+				$(test1).css('width','100%');	
+				$(test1).css('height','100%');
+			});			
+
+			$('#terug1').click(function() {   
+				$(scene0).show();
+				$(scene1).show();	
+				$(scene2).show();
+				$(scene3).show();
+				
+				$(plaatje4).show();	
+				$(test1).css('width','0%');	
+				$(test1).css('height','0%');
+				$(test2).css('width','0%');	
+				$(test2).css('height','0%');	
+				$(container3).hide();				
+				
+				$(terug1).hide();
+			});		
+
+
+			
+			$('#scene1').click(function() {   
+
+				sound_0.play();	
+			
+				$(scene0).hide();	
+				$(scene1).hide();					
+				$(scene2).hide();	
+				$(scene3).hide();				
+				$(plaatje4).hide();	
+				$(terug1).show();
+				
+				$(container3).show();
+				$(test2).css('width','100%');	
+				$(test2).css('height','100%');			
+			});
+
+			$('#terug1').click(function() {   
+				sound_0.pause();	
+				sound_0.currentTime = 0;
+			});			
+			
+			
+	
+			
+			
+			
+			
+			
+			
+			
+			
+
+<!-- reserve code niet gebruiken nu -->
+			
+			$('#scene2').click(function() {   
+				var krpano = document.getElementById("krpanoSWFObject");
+				krpano.call( "laad_foto2()" );	
+				laad_foto2();
+				changeCollorBack();
+				$(this).css('background-color', 'red');
+			});
+			
+			
+
+	});  // einde jquery druk knoppen
+
+			
+			function changeCollorBack(){
+			document.getElementById("scene1").style.background='#1769aa';
+			document.getElementById("scene2").style.background='#1769aa';
+			}
+	
+
+</script>
+
+
+<script>
+
+		function alle_geluiden_stop () {
+		sound_0.pause();
+		}
+
+</script>
+
+
+<script>
+	
+	$(function () {
+		var socket = io();
+			
+		socket.on('message', function(msg, vid, scale,d){  
+
+							console.log (msg);
+							console.log(vid);
+							console.log(scale);
+							console.log(d);
+							
+
+						if ((scale == customer) && (d == project )){
+		
+							if (msg == 'stop_alle_geluiden'){	
+								var krpano = document.getElementById("krpanoSWFObject");
+								<!--krpano.call( "stop_alle_geluiden()" );	-->
+								alle_geluiden_stop();								
+							}								
+							
+															
+														
+			
+						}  // einde customer / project
+				
+					});  //einde on-message  ///////////////////////////////////////////////////////////////////
+
+
+			window.laad_foto0 = function(){
+				console.log ('laad_foto0'); 
+				socket.emit('stuur', 'laad_foto0','',customer,project);	
+				alle_geluiden_stop();
+				<!--sound_0.play();		-->		
+			}
+			
+			window.stop_alle_geluiden = function(){
+				socket.emit('stuur', 'stop_alle_geluiden','',customer,project);	
+				alle_geluiden_stop();
+				<!-- sound_0.play();	-->
+			}		
+
+		
+			
+
+
+
+
+
+			
+			
+		}); // einde function
+		</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

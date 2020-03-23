@@ -222,8 +222,12 @@
 	</scene>
 
 
-<!--
 
+
+	
+	
+	
+	
 	<scene name="scene_100" title="100" onstart="" havevrimage="true" thumburl="panos/100.tiles/thumb.jpg" lat="36.63694444" lng="29.10305556" heading="0.0">
 
 		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
@@ -241,31 +245,6 @@
 
 		<image if="webvr.isenabled">
 			<cube url="panos/100.tiles/vr/pano_%s.jpg" />
-		</image>
-
-
-
-	</scene>	
--->
-	
-	
-	<scene name="scene_100" title="100" onstart="" havevrimage="true" thumburl="www.360mediamasters.com/jerome/panos/100.tiles/thumb.jpg" lat="36.63694444" lng="29.10305556" heading="0.0">
-
-		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
-
-		<preview url="www.360mediamasters.com/jerome/panos/100.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
-			<level tiledimagewidth="2304" tiledimageheight="2304">
-				<cube url="www.360mediamasters.com/jerome/panos/100.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="1152" tiledimageheight="1152">
-				<cube url="www.360mediamasters.com/jerome/panos/100.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-		<image if="webvr.isenabled">
-			<cube url="www.360mediamasters.com/jerome/panos/100.tiles/vr/pano_%s.jpg" />
 		</image>
 
 		<!-- place your scene hotspots here -->
