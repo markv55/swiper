@@ -187,6 +187,29 @@
 		loadscene(scene_600, null, MERGE, BLEND(1));
 		</action>
 
+		
+		
+		
+		<scene name="scene_0" title="1" onstart="" thumburl="https://www.360mediamasters.com/vt_fotos/panos/1.tiles/thumb.jpg" lat="4.42258333" lng="-55.37036111" heading="0.0">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="https://www.360mediamasters.com/vt_fotos/panos/1.tiles/preview.jpg" />
+
+		<image>
+			<cube url="https://www.360mediamasters.com/vt_fotos/panos/1.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,1024,2048" />
+		</image>
+		
+	</scene>	
+		
+		
+		
+		
+		
+		
+		
+		
+		
 <!--
 	<scene name="scene_0" title="0" onstart="" havevrimage="true"  lat="" lng="" heading="">
 
@@ -226,8 +249,8 @@
 		
 		
 		
-		
-			
+	<!-- deze werkt!!! -->	
+<!--			
 	<scene name="scene_0" title="0" onstart="" havevrimage="true" thumburl="https://www.360mediamasters.com/jerome/panos/0.tiles/thumb.jpg" lat="" lng="" heading="">
 
 		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
@@ -256,7 +279,7 @@
 		capture="false"   ath="30" atv="0" scale= "0.3" scale.mobile = "0.5" 		/>	
 	
 	</scene>
-	
+-->	
 	<!--	
 	<scene name="scene_0" title="0" onstart="" havevrimage="true" thumburl="panos/0.tiles/thumb.jpg" lat="" lng="" heading="">
 
