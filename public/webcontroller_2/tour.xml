@@ -202,6 +202,43 @@
 			<cube url="https://www.360mediamasters.com/vt_fotos/panos/1.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,1024,2048" />
 		</image>
 -->	
+
+
+		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+			<level tiledimagewidth="2304" tiledimageheight="2304">
+				<cube url="https://www.360mediamasters.com/vt_fotos/panos/0.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1152" tiledimageheight="1152">
+				<cube url="https://www.360mediamasters.com/vt_fotos/panos/0.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+
+		<image if="webvr.isenabled">
+			<cube url="https://www.360mediamasters.com/vt_fotos/panos/0.tiles/vr/pano_%s.jpg" />
+		</image>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	</scene>	
 		
 <!--		-->	
