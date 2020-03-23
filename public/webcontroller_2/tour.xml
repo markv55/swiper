@@ -187,7 +187,7 @@
 		loadscene(scene_600, null, MERGE, BLEND(1));
 		</action>
 
-
+<!--
 	<scene name="scene_0" title="0" onstart="" havevrimage="true"  lat="" lng="" heading="">
 
 		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
@@ -215,6 +215,7 @@
 	
 	</scene>		
 		
+-->		
 		
 		
 		
@@ -226,8 +227,7 @@
 		
 		
 		
-		
-<!--				
+			
 	<scene name="scene_0" title="0" onstart="" havevrimage="true" thumburl="https://www.360mediamasters.com/jerome/panos/0.tiles/thumb.jpg" lat="" lng="" heading="">
 
 		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
@@ -257,7 +257,7 @@
 	
 	</scene>
 	
-	
+	<!--	
 	<scene name="scene_0" title="0" onstart="" havevrimage="true" thumburl="panos/0.tiles/thumb.jpg" lat="" lng="" heading="">
 
 		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
