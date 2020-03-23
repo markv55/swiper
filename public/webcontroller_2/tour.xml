@@ -187,8 +187,47 @@
 		loadscene(scene_600, null, MERGE, BLEND(1));
 		</action>
 
+
+	<scene name="scene_0" title="0" onstart="" havevrimage="true"  lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+	<preview url="https://www.360mediamasters.com/vt_fotos/3/3.tiles/preview.jpg" />
+
+	<image>
+		<cube url="https://www.360mediamasters.com/vt_fotos/3/3.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,1024,2048" />
+	</image>
+
+		<image if="webvr.isenabled">
+			<cube url="https://www.360mediamasters.com/vt_fotos/3/3.tiles/vr/pano_%s.jpg" />
+		</image>
+
+	
+	
+		<hotspot name="hart" url="images/hart.png" distorted="true"  visible= "true" keep="false" handcursor="false" 
+		capture="false"   ath="0" atv="0" scale= "0.3" scale.mobile = "0.5" 		/>		
 		
-			
+		<hotspot name="hart1" url="images/hart.png" distorted="true"  visible= "true" keep="false" handcursor="false" 
+		capture="false"   ath="-30" atv="0" scale= "0.3" scale.mobile = "0.5" 		/>	
+		
+		<hotspot name="hart2" url="images/hart.png" distorted="true"  visible= "true" keep="false" handcursor="false" 
+		capture="false"   ath="30" atv="0" scale= "0.3" scale.mobile = "0.5" 		/>	
+	
+	</scene>		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+<!--				
 	<scene name="scene_0" title="0" onstart="" havevrimage="true" thumburl="https://www.360mediamasters.com/jerome/panos/0.tiles/thumb.jpg" lat="" lng="" heading="">
 
 		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
@@ -218,7 +257,7 @@
 	
 	</scene>
 	
-<!--		
+	
 	<scene name="scene_0" title="0" onstart="" havevrimage="true" thumburl="panos/0.tiles/thumb.jpg" lat="" lng="" heading="">
 
 		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
@@ -273,7 +312,7 @@
 
 
 	</scene>	
--->
+
 	
 	
 	<scene name="scene_100" title="100" onstart="" havevrimage="true" thumburl="https://www.360mediamasters.com/jerome/panos/100.tiles/thumb.jpg" lat="36.63694444" lng="29.10305556" heading="0.0">
@@ -295,9 +334,14 @@
 			<cube url="https://www.360mediamasters.com/jerome/panos/100.tiles/vr/pano_%s.jpg" />
 		</image>
 
-		<!-- place your scene hotspots here -->
+
 
 	</scene>
+	
+-->	
+	
+	
+	
 
 	<scene name="scene_200" title="200" onstart="" havevrimage="true" thumburl="panos/200.tiles/thumb.jpg" lat="36.69361111" lng="28.86583333" heading="0.0">
 
