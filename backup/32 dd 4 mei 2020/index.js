@@ -48,8 +48,6 @@ io.on('connection', function(socket) {
 		io.emit('message', param0, "doorsturen_aan", "vr1", param3);	// VR bril 1
 		io.emit('message', param0, "doorsturen_aan", "vr2", param3);	// VR bril 2	
 		io.emit('message', param0, "doorsturen_aan", "wb1", param3);	// website 1
-		io.emit('message', param0, "doorsturen_aan", "vr11", param3);	// website 1		
-		
 		
 		}
 	});	
