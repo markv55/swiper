@@ -109,7 +109,7 @@ aangepast tov vroeger:
 	
 	
 <!-- BIJ EEN EVENT (DRAAIEN VAN SCHERM) VAN WORDT OPNIEUW DE HOOGTE/BREEDTE VAN DE BUBBLE STORIES CONTENT BEPAALD-->
-<events name="orientation" keep="true" onresize="Bepaal_Scale(); zet_aan"  />
+<events name="orientation" keep="true" onresize="Bepaal_Scale(); zet_aan()"  />
 
 <action name="Bepaal_Scale">
 if(stagewidth LT stageheight  <!-- breedte kleiner dan hoogte =  portrait-->
@@ -124,6 +124,9 @@ if(device.tablet,  set (hoogte_factor, calc(stageheight*0.8)); 	set (breedte_fac
 if(device.mobile,  set (hoogte_factor, calc(stageheight*0.9)); 	set (breedte_factor, calc(stageheight*0.9) );); 	
 if(device.desktop, set (hoogte_factor, calc(stageheight*0.5)); 	set (breedte_factor, calc(stageheight*0.5) ););	
 );
+
+
+
 </action>
 
 
@@ -157,16 +160,47 @@ if(device.desktop, set (hoogte_factor, calc(stageheight*0.5)); 	set (breedte_fac
 
 <action name="zet_aan">
 
-set(breedte_plaatje,0.2); 	<!--  de grootte van de members hotspot -->
+<!-- set(breedte_plaatje,0.2); 	-->
+	<!--  de grootte van de members hotspot --> 
+
+set(breedte_plaatje,(calc(stagewidth*0.8)));  
+
 set(breedte_dia,0.20);		<!--  de breedte van de 8 plaatjes in de 22 scenes -->
 
 set (fov_default,110);		<!-- de field of view van de 22 scenes   vof 200 ie een hele brede kijk, dus je ziet veel plaatjes maar deze zijn klein.  60 is een hele smalle kijk dus de plaatjes zijn heel groot in beeld-->
 
-set (hotspot[logo1].scale, calc(breedte_plaatje*1));	
-set (hotspot[logo2].scale, calc(breedte_plaatje*1));	
-set (hotspot[logo3].scale, calc(breedte_plaatje*1));	
-set (hotspot[logo4].scale, calc(breedte_plaatje*1));	
-set (hotspot[logo5].scale, calc(breedte_plaatje*1));	
+<!-- set (hotspot[logo1].scale, calc(breedte_plaatje*1));	 -->
+<!-- set (hotspot[logo2].scale, calc(breedte_plaatje*1));	 -->
+<!-- set (hotspot[logo3].scale, calc(breedte_plaatje*1));	 -->
+<!-- set (hotspot[logo4].scale, calc(breedte_plaatje*1));	 -->
+<!-- set (hotspot[logo5].scale, calc(breedte_plaatje*1));	 -->
+
+
+set(scale_icon,0.12);	
+
+		set (hotspot[logo1].width, calc(stagewidth*scale_icon)); 	
+		set (hotspot[logo1].height, calc(stagewidth*scale_icon)); 	
+		
+		set (hotspot[logo2].width, calc(stagewidth*scale_icon)); 	
+		set (hotspot[logo2].height, calc(stagewidth*scale_icon)); 			
+		
+		set (hotspot[logo3].width, calc(stagewidth*scale_icon)); 	
+		set (hotspot[logo3].height, calc(stagewidth*scale_icon)); 			
+		
+		set (hotspot[logo4].width, calc(stagewidth*scale_icon)); 	
+		set (hotspot[logo4].height, calc(stagewidth*scale_icon)); 			
+
+		set (hotspot[logo5].width, calc(stagewidth*scale_icon)); 	
+		set (hotspot[logo5].height, calc(stagewidth*scale_icon)); 	
+<!-- set (hotspot[logo1].scale, calc(stagewidth*0.1));	 -->
+<!-- set (hotspot[logo2].scale, calc(stagewidth*0.1));	 -->
+<!-- set (hotspot[logo3].scale, calc(stagewidth*0.1));	 -->
+<!-- set (hotspot[logo4].scale, calc(stagewidth*0.1));	 -->
+<!-- set (hotspot[logo5].scale, calc(stagewidth*0.1));	 -->
+
+<!-- set (breedte_factor, calc(stageheight*0.5) ) -->
+
+
 set (hotspot[logo6].scale, calc(breedte_plaatje*1));	
 set (hotspot[logo7].scale, calc(breedte_plaatje*1));	
 set (hotspot[logo8].scale, calc(breedte_plaatje*1));
