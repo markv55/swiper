@@ -8,7 +8,18 @@
 		var project = 'P_01';	//  project name
 	</script>
 
+ 
 
+    <script>
+
+        var queryParams = new URLSearchParams(window.location.search);
+        var name = queryParams.get('name');
+        var timeStamp = queryParams.get('timestamp');
+        var userString = name + timeStamp;
+
+        alert(userString);
+
+    </script>
 
 
 
